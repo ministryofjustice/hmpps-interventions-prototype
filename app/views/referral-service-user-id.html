@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  MoJ Interventions - make referrals
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+         Book and Manage Interventions 
+      </h1>
+      <h2 class="govuk-heading-m">
+        Enter service user's identification
+      </h2>
+
+      <form action="pp-form-v01/making-referral-service-user-details" method="post" class="form">
+
+        {{ govukInput({
+          label: {
+            text: "CRN number"
+          },
+          id: "service-user-id",
+          name: "service-user-id",
+          type: "text",
+          autocomplete: "CRN number",
+          attributes: "{{data['service-user-id']}}",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

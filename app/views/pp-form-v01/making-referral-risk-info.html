@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        HMPPS - Referring Intervention
+      </h1>
+      <h2 class="govuk-heading-m">
+        Risk information 
+      </h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Public - L/M/H/VH
+          </dt>
+          <dd class="govuk-summary-list__value">
+            XXXXXXXX
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Children - L/M/H/VH
+          </dt>
+          <dd class="govuk-summary-list__value">
+            XXXXXXXX
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Staff - L/M/H/VH
+          </dt>
+          <dd class="govuk-summary-list__value">
+            XXXXXXX
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Known Adult - L/M/H/VH
+          </dt>
+          <dd class="govuk-summary-list__value">
+            XXXXXXX
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            MAPPA level
+          </dt>
+          <dd class="govuk-summary-list__value">
+            XXXXXXX
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Self-harm / Suicide
+          </dt>
+          <dd class="govuk-summary-list__value">
+            XXXXXXX
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Area restrictions
+          </dt>
+          <dd class="govuk-summary-list__value">
+            XXXXXXX
+          </dd>
+        </div>
+      </dl>
+      <form action="making-referral-services-previously-received" method="post" class="form">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>
+        <a href="/">
+          Return to the start of the making referrals process
+        </a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}
