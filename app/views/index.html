@@ -8,57 +8,38 @@
 
   {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
   {{ govukPhaseBanner({
-    tag: {
+     tag: {
       text: "prototype"
-    },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+     },
+     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
   }) }}
 
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-         Book and Manage Interventions 
-      </h1>
-      <h2 class="govuk-heading-m">
-        Sign in to make referrals
-      </h2>
-
-      <form action="referral-start" method="post" class="form">
-
-        {{ govukInput({
-          label: {
-            text: "Email address"
-          },
-          id: "email",
-          name: "email",
-          type: "email",
-          autocomplete: "email",
-          attributes: {
-            spellcheck: "false"
-          }
-        }) }}
-
-        {{ govukInput({
-          label: {
-            text: "Password"
-          },
-          id: "password",
-          name: "password",
-          type: "password",
-          autocomplete: "password",
-          attributes: {
-            spellcheck: "false"
-          }
-        }) }}
-
-        {{ govukButton({
-          text: "Sign in"
-        }) }}
-      </form>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      MoJ interventions
+    </h1>
+    <div class="govuk-grid-column-full">
+      <ul class="govuk-list">
+        <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+          Add and find an intervention
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+          </svg>
+        </a>
+        <a href="book-and-manage/index" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+          Book and manage an intervention
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+          </svg>
+        </a>
+      </ul>
     </div>
   </div>
+</div>
+
 {% endblock %}
