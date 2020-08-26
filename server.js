@@ -51,6 +51,9 @@ documentationApp.use(cookieParser())
 app.use(utils.handleCookies(app))
 documentationApp.use(utils.handleCookies(documentationApp))
 
+// Determine whether to show logged in banner or not
+app.use(utils.handleBanner(app))
+
 // Set up configuration variables
 var releaseVersion = packageJson.version
 var glitchEnv = (process.env.PROJECT_REMIX_CHAIN) ? 'production' : false // glitch.com
@@ -166,6 +169,7 @@ app.locals.cookieText = config.cookieText
 app.locals.promoMode = promoMode
 app.locals.releaseVersion = 'v' + releaseVersion
 app.locals.serviceName = config.serviceName
+app.locals.organisationName = config.organisationName
 // extensionConfig sets up variables used to add the scripts and stylesheets to each page.
 app.locals.extensionConfig = extensions.getAppConfig()
 

@@ -38,14 +38,9 @@
 {% endblock %}
 
 {% block header %}
+  {%- from "moj/components/header/macro.njk" import mojHeader -%}
   {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: serviceName,
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+  {% include "includes/banner.html" %}
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
