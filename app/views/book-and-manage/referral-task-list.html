@@ -32,7 +32,9 @@
             <a class="moj-task-list__task-name" href="make-a-referral/service-user-id"
               >Enter service user's case identifier</a
             >
-            <strong class="govuk-tag moj-task-list__task"> not started </strong>
+            {% if data["service-user-id"] %}
+              <strong class="govuk-tag moj-task-list__task"> completed </strong>
+            {% endif %}
           </li>
           <li class="moj-task-list__item">
             <a class="moj-task-list__task-name" href="make-a-referral/service-user-details"
