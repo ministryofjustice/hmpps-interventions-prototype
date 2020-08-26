@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  MoJ Interventions - make referrals
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Make a referral</h1>
+
+    <ol class="moj-task-list">
+      <li>
+        <h2 class="moj-task-list__section">
+          <span class="moj-task-list__section-number">1. </span>
+          Service user's information
+        </h2>
+        <ul class="moj-task-list__items">
+          <li class="moj-task-list__item">
+            <a class="moj-task-list__task-name" href="make-a-referral/service-user-id"
+              >Enter service user's case identifier</a
+            >
+            <strong class="govuk-tag moj-task-list__task"> not started </strong>
+          </li>
+          <li class="moj-task-list__item">
+            <a class="moj-task-list__task-name" href="#"
+              >Service user's personal information</a
+            >
+          </li>
+          <li class="moj-task-list__item">
+            <a class="moj-task-list__task-name" href="#"
+              >Service user's risk information</a
+            >
+          </li>
+          <li class="moj-task-list__item">
+            <a class="moj-task-list__task-name" href="#"
+              >Service user's needs and requirements</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="moj-task-list__section">
+          <span class="moj-task-list__section-number">2. </span>
+          Responsible officer's information
+        </h2>
+        <ul class="moj-task-list__items">
+          <li class="moj-task-list__item">
+            <a class="moj-task-list__task-name" href="#"
+              >Responsible officer's information</a
+            >
+            <strong class="govuk-tag moj-task-list__task"> not started </strong>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="moj-task-list__section">
+          <span class="moj-task-list__section-number">3. </span>
+          Acommodation referral information
+        </h2>
+        <ul class="moj-task-list__items">
+          <li class="moj-task-list__item">
+            <a class="moj-task-list__task-name" href="#">Add link</a>
+            <strong class="govuk-tag moj-task-list__task"> not started </strong>
+          </li>
+          <li class="moj-task-list__item">
+            <a class="moj-task-list__task-name" href="#">Add link</a>
+          </li>
+          <li class="moj-task-list__item">
+            <a class="moj-task-list__task-name" href="#">Add link</a>
+          </li>
+          <li class="moj-task-list__item">
+            <a class="moj-task-list__task-name" href="#">Add link</a>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</div>
+
+{% endblock %}
