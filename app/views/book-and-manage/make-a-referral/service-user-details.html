@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  MoJ Interventions - make referrals
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Confirm the service user's personal details
+      </h1>
+      <form action="risk-information" method="post" class="form">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+             Title
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Mr
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+             Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Alex Rivasur
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+             Other names
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Shorty
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              PNC
+            </dt>
+            <dd class="govuk-summary-list__value">
+              2014/1234786A
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              CRN
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['service-user-id'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Nomis Number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              xxxxxxxxxxxx
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              10/08/1980
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Gender
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Male
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Ethnicity
+            </dt>
+            <dd class="govuk-summary-list__value">
+              White British
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Substance misuse and medication
+            </dt>
+            <dd class="govuk-summary-list__value">
+               No substance abuse
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Next of kin
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Josie Palmer
+            </dd>
+          </div>
+        </dl>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+      <a href="../referral-service-user-id" class=govuk-link>
+        Enter case identifier again
+      </a>
+    </div>
+  </div>
+{% endblock %}
