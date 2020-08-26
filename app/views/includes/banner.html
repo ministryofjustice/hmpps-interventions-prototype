@@ -1,0 +1,46 @@
+{%- from "moj/components/header/macro.njk" import mojHeader -%}
+{# Set serviceName & organisation name in config.js. #}
+{% if isLoggedInPage %}
+
+{{ mojHeader({
+  homepageUrl: "/",
+  organisationLabel: {
+    text: organisationName,
+    href: "/"
+  },
+  serviceLabel: {
+    text: serviceName,
+    href: "/book-and-manage/referral-start"
+  },
+  serviceUrl: "/",
+  containerClasses: "govuk-width-container",
+  navigation: {
+    label: "Account navigation",
+    items: [{
+      text: "James",
+      href: "#"
+    },
+    {
+      text: "Sign out",
+      href: "/book-and-manage/index"
+    }]
+  }
+}) }}
+
+{% else %}
+
+{{ mojHeader({
+  homepageUrl: "/",
+  organisationLabel: {
+    text: organisationName,
+    href: "/"
+  },
+  serviceLabel: {
+    text: serviceName,
+    href: "/book-and-manage/referral-start"
+  },
+  serviceUrl: "/",
+  containerClasses: "govuk-width-container"
+}) }}
+
+{% endif %}
