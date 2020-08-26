@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Find an intervention
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Find an intervention</h1>
+
+      <p>
+        Use this service to find an intervention. You can search by keyword or postcode, or you can search with both. You can also browse by need.
+      </p>
+
+      <form action="/results">
+        <div class="govuk-form-group">
+          <label for="location" class="govuk-label">Location</label>
+          <input id="location" class="govuk-input" name="location" placeholder="e.g. London">
+        </div>
+
+        <div class="govuk-form-group">
+          <label for="needs" class="govuk-label">Criminogenic needs</label>
+          <input id="needs" class="govuk-input" name="needs" placeholder="e.g. Drug misuse">
+        </div>
+
+        <div class="govuk-form-group">
+          <label for="risks" class="govuk-label">Risks</label>
+          <input id="risks" class="govuk-input" name="risks" placeholder="e.g. OGRS">
+        </div>
+
+        <div class="govuk-form-group">
+          <label for="text" class="govuk-label">Title and description of interventions</label>
+          <input id="text" class="govuk-input" name="text" placeholder="e.g. Wellbeing">
+        </div>
+
+        <input type="submit" class="govuk-button" value="Search">
+      </form>
+
+      <p>
+        <a href="#" class="govuk-link">Advanced search</a>
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+      <h2 class="govuk-heading-l">Browse interventions by need</h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a href="/results?need=accommodation">Accommodation</a>
+        </li>
+        <li>
+          <a href="/results?need=education-training-and-employment">Education, training and employment</a>
+        </li>
+        <li>
+          <a href="/results?need=finance">Finance</a>
+        </li>
+        <li>
+          <a href="/results?need=relationships">Relationships</a>
+        </li>
+        <li>
+          <a href="/results?need=lifestyle-and-associates">Lifestyle and associates</a>
+        </li>
+        <li>
+          <a href="/results?need=emotional-wellbeing">Emotional wellbeing</a>
+        </li>
+        <li>
+          <a href="/results?need=alcohol-misuse">Alcohol misuse</a>
+        </li>
+        <li>
+          <a href="/results?need=drug-misuse">Drug misuse</a>
+        </li>
+        <li>
+          <a href="/results?need=thinking-and-behaviour">Thinking and behaviour</a>
+        </li>
+        <li>
+          <a href="/results?need=attitudes">Attitudes</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-s">Useful links</h2>
+      <ul class="govuk-list">
+        <li>
+          <a href="#" class="govuk-link">Link 1</a>
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Link 2</a>
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Link 3</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
