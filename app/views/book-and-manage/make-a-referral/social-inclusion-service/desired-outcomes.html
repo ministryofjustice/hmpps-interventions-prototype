@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Desired outcomes for social inclusion service
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        What are the desired outcomes for the social inclusion service?
+      </h1>
+      <form action="complexity-level" method="post" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="service-user-needs-hint">
+            <span id="service-user-needs-hint" class="govuk-hint">
+              Select all that apply
+            </span>
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="service-user-needs-accomodation" name="service-user-needs" type="checkbox" value="Accomodation">
+                <label class="govuk-label govuk-checkboxes__label" for="service-user-needs-heated-seats">
+                  Service User develops and sustains social networks to reduce initial social isolation.
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="service-user-needs-ete" name="service-user-needs" type="checkbox" value="ETE">
+                <label class="govuk-label govuk-checkboxes__label" for="service-user-needs-ete">
+                  Service User secures early post-release engagement with community based services.
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="service-user-needs-drug-misuse" name="service-user-needs" type="checkbox" value="Drug misuse">
+                <label class="govuk-label govuk-checkboxes__label" for="service-user-needs-drug-misuse">
+                  Service User develops resilience and perseverance to cope with challenges and barriers on return to the community.
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
