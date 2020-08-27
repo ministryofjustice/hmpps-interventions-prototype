@@ -1,0 +1,647 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Check your answers
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        Service user's information
+      </h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Title
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Mr
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Alex Rivasur
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Other names
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Shorty
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            PNC
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2014/1234786A
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            CRN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['service-user-id'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Nomis Number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            xxxxxxxxxxxx
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            10/08/1980
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Flat 2<br>27 Test Walk<br>SY16 1AQ<br><br>Private rental
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            OGRS score
+          </dt>
+          <dd class="govuk-summary-list__value">
+            50
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            ROSHA score
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Medium
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            RM2000 score
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Medium
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            SARA score
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Low
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Needs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Thinking and attitudes</p>
+            <p>Relationships</p>
+            <p>Accommodation</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Gender
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Male
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Ethnicity
+          </dt>
+          <dd class="govuk-summary-list__value">
+            White British
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Preferred language
+          </dt>
+          <dd class="govuk-summary-list__value">
+            English
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Religion or belief
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Sexual orientation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Heterosexual
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Disabilities
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Autism spectrum condition
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-9">
+        Responsible officer information
+      </h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Responsible officer name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Adam Michaels
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Reponsible officer email
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Adam.Michaels@justice.gov.uk
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Responsible officer office address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            44 Bouverie Road<br>WESTON LULLINGFIELDS<br>SY4 0RE
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-9">
+        Additional service user information
+      </h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Risk scores information
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Risk scores information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Identify needs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Identify needs</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Language needs:<br>Do they require an interpreter?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Do they require an interpreter?</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Language needs:<br>What language?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">What language?</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Does Alex have caring or employment responsibilities?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Caring responsibilities</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Provide details of when Alex will not be able to attend sessions
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">When unavailable</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-9">
+        Information for the accommodation referral
+      </h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Select the relevant sentence for the accommodation service referral
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Relevant sentence</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Desired outcomes for the accommodation service?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Desired outcomes</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            What is the required complexity for the accommodation service?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Required complexity</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            What date does the accommodation service need to be completed by?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Date completed by</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Maximum number RAR days for the accommodation service
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Maximum RAR days</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Do you have further information for the accommodation service provider?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Further information</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-9">
+        Information for the social inclusion referral
+      </h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Select the relevant sentence for the social inclusion service referral
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Relevant sentence</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Desired outcomes for the social inclusion service?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Desired outcomes</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            What is the required complexity for the social inclusion service?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Required complexity</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            What date does the social inclusion service need to be completed by?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Date completed by</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Maximum number RAR days for the social inclusion service
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Maximum RAR days</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Do you have further information for the social inclusion service provider?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            to add
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+              <span class="govuk-visually-hidden">Further information</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      {# old below here #}
+
+      {# <h2 class="govuk-heading-m govuk-!-margin-top-9">
+        Needs and risks
+      </h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Needs of the service user
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list govuk-list--bullet">
+              {% for need in data['service-user-needs'] %}
+                <li>{{ need }}</li>
+              {% else %}
+                <li>No needs selected</li>
+              {% endfor %}
+            </ul>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="making-referral-needs-and-risks">
+              Change
+              <span class="govuk-visually-hidden">needs and risks</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-9">
+        Offenders details
+      </h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Relevant previous offences
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["intervention-more-detail"]}}
+            {% if not data["intervention-more-detail"] %}
+              No additional information
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="making-referral-offence-detail">
+              Change
+              <span class="govuk-visually-hidden">Relevant previous offences</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Date of offence
+          </dt>
+          <dd class="govuk-summary-list__value">
+            20,01,2018
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Offence convicted
+          </dt>
+          <dd class="govuk-summary-list__value">
+            XXXXXXXX
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Date of sentence
+          </dt>
+          <dd class="govuk-summary-list__value">
+            20,01,2018
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            End Sentence Date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            20,05,2021
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Licence end date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            10,08,2021
+          </dd>
+        </div>
+      </dl>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Intervention delivery date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["intervention-delivery"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="making-referral-offence-detail">
+              Change
+              <span class="govuk-visually-hidden">intervention delivery date</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Days to complete service
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["days-to complete-service"]}}
+            {% if not data["days-to complete-service"] %}
+              No information
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="making-referral-offence-detail">
+              Change
+              <span class="govuk-visually-hidden">Days to complete service</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <h2 class="govuk-heading-m govuk-!-margin-top-9">
+        Services previously received
+      </h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Summary service received
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data["summary-of-service-provision"]}}
+            {% if not data["summary-of-service-provision"] %}
+              No information
+            {% endif %}
+          </dd>
+        </div>
+      </dl> #}
+
+      <a href="confirmation" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+        Submit referrals
+      </a>
+
+    </div>
+
+  </div>
+
+{% endblock %}
