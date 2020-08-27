@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Desired outcomes for accommodation service
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        What are the desired outcomes for the accommodation service?
+      </h1>
+      <form action="accommodation-complexity-level" method="post" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="service-user-needs-hint">
+            <span id="service-user-needs-hint" class="govuk-hint">
+              Select all that apply
+            </span>
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="service-user-needs-accomodation" name="service-user-needs" type="checkbox" value="Accomodation" {{ checked("service-user-needs", "Accomodation") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="service-user-needs-heated-seats">
+                  All barriers, as identified in the Service User Action Plan(for example financial, behavioural, physical, mental or offence-type related), to obtaining or sustaining accommodation are successfully removed
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="service-user-needs-ete" name="service-user-needs" type="checkbox" value="ETE" {{ checked("service-user-needs", "ETE") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="service-user-needs-ete">
+                  Service User makes progress in obtaining accommodation
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="service-user-needs-drug-misuse" name="service-user-needs" type="checkbox" value="Drug misuse" {{ checked("service-user-needs", "Drug misuse") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="service-user-needs-drug-misuse">
+                  Drug Service User is helped to secure social or supported housing
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="service-user-needs-drug-misuse" name="service-user-needs" type="checkbox" value="Drug misuse" {{ checked("service-user-needs", "Drug misuse") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="service-user-needs-drug-misuse">
+                  Service User is helped to secure a tenancy in the private rented sector (PRS)
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="service-user-needs-drug-misuse" name="service-user-needs" type="checkbox" value="Drug misuse" {{ checked("service-user-needs", "Drug misuse") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="service-user-needs-drug-misuse">
+                  Service User is helped to sustain existing accommodation
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="service-user-needs-drug-misuse" name="service-user-needs" type="checkbox" value="Drug misuse" {{ checked("service-user-needs", "Drug misuse") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="service-user-needs-drug-misuse">
+                  Settled accommodation issustained for a period of at least 6 months or until the end of sentence, whichever occurs first (including for those serving custodial sentences of less than 6 months)
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="service-user-needs-drug-misuse" name="service-user-needs" type="checkbox" value="Drug misuse" {{ checked("service-user-needs", "Drug misuse") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="service-user-needs-drug-misuse">
+                  Service User at risk of losing their tenancy are successfully helped to retain it
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
