@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Needs and requirements
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Alex's needs and requirements
+      </h1>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Needs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Thinking and attitudes</p>
+            <p>Relationships</p>
+            <p>Accommodation</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Gender
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Male
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Ethnicity
+          </dt>
+          <dd class="govuk-summary-list__value">
+            White British
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Preferred language
+          </dt>
+          <dd class="govuk-summary-list__value">
+            English
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Religion or belief
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Sexual orientation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Heterosexual
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Disabilities
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Autism spectrum condition
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="../referral-task-list" method="post" class="form">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group govuk-!-margin-bottom-9">
+            <label class="govuk-label" for="more-needs">
+              Additional information about Alex's needs (optional) <span class="govuk-visually-hidden">Additional
+                information about Alex's needs (optional)</span>
+            </label>
+            <textarea class="govuk-textarea" id="more-needs" name="intervention-more-needs" rows="5"
+              aria-describedby="intervention-more-detail"></textarea>
+          </div>
+        </fieldset>
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group govuk-!-margin-bottom-9">
+            <label class="govuk-label" for="disability-needs">
+              Does Alex have any other mobilitiy, disability or accessibility needs? (optional) <span
+                class="govuk-visually-hidden">Does Alex have any other mobilitiy, disability or accessibility needs?
+                (optional)</span>
+              <p>For example, if they use a wheelchair, use a hearing aid or have a learning difficulty</p>
+            </label>
+            <textarea class="govuk-textarea" id="disability-needs" name="intervention-disability-needs" rows="5"
+              aria-describedby="intervention-more-detail"></textarea>
+          </div>
+        </fieldset>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
