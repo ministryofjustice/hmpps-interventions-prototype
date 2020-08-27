@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  MoJ Interventions - make referrals
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-form-group">
+    <form action="accommodation-desired-outcomes" method="post" class="form">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Select the relevant sentence for the accommodation service referral
+          </h1>
+        </legend>
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="wild-birds" name="accommodation-sentence" type="radio" value="Wild birds protection act">
+            <label class="govuk-label govuk-radios__label" for="accommodation-sentence">
+              Wild birds protection act<br>Sub category: Wild birds protection act, 1900<br>Date: 01/01/2020<br>Order: Suspended sentence
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="armed-robbery" name="accommodation-sentence" type="radio" value="Armed robbery">
+            <label class="govuk-label govuk-radios__label" for="accommodation-sentence-2">
+              Armed robbery<br>Sub category: Wild birds protection act, 1900<br>Date: 01/01/2020<br>Order: Suspended sentence
+            </label>
+          </div>
+      </fieldset>
+        </div>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+
+{% endblock %}
