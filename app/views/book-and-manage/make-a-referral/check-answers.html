@@ -238,12 +238,26 @@
             Identify needs
           </dt>
           <dd class="govuk-summary-list__value">
-            to add
+            {{ data["service-user-more-needs"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="needs-and-requirements">
               Change
               <span class="govuk-visually-hidden">Identify needs</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Any other mobility, disability or accessibility needs (optional)?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["service-user-disability-needs"] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="needs-and-requirements">
+              Change
+              <span class="govuk-visually-hidden">disability needs</span>
             </a>
           </dd>
         </div>
@@ -252,10 +266,10 @@
             Language needs:<br>Do they require an interpreter?
           </dt>
           <dd class="govuk-summary-list__value">
-            to add
+            {{ data["needs-interpreter"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="needs-and-requirements">
               Change
               <span class="govuk-visually-hidden">Do they require an interpreter?</span>
             </a>
@@ -266,10 +280,10 @@
             Language needs:<br>What language?
           </dt>
           <dd class="govuk-summary-list__value">
-            to add
+            {{ data["interpreter-language"]}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="needs-and-requirements">
               Change
               <span class="govuk-visually-hidden">What language?</span>
             </a>
@@ -280,10 +294,10 @@
             Does Alex have caring or employment responsibilities?
           </dt>
           <dd class="govuk-summary-list__value">
-            to add
+            {{ data["has-responsibilities"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="needs-and-requirements">
               Change
               <span class="govuk-visually-hidden">Caring responsibilities</span>
             </a>
@@ -294,7 +308,7 @@
             Provide details of when Alex will not be able to attend sessions
           </dt>
           <dd class="govuk-summary-list__value">
-            to add
+            {{ data["when-unavailable"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
