@@ -19,7 +19,7 @@
 {% block content %}
   <form action="rar-days" method="post" class="form">
     <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="social-inclusion-completion-date-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
             What date does the social inclusion service need to be completed by?
@@ -31,26 +31,26 @@
         <div class="govuk-date-input" id="date">
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="date-day">
+              <label class="govuk-label govuk-date-input__label" for="social-inclusion-date-day">
                 Day
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-day" name="date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="social-inclusion-date-day" name="social-inclusion-date-day" type="text" pattern="[0-9]*" inputmode="numeric" value={{ data["social-inclusion-date-day"] }}>
             </div>
           </div>
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="date-month">
+              <label class="govuk-label govuk-date-input__label" for="social-inclusion-date-month">
                 Month
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-month" name="date-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="social-inclusion-date-month" name="social-inclusion-date-month" type="text" pattern="[0-9]*" inputmode="numeric" value={{ data["social-inclusion-date-month"] }}>
             </div>
           </div>
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="date-year">
+              <label class="govuk-label govuk-date-input__label" for="social-inclusion-date-year">
                 Year
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-year" name="date-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="social-inclusion-date-year" name="social-inclusion-date-year" type="text" pattern="[0-9]*" inputmode="numeric" value={{ data["social-inclusion-date-year"] }}>
             </div>
           </div>
         </div>

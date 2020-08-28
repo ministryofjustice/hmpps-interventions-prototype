@@ -15,7 +15,6 @@
   }) }}
 
 {% endblock %}
-{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -30,7 +29,7 @@
               For example, relevant previous offences, previously completed programmes or further reasons for this referral
               <span class="govuk-visually-hidden">For example, relevant previous offences, previously completed programmes or further reasons for this referral</span>
             </label>
-            <textarea class="govuk-textarea" id="more-detail" name="accommodation-further-information" rows="5" aria-describedby="summary-of-service-provision"></textarea>
+            <textarea class="govuk-textarea" id="more-detail" name="social-inclusion-further-information" rows="5" aria-describedby="social-inclusion-further-information">{{ data["social-inclusion-further-information"] }}</textarea>
           </div>
         </fieldset>
         <button class="govuk-button" data-module="govuk-button">
