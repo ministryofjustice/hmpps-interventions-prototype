@@ -20,14 +20,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Enter the service user's case identifier
-      </h1>
-
       <form action="service-user-details" method="post" class="form">
-
         {{ govukInput({
           label: {
+            text: "Enter the service user's case identifier",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
             text: "You can use the CRN, PNC or Nomis number"
           },
           id: "service-user-id",
