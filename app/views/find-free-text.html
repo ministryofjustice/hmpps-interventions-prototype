@@ -11,28 +11,40 @@
       <h1 class="govuk-heading-xl">Find an intervention</h1>
 
       <p>
-        Use this service to find an intervention. You can search by keyword or postcode, or you can search with both. You can also browse by need.
+        If you're a probation practitioner, you can use this service to find interventions, such as:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          accredited programmes
+        </li>
+        <li>
+         rehabilitation and resettlement interventions 
+        </li>
+      </ul>
+      
+      <p>
+       You can search by keyword, postcode, criminogenic needs and risks.
       </p>
 
       <form action="/results">
         <div class="govuk-form-group">
           <label for="location" class="govuk-label">Location</label>
-          <input id="location" class="govuk-input" name="location" placeholder="e.g. London">
+          <input id="location" class="govuk-input" name="location" placeholder="For example London">
         </div>
 
         <div class="govuk-form-group">
           <label for="needs" class="govuk-label">Criminogenic needs</label>
-          <input id="needs" class="govuk-input" name="needs" placeholder="e.g. Drug misuse">
+          <input id="needs" class="govuk-input" name="needs" placeholder="For example Drug misuse">
         </div>
 
         <div class="govuk-form-group">
           <label for="risks" class="govuk-label">Risks</label>
-          <input id="risks" class="govuk-input" name="risks" placeholder="e.g. OGRS">
+          <input id="risks" class="govuk-input" name="risks" placeholder="For example OGRS">
         </div>
 
         <div class="govuk-form-group">
           <label for="text" class="govuk-label">Title and description of interventions</label>
-          <input id="text" class="govuk-input" name="text" placeholder="e.g. Wellbeing">
+          <input id="text" class="govuk-input" name="text" placeholder="For example Wellbeing">
         </div>
 
         <input type="submit" class="govuk-button" value="Search">
@@ -137,28 +149,28 @@
           <a href="/results?category=high-risk-for-children">High risk for children</a>
         </li>
         <li>
-          <a href="/results?category=aged-18-to-24">Aged 18-24</a>
+          <a href="/results?category=aged-18-to-24">Aged 18 to 24</a>
         </li>
         <li>
           <a href="/results?category=female-only">Female only</a>
         </li>
         <li>
-          <a href="/results?category=ogrs-50-to-74">OGRS 50-74</a>
+          <a href="/results?category=ogrs-50-to-74">OGRS 50% to 74%</a>
         </li>
         <li>
-          <a href="/results?category=ogrs-25-to-49">OGRS 25-49</a>
+          <a href="/results?category=ogrs-25-to-49">OGRS 25% to 49%</a>
         </li>
         <li>
           <a href="/results?category=high-sara">High SARA</a>
         </li>
         <li>
-          <a href="/results?category=very-high-rosh">Very High RoSH</a>
+          <a href="/results?category=very-high-rosh">Very high RoSH</a>
         </li>
         <li>
           <a href="/results?category=low-rosh">Low RoSH</a>
         </li>
         <li>
-          <a href="/results?category=6-to-12-sessions-per-day">6-12 sessions per day</a>
+          <a href="/results?category=6-to-12-sessions-per-day">6 to 12 sessions per day</a>
         </li>
       </ul>
     </div>
