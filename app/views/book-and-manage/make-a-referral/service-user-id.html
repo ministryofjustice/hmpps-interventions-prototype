@@ -21,17 +21,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-         Book and Manage Interventions 
+        Enter the service user's case identifier
       </h1>
-      <h2 class="govuk-heading-m">
-        Enter service user's identification
-      </h2>
 
-      <form action="pp-form-v01/making-referral-service-user-details" method="post" class="form">
+      <form action="service-user-details" method="post" class="form">
 
         {{ govukInput({
           label: {
-            text: "CRN number"
+            text: "You can use the CRN, PNC or Nomis number"
           },
           id: "service-user-id",
           name: "service-user-id",
@@ -43,8 +40,12 @@
           }
         }) }}
 
+        <p class="govuk-body">
+          The service user's details will be imported for the referral
+        </p>
+
         {{ govukButton({
-          text: "Save and continue"
+          text: "Continue"
         }) }}
       </form>
     </div>

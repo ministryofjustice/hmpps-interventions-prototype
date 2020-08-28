@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Check your answers
+  Risk information
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,87 +20,63 @@ Check your answers
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        HMPPS - Referring Intervention
+        Alex's risk information
       </h1>
-      <h2 class="govuk-heading-m">
-        Risk information 
-      </h2>
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Public - L/M/H/VH
+            OGRS score
           </dt>
           <dd class="govuk-summary-list__value">
-            XXXXXXXX
+            50
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Children - L/M/H/VH
+            ROSHA score
           </dt>
           <dd class="govuk-summary-list__value">
-            XXXXXXXX
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Staff - L/M/H/VH
-          </dt>
-          <dd class="govuk-summary-list__value">
-            XXXXXXX
+            Medium
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Known Adult - L/M/H/VH
+            RM2000 score
           </dt>
           <dd class="govuk-summary-list__value">
-            XXXXXXX
+            Medium
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            MAPPA level
+            SARA score
           </dt>
           <dd class="govuk-summary-list__value">
-            XXXXXXX
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Self-harm / Suicide
-          </dt>
-          <dd class="govuk-summary-list__value">
-            XXXXXXX
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Area restrictions
-          </dt>
-          <dd class="govuk-summary-list__value">
-            XXXXXXX
+            Low
           </dd>
         </div>
       </dl>
-      <form action="making-referral-services-previously-received" method="post" class="form">
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
-      </form>
     </div>
   </div>
-
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <p>
-        <a href="/">
-          Return to the start of the making referrals process
-        </a>
-      </p>
-    </div>
+      <form action="needs-and-requirements" method="post" class="form">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group govuk-!-margin-bottom-9">
+            <label class="govuk-label" for="risk-score-information">
+              Additional information for the provider about Alex's risks (optional) <span class="govuk-visually-hidden">Additional information for the provider about Alex's risks (optional)</span>
+            </label>
+            <textarea class="govuk-textarea" id="more-detail" name="risk-score-information" rows="5" aria-describedby="risk-score-information"></textarea>
+          </div>
+        </fieldset>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+    </form>
   </div>
+</div>
 
 {% endblock %}
+
