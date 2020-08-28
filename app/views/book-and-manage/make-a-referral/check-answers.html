@@ -328,10 +328,14 @@
             Select the relevant sentence for the accommodation service referral
           </dt>
           <dd class="govuk-summary-list__value">
-            to add
+            {% if data["accommodation-sentence"] == "Wild birds" %}
+              Wild birds protection act<br>Sub category: Wild birds protection act, 1900<br>Date: 01/01/2020<br>Order: Suspended sentence
+            {% elseif data["accommodation-sentence"] == "Armed robbery" %}
+              Armed robbery<br>Sub category: Wild birds protection act, 1900<br>Date: 01/01/2020<br>Order: Suspended sentence
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="accommodation-service/select-sentence">
               Change
               <span class="govuk-visually-hidden">Relevant sentence</span>
             </a>
