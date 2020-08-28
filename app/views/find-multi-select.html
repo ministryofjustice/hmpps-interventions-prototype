@@ -1,0 +1,199 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Find an intervention
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Find an intervention</h1>
+
+      <p>
+        Use this service to find an intervention. You can search by keyword or postcode, or you can search with both. You can also browse by need.
+      </p>
+
+      <form action="/results">
+        <div class="govuk-form-group">
+          <label for="location" class="govuk-label">Location</label>
+          <input id="location" class="govuk-input" name="location" placeholder="e.g. London">
+        </div>
+
+        <div class="govuk-form-group">
+          <label for="needs" class="govuk-label">Criminogenic needs</label>
+          <select id="needs" name="needs" class="govuk-select" multiple="multiple" data-auto-complete="true">
+            <option value="accommodation">Accommodation</option>
+            <option value="education-training-and-employment">Education, training and employment</option>
+            <option value="finances">Finances</option>
+            <option value="relationships">Relationships</option>
+            <option value="emotional-well-being">Emotional well-being</option>
+            <option value="drugs">Drugs</option>
+            <option value="alcohol">Alcohol</option>
+            <option value="lifestyle-and-associates">Lifestyle and associates</option>
+            <option value="attitudes">Attitudes</option>
+            <option value="thinking-skills">Thinking skills</option>
+            <option value="health">Health</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label for="risks" class="govuk-label">Risks</label>
+          <select id="risks" name="risks" class="govuk-select" multiple="multiple" data-auto-complete="true">
+            <option value="ogrs3-75">OGRS3 - 75%</option>
+            <option value="ogrs3-50-to-74">OGRS3 - 50% to 74%</option>
+            <option value="ogrs3-25-to-49">OGRS3 - 25% to 49%</option>
+            <option value="ogrs3-0-to-24">OGRS3 - 0 to 24%</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label for="text" class="govuk-label">Title and description of interventions</label>
+          <input id="text" class="govuk-input" name="text" placeholder="e.g. Wellbeing">
+        </div>
+
+        <input type="submit" class="govuk-button" value="Search">
+      </form>
+
+      <p>
+        <a href="#" class="govuk-link">Advanced search</a>
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+      <h2 class="govuk-heading-l">Browse interventions by need</h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a href="/results?need=accommodation">Accommodation</a>
+        </li>
+        <li>
+          <a href="/results?need=education-training-and-employment">Education, training and employment</a>
+        </li>
+        <li>
+          <a href="/results?need=finance">Finance</a>
+        </li>
+        <li>
+          <a href="/results?need=relationships">Relationships</a>
+        </li>
+        <li>
+          <a href="/results?need=lifestyle-and-associates">Lifestyle and associates</a>
+        </li>
+        <li>
+          <a href="/results?need=emotional-wellbeing">Emotional wellbeing</a>
+        </li>
+        <li>
+          <a href="/results?need=alcohol-misuse">Alcohol misuse</a>
+        </li>
+        <li>
+          <a href="/results?need=drug-misuse">Drug misuse</a>
+        </li>
+        <li>
+          <a href="/results?need=thinking-and-behaviour">Thinking and behaviour</a>
+        </li>
+        <li>
+          <a href="/results?need=attitudes">Attitudes</a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+      <h2 class="govuk-heading-l">Browse interventions by region</h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a href="/results?region=north-east">North East</a>
+        </li>
+        <li>
+          <a href="/results?region=north-west">North West</a>
+        </li>
+        <li>
+          <a href="/results?region=yorkshire-and-the-humber">Yorkshire and the Humber</a>
+        </li>
+        <li>
+          <a href="/results?region=wales">Wales</a>
+        </li>
+        <li>
+          <a href="/results?region=west-midlands">West Midlands</a>
+        </li>
+        <li>
+          <a href="/results?region=east-midlands">East Midlands</a>
+        </li>
+        <li>
+          <a href="/results?region=south-west">South West</a>
+        </li>
+        <li>
+          <a href="/results?region=south-central">South Central</a>
+        </li>
+        <li>
+          <a href="/results?region=east-of-england">East of England</a>
+        </li>
+        <li>
+          <a href="/results?region=london">London</a>
+        </li>
+        <li>
+          <a href="/results?region=kent">Kent</a>
+        </li>
+        <li>
+          <a href="/results?region=surrey-and-sussex">Surrey and Sussex</a>
+        </li>
+        <li>
+          <a href="/results?region=greater-manchester">Greater Manchester</a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+      <h2 class="govuk-heading-l">Browse interventions by category</h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a href="/results?category=high-risk-for-public">High risk for public</a>
+        </li>
+        <li>
+          <a href="/results?category=high-risk-for-children">High risk for children</a>
+        </li>
+        <li>
+          <a href="/results?category=aged-18-to-24">Aged 18-24</a>
+        </li>
+        <li>
+          <a href="/results?category=female-only">Female only</a>
+        </li>
+        <li>
+          <a href="/results?category=ogrs-50-to-74">OGRS 50-74</a>
+        </li>
+        <li>
+          <a href="/results?category=ogrs-25-to-49">OGRS 25-49</a>
+        </li>
+        <li>
+          <a href="/results?category=high-sara">High SARA</a>
+        </li>
+        <li>
+          <a href="/results?category=very-high-rosh">Very High RoSH</a>
+        </li>
+        <li>
+          <a href="/results?category=low-rosh">Low RoSH</a>
+        </li>
+        <li>
+          <a href="/results?category=6-to-12-sessions-per-day">6-12 sessions per day</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-s">Useful links</h2>
+      <ul class="govuk-list">
+        <li>
+          <a href="/find-free-text" class="govuk-link">Link 1</a>
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Link 2</a>
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Link 3</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
