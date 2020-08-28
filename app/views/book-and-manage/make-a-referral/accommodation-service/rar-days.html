@@ -21,45 +21,45 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="further-information" method="post" class="form">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-6">
-                Are you using RAR days for the accommodation service?
-              </h1>
-            </legend>
-            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
-                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
-                <div class="govuk-date-input" id="passport-issued">
-                  <div class="govuk-date-input__item">
-                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                      What is the maximum number of RAR days for the accommodation service?
-                      <div class="govuk-form-group">
-                        <div id="days-remaining-hint" class="govuk-hint">
-                          Days
-                        </div>
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="rar-days-left" type="number" pattern="[0-200]*" inputmode="numeric">
-                    </div>
-                  </div>
-                </div>
+        {% set rarDaysHTML %}
+        {{ govukInput({
+          id: "accommodation-rar-days",
+          name: "accommodation-rar-days",
+          spellcheck: false,
+          classes: "govuk-input--width-3",
+          value: data["accommodation-rar-days"],
+          label: {
+            text: "What is the maximum number of RAR days for the accommodation service?\n\nDays" | striptags(true) | escape | nl2br
+          }
+        }) }}
+        {% endset -%}
 
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
-                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                  No
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
+        {{ govukRadios({
+          idPrefix: "accommodation-using-rar-days-conditional",
+          name: "accommodation-using-rar-days",
+          fieldset: {
+            legend: {
+              text: "Are you using RAR days for the accommodation service?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: rarDaysHTML
+              },
+              checked: data["accommodation-using-rar-days"] == "yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: data["accommodation-using-rar-days"] == "no"
+            }
+          ]
+        }) }}
         <button class="govuk-button" data-module="govuk-button">
           Save and continue
         </button>
