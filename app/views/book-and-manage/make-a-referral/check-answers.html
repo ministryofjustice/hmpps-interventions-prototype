@@ -409,129 +409,131 @@
             </a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Maximum number RAR days for the accommodation service
-          </dt>
-          <dd class="govuk-summary-list__value">
-            to add
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change
-              <span class="govuk-visually-hidden">Maximum RAR days</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Do you have further information for the accommodation service provider?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            to add
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change
-              <span class="govuk-visually-hidden">Further information</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
+        {% if data["accommodation-using-rar-days"] == "yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Maximum number RAR days for the accommodation service
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["accommodation-rar-days"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="accommodation-service/rar-days">
+                Change
+                <span class="govuk-visually-hidden">Maximum RAR days</span>
+              </a>
+            </dd>
+          </div>
+          {% endif%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Do you have further information for the accommodation service provider?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              to add
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden">Further information</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
-      <h2 class="govuk-heading-m govuk-!-margin-top-9">
-        Information for the social inclusion referral
-      </h2>
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Select the relevant sentence for the social inclusion service referral
-          </dt>
-          <dd class="govuk-summary-list__value">
-            to add
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change
-              <span class="govuk-visually-hidden">Relevant sentence</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Desired outcomes for the social inclusion service?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            to add
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change
-              <span class="govuk-visually-hidden">Desired outcomes</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            What is the required complexity for the social inclusion service?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            to add
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change
-              <span class="govuk-visually-hidden">Required complexity</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            What date does the social inclusion service need to be completed by?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            to add
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change
-              <span class="govuk-visually-hidden">Date completed by</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Maximum number RAR days for the social inclusion service
-          </dt>
-          <dd class="govuk-summary-list__value">
-            to add
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change
-              <span class="govuk-visually-hidden">Maximum RAR days</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Do you have further information for the social inclusion service provider?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            to add
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change
-              <span class="govuk-visually-hidden">Further information</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
+        <h2 class="govuk-heading-m govuk-!-margin-top-9">
+          Information for the social inclusion referral
+        </h2>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Select the relevant sentence for the social inclusion service referral
+            </dt>
+            <dd class="govuk-summary-list__value">
+              to add
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden">Relevant sentence</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Desired outcomes for the social inclusion service?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              to add
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden">Desired outcomes</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              What is the required complexity for the social inclusion service?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              to add
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden">Required complexity</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              What date does the social inclusion service need to be completed by?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              to add
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden">Date completed by</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Maximum number RAR days for the social inclusion service
+            </dt>
+            <dd class="govuk-summary-list__value">
+              to add
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden">Maximum RAR days</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Do you have further information for the social inclusion service provider?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              to add
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden">Further information</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
-      {# old below here #}
+        {# old below here #}
 
-      {# <h2 class="govuk-heading-m govuk-!-margin-top-9">
+        {# <h2 class="govuk-heading-m govuk-!-margin-top-9">
         Needs and risks
       </h2>
 
@@ -680,12 +682,12 @@
         </div>
       </dl> #}
 
-      <a href="confirmation" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-        Submit referrals
-      </a>
+        <a href="confirmation" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Submit referrals
+        </a>
+
+      </div>
 
     </div>
 
-  </div>
-
-{% endblock %}
+  {% endblock %}
