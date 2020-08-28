@@ -328,10 +328,14 @@
             Select the relevant sentence for the accommodation service referral
           </dt>
           <dd class="govuk-summary-list__value">
-            to add
+            {% if data["accommodation-sentence"] == "Wild birds" %}
+              Wild birds protection act<br>Sub category: Wild birds protection act, 1900<br>Date: 01/01/2020<br>Order: Suspended sentence
+            {% elseif data["accommodation-sentence"] == "Armed robbery" %}
+              Armed robbery<br>Sub category: Wild birds protection act, 1900<br>Date: 01/01/2020<br>Order: Suspended sentence
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="accommodation-service/select-sentence">
               Change
               <span class="govuk-visually-hidden">Relevant sentence</span>
             </a>
@@ -342,10 +346,34 @@
             Desired outcomes for the accommodation service?
           </dt>
           <dd class="govuk-summary-list__value">
-            to add
+            <ul class="govuk-list govuk-list--bullet">
+              {% for need in data["accommodation-desired-outcomes"] %}
+                <li>
+                  {% if need == "all barriers"%}
+                    All barriers, as identified in the Service User Action Plan (for example financial, behavioural, physical, mental or offence-type related), to obtaining or sustaining accommodation are successfully removed
+                  {% elseif need == "makes progress"%}
+                    Service User makes progress in obtaining accommodation
+                  {% elseif need == "secure social housing"%}
+                    Service User is helped to secure social or supported housing
+                  {% elseif need == "tenancy"%}
+                    Service User is helped to secure a tenancy in the private rented sector (PRS)
+                  {% elseif need == "sustain existing"%}
+                    Service User is helped to sustain existing accommodation
+                  {% elseif need == "prevent homelessness"%}
+                    Service User is prevented from becoming homeless
+                  {% elseif need == "sustain six months"%}
+                    Settled accommodation is sustained for a period of at least 6 months or until the end of sentence, whichever occurs first (including for those serving custodial sentences of less than 6 months)
+                  {% elseif need == "risk losing tenancy"%}
+                    Service User at risk of losing their tenancy are successfully helped to retain it
+                  {% endif %}
+                </li>
+              {% else %}
+                <li>No desired outcomes selected</li>
+              {% endfor %}
+            </ul>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="accommodation-service/desired-outcomes">
               Change
               <span class="govuk-visually-hidden">Desired outcomes</span>
             </a>
@@ -356,10 +384,10 @@
             What is the required complexity for the accommodation service?
           </dt>
           <dd class="govuk-summary-list__value">
-            to add
+            {{ data["accommodation-complexity"] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="accommodation-service/complexity-level">
               Change
               <span class="govuk-visually-hidden">Required complexity</span>
             </a>
@@ -370,10 +398,10 @@
             What date does the accommodation service need to be completed by?
           </dt>
           <dd class="govuk-summary-list__value">
-            to add
+            {{ data["accommodation-date-day"]}} {{ data["accommodation-date-month"]}} {{ data["accommodation-date-year"]}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="accommodation-service/completion-date">
               Change
               <span class="govuk-visually-hidden">Date completed by</span>
             </a>
