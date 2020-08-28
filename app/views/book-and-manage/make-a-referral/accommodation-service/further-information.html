@@ -15,7 +15,6 @@
   }) }}
 
 {% endblock %}
-{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -26,11 +25,11 @@
       <form action="../../referral-task-list" method="post" class="form">
         <fieldset class="govuk-fieldset">
           <div class="govuk-form-group govuk-!-margin-bottom-9">
-            <label class="govuk-label" for="previous-offences">
+            <label class="govuk-label" for="accommodation-further-information">
               For example, relevant previous offences, previously completed programmes or further reasons for this referral
               <span class="govuk-visually-hidden">For example, relevant previous offences, previously completed programmes or further reasons for this referral</span>
             </label>
-            <textarea class="govuk-textarea" id="more-detail" name="accommodation-further-information" rows="5" aria-describedby="summary-of-service-provision"></textarea>
+            <textarea class="govuk-textarea" id="accommodation-further-information" name="accommodation-further-information" rows="5" aria-describedby="accommodation-further-information">{{ data["accommodation-further-information"] }}</textarea>
           </div>
         </fieldset>
         <button class="govuk-button" data-module="govuk-button">
