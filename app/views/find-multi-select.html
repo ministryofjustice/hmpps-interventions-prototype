@@ -52,10 +52,32 @@
         <div class="govuk-form-group">
           <label for="risks" class="govuk-label">Risks</label>
           <select id="risks" name="risks" class="govuk-select" multiple="multiple" data-auto-complete="true">
-            <option value="ogrs3-75">OGRS3 75%</option>
-            <option value="ogrs3-50-to-74">OGRS3 - 50% to 74%</option>
-            <option value="ogrs3-25-to-49">OGRS3 - 25% to 49%</option>
-            <option value="ogrs3-0-to-24">OGRS3 - 0 to 24%</option>
+            <optgroup label="OGRS3">
+              <option value="ogrs3-75-and-above">OGRS3 - 75% and above</option>
+              <option value="ogrs3-50-to-74">OGRS3 - 50% to 74%</option>
+              <option value="ogrs3-25-to-49">OGRS3 - 25% to 49%</option>
+              <option value="ogrs3-0-to-24">OGRS3 - 0 to 24%</option>
+            </optgroup>
+
+            <optgroup label="RoSH">
+              <option value="rosh-high">RoSH - High</option>
+              <option value="rosh-medium">RoSH - Medium</option>
+              <option value="rosh-low">RoSH - Low</option>
+            </optgroup>
+
+            <optgroup label="RM2000">
+              <option value="rm2000-very-high">RM2000 - Very High</option>
+              <option value="rm2000-high">RM2000 - High</option>
+              <option value="rm2000-medium">RM2000 - Medium</option>
+              <option value="rm2000-low">RM2000 - Low</option>
+            </optgroup>
+
+            <optgroup label="SARA">
+              <option value="sara-high">SARA - High</option>
+              <option value="sara-medium">SARA - Medium</option>
+              <option value="sara-low">SARA - Low</option>
+              <option value="sara-none">SARA - None</option>
+            </optgroup>
           </select>
         </div>
 
