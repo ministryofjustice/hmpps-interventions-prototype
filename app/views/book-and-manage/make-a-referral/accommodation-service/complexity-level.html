@@ -28,19 +28,19 @@
         </legend>
         <div class="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="low" name="accommodation-complexity" type="radio" value="Low complexity">
+            <input class="govuk-radios__input" id="low" name="accommodation-complexity" type="radio" value="Low complexity" {{ checked("accommodation-complexity", "Low complexity") }}>
             <label class="govuk-label govuk-radios__label" for="accommodation-complexity">
               Low complexity<br>Service User has some capacity and means to secure and/or maintain suitable accommodation but quires some support and guidance to do so.
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="medium" name="accommodation-complexity" type="radio" value="Medium complexity">
+            <input class="govuk-radios__input" id="medium" name="accommodation-complexity" type="radio" value="Medium complexity" {{ checked("accommodation-complexity", "Medium complexity") }}>
             <label class="govuk-label govuk-radios__label" for="accommodation-complexity-2">
               Medium complexity<br>Service User is at risk of homelessness/is homeless, or will be on release from prison. Service User has had some success in maintaining atenancy but may have additional needs e.g. Learning Difficulties and/or Learning Disabilities or other challenges currently.
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="medium" name="accommodation-complexity" type="radio" value="High complexity">
+            <input class="govuk-radios__input" id="medium" name="accommodation-complexity" type="radio" value="High complexity" {{ checked("accommodation-complexity", "High complexity") }}>
             <label class="govuk-label govuk-radios__label" for="accommodation-complexity-3">
               High complexity<br>Service User is homeless or in temporary/unstable accommodation, or will be on release from prison. Service User has poor accommodation history, complex needs and limited skills to secure or sustain a tenancy.
             </label>
