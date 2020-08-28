@@ -346,7 +346,31 @@
             Desired outcomes for the accommodation service?
           </dt>
           <dd class="govuk-summary-list__value">
-            to add
+            <ul class="govuk-list govuk-list--bullet">
+              {% for need in data["accommodation-desired-outcomes"] %}
+                <li>
+                  {% if need == "all barriers"%}
+                    All barriers, as identified in the Service User Action Plan (for example financial, behavioural, physical, mental or offence-type related), to obtaining or sustaining accommodation are successfully removed
+                  {% elseif need == "makes progress"%}
+                    Service User makes progress in obtaining accommodation
+                  {% elseif need == "secure social housing"%}
+                    Service User is helped to secure social or supported housing
+                  {% elseif need == "tenancy"%}
+                    Service User is helped to secure a tenancy in the private rented sector (PRS)
+                  {% elseif need == "sustain existing"%}
+                    Service User is helped to sustain existing accommodation
+                  {% elseif need == "prevent homelessness"%}
+                    Service User is prevented from becoming homeless
+                  {% elseif need == "sustain six months"%}
+                    Settled accommodation is sustained for a period of at least 6 months or until the end of sentence, whichever occurs first (including for those serving custodial sentences of less than 6 months)
+                  {% elseif need == "risk losing tenancy"%}
+                    Service User at risk of losing their tenancy are successfully helped to retain it
+                  {% endif %}
+                </li>
+              {% else %}
+                <li>No needs selected</li>
+              {% endfor %}
+            </ul>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
