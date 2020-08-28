@@ -28,9 +28,7 @@
             Needs
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Thinking and attitudes</p>
-            <p>Relationships</p>
-            <p>Accommodation</p>
+            Thinking and attitudes<br>Relationships<br>Accommodation<br>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -90,26 +88,100 @@
       <form action="../referral-task-list" method="post" class="form">
         <fieldset class="govuk-fieldset">
           <div class="govuk-form-group govuk-!-margin-bottom-9">
-            <label class="govuk-label" for="more-needs">
-              Additional information about Alex's needs (optional) <span class="govuk-visually-hidden">Additional
-                information about Alex's needs (optional)</span>
-            </label>
-            <textarea class="govuk-textarea" id="more-needs" name="intervention-more-needs" rows="5"
-              aria-describedby="intervention-more-detail"></textarea>
+          <label class="govuk-label" for="more-needs">
+            Additional information about Alex's needs (optional)
+            <span class="govuk-visually-hidden">Additional information about Alex's needs (optional)</span>
+          </label>
+            <textarea class="govuk-textarea" id="more-needs" name="intervention-more-needs" rows="5" aria-describedby="intervention-more-detail"></textarea>
           </div>
         </fieldset>
         <fieldset class="govuk-fieldset">
           <div class="govuk-form-group govuk-!-margin-bottom-9">
             <label class="govuk-label" for="disability-needs">
-              Does Alex have any other mobilitiy, disability or accessibility needs? (optional) <span
-                class="govuk-visually-hidden">Does Alex have any other mobilitiy, disability or accessibility needs?
-                (optional)</span>
-              <p>For example, if they use a wheelchair, use a hearing aid or have a learning difficulty</p>
+              Does Alex have any other mobilitiy, disability or accessibility needs? (optional)
+              <span class="govuk-visually-hidden">Does Alex have any other mobilitiy, disability or accessibility needs? (optional)</span>
+              <br>For example, if they use a wheelchair, use a hearing aid or have a learning difficulty
             </label>
-            <textarea class="govuk-textarea" id="disability-needs" name="intervention-disability-needs" rows="5"
-              aria-describedby="intervention-more-detail"></textarea>
+            <textarea class="govuk-textarea" id="disability-needs" name="intervention-disability-needs" rows="5" aria-describedby="intervention-more-detail"></textarea>
           </div>
         </fieldset>
+
+        {% set interpreterHTML %}
+        {{ govukInput({
+          id: "interpreter-language",
+          name: "interpreter-language",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "What language?"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "needs-interpreter-conditional",
+          name: "needs-interpreter",
+          fieldset: {
+            legend: {
+              text: "Does Alex need an interpreter?",
+              isPageHeading: true,
+              classes: "govuk-label"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: interpreterHTML
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {% set responsibilitiesHTML %}
+        {{ govukInput({
+          id: "when-unavailable",
+          name: "when-unavailable",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Provide details of when Alex will not be able to attend sessions"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "has-responsibilities-conditional",
+          name: "has-responsibilities",
+          fieldset: {
+            legend: {
+              text: "Does Alex have caring or employment responsibilities?",
+              isPageHeading: true,
+              classes: "govuk-label"
+            }
+          },
+          hint: {
+            text: "For example, times and dates when they are at work."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: responsibilitiesHTML
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
 
         <button class="govuk-button" data-module="govuk-button">
           Save and continue
