@@ -88,11 +88,11 @@
       <form action="../referral-task-list" method="post" class="form">
         <fieldset class="govuk-fieldset">
           <div class="govuk-form-group govuk-!-margin-bottom-9">
-          <label class="govuk-label" for="service-user-more-needs">
-            Additional information about Alex's needs (optional)
-            <span class="govuk-visually-hidden">Additional information about Alex's needs (optional)</span>
-          </label>
-            <textarea class="govuk-textarea" id="service-user-more-needs" name="service-user-more-needs" rows="5" aria-describedby="intervention-more-detail"></textarea>
+            <label class="govuk-label" for="service-user-more-needs">
+              Additional information about Alex's needs (optional)
+              <span class="govuk-visually-hidden">Additional information about Alex's needs (optional)</span>
+            </label>
+            <textarea class="govuk-textarea" id="service-user-more-needs" name="service-user-more-needs" rows="5" aria-describedby="service-user-more-needs">{{ data["service-user-more-needs"] }}</textarea>
           </div>
         </fieldset>
         <fieldset class="govuk-fieldset">
@@ -102,7 +102,7 @@
               <span class="govuk-visually-hidden">Does Alex have any other mobilitiy, disability or accessibility needs? (optional)</span>
               <br>For example, if they use a wheelchair, use a hearing aid or have a learning difficulty
             </label>
-            <textarea class="govuk-textarea" id="sevice-user-disability-needs" name="service-user-disability-needs" rows="5" aria-describedby="intervention-more-detail"></textarea>
+            <textarea class="govuk-textarea" id="sevice-user-disability-needs" name="service-user-disability-needs" rows="5" aria-describedby="service-user-disability-needs">{{ data["service-user-disability-needs"] }}</textarea>
           </div>
         </fieldset>
 
@@ -112,6 +112,7 @@
           name: "interpreter-language",
           spellcheck: false,
           classes: "govuk-!-width-one-third",
+          value: data["interpreter-language"],
           label: {
             text: "What language?"
           }
@@ -134,11 +135,13 @@
               text: "Yes",
               conditional: {
                 html: interpreterHTML
-              }
+              },
+              checked: data["needs-interpreter"] == "yes"
             },
             {
               value: "no",
-              text: "No"
+              text: "No",
+              checked: data["needs-interpreter"] == "no"
             }
           ]
         }) }}
@@ -147,6 +150,7 @@
         {{ govukInput({
           id: "when-unavailable",
           name: "when-unavailable",
+          value: data["when-unavailable"],
           spellcheck: false,
           classes: "govuk-!-width-one-third",
           label: {
@@ -174,11 +178,13 @@
               text: "Yes",
               conditional: {
                 html: responsibilitiesHTML
-              }
+              },
+              checked: data["has-responsibilities"] == "yes"
             },
             {
               value: "no",
-              text: "No"
+              text: "No",
+                            checked: data["has-responsibilities"] == "no"
             }
           ]
         }) }}
