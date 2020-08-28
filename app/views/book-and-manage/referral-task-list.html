@@ -63,7 +63,7 @@
           <li class="moj-task-list__item">
             {% if data["risk-information-completed"] %}
               <a class="moj-task-list__task-name" href="make-a-referral/risk-information">Service user's risk information</a >
-              <strong class="govuk-tag moj-task-list__task">
+              <strong class="govuk-tag govuk-tag app-task-list__tag">
                 completed
               </strong>
             {% elseif data["service-user-details-completed"]%}
@@ -81,7 +81,7 @@
           <li class="moj-task-list__item">
             {% if data["needs-and-requirements-completed"] %}
               <a class="moj-task-list__task-name" href="make-a-referral/needs-and-requirements">Service user's needs and requirements</a >
-              <strong class="govuk-tag moj-task-list__task">
+              <strong class="govuk-tag govuk-tag app-task-list__tag">
                 completed
               </strong>
             {% elseif data["risk-information-completed"] %}
@@ -118,7 +118,7 @@
               </strong>
             {% else %}
               <span class="app-task-list__task-name">
-                Service user's needs and requirements
+                Responsible officer's information
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="personal-information">Cannot start yet</strong>
             {% endif %}
@@ -133,22 +133,94 @@
         </h2>
         <ul class="moj-task-list__items">
           <li class="moj-task-list__item">
-            <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/select-sentence">Select the relevant sentence for the accommodation service referral</a>
-            <strong class="govuk-tag moj-task-list__task">
-              not started
-            </strong>
+            {% if data["accommodation-sentence"] %}
+              <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/select-sentence">Select the relevant sentence for the accommodation service referral</a>
+              <strong class="govuk-tag govuk-tag app-task-list__tag">
+                completed
+              </strong>
+            {% elseif data["responsible-officer-information-completed"] %}
+              <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/select-sentence">Select the relevant sentence for the accommodation service referral</a>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
+                not started
+              </strong>
+            {% else %}
+              <span class="app-task-list__task-name">
+                Select the relevant sentence for the accommodation service referral
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="accommodation-service-referral">Cannot start yet</strong>
+            {% endif %}
           </li>
           <li class="moj-task-list__item">
-            <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/desired-outcomes">What are the desired outcomes for the accommodation service?</a>
+            {% if data["accommodation-desired-outcomes"] %}
+              <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/desired-outcomes">What are the desired outcomes for the accommodation service?</a>
+              <strong class="govuk-tag govuk-tag app-task-list__tag">
+                completed
+              </strong>
+            {% elseif data["accommodation-sentence"] %}
+              <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/desired-outcomes">What are the desired outcomes for the accommodation service?</a>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
+                not started
+              </strong>
+            {% else %}
+              <span class="app-task-list__task-name">
+                What are the desired outcomes for the accommodation service?
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="accommodation-desired-outcomes">Cannot start yet</strong>
+            {% endif %}
           </li>
           <li class="moj-task-list__item">
-            <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/completion-date">What date does the accommodation service need to be completed by?</a>
+            {% if data["accommodation-date-year"] %}
+              <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/completion-date">What date does the accommodation service need to be completed by?</a>
+              <strong class="govuk-tag govuk-tag app-task-list__tag">
+                completed
+              </strong>
+            {% elseif data["accommodation-desired-outcomes"] %}
+              <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/completion-date">What date does the accommodation service need to be completed by?</a>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
+                not started
+              </strong>
+            {% else %}
+              <span class="app-task-list__task-name">
+                What date does the accommodation service need to be completed by?
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="accommodation-completion-date">Cannot start yet</strong>
+            {% endif %}
           </li>
           <li class="moj-task-list__item">
-            <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/rar-days">Are you using RAR days for the accommodation service?</a>
+            {% if data["accommodation-using-rar-days"] %}
+              <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/rar-days">Are you using RAR days for the accommodation service?</a>
+              <strong class="govuk-tag govuk-tag app-task-list__tag">
+                completed
+              </strong>
+            {% elseif data["accommodation-date-year"] %}
+              <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/rar-days">Are you using RAR days for the accommodation service?</a>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
+                not started
+              </strong>
+            {% else %}
+              <span class="app-task-list__task-name">
+                Are you using RAR days for the accommodation service?
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="using-rar-days">Cannot start yet</strong>
+            {% endif %}
           </li>
           <li class="moj-task-list__item">
+            {% if data["accommodation-more-info-completed"] %}
             <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/further-information">Do you have any further information for the accommodation service provider?</a>
+              <strong class="govuk-tag govuk-tag app-task-list__tag">
+                completed
+              </strong>
+            {% elseif data["accommodation-using-rar-days"] %}
+            <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/further-information">Do you have any further information for the accommodation service provider?</a>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
+                not started
+              </strong>
+            {% else %}
+              <span class="app-task-list__task-name">
+                Do you have any further information for the accommodation service provider?
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="further-accommodation-information">Cannot start yet</strong>
+            {% endif %}
           </li>
         </ul>
       </li>
