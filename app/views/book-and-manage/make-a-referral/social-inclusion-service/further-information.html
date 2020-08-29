@@ -14,6 +14,11 @@
     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
   }) }}
 
+  {{ govukBackLink({
+    text: "Back",
+    href: "rar-days"
+  }) }}
+
 {% endblock %}
 
 {% block content %}
@@ -32,6 +37,7 @@
             <textarea class="govuk-textarea" id="more-detail" name="social-inclusion-further-information" rows="5" aria-describedby="social-inclusion-further-information">{{ data["social-inclusion-further-information"] }}</textarea>
           </div>
         </fieldset>
+        <input type="hidden" name="social-inclusion-more-information-completed" value="yes">
         <button class="govuk-button" data-module="govuk-button">
           Save and continue
         </button>

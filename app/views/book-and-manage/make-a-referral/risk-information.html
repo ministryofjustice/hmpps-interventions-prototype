@@ -14,6 +14,10 @@
     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
   }) }}
 
+  {{ govukBackLink({
+    text: "Back",
+    href: "service-user-details"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -71,6 +75,7 @@
           </div>
         </fieldset>
 
+        <input type="hidden" name="risk-information-completed" value="yes"/>
         <button class="govuk-button" data-module="govuk-button">
           Save and continue
         </button>
