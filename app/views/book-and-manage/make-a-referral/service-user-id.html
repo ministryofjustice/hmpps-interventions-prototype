@@ -28,12 +28,9 @@
       <form action="service-user-details" method="post" class="form">
         {{ govukInput({
           label: {
-            text: "Enter the service user's case identifier",
+            text: "Enter service user CRN, PNC or NOMIS number",
             classes: "govuk-label--xl",
             isPageHeading: true
-          },
-          hint: {
-            text: "You can use the CRN, PNC or Nomis number"
           },
           id: "service-user-id",
           name: "service-user-id",
