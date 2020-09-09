@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Find an intervention
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Service user’s details</h1>
+
+      <p>
+        Here is the information found in OASys for CRN
+        {{ data.crn }}.
+      </p>
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Forename 1
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ offender.forename1 }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Forename 2
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ offender.forename2 }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Forename 3
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ offender.forename3 }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Family name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ offender.familyName }}
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Risks</h2>
+
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Assessment completed on
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ moment(predictors.completedDate).format('MMMM Do YYYY') }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            OVP age-weighted score
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ predictors.ovp.ovpAgeWeightedScore }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            OVP sex-weighted score
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ predictors.ovp.ovpSexWeightedScore }}
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Criminogenic needs</h2>
+
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Assessment completed on
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ moment(assessment.completedDateTime).format('MMMM Do YYYY') }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Identified needs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list">
+              {% for need in assessment.layer3SentencePlanNeeds %}
+                <li>{{ need.name }}</li>
+              {% endfor %}
+            </ul>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+{% endblock %}
