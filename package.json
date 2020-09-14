@@ -39,6 +39,7 @@
     "inquirer": "^7.1.0",
     "keypather": "^3.0.0",
     "marked": "^0.8.2",
+    "moment": "^2.28.0",
     "notifications-node-client": "^4.7.2",
     "nunjucks": "^3.2.1",
     "portscanner": "^2.1.1",

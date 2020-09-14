@@ -19,8 +19,26 @@ Example usage:
 */
 
 module.exports = {
-  users: [
-    {id: "GB123456"},
-    {id: "EN000001"}
-  ]
+  referrals: [
+    {
+      interventions: [
+	{
+	  name: "Accommodation",
+	  initialAssessmentScheduled: false,
+	  actionPlanSubmitted: false,
+	  actionPlanApproved: false,
+	  goals: [],
+	  sessions: [],
+	},
+	{
+	  name: "Social inclusion",
+	  initialAssessmentScheduled: true,
+	  actionPlanSubmitted: false,
+	  actionPlanApproved: false,
+	  goals: [],
+	  sessions: [],
+	}
+      ]
+    }
+  ],
 }

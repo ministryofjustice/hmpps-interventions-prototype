@@ -2,6 +2,7 @@ const express = require("express");
 const communityAPIClient = require("../lib/community_api_client.js");
 const hmppsOauthClient = require("../lib/hmpps_oauth_client.js");
 const router = express.Router();
+const caseworkerManageRouter = require('./caseworkerManageRoutes')
 
 router.get("/service-user-details/show", async function (req, res, next) {
   try {
@@ -22,4 +23,8 @@ router.get("/service-user-details/show", async function (req, res, next) {
   }
 });
 
-module.exports = router;
+router.use("/book-and-manage/manage-a-referral/caseworker", caseworkerManageRouter);
+
+// Add your routes here - above the module.exports line
+
+module.exports = router
