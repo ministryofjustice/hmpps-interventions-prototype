@@ -14,4 +14,12 @@ router.get("/referrals", (req, res) => {
   });
 });
 
+router.get("/referrals/:referralIndex", (req, res) => {
+  const serviceUser = staticData.serviceUsers[req.params.referralIndex];
+
+  res.render("book-and-manage/manage-a-referral/manager/referral", {
+    serviceUser,
+  });
+});
+
 module.exports = router;
