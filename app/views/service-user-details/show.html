@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Service user results
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Service user personal details from nDelius
+      </h1>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            First name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ serviceUser.firstName }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Surname
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ serviceUser.surname }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Other names
+          </dt>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Most recent prisoner number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ serviceUser.otherIds.mostRecentPrisonerNumber }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            CRN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ serviceUser.otherIds.crn }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            NOMIS number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ serviceUser.otherIds.nomsNumber }}
+
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ serviceUser.dateOfBirth }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Known addresses
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% set addresses = serviceUser.contactDetails.addresses %}
+            {% for address in addresses %}
+              From:
+              {{ address.from }}
+              <address>
+                {{ address.addressNumber }}
+                {{ address.streetName }}<br>
+                {{ address.town }}<br>
+                {{ address.postcode }}
+              </address>
+            {% endfor %}
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+{% endblock %}
