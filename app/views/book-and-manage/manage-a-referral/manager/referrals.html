@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Referrals
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-column">
+    <h1 class="govuk-heading-xl">
+      Referrals
+    </h1>
+    <div class="govuk-grid-row-two-thirds">
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#unassigned-referrals">
+              Unassigned referrals
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#assigned-referrals">
+              Assigned referrals
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-tabs__panel" id="unassigned-referrals">
+          <h2 class="govuk-heading-l">Unassigned referrals</h2>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Referral</th>
+                <th scope="col" class="govuk-table__header">Probation practitioner</th>
+                <th scope="col" class="govuk-table__header">Admin action</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              {% for practitioner in probationPractitioners %}
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="#">
+                      {{ practitioner.referralNumber }}</td>
+                  </a>
+                  <td class="govuk-table__cell">{{ practitioner.name }}</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="assigned-referrals">
+          <h2 class="govuk-heading-l">Assigned referrals</h2>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Referral</th>
+                <th scope="col" class="govuk-table__header">Probation practitioner</th>
+                <th scope="col" class="govuk-table__header">Admin action</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              {% for practitioner in probationPractitioners %}
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="#">
+                      {{ practitioner.referralNumber }}</td>
+                  </a>
+                  <td class="govuk-table__cell">{{ practitioner.name }}</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
