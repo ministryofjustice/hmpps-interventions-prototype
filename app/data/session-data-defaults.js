@@ -21,6 +21,8 @@ Example usage:
 module.exports = {
   referrals: [
     {
+      reference: "NR0001",
+
       interventions: [
 	{
 	  name: "Accommodation",
