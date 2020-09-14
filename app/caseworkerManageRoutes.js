@@ -24,7 +24,7 @@ function findReferral(req) {
 	}
 
 	// Populate initial assessment status based on which events have occurred.
-	if (intervention.initialAssessmentScheduled) {
+	if (intervention.initialAssessment != null) {
 	    intervention.initialAssessmentStatus = "completed";
 	} else {
 	    intervention.initialAssessmentStatus = "not started";
@@ -89,7 +89,9 @@ function cssClassForSessionStatus(sessionStatus) {
 router.get("/referrals/:referralIndex", (req, res) => {
     const referral = findReferral(req);
 
-    res.render("book-and-manage/manage-a-referral/caseworker/referral", { referral, referralIndex: req.params.referralIndex, cssClassForInitialAssessmentStatus, cssClassForActionPlanStatus });
+    const someInitialAssessmentsScheduled = referral.interventions.some(intervention => intervention.initialAssessment != null);
+
+    res.render("book-and-manage/manage-a-referral/caseworker/referral", { referral, referralIndex: req.params.referralIndex, cssClassForInitialAssessmentStatus, cssClassForActionPlanStatus, someInitialAssessmentsScheduled });
 });
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, res) => {
@@ -198,6 +200,22 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex/end-of-se
     const intervention = findIntervention(req);
 
     res.render("book-and-manage/manage-a-referral/caseworker/end-of-service-report-confirmation", { intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex });
+});
+
+router.get("/referrals/:referralIndex/interventions/:interventionIndex/initial-assessment", (req, res) => {
+    const intervention = findIntervention(req);
+
+    res.render("book-and-manage/manage-a-referral/caseworker/initial-assessment", { intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex });
+});
+
+router.post("/referrals/:referralIndex/interventions/:interventionIndex/initial-assessment", (req, res) => {
+    const intervention = findIntervention(req);
+
+    if (req.body.scheduled === "yes") {
+	intervention.initialAssessment = req.body;
+    }
+
+    res.redirect(`/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}`);
 });
 
 module.exports = router

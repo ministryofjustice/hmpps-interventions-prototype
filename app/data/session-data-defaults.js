@@ -24,7 +24,6 @@ module.exports = {
       interventions: [
 	{
 	  name: "Accommodation",
-	  initialAssessmentScheduled: false,
 	  actionPlanSubmitted: false,
 	  actionPlanApproved: false,
 	  goals: [],
@@ -32,7 +31,6 @@ module.exports = {
 	},
 	{
 	  name: "Social inclusion",
-	  initialAssessmentScheduled: true,
 	  actionPlanSubmitted: false,
 	  actionPlanApproved: false,
 	  goals: [],
