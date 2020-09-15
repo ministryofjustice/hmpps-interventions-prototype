@@ -320,122 +320,142 @@
               </dd>
             </div>
           </dl>
-          <form action="#" method="post" class="form">
+          <form action="#accommodation-desired-outcomes-more-info" method="post" class="form" id="accommodation-desired-outcomes-more-info">
             <fieldset class="govuk-fieldset">
               <div class="govuk-form-group govuk-!-margin-bottom-9">
                 <label class="govuk-label govuk-label--m" for="accommodation-desired-outcomes-info">
                   Desired outcomes: additional information
                 </label>
-                <div id="more-detail-hint" class="govuk-hint">
+                <div id="accommodation-more-detail-hint" class="govuk-hint">
                   Add any communication you've had with the probation practitioner about desired outcomes.
                 </div>
-                <textarea class="govuk-textarea" id="accommodation-desired-outcomes-info" name="accommodation-desired-outcomes-info" rows="5" aria-describedby="accommodation-desired-outcomes-info"></textarea>
-              </div>
-              <div class="govuk-form-group govuk-!-margin-bottom-9">
-                <label class="govuk-label govuk-label--m" for="accommodation-complexity-info">
-                  Required complexity: additional information
-                </label>
-                <div id="more-detail-hint" class="govuk-hint">
-                  Add any communication you’ve had with the probation practitioner about required complexity.
-                </div>
-                <textarea class="govuk-textarea" id="accommodation-complexity-info" name="accommodation-complexity-info" rows="5" aria-describedby="accommodation-complexity-info"></textarea>
+                <textarea class="govuk-textarea" onblur="handleTextAreaSubmit('accommodation-desired-outcomes-info', 'accommodation-desired-outcomes-save')" id="accommodation-desired-outcomes-info" name="accommodation-desired-outcomes-info" rows="5" aria-describedby="accommodation-desired-outcomes-info">{{ data["accommodation-desired-outcomes-info"] }}</textarea>
+                <button class="govuk-button" data-module="govuk-button" id="accommodation-desired-outcomes-save">
+                  Save
+                </button>
               </div>
             </fieldset>
-            <a class="govuk-body govuk-link" href="0/accommodation/assign-caseworker">Assign accommodation referral to a caseworker</a>
-          </form>
-        </div>
-      </div>
-      <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="referral-social-inclusion-referral">
-              Social inclusion referral
-            </span>
-          </h2>
-        </div>
-        <div id="social-inclusion-referral" class="govuk-accordion__section-content" aria-labelledby="referral-social-inclusion-referral">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                Relevant sentence
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ serviceUser.socialInclusionReferral.sentence.category }}<br>
-                Subcategory:
-                {{ serviceUser.socialInclusionReferral.sentence.subcategory }}<br>
-                Date:
-                {{ serviceUser.socialInclusionReferral.sentence.date }}<br>
-                Order:
-                {{ serviceUser.socialInclusionReferral.sentence.order }}<br>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                Desired outcomes
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ serviceUser.socialInclusionReferral.desiredOutcomes }}
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                Required complexity
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ serviceUser.socialInclusionReferral.requiredComplexity.type }}<br>
-                {{ serviceUser.socialInclusionReferral.requiredComplexity.description }}
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                Completion date required
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ serviceUser.socialInclusionReferral.completionDate }}
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                Maximum number of RAR days
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ serviceUser.socialInclusionReferral.maxRARDays }}
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                Further information
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ serviceUser.socialInclusionReferral.furtherInformation }}
-              </dd>
-            </div>
-          </dl>
-          <form action="#" method="post" class="form">
-            <fieldset class="govuk-fieldset">
-              <div class="govuk-form-group govuk-!-margin-bottom-9">
-                <label class="govuk-label govuk-label--m" for="social-inclusion-desired-outcomes-info">
-                  Desired outcomes: additional information
-                </label>
-                <div id="more-detail-hint" class="govuk-hint">
-                  Add any communication you've had with the probation practitioner about desired outcomes.
+            <form action="#accommodation-complexity" method="post" class="form" id="accommodation-complexity">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-form-group govuk-!-margin-bottom-9">
+                  <label class="govuk-label govuk-label--m" for="accommodation-complexity-info">
+                    Required complexity: additional information
+                  </label>
+                  <div id="more-detail-hint" class="govuk-hint">
+                    Add any communication you’ve had with the probation practitioner about required complexity.
+                  </div>
+                  <textarea class="govuk-textarea" onblur="handleTextAreaSubmit('accommodation-complexity-info', 'accommodation-complexity-save')" id="accommodation-complexity-info" name="accommodation-complexity-info" rows="5" aria-describedby="accommodation-complexity-info">{{ data["accommodation-complexity-info"] }}</textarea>
+                  <button class="govuk-button" data-module="govuk-button" id="accommodation-complexity-save">
+                    Save
+                  </button>
                 </div>
-                <textarea class="govuk-textarea" id="social-inclusion-desired-outcomes-info" name="social-inclusion-desired-outcomes-info" rows="5" aria-describedby="social-inclusion-desired-outcomes-info"></textarea>
+              </fieldset>
+              <a class="govuk-body govuk-link" href="0/accommodation/assign-caseworker">Assign accommodation referral to a caseworker</a>
+            </form>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="referral-social-inclusion-referral">
+                Social inclusion referral
+              </span>
+            </h2>
+          </div>
+          <div id="social-inclusion-referral" class="govuk-accordion__section-content" aria-labelledby="referral-social-inclusion-referral">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                  Relevant sentence
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ serviceUser.socialInclusionReferral.sentence.category }}<br>
+                  Subcategory:
+                  {{ serviceUser.socialInclusionReferral.sentence.subcategory }}<br>
+                  Date:
+                  {{ serviceUser.socialInclusionReferral.sentence.date }}<br>
+                  Order:
+                  {{ serviceUser.socialInclusionReferral.sentence.order }}<br>
+                </dd>
               </div>
-              <div class="govuk-form-group govuk-!-margin-bottom-9">
-                <label class="govuk-label govuk-label--m" for="social-inclusion-complexity-info">
-                  Required complexity: additional information
-                </label>
-                <div id="more-detail-hint" class="govuk-hint">
-                  Add any communication you’ve had with the probation practitioner about required complexity.
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                  Desired outcomes
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ serviceUser.socialInclusionReferral.desiredOutcomes }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                  Required complexity
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ serviceUser.socialInclusionReferral.requiredComplexity.type }}<br>
+                  {{ serviceUser.socialInclusionReferral.requiredComplexity.description }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                  Completion date required
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ serviceUser.socialInclusionReferral.completionDate }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                  Maximum number of RAR days
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ serviceUser.socialInclusionReferral.maxRARDays }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                  Further information
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ serviceUser.socialInclusionReferral.furtherInformation }}
+                </dd>
+              </div>
+            </dl>
+            <form action="#social-inclusion-desired-outcomes-more-information" method="post" class="form" id="social-inclusion-desired-outcomes-more-information">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-form-group govuk-!-margin-bottom-9">
+                  <label class="govuk-label govuk-label--m" for="social-inclusion-desired-outcomes-info">
+                    Desired outcomes: additional information
+                  </label>
+                  <div id="desired-outcomes-more-detail-hint" class="govuk-hint">
+                    Add any communication you've had with the probation practitioner about desired outcomes.
+                  </div>
+                  <textarea class="govuk-textarea" onblur="handleTextAreaSubmit('social-inclusion-desired-outcomes-info', 'social-inclusion-desired-outcomes-save')" id="social-inclusion-desired-outcomes-info" name="social-inclusion-desired-outcomes-info" rows="5" aria-describedby="social-inclusion-desired-outcomes-info">{{ data["social-inclusion-desired-outcomes-info"] }}</textarea>
+                  <button class="govuk-button" data-module="govuk-button" id="social-inclusion-desired-outcomes-save">
+                    Save
+                  </button>
                 </div>
-                <textarea class="govuk-textarea" id="social-inclusion-complexity-info" name="social-inclusion-complexity-info" rows="5" aria-describedby="social-inclusion-complexity-info"></textarea>
-              </div>
-            </fieldset>
-            <a class="govuk-body govuk-link" href="0/social-inclusion/assign-caseworker">Assign social inclusion referral to a caseworker</a>
-          </form>
+              </fieldset>
+            </form>
+
+            <form action="#social-inclusion-complexity" method="post" class="form" id="social-inclusion-complexity">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-form-group govuk-!-margin-bottom-9">
+                  <label class="govuk-label govuk-label--m" for="social-inclusion-complexity-info">
+                    Required complexity: additional information
+                  </label>
+                  <div id="social-inclusion-more-detail-hint" class="govuk-hint">
+                    Add any communication you’ve had with the probation practitioner about required complexity.
+                  </div>
+                  <textarea class="govuk-textarea" onblur="handleTextAreaSubmit('social-inclusion-complexity-info', 'social-inclusion-complexity-info-save')" id="social-inclusion-complexity-info" name="social-inclusion-complexity-info" rows="5" aria-describedby="social-inclusion-complexity-info">{{ data["social-inclusion-complexity-info"] }}</textarea>
+                  <button class="govuk-button" data-module="govuk-button" id="social-inclusion-complexity-info-save">
+                    Save
+                  </button>
+                </div>
+              </fieldset>
+              <a class="govuk-body govuk-link" href="0/social-inclusion/assign-caseworker">Assign social inclusion referral to a caseworker</a>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-{% endblock %}
+  {% endblock %}
