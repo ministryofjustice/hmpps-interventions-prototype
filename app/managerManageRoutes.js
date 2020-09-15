@@ -36,7 +36,9 @@ router.get(
 );
 
 router.get("/referrals/:referralIndex/caseworker-confirmation", (req, res) => {
-  res.render("book-and-manage/manage-a-referral/manager/confirmation");
+  res.render(
+    "book-and-manage/manage-a-referral/manager/caseworker-email-confirmation"
+  );
 });
 
 router.get("/referrals/:referralIndex/send-email", (req, res) => {
