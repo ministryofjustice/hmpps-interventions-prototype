@@ -22,4 +22,21 @@ router.get("/referrals/:referralIndex", (req, res) => {
   });
 });
 
+router.get(
+  "/referrals/:referralIndex/:interventionType/assign-caseworker",
+  (req, res) => {
+    const caseworkers = staticData.caseworkers;
+    const interventionType = req.params.interventionType.replace("-", " ");
+
+    res.render("book-and-manage/manage-a-referral/manager/assign-caseworker", {
+      caseworkers,
+      interventionType: interventionType,
+    });
+  }
+);
+
+router.get("/referrals/:referralIndex/caseworker-confirmation", (req, res) => {
+  res.render("book-and-manage/manage-a-referral/manager/confirmation");
+});
+
 module.exports = router;

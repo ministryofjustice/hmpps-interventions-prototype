@@ -119,5 +119,13 @@ module.exports = {
         furtherInformation: "N/A",
       },
     },
-  ]
+  ],
+  caseworkers: [
+    {
+      name: "Liam Johnson",
+    },
+    {
+      name: "Jenny Thompson",
+    },
+  ],
 };
