@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block content %}
-  <div>
+  <div class="govuk-grid-row">
     <h1 class="govuk-heading-xl">
       Referral details
     </h1>
-    <div class="govuk-accordion" data-module="govuk-accordion" id="referral">
+    <div class="govuk-grid-column-two-thirds govuk-accordion" data-module="govuk-accordion" id="referral">
       <div class="govuk-accordion__section ">
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
@@ -457,5 +457,18 @@
           </div>
         </div>
       </div>
+      <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar">
+        <h2>Useful links</h2>
+        <p>
+          <a class="govuk-link" href="#">Send email to probation practitioner</a>
+        </p>
+        <p>
+          <a class="govuk-link" href="#">Upload case notes</a>
+        </p>
+        <p>
+          <a class="govuk-link" href="#">View communication archive</a>
+        </p>
+      </div>
     </div>
-  {% endblock %}
+  </div>
+{% endblock %}
