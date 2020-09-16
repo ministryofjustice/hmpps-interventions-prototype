@@ -44,11 +44,11 @@
           </h2>
           <ul class="moj-task-list__items">
             <li class="moj-task-list__item">
-              <a class="moj-task-list__task-name" href="make-a-referral/service-user-id">Enter CRN, PNC or NOMIS number</a >
+              <a class="moj-task-list__task-name" href="service-user-id">Enter CRN, PNC or NOMIS number</a >
             </li>
             <li class="moj-task-list__item">
               {% if data["service-user-id"]%}
-                <a class="moj-task-list__task-name" href="make-a-referral/service-user-details">Confirm personal information</a>
+                <a class="moj-task-list__task-name" href="service-user-details">Confirm personal information</a>
               {% else %}
                 <span class="app-task-list__task-name">
                   Confirm personal information
@@ -58,7 +58,7 @@
           </li>
           <li class="moj-task-list__item">
             {% if data["risk-information-completed"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/risk-information">Confirm risk information</a >
+              <a class="moj-task-list__task-name" href="risk-information">Confirm risk information</a >
             {% else %}
               <span class="app-task-list__task-name">
                 Confirm risk information
@@ -67,7 +67,7 @@
           </li>
           <li class="moj-task-list__item">
             {% if data["risk-information-completed"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/needs-and-requirements">Confirm needs and requirements</a >
+              <a class="moj-task-list__task-name" href="needs-and-requirements">Confirm needs and requirements</a >
             {% else %}
               <span class="app-task-list__task-name">
                 Confirm needs and requirements
@@ -99,7 +99,7 @@
         <ul class="moj-task-list__items">
           <li class="moj-task-list__item">
             {% if data["needs-and-requirements-completed"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/responsible-officer-information">Confirm responsible officer information</a >
+              <a class="moj-task-list__task-name" href="responsible-officer-information">Confirm responsible officer information</a >
             {% else %}
               <span class="app-task-list__task-name">
                 Confirm responsible officer information
@@ -135,7 +135,7 @@
         <ul class="moj-task-list__items">
           <li class="moj-task-list__item">
             {% if data["needs-and-requirements-completed"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/select-sentence">Select relevant sentence</a>
+              <a class="moj-task-list__task-name" href="accommodation-service/select-sentence">Select relevant sentence</a>
             {% else %}
               <span class="app-task-list__task-name">
                 Select relevant sentence
@@ -144,7 +144,7 @@
           </li>
           <li class="moj-task-list__item">
             {% if data["accommodation-sentence"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/desired-outcomes">Select desired outcomes</a>
+              <a class="moj-task-list__task-name" href="accommodation-service/desired-outcomes">Select desired outcomes</a>
             {% else %}
               <span class="app-task-list__task-name">
                 Select desired outcomes
@@ -153,7 +153,7 @@
           </li>
           <li class="moj-task-list__item">
             {% if data["accommodation-desired-outcomes"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/complexity-level">Select required complexity level</a>
+              <a class="moj-task-list__task-name" href="accommodation-service/complexity-level">Select required complexity level</a>
             {% else %}
               <span class="app-task-list__task-name">
                 Select required complexity level
@@ -162,7 +162,7 @@
           </li>
           <li class="moj-task-list__item">
             {% if data["accommodation-desired-outcomes"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/completion-date">What date does the accommodation service need to be completed by?</a>
+              <a class="moj-task-list__task-name" href="accommodation-service/completion-date">What date does the accommodation service need to be completed by?</a>
             {% else %}
               <span class="app-task-list__task-name">
                 What date does the accommodation service need to be completed by?
@@ -171,7 +171,7 @@
           </li>
           <li class="moj-task-list__item">
             {% if data["accommodation-date-year"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/rar-days">Enter RAR days used</a>
+              <a class="moj-task-list__task-name" href="accommodation-service/rar-days">Enter RAR days used</a>
             {% else %}
               <span class="app-task-list__task-name">
                 Enter RAR days used
@@ -180,7 +180,7 @@
           </li>
           <li class="moj-task-list__item">
             {% if data["accommodation-using-rar-days"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/accommodation-service/further-information">Further information for service provider</a>
+              <a class="moj-task-list__task-name" href="accommodation-service/further-information">Further information for service provider</a>
             {% else %}
               <span class="app-task-list__task-name">
                 Further information for service provider
@@ -216,7 +216,7 @@
         <ul class="moj-task-list__items">
           <li class="moj-task-list__item">
             {% if data["needs-and-requirements-completed"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/social-inclusion-service/select-sentence">Select the relevant sentence for the social inclusion service referral</a>
+              <a class="moj-task-list__task-name" href="social-inclusion-service/select-sentence">Select the relevant sentence for the social inclusion service referral</a>
             {% else %}
               <span class="app-task-list__task-name">
                 Select relevant sentence
@@ -225,7 +225,7 @@
           </li>
           <li class="moj-task-list__item">
             {% if data["social-inclusion-sentence"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/social-inclusion-service/desired-outcomes">What are the desired outcomes for the social inclusion service?</a>
+              <a class="moj-task-list__task-name" href="social-inclusion-service/desired-outcomes">What are the desired outcomes for the social inclusion service?</a>
             {% else %}
               <span class="app-task-list__task-name">
                 Select desired outcomes
@@ -234,7 +234,7 @@
           </li>
           <li class="moj-task-list__item">
             {% if data["social-inclusion-desired-outcomes"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/social-inclusion-service/complexity-level">What is the required complexity level for the social inclusion service?</a>
+              <a class="moj-task-list__task-name" href="social-inclusion-service/complexity-level">What is the required complexity level for the social inclusion service?</a>
             {% else %}
               <span class="app-task-list__task-name">
                 Select required complexity level
@@ -243,7 +243,7 @@
           </li>
           <li class="moj-task-list__item">
             {% if data["social-inclusion-complexity"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/social-inclusion-service/completion-date">Enter completion date</a>
+              <a class="moj-task-list__task-name" href="social-inclusion-service/completion-date">Enter completion date</a>
             {% else %}
               <span class="app-task-list__task-name">
                 Enter completion date
@@ -252,7 +252,7 @@
           </li>
           <li class="moj-task-list__item">
             {% if data["social-inclusion-date-year"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/social-inclusion-service/rar-days">Enter RAR days used</a>
+              <a class="moj-task-list__task-name" href="social-inclusion-service/rar-days">Enter RAR days used</a>
             {% else %}
               <span class="app-task-list__task-name">
                 Enter RAR days used
@@ -261,7 +261,7 @@
           </li>
           <li class="moj-task-list__item">
             {% if data["social-inclusion-using-rar-days"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/social-inclusion-service/further-information">Further information for service provider</a>
+              <a class="moj-task-list__task-name" href="social-inclusion-service/further-information">Further information for service provider</a>
             {% else %}
               <span class="app-task-list__task-name">
                 Further information for service provider
@@ -288,7 +288,7 @@
         <ul class="moj-task-list__items">
           <li class="moj-task-list__item">
             {% if data["social-inclusion-more-information-completed"] and data["accommodation-more-info-completed"] and data["responsible-officer-information-completed"] %}
-              <a class="moj-task-list__task-name" href="make-a-referral/check-answers">Check your answers</a >
+              <a class="moj-task-list__task-name" href="check-answers">Check your answers</a >
             {% else %}
               <span class="app-task-list__task-name">
                 Check your answers
