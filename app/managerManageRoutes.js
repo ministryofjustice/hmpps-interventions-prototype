@@ -4,7 +4,7 @@ const moment = require("moment");
 const staticData = require("./data/managerManageStaticData");
 
 router.use(function (req, res, next) {
-  res.locals.serviceName = "Manage intervention referrals";
+  res.locals.serviceName = "Receive intervention referrals";
   next();
 });
 
