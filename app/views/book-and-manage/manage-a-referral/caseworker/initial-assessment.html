@@ -4,6 +4,11 @@
   Manage intervention referrals
 {% endblock %}
 
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
 {% block beforeContent %}
   <a href="/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}" class="govuk-back-link">Back</a>
 {% endblock %}

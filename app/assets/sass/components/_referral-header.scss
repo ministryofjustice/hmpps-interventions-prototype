@@ -1,0 +1,65 @@
+.app-referral-header__referral {
+  @extend %govuk-body-s;
+  padding-top: govuk-spacing(2);
+  padding-bottom: govuk-spacing(2);
+  margin: 0;
+
+  dt {
+    display: inline;
+    font-weight: $govuk-font-weight-bold;
+  }
+  dt::after {
+    content: ":";
+  }
+  dt:last-of-type {
+    margin-left: auto;
+  }
+  dd {
+    display: inline;
+    margin-left: govuk-spacing(2);
+    margin-right: govuk-spacing(2);
+  }
+
+  .govuk-width-container {
+    display: flex;
+  }
+}
+
+.app-referral-header__service-user {
+  dl {
+    @extend %govuk-body-s;
+    color: inherit;
+    display: inline;
+  }
+  dt {
+    display: inline;
+    font-weight: $govuk-font-weight-bold;
+  }
+  dt::after {
+    content: ":";
+  }
+  dd {
+    display: inline;
+    margin-left: govuk-spacing(2);
+  }
+  dd::after {
+    margin-left: govuk-spacing(1);
+    margin-right: govuk-spacing(1);
+    content: "|";
+  }
+  dd:last-of-type::after {
+    content: "";
+  }
+
+  background: $govuk-brand-colour;
+  color: govuk-colour("white");
+  padding-top: govuk-spacing(2);
+  padding-bottom: govuk-spacing(2);
+
+  span {
+    @extend %govuk-body-m;
+    color: inherit;
+    font-weight: $govuk-font-weight-bold;
+    margin-right: govuk-spacing(5);
+  }
+}

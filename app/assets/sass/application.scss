@@ -16,6 +16,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
+@import "components/referral-header";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 .govuk-panel--sidebar {

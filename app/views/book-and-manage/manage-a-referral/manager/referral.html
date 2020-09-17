@@ -4,6 +4,11 @@
   Referral details
 {% endblock %}
 
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <h1 class="govuk-heading-xl">
