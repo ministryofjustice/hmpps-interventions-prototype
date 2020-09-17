@@ -4,7 +4,13 @@
   Referral details
 {% endblock %}
 
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
 {% block beforeContent %}
+
   <a href="/book-and-manage/manage-a-referral/caseworker/referrals" class="govuk-back-link">Return to cases and referrals</a>
 {% endblock %}
 
