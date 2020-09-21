@@ -2,8 +2,6 @@ const express = require("express");
 const communityAPIClient = require("../lib/community_api_client.js");
 const hmppsOauthClient = require("../lib/hmpps_oauth_client.js");
 const router = express.Router();
-const caseworkerManageRouter = require("./caseworkerManageRoutes");
-const managerManageRouter = require("./managerManageRoutes");
 
 router.get("/service-user-details/show", async function (req, res, next) {
   try {
@@ -24,12 +22,19 @@ router.get("/service-user-details/show", async function (req, res, next) {
   }
 });
 
-router.use(
-  "/book-and-manage/manage-a-referral/caseworker",
-  caseworkerManageRouter
-);
+const sprints = ["sprint-3", "sprint-4"];
+const sprintRouters = {};
+for (sprint of sprints) {
+  router.use(
+    `/${sprint}/book-and-manage/manage-a-referral/caseworker`,
+    require(`./routes/${sprint}/caseworkerManageRoutes`),
+  );
 
-router.use("/book-and-manage/manage-a-referral/manager", managerManageRouter);
+  router.use(
+    `/${sprint}/book-and-manage/manage-a-referral/manager`,
+    require(`./routes/${sprint}/managerManageRoutes`),
+  );
+}
 
 // Add your routes here - above the module.exports line
 

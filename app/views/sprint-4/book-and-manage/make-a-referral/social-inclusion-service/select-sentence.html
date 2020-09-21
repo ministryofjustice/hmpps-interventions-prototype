@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Select social inclusion service
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "../referral-task-list"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <form action="desired-outcomes" method="post" class="form">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-6">
+              Select the relevant sentence for the social inclusion service referral
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="wild-birds" name="social-inclusion-sentence" type="radio" value="Wild birds" {{ checked("social-inclusion-sentence", "Wild birds") }}>
+              <label class="govuk-label govuk-radios__label" for="social-inclusion-sentence">
+                Wild birds protection act<br>Sub category: Wild birds protection act, 1900<br>Date: 01/01/2020<br>Order: Suspended sentence
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="armed-robbery" name="social-inclusion-sentence" type="radio" value="Armed robbery"  {{ checked("social-inclusion-sentence", "Armed robbery") }}>
+              <label class="govuk-label govuk-radios__label" for="social-inclusion-sentence-2">
+                Armed robbery<br>Sub category: Wild birds protection act, 1900<br>Date: 01/01/2020<br>Order: Suspended sentence
+              </label>
+            </div>
+        </fieldset>
+          </div>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
