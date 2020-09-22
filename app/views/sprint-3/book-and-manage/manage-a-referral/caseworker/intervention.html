@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage intervention referrals
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="/sprint-3/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ intervention.name }} referral</h1>
+
+      <dl class="govuk-summary-list">
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Relevant sentence</dt>
+	  <dd class="govuk-summary-list__value">Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Desired outcomes</dt>
+	  <dd class="govuk-summary-list__value">Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Required complexity</dt>
+	  <dd class="govuk-summary-list__value">Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Completion date required</dt>
+	  <dd class="govuk-summary-list__value">10/01/2021</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Maximum number of RAR days</dt>
+	  <dd class="govuk-summary-list__value">22</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Further information</dt>
+	  <dd class="govuk-summary-list__value">N/A</dd>
+	</div>
+      </dl>
+
+      <h2 class="govuk-heading-l">Action plan</h2>
+
+      <h3 class="govuk-heading-m">Goals</h3>
+      {% for goal in intervention.goals %}
+	<h4 class="govuk-heading-s">Goal {{ loop.index }}</h4>
+	<p class="govuk-body">{{ goal.text }}</p>
+      {% endfor %}
+      {% if canChangeActionPlan %}
+	<form method="post" action="/sprint-3/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/goals">
+	  <div class="govuk-form-group">
+	    <label class="govuk-heading-s" for="text">Goal {{ intervention.goals.length + 1 }}</label>
+	    <textarea class="govuk-textarea" id="text" name="text"></textarea>
+	  </div>
+	  <input class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="Add new goal">
+	</form>
+      {% endif %}
+
+      <h3 class="govuk-heading-m">Sessions</h3>
+      <table class="govuk-table">
+	<thead class="govuk-table__header" class="govuk-table__head">
+	  <tr class="govuk-table-row">
+	    <th class="govuk-table__header" scope="col">Session title</th>
+	    <th class="govuk-table__header" scope="col">Date</th>
+	    <th class="govuk-table__header" scope="col">Time</th>
+	    <th class="govuk-table__header" scope="col">Status</th>
+	    <th class="govuk-table__header" scope="col">Action</th>
+	  </tr>
+	</thead>
+
+	{% for session in intervention.sessions %}
+	  <tr class="govuk-table-row">
+	    <td class="govuk-table__cell">{{ session.title }}</td>
+	    <td class="govuk-table__cell">{{ moment(session.date).format("D/M/YYYY") }}</td>
+	    <td class="govuk-table__cell">{{ session.startTime }} to {{ session.endTime }}</td>
+	    <td class="govuk-table__cell ">
+	      <strong class="{{ cssClassForSessionStatus(session.status) }}">{{ session.status }}</strong>
+	    </td>
+	    <td class="govuk-table__cell">
+	      {% if session.status !== "completed" %}
+		<a class="govuk-link" href="#">Edit</a>
+	      {% endif %}
+
+	      {% if session.status === "completed" %}
+		<a class="govuk-link" href="#">View</a>
+	      {% endif %}
+
+	      {% if session.status === "pending" %}
+		<a class="govuk-link" href="/sprint-3/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/sessions/{{loop.index0}}/assessment">Assess</a>
+	      {% endif %}
+	    </td>
+	  </tr>
+	{% endfor %}
+      </table>
+
+      {% if canChangeActionPlan %}
+	<form method="post" action="/sprint-3/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/sessions">
+	  <input class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="Add new session">
+	</form>
+      {% endif %}
+
+      {% if not intervention.actionPlanSubmitted %}
+	<form method="post" action="/sprint-3/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/action-plan-submission">
+	  <input class="govuk-button" data-module="govuk-button" type="submit" value="Submit for approval">
+	</form>
+      {% endif %}
+
+      <p class="govuk-body">
+      {% if readyForEndOfServiceReport %}
+	<a class="govuk-button" data-module="govuk-button" href="/sprint-3/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/end-of-service-report">Complete end of service report</a>
+      {% endif %}
+
+      {% if intervention.actionPlanSubmitted and not intervention.actionPlanApproved %}
+	<a class="govuk-link" href="/sprint-3/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/fast-forward/action-plan-approved">Fast-forward to action plan approved</a>
+      {% endif %}
+
+      {% if intervention.actionPlanApproved and not allSessionsCompleted %}
+	<a class="govuk-link" href="/sprint-3/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/fast-forward/sessions-completed">Fast-forward to sessions completed</a>
+      {% endif %}
+      </p>
+    </div>
+  </div>
+{% endblock %}

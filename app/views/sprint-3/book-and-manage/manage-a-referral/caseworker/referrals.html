@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cases and referrals
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column">
+      <div class="govuk-tabs" data-module="govuk-tabs">
+	<h2 class="govuk-tabs__title">
+	  Contents
+	</h2>
+	<ul class="govuk-tabs__list">
+	  <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+	    <a class="govuk-tabs__tab" href="#recently-added">
+	      Recently added referrals
+	    </a>
+	  </li>
+	  <li class="govuk-tabs__list-item">
+	    <a class="govuk-tabs__tab" href="#ongoing">
+	      Ongoing cases
+	    </a>
+	  </li>
+	  <li class="govuk-tabs__list-item">
+	    <a class="govuk-tabs__tab" href="#complete">
+	      Complete cases
+	    </a>
+	  </li>
+	  <li class="govuk-tabs__list-item">
+	    <a class="govuk-tabs__tab" href="#breach">
+	      Breach cases
+	    </a>
+	  </li>
+	</ul>
+
+	<div class="govuk-tabs__panel" id="recently-added">
+	  <h2 class="govuk-heading-l">Referrals awaiting assessment</h2>
+	  <table class="govuk-table">
+	    <thead class="govuk-table__head">
+	      <tr class="govuk-table__row">
+		<th scope="col" class="govuk-table__header">Referral</th>
+		<th scope="col" class="govuk-table__header">Service user</th>
+		<th scope="col" class="govuk-table__header">Probation practitioner</th>
+		<th scope="col" class="govuk-table__header">Status</th>
+	      </tr>
+	    </thead>
+	    <tbody class="govuk-table__body">
+	      {% for referral in data.referrals %}
+		<tr class="govuk-table__row">
+		  <td class="govuk-table__cell"><a href="/sprint-3/book-and-manage/manage-a-referral/caseworker/referrals/{{loop.index0}}">{{referral.reference}}</a></td>
+		  <td class="govuk-table__cell">Alex River</td>
+		  <td class="govuk-table__cell">Jessica Reel</td>
+		  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started<strong></td>
+		</tr>
+	      {% endfor %}
+	    </tbody>
+	  </table>
+
+	  <h2 class="govuk-heading-l">Next assessment appointment</h2>
+	  <p class="govuk-body">To-do</p>
+	</div>
+
+	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="ongoing">
+	  <h2 class="govuk-heading-l">Ongoing cases</h2>
+
+	  <p class="govuk-body">To-do</p>
+	</div>
+
+	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="complete">
+	  <h2 class="govuk-heading-l">Complete cases</h2>
+
+	  <p class="govuk-body">To-do</p>
+	</div>
+
+	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="breach">
+	  <h2 class="govuk-heading-l">Breach cases</h2>
+
+	  <p class="govuk-body">To-do</p>
+	</div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

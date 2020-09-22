@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Social inclusion service RAR days
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "completion-date"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="further-information" method="post" class="form">
+        {% set rarDaysHTML %}
+        {{ govukInput({
+          id: "social-inclusion-rar-days",
+          name: "social-inclusion-rar-days",
+          spellcheck: false,
+          classes: "govuk-input--width-3",
+          value: data["social-inclusion-rar-days"],
+          label: {
+            text: "What is the maximum number of RAR days for the social inclusion service?\n\nDays" | striptags(true) | escape | nl2br
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "social-inclusion-using-rar-days-conditional",
+          name: "social-inclusion-using-rar-days",
+          fieldset: {
+            legend: {
+              text: "Are you using RAR days for the social inclusion service?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: rarDaysHTML
+              },
+              checked: data["social-inclusion-using-rar-days"] == "yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: data["social-inclusion-using-rar-days"] == "no"
+            }
+          ]
+        }) }}
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
