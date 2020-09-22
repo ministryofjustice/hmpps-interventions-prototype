@@ -7,69 +7,113 @@
 {% block content %}
   <div class="govuk-grid-column">
     <h1 class="govuk-heading-xl">
-      Referrals
+      Current referrals
     </h1>
     <div class="govuk-grid-row-two-thirds">
       <div class="govuk-tabs" data-module="govuk-tabs">
         <ul class="govuk-tabs__list">
           <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-            <a class="govuk-tabs__tab" href="#unassigned-referrals">
-              Unassigned referrals
+            <a class="govuk-tabs__tab" href="#assign-interventions">
+              Assign interventions
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#assigned-referrals">
-              Assigned referrals
+            <a class="govuk-tabs__tab" href="#re-assign-interventions">
+              Re-assign interventions
             </a>
           </li>
         </ul>
-        <div class="govuk-tabs__panel" id="unassigned-referrals">
-          <h2 class="govuk-heading-l">Unassigned referrals</h2>
+        <div class="govuk-tabs__panel" id="assign-interventions">
+          <h2 class="govuk-heading-l">Assign interventions</h2>
+          <p class="govuk-body">
+            Assign each intervention or service to a caseworker
+          </p>
           <table class="govuk-table">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header">Referral</th>
+                <th scope="col" class="govuk-table__header">Service user</th>
                 <th scope="col" class="govuk-table__header">Probation practitioner</th>
-                <th scope="col" class="govuk-table__header">Admin action</th>
+                <th scope="col" class="govuk-table__header">Intervention</th>
+                <th scope="col" class="govuk-table__header">Action</th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
               {% for practitioner in probationPractitioners %}
                 <tr class="govuk-table__row">
+                  <td class="govuk-table__cell" rowspan="2">
+                    {{ practitioner.referralNumber }}
+                  </td>
+                  <td class="govuk-table__cell" rowspan="2">
+                    Alex River
+                    {#TODO#}
+                  </td>
+                  <td class="govuk-table__cell" rowspan="2">
+                    {{ practitioner.name }}
+                  </td>
                   <td class="govuk-table__cell">
-                    <a class="govuk-link" href="referrals/0">
-                      {{ practitioner.referralNumber }}</td>
-                  </a>
-                  <td class="govuk-table__cell">{{ practitioner.name }}</td>
+                    Accommodation
+                    {#TODO#}
+                  </td>
                   <td class="govuk-table__cell">
-                    <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                    <a class="govuk-link" href="referrals/0">Assign</a>
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Social inclusion</td>
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="referrals/0">Assign</a>
                   </td>
                 </tr>
               {% endfor %}
             </tbody>
           </table>
         </div>
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="assigned-referrals">
-          <h2 class="govuk-heading-l">Assigned referrals</h2>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="re-assign-interventions">
+          <h2 class="govuk-heading-l">Re-assign interventions</h2>
+
+          <p class="govuk-body">
+            Re-assign each intervention or service to a different caseworker
+          </p>
 
           <table class="govuk-table">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header">Referral</th>
+                <th scope="col" class="govuk-table__header">Service user</th>
                 <th scope="col" class="govuk-table__header">Probation practitioner</th>
-                <th scope="col" class="govuk-table__header">Admin action</th>
+                <th scope="col" class="govuk-table__header">Intervention</th>
+                <th scope="col" class="govuk-table__header">Assigned to</th>
+                <th scope="col" class="govuk-table__header">Action</th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
               {% for practitioner in probationPractitioners %}
                 <tr class="govuk-table__row">
+                  <td class="govuk-table__cell" rowspan="2">
+                    {{ practitioner.referralNumber }}
+                  </td>
+                  <td class="govuk-table__cell" rowspan="2">
+                    Alex River
+                    {#TODO#}
+                  </td>
+                  <td class="govuk-table__cell" rowspan="2">
+                    {{ practitioner.name }}
+                  </td>
                   <td class="govuk-table__cell">
-                    <a class="govuk-link" href="#">
-                      {{ practitioner.referralNumber }}</td>
-                  </a>
-                  <td class="govuk-table__cell">{{ practitioner.name }}</td>
+                    Accommodation
+                    {#TODO#}
+                  </td>
+                  <td class="govuk-table__cell">Emma Thompson</td>
                   <td class="govuk-table__cell">
-                    <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                    <a class="govuk-link" href="#">Re-assign</a>
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Social inclusion</td>
+                  <td class="govuk-table__cell">Jenny Bates</td>
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="#">Re-assign</a>
                   </td>
                 </tr>
               {% endfor %}
