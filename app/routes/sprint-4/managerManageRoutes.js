@@ -17,25 +17,14 @@ router.get("/referrals", (req, res) => {
 router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, res) => {
   const serviceUser = staticData.serviceUsers[req.params.referralIndex];
   const intervention = serviceUser.interventions[req.params.interventionIndex];
+  const caseworkers = staticData.caseworkers;
 
   res.render("sprint-4/book-and-manage/manage-a-referral/manager/intervention", {
     serviceUser,
     intervention,
+    caseworkers,
   });
 });
-
-router.get(
-  "/referrals/:referralIndex/:interventionType/assign-caseworker",
-  (req, res) => {
-    const caseworkers = staticData.caseworkers;
-    const interventionType = req.params.interventionType.replace("-", " ");
-
-    res.render("sprint-4/book-and-manage/manage-a-referral/manager/assign-caseworker", {
-      caseworkers,
-      interventionType: interventionType,
-    });
-  }
-);
 
 router.get("/referrals/:referralIndex/caseworker-confirmation", (req, res) => {
   res.render(
