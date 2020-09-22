@@ -12,23 +12,48 @@
 {% block content %}
   <div class="govuk-grid-row">
     <h1 class="govuk-heading-xl">
-      Assign {{intervention.name}} intervention to a caseworker
+      {% if reassign %}
+        Re-assign {{intervention.name}} intervention to a caseworker
+      {% else %}
+        Assign {{intervention.name}} intervention to a caseworker
+      {% endif %}
     </h1>
 
     <div class="govuk-grid-column-two-thirds">
       <p class="govuk-body">
-        Once you have assigned the case to a caseworker they will receive an email notification.
+        {% if reassign %}
+          Once you have re-assigned the case to a new caseworker they will receive an email notification.
+        {% else %}
+          Once you have assigned the case to a caseworker they will receive an email notification.
+        {% endif %}
       </p>
 
       <form method="post" action="/sprint-4/book-and-manage/manage-a-referral/manager/referrals/0/caseworker-confirmation">
+        {% if reassign %}
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="assigned-caseworker">
+              Current caseworker
+            </label>
+
+            <p class="govuk-body">
+              {{ currentCaseworker.name }}
+            </p>
+          </div>
+        {% endif %}
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--m" for="assigned-caseworker">
-            Select a caseworker
+            {% if reassign %}
+              Assign a new caseworker
+            {% else %}
+              Select a caseworker
+            {% endif %}
           </label>
 
           <select class="govuk-select" id="assigned-caseworker" name="assigned-caseworker">
             {% for caseworker in caseworkers %}
-              <option value="{{caseworker.name}}">{{ caseworker.name }}</option>
+              {% if not (reassign and currentCaseworker.name == caseworker.name) %}
+                <option value="{{caseworker.name}}">{{ caseworker.name }}</option>
+              {% endif %}
             {% endfor %}
           </select>
         </div>
@@ -358,7 +383,7 @@
           </div>
         </div>
 
-        <input type="submit" class="govuk-button" data-module="govuk-button" id="{{intervention.name}}-desired-outcomes-save" value="Add caseworker to this intervention">
+        <input type="submit" class="govuk-button" data-module="govuk-button" id="{{intervention.name}}-desired-outcomes-save" value={% if reassign %}"Add new caseworker to this intervention"{% else %}"Add caseworker to this intervention"{% endif %}>
       </form>
     </div>
 

@@ -18,11 +18,15 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
   const serviceUser = staticData.serviceUsers[req.params.referralIndex];
   const intervention = serviceUser.interventions[req.params.interventionIndex];
   const caseworkers = staticData.caseworkers;
+  const reassign = req.query.reassign;
+  const currentCaseworker = { name: req.session.data['assigned-caseworker'] };
 
   res.render("sprint-4/book-and-manage/manage-a-referral/manager/intervention", {
     serviceUser,
     intervention,
     caseworkers,
+    reassign,
+    currentCaseworker,
   });
 });
 
