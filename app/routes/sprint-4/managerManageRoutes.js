@@ -14,11 +14,13 @@ router.get("/referrals", (req, res) => {
   });
 });
 
-router.get("/referrals/:referralIndex", (req, res) => {
+router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, res) => {
   const serviceUser = staticData.serviceUsers[req.params.referralIndex];
+  const intervention = serviceUser.interventions[req.params.interventionIndex];
 
-  res.render("sprint-4/book-and-manage/manage-a-referral/manager/referral", {
+  res.render("sprint-4/book-and-manage/manage-a-referral/manager/intervention", {
     serviceUser,
+    intervention,
   });
 });
 

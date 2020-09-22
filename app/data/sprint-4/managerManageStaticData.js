@@ -64,60 +64,68 @@ module.exports = {
           postcode: "SY4 0RE",
         },
       },
-      accommodationReferral: {
-        sentence: {
-          category: "Misuse of Drugs Act 1971 s.4(3)",
-          subcategory: "Misuse of Drugs Act 1971 s.5(3)",
-          date: "01/01/2020",
-          order: "Suspended sentence",
+      interventions: [
+        {
+          name: "accommodation",
+
+          sentence: {
+            category: "Misuse of Drugs Act 1971 s.4(3)",
+            subcategory: "Misuse of Drugs Act 1971 s.5(3)",
+            date: "01/01/2020",
+            order: "Suspended sentence",
+          },
+          desiredOutcomes:
+            "Service user is helped to secure social or supported housing",
+          requiredComplexity: {
+            type: "Low complexity",
+            description:
+              "Service user has some capacity and means to secure and/or maintain suitable accommodation but requires some support and guidance to do so.",
+          },
+          completionDate: "10/01/2021",
+          maxRARDays: "10",
+          furtherInformation: "N/A",
         },
-        desiredOutcomes:
-          "Service user is helped to secure social or supported housing",
-        requiredComplexity: {
-          type: "Low complexity",
-          description:
-            "Service user has some capacity and means to secure and/or maintain suitable accommodation but requires some support and guidance to do so.",
+        {
+          name: "social inclusion",
+
+          sentence: {
+            category: "Misuse of Drugs Act 1971 s.4(3)",
+            subcategory: "Misuse of Drugs Act 1971 s.5(3)",
+            date: "01/01/2020",
+            order: "Suspended sentence",
+          },
+          desiredOutcomes:
+            "Service user is helped to secure social or supported housing",
+          requiredComplexity: {
+            type: "Low complexity",
+            description:
+              "Service user has some capacity and means to secure and/or maintain suitable accommodation but requires some support and guidance to do so.",
+          },
+          completionDate: "10/01/2021",
+          maxRARDays: "10",
+          furtherInformation: "N/A",
         },
-        completionDate: "10/01/2021",
-        maxRARDays: "10",
-        furtherInformation: "N/A",
-      },
-      socialInclusionReferral: {
-        sentence: {
-          category: "Misuse of Drugs Act 1971 s.4(3)",
-          subcategory: "Misuse of Drugs Act 1971 s.5(3)",
-          date: "01/01/2020",
-          order: "Suspended sentence",
+        {
+          name: "accommodation",
+
+          sentence: {
+            category: "Misuse of Drugs Act 1971 s.4(3)",
+            subcategory: "Misuse of Drugs Act 1971 s.5(3)",
+            date: "01/01/2020",
+            order: "Suspended sentence",
+          },
+          desiredOutcomes:
+            "Service user is helped to secure social or supported housing",
+          requiredComplexity: {
+            type: "Low complexity",
+            description:
+              "Service user has some capacity and means to secure and/or maintain suitable accommodation but requires some support and guidance to do so.",
+          },
+          completionDate: "10/01/2021",
+          maxRARDays: "10",
+          furtherInformation: "N/A",
         },
-        desiredOutcomes:
-          "Service user is helped to secure social or supported housing",
-        requiredComplexity: {
-          type: "Low complexity",
-          description:
-            "Service user has some capacity and means to secure and/or maintain suitable accommodation but requires some support and guidance to do so.",
-        },
-        completionDate: "10/01/2021",
-        maxRARDays: "10",
-        furtherInformation: "N/A",
-      },
-      accommodationReferral: {
-        sentence: {
-          category: "Misuse of Drugs Act 1971 s.4(3)",
-          subcategory: "Misuse of Drugs Act 1971 s.5(3)",
-          date: "01/01/2020",
-          order: "Suspended sentence",
-        },
-        desiredOutcomes:
-          "Service user is helped to secure social or supported housing",
-        requiredComplexity: {
-          type: "Low complexity",
-          description:
-            "Service user has some capacity and means to secure and/or maintain suitable accommodation but requires some support and guidance to do so.",
-        },
-        completionDate: "10/01/2021",
-        maxRARDays: "10",
-        furtherInformation: "N/A",
-      },
+      ],
     },
   ],
   caseworkers: [
