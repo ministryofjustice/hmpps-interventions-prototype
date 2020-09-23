@@ -78,63 +78,7 @@
               </h2>
             </div>
             <div id="{{intervention.name}}-referral" class="govuk-accordion__section-content" aria-labelledby="referral-{{intervention.name}}-referral">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Sentence information
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ intervention.sentence.category }}<br>
-                    Subcategory:
-                    {{ intervention.sentence.subcategory }}<br>
-                    Date:
-                    {{ intervention.sentence.date }}<br>
-                    Order:
-                    {{ intervention.sentence.order }}<br>
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Desired outcome
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ intervention.desiredOutcomes }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Complexity level
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ intervention.requiredComplexity.type }}<br>
-                    {{ intervention.requiredComplexity.description }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Date to be completed by
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ intervention.completionDate }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Maximum number of RAR days
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ intervention.maxRARDays }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Further information for the provider
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ intervention.furtherInformation }}
-                  </dd>
-                </div>
-              </dl>
+              {% include "./includes/intervention.html" %}
             </div>
           </div>
           <div class="govuk-accordion__section ">
@@ -146,76 +90,7 @@
               </h2>
             </div>
             <div id="personal-details" class="govuk-accordion__section-content" aria-labelledby="referral-service-user-personal-details">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Other names
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.personalDetails.otherNames }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Address
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.personalDetails.address.line1 }}<br>
-                    {{ serviceUser.personalDetails.address.line2 }}<br>
-                    {{ serviceUser.personalDetails.address.city }}<br>
-                    {{ serviceUser.personalDetails.address.postcode }}<br>
-                    {{ serviceUser.personalDetails.address.type }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Nationality
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.personalDetails.nationality }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Ethnic group
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.personalDetails.ethnicGroup }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Preferred language
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.personalDetails.preferredLanguage }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Sexual orientation
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.personalDetails.sexualOrientation }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Religion or belief
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.personalDetails.religion }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Disabilities
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.personalDetails.disabilities }}
-                  </dd>
-                </div>
-              </dl>
+              {% include "./includes/personal-details.html" %}
             </div>
           </div>
           <div class="govuk-accordion__section ">
@@ -227,48 +102,7 @@
               </h2>
             </div>
             <div id="risks" class="govuk-accordion__section-content" aria-labelledby="referral-service-user-risks">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    OGRS Score
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.risks.OGRSScore }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    RM2000 Score
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.risks.RM2000Score }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    ROSHA Score
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.risks.ROSHAScore }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    SARA Score
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.risks.SARAScore }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Risk scores information
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.risks.scoresInformation }}
-                  </dd>
-                </div>
-              </dl>
+              {% include "./includes/risks.html" %}
             </div>
           </div>
           <div class="govuk-accordion__section ">
@@ -280,66 +114,7 @@
               </h2>
             </div>
             <div id="needs" class="govuk-accordion__section-content" aria-labelledby="referral-service-user-needs">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Criminogenic needs
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {% for need in serviceUser.needs.criminogenicNeeds %}
-                      {{ need }}<br>
-                    {% endfor %}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Identify needs
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.needs.identifyNeeds }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Other mobility, disability or accessibility needs
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.needs.otherNeeds }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Interpreter needed
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.needs.interpreterNeeded }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Language needs
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.needs.languageNeeds }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Caring or employment responsibilities
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.needs.responsibilities }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Times not available to attend sessions
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.needs.timesUnavailable }}
-                  </dd>
-                </div>
-              </dl>
+              {% include "./includes/needs.html" %}
             </div>
           </div>
           <div class="govuk-accordion__section ">
@@ -351,34 +126,7 @@
               </h2>
             </div>
             <div id="responsible-officer" class="govuk-accordion__section-content" aria-labelledby="referral-responsible-officer-details">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Full name
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.responsibleOfficer.fullName}}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Email address
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.responsibleOfficer.email }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Office address
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ serviceUser.personalDetails.address.line1 }}<br>
-                    {{ serviceUser.personalDetails.address.city }}<br>
-                    {{ serviceUser.personalDetails.address.postcode }}<br>
-                  </dd>
-                </div>
-              </dl>
+              {% include "./includes/probation-officer.html" %}
             </div>
           </div>
         </div>
