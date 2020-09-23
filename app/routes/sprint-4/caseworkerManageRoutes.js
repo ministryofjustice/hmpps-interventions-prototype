@@ -98,13 +98,22 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
     res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsCompleted, readyForEndOfServiceReport, canChangeActionPlan, moment, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForActionPlanStatus, initialAssessmentScheduled });
 });
 
+router.get("/referrals/:referralIndex/interventions/:interventionIndex/action-plan", (req, res) => {
+    const referral = findReferral(req);
+    const intervention = findIntervention(req);
+
+    const canChangeActionPlan = intervention.endOfServiceReport == null;
+
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/action-plan", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, canChangeActionPlan, moment, cssClassForSessionStatus });
+});
+
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/goals", (req, res) => {
     const intervention = findIntervention(req);
 
     const goal = { text: req.body.text };
     intervention.goals.push(goal);
 
-    res.redirect(`/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
+    res.redirect(`/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/action-plan#goals`);
 });
 
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/sessions", (req, res) => {
@@ -122,7 +131,7 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/sessions
     const session = { title: `Session ${intervention.sessions.length + 1}`, date: date, startTime: "17:00", endTime: "18:00" }
     intervention.sessions.push(session);
 
-    res.redirect(`/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
+    res.redirect(`/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/action-plan#sessions`);
 });
 
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/action-plan-submission", (req, res) => {

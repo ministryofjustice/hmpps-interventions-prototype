@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Service user action plan
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals" class="govuk-back-link">Return to cases and referrals</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Service user action plan</h1>
+
+      <p class="govuk-body">
+      Create or edit the action plan. The submitted action plan will be shared with the probation practitioner.
+      </p>
+
+      <dl class="govuk-summary-list">
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Intervention</dt>
+	  <dd class="govuk-summary-list__value">{{intervention.name}}</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Service user</dt>
+	  <dd class="govuk-summary-list__value">Alex River</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Probation practitioner</dt>
+	  <dd class="govuk-summary-list__value">Jessica Reel</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Approval status</dt>
+	  <dd class="govuk-summary-list__value">{{ intervention.actionPlanStatus | capitalize }}</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">First approval date</dt>
+	  {#TODO what is this?#}
+	  <dd class="govuk-summary-list__value">N/A</dd>
+	</div>
+      </dl>
+
+      <dl class="govuk-summary-list">
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Relevant sentence</dt>
+	  <dd class="govuk-summary-list__value">Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Desired outcomes</dt>
+	  <dd class="govuk-summary-list__value">Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Required complexity</dt>
+	  <dd class="govuk-summary-list__value">Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Completion date required</dt>
+	  <dd class="govuk-summary-list__value">10/01/2021</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Maximum number of RAR days</dt>
+	  <dd class="govuk-summary-list__value">22</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Further information</dt>
+	  <dd class="govuk-summary-list__value">N/A</dd>
+	</div>
+      </dl>
+
+      <h2 class="govuk-heading-l" id="goals">Outcomes</h2>
+      <p class="govuk-body">
+      Add the outcomes of the intervention.
+      </p>
+      {% for goal in intervention.goals %}
+	<h3 class="govuk-heading-m">Outcome {{ loop.index }}</h3>
+	<p class="govuk-body">{{ goal.text }}</p>
+      {% endfor %}
+      {% if canChangeActionPlan %}
+	<form method="post" action="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/goals">
+	  <div class="govuk-form-group">
+	    <label class="govuk-heading-s" for="text">Outcome {{ intervention.goals.length + 1 }}</label>
+	    <textarea class="govuk-textarea" id="text" name="text"></textarea>
+	  </div>
+	  <input class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="Add new outcome">
+	</form>
+      {% endif %}
+
+      <h2 class="govuk-heading-l" id="sessions">Sessions</h2>
+
+      <p class="govuk-body">
+      Add the details of each session.
+      </p>
+
+      <table class="govuk-table">
+	<thead class="govuk-table__header" class="govuk-table__head">
+	  <tr class="govuk-table-row">
+	    <th class="govuk-table__header" scope="col">Session title</th>
+	    <th class="govuk-table__header" scope="col">Date</th>
+	    <th class="govuk-table__header" scope="col">Time</th>
+	    <th class="govuk-table__header" scope="col">Status</th>
+	    <th class="govuk-table__header" scope="col">Action</th>
+	  </tr>
+	</thead>
+
+	{% for session in intervention.sessions %}
+	  <tr class="govuk-table-row">
+	    <td class="govuk-table__cell">{{ session.title }}</td>
+	    <td class="govuk-table__cell">{{ moment(session.date).format("D/M/YYYY") }}</td>
+	    <td class="govuk-table__cell">{{ session.startTime }} to {{ session.endTime }}</td>
+	    <td class="govuk-table__cell ">
+	      <strong class="{{ cssClassForSessionStatus(session.status) }}">{{ session.status }}</strong>
+	    </td>
+	    <td class="govuk-table__cell">
+	      {% if session.status === "completed" %}
+		<a class="govuk-link" href="#">View</a>
+	      {% else %}
+		<a class="govuk-link" href="#">Edit</a>
+	      {% endif %}
+	    </td>
+	  </tr>
+	{% endfor %}
+      </table>
+
+      {% if canChangeActionPlan %}
+	<form method="post" action="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/sessions">
+	  <input class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="Add new session">
+	</form>
+      {% endif %}
+
+      {% if not intervention.actionPlanSubmitted %}
+	<form method="post" action="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/action-plan-submission">
+	  <input class="govuk-button" data-module="govuk-button" type="submit" value="Submit for approval">
+	</form>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
