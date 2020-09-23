@@ -30,6 +30,16 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
   });
 });
 
+router.get("/referrals/:referralIndex/interventions/:interventionIndex/confirm-details", (req, res) => {
+  const serviceUser = staticData.serviceUsers[req.params.referralIndex];
+  const intervention = serviceUser.interventions[req.params.interventionIndex];
+
+  res.render("sprint-4/book-and-manage/manage-a-referral/manager/confirm-details", {
+    serviceUser,
+    intervention,
+  });
+});
+
 router.get("/referrals/:referralIndex/caseworker-confirmation", (req, res) => {
   res.render(
     "sprint-4/book-and-manage/manage-a-referral/manager/caseworker-email-confirmation"

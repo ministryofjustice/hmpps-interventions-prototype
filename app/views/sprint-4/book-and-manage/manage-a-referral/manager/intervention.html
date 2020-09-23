@@ -28,7 +28,7 @@
         {% endif %}
       </p>
 
-      <form method="post" action="/sprint-4/book-and-manage/manage-a-referral/manager/referrals/0/caseworker-confirmation">
+      <form method="post" action="/sprint-4/book-and-manage/manage-a-referral/manager/referrals/0/interventions/0/confirm-details">
         {% if reassign %}
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="assigned-caseworker">
@@ -40,7 +40,7 @@
             </p>
           </div>
         {% endif %}
-        <div class="govuk-form-group">
+        <div class="govuk-form-group" id="caseworker">
           <label class="govuk-label govuk-label--m" for="assigned-caseworker">
             {% if reassign %}
               Assign a new caseworker
@@ -58,7 +58,7 @@
           </select>
         </div>
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group" id="additional-information">
           <label class="govuk-label govuk-label--m" for="{{intervention.name}}-additional-info">
             Additional information
           </label>
