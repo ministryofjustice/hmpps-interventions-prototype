@@ -86,22 +86,16 @@ function cssClassForSessionStatus(sessionStatus) {
     }
 }
 
-router.get("/referrals/:referralIndex", (req, res) => {
-    const referral = findReferral(req);
-
-    const someInitialAssessmentsScheduled = referral.interventions.some(intervention => intervention.initialAssessment != null);
-
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/referral", { referral, referralIndex: req.params.referralIndex, cssClassForInitialAssessmentStatus, cssClassForActionPlanStatus, someInitialAssessmentsScheduled });
-});
-
 router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, res) => {
+    const referral = findReferral(req);
     const intervention = findIntervention(req);
 
     const allSessionsCompleted = intervention.sessions.every(intervention => intervention.status === "completed");
     const readyForEndOfServiceReport = intervention.actionPlanApproved && allSessionsCompleted && intervention.endOfServiceReport == null;
     const canChangeActionPlan = intervention.endOfServiceReport == null;
+    const initialAssessmentScheduled = intervention.initialAssessment != null;
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/intervention", { intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsCompleted, readyForEndOfServiceReport, canChangeActionPlan, moment, cssClassForSessionStatus, cssClassForActionPlanStatus });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsCompleted, readyForEndOfServiceReport, canChangeActionPlan, moment, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForActionPlanStatus, initialAssessmentScheduled });
 });
 
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/goals", (req, res) => {
@@ -215,7 +209,7 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/initial-
 	intervention.initialAssessment = req.body;
     }
 
-    res.redirect(`/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}`);
+    res.redirect(`/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });
 
 module.exports = router

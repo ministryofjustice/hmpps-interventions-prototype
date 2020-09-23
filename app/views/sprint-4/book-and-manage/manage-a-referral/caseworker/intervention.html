@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}" class="govuk-back-link">Back</a>
+  <a href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -18,6 +18,84 @@
 
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">{{ intervention.name }} referral</h1>
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+	<h2 class="govuk-tabs__title">
+	  Contents
+	</h2>
+	<ul class="govuk-tabs__list">
+	  <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+	    <a class="govuk-tabs__tab" href="#intervention-progress">
+	      Intervention progress
+	    </a>
+	  </li>
+	  <li class="govuk-tabs__list-item">
+	    <a class="govuk-tabs__tab" href="#referral-details">
+	      Referral details
+	    </a>
+	  </li>
+	</ul>
+	<div class="govuk-tabs__panel" id="intervention-progress">
+	  <h2 class="govuk-heading-l">Initial assessment</h2>
+	  <table class="govuk-table">
+	    <thead class="govuk-table__head">
+	      <tr class="govuk-table__row">
+		<th scope="col" class="govuk-table__header">Intervention</th>
+		<th scope="col" class="govuk-table__header">Status</th>
+		<th scope="col" class="govuk-table__header">Action</th>
+	      </tr>
+	    </thead>
+	    <tbody class="govuk-table__body">
+	      <tr class="govuk-table__row">
+		<td class="govuk-table__cell">{{ intervention.name }}</td>
+		<td class="govuk-table__cell"><strong class="{{ cssClassForInitialAssessmentStatus(intervention.initialAssessmentStatus) }}">{{ intervention.initialAssessmentStatus }}</strong></td>
+		{% if intervention.initialAssessment != null %}
+		  <td class="govuk-table__cell"><a class="govuk-link" href="#">View</a></td>
+		{% else %}
+		  <td class="govuk-table__cell"><a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/initial-assessment">Schedule</a></td>
+		{% endif %}
+	      </tr>
+	    </tbody>
+	  </table>
+
+	  {% if initialAssessmentScheduled %}
+	    <h2 class="govuk-heading-l">Action plan</h2>
+	    <table class="govuk-table">
+	      <thead class="govuk-table__head">
+		<tr class="govuk-table__row">
+		  <th scope="col" class="govuk-table__header">Intervention</th>
+		  <th scope="col" class="govuk-table__header">Status</th>
+		  <th scope="col" class="govuk-table__header">Action</th>
+		</tr>
+	      </thead>
+	      <tbody class="govuk-table__body">
+		{% if intervention.initialAssessment != null %}
+		  <tr class="govuk-table__row">
+		    <td class="govuk-table__cell">{{intervention.name}}</td>
+		    <td class="govuk-table__cell"><strong class="{{cssClassForActionPlanStatus(intervention.actionPlanStatus)}}">{{intervention.actionPlanStatus}}</strong></td>
+		    <td class="govuk-table__cell">
+		      <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}">
+			{% if intervention.actionPlanStatus == "pending" or intervention.actionPlanStatus == "completed" %}
+			  View
+			{% elif intervention.actionPlanStatus == "in progress" %}
+			  Edit
+			{% elif intervention.actionPlanStatus == "not started" %}
+			  Set up
+			{% endif %}
+		      </a>
+		    </td>
+		  </tr>
+		{% endif %}
+	      </tbody>
+	    </table>
+	  {% endif %}
+	</div>
+	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="referral-details">
+	  <h2 class="govuk-heading-l">Referral details</h2>
+
+	  <p class="govuk-body">To-do</p>
+	</div>
+      </div>
 
       <dl class="govuk-summary-list">
 	<div class="govuk-summary-list__row">
