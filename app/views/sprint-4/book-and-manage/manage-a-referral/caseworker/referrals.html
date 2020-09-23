@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Cases and referrals
+  Clients and interventions
 {% endblock %}
 
 {% block content %}
@@ -13,69 +13,87 @@
 	</h2>
 	<ul class="govuk-tabs__list">
 	  <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-	    <a class="govuk-tabs__tab" href="#recently-added">
-	      Recently added referrals
+	    <a class="govuk-tabs__tab" href="#awaiting-assessment">
+	      Interventions awaiting assessment
 	    </a>
 	  </li>
 	  <li class="govuk-tabs__list-item">
-	    <a class="govuk-tabs__tab" href="#ongoing">
-	      Ongoing cases
+	    <a class="govuk-tabs__tab" href="#in-progress">
+	      Interventions in progress
 	    </a>
 	  </li>
 	  <li class="govuk-tabs__list-item">
 	    <a class="govuk-tabs__tab" href="#complete">
-	      Complete cases
+	      Completed interventions
 	    </a>
 	  </li>
 	  <li class="govuk-tabs__list-item">
 	    <a class="govuk-tabs__tab" href="#breach">
-	      Breach cases
+	      Breached interventions
 	    </a>
 	  </li>
 	</ul>
 
-	<div class="govuk-tabs__panel" id="recently-added">
-	  <h2 class="govuk-heading-l">Referrals awaiting assessment</h2>
+	<div class="govuk-tabs__panel" id="awaiting-assessment">
+	  <h2 class="govuk-heading-l">Clients awaiting assessment</h2>
+
+	  <p class="govuk-body">
+	  Schedule an initial assessment for each intervention
+	  </p>
+
 	  <table class="govuk-table">
 	    <thead class="govuk-table__head">
 	      <tr class="govuk-table__row">
 		<th scope="col" class="govuk-table__header">Referral</th>
+		<th scope="col" class="govuk-table__header">Date received</th>
 		<th scope="col" class="govuk-table__header">Service user</th>
 		<th scope="col" class="govuk-table__header">Probation practitioner</th>
-		<th scope="col" class="govuk-table__header">Status</th>
+		<th scope="col" class="govuk-table__header">Intervention</th>
+		<th scope="col" class="govuk-table__header">Action</th>
 	      </tr>
 	    </thead>
 	    <tbody class="govuk-table__body">
 	      {% for referral in data.referrals %}
-		<tr class="govuk-table__row">
-		  <td class="govuk-table__cell"><a href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{loop.index0}}">{{referral.reference}}</a></td>
-		  <td class="govuk-table__cell">Alex River</td>
-		  <td class="govuk-table__cell">Jessica Reel</td>
-		  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started<strong></td>
-		</tr>
-	      {% endfor %}
+		{% set referralIndex = loop.index0 %}
+		{% for intervention in referral.interventions %}
+		  <tr class="govuk-table__row">
+		    {% if loop.index0 == 0 %}
+		      <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">{{referral.reference}}</td>
+		      <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">19/01/2020</td>
+		      <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">Alex River</td>
+		      <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">Jessica Reel</td>
+		    {% endif %}
+		    <td class="govuk-table__cell">{{ intervention.name }}</td>
+		    <td class="govuk-table__cell"><a href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}">Schedule assessment</a></td>
+		  {% endfor %}
+		  </tr>
+		{% endfor %}
 	    </tbody>
 	  </table>
 
 	  <h2 class="govuk-heading-l">Next assessment appointment</h2>
+	  <p class="govuk-body">Upcoming assessments for each intervention</p>
 	  <p class="govuk-body">To-do</p>
 	</div>
 
-	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="ongoing">
-	  <h2 class="govuk-heading-l">Ongoing cases</h2>
+	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="in-progress">
+	  <h2 class="govuk-heading-l">Interventions in progress</h2>
 
+	  <p class="govuk-body">Monitor the progress of interventions assigned to you</p>
 	  <p class="govuk-body">To-do</p>
 	</div>
 
 	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="complete">
-	  <h2 class="govuk-heading-l">Complete cases</h2>
+	  <h2 class="govuk-heading-l">Completed interventions</h2>
 
+	  <p class="govuk-body">Interventions that have been successfully completed</p>
 	  <p class="govuk-body">To-do</p>
 	</div>
 
 	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="breach">
-	  <h2 class="govuk-heading-l">Breach cases</h2>
+	  <h2 class="govuk-heading-l">Breached interventions</h2>
 
+	  <p class="govuk-body">Interventions that cannot continue due to a breach by the service user</p>
 	  <p class="govuk-body">To-do</p>
 	</div>
       </div>
