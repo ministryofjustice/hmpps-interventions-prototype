@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Communication archive
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Communication archive
+      </h1>
+
+      <div class="app-archive__controls">
+        <span>
+          <label for="sort-by" class="govuk-label">Sort by</label>
+          <select class="govuk-select" id="sort-by">
+            <option>Date</option>
+          </select>
+          <select class="govuk-select" id="order">
+            <option>Ascending</option>
+          </select>
+        </span>
+
+        <span class="app-archive__controls-filter">
+          <label for="filter-by" class="govuk-label">Filter by</label>
+          <select class="govuk-select" id="filter-by">
+            <option>Email</option>
+          </select>
+          <select class="govuk-select" id="tag">
+            <option>Desired outcomes</option>
+          </select>
+        </span>
+      </div>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">View</th>
+            <th scope="col" class="govuk-table__header">Tag</th>
+            <th scope="col" class="govuk-table__header">Type</th>
+            <th scope="col" class="govuk-table__header">Submitted</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a class="govuk-link" href="#">NR0001</a></td>
+            <td class="govuk-table__cell">Desired outcomes</td>
+            <td class="govuk-table__cell">Type</td>
+            <td class="govuk-table__cell">13 September 2018 8:56</td>
+          </tr>
+          {#TODO more rows#}
+        </tbody>
+      </table>
+      <div class="app-pagination">
+        <span class="govuk-body">Showing 1-4 of 100 items</span>
+        <ul class="app-pagination__controls govuk-list">
+          <li><a href="#" class="govuk-link">Previous</a></li>
+          <li><a href="#" class="govuk-link">1</a></li>
+          <li><a href="#" class="govuk-link">2</a></li>
+          <li><a href="#" class="govuk-link">3</a></li>
+          <li><a href="#" class="govuk-link">4</a></li>
+          <li><a href="#" class="govuk-link">Next</a></li>
+        </ul>
+    </div>
+  </div>
+{% endblock %}

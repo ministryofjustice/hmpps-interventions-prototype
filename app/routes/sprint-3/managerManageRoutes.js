@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const moment = require("moment");
-const staticData = require("../../data/managerManageStaticData");
+const staticData = require("../../data/sprint-3/managerManageStaticData");
 
 router.use(function (req, res, next) {
   res.locals.serviceName = "Receive intervention referrals";

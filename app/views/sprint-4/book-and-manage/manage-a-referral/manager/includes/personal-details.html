@@ -1,0 +1,70 @@
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Other names
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.personalDetails.otherNames }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.personalDetails.address.line1 }}<br>
+      {{ serviceUser.personalDetails.address.line2 }}<br>
+      {{ serviceUser.personalDetails.address.city }}<br>
+      {{ serviceUser.personalDetails.address.postcode }}<br>
+      {{ serviceUser.personalDetails.address.type }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Nationality
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.personalDetails.nationality }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Ethnic group
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.personalDetails.ethnicGroup }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Preferred language
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.personalDetails.preferredLanguage }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Sexual orientation
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.personalDetails.sexualOrientation }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Religion or belief
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.personalDetails.religion }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Disabilities
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.personalDetails.disabilities }}
+    </dd>
+  </div>
+</dl>

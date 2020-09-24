@@ -24,3 +24,26 @@ $govuk-assets-path: '/govuk/assets/';
   background: #eeee;
   padding-top: 0 !important;
 }
+
+.app-pagination {
+  display: flex;
+}
+
+.app-pagination__controls {
+  display: inline;
+  margin-left: auto;
+  
+  li {
+    display: inline;
+    margin-left: 0.4rem;
+  }
+}
+
+.app-archive__controls {
+  display: flex;
+}
+
+.app-archive__controls-filter {
+  /* TODO why couldn’t I get :last-child to work? */
+  margin-left: 2rem;
+}

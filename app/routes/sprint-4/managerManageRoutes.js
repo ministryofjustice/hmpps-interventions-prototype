@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const moment = require("moment");
-const staticData = require("../../data/managerManageStaticData");
+const staticData = require("../../data/sprint-4/managerManageStaticData");
 
 router.use(function (req, res, next) {
   res.locals.serviceName = "Receive intervention referrals";
@@ -14,26 +14,31 @@ router.get("/referrals", (req, res) => {
   });
 });
 
-router.get("/referrals/:referralIndex", (req, res) => {
+router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, res) => {
   const serviceUser = staticData.serviceUsers[req.params.referralIndex];
+  const intervention = serviceUser.interventions[req.params.interventionIndex];
+  const caseworkers = staticData.caseworkers;
+  const reassign = req.query.reassign;
+  const currentCaseworker = { name: req.session.data['assigned-caseworker'] };
 
-  res.render("sprint-4/book-and-manage/manage-a-referral/manager/referral", {
+  res.render("sprint-4/book-and-manage/manage-a-referral/manager/intervention", {
     serviceUser,
+    intervention,
+    caseworkers,
+    reassign,
+    currentCaseworker,
   });
 });
 
-router.get(
-  "/referrals/:referralIndex/:interventionType/assign-caseworker",
-  (req, res) => {
-    const caseworkers = staticData.caseworkers;
-    const interventionType = req.params.interventionType.replace("-", " ");
+router.get("/referrals/:referralIndex/interventions/:interventionIndex/confirm-details", (req, res) => {
+  const serviceUser = staticData.serviceUsers[req.params.referralIndex];
+  const intervention = serviceUser.interventions[req.params.interventionIndex];
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/manager/assign-caseworker", {
-      caseworkers,
-      interventionType: interventionType,
-    });
-  }
-);
+  res.render("sprint-4/book-and-manage/manage-a-referral/manager/confirm-details", {
+    serviceUser,
+    intervention,
+  });
+});
 
 router.get("/referrals/:referralIndex/caseworker-confirmation", (req, res) => {
   res.render(
