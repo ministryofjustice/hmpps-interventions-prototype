@@ -48,3 +48,10 @@ $govuk-assets-path: '/govuk/assets/';
   /* TODO why couldn’t I get :last-child to work? */
   margin-left: 2rem;
 }
+
+.govuk-button {
+  &--blue {
+    background-color: govuk-colour("blue") !important;
+    margin-right: 10rem;
+  }
+}
