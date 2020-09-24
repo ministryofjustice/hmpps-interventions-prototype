@@ -46,11 +46,18 @@
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">First approval date</dt>
-	  {#TODO what is this?#}
-	  <dd class="govuk-summary-list__value">N/A</dd>
+	  <dd class="govuk-summary-list__value">
+	    {% if intervention.actionPlanApproved %}
+	      {{ moment(intervention.actionPlanApprovedAt).format("D/M/YYYY") }}
+	    {% else %}
+	      N/A
+	    {% endif %}
+	  </dd>
 	</div>
       </dl>
 
+      <h2 class="govuk-heading-l">Referral information</h2>
+      {# TODO move to sidebar #}
       <dl class="govuk-summary-list">
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Relevant sentence</dt>
@@ -94,7 +101,7 @@
       {% if canChangeActionPlan %}
 	<form method="post" action="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/goals">
 	  <div class="govuk-form-group">
-	    <label class="govuk-heading-s" for="text">Outcome {{ intervention.goals.length + 1 }}</label>
+	    <label class="govuk-heading-m" for="text">Outcome {{ intervention.goals.length + 1 }}</label>
 	    <textarea class="govuk-textarea" id="text" name="text"></textarea>
 	  </div>
 	  <input class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="Add new outcome">
@@ -124,7 +131,9 @@
 	    <td class="govuk-table__cell">{{ moment(session.date).format("D/M/YYYY") }}</td>
 	    <td class="govuk-table__cell">{{ session.startTime }} to {{ session.endTime }}</td>
 	    <td class="govuk-table__cell ">
-	      <strong class="{{ cssClassForSessionStatus(session.status) }}">{{ session.status }}</strong>
+	      {% if intervention.actionPlanApproved and session.status != "not started" %}
+		<strong class="{{ cssClassForSessionStatus(session.status) }}">{{ session.status }}</strong>
+	      {% endif %}
 	    </td>
 	    <td class="govuk-table__cell">
 	      {% if session.status === "completed" %}

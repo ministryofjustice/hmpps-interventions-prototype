@@ -93,128 +93,52 @@
 	    </tbody>
 	  </table>
 
-	  {% if initialAssessmentScheduled %}
-	    <h2 class="govuk-heading-l">Action plan</h2>
-
-	    <p class="govuk-body">
-	    Create the action plan and submit it to the probation practitioner for approval
-	    </p>
-
-	    <table class="govuk-table">
-	      <thead class="govuk-table__head">
-		<tr class="govuk-table__row">
-		  <th scope="col" class="govuk-table__header">Intervention</th>
-		  <th scope="col" class="govuk-table__header">Status</th>
-		  <th scope="col" class="govuk-table__header">Action</th>
-		</tr>
-	      </thead>
-	      <tbody class="govuk-table__body">
-		{% if intervention.initialAssessment != null %}
-		  <tr class="govuk-table__row">
-		    <td class="govuk-table__cell">{{intervention.name}}</td>
-		    <td class="govuk-table__cell"><strong class="{{cssClassForActionPlanStatus(intervention.actionPlanStatus)}}">{{intervention.actionPlanStatus}}</strong></td>
-		    <td class="govuk-table__cell">
-		      <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/action-plan">
-			{% if intervention.actionPlanStatus == "pending" or intervention.actionPlanStatus == "completed" %}
-			  View
-			{% elif intervention.actionPlanStatus == "in progress" %}
-			  Edit
-			{% elif intervention.actionPlanStatus == "not started" %}
-			  Set up
-			{% endif %}
-		      </a>
-		    </td>
-		  </tr>
-		{% endif %}
-	      </tbody>
-	    </table>
+	  <h2 class="govuk-heading-l">Action plan</h2>
+	  {% set showActionPlan = (intervention.initialAssessmentStatus === "scheduled") %}
+	  <p class="govuk-body">
+	  Create the action plan and submit it to the probation practitioner for approval.
+	  {% if not showActionPlan %}
+	    Action plans that are ready to be created will appear below when the initial assessment is scheduled.
 	  {% endif %}
+	  </p>
+	  {% if intervention.initialAssessmentStatus === "scheduled" %}
+	    {% include "./includes/intervention/action-plan.html" %}
 
-	  {% if true %}
-	    {#TODO conditional logic #}
 	    <h2 class="govuk-heading-l">Intervention progress track</h2>
-
+	    {% set showProgress = (intervention.actionPlanStatus === "approved") %}
 	    <p class="govuk-body">
-	    You can track the progress of the sessions here.
+	    Track the progress of each intervention session.
+	    {% if not showProgress %}
+	      Intervention sessions that are ready to be tracked will appear below once the action plan is approved.
+	    {% endif %}
 	    </p>
+	    {% if showProgress %}
+	      {% include "./includes/intervention/progress.html" %}
 
-	    <table class="govuk-table">
-	      <thead class="govuk-table__header" class="govuk-table__head">
-		<tr class="govuk-table-row">
-		  <th class="govuk-table__header" scope="col">Session title</th>
-		  <th class="govuk-table__header" scope="col">Date</th>
-		  <th class="govuk-table__header" scope="col">Time</th>
-		  <th class="govuk-table__header" scope="col">Status</th>
-		  <th class="govuk-table__header" scope="col">Action</th>
-		</tr>
-	      </thead>
+	      <h2 class="govuk-heading-l">End of service report</h2>
+	      {% set showEndOfServiceReport = allSessionsAssessed %}
+	      <p class="govuk-body">
+	      Complete and submit the end of service report.
+	      {% if not showEndOfServiceReport %}
+		Interventions ready for an end of service report will appear below once the post-session feedback forms of the intervention are completed.
+	      {% endif %}
+	      </p>
+	      {% if showEndOfServiceReport %}
+		{% include "./includes/intervention/end-of-service-report.html" %}
+	      {% endif %}
 
-	      {% for session in intervention.sessions %}
-		<tr class="govuk-table-row">
-		  <td class="govuk-table__cell">{{ session.title }}</td>
-		  <td class="govuk-table__cell">{{ moment(session.date).format("D/M/YYYY") }}</td>
-		  <td class="govuk-table__cell">{{ session.startTime }} to {{ session.endTime }}</td>
-		  <td class="govuk-table__cell ">
-		    <strong class="{{ cssClassForSessionStatus(session.status) }}">{{ session.status }}</strong>
-		  </td>
-		  <td class="govuk-table__cell">
-		    {% if session.status === "completed" %}
-		      <a class="govuk-link" href="#">View</a>
-		    {% elif session.status === "pending" %}
-		      <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/sessions/{{loop.index0}}/assessment">Assess</a>
-		    {% endif %}
-		  </td>
-		</tr>
-	      {% endfor %}
-	    </table>
+	    {% endif %}
+
 	  {% endif %}
 
-	  {% if readyForEndOfServiceReport %}
-	    <h2 class="govuk-heading-l">End of service report</h2>
-
-	    <p class="govuk-body">
-	    You can complete and submit the end of service report here.
-	    </p>
-
-	    <table class="govuk-table">
-	      <thead class="govuk-table__head">
-		<tr class="govuk-table__row">
-		  <th scope="col" class="govuk-table__header">Probation practitioner</th>
-		  <th scope="col" class="govuk-table__header">Status</th>
-		  <th scope="col" class="govuk-table__header">Action</th>
-		</tr>
-	      </thead>
-	      <tbody class="govuk-table__body">
-		<tr class="govuk-table__row">
-		  <td class="govuk-table__cell">Jessica Reel</td>
-		  <td class="govuk-table__cell">TODO status</td>
-		  {# TODO conditional on status #}
-		  {% if true %}
-		    <td class="govuk-table__cell"><a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/end-of-service-report">Start</a></td>
-		  {% else %}
-		    <td class="govuk-table__cell"><a class="govuk-link" href="#">View</a></td>
-		  {% endif %}
-		</tr>
-	      </tbody>
-	    </table>
-	  {% endif %}
 	</div>
+
 	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="referral-details">
 	  <h2 class="govuk-heading-l">Referral details</h2>
 
 	  <p class="govuk-body">To-do</p>
 	</div>
       </div>
-
-      <p class="govuk-body">
-      {% if intervention.actionPlanSubmitted and not intervention.actionPlanApproved %}
-	<a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/fast-forward/action-plan-approved">Fast-forward to action plan approved</a>
-      {% endif %}
-
-      {% if intervention.actionPlanApproved and not allSessionsCompleted %}
-	<a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/fast-forward/sessions-completed">Fast-forward to sessions completed</a>
-      {% endif %}
-      </p>
     </div>
   </div>
 {% endblock %}
