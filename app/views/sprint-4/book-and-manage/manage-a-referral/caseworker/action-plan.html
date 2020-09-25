@@ -31,12 +31,12 @@
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Service user</dt>
-	  <dd class="govuk-summary-list__value">Alex River</dd>
+	  <dd class="govuk-summary-list__value">{{ referral.serviceUser.name }}</dd>
 	</div>
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Probation practitioner</dt>
-	  <dd class="govuk-summary-list__value">Jessica Reel</dd>
+	  <dd class="govuk-summary-list__value">{{ referral.probationPractitioner.name }}</dd>
 	</div>
 
 	<div class="govuk-summary-list__row">
@@ -61,32 +61,32 @@
       <dl class="govuk-summary-list">
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Relevant sentence</dt>
-	  <dd class="govuk-summary-list__value">Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence</dd>
+	  <dd class="govuk-summary-list__value">{{ referral.relevantSentenceHTML | safe }}</dd>
 	</div>
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Desired outcomes</dt>
-	  <dd class="govuk-summary-list__value">Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.</dd>
+	  <dd class="govuk-summary-list__value">{{ referral.desiredOutcomes }}</dd>
 	</div>
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Required complexity</dt>
-	  <dd class="govuk-summary-list__value">Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.</dd>
+	  <dd class="govuk-summary-list__value">{{ referral.requiredComplexityHTML | safe }}</dd>
 	</div>
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Completion date required</dt>
-	  <dd class="govuk-summary-list__value">10/01/2021</dd>
+	  <dd class="govuk-summary-list__value">{{ moment(referral.completionDateRequired).format("D/M/YYYY") }}</dd>
 	</div>
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Maximum number of RAR days</dt>
-	  <dd class="govuk-summary-list__value">22</dd>
+	  <dd class="govuk-summary-list__value">{{ referral.maximumRARDays }}</dd>
 	</div>
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Further information</dt>
-	  <dd class="govuk-summary-list__value">N/A</dd>
+	  <dd class="govuk-summary-list__value">{{ referral.furtherInformation }}</dd>
 	</div>
       </dl>
 

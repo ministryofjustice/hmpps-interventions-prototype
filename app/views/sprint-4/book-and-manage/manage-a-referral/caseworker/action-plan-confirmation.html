@@ -10,7 +10,7 @@
       <div class="govuk-panel govuk-panel--confirmation">
 	<h1 class="govuk-panel__title">Service user action plan submitted</h1>
 
-	<div class="govuk-panel__body">Your reference number<br><strong>NR0001</strong></div>
+	<div class="govuk-panel__body">Your reference number<br><strong>{{ referral.reference }}</strong></div>
 	<br>
 	<div class="govuk-panel__body">Intervention: <strong>{{intervention.name}}<strong></div>
       </div>
@@ -18,11 +18,11 @@
       <p class="govuk-body">The action plan has been submitted to the following person for approval:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-	<li>Josie Bart, PP</li>
+	<li>{{ referral.probationPractitioner.name }}, PP</li>
       </ul>
 
       <p class="govuk-body">
-      <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}">Back to Alex’s referral page</a>
+      <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}">Back to {{ referral.serviceUser.firstName }}’s referral page</a>
       </p>
     </div>
   </div>

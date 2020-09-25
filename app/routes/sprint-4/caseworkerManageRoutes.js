@@ -198,8 +198,9 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/action-p
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/action-plan-confirmation", (req, res) => {
     const intervention = findIntervention(req);
+    const referral = findReferral(req);
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/action-plan-confirmation", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/action-plan-confirmation", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, referral });
 });
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/fast-forward/action-plan-approved", (req, res) => {
@@ -213,10 +214,11 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex/fast-forw
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/assessment", (req, res) => {
     const intervention = findIntervention(req);
+    const referral = findReferral(req);
 
     const sessionIndex = parseInt(req.params.sessionIndex);
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/assessment", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, sessionIndex });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/assessment", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, sessionIndex, referral });
 });
 
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/assessment", (req, res) => {
@@ -243,8 +245,9 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex/fast-forw
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/end-of-service-report", (req, res) => {
     const intervention = findIntervention(req);
+    const referral = findReferral(req);
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/end-of-service-report", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/end-of-service-report", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, referral });
 });
 
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/end-of-service-report", (req, res) => {
@@ -258,8 +261,9 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/end-of-s
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/end-of-service-report-confirmation", (req, res) => {
     const intervention = findIntervention(req);
+    const referral = findReferral(req);
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/end-of-service-report-confirmation", { intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/end-of-service-report-confirmation", { intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, referral });
 });
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/initial-assessment", (req, res) => {

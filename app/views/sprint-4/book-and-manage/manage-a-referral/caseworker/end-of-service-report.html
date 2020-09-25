@@ -30,42 +30,42 @@
       <dl class="govuk-summary-list">
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Other names</dt>
-	  <dd class="govuk-summary-list__value">Shorty</dd>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.otherNames }}</dd>
 	</div>
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Address</dt>
-          <dd class="govuk-summary-list__value">Flat 2<br>27 Test Walk<br>SY16 1AQ<br><br>Private rental</dd>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.addressHTML | safe }}
 	</div>
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Nationality</dt>
-	  <dd class="govuk-summary-list__value">British</dd>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.nationality }}</dd>
 	</div>
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Ethnic group</dt>
-	  <dd class="govuk-summary-list__value">White: British</dd>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.ethnicGroup }}</dd>
 	</div>
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Preferred language</dt>
-	  <dd class="govuk-summary-list__value">English</dd>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.preferredLanguage }}</dd>
 	</div>
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Sex</dt>
-	  <dd class="govuk-summary-list__value">Heterosexual</dd>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.sexuality }}</dd>
 	</div>
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Religion or belief</dt>
-	  <dd class="govuk-summary-list__value">None</dd>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.religionOrBelief }}</dd>
 	</div>
 
 	<div class="govuk-summary-list__row">
 	  <dt class="govuk-summary-list__key">Disabilities</dt>
-	  <dd class="govuk-summary-list__value">Autism spectrum condition</dd>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.disabilities }}</dd>
 	</div>
       </dl>
 
@@ -75,7 +75,7 @@
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h2 class="govuk-fieldset__heading">Did Alex achieve goal {{ loop.index }}?</h2>
+                <h2 class="govuk-fieldset__heading">Did {{ referral.serviceUser.firstName }} achieve goal {{ loop.index }}?</h2>
               </legend>
 
               <p class="govuk-body">{{ intervention.goals[loop.index0].text }}</p>
@@ -101,7 +101,7 @@
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="goal-{{loop.index0}}-details">
-              Provide details about Alex’s performance during the intervention.
+              Provide details about {{ referral.serviceUser.firstName }}’s performance during the intervention.
             </label>
 
             <textarea class="govuk-textarea" id="goal-{{loop.index0}}-details" name="goal-{{loop.index0}}-details"></textarea>

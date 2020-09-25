@@ -18,6 +18,8 @@ Example usage:
 
 */
 
+const moment = require("moment");
+
 module.exports = {
   sprint3: {
     referrals: [
@@ -47,6 +49,31 @@ module.exports = {
     referrals: [
       {
 	reference: "NR0001",
+
+	receivedAt: moment().subtract('1', 'days').toDate(),
+
+	relevantSentenceHTML: "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+	desiredOutcomes: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+	requiredComplexityHTML: "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+	completionDateRequired: moment().add('2', 'months').toDate(),
+	maximumRARDays: "22",
+	furtherInformation: "N/A",
+
+	serviceUser: {
+	  name: "Alex River",
+	  firstName: "Alex",
+	  otherNames: "Shorty",
+	  addressHTML: "Flat 2<br>27 Test Walk<br>SY16 1AQ<br><br>Private rental</dd>",
+	  nationality: "British",
+	  ethnicGroup: "White: British",
+	  preferredLanguage: "English",
+	  sexuality: "Heterosexual",
+	  religionOrBelief: "None",
+	  disabilities: "Autism spectrum condition"
+	},
+	probationPractitioner: {
+	  name: "Jessica Reel"
+	},
 
 	interventions: [
 	  {

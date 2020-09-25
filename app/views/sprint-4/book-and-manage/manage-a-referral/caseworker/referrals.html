@@ -82,9 +82,9 @@
 		      <tr class="govuk-table__row">
 			{% if not (hasOutputReferral or interventionIndexes.length === 0) %}
 			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{referral.reference}}</td>
-			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">19/01/2020</td>
-			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">Alex River</td>
-			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">Jessica Reel</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ moment(referral.receivedAt).format("D/M/YYYY") }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.serviceUser.name }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.probationPractitioner.name }}</td>
 			  {% set hasOutputReferral = true %}
 			{% endif %}
 
@@ -138,7 +138,7 @@
 		      <tr class="govuk-table__row">
 			{% if not (hasOutputReferral or interventionIndexes.length === 0) %}
 			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{referral.reference}}</td>
-			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">Alex River</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.serviceUser.name }}</td>
 			  {% set hasOutputReferral = true %}
 			{% endif %}
 
@@ -198,9 +198,9 @@
 		      <tr class="govuk-table__row">
 			{% if not (hasOutputReferral or interventionIndexes.length === 0) %}
 			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{referral.reference}}</td>
-			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">19/01/2020</td>
-			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">Alex River</td>
-			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">Jessica Reel</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ moment(referral.receivedAt).format("D/M/YYYY") }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.serviceUser.name }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.probationPractitioner.name }}</td>
 			  {% set hasOutputReferral = true %}
 			{% endif %}
 
@@ -258,9 +258,9 @@
 		      <tr class="govuk-table__row">
 			{% if not (hasOutputReferral or interventionIndexes.length === 0) %}
 			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{referral.reference}}</td>
-			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">19/01/2020</td>
-			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">Alex River</td>
-			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">Jessica Reel</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ moment(referral.receivedAt).format("D/M/YYYY") }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.serviceUser.name }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.probationPractitioner.name }}</td>
 			  {% set hasOutputReferral = true %}
 			{% endif %}
 
@@ -320,9 +320,9 @@
 		      <tr class="govuk-table__row">
 			{% if not (hasOutputReferral or interventionIndexes.length === 0) %}
 			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{referral.reference}}</td>
-			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">19/01/2020</td>
-			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">Alex River</td>
-			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">Jessica Reel</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ moment(referral.receivedAt).format("D/M/YYYY") }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.serviceUser.name }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.probationPractitioner.name }}</td>
 			  {% set hasOutputReferral = true %}
 			{% endif %}
 
