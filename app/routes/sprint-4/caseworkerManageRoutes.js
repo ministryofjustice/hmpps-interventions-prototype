@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const moment = require('moment')
+const moment = require('moment');
 
 router.use(function (req, res, next) {
     res.locals.serviceName = "Manage interventions and services";
@@ -139,7 +139,7 @@ function cssClassForEndOfServiceReportStatus(endOfServiceReportStatus) {
 
 router.get("/referrals", (req, res) => {
     const referrals = allReferrals(req);
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/referrals", { referrals, moment });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/referrals", { referrals });
 });
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, res) => {
@@ -150,7 +150,7 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
     const canChangeActionPlan = intervention.endOfServiceReport == null;
     const initialAssessmentScheduled = intervention.initialAssessment != null;
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsAssessed, canChangeActionPlan, moment, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForActionPlanStatus, cssClassForEndOfServiceReportStatus, initialAssessmentScheduled });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsAssessed, canChangeActionPlan, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForActionPlanStatus, cssClassForEndOfServiceReportStatus, initialAssessmentScheduled });
 });
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/action-plan", (req, res) => {
@@ -159,7 +159,7 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex/action-pl
 
     const canChangeActionPlan = intervention.endOfServiceReport == null;
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/action-plan", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, canChangeActionPlan, moment, cssClassForSessionStatus });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/action-plan", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, canChangeActionPlan, cssClassForSessionStatus });
 });
 
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/goals", (req, res) => {

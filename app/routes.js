@@ -1,7 +1,15 @@
 const express = require("express");
 const communityAPIClient = require("../lib/community_api_client.js");
 const hmppsOauthClient = require("../lib/hmpps_oauth_client.js");
+const moment = require("moment");
 const router = express.Router();
+
+// Make Moment.js available to all views (we use it for date formatting quite a
+// bit)
+router.use((req, res, next) => {
+  res.locals.moment = moment;
+  next();
+});
 
 router.get("/service-user-details/show", async function (req, res, next) {
   try {
