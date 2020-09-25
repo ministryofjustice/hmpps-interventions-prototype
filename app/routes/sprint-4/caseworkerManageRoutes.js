@@ -8,7 +8,19 @@ router.use(function (req, res, next) {
 })
 
 function findReferral(req) {
-    const referral = req.session.data.referrals[req.params.referralIndex];
+    return findReferralByIndex(req, req.params.referralIndex);
+}
+
+function allReferrals(req) {
+    referrals = []
+    for (i = 0; i < req.session.data.referrals.length; i++) {
+	referrals.push(findReferralByIndex(req, i));
+    }
+    return referrals;
+}
+
+function findReferralByIndex(req, index) {
+    const referral = req.session.data.referrals[index];
 
     for (const intervention of referral.interventions) {
 	// Populate the intervention’s status based on which events have occurred.
@@ -125,6 +137,11 @@ function cssClassForEndOfServiceReportStatus(endOfServiceReportStatus) {
     }
 }
 
+router.get("/referrals", (req, res) => {
+    const referrals = allReferrals(req);
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/referrals", { referrals, moment });
+});
+
 router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, res) => {
     const referral = findReferral(req);
     const intervention = findIntervention(req);
@@ -234,6 +251,7 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/end-of-s
     const intervention = findIntervention(req);
 
     intervention.endOfServiceReport = req.body;
+    intervention.endOfServiceReportSubmittedAt = new Date();
 
     res.redirect(`/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/end-of-service-report-confirmation`);
 });
