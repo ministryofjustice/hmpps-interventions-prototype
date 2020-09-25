@@ -3,7 +3,7 @@ const router = express.Router()
 const moment = require('moment')
 
 router.use(function (req, res, next) {
-    res.locals.serviceName = "Manage intervention referrals"
+    res.locals.serviceName = "Manage interventions and services";
     next()
 })
 
