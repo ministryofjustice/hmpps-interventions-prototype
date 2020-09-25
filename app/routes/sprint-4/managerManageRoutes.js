@@ -8,6 +8,11 @@ router.use(function (req, res, next) {
   next();
 });
 
+router.get("/dashboard", (req, res) => {
+  res.locals.serviceName = "Access interventions and services";
+  res.render("sprint-4/book-and-manage/manage-a-referral/manager/dashboard");
+});
+
 router.get("/referrals", (req, res) => {
   res.render("sprint-4/book-and-manage/manage-a-referral/manager/referrals", {
     probationPractitioners: staticData.probationPractitioners,
