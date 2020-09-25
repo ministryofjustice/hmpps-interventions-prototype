@@ -95,14 +95,14 @@ module.exports = {
             order: "Suspended sentence",
           },
           desiredOutcomes:
-            "Service user is helped to secure social or supported housing",
+            "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
           requiredComplexity: {
             type: "Low complexity",
             description:
-              "Service user has some capacity and means to secure and/or maintain suitable accommodation but requires some support and guidance to do so.",
+              "[up to 4 Sessions (pre-release virtual contact)] Service User has a low risk of reoffending. Service User has limited family support.",
           },
           completionDate: "10/01/2021",
-          maxRARDays: "10",
+          maxRARDays: "22",
           furtherInformation: "N/A",
         },
         {
