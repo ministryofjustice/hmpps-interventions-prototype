@@ -13,14 +13,14 @@ function findReferral(req) {
 
 function allReferrals(req) {
     referrals = []
-    for (i = 0; i < req.session.data.referrals.length; i++) {
+    for (i = 0; i < req.session.data.sprint4.referrals.length; i++) {
 	referrals.push(findReferralByIndex(req, i));
     }
     return referrals;
 }
 
 function findReferralByIndex(req, index) {
-    const referral = req.session.data.referrals[index];
+    const referral = req.session.data.sprint4.referrals[index];
 
     for (const intervention of referral.interventions) {
 	// Populate the intervention’s status based on which events have occurred.

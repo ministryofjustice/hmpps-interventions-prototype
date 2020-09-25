@@ -19,26 +19,52 @@ Example usage:
 */
 
 module.exports = {
-  referrals: [
-    {
-      reference: "NR0001",
+  sprint3: {
+    referrals: [
+      {
+	reference: "NR0001",
 
-      interventions: [
-	{
-	  name: "Accommodation",
-	  actionPlanSubmitted: false,
-	  actionPlanApproved: false,
-	  goals: [],
-	  sessions: [],
-	},
-	{
-	  name: "Social inclusion",
-	  actionPlanSubmitted: false,
-	  actionPlanApproved: false,
-	  goals: [],
-	  sessions: [],
-	}
-      ]
-    }
-  ],
+	interventions: [
+	  {
+	    name: "Accommodation",
+	    actionPlanSubmitted: false,
+	    actionPlanApproved: false,
+	    goals: [],
+	    sessions: [],
+	  },
+	  {
+	    name: "Social inclusion",
+	    actionPlanSubmitted: false,
+	    actionPlanApproved: false,
+	    goals: [],
+	    sessions: [],
+	  }
+	]
+      }
+    ],
+  },
+  sprint4: {
+    referrals: [
+      {
+	reference: "NR0001",
+
+	interventions: [
+	  {
+	    name: "Accommodation",
+	    actionPlanSubmitted: false,
+	    actionPlanApproved: false,
+	    goals: [],
+	    sessions: [],
+	  },
+	  {
+	    name: "Social inclusion",
+	    actionPlanSubmitted: false,
+	    actionPlanApproved: false,
+	    goals: [],
+	    sessions: [],
+	  }
+	]
+      }
+    ],
+  }
 }
