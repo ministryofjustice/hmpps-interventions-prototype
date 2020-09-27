@@ -1,14 +1,3 @@
-{#<h1>End of service report</h1>#}
-
-{#<form method="post" action="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/end-of-service-report">#}
-  {#{% for goal in intervention.goals %}#}
-    {#<h2>Did Alex achieve goal {{ loop.index }}?</h2>#}
-    {#<p>{{ intervention.goals[loop.index0].text }}</p>#}
-  {#{% endfor %}#}
-
-  {#<input type="submit" value="Submit the report">#}
-{#</form>#}
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
