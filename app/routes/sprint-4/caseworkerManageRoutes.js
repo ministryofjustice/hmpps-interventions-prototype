@@ -277,16 +277,15 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex/end-of-se
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/initial-assessment", (req, res) => {
     const intervention = findIntervention(req);
+    const referral = findReferral(req);
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/initial-assessment", { intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/initial-assessment", { intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, referral });
 });
 
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/initial-assessment", (req, res) => {
     const intervention = findIntervention(req);
 
-    if (req.body.scheduled === "yes") {
-	intervention.initialAssessment = req.body;
-    }
+    intervention.initialAssessment = req.body;
 
     res.redirect(`/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });

@@ -47,9 +47,9 @@ module.exports = {
   },
   sprint4: {
     referrals: [
-      { serviceUser: { name: "Alex River", firstName: "Alex" }, probationPractitioner: { name: "Jessica Reel" } },
-      { serviceUser: { name: "Emma Thompson", firstName: "Emma" }, probationPractitioner: { name: "Josie Bart" } },
-      { serviceUser: { name: "Rosie Palma", firstName: "Rosie" }, probationPractitioner: { name: "Josie Bart" } },
+      { serviceUser: { name: "Alex River", firstName: "Alex", email: "alex.river@gmail.com" }, probationPractitioner: { name: "Jessica Reel" } },
+      { serviceUser: { name: "Emma Thompson", firstName: "Emma", email: "emma.thompson@gmail.com" }, probationPractitioner: { name: "Josie Bart" } },
+      { serviceUser: { name: "Rosie Palma", firstName: "Rosie", email: "rosie.palma@gmail.com" }, probationPractitioner: { name: "Josie Bart" } },
     ].map(createReferral)
   }
 }
@@ -77,11 +77,14 @@ function createReferral(params, index) {
       preferredLanguage: "English",
       sexuality: "Heterosexual",
       religionOrBelief: "None",
-      disabilities: "Autism spectrum condition"
+      disabilities: "Autism spectrum condition",
+      email: "alex.river@gmail.com",
+      phone: "07588 382 222"
     }, params.serviceUser),
 
     probationPractitioner: Object.assign({
-      name: "Jessica Reel"
+      name: "Jessica Reel",
+      phone: "01909 234 567"
     }, params.probationPractitioner),
 
     interventions: [
