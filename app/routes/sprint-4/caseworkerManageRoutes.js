@@ -250,6 +250,15 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex/end-of-se
     res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/end-of-service-report", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, referral });
 });
 
+router.post("/referrals/:referralIndex/interventions/:interventionIndex/end-of-service-report-check-answers", (req, res) => {
+    const intervention = findIntervention(req);
+    const referral = findReferral(req);
+
+    endOfServiceReport = req.body;
+
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/end-of-service-report-check-answers", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, referral, endOfServiceReport });
+});
+
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/end-of-service-report", (req, res) => {
     const intervention = findIntervention(req);
 

@@ -58,7 +58,7 @@
 	</div>
       </dl>
 
-      <form method="post" action="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/end-of-service-report">
+      <form method="post" action="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/end-of-service-report-check-answers">
 
         {% for goal in intervention.goals %}
           <div class="govuk-form-group">
@@ -97,7 +97,7 @@
           </div>
         {% endfor %}
 
-        <input type="submit" class="govuk-button" data-module="govuk-button" value="Submit the report">
+        <input type="submit" class="govuk-button" data-module="govuk-button" value="Review before submitting">
       </form>
     </div>
   </div>
