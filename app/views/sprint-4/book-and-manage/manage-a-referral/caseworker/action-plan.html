@@ -95,7 +95,10 @@
       Add the outcomes of the intervention.
       </p>
       {% for goal in intervention.goals %}
-	<h3 class="govuk-heading-m">Outcome {{ loop.index }}</h3>
+	<h3 class="govuk-heading-m">
+	  Outcome {{ loop.index }}
+	  <a href="#" class="govuk-link govuk-!-margin-left-3 govuk-!-font-size-19 govuk-!-font-weight-regular">Edit</a>
+	</h3>
 	<p class="govuk-body">{{ goal.text }}</p>
       {% endfor %}
       {% if canChangeActionPlan %}
