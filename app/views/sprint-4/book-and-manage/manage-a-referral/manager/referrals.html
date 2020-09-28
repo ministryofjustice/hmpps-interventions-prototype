@@ -39,31 +39,33 @@
               </tr>
             </thead>
             <tbody class="govuk-table__body">
-              {% for practitioner in probationPractitioners %}
+              {% for referral in referrals %}
+                {% set referralIndex = loop.index0 %}
                 <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" rowspan="2">
-                    {{ practitioner.referralNumber }}
+                  <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">
+                    {{ referral.referralNumber }}
                   </td>
-                  <td class="govuk-table__cell" rowspan="2">
-                    Alex River
-                    {#TODO#}
+                  <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">
+                    {{ referral.serviceUser.personalDetails.name }}
                   </td>
-                  <td class="govuk-table__cell" rowspan="2">
-                    {{ practitioner.name }}
+                  <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">
+                    {{ referral.probationPractitioner }}
                   </td>
-                  <td class="govuk-table__cell">
-                    Accommodation
-                    {#TODO#}
-                  </td>
-                  <td class="govuk-table__cell">
-                    <a class="govuk-link" href="referrals/0/interventions/0">Assign</a>
-                  </td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">Social inclusion</td>
-                  <td class="govuk-table__cell">
-                    <a class="govuk-link" href="referrals/0/interventions/1">Assign</a>
-                  </td>
+
+                  {% for intervention in referral.interventions %}
+                    {% set interventionIndex = loop.index0%}
+                    <td class="govuk-table__cell">
+                      {{ intervention.name | capitalize }}
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="referrals/{{referralIndex}}/interventions/{{interventionIndex}}">Assign</a>
+                    </td>
+
+                    {% if referral.interventions.length > 1 and not loop.last %}
+                    </tr>
+                    {% endif%}
+
+                  {% endfor %}
                 </tr>
               {% endfor %}
             </tbody>
