@@ -120,11 +120,14 @@ router.get(
     intervention.assignedCaseworker = req.session.data["assigned-caseworker"];
 
     const referralNumber = referral.reference;
+    const serviceUser = referral.serviceUser;
 
     res.render(
       "sprint-4/book-and-manage/manage-a-referral/manager/caseworker-email-confirmation",
       {
+        serviceUser,
         referralNumber,
+        intervention,
       }
     );
   }
