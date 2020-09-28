@@ -71,3 +71,7 @@ $govuk-assets-path: '/govuk/assets/';
 .govuk-width-container--app-extra-wide.govuk-width-container--app-extra-wide {
   @include govuk-width-container(1100px);
 }
+
+.app-information-sidebar {
+  background: govuk-colour("light-grey");
+}

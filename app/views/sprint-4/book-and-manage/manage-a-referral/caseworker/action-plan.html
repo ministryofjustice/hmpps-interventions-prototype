@@ -18,7 +18,11 @@
 
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Service user action plan</h1>
+    </div>
+  </div>
 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
       <p class="govuk-body">
       Create or edit the action plan. The submitted action plan will be shared with the probation practitioner.
       </p>
@@ -53,40 +57,6 @@
 	      N/A
 	    {% endif %}
 	  </dd>
-	</div>
-      </dl>
-
-      <h2 class="govuk-heading-l">Referral information</h2>
-      {# TODO move to sidebar #}
-      <dl class="govuk-summary-list">
-	<div class="govuk-summary-list__row">
-	  <dt class="govuk-summary-list__key">Relevant sentence</dt>
-	  <dd class="govuk-summary-list__value">{{ referral.relevantSentenceHTML | safe }}</dd>
-	</div>
-
-	<div class="govuk-summary-list__row">
-	  <dt class="govuk-summary-list__key">Desired outcomes</dt>
-	  <dd class="govuk-summary-list__value">{{ referral.desiredOutcomes }}</dd>
-	</div>
-
-	<div class="govuk-summary-list__row">
-	  <dt class="govuk-summary-list__key">Required complexity</dt>
-	  <dd class="govuk-summary-list__value">{{ referral.requiredComplexityHTML | safe }}</dd>
-	</div>
-
-	<div class="govuk-summary-list__row">
-	  <dt class="govuk-summary-list__key">Completion date required</dt>
-	  <dd class="govuk-summary-list__value">{{ moment(referral.completionDateRequired).format("D/M/YYYY") }}</dd>
-	</div>
-
-	<div class="govuk-summary-list__row">
-	  <dt class="govuk-summary-list__key">Maximum number of RAR days</dt>
-	  <dd class="govuk-summary-list__value">{{ referral.maximumRARDays }}</dd>
-	</div>
-
-	<div class="govuk-summary-list__row">
-	  <dt class="govuk-summary-list__key">Further information</dt>
-	  <dd class="govuk-summary-list__value">{{ referral.furtherInformation }}</dd>
 	</div>
       </dl>
 
@@ -160,6 +130,33 @@
 	  <input class="govuk-button" data-module="govuk-button" type="submit" value="Submit for approval">
 	</form>
       {% endif %}
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <dl class="app-information-sidebar govuk-!-padding-2">
+	<h2 class="govuk-heading-m">Referral information</h2>
+
+	{% set termClass = "govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold" %}
+	{% set definitionClass = "govuk-body govuk-!-margin-left-0" %}
+
+	<dt class="{{ termClass }}">Relevant sentence</dt>
+	<dd class="{{ definitionClass }}">{{ referral.relevantSentenceHTML | safe }}</dd>
+
+	<dt class="{{ termClass }}">Desired outcomes</dt>
+	<dd class="{{ definitionClass }}">{{ referral.desiredOutcomes }}</dd>
+
+	<dt class="{{ termClass }}">Required complexity</dt>
+	<dd class="{{ definitionClass }}">{{ referral.requiredComplexityHTML | safe }}</dd>
+
+	<dt class="{{ termClass }}">Completion date required</dt>
+	<dd class="{{ definitionClass }}">{{ moment(referral.completionDateRequired).format("D/M/YYYY") }}</dd>
+
+	<dt class="{{ termClass }}">Maximum number of RAR days</dt>
+	<dd class="{{ definitionClass }}">{{ referral.maximumRARDays }}</dd>
+
+	<dt class="{{ termClass }}">Further information</dt>
+	<dd class="{{ definitionClass }} govuk-!-margin-bottom-0">{{ referral.furtherInformation }}</dd>
+      </dl>
     </div>
   </div>
 {% endblock %}
