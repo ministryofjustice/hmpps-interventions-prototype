@@ -76,23 +76,26 @@ module.exports = {
           email: "rosie.palma@gmail.com",
         },
         probationPractitioner: {
-          name: "Josie Bart",
-          email: "j.bart@justice.gov.uk",
+          name: "Claire Phill",
+          email: "c.phill@justice.gov.uk",
         },
       },
       {
         serviceUser: {
-          name: "Rosie Palma",
-          firstName: "Rosie",
-          email: "rosie.palma@gmail.com",
+          name: "Macy Flem",
+          firstName: "Macy",
+          email: "macy.flem@gmail.com",
         },
         probationPractitioner: {
-          name: "Josie Bart",
-          email: "j.bart@justice.gov.uk",
+          name: "Claire Phill",
+          email: "c.phill@justice.gov.uk",
         },
       },
     ].map(createReferral),
     caseworkers: [
+      {
+        name: "Rebecca Green",
+      },
       {
         name: "Liam Johnson",
       },
