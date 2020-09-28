@@ -32,6 +32,7 @@
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header">Referral</th>
+                <th scope="col" class="govuk-table__header">Date received</th>
                 <th scope="col" class="govuk-table__header">Service user</th>
                 <th scope="col" class="govuk-table__header">Probation practitioner</th>
                 <th scope="col" class="govuk-table__header">Intervention</th>
@@ -44,6 +45,9 @@
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">
                     {{ referral.reference }}
+                  </td>
+                  <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">
+                    {{ moment(referral.receivedAt).format("D/M/YYYY") }}
                   </td>
                   <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">
                     {{ referral.serviceUser.name }}
