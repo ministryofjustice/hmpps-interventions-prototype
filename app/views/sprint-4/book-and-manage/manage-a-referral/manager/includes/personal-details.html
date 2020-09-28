@@ -4,7 +4,7 @@
       Other names
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ serviceUser.personalDetails.otherNames }}
+      {{ serviceUser.otherNames }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -12,11 +12,7 @@
       Address
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ serviceUser.personalDetails.address.line1 }}<br>
-      {{ serviceUser.personalDetails.address.line2 }}<br>
-      {{ serviceUser.personalDetails.address.city }}<br>
-      {{ serviceUser.personalDetails.address.postcode }}<br>
-      {{ serviceUser.personalDetails.address.type }}
+      {{ serviceUser.addressHTML | safe }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -24,7 +20,7 @@
       Nationality
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ serviceUser.personalDetails.nationality }}
+      {{ serviceUser.nationality }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -32,7 +28,7 @@
       Ethnic group
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ serviceUser.personalDetails.ethnicGroup }}
+      {{ serviceUser.ethnicGroup }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -40,7 +36,7 @@
       Preferred language
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ serviceUser.personalDetails.preferredLanguage }}
+      {{ serviceUser.preferredLanguage }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -48,7 +44,7 @@
       Sexual orientation
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ serviceUser.personalDetails.sexualOrientation }}
+      {{ serviceUser.sexuality }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -56,7 +52,7 @@
       Religion or belief
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ serviceUser.personalDetails.religion }}
+      {{ serviceUser.religionOrBelief }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -64,7 +60,7 @@
       Disabilities
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ serviceUser.personalDetails.disabilities }}
+      {{ serviceUser.disabilities }}
     </dd>
   </div>
 </dl>

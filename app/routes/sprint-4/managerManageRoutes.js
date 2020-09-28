@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const moment = require("moment");
-const staticData = require("../../data/sprint-4/managerManageStaticData");
 
 router.use(function (req, res, next) {
   res.locals.serviceName = "Receive intervention referrals";
@@ -17,7 +16,7 @@ router.get("/dashboard", (req, res) => {
 
 router.get("/referrals", (req, res) => {
   res.render("sprint-4/book-and-manage/manage-a-referral/manager/referrals", {
-    referrals: staticData.referrals,
+    referrals: req.session.data.sprint4.referrals,
   });
 });
 
@@ -27,12 +26,13 @@ router.get(
     const referralIndex = req.params.referralIndex;
     const interventionIndex = req.params.interventionIndex;
 
-    const referral = staticData.referrals[referralIndex];
+    const referral = req.session.data.sprint4.referrals[referralIndex];
     const serviceUser = referral.serviceUser;
     const intervention = referral.interventions[interventionIndex];
-    const caseworkers = staticData.caseworkers;
+    const caseworkers = req.session.data.sprint4.caseworkers;
     const reassign = req.query.reassign;
     const currentCaseworker = { name: req.session.data["assigned-caseworker"] };
+    const probationOfficer = referral.probationPractitioner;
 
     res.render(
       "sprint-4/book-and-manage/manage-a-referral/manager/intervention",
@@ -44,6 +44,7 @@ router.get(
         caseworkers,
         reassign,
         currentCaseworker,
+        probationOfficer,
       }
     );
   }
@@ -54,23 +55,25 @@ router.get(
   (req, res) => {
     const referralIndex = req.params.referralIndex;
     const interventionIndex = req.params.interventionIndex;
-
-    const referral = staticData.referrals[referralIndex];
+    const referral = req.session.data.sprint4.referrals[referralIndex];
     const serviceUser = referral.serviceUser;
     const intervention = referral.interventions[interventionIndex];
+    const probationOfficer = referral.probationPractitioner;
+
     res.render(
       "sprint-4/book-and-manage/manage-a-referral/manager/confirm-details",
       {
         referralIndex,
         serviceUser,
         intervention,
+        probationOfficer,
       }
     );
   }
 );
 
 router.get("/referrals/:referralIndex/caseworker-confirmation", (req, res) => {
-  const referral = staticData.referrals[req.params.referralIndex];
+  const referral = req.session.data.sprint4.referrals[req.params.referralIndex];
   const referralNumber = referral.referralNumber;
   res.render(
     "sprint-4/book-and-manage/manage-a-referral/manager/caseworker-email-confirmation",
