@@ -293,4 +293,13 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/initial-
     res.redirect(`/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });
 
+for (const page of ["probation-practitioner-email-confirmation", "send-email", "upload-case-notes", "communication-archive"]) {
+    router.get(`/referrals/:referralIndex/interventions/:interventionIndex/${page}`, (req, res) => {
+	const intervention = findIntervention(req);
+	const referral = findReferral(req);
+
+	res.render(`sprint-4/book-and-manage/manage-a-referral/caseworker/${page}`, { intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, referral });
+    });
+}
+
 module.exports = router

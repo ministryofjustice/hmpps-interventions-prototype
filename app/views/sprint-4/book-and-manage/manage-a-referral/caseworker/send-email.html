@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Send email to probation practitioner
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Send email to probation practitioner
+      </h1>
+
+      <p class="govuk-body govuk-!-margin-bottom-9">
+        You can write and send an email to a probation practitioner.
+      </p>
+      <div>
+        <form method="post" action="probation-practitioner-email-confirmation">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="subject">
+              Subject
+            </label>
+            <input class="govuk-input" id="subject" name="subject" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="message">
+              Message
+            </label>
+            <textarea class="govuk-textarea" id="message" name="message" type="text" rows="5"></textarea>
+          </div>
+        </div>
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+    </div>
+    <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar">
+      <h2>Subsection</h2>
+      <p>
+        <a class="govuk-link" href="communication-archive">View communication archive</a>
+      </p>
+    </div>
+  </div>
+{% endblock %}
