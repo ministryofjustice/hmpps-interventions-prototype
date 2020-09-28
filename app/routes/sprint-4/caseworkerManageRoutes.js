@@ -2,8 +2,10 @@ const express = require('express')
 const router = express.Router()
 const moment = require('moment');
 
+// Configure the layout
 router.use(function (req, res, next) {
     res.locals.serviceName = "Manage interventions and services";
+    res.locals.extraWide = true;
     next()
 })
 

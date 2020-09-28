@@ -64,3 +64,10 @@ $govuk-assets-path: '/govuk/assets/';
   color: red;
   font-weight: bold;
 }
+
+// TODO This didn’t work with the class there only once (just uses the 960px of
+// the Design System’s govuk-width-container rule) - understand what was
+// happening specificity/ordering-wise
+.govuk-width-container--app-extra-wide.govuk-width-container--app-extra-wide {
+  @include govuk-width-container(1100px);
+}

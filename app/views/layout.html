@@ -44,6 +44,10 @@
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 
+{% if extraWide %}
+  {% set containerClasses = "govuk-width-container--app-extra-wide" %}
+{% endif %}
+
 {% if useAutoStoreData %}
   {% block footer %}
     {{ govukFooter({
@@ -58,7 +62,8 @@
             text: "Clear data"
           }
         ]
-      }
+      },
+      containerClasses: containerClasses
     }) }}
   {% endblock %}
 {% endif %}
