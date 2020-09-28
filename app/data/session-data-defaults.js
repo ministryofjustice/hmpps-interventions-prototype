@@ -170,9 +170,11 @@ function createReferral(params, index) {
 
     interventions: [
       {
+        id: "0",
         name: "Accommodation",
         actionPlanSubmitted: false,
         actionPlanApproved: false,
+        assigned: false,
         goals: [],
         sessions: [],
         relevantSentenceHTML:
@@ -186,9 +188,11 @@ function createReferral(params, index) {
         furtherInformation: "N/A",
       },
       {
+        id: "1",
         name: "Social inclusion",
         actionPlanSubmitted: false,
         actionPlanApproved: false,
+        assigned: false,
         goals: [],
         sessions: [],
         relevantSentenceHTML:
