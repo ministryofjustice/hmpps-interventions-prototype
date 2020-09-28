@@ -8,7 +8,7 @@ router.use(function (req, res, next) {
 })
 
 function findReferral(req) {
-    const referral = req.session.data.referrals[req.params.referralIndex];
+    const referral = req.session.data.sprint3.referrals[req.params.referralIndex];
 
     for (const intervention of referral.interventions) {
 	// Populate each session’s status based on which events have occurred.

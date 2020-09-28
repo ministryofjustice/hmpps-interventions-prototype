@@ -1,44 +1,91 @@
 const express = require('express')
 const router = express.Router()
-const moment = require('moment')
+const moment = require('moment');
 
+// Configure the layout
 router.use(function (req, res, next) {
-    res.locals.serviceName = "Manage intervention referrals"
+    res.locals.serviceName = "Manage interventions and services";
+    res.locals.serviceHref = "/sprint-4/book-and-manage/manage-a-referral/caseworker/dashboard";
+    res.locals.extraWide = true;
     next()
 })
 
 function findReferral(req) {
-    const referral = req.session.data.referrals[req.params.referralIndex];
+    return findReferralByIndex(req, req.params.referralIndex);
+}
+
+function allReferrals(req) {
+    referrals = []
+    for (i = 0; i < req.session.data.sprint4.referrals.length; i++) {
+	referrals.push(findReferralByIndex(req, i));
+    }
+    return referrals;
+}
+
+function findReferralByIndex(req, index) {
+    const referral = req.session.data.sprint4.referrals[index];
 
     for (const intervention of referral.interventions) {
+	// Populate the intervention’s status based on which events have occurred.
+	if (intervention.initialAssessment == null) {
+	    intervention.status = "not started";
+	} else if (intervention.endOfServiceReport == null) {
+	    intervention.status = "in progress";
+	} else {
+	    intervention.status = "completed";
+	}
+
+	// Populate initial assessment status based on which events have occurred.
+	if (intervention.initialAssessment == null) {
+	    intervention.initialAssessmentStatus = "not scheduled";
+	} else {
+	    intervention.initialAssessmentStatus = "scheduled";
+	}
+
+	// Populate action plan status based on what’s happened to the plan.
+	if (!intervention.actionPlanSubmitted) {
+	    intervention.actionPlanStatus = "not submitted";
+	} else if (!intervention.actionPlanApproved) {
+	    intervention.actionPlanStatus = "pending approval";
+	} else {
+	    intervention.actionPlanStatus = "approved";
+	}
+
 	// Populate each session’s status based on which events have occurred.
 	if (intervention.actionPlanApproved) {
+	    var awaitingAssessment = true;
 	    for (const session of intervention.sessions) {
 		if (session.assessment != null) {
-		    session.status = "completed";
+		    if (session.assessment.attended === "no") {
+			session.status = "no show";
+		    } else {
+			session.status = "completed";
+		    }
+		} else if (awaitingAssessment) {
+		    session.status = "awaiting assessment";
+		    awaitingAssessment = false;
 		} else {
-		    session.status = "pending";
-		    break;
+		    session.status = "not started";
 		}
 	    }
 	}
 
-	// Populate initial assessment status based on which events have occurred.
-	if (intervention.initialAssessment != null) {
-	    intervention.initialAssessmentStatus = "completed";
+	// Populate end of service report status.
+	if (intervention.endOfServiceReport == null) {
+	    intervention.endOfServiceReportStatus = "not started";
 	} else {
-	    intervention.initialAssessmentStatus = "not started";
+	    intervention.endOfServiceReportStatus = "completed";
 	}
 
-	// Populate action plan status based on what’s happened to the plan.
-	if (intervention.endOfServiceReport != null) {
-	    intervention.actionPlanStatus = "completed";
-	} else if (intervention.actionPlanApproved) {
-	    intervention.actionPlanStatus = "in progress";
-	} else if (intervention.actionPlanSubmitted) {
-	    intervention.actionPlanStatus = "pending";
+	// Populate delivery progress based on which events have occurred.
+	if (intervention.sessions.some(session => session.assessment != null)) {
+	    if (intervention.sessions.every(session => session.assessment != null) && intervention.endOfServiceReport != null) {
+		intervention.deliveryProgress = "completed";
+	    } else {
+		intervention.deliveryProgress = "in progress";
+	    }
 	} else {
-	    intervention.actionPlanStatus = "not started";
+	    intervention.deliveryProgress = "not started";
 	}
     }
 
@@ -52,9 +99,9 @@ function findIntervention(req) {
 
 function cssClassForInitialAssessmentStatus(initialAssessmentStatus) {
     switch (initialAssessmentStatus) {
-	case "completed":
+	case "scheduled":
 	    return "govuk-tag";
-	case "not started":
+	case "not scheduled":
 	    return "govuk-tag govuk-tag--grey";
 	default:
 	    return "";
@@ -63,13 +110,11 @@ function cssClassForInitialAssessmentStatus(initialAssessmentStatus) {
 
 function cssClassForActionPlanStatus(actionPlanStatus) {
     switch (actionPlanStatus) {
-	case "pending":
-	    return "govuk-tag govuk-tag--green";
-	case "in progress":
-	    return "govuk-tag govuk-tag--blue";
-	case "not started":
+	case "pending approval":
+	    return "govuk-tag govuk-tag--red";
+	case "not submitted":
 	    return "govuk-tag govuk-tag--grey";
-	case "completed":
+	case "approved":
 	    return "govuk-tag";
 	default: return "";
     }
@@ -78,24 +123,37 @@ function cssClassForActionPlanStatus(actionPlanStatus) {
 function cssClassForSessionStatus(sessionStatus) {
     switch (sessionStatus) {
 	case "completed":
-	    return "govuk-tag govuk-tag--green";
-	case "pending":
 	    return "govuk-tag";
+	case "no show":
+	    return "govuk-tag govuk-tag--red";
 	default:
-	    return "";
+	    return "govuk-tag govuk-tag--grey";
     }
 }
+
+function cssClassForEndOfServiceReportStatus(endOfServiceReportStatus) {
+    switch (endOfServiceReportStatus) {
+	case "completed":
+	    return "govuk-tag";
+	default:
+	    return "govuk-tag govuk-tag--grey";
+    }
+}
+
+router.get("/referrals", (req, res) => {
+    const referrals = allReferrals(req);
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/referrals", { referrals });
+});
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, res) => {
     const referral = findReferral(req);
     const intervention = findIntervention(req);
 
-    const allSessionsCompleted = intervention.sessions.every(intervention => intervention.status === "completed");
-    const readyForEndOfServiceReport = intervention.actionPlanApproved && allSessionsCompleted && intervention.endOfServiceReport == null;
+    const allSessionsAssessed = intervention.sessions.every(session => session.assessment != null);
     const canChangeActionPlan = intervention.endOfServiceReport == null;
     const initialAssessmentScheduled = intervention.initialAssessment != null;
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsCompleted, readyForEndOfServiceReport, canChangeActionPlan, moment, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForActionPlanStatus, initialAssessmentScheduled });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsAssessed, canChangeActionPlan, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForActionPlanStatus, cssClassForEndOfServiceReportStatus, initialAssessmentScheduled });
 });
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/action-plan", (req, res) => {
@@ -104,7 +162,7 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex/action-pl
 
     const canChangeActionPlan = intervention.endOfServiceReport == null;
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/action-plan", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, canChangeActionPlan, moment, cssClassForSessionStatus });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/action-plan", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, canChangeActionPlan, cssClassForSessionStatus });
 });
 
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/goals", (req, res) => {
@@ -143,24 +201,27 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/action-p
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/action-plan-confirmation", (req, res) => {
     const intervention = findIntervention(req);
+    const referral = findReferral(req);
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/action-plan-confirmation", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/action-plan-confirmation", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, referral });
 });
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/fast-forward/action-plan-approved", (req, res) => {
     const intervention = findIntervention(req);
 
     intervention.actionPlanApproved = true;
+    intervention.actionPlanApprovedAt = new Date();
 
     res.redirect(`/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/assessment", (req, res) => {
     const intervention = findIntervention(req);
+    const referral = findReferral(req);
 
     const sessionIndex = parseInt(req.params.sessionIndex);
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/assessment", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, sessionIndex });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/assessment", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, sessionIndex, referral });
 });
 
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/assessment", (req, res) => {
@@ -187,38 +248,58 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex/fast-forw
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/end-of-service-report", (req, res) => {
     const intervention = findIntervention(req);
+    const referral = findReferral(req);
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/end-of-service-report", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/end-of-service-report", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, referral });
+});
+
+router.post("/referrals/:referralIndex/interventions/:interventionIndex/end-of-service-report-check-answers", (req, res) => {
+    const intervention = findIntervention(req);
+    const referral = findReferral(req);
+
+    endOfServiceReport = req.body;
+
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/end-of-service-report-check-answers", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, referral, endOfServiceReport });
 });
 
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/end-of-service-report", (req, res) => {
     const intervention = findIntervention(req);
 
     intervention.endOfServiceReport = req.body;
+    intervention.endOfServiceReportSubmittedAt = new Date();
 
     res.redirect(`/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/end-of-service-report-confirmation`);
 });
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/end-of-service-report-confirmation", (req, res) => {
     const intervention = findIntervention(req);
+    const referral = findReferral(req);
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/end-of-service-report-confirmation", { intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/end-of-service-report-confirmation", { intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, referral });
 });
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/initial-assessment", (req, res) => {
     const intervention = findIntervention(req);
+    const referral = findReferral(req);
 
-    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/initial-assessment", { intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex });
+    res.render("sprint-4/book-and-manage/manage-a-referral/caseworker/initial-assessment", { intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, referral });
 });
 
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/initial-assessment", (req, res) => {
     const intervention = findIntervention(req);
 
-    if (req.body.scheduled === "yes") {
-	intervention.initialAssessment = req.body;
-    }
+    intervention.initialAssessment = req.body;
 
     res.redirect(`/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });
+
+for (const page of ["probation-practitioner-email-confirmation", "send-email", "upload-case-notes", "communication-archive"]) {
+    router.get(`/referrals/:referralIndex/interventions/:interventionIndex/${page}`, (req, res) => {
+	const intervention = findIntervention(req);
+	const referral = findReferral(req);
+
+	res.render(`sprint-4/book-and-manage/manage-a-referral/caseworker/${page}`, { intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, referral });
+    });
+}
 
 module.exports = router

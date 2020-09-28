@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Manage intervention referrals
+  Have you scheduled the initial assessment?
 {% endblock %}
 
 {% block header %}
@@ -16,66 +16,58 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Have you scheduled the initial assessment?
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        If you have scheduled the assessment, add the details below
+      </h2>
+
       <form action="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/initial-assessment" method="post">
-
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                Have you scheduled the first assessment?
-              </h1>
-            </legend>
-
-            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="scheduled-yes" name="scheduled" type="radio" value="yes" data-aria-controls="conditional-scheduled-yes">
-                <label class="govuk-label govuk-radios__label" for="scheduled-yes">
-                  Yes
-                </label>
-              </div>
-
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-scheduled-yes">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="date">
-                    Date
-                  </label>
-                  <input class="govuk-input" id="date" name="date">
-                </div>
-
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="time">
-                    Time
-                  </label>
-                  <input class="govuk-input" id="time" name="time">
-                </div>
-
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address">
-                    Address
-                  </label>
-                  <input class="govuk-input" id="address" name="address">
-                </div>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="scheduled-no" name="scheduled" type="radio" value="no" data-aria-controls="conditional-scheduled-no">
-                <label class="govuk-label govuk-radios__label" for="scheduled-no">
-                  No
-                </label>
-              </div>
-
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-scheduled-no">
-                <p class="govuk-body">
-                Contact the probation practitioner and schedule an appointment.
-                </p>
-              </div>
-            </div>
-
-          </fieldset>
+          <label class="govuk-label" for="date">
+            Date
+          </label>
+          <input class="govuk-input" id="date" name="date">
         </div>
 
-        <input type="submit" class="govuk-button" data-module="govuk-button" value="Save and continue">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="time">
+            Time
+          </label>
+          <input class="govuk-input" id="time" name="time">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address">
+            Address
+          </label>
+          <input class="govuk-input" id="address" name="address">
+        </div>
+
+        <input type="submit" class="govuk-button" data-module="govuk-button" value="Confirm details">
       </form>
+
+      <h2 class="govuk-heading-m">
+        If you haven’t scheduled the assessment
+      </h2>
+
+      <p class="govuk-body">
+      Contact the probation practitioner and schedule an appointment by either:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="send-email" class="govuk-link">sending an email to the probation practitioner</a></li>
+        <li>contacting by telephone on {{ referral.probationPractitioner.phone }}</li>
+      </ul>
+
+      <p class="govuk-body">
+      Contact the service user with the appointment details by either:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>sending an email to {{ referral.serviceUser.email }}</li>
+        <li>contacting by telephone on {{ referral.serviceUser.phone }}</li>
+      </ul>
     </div>
   </div>
 {% endblock %}

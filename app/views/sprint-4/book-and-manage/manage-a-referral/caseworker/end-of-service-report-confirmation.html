@@ -10,7 +10,7 @@
       <div class="govuk-panel govuk-panel--confirmation">
 	<h1 class="govuk-panel__title">End of service report submitted</h1>
 
-	<div class="govuk-panel__body">Your reference number<br><strong>NR0001</strong></div>
+	<div class="govuk-panel__body">Your reference number<br><strong>{{ referral.reference }}</strong></div>
 	<br>
 	<div class="govuk-panel__body">Intervention: <strong>{{intervention.name}}<strong></div>
       </div>
@@ -18,7 +18,7 @@
       <p class="govuk-body">The end of service report has been saved to our system and submitted to the following person:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-	<li>Josie Bart, PP</li>
+	<li>{{ referral.probationPractitioner.name }}, PP</li>
       </ul>
 
       <p class="govuk-body">

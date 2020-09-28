@@ -1,0 +1,32 @@
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Intervention</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header">Action</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% if intervention.initialAssessment != null %}
+      <tr class="govuk-table__row">
+	<td class="govuk-table__cell">{{intervention.name}}</td>
+	<td class="govuk-table__cell"><strong class="{{cssClassForActionPlanStatus(intervention.actionPlanStatus)}}">{{intervention.actionPlanStatus}}</strong></td>
+	<td class="govuk-table__cell">
+	  <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/action-plan">
+	    {% if intervention.actionPlanStatus == "not submitted" %}
+	      Create
+	    {% else %}
+	      View
+	    {% endif %}
+	  </a>
+	</td>
+      </tr>
+    {% endif %}
+  </tbody>
+</table>
+
+{% if intervention.actionPlanStatus === "pending approval" %}
+  <p class="govuk-body">
+<a class="govuk-link govuk-link--app-fast-forward" href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/fast-forward/action-plan-approved">Fast-forward to action plan approved</a>
+  </p>
+{% endif %}

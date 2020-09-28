@@ -14,7 +14,7 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class="govuk-fieldset__heading">Did Alex attend session {{sessionIndex + 1}}?</h2>
+              <h2 class="govuk-fieldset__heading">Did {{ referral.serviceUser.firstName }} attend session {{sessionIndex + 1}}?</h2>
             </legend>
 
             <div class="govuk-radios">
@@ -46,7 +46,7 @@
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h2 class="govuk-fieldset__heading">Assess Alex’s {{ aspect }}</h2>
+                <h2 class="govuk-fieldset__heading">Assess {{ referral.serviceUser.firstName }}’s {{ aspect }}</h2>
               </legend>
 
               <div class="govuk-radios">
@@ -81,7 +81,7 @@
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="{{aspect}}-justification">
-              Why did you give Alex that rating?
+              Why did you give {{ referral.serviceUser.firstName }} that rating?
             </label>
 
             <textarea class="govuk-textarea" id="{{aspect}}-justification" name="{{aspect}}-justification"></textarea>
