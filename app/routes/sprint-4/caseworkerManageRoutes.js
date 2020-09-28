@@ -5,6 +5,7 @@ const moment = require('moment');
 // Configure the layout
 router.use(function (req, res, next) {
     res.locals.serviceName = "Manage interventions and services";
+    res.locals.serviceHref = "/sprint-4/book-and-manage/manage-a-referral/caseworker/dashboard";
     res.locals.extraWide = true;
     next()
 })

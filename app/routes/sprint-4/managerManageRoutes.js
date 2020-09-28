@@ -5,6 +5,7 @@ const staticData = require("../../data/sprint-4/managerManageStaticData");
 
 router.use(function (req, res, next) {
   res.locals.serviceName = "Receive intervention referrals";
+  res.locals.serviceHref = "/sprint-4/book-and-manage/manage-a-referral/manager/dashboard";
   next();
 });
 
