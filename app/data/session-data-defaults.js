@@ -47,9 +47,9 @@ module.exports = {
   },
   sprint4: {
     referrals: [
-      { serviceUser: { name: "Alex River", firstName: "Alex", email: "alex.river@gmail.com" }, probationPractitioner: { name: "Jessica Reel" } },
-      { serviceUser: { name: "Emma Thompson", firstName: "Emma", email: "emma.thompson@gmail.com" }, probationPractitioner: { name: "Josie Bart" } },
-      { serviceUser: { name: "Rosie Palma", firstName: "Rosie", email: "rosie.palma@gmail.com" }, probationPractitioner: { name: "Josie Bart" } },
+      { serviceUser: { name: "Alex River", firstName: "Alex", email: "alex.river@gmail.com" }, probationPractitioner: { name: "Jessica Reel", email: "j.reel@justice.gov.uk" } },
+      { serviceUser: { name: "Emma Thompson", firstName: "Emma", email: "emma.thompson@gmail.com" }, probationPractitioner: { name: "Josie Bart", email: "j.bart@justice.gov.uk" } },
+      { serviceUser: { name: "Rosie Palma", firstName: "Rosie", email: "rosie.palma@gmail.com" }, probationPractitioner: { name: "Josie Bart", email: "j.bart@justice.gov.uk" } },
     ].map(createReferral)
   }
 }
@@ -79,12 +79,34 @@ function createReferral(params, index) {
       religionOrBelief: "None",
       disabilities: "Autism spectrum condition",
       email: "alex.river@gmail.com",
-      phone: "07588 382 222"
+      phone: "07588 382 222",
+      risks: {
+        OGRSScore: "50",
+        RM2000Score: "Medium",
+        ROSHAScore: "Medium",
+        SARAScore: "Low",
+        scoresInformation: "N/A",
+      },
+      needs: {
+        criminogenicNeeds: [
+          "Thinking and attitudes",
+          "Relationships",
+          "Accommodation",
+        ],
+        identifyNeeds: "N/A",
+        otherNeeds: "N/A",
+        interpreterNeeded: "No",
+        languageNeeds: "English",
+        responsibilities: "Yes",
+        timesUnavailable: "N/A",
+      }
     }, params.serviceUser),
 
     probationPractitioner: Object.assign({
       name: "Jessica Reel",
-      phone: "01909 234 567"
+      phone: "01909 234 567",
+      email: "j.reel@justice.gov.uk",
+      addressHTML: "44 Bouverie Road<br>Weston Lullingfields<br>SY4 0RE"
     }, params.probationPractitioner),
 
     interventions: [
