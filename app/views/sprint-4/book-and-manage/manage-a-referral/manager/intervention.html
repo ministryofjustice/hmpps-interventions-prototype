@@ -131,22 +131,22 @@
           </div>
         </div>
 
-        <input type="submit" class="govuk-button" data-module="govuk-button" id="{{intervention.name}}-desired-outcomes-save" value={% if reassign %}"Add new caseworker to this intervention"{% else %}"Add caseworker to this intervention"{% endif %}>
+        <input type="submit" class="govuk-button" data-module="govuk-button" id="{{intervention.name}}-desired-outcomes-save" value={% if reassign %} "Add new caseworker to this intervention" {% else %} "Add caseworker to this intervention" {% endif %}>
       </form>
     </div>
 
-      <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar">
-        <h2>Useful links</h2>
-        <p>
-          <a class="govuk-link" href="0/send-email">Send email to probation practitioner</a>
-        </p>
-        <p>
-          <a class="govuk-link" href="#">Upload case notes</a>
-        </p>
-        <p>
-          <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/manager/communication-archive">View communication archive</a>
-        </p>
-      </div>
+    <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar">
+      <h2>Subsection</h2>
+      <p>
+        <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/manager/send-email">Send email to probation practitioner</a>
+      </p>
+      <p>
+        <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/manager/upload-case-notes">Upload case notes</a>
+      </p>
+      <p>
+        <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/manager/communication-archive">View communication archive</a>
+      </p>
     </div>
   </div>
+</div>
 {% endblock %}

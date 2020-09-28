@@ -21,8 +21,10 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 .govuk-panel--sidebar {
+  border-top: $govuk-border-width solid $govuk-brand-colour !important;
+  border-left: none !important;
+  border-right: none !important;
   text-align: left !important;
-  background: #eeee;
   padding-top: 0 !important;
 }
 
