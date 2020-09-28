@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage interventions and services
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-phase-banner govuk-!-margin-bottom-8">
+    <div class="govuk-phase-banner__content">
+      <p class="govuk-phase-banner__text">
+        Welcome to book and manage interventions services
+      </p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <h1 class="govuk-heading-xl">
+      Manage interventions and services
+    </h1>
+
+    <ul class="govuk-list">
+      <a href="referrals" role="button" draggable="false" class="govuk-button govuk-button--start govuk-button--blue govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
+        Receive interventions
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+      <a href="referrals" role="button" draggable="false" class="govuk-button govuk-button--start govuk-button--blue govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
+        Manage interventions
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+    </ul>
+  </div>
+
+{% endblock %}
