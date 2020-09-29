@@ -19,9 +19,19 @@
     margin-left: govuk-spacing(2);
     margin-right: govuk-spacing(2);
   }
+  .right-bordered::after {
+    margin-left: govuk-spacing(2);
+    content: "|";
+  }
+  .govuk-width-container-sprint-3 {
+    @include govuk-width-container;
+    display: flex;
+  }
 
   .govuk-width-container {
+    @include govuk-width-container(1100px);
     display: flex;
+    flex-wrap: nowrap;
   }
 }
 
@@ -61,5 +71,13 @@
     color: inherit;
     font-weight: $govuk-font-weight-bold;
     margin-right: govuk-spacing(5);
+  }
+
+  .govuk-width-container-sprint-3 {
+    @include govuk-width-container;
+  }
+
+  .govuk-width-container {
+    @include govuk-width-container(1100px);
   }
 }
