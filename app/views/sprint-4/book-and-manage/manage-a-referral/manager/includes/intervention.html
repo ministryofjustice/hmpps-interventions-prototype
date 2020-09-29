@@ -28,7 +28,7 @@
       Date to be completed by
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ intervention.completionDateRequired }}
+      {{ moment(intervention.completionDateRequired).format("D/M/YYYY") }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
