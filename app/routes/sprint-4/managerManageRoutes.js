@@ -77,6 +77,7 @@ router.get(
         interventionId,
         serviceUser,
         intervention,
+        referral,
         caseworkers,
         reassign,
         currentCaseworker,
@@ -103,6 +104,7 @@ router.get(
         interventionId,
         serviceUser,
         intervention,
+        referral,
         probationOfficer,
       }
     );
@@ -128,25 +130,22 @@ router.get(
         serviceUser,
         referralNumber,
         intervention,
+        referral,
       }
     );
   }
 );
 
-router.get(
-  "/referrals/:referralIndex/interventions/:interventionId/send-email",
-  (req, res) => {
-    res.render("sprint-4/book-and-manage/manage-a-referral/manager/send-email");
-  }
-);
+for (const page of ["send-email", "upload-case-notes", "probation-practitioner-email-confirmation", "casenotes-upload-confirmation", "communication-archive"]) {
+  router.get(
+    `/referrals/:referralIndex/interventions/:interventionId/${page}`,
+    (req, res) => {
+      const referral =
+        req.session.data.sprint4.referrals[req.params.referralIndex];
 
-router.get(
-  "/referrals/:referralIndex/interventions/:interventionId/probation-practitioner-email-confirmation",
-  (req, res) => {
-    res.render(
-      "sprint-4/book-and-manage/manage-a-referral/manager/probation-practitioner-email-confirmation"
-    );
-  }
-);
+      res.render(`sprint-4/book-and-manage/manage-a-referral/manager/${page}`, { referral });
+    }
+  );
+}
 
 module.exports = router;
