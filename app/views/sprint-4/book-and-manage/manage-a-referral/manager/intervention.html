@@ -13,9 +13,9 @@
   <div class="govuk-grid-row">
     <h1 class="govuk-heading-xl">
       {% if reassign %}
-        Re-assign {{intervention.name}} intervention to a caseworker
+        Re-assign {{intervention.name | lower}} intervention to a caseworker
       {% else %}
-        Assign {{intervention.name}} intervention to a caseworker
+        Assign {{intervention.name | lower}} intervention to a caseworker
       {% endif %}
     </h1>
 
