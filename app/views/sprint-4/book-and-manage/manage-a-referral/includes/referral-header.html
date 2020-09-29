@@ -1,32 +1,32 @@
 <dl class="app-referral-header__referral">
   <div class="govuk-width-container {{ containerClasses }}">
     <dt>Referral</dt>
-    <dd>NR0001</dd>
+    <dd>{{ referral.reference }}</dd>
 
     <dt>Referral status</dt>
-    <dd>in progress</dd>
+    <dd>{{ intervention.status | default("in progress") }}</dd>
 
     <dt>Probation practitioner</dt>
-    <dd>Josie Bart</dd>
+    <dd>{{ referral.probationPractitioner.name }}</dd>
   </div>
 </dl>
 
 <div class="app-referral-header__service-user">
   <div class="govuk-width-container {{ containerClasses }}">
-    <span>Mr Alex River</span>
+    <span>{{ referral.serviceUser.title }} {{ referral.serviceUser.name }}</span>
 
     <dl>
       <dt>Date of birth</dt>
       <dd>08/05/1986</dd>
 
       <dt>Email address</dt>
-      <dd>alex.river@gmail.com</dd>
+      <dd>{{ referral.serviceUser.email }}</dd>
 
       <dt>Contact number</dt>
-      <dd>07588 382222</dd>
+      <dd>{{ referral.serviceUser.phone }}</dd>
 
       <dt>Gender</dt>
-      <dd>Male</dd>
+      <dd>{{ referral.serviceUser.gender }}</dd>
 
       <dt>CRN</dt>
       <dd>DX12340A</dd>
