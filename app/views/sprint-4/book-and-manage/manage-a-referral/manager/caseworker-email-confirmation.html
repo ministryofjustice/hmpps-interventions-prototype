@@ -11,27 +11,51 @@
 
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">Intervention assigned</h1>
-        <div class="govuk-panel__body">
-          Your referral number<br>
-          <strong>NR0001</strong>
-        </div>
       </div>
-      <p>
-        The intervention and caseworker details have been saved to our system and submitted to the following people:
-      </p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Probation practitioner: Tony Bates</li>
-        <li>Service provider:
-          {{ data["assigned-caseworker"] }}
-        </li>
-      </ul>
+      <h2 class="govuk-heading-l">
+        Service user details
+      </h2>
+       <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ serviceUser.name }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Referral number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ referralNumber }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Type of referral
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ intervention.name }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Assigned to
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ intervention.assignedCaseworker }}
+            </dd>
+          </div>
+        </dl>
       <br>
       <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/manager/referrals">Return to referrals dashboard</a>
     </div>
     <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar">
       <h2>Subsection</h2>
       <p>
-        <a class="govuk-link" href="#">Upload case notes</a>
+        <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/manager/upload-case-notes">Upload case notes</a>
       </p>
       <p>
         <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/manager/communication-archive">View communication archive</a>

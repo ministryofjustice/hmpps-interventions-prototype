@@ -4,7 +4,7 @@
       Full name
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ serviceUser.responsibleOfficer.fullName}}
+      {{ probationOfficer.name}}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -12,7 +12,7 @@
       Email address
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ serviceUser.responsibleOfficer.email }}
+      {{ probationOfficer.email }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -20,9 +20,7 @@
       Office address
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ serviceUser.personalDetails.address.line1 }}<br>
-      {{ serviceUser.personalDetails.address.city }}<br>
-      {{ serviceUser.personalDetails.address.postcode }}<br>
+      {{ probationOfficer.addressHTML | safe }}
     </dd>
   </div>
 </dl>

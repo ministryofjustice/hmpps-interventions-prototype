@@ -4,13 +4,7 @@
       Sentence information
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ intervention.sentence.category }}<br>
-      Subcategory:
-      {{ intervention.sentence.subcategory }}<br>
-      Date:
-      {{ intervention.sentence.date }}<br>
-      Order:
-      {{ intervention.sentence.order }}<br>
+      {{ intervention.relevantSentenceHTML | safe }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -26,8 +20,7 @@
       Complexity level
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ intervention.requiredComplexity.type }}<br>
-      {{ intervention.requiredComplexity.description }}
+      {{ intervention.requiredComplexityHTML | safe }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -35,7 +28,7 @@
       Date to be completed by
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ intervention.completionDate }}
+      {{ intervention.completionDateRequired }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -43,7 +36,7 @@
       Maximum number of RAR days
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ intervention.maxRARDays }}
+      {{ intervention.maximumRARDays }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">

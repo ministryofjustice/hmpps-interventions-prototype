@@ -28,7 +28,7 @@
         {% endif %}
       </p>
 
-      <form method="post" action="/sprint-4/book-and-manage/manage-a-referral/manager/referrals/0/interventions/0/confirm-details">
+      <form method="post" action="/sprint-4/book-and-manage/manage-a-referral/manager/referrals/{{referralIndex}}/interventions/{{interventionId}}/confirm-details">
         {% if reassign %}
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="assigned-caseworker">
