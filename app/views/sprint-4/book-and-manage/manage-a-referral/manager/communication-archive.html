@@ -4,6 +4,11 @@
   Communication archive
 {% endblock %}
 
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-column-two-thirds">

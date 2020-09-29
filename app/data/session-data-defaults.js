@@ -51,6 +51,8 @@ module.exports = {
         serviceUser: {
           name: "Alex River",
           firstName: "Alex",
+          title: "Mr",
+          gender: "Male",
           email: "alex.river@gmail.com",
         },
         probationPractitioner: {
@@ -62,6 +64,8 @@ module.exports = {
         serviceUser: {
           name: "Emma Thompson",
           firstName: "Emma",
+          title: "Ms",
+          gender: "Female",
           email: "emma.thompson@gmail.com",
         },
         probationPractitioner: {
@@ -73,6 +77,8 @@ module.exports = {
         serviceUser: {
           name: "Rosie Palma",
           firstName: "Rosie",
+          title: "Ms",
+          gender: "Female",
           email: "rosie.palma@gmail.com",
         },
         probationPractitioner: {
@@ -84,6 +90,8 @@ module.exports = {
         serviceUser: {
           name: "Macy Flem",
           firstName: "Macy",
+          title: "Ms",
+          gender: "Female",
           email: "macy.flem@gmail.com",
         },
         probationPractitioner: {
@@ -127,6 +135,8 @@ function createReferral(params, index) {
         name: "Alex River",
         firstName: "Alex",
         otherNames: "Shorty",
+        gender: "Male",
+        title: "Mr",
         addressHTML:
           "Flat 2<br>27 Test Walk<br>SY16 1AQ<br><br>Private rental</dd>",
         nationality: "British",
