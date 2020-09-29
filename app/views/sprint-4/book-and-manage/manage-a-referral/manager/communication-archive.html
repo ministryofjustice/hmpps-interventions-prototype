@@ -10,8 +10,8 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-column-two-thirds">
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
         Communication archive
       </h1>
@@ -90,6 +90,20 @@
           <li><a href="#" class="govuk-link">4</a></li>
           <li><a href="#" class="govuk-link">Next</a></li>
         </ul>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar">
+      <h2>Subsection</h2>
+      <p>
+      <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/manager/referrals/{{referralIndex}}/interventions/{{interventionId}}/send-email">Send email to probation practitioner</a>
+      </p>
+      <p>
+      <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/manager/referrals/{{referralIndex}}/interventions/{{interventionId}}/upload-case-notes">Add case notes</a>
+      </p>
+      <p>
+      <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/manager/referrals/{{referralIndex}}/interventions/{{interventionId}}/communication-archive">View communication history</a>
+      </p>
     </div>
   </div>
 {% endblock %}

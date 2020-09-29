@@ -136,14 +136,24 @@ router.get(
   }
 );
 
-for (const page of ["send-email", "upload-case-notes", "probation-practitioner-email-confirmation", "casenotes-upload-confirmation", "communication-archive"]) {
+for (const page of [
+  "send-email",
+  "upload-case-notes",
+  "probation-practitioner-email-confirmation",
+  "casenotes-upload-confirmation",
+  "communication-archive",
+]) {
   router.get(
     `/referrals/:referralIndex/interventions/:interventionId/${page}`,
     (req, res) => {
       const referral =
         req.session.data.sprint4.referrals[req.params.referralIndex];
 
-      res.render(`sprint-4/book-and-manage/manage-a-referral/manager/${page}`, { referral });
+      res.render(`sprint-4/book-and-manage/manage-a-referral/manager/${page}`, {
+        referral,
+        referralIndex: req.params.referralIndex,
+        interventionId: req.params.interventionId,
+      });
     }
   );
 }
