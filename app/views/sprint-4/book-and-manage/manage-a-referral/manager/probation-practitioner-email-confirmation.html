@@ -9,16 +9,12 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">Email sent</h1>
-        <div class="govuk-panel__body">
-          Your referral number<br>
-          <strong>NR0001</strong>
-        </div>
       </div>
       <p>
         Your email has be sent to:
       </p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>Josie Bart, probation practitioner</li>
+        <li>{{ referral.probationPractitioner.name }}, probation practitioner</li>
       </ul>
       <br>
       <a class="govuk-link" href="/sprint-4/book-and-manage/manage-a-referral/manager/referrals">Return to referrals dashboard</a>
