@@ -24,7 +24,7 @@
   navigation: {
     label: "Account navigation",
     items: [{
-      text: "James",
+      text: loggedInUserName | default("James"),
       href: "#"
     },
     {

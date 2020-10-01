@@ -102,13 +102,16 @@ module.exports = {
     ].map(createReferral),
     caseworkers: [
       {
-        name: "Rebecca Green",
+        name: "Liam Johnson",
+        firstName: "Liam"
       },
       {
-        name: "Liam Johnson",
+        name: "Rebecca Green",
+        firstName: "Rebecca"
       },
       {
         name: "Jenny Thompson",
+        firstName: "Jenny"
       },
     ],
   },
