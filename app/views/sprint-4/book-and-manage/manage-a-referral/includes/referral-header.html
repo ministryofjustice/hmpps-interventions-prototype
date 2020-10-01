@@ -24,13 +24,13 @@
       <dd>{{ referral.serviceUser.email }} | {{ referral.serviceUser.phone }}</dd>
 
       <dt>CRN</dt>
-      <dd>DX12340A</dd>
+      <dd>{{ referral.serviceUser.crn }}</dd>
 
       <dt>PNC</dt>
-      <dd>A1234560A</dd>
+      <dd>{{ referral.serviceUser.pncNumber }}</dd>
 
       <dt>NOMIS</dt>
-      <dd>0203394</dd>
+      <dd>{{ referral.serviceUser.nomisNumber }}</dd>
     </dl>
   </div>
 </div>

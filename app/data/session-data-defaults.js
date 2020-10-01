@@ -147,6 +147,9 @@ function createReferral(params, index) {
         disabilities: "Autism spectrum condition",
         email: "alex.river@gmail.com",
         phone: "07588 382 222",
+        pncNumber: "2014/1234786A",
+        crn: "D016868",
+        nomisNumber: "0203394",
         risks: {
           OGRSScore: "50",
           RM2000Score: "Medium",
