@@ -4,6 +4,11 @@
   Manage interventions and services
 {% endblock %}
 
+{% block header %}
+  {{ super() }}
+  {% include "./includes/primary-navigation.html" %}
+{% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column">
