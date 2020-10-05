@@ -72,7 +72,7 @@ async function createAuthenticatedApiClient() {
   return client;
 }
 
-router.get("/found-service-user", async function (req, res, next) {
+router.get("/service-user-assessments/show", async function (req, res, next) {
   try {
     // We create a new auth token on every request - not sure if this is what we'd do in production but it's the easiest way to avoid token expiry.
     const client = await createAuthenticatedApiClient();
@@ -118,7 +118,7 @@ router.get("/found-service-user", async function (req, res, next) {
       })
       .slice(-1)[0];
 
-    res.render("found-service-user", {
+    res.render("service-user-assessments/show", {
       offender: offender,
       predictors: latestPredictors,
       assessment: assessment,
