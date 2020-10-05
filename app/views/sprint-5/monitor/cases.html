@@ -21,18 +21,28 @@
         Group by:
       </h2>
       <ul class="group-by-links">
-        <li class="group-by-link govuk-tag">
+        {% if groupBy == 'details' or not groupBy %}
+          <li class="group-by-link govuk-tag">
+        {% else %}
+          <li class="group-by-link">
+        {% endif %}
           <a aria-current="page" href="cases?group_by=details">Details</a>
         </li>
-        <li class="group-by-link">
-          <a href="stages">Stages</a>
+        {% if groupBy == 'stage' %}
+          <li class="group-by-link govuk-tag">
+        {% else %}
+          <li class="group-by-link">
+        {% endif %}
+          <a href="cases?group_by=stage">Stages</a>
         </li>
       </ul>
     </div>
   </div>
 
   {% if groupBy == 'details' or not groupBy %}
-      {% include "./includes/cases-by-detail.html" %}
+    {% include "./includes/cases-by-detail.html" %}
+  {% elif groupBy == 'stage' %}
+    {% include "./includes/cases-by-stage.html" %}
   {% endif %}
 </div>
 {% endblock %}

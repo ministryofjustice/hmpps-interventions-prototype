@@ -12,40 +12,38 @@
 
   <tbody class="govuk-table__body">
     {% for referral in referrals %}
-      {% set referralIndex = loop.index0 %}
+    {% set referralIndex = loop.index0 %}
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">
-          {{ referral.reference }}
+      <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">
+        {{ referral.reference }}
+      </td>
+      <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">
+        {{ referral.serviceUser.name }}
+      </td>
+
+    {% for intervention in referral.interventions %}
+      {% if referral.interventions.length > 1 and not loop.first %}
+      <tr>
+      {% endif%}
+        <td class="govuk-table__cell">
+          {{ intervention.name | capitalize }}
         </td>
-        <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">
-          {{ referral.serviceUser.name }}
+        <td class="govuk-table__cell">
+          {{ intervention.providerName }}
+        </td>
+        <td class="govuk-table__cell">
+          {{ intervention.assignedCaseworker }}
+        </td>
+        <td class="govuk-table__cell">
+          <a class="govuk-link" href="cases/{{caseIndex}}/interventions/{{intervention.id}}">View</a>
         </td>
 
-        {% for intervention in referral.interventions %}
+      {% if referral.interventions.length > 1 and not loop.first %}
+      </tr>
+      {% endif%}
 
-          {% if referral.interventions.length > 1 and not loop.first %}
-            <tr>
-              {% endif%}
-
-              <td class="govuk-table__cell">
-                {{ intervention.name | capitalize }}
-              </td>
-              <td class="govuk-table__cell">
-                {{ intervention.providerName }}
-              </td>
-              <td class="govuk-table__cell">
-                {{ intervention.assignedCaseworker }}
-              </td>
-              <td class="govuk-table__cell">
-                <a class="govuk-link" href="cases/{{caseIndex}}/interventions/{{intervention.id}}">View</a>
-              </td>
-
-              {% if referral.interventions.length > 1 and not loop.first %}
-              </tr>
-              {% endif%}
-
-            {% endfor %}
-          </tr>
-        {% endfor %}
+      {% endfor %}
+    </tr>
+    {% endfor %}
   </tbody>
 </table>
