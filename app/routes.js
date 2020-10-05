@@ -13,6 +13,16 @@ router.use((req, res, next) => {
   next();
 });
 
+router.get("/*/book-and-manage/make-a-referral(/*)?", function (req, res, next) {
+  res.locals.serviceName = "Make a referral";
+  next();
+});
+
+router.get("/*/find-an-intervention(/*)?", function (req, res, next) {
+  res.locals.serviceName = "HMPPS - Find an intervention";
+  next();
+});
+
 router.get("/service-user-details/show", async function (req, res, next) {
   try {
     // We create a new auth token on every request - not sure if this is what we'd do in production but it's the easiest way to avoid token expiry.
