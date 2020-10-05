@@ -1,0 +1,16 @@
+// Overriding rules from SlimSelect’s stylesheet
+
+.ss-main .ss-multi-selected {
+    border: none;
+}
+
+.ss-main .ss-multi-selected .ss-values .ss-value, .ss-content .ss-list .ss-option:hover {
+    font-size: inherit;
+    background-color: govuk-colour("blue");
+}
+
+// Handle multiple lines of tokens
+
+.ss-main.govuk-select {
+    height: auto;
+}

@@ -20,6 +20,8 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/referral-header";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+@import "autoCompleteMultiselects";
+
 .govuk-panel--sidebar {
   border-top: $govuk-border-width solid $govuk-brand-colour !important;
   border-left: none !important;
