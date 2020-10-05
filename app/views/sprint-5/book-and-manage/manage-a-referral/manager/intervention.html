@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Referral details
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <h1 class="govuk-heading-xl">
+      {% if reassign %}
+        Re-assign {{intervention.name | lower}} intervention to a caseworker
+      {% else %}
+        Assign {{intervention.name | lower}} intervention to a caseworker
+      {% endif %}
+    </h1>
+
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body">
+        {% if reassign %}
+          Once you have re-assigned the case to a new caseworker they will receive an email notification.
+        {% else %}
+          Once you have assigned the case to a caseworker they will receive an email notification.
+        {% endif %}
+      </p>
+
+      <form method="post" action="/sprint-5/book-and-manage/manage-a-referral/manager/referrals/{{referralIndex}}/interventions/{{interventionId}}/confirm-details">
+        {% if reassign %}
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="assigned-caseworker">
+              Current caseworker
+            </label>
+
+            <p class="govuk-body">
+              {{ currentCaseworker.name }}
+            </p>
+          </div>
+        {% endif %}
+        <div class="govuk-form-group" id="caseworker">
+          <label class="govuk-label govuk-label--m" for="assigned-caseworker">
+            {% if reassign %}
+              Assign a new caseworker
+            {% else %}
+              Select a caseworker
+            {% endif %}
+          </label>
+
+          <select class="govuk-select" id="assigned-caseworker" name="assigned-caseworker">
+            {% for caseworker in caseworkers %}
+              {% if not (reassign and currentCaseworker.name == caseworker.name) %}
+                <option value="{{caseworker.name}}">{{ caseworker.name }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="govuk-form-group" id="additional-information">
+          <label class="govuk-label govuk-label--m" for="{{intervention.name}}-additional-info">
+            Additional information
+          </label>
+          <div id="{{intervention.name}}-more-detail-hint" class="govuk-hint">
+            For example updates on desired outcomes, case complexity and further notes
+          </div>
+          <textarea class="govuk-textarea" name="{{intervention.name}}-additional-info" rows="5" aria-describedby="{{intervention.name}}-additional-info">{{ data[intervention.name + "-additional-info"] }}</textarea>
+        </div>
+
+        <div class="govuk-accordion" data-module="govuk-accordion" id="referral">
+          <div class="govuk-accordion__section govuk-accordion__section--expanded">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="referral-{{intervention.name}}-referral">
+                  {{intervention.name | capitalize}} intervention
+                </span>
+              </h2>
+            </div>
+            <div id="{{intervention.name}}-referral" class="govuk-accordion__section-content" aria-labelledby="referral-{{intervention.name}}-referral">
+              {% include "./includes/intervention.html" %}
+            </div>
+          </div>
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="referral-service-user-personal-details">
+                  Service user personal details
+                </span>
+              </h2>
+            </div>
+            <div id="personal-details" class="govuk-accordion__section-content" aria-labelledby="referral-service-user-personal-details">
+              {% include "./includes/personal-details.html" %}
+            </div>
+          </div>
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="referral-service-user-risks">
+                  Service user risks
+                </span>
+              </h2>
+            </div>
+            <div id="risks" class="govuk-accordion__section-content" aria-labelledby="referral-service-user-risks">
+              {% include "./includes/risks.html" %}
+            </div>
+          </div>
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="referral-service-user-needs">
+                  Service user needs
+                </span>
+              </h2>
+            </div>
+            <div id="needs" class="govuk-accordion__section-content" aria-labelledby="referral-service-user-needs">
+              {% include "./includes/needs.html" %}
+            </div>
+          </div>
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="referral-responsible-officer-details">
+                  Probation officer details
+                </span>
+              </h2>
+            </div>
+            <div id="responsible-officer" class="govuk-accordion__section-content" aria-labelledby="referral-responsible-officer-details">
+              {% include "./includes/probation-officer.html" %}
+            </div>
+          </div>
+        </div>
+
+        <input type="submit" class="govuk-button" data-module="govuk-button" id="{{intervention.name}}-desired-outcomes-save" value={% if reassign %} "Add new caseworker to this intervention" {% else %} "Assign intervention and review" {% endif %}>
+      </form>
+    </div>
+
+    <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar">
+      <h2>Subsection</h2>
+      <p>
+        <a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/manager/referrals/{{referralIndex}}/interventions/{{interventionId}}/send-email">Send email to probation practitioner</a>
+      </p>
+      <p>
+        <a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/manager/referrals/{{referralIndex}}/interventions/{{interventionId}}/upload-case-notes">Add case notes</a>
+      </p>
+      <p>
+        <a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/manager/referrals/{{referralIndex}}/interventions/{{interventionId}}/communication-archive">View communication history</a>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

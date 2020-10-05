@@ -1,0 +1,37 @@
+<table class="govuk-table">
+  <thead class="govuk-table__header" class="govuk-table__head">
+    <tr class="govuk-table-row">
+      <th class="govuk-table__header" scope="col">Session title</th>
+      <th class="govuk-table__header" scope="col">Date</th>
+      <th class="govuk-table__header" scope="col">Time</th>
+      <th class="govuk-table__header" scope="col">Status</th>
+      <th class="govuk-table__header" scope="col">Action</th>
+    </tr>
+  </thead>
+
+  {% for session in intervention.sessions %}
+    <tr class="govuk-table-row">
+      <td class="govuk-table__cell">{{ session.title }}</td>
+      <td class="govuk-table__cell">{{ moment(session.date).format("D/M/YYYY") }}</td>
+      <td class="govuk-table__cell">{{ session.startTime }} to {{ session.endTime }}</td>
+      <td class="govuk-table__cell ">
+        {% if session.status != "not started" %}
+          <strong class="{{ cssClassForSessionStatus(session.status) }}">{{ session.status }}</strong>
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell">
+        {% if session.status === "awaiting assessment" %}
+          <a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/sessions/{{loop.index0}}/assessment">Assess</a>
+        {% else %}
+          <a class="govuk-link" href="#">View</a>
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+
+{% if not allSessionsAssessed %}
+  <p class="govuk-body">
+  <a class="govuk-link govuk-link--app-fast-forward" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/fast-forward/sessions-completed">Fast-forward to sessions completed</a>
+  </p>
+{% endif %}
