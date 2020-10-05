@@ -22,6 +22,32 @@ $govuk-assets-path: '/govuk/assets/';
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "autoCompleteMultiselects";
 
+.group-by {
+  display: flex;
+
+  .group-by-heading {
+    min-width: 15%;
+  }
+
+  .group-by-links {
+    margin-top: 0;
+    padding-left: 0;
+    align-self: center;
+    width: 100%;
+
+    .govuk-tag a {
+      color: white;
+      text-transform: none;
+      text-decoration: none;
+    }
+  }
+
+  .group-by-link {
+    display: inline-block;
+    margin-right: 5%;
+  }
+}
+
 .govuk-panel--sidebar {
   border-top: $govuk-border-width solid $govuk-brand-colour !important;
   border-left: none !important;
