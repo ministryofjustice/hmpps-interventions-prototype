@@ -1,0 +1,35 @@
+{% extends "layout-add-and-find.html" %}
+
+{% block pageTitle %}
+  Find an intervention
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Look up a service user</h1>
+
+      <p>
+        This allows you to look up a service user’s information using the
+        <a href="https://github.com/ministryofjustice/offender-assessments-api-kotlin/" class="govuk-link">Assessments API</a>.
+        <div class="govuk-inset-text">It currently requires the API to be running on
+          <code>localhost</code>, so it will not work on the Heroku prototype.</div>
+      </p>
+
+      <p>
+        Enter the service user’s CRN.
+      </p>
+
+      <form action="/found-service-user">
+        <div class="govuk-form-group">
+          <label for="crn" class="govuk-label">CRN</label>
+          <input id="crn" class="govuk-input" name="crn">
+        </div>
+
+        <input type="submit" class="govuk-button" value="Continue">
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
