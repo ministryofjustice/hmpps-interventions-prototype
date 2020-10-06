@@ -278,7 +278,7 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/end-of-s
 	    res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/end-of-service-report`);
 	    break;
 	case "no":
-	    res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/end-of-service-report`);
+	    res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/end-of-service-report-contact-probation-practitioner`);
 	    break;
 	default:
 	    // Not building validation into the prototype, so just ask the
@@ -319,7 +319,7 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/initial-
     res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });
 
-for (const page of ["probation-practitioner-email-confirmation", "send-email", "upload-case-notes", "communication-archive", "casenotes-upload-confirmation", "end-of-service-report", "end-of-service-report-check-your-answers", "end-of-service-report-reason", "end-of-service-report-contacted-probation-practitioner"]) {
+for (const page of ["probation-practitioner-email-confirmation", "send-email", "upload-case-notes", "communication-archive", "casenotes-upload-confirmation", "end-of-service-report", "end-of-service-report-check-your-answers", "end-of-service-report-reason", "end-of-service-report-contacted-probation-practitioner", "end-of-service-report-contact-probation-practitioner"]) {
     router.get(`/referrals/:referralIndex/interventions/:interventionIndex/${page}`, (req, res) => {
 	const intervention = findIntervention(req);
 	const referral = findReferral(req);
