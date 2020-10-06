@@ -18,12 +18,12 @@
 	<ul class="govuk-tabs__list">
 	  <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
 	    <a class="govuk-tabs__tab" href="#awaiting-assessment">
-	      Interventions awaiting assessment
+	      Awaiting initial assessment
 	    </a>
 	  </li>
 	  <li class="govuk-tabs__list-item">
 	    <a class="govuk-tabs__tab" href="#in-progress">
-	      Interventions in progress
+	      Ongoing interventions
 	    </a>
 	  </li>
 	  <li class="govuk-tabs__list-item">
@@ -33,13 +33,13 @@
 	  </li>
 	  <li class="govuk-tabs__list-item">
 	    <a class="govuk-tabs__tab" href="#incomplete">
-	      Incomplete interventions
+	      Terminated interventions
 	    </a>
 	  </li>
 	</ul>
 
 	<div class="govuk-tabs__panel" id="awaiting-assessment">
-	  <h2 class="govuk-heading-l">Interventions awaiting assessment</h2>
+	  <h2 class="govuk-heading-l">Awaiting initial assessment</h2>
 
 	  <p class="govuk-body">
 	  Schedule an initial assessment for each intervention
@@ -157,7 +157,7 @@
 	</div>
 
 	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="in-progress">
-	  <h2 class="govuk-heading-l">Interventions in progress</h2>
+	  <h2 class="govuk-heading-l">Ongoing interventions</h2>
 
 	  <p class="govuk-body">Monitor the progress of interventions assigned to you</p>
 
@@ -277,9 +277,9 @@
 	</div>
 
 	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="incomplete">
-	  <h2 class="govuk-heading-l">Incomplete interventions</h2>
+	  <h2 class="govuk-heading-l">Terminated interventions</h2>
 
-	  <p class="govuk-body">Interventions that cannot continue due to a breach by the service user</p>
+	  <p class="govuk-body">Interventions that have been terminated</p>
 
 	  {# This is so clunky, there must be a better way? #}
 	  {% set interventionIndexesByReferral = [] %}
