@@ -52,7 +52,7 @@
 	    {% set referralIndex = loop.index0 %}
 	    {{ interventionIndexesByReferral.push([]) and null }}
 	    {% for intervention in referral.interventions %}
-	      {% if intervention.initialAssessmentStatus === "not scheduled" %}
+	      {% if intervention.status !== "terminated" and intervention.initialAssessmentStatus === "not scheduled" %}
 		{% set hasReferrals = true %}
 		{{ interventionIndexesByReferral[referralIndex].push(loop.index0) and null }}
 	      {% endif %}
@@ -108,7 +108,7 @@
 	    {% set referralIndex = loop.index0 %}
 	    {{ interventionIndexesByReferral.push([]) and null }}
 	    {% for intervention in referral.interventions %}
-	      {% if intervention.initialAssessmentStatus === "scheduled" and intervention.actionPlanStatus === "not submitted" %}
+	      {% if intervention.initialAssessmentStatus === "scheduled" and intervention.actionPlanStatus === "not submitted" and intervention.status !== "terminated" %}
 		{% set hasReferrals = true %}
 		{{ interventionIndexesByReferral[referralIndex].push(loop.index0) and null }}
 	      {% endif %}
@@ -288,8 +288,7 @@
 	    {% set referralIndex = loop.index0 %}
 	    {{ interventionIndexesByReferral.push([]) and null }}
 	    {% for intervention in referral.interventions %}
-	      {# TODO Not sure of the logic for a ”breach”, so we’re just showing all the referrals for now #}
-	      {% if true %}
+	      {% if intervention.status === "terminated" %}
 		{% set hasReferrals = true %}
 		{{ interventionIndexesByReferral[referralIndex].push(loop.index0) and null }}
 	      {% endif %}
@@ -305,7 +304,7 @@
 		  <th scope="col" class="govuk-table__header">Service user</th>
 		  <th scope="col" class="govuk-table__header">Probation practitioner</th>
 		  <th scope="col" class="govuk-table__header">Intervention</th>
-		  <th scope="col" class="govuk-table__header">Reason for breach</th>
+		  <th scope="col" class="govuk-table__header">Reason for termination</th>
 		  <th scope="col" class="govuk-table__header">Action</th>
 		</tr>
 	      </thead>
@@ -327,7 +326,7 @@
 			{% endif %}
 
 			<td class="govuk-table__cell">{{ intervention.name }}</td>
-			<td class="govuk-table__cell"></td>
+			<td class="govuk-table__cell">{{ intervention.endOfServiceReport["termination-short-reason"] }}</td>
 			<td class="govuk-table__cell"><a href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}">View</a></td>
 		      </tr>
 		    {% endif %}
