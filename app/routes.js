@@ -56,6 +56,8 @@ for (sprint of sprints) {
   );
 }
 
+router.use("/sprint-5/monitor", require("./routes/sprint-5/monitorRoutes"));
+
 async function createAuthenticatedApiClient() {
   const client = new HmppsOffenderAssessmentApi.ApiClient();
 

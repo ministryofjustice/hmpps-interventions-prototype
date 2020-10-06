@@ -7,6 +7,11 @@
 {% endfor %}
 
 <script src="/public/javascripts/application.js"></script>
+<script>
+  new MOJFrontend.SortableTable({
+    table: $('table')[0]
+  });
+</script>
 
 {% if useAutoStoreData %}
   <script src="/public/javascripts/auto-store-data.js"></script>
