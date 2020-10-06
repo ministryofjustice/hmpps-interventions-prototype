@@ -1,4 +1,4 @@
-<table class="govuk-table">
+<table class="govuk-table tablesorter" id="by-detail">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header" aria-sort="ascending">Referral</th>
@@ -13,7 +13,7 @@
   <tbody class="govuk-table__body">
     {% for referral in referrals %}
     {% set referralIndex = loop.index0 %}
-      <tr class="govuk-table__row">
+      <tr class="govuk-table__row" data-row="{{referralIndex}}">
       <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">
         {{ referral.reference }}
       </td>
@@ -23,7 +23,7 @@
 
     {% for intervention in referral.interventions %}
       {% if referral.interventions.length > 1 and not loop.first %}
-      <tr>
+      <tr data-parent={{referralIndex}}>
       {% endif%}
         <td class="govuk-table__cell">
           {{ intervention.name | capitalize }}

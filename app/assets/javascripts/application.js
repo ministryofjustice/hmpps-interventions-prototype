@@ -38,6 +38,31 @@ $(document).ready(function () {
   );
 
   setUpAutoCompleteMultiselects();
+
+  $("#by-detail").tablesorter({
+    theme: "ice",
+    headers: {
+      0: { sorter: "digit" },
+      1: { sorter: false },
+    },
+  });
+
+  $("#by-detail").bind("sortEnd updateComplete", function (e, table) {
+    $(table)
+      .find("[data-row]")
+      .each(function (idx, parent) {
+        var $parent = $(parent);
+        var $rows = $(table).find(
+          '[data-parent="' + $parent.data("row") + '"]'
+        );
+
+        if ($rows.first().prev("tr")[0] != $parent[0]) {
+          $parent.after($rows);
+        }
+
+        $rows.show();
+      });
+  });
 });
 
 function setUpAutoCompleteMultiselects() {
