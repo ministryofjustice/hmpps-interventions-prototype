@@ -28,7 +28,9 @@ function findReferralByIndex(req, index) {
 
     for (const intervention of referral.interventions) {
 	// Populate the intervention’s status based on which events have occurred.
-	if (intervention.initialAssessment == null) {
+	if (intervention.endOfServiceReport != null && intervention.endOfServiceReport.terminated) {
+	    intervention.status = "terminated";
+	} else if (intervention.initialAssessment == null) {
 	    intervention.status = "not started";
 	} else if (intervention.endOfServiceReport == null) {
 	    intervention.status = "in progress";
@@ -74,12 +76,17 @@ function findReferralByIndex(req, index) {
 	// Populate end of service report status.
 	if (intervention.endOfServiceReport == null) {
 	    intervention.endOfServiceReportStatus = "not started";
+	} else if (intervention.endOfServiceReport.terminated) {
+	    intervention.endOfServiceReportStatus = "terminated";
 	} else {
 	    intervention.endOfServiceReportStatus = "completed";
 	}
 
 	// Populate delivery progress based on which events have occurred.
-	if (intervention.sessions.some(session => session.assessment != null)) {
+	if (intervention.endOfServiceReport != null && intervention.endOfServiceReport.terminated) {
+	    intervention.deliveryProgress = "terminated";
+	}
+	else if (intervention.sessions.some(session => session.assessment != null)) {
 	    if (intervention.sessions.every(session => session.assessment != null) && intervention.endOfServiceReport != null) {
 		intervention.deliveryProgress = "completed";
 	    } else {
@@ -136,6 +143,8 @@ function cssClassForEndOfServiceReportStatus(endOfServiceReportStatus) {
     switch (endOfServiceReportStatus) {
 	case "completed":
 	    return "govuk-tag";
+	case "terminated":
+	    return "govuk-tag govuk-tag--red";
 	default:
 	    return "govuk-tag govuk-tag--grey";
     }
