@@ -116,23 +116,15 @@
 	    </p>
 	    {% if showProgress %}
 	      {% include "./includes/intervention/progress.html" %}
-
-	      <h2 class="govuk-heading-l">End of service report</h2>
-	      {% set showEndOfServiceReport = allSessionsAssessed %}
-	      <p class="govuk-body">
-	      Complete and submit the end of service report.
-	      {% if not showEndOfServiceReport %}
-		Interventions ready for an end of service report will appear below once the post-session feedback forms of the intervention are completed.
-	      {% endif %}
-	      </p>
-	      {% if showEndOfServiceReport %}
-		{% include "./includes/intervention/end-of-service-report.html" %}
-	      {% endif %}
-
 	    {% endif %}
 
 	  {% endif %}
 
+	  <h2 class="govuk-heading-l">End of service report</h2>
+	  <p class="govuk-body">
+	  Complete and submit the end of service report when the service user has met the conditions for this intervention. If the service user has not met the conditions of the intervention the service provider can also terminate and generate an end of service report at any time.
+	  </p>
+	  {% include "./includes/intervention/end-of-service-report.html" %}
 	</div>
 
 	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="referral-details">
