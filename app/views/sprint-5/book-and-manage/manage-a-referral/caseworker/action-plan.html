@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Service user action plan
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript: window.history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Service user action plan</h1>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body">
+      Create or edit the action plan. The submitted action plan will be shared with the probation practitioner.
+      </p>
+
+      <dl class="govuk-summary-list">
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Intervention</dt>
+	  <dd class="govuk-summary-list__value">{{intervention.name}}</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Service user</dt>
+	  <dd class="govuk-summary-list__value">{{ referral.serviceUser.name }}</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Probation practitioner</dt>
+	  <dd class="govuk-summary-list__value">{{ referral.probationPractitioner.name }}</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Approval status</dt>
+	  <dd class="govuk-summary-list__value">{{ intervention.actionPlanStatus | capitalize }}</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">First approval date</dt>
+	  <dd class="govuk-summary-list__value">
+	    {% if intervention.actionPlanApproved %}
+	      {{ moment(intervention.actionPlanApprovedAt).format("D/M/YYYY") }}
+	    {% else %}
+	      N/A
+	    {% endif %}
+	  </dd>
+	</div>
+      </dl>
+
+      <h2 class="govuk-heading-l" id="goals">Outcomes</h2>
+      <p class="govuk-body">
+      Add the outcomes of the intervention.
+      </p>
+      {% for goal in intervention.goals %}
+	<h3 class="govuk-heading-m">
+	  Outcome {{ loop.index }}
+	  <a href="#" class="govuk-link govuk-!-margin-left-3 govuk-!-font-size-19 govuk-!-font-weight-regular">Edit</a>
+	</h3>
+	<p class="govuk-body">{{ goal.text }}</p>
+      {% endfor %}
+      {% if canChangeActionPlan %}
+	<form method="post" action="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/goals">
+	  <div class="govuk-form-group">
+	    <label class="govuk-heading-m" for="text">Outcome {{ intervention.goals.length + 1 }}</label>
+	    <textarea class="govuk-textarea" id="text" name="text"></textarea>
+	  </div>
+	  <input class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="Add new outcome">
+	</form>
+      {% endif %}
+
+      <h2 class="govuk-heading-l" id="sessions">Sessions</h2>
+
+      <p class="govuk-body">
+      Add the details of each session.
+      </p>
+
+      <table class="govuk-table">
+	<thead class="govuk-table__header" class="govuk-table__head">
+	  <tr class="govuk-table-row">
+	    <th class="govuk-table__header" scope="col">Session title</th>
+	    <th class="govuk-table__header" scope="col">Date</th>
+	    <th class="govuk-table__header" scope="col">Time</th>
+	    <th class="govuk-table__header" scope="col">Status</th>
+	    <th class="govuk-table__header" scope="col">Action</th>
+	  </tr>
+	</thead>
+
+	{% for session in intervention.sessions %}
+	  <tr class="govuk-table-row">
+	    <td class="govuk-table__cell">{{ session.title }}</td>
+	    <td class="govuk-table__cell">{{ moment(session.date).format("D/M/YYYY") }}</td>
+	    <td class="govuk-table__cell">{{ session.startTime }} to {{ session.endTime }}</td>
+	    <td class="govuk-table__cell ">
+	      {% if intervention.actionPlanApproved and session.status != "not started" %}
+		<strong class="{{ cssClassForSessionStatus(session.status) }}">{{ session.status }}</strong>
+	      {% endif %}
+	    </td>
+	    <td class="govuk-table__cell">
+	      {% if session.status === "completed" %}
+		<a class="govuk-link" href="#">View</a>
+	      {% else %}
+		<a class="govuk-link" href="#">Edit</a>
+	      {% endif %}
+	    </td>
+	  </tr>
+	{% endfor %}
+      </table>
+
+      {% if canChangeActionPlan %}
+	<form method="post" action="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/sessions">
+	  <input class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="Add new session">
+	</form>
+      {% endif %}
+
+      {% if not intervention.actionPlanSubmitted %}
+	<form method="post" action="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/action-plan-submission">
+	  <input class="govuk-button" data-module="govuk-button" type="submit" value="Submit for approval">
+	</form>
+      {% endif %}
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <dl class="app-information-sidebar govuk-!-padding-2">
+	<h2 class="govuk-heading-m">Referral information</h2>
+
+	{% set termClass = "govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold" %}
+	{% set definitionClass = "govuk-body govuk-!-margin-left-0" %}
+
+	<dt class="{{ termClass }}">Relevant sentence</dt>
+	<dd class="{{ definitionClass }}">{{ referral.relevantSentenceHTML | safe }}</dd>
+
+	<dt class="{{ termClass }}">Desired outcomes</dt>
+	<dd class="{{ definitionClass }}">{{ referral.desiredOutcomes }}</dd>
+
+	<dt class="{{ termClass }}">Required complexity</dt>
+	<dd class="{{ definitionClass }}">{{ referral.requiredComplexityHTML | safe }}</dd>
+
+	<dt class="{{ termClass }}">Completion date required</dt>
+	<dd class="{{ definitionClass }}">{{ moment(referral.completionDateRequired).format("D/M/YYYY") }}</dd>
+
+	<dt class="{{ termClass }}">Maximum number of RAR days</dt>
+	<dd class="{{ definitionClass }}">{{ referral.maximumRARDays }}</dd>
+
+	<dt class="{{ termClass }}">Further information</dt>
+	<dd class="{{ definitionClass }} govuk-!-margin-bottom-0">{{ referral.furtherInformation }}</dd>
+      </dl>
+    </div>
+  </div>
+{% endblock %}

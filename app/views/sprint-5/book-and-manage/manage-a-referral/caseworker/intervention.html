@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage intervention referrals
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals" class="govuk-back-link">Return to cases and referrals</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-visually-hidden">Intervention details</h1>
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+	<h2 class="govuk-tabs__title">
+	  Contents
+	</h2>
+	<ul class="govuk-tabs__list">
+	  <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+	    <a class="govuk-tabs__tab" href="#intervention-progress">
+	      Intervention progress
+	    </a>
+	  </li>
+	  <li class="govuk-tabs__list-item">
+	    <a class="govuk-tabs__tab" href="#referral-details">
+	      Referral details
+	    </a>
+	  </li>
+	</ul>
+	<div class="govuk-tabs__panel" id="intervention-progress">
+	  <h2 class="govuk-heading-xl">Intervention progress</h2>
+
+	  <p class="govuk-body">
+	  On this page you can:
+	  </p>
+
+	  <ul class="govuk-list govuk-list--bullet">
+	    <li>enter the scheduled date of an initial assessment</li>
+	    <li>create the action plan and submit to the probation practitioner for approval</li>
+	    <li>track the progress of the intervention</li>
+	    <li>complete the end of service report for the intervention</li>
+	  </ul>
+
+	  <h2 class="govuk-heading-l">Intervention overview</h2>
+
+	  <dl class="govuk-summary-list">
+	    <div class="govuk-summary-list__row">
+	      <dt class="govuk-summary-list__key">Intervention</dt>
+	      <dd class="govuk-summary-list__value">{{ intervention.name }}</dd>
+	    </div>
+	    <div class="govuk-summary-list__row">
+	      <dt class="govuk-summary-list__key">Service user</dt>
+	      <dd class="govuk-summary-list__value">{{ referral.serviceUser.name }}</dd>
+	    </div>
+	    <div class="govuk-summary-list__row">
+	      <dt class="govuk-summary-list__key">Probation practitioner</dt>
+	      <dd class="govuk-summary-list__value">{{ referral.probationPractitioner.name }}</dd>
+	    </div>
+	  </dl>
+
+	  <h2 class="govuk-heading-l">Initial assessment</h2>
+
+	  <p class="govuk-body">
+	  Enter the date of the initial assessment. If it is not scheduled, use the communications tool to contact the probation practitioner online.
+	  </p>
+
+	  <table class="govuk-table">
+	    <thead class="govuk-table__head">
+	      <tr class="govuk-table__row">
+		<th scope="col" class="govuk-table__header">Probation practitioner</th>
+		<th scope="col" class="govuk-table__header">Date</th>
+		<th scope="col" class="govuk-table__header">Status</th>
+		<th scope="col" class="govuk-table__header">Action</th>
+	      </tr>
+	    </thead>
+	    <tbody class="govuk-table__body">
+	      <tr class="govuk-table__row">
+		<td class="govuk-table__cell">{{ referral.probationPractitioner.name }}</td>
+		<td class="govuk-table__cell">{{ intervention.initialAssessment.date }}</td>
+		<td class="govuk-table__cell"><strong class="{{ cssClassForInitialAssessmentStatus(intervention.initialAssessmentStatus) }}">{{ intervention.initialAssessmentStatus }}</strong></td>
+		{% if intervention.initialAssessment != null %}
+		  <td class="govuk-table__cell"><a class="govuk-link" href="#">View</a></td>
+		{% else %}
+		  <td class="govuk-table__cell"><a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/initial-assessment">Schedule</a></td>
+		{% endif %}
+	      </tr>
+	    </tbody>
+	  </table>
+
+	  <h2 class="govuk-heading-l">Service user action plan</h2>
+	  {% set showActionPlan = (intervention.initialAssessmentStatus === "scheduled") %}
+	  <p class="govuk-body">
+	  Create the action plan and submit it to the probation practitioner for approval.
+	  {% if not showActionPlan %}
+	    Action plans that are ready to be created will appear below when the initial assessment is scheduled.
+	  {% endif %}
+	  </p>
+	  {% if intervention.initialAssessmentStatus === "scheduled" %}
+	    {% include "./includes/intervention/action-plan.html" %}
+
+	    <h2 class="govuk-heading-l">Intervention sessions</h2>
+	    {% set showProgress = (intervention.actionPlanStatus === "approved") %}
+	    <p class="govuk-body">
+	    Track the progress of each intervention session.
+	    {% if not showProgress %}
+	      Intervention sessions that are ready to be tracked will appear below once the action plan is approved.
+	    {% endif %}
+	    </p>
+	    {% if showProgress %}
+	      {% include "./includes/intervention/progress.html" %}
+
+	      <h2 class="govuk-heading-l">End of service report</h2>
+	      {% set showEndOfServiceReport = allSessionsAssessed %}
+	      <p class="govuk-body">
+	      Complete and submit the end of service report.
+	      {% if not showEndOfServiceReport %}
+		Interventions ready for an end of service report will appear below once the post-session feedback forms of the intervention are completed.
+	      {% endif %}
+	      </p>
+	      {% if showEndOfServiceReport %}
+		{% include "./includes/intervention/end-of-service-report.html" %}
+	      {% endif %}
+
+	    {% endif %}
+
+	  {% endif %}
+
+	</div>
+
+	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="referral-details">
+	  <h2 class="govuk-heading-l">Referral details</h2>
+
+	  {% include "./includes/referral-details.html" %}
+	</div>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar">
+      <h2>Subsection</h2>
+      <p>
+      <a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/send-email">Send email to probation practitioner</a>
+      </p>
+      <p>
+      <a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/upload-case-notes">Add case notes</a>
+      </p>
+      <p>
+      <a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/communication-archive">View communication history</a>
+      </p>
+    </div>
+
+  </div>
+{% endblock %}
