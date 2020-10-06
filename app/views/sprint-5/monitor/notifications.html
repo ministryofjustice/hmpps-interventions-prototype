@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage interventions and services
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "./includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column">
+      <h1 class="govuk-heading-xl">
+        My notifications
+      </h1>
+    </div>
+    <div class="group-by">
+      <h2 class="govuk-heading-m group-by-heading">
+        Sort by:
+      </h2>
+      <ul class="group-by-links">
+        {% if sortBy == 'date' or not sortBy %}
+          <li class="group-by-link govuk-tag">
+        {% else %}
+          <li class="group-by-link">
+        {% endif %}
+          <a aria-current="page" href="notifications?sort_by=date">Date</a>
+        </li>
+        {% if sortBy == 'type' %}
+          <li class="group-by-link govuk-tag">
+        {% else %}
+          <li class="group-by-link">
+        {% endif %}
+          <a href="notifications?sort_by=type">Type</a>
+        </li>
+        </li>
+        {% if sortBy == 'service-users' %}
+          <li class="group-by-link govuk-tag">
+        {% else %}
+          <li class="group-by-link">
+        {% endif %}
+          <a href="notifications?sort_by=service-users">Service users</a>
+        </li>
+        </li>
+        {% if sortBy == 'priority' %}
+          <li class="group-by-link govuk-tag">
+        {% else %}
+          <li class="group-by-link">
+        {% endif %}
+          <a href="notifications?sort_by=priority">Priority</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  {% if sortBy == 'date' or not sortBy %}
+    {% include "./includes/notifications/by-date.html" %}
+  {% endif %}
+</div>
+{% endblock %}

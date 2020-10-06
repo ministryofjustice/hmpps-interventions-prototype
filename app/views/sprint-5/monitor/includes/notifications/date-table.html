@@ -1,0 +1,35 @@
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Time</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Type</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Service user</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Priority</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Action</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    {% for notification in notificationsForDate %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        {{ notification.date }}
+      </td>
+      <td class="govuk-table__cell">
+        {{ notification.type }}
+      </td>
+      <td class="govuk-table__cell">
+        {{ notification.serviceUser }}
+      </td>
+      <td class="govuk-table__cell">
+        {% if notification.priority %}
+          !
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell">
+        <a class="govuk-link" href="#">{{ notification.action | capitalize }}</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

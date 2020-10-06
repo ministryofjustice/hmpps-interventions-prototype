@@ -725,6 +725,77 @@ module.exports = {
         firstName: "Samantha",
       },
     ],
+    notifications: {
+      today: [
+        {
+          date: "Today 12:43",
+          type: "Approve service user action plan",
+          serviceUser: "Alex River",
+          priority: true,
+          action: "review",
+        },
+        {
+          date: "Today 11:02",
+          type: "Approve service user action plan",
+          serviceUser: "Alex River",
+          priority: true,
+          action: "review",
+        },
+      ],
+      yesterday: [
+        {
+          date: "Thursday 10:12",
+          type: "Attended Session 2",
+          serviceUser: "Bob Brown",
+          priority: false,
+          action: "view",
+        },
+        {
+          date: "Thursday 09:51",
+          type: "Safeguarding issues identified",
+          serviceUser: "Alex River",
+          priority: true,
+          action: "view",
+        },
+        {
+          date: "Thursday 09:42",
+          type: "Initial assessment completed",
+          serviceUser: "Emma Thompson",
+          priority: false,
+          action: "view",
+        },
+        {
+          date: "Thursday 11:02",
+          type: "Safeguarding issues identified",
+          serviceUser: "Emma Thompson",
+          priority: true,
+          action: "view",
+        },
+      ],
+      wednesday: [
+        {
+          date: "Wednesday 16:10",
+          type: "Did not attend initial assessment",
+          serviceUser: "Macy Flem",
+          priority: true,
+          action: "view",
+        },
+        {
+          date: "Wednesday 15:23",
+          type: "Approve end of service report",
+          serviceUser: "Robert Watkins",
+          priority: true,
+          action: "review",
+        },
+        {
+          date: "Wednesday 11:35",
+          type: "Initial assessment completed",
+          serviceUser: "Richard Smith",
+          priority: true,
+          action: "view",
+        },
+      ],
+    },
   },
 };
 
