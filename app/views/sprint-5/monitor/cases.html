@@ -40,9 +40,9 @@
   </div>
 
   {% if groupBy == 'details' or not groupBy %}
-    {% include "./includes/cases-by-detail.html" %}
+    {% include "./includes/cases/by-detail.html" %}
   {% elif groupBy == 'stage' %}
-    {% include "./includes/cases-by-stage.html" %}
+    {% include "./includes/cases/by-stage.html" %}
   {% endif %}
 </div>
 {% endblock %}
