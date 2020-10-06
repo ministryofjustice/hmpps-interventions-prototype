@@ -262,6 +262,22 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/end-of-s
 	    res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/end-of-service-report`);
 	    break;
 	case "termination":
+	    res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/end-of-service-report-contacted-probation-practitioner`);
+	    break;
+	default:
+	    // Not building validation into the prototype, so just ask the
+	    // question again.
+	    res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/end-of-service-report-reason`);
+	    break;
+    }
+});
+
+router.post("/referrals/:referralIndex/interventions/:interventionIndex/end-of-service-report-contacted-probation-practitioner", (req, res) => {
+    switch (req.body["contacted-probation-practitioner"]) {
+	case "yes":
+	    res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/end-of-service-report`);
+	    break;
+	case "no":
 	    res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/end-of-service-report`);
 	    break;
 	default:
@@ -303,7 +319,7 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/initial-
     res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });
 
-for (const page of ["probation-practitioner-email-confirmation", "send-email", "upload-case-notes", "communication-archive", "casenotes-upload-confirmation", "end-of-service-report", "end-of-service-report-check-your-answers", "end-of-service-report-reason"]) {
+for (const page of ["probation-practitioner-email-confirmation", "send-email", "upload-case-notes", "communication-archive", "casenotes-upload-confirmation", "end-of-service-report", "end-of-service-report-check-your-answers", "end-of-service-report-reason", "end-of-service-report-contacted-probation-practitioner"]) {
     router.get(`/referrals/:referralIndex/interventions/:interventionIndex/${page}`, (req, res) => {
 	const intervention = findIntervention(req);
 	const referral = findReferral(req);
