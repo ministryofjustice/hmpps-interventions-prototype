@@ -56,8 +56,8 @@ module.exports = {
           email: "alex.river@gmail.com",
         },
         probationPractitioner: {
-          name: "Jessica Reel",
-          email: "j.reel@justice.gov.uk",
+          name: "Adam Michaels",
+          email: "Adam.Michaels@justice.gov.uk",
         },
       },
       {
@@ -133,7 +133,7 @@ module.exports = {
           {
             id: "0",
             name: "Accommodation",
-            providerName: "XYZ Provider Name",
+            providerName: "Harmony Living",
             assignedCaseworker: "Jenny Thompson",
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -153,7 +153,7 @@ module.exports = {
           {
             id: "1",
             name: "Social inclusion",
-            providerName: "XYZ Provider Name",
+            providerName: "Harmony Living",
             assignedCaseworker: "Jenny Thompson",
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -166,26 +166,6 @@ module.exports = {
               "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 Sessions (pre-release virtual contact)] Service User has a low risk of reoffending. Service User has limited family support.",
-            completionDateRequired: moment().add("2", "months").toDate(),
-            maximumRARDays: "22",
-            furtherInformation: "N/A",
-          },
-          {
-            id: "3",
-            name: "Independent living",
-            providerName: "XYZ Provider Name",
-            assignedCaseworker: "Samantha Jones",
-            actionPlanSubmitted: false,
-            actionPlanApproved: false,
-            assigned: false,
-            goals: [],
-            sessions: [],
-            relevantSentenceHTML:
-              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
-            desiredOutcomes:
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-            requiredComplexityHTML:
-              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
             furtherInformation: "N/A",
@@ -241,6 +221,26 @@ module.exports = {
               "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 Sessions (pre-release virtual contact)] Service User has a low risk of reoffending. Service User has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformation: "N/A",
+          },
+          {
+            id: "3",
+            name: "Independent living",
+            providerName: "XYZ Provider Name",
+            assignedCaseworker: "Samantha Jones",
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            goals: [],
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes:
+              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
             furtherInformation: "N/A",
