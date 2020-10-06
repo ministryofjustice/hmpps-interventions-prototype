@@ -11,7 +11,7 @@
   </thead>
 
   <tbody class="govuk-table__body">
-    {% for referral in referrals %}
+    {% for referral in referralsToDisplay %}
     {% set referralIndex = loop.index0 %}
       <tr class="govuk-table__row">
       <td class="govuk-table__cell" rowspan="{{referral.interventions.length}}">

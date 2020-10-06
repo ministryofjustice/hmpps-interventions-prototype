@@ -2,8 +2,60 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/cases", (req, res) => {
+  const referrals = req.session.data.sprint5.referrals;
+  const referralsWithSomeUnassigned = referrals.filter((referral) => {
+    return referral.interventions.some(
+      (intervention) => !intervention.assigned
+    );
+  });
+
+  const referralsAwaitingAssessment = referrals.filter((referral) => {
+    return referral.interventions.some(
+      (intervention) =>
+        intervention.assigned && !intervention.actionPlanSubmitted
+    );
+  });
+
+  const referralsWithActionPlan = referrals.filter((referral) => {
+    return referral.interventions.some(
+      (intervention) =>
+        intervention.actionPlanSubmitted &&
+        !intervention.inProgress &&
+        !intervention.completed
+    );
+  });
+  const referralsInProgress = referrals.filter((referral) => {
+    return referral.interventions.some(
+      (intervention) =>
+        intervention.inProgress &&
+        !intervention.overdue &&
+        !intervention.completed
+    );
+  });
+
+  const referralsOverdue = referrals.filter((referral) => {
+    return referral.interventions.some(
+      (intervention) =>
+        intervention.inProgress &&
+        intervention.overdue &&
+        !intervention.completed
+    );
+  });
+
+  const referralsCompleted = referrals.filter((referral) => {
+    return referral.interventions.some(
+      (intervention) => intervention.completed
+    );
+  });
+
   res.render("sprint-5/monitor/cases", {
     referrals: req.session.data.sprint5.referrals,
+    referralsWithSomeUnassigned: referralsWithSomeUnassigned,
+    referralsAwaitingAssessment: referralsAwaitingAssessment,
+    referralsWithActionPlan: referralsWithActionPlan,
+    referralsInProgress: referralsInProgress,
+    referralsOverdue: referralsOverdue,
+    referralsCompleted: referralsCompleted,
     groupBy: req.query.group_by,
     currentPage: "cases",
   });

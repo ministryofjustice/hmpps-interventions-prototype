@@ -26,31 +26,37 @@
     <h2 class="govuk-heading-m">
       Awaiting a caseworker to be assigned
     </h2>
+    {% set referralsToDisplay = referralsWithSomeUnassigned %}
     {% include "./table.html"%}
-    
+
     <h2 class="govuk-heading-m">
       Awaiting assessment
     </h2>
+    {% set referralsToDisplay = referralsAwaitingAssessment %}
     {% include "./table.html"%}
   </div>
 
   <div class="govuk-tabs__panel" id="action-plan">
-       {% include "./table.html"%}
+    {% set referralsToDisplay = referralsWithActionPlan %}
+    {% include "./table.html"%}
   </div>
 
   <div class="govuk-tabs__panel" id="intervention-progress">
     <h2 class="govuk-heading-m">
       Interventions in progress
     </h2>
+    {% set referralsToDisplay = referralsInProgress %}
     {% include "./table.html"%}
 
     <h2 class="govuk-heading-m">
       Session assessment overdue
     </h2>
+    {% set referralsToDisplay = referralsOverdue %}
     {% include "./table.html"%}
   </div>
 
   <div class="govuk-tabs__panel" id="completed-interventions">
+    {% set referralsToDisplay = referralsCompleted %}
     {% include "./table.html"%}
   </div>
 </div>
