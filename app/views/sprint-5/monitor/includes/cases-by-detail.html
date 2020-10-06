@@ -22,25 +22,30 @@
         </td>
 
         {% for intervention in referral.interventions %}
-          <td class="govuk-table__cell">
-            {{ intervention.name | capitalize }}
-          </td>
-          <td class="govuk-table__cell">
-            {{ intervention.providerName }}
-          </td>
-          <td class="govuk-table__cell">
-            {{ intervention.assignedCaseworker }}
-          </td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" href="cases/{{caseIndex}}/interventions/{{intervention.id}}">View</a>
-          </td>
 
-          {% if referral.interventions.length > 1 and not loop.last %}
+          {% if referral.interventions.length > 1 and not loop.first %}
+            <tr>
+              {% endif%}
+
+              <td class="govuk-table__cell">
+                {{ intervention.name | capitalize }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ intervention.providerName }}
+              </td>
+              <td class="govuk-table__cell">
+                {{ intervention.assignedCaseworker }}
+              </td>
+              <td class="govuk-table__cell">
+                <a class="govuk-link" href="cases/{{caseIndex}}/interventions/{{intervention.id}}">View</a>
+              </td>
+
+              {% if referral.interventions.length > 1 and not loop.first %}
+              </tr>
+              {% endif%}
+
+            {% endfor %}
           </tr>
-          {% endif%}
-
         {% endfor %}
-      </tr>
-    {% endfor %}
   </tbody>
 </table>
