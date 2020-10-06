@@ -247,13 +247,6 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex/fast-forw
     res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });
 
-router.get("/referrals/:referralIndex/interventions/:interventionIndex/end-of-service-report", (req, res) => {
-    const intervention = findIntervention(req);
-    const referral = findReferral(req);
-
-    res.render("sprint-5/book-and-manage/manage-a-referral/caseworker/end-of-service-report", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, referral });
-});
-
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/end-of-service-report-check-answers", (req, res) => {
     const intervention = findIntervention(req);
     const referral = findReferral(req);
@@ -261,6 +254,22 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/end-of-s
     endOfServiceReport = req.body;
 
     res.render("sprint-5/book-and-manage/manage-a-referral/caseworker/end-of-service-report-check-answers", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, referral, endOfServiceReport });
+});
+
+router.post("/referrals/:referralIndex/interventions/:interventionIndex/end-of-service-report-reason", (req, res) => {
+    switch (req.body.reason) {
+	case "delivered-successfully":
+	    res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/end-of-service-report`);
+	    break;
+	case "termination":
+	    res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/end-of-service-report`);
+	    break;
+	default:
+	    // Not building validation into the prototype, so just ask the
+	    // question again.
+	    res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/end-of-service-report-contacted-probation-practitioner`);
+	    break;
+    }
 });
 
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/end-of-service-report", (req, res) => {
@@ -294,7 +303,7 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/initial-
     res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });
 
-for (const page of ["probation-practitioner-email-confirmation", "send-email", "upload-case-notes", "communication-archive", "casenotes-upload-confirmation"]) {
+for (const page of ["probation-practitioner-email-confirmation", "send-email", "upload-case-notes", "communication-archive", "casenotes-upload-confirmation", "end-of-service-report", "end-of-service-report-check-your-answers", "end-of-service-report-reason"]) {
     router.get(`/referrals/:referralIndex/interventions/:interventionIndex/${page}`, (req, res) => {
 	const intervention = findIntervention(req);
 	const referral = findReferral(req);
