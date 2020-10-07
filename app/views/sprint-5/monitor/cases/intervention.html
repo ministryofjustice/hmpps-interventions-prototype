@@ -10,15 +10,88 @@
 {% endblock %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
-    {{ serviceUser.name }}
-  </h1>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+          {{ serviceUser.name }}
+        </h1>
         {% set currentPage = intervention.name %}
         {% include "./side-navigation.html" %}
+
+        <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar--grey govuk-!-margin-top-6">
+          <ul class="govuk-list govuk-list--case-summary">
+            <li>
+              <strong>Type</strong>
+              <br>Delivery partner
+            </li>
+            <li>
+              <strong>Needs referred</strong>
+              <br>
+              {% for need in serviceUser.needs.criminogenicNeeds %}
+                {{ need }}
+              {% endfor %}
+            </li>
+            <li>
+              <strong>Provider</strong>
+              <br>{{ intervention.providerName }}
+            </li>
+            <li>
+              <strong>Date referred</strong>
+              <br>1 Aug 2020
+            </li>
+            <li>
+              <strong>Assessment date</strong>
+              <br>8 Aug 2020
+            </li>
+            <li>
+              <strong>Date of action plan</strong>
+              <br>
+            </li>
+            <li>
+              <strong>Date started</strong>
+              <br>22 Aug 2020
+            </li>
+            <li>
+              <strong>Target end date</strong>
+              <br>5 Sep 2020
+            </li>
+            <li>
+              <strong>End of service review</strong>
+              <br>To be confirmed
+            </li>
+            <li>
+              <strong>RAR days allocation</strong>
+              <br>10 days
+            </li>
+            <li>
+              <strong>Appointments offered</strong>
+              <br>8
+            </li>
+            <li>
+              <strong>Appointments attended</strong>
+              <br>7
+            </li>
+            <li>
+              <strong>Acceptable absences</strong>
+              <br>1
+            </li>
+            <li>
+              <strong>Unacceptable absences</strong>
+              <br>0
+            </li>
+            <li>
+              <strong>Provider case notes</strong>
+              <br>
+              <a href="#" class="govuk-link">View notes</a>
+            </li>
+            <li>
+              <strong>Contact number</strong>
+              <br>0300 4560021
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="govuk-grid-column-two-thirds">
