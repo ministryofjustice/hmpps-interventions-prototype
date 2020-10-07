@@ -69,4 +69,19 @@ router.get("/notifications", (req, res) => {
   });
 });
 
+router.get("/cases/:referralNumber/service-user", (req, res) => {
+  const referralNumber = req.params.referralNumber;
+
+  const referral = req.session.data.sprint5.referrals.find(
+    (referral) => referral.reference == referralNumber
+  );
+
+  const serviceUser = referral ? referral.serviceUser : {};
+
+  res.render("sprint-5/monitor/cases/service-user", {
+    referral: referral,
+    serviceUser: serviceUser,
+  });
+});
+
 module.exports = router;

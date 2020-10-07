@@ -1,0 +1,164 @@
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Title
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.title }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.name }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Other names
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.otherNames }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      PNC number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.pncNumber }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      CRN
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.crn }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Nomis number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.nomisNumber }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.dateOfBirth }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.addressHTML | safe }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      OGRS Score
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.risks.OGRSScore }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      RM2000 Score
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.risks.RM2000Score }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      ROSHA Score
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.risks.ROSHAScore }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      SARA Score
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.risks.SARAScore }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Criminogenic needs
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {% for need in serviceUser.needs.criminogenicNeeds %}
+        {{ need }}<br>
+      {% endfor %}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.gender }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Ethnicity
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.ethnicGroup }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Nationality
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.nationality }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Preferred language
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.preferredLanguage }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Religion or belief
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.religionOrBelief }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Sexual orientation
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.sexuality }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Disabilities
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ serviceUser.disabilities }}
+    </dd>
+  </div>
+</dl>

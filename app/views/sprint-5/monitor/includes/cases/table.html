@@ -19,13 +19,13 @@
             {{ referral.reference }}
           </td>
           <td class="govuk-table__cell" data-sort-value={{referral.serviceUser.name}}>
-            <a class="govuk-link" href="cases/{{referralIndex}}/service-user">
+            <a class="govuk-link" href="cases/{{referral.reference}}/service-user">
               {{ referral.serviceUser.name }}
             </a>
           </td>
 
           <td class="govuk-table__cell" data-sort-value={{intervention.name}}>
-            <a class="govuk-link" href="cases/{{referralIndex}}/interventions/{{intervention.id}}">
+            <a class="govuk-link" href="cases/{{referral.reference}}/interventions/{{intervention.id}}">
               {{ intervention.name | capitalize }}
             </a>
           </td>

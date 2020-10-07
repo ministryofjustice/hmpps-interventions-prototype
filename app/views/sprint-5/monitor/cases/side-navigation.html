@@ -1,0 +1,18 @@
+<nav class="moj-side-navigation" aria-label="Side navigation">
+  <ul class="moj-side-navigation__list">
+    {% if currentPage == "personal-details" %}
+      <li class="moj-side-navigation__item moj-side-navigation__item--active">
+        <a href="/sprint-5/monitor/cases/{{referral.reference}}/service-user" aria-current="location">Service user's details</a>
+    {% else %}
+      <li class="moj-side-navigation__item">
+         <a href="/sprint-5/monitor/cases/{{referral.reference}}/service-user">Service user's details</a>
+      </li>
+    {% endif %}
+
+    {% for intervention in referral.interventions %}
+      <li class="moj-side-navigation__item">
+        <a href="#">{{ intervention.name | capitalize }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
