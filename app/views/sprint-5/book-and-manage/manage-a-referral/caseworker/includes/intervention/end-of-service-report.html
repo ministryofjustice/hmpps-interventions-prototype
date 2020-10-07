@@ -10,10 +10,10 @@
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">{{ referral.probationPractitioner.name }}</td>
       <td class="govuk-table__cell"><strong class="{{ cssClassForEndOfServiceReportStatus(intervention.endOfServiceReportStatus) }}">{{ intervention.endOfServiceReportStatus }}</strong></td>
-      {% if intervention.endOfServiceReportStatus === "completed" %}
+      {% if intervention.endOfServiceReportStatus === "completed" or intervention.endOfServiceReportStatus === "terminated" %}
         <td class="govuk-table__cell"><a class="govuk-link" href="#">View</a></td>
       {% else %}
-        <td class="govuk-table__cell"><a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/end-of-service-report">Start</a></td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/end-of-service-report-reason">Start</a></td>
       {% endif %}
     </tr>
   </tbody>

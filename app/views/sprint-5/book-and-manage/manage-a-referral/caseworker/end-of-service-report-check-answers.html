@@ -60,6 +60,15 @@
 
       <form method="post" action="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/end-of-service-report">
 
+        {% if isTermination %}
+          <h2 class="govuk-heading-l">
+            Reason for termination
+          </h2>
+
+          <p class="govuk-body">{{ endOfServiceReport["termination-short-reason"] }}</p>
+          <p class="govuk-body">{{ endOfServiceReport["termination-reason"] }}</p>
+        {% endif %}
+
         {% for goal in intervention.goals %}
           {% set name = "goal-" + loop.index0 %}
           {% set detailsName = "goal-" + loop.index0 + "-details" %}

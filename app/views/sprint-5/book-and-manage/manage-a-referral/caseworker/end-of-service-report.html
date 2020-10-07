@@ -60,6 +60,32 @@
 
       <form method="post" action="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/end-of-service-report-check-answers">
 
+        {% if isTermination %}
+          <h2 class="govuk-heading-m">
+            Reason for termination
+          </h2>
+
+          <p class="govuk-body">
+          As a service provider you can terminate the service at any time. Please provide details below.
+          </p>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="termination-short-reason">
+              Brief detail
+            </label>
+            <input class="govuk-input" id="termination-short-reason" name="termination-short-reason">
+          </div>
+
+          <input type="hidden" name="terminated" value="true">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="termination-reason">
+              Reason for termination
+            </label>
+            <textarea class="govuk-textarea" id="termination-reason" name="termination-reason"></textarea>
+          </div>
+        {% endif %}
+
         {% for goal in intervention.goals %}
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
