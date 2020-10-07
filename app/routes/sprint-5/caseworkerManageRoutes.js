@@ -163,7 +163,21 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
     const canChangeActionPlan = intervention.endOfServiceReport == null;
     const initialAssessmentScheduled = intervention.initialAssessment != null;
 
-    res.render("sprint-5/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsAssessed, canChangeActionPlan, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForActionPlanStatus, cssClassForEndOfServiceReportStatus, initialAssessmentScheduled });
+    const viewModel = {}
+
+    viewModel.showInitialAssessment = true;
+    viewModel.populateInitialAssessmentContent = true;
+
+    viewModel.showActionPlan = viewModel.populateInitialAssessmentContent;
+    viewModel.populateActionPlanContent = intervention.initialAssessmentStatus === "scheduled";
+
+    viewModel.showInterventionSessions = viewModel.populateActionPlanContent;
+    viewModel.populateInterventionSessionsContent = intervention.actionPlanStatus === "approved";
+
+    viewModel.showEndOfServiceReport = true;
+    viewModel.populateEndOfServiceReportContent = true;
+
+    res.render("sprint-5/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsAssessed, canChangeActionPlan, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForActionPlanStatus, cssClassForEndOfServiceReportStatus, initialAssessmentScheduled, viewModel });
 });
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/action-plan", (req, res) => {
