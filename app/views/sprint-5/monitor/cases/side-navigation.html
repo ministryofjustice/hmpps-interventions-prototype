@@ -3,16 +3,27 @@
     {% if currentPage == "personal-details" %}
       <li class="moj-side-navigation__item moj-side-navigation__item--active">
         <a href="/sprint-5/monitor/cases/{{referral.reference}}/service-user" aria-current="location">Service user's details</a>
+      </li>
     {% else %}
       <li class="moj-side-navigation__item">
-         <a href="/sprint-5/monitor/cases/{{referral.reference}}/service-user">Service user's details</a>
+        <a href="/sprint-5/monitor/cases/{{referral.reference}}/service-user">Service user's details</a>
       </li>
     {% endif %}
 
     {% for intervention in referral.interventions %}
-      <li class="moj-side-navigation__item">
-        <a href="#">{{ intervention.name | capitalize }}</a>
+      {% if currentPage == intervention.name %}
+      <li class="moj-side-navigation__item moj-side-navigation__item--active">
+        <a href="/sprint-5/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}">
+          {{ intervention.name | capitalize }}
+        </a>
       </li>
+      {% else %}
+      <li class="moj-side-navigation__item">
+        <a href="/sprint-5/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}">
+          {{ intervention.name | capitalize }}
+        </a>
+      </li>
+      {% endif %}
     {% endfor %}
   </ul>
 </nav>

@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
+const findReferral = (referrals, referralNumber) =>
+  referrals.find((referral) => referralNumber === referral.reference);
+
 router.get("/cases", (req, res) => {
   const referrals = req.session.data.sprint5.referrals;
   const referralsWithSomeUnassigned = referrals.filter((referral) => {
@@ -72,8 +75,9 @@ router.get("/notifications", (req, res) => {
 router.get("/cases/:referralNumber/service-user", (req, res) => {
   const referralNumber = req.params.referralNumber;
 
-  const referral = req.session.data.sprint5.referrals.find(
-    (referral) => referral.reference == referralNumber
+  const referral = findReferral(
+    req.session.data.sprint5.referrals,
+    referralNumber
   );
 
   const serviceUser = referral ? referral.serviceUser : {};
@@ -83,5 +87,33 @@ router.get("/cases/:referralNumber/service-user", (req, res) => {
     serviceUser: serviceUser,
   });
 });
+
+router.get(
+  "/cases/:referralNumber/interventions/:interventionId",
+  (req, res) => {
+    const referralNumber = req.params.referralNumber;
+    const interventionId = req.params.interventionId;
+
+    const referral = findReferral(
+      req.session.data.sprint5.referrals,
+      referralNumber
+    );
+
+    const intervention = referral.interventions.find(
+      (intervention) => interventionId === intervention.id
+    );
+
+    console.log(intervention);
+
+    const serviceUser = referral ? referral.serviceUser : {};
+
+    res.render("sprint-5/monitor/cases/intervention", {
+      referral: referral,
+      intervention: intervention,
+      serviceUser: serviceUser,
+      currentPage: intervention.name,
+    });
+  }
+);
 
 module.exports = router;
