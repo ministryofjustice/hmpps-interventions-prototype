@@ -8,6 +8,14 @@
 {% endfor %}
 
 <script src="/public/javascripts/application.js"></script>
+<script>
+  var sortableTables = $('.sortable')
+  for (var i = 0; i < sortableTables.length; i++) {
+    new MOJFrontend.SortableTable({
+      table: sortableTables[i]
+    });
+  }
+</script>
 
 {% if useAutoStoreData %}
   <script src="/public/javascripts/auto-store-data.js"></script>
