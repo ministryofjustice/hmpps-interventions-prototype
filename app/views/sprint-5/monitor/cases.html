@@ -40,7 +40,8 @@
   </div>
 
   {% if groupBy == 'details' or not groupBy %}
-    {% include "./includes/cases/by-detail.html" %}
+    {% set referralsToDisplay = referrals %}
+    {% include "./includes/cases/table.html" %}
   {% elif groupBy == 'stage' %}
     {% include "./includes/cases/by-stage.html" %}
   {% endif %}

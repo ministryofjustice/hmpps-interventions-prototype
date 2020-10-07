@@ -6,7 +6,6 @@
       <th scope="col" class="govuk-table__header" aria-sort="none">Intervention category</th>
       <th scope="col" class="govuk-table__header" aria-sort="none">Provider</th>
       <th scope="col" class="govuk-table__header" aria-sort="none">Caseworker</th>
-      <th scope="col" class="govuk-table__header" aria-sort="none">Action</th>
     </tr>
   </thead>
 
@@ -19,21 +18,22 @@
           <td class="govuk-table__cell">
             {{ referral.reference }}
           </td>
-          <td class="govuk-table__cell">
-            {{ referral.serviceUser.name }}
+          <td class="govuk-table__cell" data-sort-value={{referral.serviceUser.name}}>
+            <a class="govuk-link" href="cases/{{referralIndex}}/service-user">
+              {{ referral.serviceUser.name }}
+            </a>
           </td>
 
-          <td class="govuk-table__cell">
-            {{ intervention.name | capitalize }}
+          <td class="govuk-table__cell" data-sort-value={{intervention.name}}>
+            <a class="govuk-link" href="cases/{{referralIndex}}/interventions/{{intervention.id}}">
+              {{ intervention.name | capitalize }}
+            </a>
           </td>
           <td class="govuk-table__cell">
             {{ intervention.providerName }}
           </td>
           <td class="govuk-table__cell">
             {{ intervention.assignedCaseworker }}
-          </td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" href="cases/{{referralIndex}}/interventions/{{intervention.id}}">View</a>
           </td>
         {% endfor %}
       </tr>
