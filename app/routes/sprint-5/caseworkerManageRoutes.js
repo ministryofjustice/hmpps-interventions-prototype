@@ -73,6 +73,13 @@ function findReferralByIndex(req, index) {
 	    }
 	}
 
+	// Populate overall intervention sessions status.
+	if (intervention.sessions.some(session => session.status === "awaiting assessment")) {
+	    intervention.sessionsStatus = "awaiting assessment";
+	} else {
+	    intervention.sessionsStatus = "completed";
+	}
+
 	// Populate end of service report status.
 	if (intervention.endOfServiceReport == null) {
 	    intervention.endOfServiceReportStatus = "not started";
@@ -139,6 +146,15 @@ function cssClassForSessionStatus(sessionStatus) {
     }
 }
 
+function cssClassForInterventionSessionsStatus(sessionsStatus) {
+    switch (sessionsStatus) {
+	case "completed":
+	    return "govuk-tag";
+	default:
+	    return "govuk-tag govuk-tag--grey";
+    }
+}
+
 function cssClassForEndOfServiceReportStatus(endOfServiceReportStatus) {
     switch (endOfServiceReportStatus) {
 	case "completed":
@@ -177,7 +193,7 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
     viewModel.showEndOfServiceReport = true;
     viewModel.populateEndOfServiceReportContent = true;
 
-    res.render("sprint-5/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsAssessed, canChangeActionPlan, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForActionPlanStatus, cssClassForEndOfServiceReportStatus, initialAssessmentScheduled, viewModel });
+    res.render("sprint-5/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsAssessed, canChangeActionPlan, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForInterventionSessionsStatus, cssClassForActionPlanStatus, cssClassForEndOfServiceReportStatus, initialAssessmentScheduled, viewModel });
 });
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/action-plan", (req, res) => {
