@@ -1,6 +1,8 @@
+{% set initialAssessmentHTML = null %}
 {% if viewModel.showInitialAssessment %}
   <h2 class="govuk-heading-l">Initial assessment</h2>
 
+  {% set initialAssessmentHTML %}
   <p class="govuk-body">
   Enter the date of the initial assessment. If it is not scheduled, use the communications tool to contact the probation practitioner online.
   </p>
@@ -8,10 +10,16 @@
   {% if viewModel.populateInitialAssessmentContent %}
     {% include "./initial-assessment.html" %}
   {% endif %}
+  {% endset %}
+
+  {{ initialAssessmentHTML | safe }}
 {% endif %}
 
+{% set actionPlanHTML = null %}
 {% if viewModel.showActionPlan %}
   <h2 class="govuk-heading-l">Service user action plan</h2>
+
+  {% set actionPlanHTML %}
   <p class="govuk-body">
   Create the action plan and submit it to the probation practitioner for approval.
   {% if not viewModel.populateActionPlanContent %}
@@ -21,10 +29,16 @@
   {% if viewModel.populateActionPlanContent %}
     {% include "./action-plan.html" %}
   {% endif %}
+  {% endset %}
+
+  {{ actionPlanHTML | safe }}
 {% endif %}
 
+{% set interventionSessionsHTML = null %}
 {% if viewModel.showInterventionSessions %}
   <h2 class="govuk-heading-l">Intervention sessions</h2>
+
+  {% set interventionSessionsHTML %}
   <p class="govuk-body">
   Track the progress of each intervention session.
   {% if not viewModel.populateInterventionSessionsContent %}
@@ -34,14 +48,23 @@
   {% if viewModel.populateInterventionSessionsContent %}
     {% include "./progress.html" %}
   {% endif %}
+  {% endset %}
+
+  {{ interventionSessionsHTML | safe }}
 {% endif %}
 
+{% set endOfServiceReportHTML = null %}
 {% if viewModel.showEndOfServiceReport %}
   <h2 class="govuk-heading-l">End of service report</h2>
+
+  {% set endOfServiceReportHTML %}
   <p class="govuk-body">
   Complete and submit the end of service report when the service user has met the conditions for this intervention. If the service user has not met the conditions of the intervention the service provider can also terminate and generate an end of service report at any time.
   </p>
   {% if viewModel.populateEndOfServiceReportContent %}
     {% include "./end-of-service-report.html" %}
   {% endif %}
+  {% endset %}
+
+  {{ endOfServiceReportHTML | safe }}
 {% endif %}
