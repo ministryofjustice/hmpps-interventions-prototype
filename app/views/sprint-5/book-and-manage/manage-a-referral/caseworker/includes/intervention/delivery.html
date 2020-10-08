@@ -13,7 +13,7 @@
   {% endset %}
 
   {% set headingHTML %}
-  Initial assessment <span class="app-accordion-tag-container"><strong class="govuk-tag govuk-tag--app-accordion-tag">TODO content</strong></span>
+  Initial assessment <span class="app-accordion-tag-container"><strong class="{{ cssClassForInitialAssessmentStatus(intervention.initialAssessmentStatus) }} govuk-tag--app-accordion-tag">{{ intervention.initialAssessmentStatus }}</strong></span>
   {% endset %}
 
   {% set item = { heading: { html: headingHTML}, content: { html: html }, expanded: expanded } %}
@@ -36,7 +36,14 @@
   {% endset %}
 
   {% set headingHTML %}
-  Service user action plan <span class="app-accordion-tag-container"><strong class="govuk-tag govuk-tag--app-accordion-tag">TODO content</strong></span>
+  Service user action plan
+  <span class="app-accordion-tag-container">
+    {% if viewModel.populateActionPlanContent %}
+      <strong class="{{cssClassForActionPlanStatus(intervention.actionPlanStatus)}} govuk-tag--app-accordion-tag">{{intervention.actionPlanStatus}}</strong>
+    {% else %}
+      <strong class="govuk-tag govuk-tag--grey govuk-tag--app-accordion-tag">Cannot start yet</strong>
+    {% endif %}
+  </span>
   {% endset %}
 
   {% set item = { heading: { html: headingHTML }, content: { html: html }, expanded: expanded } %}
@@ -60,7 +67,14 @@
   {% endset %}
 
   {% set headingHTML %}
-  Intervention sessions <span class="app-accordion-tag-container"><strong class="govuk-tag govuk-tag--app-accordion-tag">TODO content</strong></span>
+  Intervention sessions
+  <span class="app-accordion-tag-container">
+    {% if viewModel.populateInterventionSessionsContent %}
+      <strong class="{{cssClassForInterventionSessionsStatus(intervention.actionPlanStatus)}} govuk-tag--app-accordion-tag">{{ intervention.sessionsStatus }}</strong>
+    {% else %}
+      <strong class="govuk-tag govuk-tag--grey govuk-tag--app-accordion-tag">Cannot start yet</strong>
+    {% endif %}
+  </span>
   {% endset %}
 
   {% set item = { heading: { html: headingHTML }, content: { html: html }, expanded: expanded } %}
@@ -81,7 +95,7 @@
   {% endset %}
 
   {% set headingHTML %}
-  End of service report <span class="app-accordion-tag-container"><strong class="govuk-tag govuk-tag--app-accordion-tag">TODO content</strong></span>
+  End of service report <span class="app-accordion-tag-container"><strong class="{{ cssClassForEndOfServiceReportStatus(intervention.endOfServiceReportStatus) }} govuk-tag--app-accordion-tag">{{ intervention.endOfServiceReportStatus }}</strong></span>
   {% endset %}
 
   {% set item = { heading: { html: headingHTML }, content: { html: html }, expanded: expanded } %}
