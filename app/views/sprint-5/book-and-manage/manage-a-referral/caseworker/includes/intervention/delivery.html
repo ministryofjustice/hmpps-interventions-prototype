@@ -2,7 +2,7 @@
 {% set expandFirstItem = true %}
 {% set accordionId = "to-complete" %}
 {% if accordionSections.length > 0 %}
-  <h2 class="govuk-heading-l">Tasks to complete</h3>
+  <h3 class="govuk-heading-l">Tasks to complete</h3>
   {% include "./delivery-accordion.html" %}
 {% endif %}
 
@@ -10,6 +10,6 @@
 {% set expandFirstItem = false %}
 {% set accordionId = "completed" %}
 {% if accordionSections.length > 0 %}
-  <h2 class="govuk-heading-l">Completed tasks</h3>
+  <h3 class="govuk-heading-l">Completed tasks</h3>
   {% include "./delivery-accordion.html" %}
 {% endif %}
