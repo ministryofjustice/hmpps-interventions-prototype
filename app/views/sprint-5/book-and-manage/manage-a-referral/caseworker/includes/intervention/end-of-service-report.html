@@ -1,20 +1,14 @@
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Probation practitioner</th>
-      <th scope="col" class="govuk-table__header">Status</th>
-      <th scope="col" class="govuk-table__header">Action</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">{{ referral.probationPractitioner.name }}</td>
-      <td class="govuk-table__cell"><strong class="{{ cssClassForEndOfServiceReportStatus(intervention.endOfServiceReportStatus) }}">{{ intervention.endOfServiceReportStatus }}</strong></td>
+<dl class="govuk-summary-list govuk-!-width-two-thirds">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Action
+    </dt>
+    <dd class="govuk-summary-list__value">
       {% if intervention.endOfServiceReportStatus === "completed" or intervention.endOfServiceReportStatus === "terminated" %}
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">View</a></td>
+        <a class="govuk-link" href="#">View</a>
       {% else %}
-        <td class="govuk-table__cell"><a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/end-of-service-report-reason">Start</a></td>
+        <a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/end-of-service-report-reason">Start</a>
       {% endif %}
-    </tr>
-  </tbody>
-</table>
+    </dd>
+  </div>
+</dl>

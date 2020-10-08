@@ -36,95 +36,9 @@
 	  </li>
 	</ul>
 	<div class="govuk-tabs__panel" id="intervention-progress">
-	  <h2 class="govuk-heading-xl">Intervention progress</h2>
+	  <h2 class="govuk-heading-xl">Intervention progress: {{intervention.name | lower }}</h2>
 
-	  <p class="govuk-body">
-	  On this page you can:
-	  </p>
-
-	  <ul class="govuk-list govuk-list--bullet">
-	    <li>enter the scheduled date of an initial assessment</li>
-	    <li>create the action plan and submit to the probation practitioner for approval</li>
-	    <li>track the progress of the intervention</li>
-	    <li>complete the end of service report for the intervention</li>
-	  </ul>
-
-	  <h2 class="govuk-heading-l">Intervention overview</h2>
-
-	  <dl class="govuk-summary-list">
-	    <div class="govuk-summary-list__row">
-	      <dt class="govuk-summary-list__key">Intervention</dt>
-	      <dd class="govuk-summary-list__value">{{ intervention.name }}</dd>
-	    </div>
-	    <div class="govuk-summary-list__row">
-	      <dt class="govuk-summary-list__key">Service user</dt>
-	      <dd class="govuk-summary-list__value">{{ referral.serviceUser.name }}</dd>
-	    </div>
-	    <div class="govuk-summary-list__row">
-	      <dt class="govuk-summary-list__key">Probation practitioner</dt>
-	      <dd class="govuk-summary-list__value">{{ referral.probationPractitioner.name }}</dd>
-	    </div>
-	  </dl>
-
-	  <h2 class="govuk-heading-l">Initial assessment</h2>
-
-	  <p class="govuk-body">
-	  Enter the date of the initial assessment. If it is not scheduled, use the communications tool to contact the probation practitioner online.
-	  </p>
-
-	  <table class="govuk-table">
-	    <thead class="govuk-table__head">
-	      <tr class="govuk-table__row">
-		<th scope="col" class="govuk-table__header">Probation practitioner</th>
-		<th scope="col" class="govuk-table__header">Date</th>
-		<th scope="col" class="govuk-table__header">Status</th>
-		<th scope="col" class="govuk-table__header">Action</th>
-	      </tr>
-	    </thead>
-	    <tbody class="govuk-table__body">
-	      <tr class="govuk-table__row">
-		<td class="govuk-table__cell">{{ referral.probationPractitioner.name }}</td>
-		<td class="govuk-table__cell">{{ intervention.initialAssessment.date }}</td>
-		<td class="govuk-table__cell"><strong class="{{ cssClassForInitialAssessmentStatus(intervention.initialAssessmentStatus) }}">{{ intervention.initialAssessmentStatus }}</strong></td>
-		{% if intervention.initialAssessment != null %}
-		  <td class="govuk-table__cell"><a class="govuk-link" href="#">View</a></td>
-		{% else %}
-		  <td class="govuk-table__cell"><a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/initial-assessment">Schedule</a></td>
-		{% endif %}
-	      </tr>
-	    </tbody>
-	  </table>
-
-	  <h2 class="govuk-heading-l">Service user action plan</h2>
-	  {% set showActionPlan = (intervention.initialAssessmentStatus === "scheduled") %}
-	  <p class="govuk-body">
-	  Create the action plan and submit it to the probation practitioner for approval.
-	  {% if not showActionPlan %}
-	    Action plans that are ready to be created will appear below when the initial assessment is scheduled.
-	  {% endif %}
-	  </p>
-	  {% if intervention.initialAssessmentStatus === "scheduled" %}
-	    {% include "./includes/intervention/action-plan.html" %}
-
-	    <h2 class="govuk-heading-l">Intervention sessions</h2>
-	    {% set showProgress = (intervention.actionPlanStatus === "approved") %}
-	    <p class="govuk-body">
-	    Track the progress of each intervention session.
-	    {% if not showProgress %}
-	      Intervention sessions that are ready to be tracked will appear below once the action plan is approved.
-	    {% endif %}
-	    </p>
-	    {% if showProgress %}
-	      {% include "./includes/intervention/progress.html" %}
-	    {% endif %}
-
-	  {% endif %}
-
-	  <h2 class="govuk-heading-l">End of service report</h2>
-	  <p class="govuk-body">
-	  Complete and submit the end of service report when the service user has met the conditions for this intervention. If the service user has not met the conditions of the intervention the service provider can also terminate and generate an end of service report at any time.
-	  </p>
-	  {% include "./includes/intervention/end-of-service-report.html" %}
+	  {% include "./includes/intervention/delivery.html" %}
 	</div>
 
 	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="referral-details">

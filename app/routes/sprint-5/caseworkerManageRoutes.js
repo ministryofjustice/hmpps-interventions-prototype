@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const moment = require('moment');
+const crypto = require('crypto')
 
 // Configure the layout
 router.use(function (req, res, next) {
@@ -73,6 +74,13 @@ function findReferralByIndex(req, index) {
 	    }
 	}
 
+	// Populate overall intervention sessions status.
+	if (intervention.sessions.some(session => session.status === "awaiting assessment")) {
+	    intervention.sessionsStatus = "awaiting assessment";
+	} else {
+	    intervention.sessionsStatus = "completed";
+	}
+
 	// Populate end of service report status.
 	if (intervention.endOfServiceReport == null) {
 	    intervention.endOfServiceReportStatus = "not started";
@@ -139,6 +147,15 @@ function cssClassForSessionStatus(sessionStatus) {
     }
 }
 
+function cssClassForInterventionSessionsStatus(sessionsStatus) {
+    switch (sessionsStatus) {
+	case "completed":
+	    return "govuk-tag";
+	default:
+	    return "govuk-tag govuk-tag--grey";
+    }
+}
+
 function cssClassForEndOfServiceReportStatus(endOfServiceReportStatus) {
     switch (endOfServiceReportStatus) {
 	case "completed":
@@ -148,6 +165,14 @@ function cssClassForEndOfServiceReportStatus(endOfServiceReportStatus) {
 	default:
 	    return "govuk-tag govuk-tag--grey";
     }
+}
+
+// stolen from https://blog.abelotech.com/posts/generate-random-values-nodejs-javascript/#generate-random-values-using-nodejs-crypto-module
+function randomValueHex(len) {
+    return crypto
+	.randomBytes(Math.ceil(len / 2))
+	.toString('hex') // convert to hexadecimal format
+	.slice(0, len) // return required number of characters
 }
 
 router.get("/referrals", (req, res) => {
@@ -163,7 +188,71 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
     const canChangeActionPlan = intervention.endOfServiceReport == null;
     const initialAssessmentScheduled = intervention.initialAssessment != null;
 
-    res.render("sprint-5/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsAssessed, canChangeActionPlan, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForActionPlanStatus, cssClassForEndOfServiceReportStatus, initialAssessmentScheduled });
+    const viewModel = {}
+
+    if (req.session.data.accordionSessionId == null) {
+	req.session.data.accordionSessionId = randomValueHex(5);
+    }
+
+    viewModel.tasksToCompleteSections = [];
+    viewModel.completedTasksSections = [];
+
+    // TODO the isTaskCompleted should be DRY-ed up with the blue tag logic
+    // from the cssClassFor… functions
+
+    const showInitialAssessment = true;
+    const populateInitialAssessmentContent = true;
+    if (showInitialAssessment) {
+	const section = { id: "initialAssessment", populateContent: populateInitialAssessmentContent }
+
+	const isTaskCompleted = intervention.initialAssessmentStatus === "scheduled";
+	if (isTaskCompleted) {
+	    viewModel.completedTasksSections.push(section);
+	} else {
+	    viewModel.tasksToCompleteSections.push(section);
+	}
+    }
+
+    const showActionPlan = populateInitialAssessmentContent;
+    const populateActionPlanContent = intervention.initialAssessmentStatus === "scheduled";
+    if (showActionPlan) {
+	const section = { id: "actionPlan", populateContent: populateActionPlanContent };
+
+	const isTaskCompleted = populateActionPlanContent && intervention.actionPlanStatus === "approved";
+	if (isTaskCompleted) {
+	    viewModel.completedTasksSections.push(section);
+	} else {
+	    viewModel.tasksToCompleteSections.push(section);
+	}
+    }
+
+    const showInterventionSessions = populateActionPlanContent;
+    const populateInterventionSessionsContent = intervention.actionPlanStatus === "approved";
+    if (showInterventionSessions) {
+	const section = { id: "interventionSessions", populateContent: populateInterventionSessionsContent };
+
+	const isTaskCompleted = populateInterventionSessionsContent && intervention.sessionsStatus === "completed";
+	if (isTaskCompleted) {
+	    viewModel.completedTasksSections.push(section);
+	} else {
+	    viewModel.tasksToCompleteSections.push(section);
+	}
+    }
+
+    const showEndOfServiceReport = true;
+    const populateEndOfServiceReportContent = true;
+    if (showEndOfServiceReport) {
+	const section = { id: "endOfServiceReport", populateContent: populateEndOfServiceReportContent };
+
+	const isTaskCompleted = ["completed", "terminated"].includes(intervention.endOfServiceReportStatus);
+	if (isTaskCompleted) {
+	    viewModel.completedTasksSections.push(section);
+	} else {
+	    viewModel.tasksToCompleteSections.push(section);
+	}
+    }
+
+    res.render("sprint-5/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsAssessed, canChangeActionPlan, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForInterventionSessionsStatus, cssClassForActionPlanStatus, cssClassForEndOfServiceReportStatus, initialAssessmentScheduled, viewModel });
 });
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/action-plan", (req, res) => {

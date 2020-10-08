@@ -1,0 +1,22 @@
+<dl class="govuk-summary-list govuk-!-width-two-thirds">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ intervention.initialAssessment.date }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Action
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {% if intervention.initialAssessment != null %}
+        <a class="govuk-link" href="#">View</a>
+      {% else %}
+        <a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/initial-assessment">Schedule</a>
+      {% endif %}
+    </dd>
+  </div>
+</dl>
