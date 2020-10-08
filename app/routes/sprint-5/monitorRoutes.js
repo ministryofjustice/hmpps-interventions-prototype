@@ -85,6 +85,7 @@ router.get("/notifications", (req, res) => {
   );
 
   const notificationsByDate = groupBy(notifications, "date");
+  console.log(notificationsByDate);
 
   const notificationsByServiceUser = groupBy(notifications, "serviceUser");
 
