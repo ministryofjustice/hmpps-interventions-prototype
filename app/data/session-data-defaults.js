@@ -877,6 +877,7 @@ module.exports = {
           serviceUser: "Alex River",
           priority: true,
           action: "review",
+          unread: true,
         },
         {
           date: "Today 11:02",
@@ -884,6 +885,7 @@ module.exports = {
           serviceUser: "Alex River",
           priority: true,
           action: "review",
+          unread: true,
         },
       ],
       yesterday: [
@@ -893,6 +895,7 @@ module.exports = {
           serviceUser: "Bob Brown",
           priority: false,
           action: "view",
+          unread: false,
         },
         {
           date: "Thursday 09:51",
@@ -900,6 +903,7 @@ module.exports = {
           serviceUser: "Alex River",
           priority: true,
           action: "view",
+          unread: false,
         },
         {
           date: "Thursday 09:42",
@@ -907,6 +911,7 @@ module.exports = {
           serviceUser: "Emma Thompson",
           priority: false,
           action: "view",
+          unread: false,
         },
         {
           date: "Thursday 11:02",
@@ -914,6 +919,7 @@ module.exports = {
           serviceUser: "Emma Thompson",
           priority: true,
           action: "view",
+          unread: false,
         },
       ],
       wednesday: [
@@ -923,6 +929,7 @@ module.exports = {
           serviceUser: "Macy Flem",
           priority: true,
           action: "view",
+          unread: false,
         },
         {
           date: "Wednesday 15:23",
@@ -937,6 +944,7 @@ module.exports = {
           serviceUser: "Richard Smith",
           priority: true,
           action: "view",
+          unread: false,
         },
       ],
     },

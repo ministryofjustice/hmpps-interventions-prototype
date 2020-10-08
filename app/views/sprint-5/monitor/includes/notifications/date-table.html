@@ -13,13 +13,31 @@
     {% for notification in notificationsForDate %}
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
-        {{ notification.date }}
+        {% if notification.unread %}
+          <strong>
+            {{ notification.date }}
+          </strong>
+        {% else %}
+          {{ notification.date }}
+        {% endif %}
       </td>
       <td class="govuk-table__cell">
-        {{ notification.type }}
+        {% if notification.unread %}
+          <strong>
+            {{ notification.type }}
+          </strong>
+        {% else %}
+          {{ notification.type }}
+        {% endif %}
       </td>
       <td class="govuk-table__cell">
-        {{ notification.serviceUser }}
+        {% if notification.unread %}
+          <strong>
+            {{ notification.serviceUser }}
+          </strong>
+        {% else %}
+          {{ notification.serviceUser }}
+        {% endif %}
       </td>
       <td class="govuk-table__cell">
         {% if notification.priority %}
