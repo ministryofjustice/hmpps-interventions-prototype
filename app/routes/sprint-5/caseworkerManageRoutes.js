@@ -182,32 +182,62 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
     const viewModel = {}
 
     viewModel.tasksToCompleteSections = [];
+    viewModel.completedTasksSections = [];
+
+    // TODO the isTaskCompleted should be DRY-ed up with the blue tag logic
+    // from the cssClassFor… functions
 
     const showInitialAssessment = true;
     const populateInitialAssessmentContent = true;
     if (showInitialAssessment) {
-	viewModel.tasksToCompleteSections.push({ id: "initialAssessment", populateContent: populateInitialAssessmentContent });
+	const section = { id: "initialAssessment", populateContent: populateInitialAssessmentContent }
+
+	const isTaskCompleted = intervention.initialAssessmentStatus === "scheduled";
+	if (isTaskCompleted) {
+	    viewModel.completedTasksSections.push(section);
+	} else {
+	    viewModel.tasksToCompleteSections.push(section);
+	}
     }
 
     const showActionPlan = populateInitialAssessmentContent;
     const populateActionPlanContent = intervention.initialAssessmentStatus === "scheduled";
     if (showActionPlan) {
-	viewModel.tasksToCompleteSections.push({ id: "actionPlan", populateContent: populateActionPlanContent });
+	const section = { id: "actionPlan", populateContent: populateActionPlanContent };
+
+	const isTaskCompleted = populateActionPlanContent && intervention.actionPlanStatus === "approved";
+	if (isTaskCompleted) {
+	    viewModel.completedTasksSections.push(section);
+	} else {
+	    viewModel.tasksToCompleteSections.push(section);
+	}
     }
 
     const showInterventionSessions = populateActionPlanContent;
     const populateInterventionSessionsContent = intervention.actionPlanStatus === "approved";
     if (showInterventionSessions) {
-	viewModel.tasksToCompleteSections.push({ id: "interventionSessions", populateContent: populateInterventionSessionsContent });
+	const section = { id: "interventionSessions", populateContent: populateInterventionSessionsContent };
+
+	const isTaskCompleted = populateInterventionSessionsContent && intervention.sessionsStatus === "completed";
+	if (isTaskCompleted) {
+	    viewModel.completedTasksSections.push(section);
+	} else {
+	    viewModel.tasksToCompleteSections.push(section);
+	}
     }
 
     const showEndOfServiceReport = true;
+    const populateEndOfServiceReportContent = true;
     if (showEndOfServiceReport) {
-	const populateContent = true;
-	viewModel.tasksToCompleteSections.push({ id: "endOfServiceReport", populateContent });
-    }
+	const section = { id: "endOfServiceReport", populateContent: populateEndOfServiceReportContent };
 
-    viewModel.completedTasksSections = viewModel.tasksToCompleteSections;
+	const isTaskCompleted = ["completed", "terminated"].includes(intervention.endOfServiceReportStatus);
+	if (isTaskCompleted) {
+	    viewModel.completedTasksSections.push(section);
+	} else {
+	    viewModel.tasksToCompleteSections.push(section);
+	}
+    }
 
     res.render("sprint-5/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsAssessed, canChangeActionPlan, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForInterventionSessionsStatus, cssClassForActionPlanStatus, cssClassForEndOfServiceReportStatus, initialAssessmentScheduled, viewModel });
 });
