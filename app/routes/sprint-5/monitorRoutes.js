@@ -4,6 +4,18 @@ const router = express.Router();
 const findReferral = (referrals, referralNumber) =>
   referrals.find((referral) => referralNumber === referral.reference);
 
+const sortByDateAndTime = (a, b) =>
+  a.date < b.date ? 1 : a.date === b.date ? (a.time < b.time ? 1 : -1) : -1;
+
+const groupBy = (items, key, sortingFunction = sortByDateAndTime) =>
+  items.sort(sortingFunction).reduce(
+    (result, item) => ({
+      ...result,
+      [item[key]]: [...(result[item[key]] || []), item],
+    }),
+    {}
+  );
+
 router.get("/cases", (req, res) => {
   const referrals = req.session.data.sprint5.referrals;
   const referralsWithSomeUnassigned = referrals.filter((referral) => {
@@ -67,33 +79,20 @@ router.get("/cases", (req, res) => {
 
 router.get("/notifications", (req, res) => {
   const notifications = req.session.data.sprint5.notifications;
-  const allNotifications = [
-    ...notifications.today,
-    ...notifications.yesterday,
-    ...notifications.wednesday,
-  ];
 
-  const notificationsByType = allNotifications.sort((a, b) =>
+  const notificationsByType = notifications.sort((a, b) =>
     a.type > b.type ? 1 : -1
   );
 
-  const groupBy = (items, key) =>
-    items
-      .sort((a, b) => (a.serviceUser > b.serviceUser ? 1 : -1))
-      .reduce(
-        (result, item) => ({
-          ...result,
-          [item[key]]: [...(result[item[key]] || []), item],
-        }),
-        {}
-      );
+  const notificationsByDate = groupBy(notifications, "date");
 
-  const notificationsByServiceUser = groupBy(allNotifications, "serviceUser");
+  const notificationsByServiceUser = groupBy(notifications, "serviceUser");
 
-  const notificationsByPriority = groupBy(allNotifications, "priority");
+  const notificationsByPriority = groupBy(notifications, "priority");
 
   res.render("sprint-5/monitor/notifications", {
     notifications: notifications,
+    notificationsByDate: notificationsByDate,
     notificationsByType: notificationsByType,
     notificationsByServiceUser: notificationsByServiceUser,
     priorityNotifications: notificationsByPriority.true,

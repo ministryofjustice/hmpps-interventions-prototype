@@ -1,11 +1,11 @@
 <h2 class="govuk-heading-m">
   Items needing action by you
 </h2>
-{% set notificationsForDate = priorityNotifications %}
+{% set notificationsToDisplay = priorityNotifications %}
 {% include "./date-table.html" %}
 
 <h2 class="govuk-heading-m">
   Items needing action by the service provider
 </h2>
-{% set notificationsForDate = nonPriorityNotifications %}
+{% set notificationsToDisplay = nonPriorityNotifications %}
 {% include "./date-table.html" %}

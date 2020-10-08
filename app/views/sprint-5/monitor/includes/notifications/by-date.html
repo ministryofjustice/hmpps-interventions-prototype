@@ -2,20 +2,21 @@
   Today
 </h2>
 
-{% set notificationsForDate = notifications.today %}
+{% set notificationsToDisplay = notificationsByDate["09/11/2020"] %}
+{% set timeOrDate = "time" %}
 {% include "./date-table.html" %}
 
 <h2 class="govuk-heading-m">
   Yesterday
 </h2>
 
-{% set notificationsForDate = notifications.yesterday %}
+{% set notificationsToDisplay = notificationsByDate["08/11/2020"] %}
 {% include "./date-table.html" %}
 
 <h2 class="govuk-heading-m">
   Wednesday
 </h2>
 
-{% set notificationsForDate = notifications.wednesday %}
+{% set notificationsToDisplay = notificationsByDate["07/11/2020"] %}
 {% include "./date-table.html" %}
 </table>
