@@ -206,7 +206,92 @@
 
               <h2 class="govuk-heading-m">Intervention sessions</h2>
 
-              {% if intervention.monitor.inProgress %}
+              {% if intervention.monitor.completed %}
+              <p class="govuk-body">
+                These show the progress of this intervention.
+              </p>
+
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Session title</th>
+                    <th scope="col" class="govuk-table__header">Date</th>
+                    <th scope="col" class="govuk-table__header">Facilitator</th>
+                    <th scope="col" class="govuk-table__header">Status</th>
+                    <th scope="col" class="govuk-table__header">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 1</td>
+                    <td class="govuk-table__cell">07/10/2020</td>
+                    <td class="govuk-table__cell">Jenny Thompson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 2</td>
+                    <td class="govuk-table__cell">14/10/2020</td>
+                    <td class="govuk-table__cell">Jenny Thompson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 3</td>
+                    <td class="govuk-table__cell">21/10/2020</td>
+                    <td class="govuk-table__cell">Jenny Thompson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 4</td>
+                    <td class="govuk-table__cell">29/10/2020</td>
+                    <td class="govuk-table__cell">Jenny Thompson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 5</td>
+                    <td class="govuk-table__cell">06/11/2020</td>
+                    <td class="govuk-table__cell">Jenny Thompson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              {% elif intervention.monitor.inProgress %}
               <p class="govuk-body">
                 These show the progress of this intervention.
               </p>
