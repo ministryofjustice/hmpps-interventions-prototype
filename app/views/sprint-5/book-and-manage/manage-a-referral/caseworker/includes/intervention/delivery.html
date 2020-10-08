@@ -1,7 +1,11 @@
-<h2 class="govuk-heading-l">Tasks to complete</h3>
 {% set accordionSections = viewModel.tasksToCompleteSections %}
-{% include "./delivery-accordion.html" %}
+{% if accordionSections.length > 0 %}
+  <h2 class="govuk-heading-l">Tasks to complete</h3>
+  {% include "./delivery-accordion.html" %}
+{% endif %}
 
-<h2 class="govuk-heading-l">Completed tasks</h3>
 {% set accordionSections = viewModel.completedTasksSections %}
-{% include "./delivery-accordion.html" %}
+{% if accordionSections.length > 0 %}
+  <h2 class="govuk-heading-l">Completed tasks</h3>
+  {% include "./delivery-accordion.html" %}
+{% endif %}
