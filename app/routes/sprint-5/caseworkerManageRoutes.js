@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const moment = require('moment');
+const crypto = require('crypto')
 
 // Configure the layout
 router.use(function (req, res, next) {
@@ -166,6 +167,14 @@ function cssClassForEndOfServiceReportStatus(endOfServiceReportStatus) {
     }
 }
 
+// stolen from https://blog.abelotech.com/posts/generate-random-values-nodejs-javascript/#generate-random-values-using-nodejs-crypto-module
+function randomValueHex(len) {
+    return crypto
+	.randomBytes(Math.ceil(len / 2))
+	.toString('hex') // convert to hexadecimal format
+	.slice(0, len) // return required number of characters
+}
+
 router.get("/referrals", (req, res) => {
     const referrals = allReferrals(req);
     res.render("sprint-5/book-and-manage/manage-a-referral/caseworker/referrals", { referrals });
@@ -180,6 +189,10 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
     const initialAssessmentScheduled = intervention.initialAssessment != null;
 
     const viewModel = {}
+
+    if (req.session.data.accordionSessionId == null) {
+	req.session.data.accordionSessionId = randomValueHex(5);
+    }
 
     viewModel.tasksToCompleteSections = [];
     viewModel.completedTasksSections = [];
