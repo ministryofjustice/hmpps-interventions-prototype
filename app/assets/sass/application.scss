@@ -103,3 +103,17 @@ $govuk-assets-path: '/govuk/assets/';
 .app-information-sidebar {
   background: govuk-colour("light-grey");
 }
+
+.govuk-accordion--app-badged .govuk-accordion__section-button {
+  width: 100%;
+  display: flex;
+}
+
+.app-accordion-tag-container {
+  margin-left: auto;
+  margin-right: govuk-spacing(2);
+
+  display: flex;
+  // Line up the tag with the accordion’s plus/minus button
+  align-items: center;
+}

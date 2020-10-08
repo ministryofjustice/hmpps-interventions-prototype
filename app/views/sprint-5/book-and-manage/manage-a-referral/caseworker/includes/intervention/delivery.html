@@ -12,7 +12,11 @@
   {% endif %}
   {% endset %}
 
-  {% set item = { heading: { text: "Initial assessment" }, content: { html: html }, expanded: expanded } %}
+  {% set headingHTML %}
+  Initial assessment <span class="app-accordion-tag-container"><strong class="govuk-tag govuk-tag--app-accordion-tag">TODO content</strong></span>
+  {% endset %}
+
+  {% set item = { heading: { html: headingHTML}, content: { html: html }, expanded: expanded } %}
   {{ items.push(item) and undefined }}
 
   {% set expanded = false %}
@@ -31,7 +35,11 @@
   {% endif %}
   {% endset %}
 
-  {% set item = { heading: { text: "Service user action plan" }, content: { html: html }, expanded: expanded } %}
+  {% set headingHTML %}
+  Service user action plan <span class="app-accordion-tag-container"><strong class="govuk-tag govuk-tag--app-accordion-tag">TODO content</strong></span>
+  {% endset %}
+
+  {% set item = { heading: { html: headingHTML }, content: { html: html }, expanded: expanded } %}
   {{ items.push(item) and undefined }}
 
   {% set expanded = false %}
@@ -51,7 +59,11 @@
   {% endif %}
   {% endset %}
 
-  {% set item = { heading: { text: "Intervention sessions" }, content: { html: html }, expanded: expanded } %}
+  {% set headingHTML %}
+  Intervention sessions <span class="app-accordion-tag-container"><strong class="govuk-tag govuk-tag--app-accordion-tag">TODO content</strong></span>
+  {% endset %}
+
+  {% set item = { heading: { html: headingHTML }, content: { html: html }, expanded: expanded } %}
   {{ items.push(item) and undefined }}
 
   {% set expanded = false %}
@@ -68,7 +80,11 @@
   {% endif %}
   {% endset %}
 
-  {% set item = { heading: { text: "End of service report" }, content: { html: html }, expanded: expanded } %}
+  {% set headingHTML %}
+  End of service report <span class="app-accordion-tag-container"><strong class="govuk-tag govuk-tag--app-accordion-tag">TODO content</strong></span>
+  {% endset %}
+
+  {% set item = { heading: { html: headingHTML }, content: { html: html }, expanded: expanded } %}
   {{ items.push(item) and undefined }}
 
   {% set expanded = false %}
@@ -76,5 +92,6 @@
 
 {{ govukAccordion({
   id: ("accordion-intervention-delivery-" + referralIndex + "-" + interventionIndex),
-  items: items
+  items: items,
+  classes: "govuk-accordion--app-badged"
 }) }}
