@@ -1,0 +1,8 @@
+{% for serviceUser, notifications in notificationsByServiceUser %}
+  <h2 class="govuk-heading-m">
+    {{ serviceUser }}
+  </h2>
+
+  {% set notificationsForDate = notifications %}
+  {% include "./date-table.html" %}
+{% endfor %}

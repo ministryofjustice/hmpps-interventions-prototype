@@ -59,6 +59,8 @@
     {% include "./includes/notifications/by-date.html" %}
   {% elif sortBy == 'type' %}
     {% include "./includes/notifications/by-type.html" %}
+  {% elif sortBy == 'service-users' %}
+    {% include "./includes/notifications/by-service-user.html" %}
   {% endif %}
 </div>
 {% endblock %}
