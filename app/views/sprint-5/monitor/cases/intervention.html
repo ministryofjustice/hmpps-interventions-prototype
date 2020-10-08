@@ -23,17 +23,6 @@
         <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar--grey govuk-!-margin-top-6">
           <ul class="govuk-list govuk-list--case-summary">
             <li>
-              <strong>Type</strong>
-              <br>Delivery partner
-            </li>
-            <li>
-              <strong>Needs referred</strong>
-              <br>
-              {% for need in serviceUser.needs.criminogenicNeeds %}
-                {{ need }}
-              {% endfor %}
-            </li>
-            <li>
               <strong>Provider</strong>
               <br>{{ intervention.providerName }}
             </li>
@@ -43,11 +32,18 @@
             </li>
             <li>
               <strong>Assessment date</strong>
-              <br>8 Aug 2020
+              <br>{{ intervention.monitor.initialAssessmentDate }}
             </li>
             <li>
               <strong>Date of action plan</strong>
               <br>
+              {% if intervention.monitor.actionPlanApproved %}
+                {{ intervention.monitor.actionPlanDate }}
+              {% elif intervention.monitor.actionPlanSubmitted %}
+                Action plan not yet approved
+              {% else %}
+                Action plan not yet submitted
+              {% endif %}
             </li>
             <li>
               <strong>Date started</strong>
@@ -55,7 +51,7 @@
             </li>
             <li>
               <strong>Target end date</strong>
-              <br>5 Sep 2020
+              <br>12 Dec 2020
             </li>
             <li>
               <strong>End of service review</strong>
