@@ -173,11 +173,11 @@
               </thead>
 
               <tbody class="govuk-table__body">
-                {% if intervention.assignedCaseworker and intervention.actionPlanSubmitted %}
+                {% if intervention.assignedCaseworker and intervention.monitor.actionPlanSubmitted %}
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">{{ intervention.assignedCaseworker}}</td>
                     <td class="govuk-table__cell">
-                      {% if intervention.actionPlanApproved %}
+                      {% if intervention.monitor.actionPlanApproved %}
                         <strong class="govuk-tag">
                           completed
                         </strong>

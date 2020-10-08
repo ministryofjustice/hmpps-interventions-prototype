@@ -8,46 +8,47 @@ router.get("/cases", (req, res) => {
   const referrals = req.session.data.sprint5.referrals;
   const referralsWithSomeUnassigned = referrals.filter((referral) => {
     return referral.interventions.some(
-      (intervention) => !intervention.assigned
+      (intervention) => !intervention.monitor.assigned
     );
   });
 
   const referralsAwaitingAssessment = referrals.filter((referral) => {
     return referral.interventions.some(
       (intervention) =>
-        intervention.assigned && !intervention.actionPlanSubmitted
+        intervention.monitor.assigned &&
+        !intervention.monitor.actionPlanSubmitted
     );
   });
 
   const referralsWithActionPlan = referrals.filter((referral) => {
     return referral.interventions.some(
       (intervention) =>
-        intervention.actionPlanSubmitted &&
-        !intervention.inProgress &&
-        !intervention.completed
+        intervention.monitor.actionPlanSubmitted &&
+        !intervention.monitor.inProgress &&
+        !intervention.monitor.completed
     );
   });
   const referralsInProgress = referrals.filter((referral) => {
     return referral.interventions.some(
       (intervention) =>
-        intervention.inProgress &&
-        !intervention.overdue &&
-        !intervention.completed
+        intervention.monitor.inProgress &&
+        !intervention.monitor.overdue &&
+        !intervention.monitor.completed
     );
   });
 
   const referralsOverdue = referrals.filter((referral) => {
     return referral.interventions.some(
       (intervention) =>
-        intervention.inProgress &&
-        intervention.overdue &&
-        !intervention.completed
+        intervention.monitor.inProgress &&
+        intervention.monitor.overdue &&
+        !intervention.monitor.completed
     );
   });
 
   const referralsCompleted = referrals.filter((referral) => {
     return referral.interventions.some(
-      (intervention) => intervention.completed
+      (intervention) => intervention.monitor.completed
     );
   });
 
