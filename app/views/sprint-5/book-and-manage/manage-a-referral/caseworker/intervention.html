@@ -66,74 +66,7 @@
 	    </div>
 	  </dl>
 
-	  {% if viewModel.showInitialAssessment %}
-	    <h2 class="govuk-heading-l">Initial assessment</h2>
-
-	    <p class="govuk-body">
-	    Enter the date of the initial assessment. If it is not scheduled, use the communications tool to contact the probation practitioner online.
-	    </p>
-
-	    {% if viewModel.populateInitialAssessmentContent %}
-	      <table class="govuk-table">
-		<thead class="govuk-table__head">
-		  <tr class="govuk-table__row">
-		    <th scope="col" class="govuk-table__header">Probation practitioner</th>
-		    <th scope="col" class="govuk-table__header">Date</th>
-		    <th scope="col" class="govuk-table__header">Status</th>
-		    <th scope="col" class="govuk-table__header">Action</th>
-		  </tr>
-		</thead>
-		<tbody class="govuk-table__body">
-		  <tr class="govuk-table__row">
-		    <td class="govuk-table__cell">{{ referral.probationPractitioner.name }}</td>
-		    <td class="govuk-table__cell">{{ intervention.initialAssessment.date }}</td>
-		    <td class="govuk-table__cell"><strong class="{{ cssClassForInitialAssessmentStatus(intervention.initialAssessmentStatus) }}">{{ intervention.initialAssessmentStatus }}</strong></td>
-		    {% if intervention.initialAssessment != null %}
-		      <td class="govuk-table__cell"><a class="govuk-link" href="#">View</a></td>
-		    {% else %}
-		      <td class="govuk-table__cell"><a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/initial-assessment">Schedule</a></td>
-		    {% endif %}
-		  </tr>
-		</tbody>
-	      </table>
-	    {% endif %}
-	  {% endif %}
-
-	  {% if viewModel.showActionPlan %}
-	    <h2 class="govuk-heading-l">Service user action plan</h2>
-	    <p class="govuk-body">
-	    Create the action plan and submit it to the probation practitioner for approval.
-	    {% if not viewModel.populateActionPlanContent %}
-	      Action plans that are ready to be created will appear below when the initial assessment is scheduled.
-	    {% endif %}
-	    </p>
-	    {% if viewModel.populateActionPlanContent %}
-	      {% include "./includes/intervention/action-plan.html" %}
-	    {% endif %}
-	  {% endif %}
-
-	  {% if viewModel.showInterventionSessions %}
-	    <h2 class="govuk-heading-l">Intervention sessions</h2>
-	    <p class="govuk-body">
-	    Track the progress of each intervention session.
-	    {% if not viewModel.populateInterventionSessionsContent %}
-	      Intervention sessions that are ready to be tracked will appear below once the action plan is approved.
-	    {% endif %}
-	    </p>
-	    {% if viewModel.populateInterventionSessionsContent %}
-	      {% include "./includes/intervention/progress.html" %}
-	    {% endif %}
-	  {% endif %}
-
-	  {% if viewModel.showEndOfServiceReport %}
-	    <h2 class="govuk-heading-l">End of service report</h2>
-	    <p class="govuk-body">
-	    Complete and submit the end of service report when the service user has met the conditions for this intervention. If the service user has not met the conditions of the intervention the service provider can also terminate and generate an end of service report at any time.
-	    </p>
-	    {% if viewModel.populateEndOfServiceReportContent %}
-	      {% include "./includes/intervention/end-of-service-report.html" %}
-	    {% endif %}
-	  {% endif %}
+	  {% include "./includes/intervention/delivery.html" %}
 	</div>
 
 	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="referral-details">
