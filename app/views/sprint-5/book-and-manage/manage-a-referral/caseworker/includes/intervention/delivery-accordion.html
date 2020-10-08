@@ -107,7 +107,7 @@
 {% endfor %}
 
 {{ govukAccordion({
-  id: ("accordion-intervention-delivery-" + referralIndex + "-" + interventionIndex + "-" + data["accordionSessionId"]),
+  id: ("accordion-intervention-delivery-" + referralIndex + "-" + interventionIndex + "-" + accordionId + "-" + data["accordionSessionId"]),
   items: items,
   classes: "govuk-accordion--app-badged",
   headingLevel: 3
