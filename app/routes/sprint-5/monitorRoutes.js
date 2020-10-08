@@ -134,8 +134,6 @@ router.get(
       (intervention) => interventionId === intervention.id
     );
 
-    console.log(intervention);
-
     const serviceUser = referral ? referral.serviceUser : {};
 
     res.render("sprint-5/monitor/cases/intervention", {
