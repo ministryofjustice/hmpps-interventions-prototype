@@ -1,4 +1,5 @@
 {% set items = [] %}
+{% set expanded = true %}
 
 {% if viewModel.showInitialAssessment %}
   {% set html %}
@@ -11,8 +12,10 @@
   {% endif %}
   {% endset %}
 
-  {% set item = { heading: { text: "Initial assessment" }, content: { html: html } } %}
+  {% set item = { heading: { text: "Initial assessment" }, content: { html: html }, expanded: expanded } %}
   {{ items.push(item) and undefined }}
+
+  {% set expanded = false %}
 {% endif %}
 
 {% if viewModel.showActionPlan %}
@@ -28,8 +31,10 @@
   {% endif %}
   {% endset %}
 
-  {% set item = { heading: { text: "Service user action plan" }, content: { html: html } } %}
+  {% set item = { heading: { text: "Service user action plan" }, content: { html: html }, expanded: expanded } %}
   {{ items.push(item) and undefined }}
+
+  {% set expanded = false %}
 {% endif %}
 
 {% set html = null %}
@@ -46,8 +51,10 @@
   {% endif %}
   {% endset %}
 
-  {% set item = { heading: { text: "Intervention sessions" }, content: { html: html } } %}
+  {% set item = { heading: { text: "Intervention sessions" }, content: { html: html }, expanded: expanded } %}
   {{ items.push(item) and undefined }}
+
+  {% set expanded = false %}
 {% endif %}
 
 {% set html = null %}
@@ -61,8 +68,10 @@
   {% endif %}
   {% endset %}
 
-  {% set item = { heading: { text: "End of service report" }, content: { html: html } } %}
+  {% set item = { heading: { text: "End of service report" }, content: { html: html }, expanded: expanded } %}
   {{ items.push(item) and undefined }}
+
+  {% set expanded = false %}
 {% endif %}
 
 {{ govukAccordion({
