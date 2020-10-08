@@ -71,7 +71,7 @@
     Intervention sessions
     <span class="app-accordion-tag-container">
       {% if section.populateContent %}
-        <strong class="{{cssClassForInterventionSessionsStatus(intervention.actionPlanStatus)}} govuk-tag--app-accordion-tag">{{ intervention.sessionsStatus }}</strong>
+        <strong class="{{cssClassForInterventionSessionsStatus(intervention.sessionsStatus)}} govuk-tag--app-accordion-tag">{{ intervention.sessionsStatus }}</strong>
       {% else %}
         <strong class="govuk-tag govuk-tag--grey govuk-tag--app-accordion-tag">Cannot start yet</strong>
       {% endif %}
