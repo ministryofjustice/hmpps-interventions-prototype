@@ -194,7 +194,7 @@ module.exports = {
           {
             id: "0",
             name: "Accommodation",
-            providerName: "XYZ Provider Name",
+            providerName: "Home Trust",
             assignedCaseworker: "Liam Johnson",
             actionPlanSubmitted: true,
             actionPlanApproved: false,
@@ -217,7 +217,7 @@ module.exports = {
           {
             id: "1",
             name: "Social inclusion",
-            providerName: "XYZ Provider Name",
+            providerName: "Safe Living Ltd.",
             assignedCaseworker: "Rebecca Green",
             actionPlanSubmitted: true,
             actionPlanApproved: false,
@@ -240,7 +240,7 @@ module.exports = {
           {
             id: "3",
             name: "Independent living",
-            providerName: "XYZ Provider Name",
+            providerName: "Home Trust",
             assignedCaseworker: "Samantha Jones",
             actionPlanSubmitted: true,
             actionPlanApproved: false,
@@ -278,7 +278,7 @@ module.exports = {
           {
             id: "0",
             name: "Independent living",
-            providerName: "XYZ Provider Name",
+            providerName: "New Beginnings Ltd.",
             assignedCaseworker: "",
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -316,7 +316,7 @@ module.exports = {
           {
             id: "0",
             name: "Independent living",
-            providerName: "XYZ Provider Name",
+            providerName: "New Beginnings Ltd.",
             assignedCaseworker: "",
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -354,7 +354,7 @@ module.exports = {
           {
             id: "0",
             name: "Social Inclusion",
-            providerName: "XYZ Provider Name",
+            providerName: "Helping Hands",
             assignedCaseworker: "Rebecca Green",
             actionPlanSubmitted: true,
             actionPlanApproved: false,
@@ -392,7 +392,7 @@ module.exports = {
           {
             id: "0",
             name: "Accommodation",
-            providerName: "XYZ Provider Name",
+            providerName: "Harmony Living",
             assignedCaseworker: "Jenny Thompson",
             actionPlanSubmitted: true,
             actionPlanApproved: false,
@@ -430,7 +430,7 @@ module.exports = {
           {
             id: "0",
             name: "Independent living",
-            providerName: "XYZ Provider Name",
+            providerName: "Ready to Go London",
             assignedCaseworker: "Samantha Jones",
             actionPlanSubmitted: true,
             actionPlanApproved: false,
@@ -468,7 +468,7 @@ module.exports = {
           {
             id: "0",
             name: "Social Inclusion",
-            providerName: "XYZ Provider Name",
+            providerName: "Better Ltd.",
             assignedCaseworker: "Rebecca Green",
             actionPlanSubmitted: true,
             actionPlanApproved: false,
@@ -506,7 +506,7 @@ module.exports = {
           {
             id: "0",
             name: "Accommodation",
-            providerName: "XYZ Provider Name",
+            providerName: "Live Well",
             assignedCaseworker: "Jenny Thompson",
             actionPlanSubmitted: true,
             actionPlanApproved: true,
@@ -544,7 +544,7 @@ module.exports = {
           {
             id: "0",
             name: "Independent living",
-            providerName: "XYZ Provider Name",
+            providerName: "New Beginnings Ltd.",
             assignedCaseworker: "Samantha Jones",
             actionPlanSubmitted: true,
             actionPlanApproved: false,
@@ -582,7 +582,7 @@ module.exports = {
           {
             id: "0",
             name: "Social Inclusion",
-            providerName: "XYZ Provider Name",
+            providerName: "Live Well",
             assignedCaseworker: "Rebecca Green",
             actionPlanSubmitted: true,
             actionPlanApproved: false,
@@ -620,7 +620,7 @@ module.exports = {
           {
             id: "0",
             name: "Accommodation",
-            providerName: "XYZ Provider Name",
+            providerName: "Harmony Living",
             assignedCaseworker: "Jenny Thompson",
             actionPlanSubmitted: true,
             actionPlanApproved: false,
@@ -658,7 +658,7 @@ module.exports = {
           {
             id: "0",
             name: "Independent living",
-            providerName: "XYZ Provider Name",
+            providerName: "Better Ltd.",
             assignedCaseworker: "Samantha Jones",
             actionPlanSubmitted: true,
             actionPlanApproved: false,
@@ -696,7 +696,7 @@ module.exports = {
           {
             id: "0",
             name: "Social Inclusion",
-            providerName: "XYZ Provider Name",
+            providerName: "Live Well",
             assignedCaseworker: "Rebecca Green",
             actionPlanSubmitted: true,
             actionPlanApproved: false,
@@ -734,7 +734,7 @@ module.exports = {
           {
             id: "0",
             name: "Independent living",
-            providerName: "XYZ Provider Name",
+            providerName: "Better Ltd.",
             assignedCaseworker: "Samantha Jones",
             actionPlanSubmitted: true,
             actionPlanApproved: false,
