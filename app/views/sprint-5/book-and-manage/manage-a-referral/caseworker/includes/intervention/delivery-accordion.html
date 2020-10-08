@@ -1,7 +1,10 @@
 {% set items = [] %}
 {% set expanded = expandFirstItem %}
 
+{% set sectionIds = "" %}
+
 {% for section in accordionSections %}
+  {% set sectionIds = sectionIds + "-" + section.id %}
 
   {% if section.id === "initialAssessment" %}
     {% set html %}
@@ -107,7 +110,7 @@
 {% endfor %}
 
 {{ govukAccordion({
-  id: ("accordion-intervention-delivery-" + referralIndex + "-" + interventionIndex + "-" + accordionId + "-" + data["accordionSessionId"]),
+  id: ("accordion-intervention-delivery-" + referralIndex + "-" + interventionIndex + "-" + accordionId + "-" + data["accordionSessionId"] + sectionIds),
   items: items,
   classes: "govuk-accordion--app-badged",
   headingLevel: 3
