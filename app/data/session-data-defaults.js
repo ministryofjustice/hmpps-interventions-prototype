@@ -1075,6 +1075,7 @@ function createReferralWithoutInterventions(params, index) {
         otherNames: "Shorty",
         gender: "Male",
         title: "Mr",
+        dateOfBirth: "03/05/1984",
         addressHTML:
           "Flat 2<br>27 Test Walk<br>SY16 1AQ<br><br>Private rental</dd>",
         nationality: "British",
