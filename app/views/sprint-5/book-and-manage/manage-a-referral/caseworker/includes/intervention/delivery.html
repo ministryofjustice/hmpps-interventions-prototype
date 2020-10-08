@@ -1,8 +1,7 @@
-{% set initialAssessmentHTML = null %}
-{% if viewModel.showInitialAssessment %}
-  <h2 class="govuk-heading-l">Initial assessment</h2>
+{% set items = [] %}
 
-  {% set initialAssessmentHTML %}
+{% if viewModel.showInitialAssessment %}
+  {% set html %}
   <p class="govuk-body">
   Enter the date of the initial assessment. If it is not scheduled, use the communications tool to contact the probation practitioner online.
   </p>
@@ -12,14 +11,12 @@
   {% endif %}
   {% endset %}
 
-  {{ initialAssessmentHTML | safe }}
+  {% set item = { heading: { text: "Initial assessment" }, content: { html: html } } %}
+  {{ items.push(item) and undefined }}
 {% endif %}
 
-{% set actionPlanHTML = null %}
 {% if viewModel.showActionPlan %}
-  <h2 class="govuk-heading-l">Service user action plan</h2>
-
-  {% set actionPlanHTML %}
+  {% set html %}
   <p class="govuk-body">
   Create the action plan and submit it to the probation practitioner for approval.
   {% if not viewModel.populateActionPlanContent %}
@@ -31,14 +28,13 @@
   {% endif %}
   {% endset %}
 
-  {{ actionPlanHTML | safe }}
+  {% set item = { heading: { text: "Service user action plan" }, content: { html: html } } %}
+  {{ items.push(item) and undefined }}
 {% endif %}
 
-{% set interventionSessionsHTML = null %}
+{% set html = null %}
 {% if viewModel.showInterventionSessions %}
-  <h2 class="govuk-heading-l">Intervention sessions</h2>
-
-  {% set interventionSessionsHTML %}
+  {% set html %}
   <p class="govuk-body">
   Track the progress of each intervention session.
   {% if not viewModel.populateInterventionSessionsContent %}
@@ -50,14 +46,13 @@
   {% endif %}
   {% endset %}
 
-  {{ interventionSessionsHTML | safe }}
+  {% set item = { heading: { text: "Intervention sessions" }, content: { html: html } } %}
+  {{ items.push(item) and undefined }}
 {% endif %}
 
-{% set endOfServiceReportHTML = null %}
+{% set html = null %}
 {% if viewModel.showEndOfServiceReport %}
-  <h2 class="govuk-heading-l">End of service report</h2>
-
-  {% set endOfServiceReportHTML %}
+  {% set html %}
   <p class="govuk-body">
   Complete and submit the end of service report when the service user has met the conditions for this intervention. If the service user has not met the conditions of the intervention the service provider can also terminate and generate an end of service report at any time.
   </p>
@@ -66,5 +61,11 @@
   {% endif %}
   {% endset %}
 
-  {{ endOfServiceReportHTML | safe }}
+  {% set item = { heading: { text: "End of service report" }, content: { html: html } } %}
+  {{ items.push(item) and undefined }}
 {% endif %}
+
+{{ govukAccordion({
+  id: ("accordion-intervention-delivery-" + referralIndex + "-" + interventionIndex),
+  items: items
+}) }}
