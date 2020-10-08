@@ -125,7 +125,9 @@
               progress on this page.
             </p>
 
-            <h3 class="govuk-heading-m">Initial assessment</h2>
+            <h2 class="govuk-heading-m">Initial assessment</h2>
+
+            {% if intervention.assignedCaseworker %}
             <p class="govuk-body">
               This is the initial assessment date scheduled by the service provider and service user.
             </p>
@@ -141,24 +143,34 @@
               </thead>
 
               <tbody class="govuk-table__body">
-                {% if intervention.assignedCaseworker %}
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">{{ intervention.assignedCaseworker}}</td>
                     <td class="govuk-table__cell">10/02/2020</td>
                     <td class="govuk-table__cell">
+                      {% if intervention.monitor.initialAssessmentCompleted %}
                       <strong class="govuk-tag">
                         completed
                       </strong>
+                      {% else %}
+                      <strong class="govuk-tag">
+                        scheduled
+                      </strong>
+                      {% endif %}
                     </td>
                     <td class="govuk-table__cell">
                       <a class="govuk-link" href="#">View</a>
                     </td>
                   </tr>
-                {% endif %}
               </tbody>
             </table>
 
+            {% else %}
+              <p class="govuk-body">A caseworker has not yet been assigned.</p>
+            {% endif %}
+
             <h2 class="govuk-heading-m">Service user action plan</h2>
+
+            {% if intervention.assignedCaseworker and intervention.monitor.actionPlanSubmitted %}
             <p class="govuk-body">
               This is the action plan created by the service provider. When there are changes submitted by the service provider, you will need to review it and decide if you want to approve it.
             </p>
@@ -173,7 +185,6 @@
               </thead>
 
               <tbody class="govuk-table__body">
-                {% if intervention.assignedCaseworker and intervention.monitor.actionPlanSubmitted %}
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">{{ intervention.assignedCaseworker}}</td>
                     <td class="govuk-table__cell">
@@ -191,10 +202,15 @@
                       <a href="#" class="govuk-link">View</td>
                     </tr>
                   </tbody>
-                {% endif %}
               </table>
 
+              {% else %}
+              <p class="govuk-body">Action plan not yet assigned.</p>
+              {% endif %}
+
               <h2 class="govuk-heading-m">Intervention sessions</h2>
+
+              {% if intervention.monitor.inProgress %}
               <p class="govuk-body">
                 These show the progress of this intervention.
               </p>
@@ -260,6 +276,9 @@
                   </tr>
                 </tbody>
               </table>
+              {% else %}
+                <p class="govuk-body">No sessions have been scheduled.</p>
+              {% endif %}
 
               <h2 class="govuk-heading-m">End of service report</h2>
               <p class="govuk-body">
