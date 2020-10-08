@@ -65,8 +65,16 @@ router.get("/cases", (req, res) => {
 });
 
 router.get("/notifications", (req, res) => {
+  const notifications = req.session.data.sprint5.notifications;
+  const notificationsByType = [
+    ...notifications.today,
+    ...notifications.yesterday,
+    ...notifications.wednesday,
+  ].sort((a, b) => (a.type > b.type ? 1 : -1));
+
   res.render("sprint-5/monitor/notifications", {
-    notifications: req.session.data.sprint5.notifications,
+    notifications: notifications,
+    notificationsByType: notificationsByType,
     sortBy: req.query.sort_by,
     currentPage: "notifications",
   });
