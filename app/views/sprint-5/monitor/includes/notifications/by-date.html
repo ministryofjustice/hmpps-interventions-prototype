@@ -1,0 +1,21 @@
+<h2 class="govuk-heading-m">
+  Today
+</h2>
+
+{% set notificationsForDate = notifications.today %}
+{% include "./date-table.html" %}
+
+<h2 class="govuk-heading-m">
+  Yesterday
+</h2>
+
+{% set notificationsForDate = notifications.yesterday %}
+{% include "./date-table.html" %}
+
+<h2 class="govuk-heading-m">
+  Wednesday
+</h2>
+
+{% set notificationsForDate = notifications.wednesday %}
+{% include "./date-table.html" %}
+</table>

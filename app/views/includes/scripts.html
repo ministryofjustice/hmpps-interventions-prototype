@@ -1,5 +1,6 @@
 <!-- Javascript -->
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.26.0/slimselect.min.js"></script>
 
 {% for scriptUrl in extensionConfig.scripts %}
@@ -8,9 +9,12 @@
 
 <script src="/public/javascripts/application.js"></script>
 <script>
-  new MOJFrontend.SortableTable({
-    table: $('table')[0]
-  });
+  var sortableTables = $('.sortable')
+  for (var i = 0; i < sortableTables.length; i++) {
+    new MOJFrontend.SortableTable({
+      table: sortableTables[i]
+    });
+  }
 </script>
 
 {% if useAutoStoreData %}

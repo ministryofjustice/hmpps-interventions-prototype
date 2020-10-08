@@ -54,6 +54,26 @@ $govuk-assets-path: '/govuk/assets/';
   border-right: none !important;
   text-align: left !important;
   padding-top: 0 !important;
+
+  &--grey {
+    background: #eeee !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+}
+
+.govuk-list {
+  &--case-summary li {
+    margin-bottom: 15px !important;
+  }
+}
+
+.send-message {
+  float: right;
+}
+
+#paper-trail {
+  padding-bottom: 10% !important;
 }
 
 .app-pagination {
