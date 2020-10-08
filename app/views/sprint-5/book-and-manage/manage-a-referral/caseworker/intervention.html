@@ -36,35 +36,7 @@
 	  </li>
 	</ul>
 	<div class="govuk-tabs__panel" id="intervention-progress">
-	  <h2 class="govuk-heading-xl">Intervention progress</h2>
-
-	  <p class="govuk-body">
-	  On this page you can:
-	  </p>
-
-	  <ul class="govuk-list govuk-list--bullet">
-	    <li>enter the scheduled date of an initial assessment</li>
-	    <li>create the action plan and submit to the probation practitioner for approval</li>
-	    <li>track the progress of the intervention</li>
-	    <li>complete the end of service report for the intervention</li>
-	  </ul>
-
-	  <h2 class="govuk-heading-l">Intervention overview</h2>
-
-	  <dl class="govuk-summary-list">
-	    <div class="govuk-summary-list__row">
-	      <dt class="govuk-summary-list__key">Intervention</dt>
-	      <dd class="govuk-summary-list__value">{{ intervention.name }}</dd>
-	    </div>
-	    <div class="govuk-summary-list__row">
-	      <dt class="govuk-summary-list__key">Service user</dt>
-	      <dd class="govuk-summary-list__value">{{ referral.serviceUser.name }}</dd>
-	    </div>
-	    <div class="govuk-summary-list__row">
-	      <dt class="govuk-summary-list__key">Probation practitioner</dt>
-	      <dd class="govuk-summary-list__value">{{ referral.probationPractitioner.name }}</dd>
-	    </div>
-	  </dl>
+	  <h2 class="govuk-heading-xl">Intervention progress: {{intervention.name | lower }}</h2>
 
 	  {% include "./includes/intervention/delivery.html" %}
 	</div>
