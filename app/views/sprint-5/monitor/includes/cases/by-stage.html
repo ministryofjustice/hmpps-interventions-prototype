@@ -43,13 +43,13 @@
 
   <div class="govuk-tabs__panel" id="intervention-progress">
     <h2 class="govuk-heading-m">
-      Interventions in progress
+      Intervention in progress
     </h2>
     {% set referralsToDisplay = referralsInProgress %}
     {% include "./table.html"%}
 
     <h2 class="govuk-heading-m">
-      Session assessment overdue
+      Post-session questionnaire to complete
     </h2>
     {% set referralsToDisplay = referralsOverdue %}
     {% include "./table.html"%}
