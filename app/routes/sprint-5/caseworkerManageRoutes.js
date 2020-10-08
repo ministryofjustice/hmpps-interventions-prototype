@@ -181,17 +181,33 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
 
     const viewModel = {}
 
-    viewModel.showInitialAssessment = true;
-    viewModel.populateInitialAssessmentContent = true;
+    viewModel.tasksToCompleteSections = [];
 
-    viewModel.showActionPlan = viewModel.populateInitialAssessmentContent;
-    viewModel.populateActionPlanContent = intervention.initialAssessmentStatus === "scheduled";
+    const showInitialAssessment = true;
+    const populateInitialAssessmentContent = true;
+    if (showInitialAssessment) {
+	viewModel.tasksToCompleteSections.push({ id: "initialAssessment", populateContent: populateInitialAssessmentContent });
+    }
 
-    viewModel.showInterventionSessions = viewModel.populateActionPlanContent;
-    viewModel.populateInterventionSessionsContent = intervention.actionPlanStatus === "approved";
+    const showActionPlan = populateInitialAssessmentContent;
+    const populateActionPlanContent = intervention.initialAssessmentStatus === "scheduled";
+    if (showActionPlan) {
+	viewModel.tasksToCompleteSections.push({ id: "actionPlan", populateContent: populateActionPlanContent });
+    }
 
-    viewModel.showEndOfServiceReport = true;
-    viewModel.populateEndOfServiceReportContent = true;
+    const showInterventionSessions = populateActionPlanContent;
+    const populateInterventionSessionsContent = intervention.actionPlanStatus === "approved";
+    if (showInterventionSessions) {
+	viewModel.tasksToCompleteSections.push({ id: "interventionSessions", populateContent: populateInterventionSessionsContent });
+    }
+
+    const showEndOfServiceReport = true;
+    if (showEndOfServiceReport) {
+	const populateContent = true;
+	viewModel.tasksToCompleteSections.push({ id: "endOfServiceReport", populateContent });
+    }
+
+    viewModel.completedTasksSections = viewModel.tasksToCompleteSections;
 
     res.render("sprint-5/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsAssessed, canChangeActionPlan, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForInterventionSessionsStatus, cssClassForActionPlanStatus, cssClassForEndOfServiceReportStatus, initialAssessmentScheduled, viewModel });
 });
