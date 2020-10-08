@@ -21,7 +21,7 @@
       </h1>
 
       <p class="govuk-body govuk-!-margin-bottom-9">
-        You can write and send an email to a probation practitioner.
+        Write and send an email to a probation practitioner
       </p>
       <div>
         <form method="post" action="probation-practitioner-email-confirmation">
@@ -32,6 +32,12 @@
             <input class="govuk-input" id="subject" name="subject" type="text">
           </div>
           <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="subject">
+              Add a category to summarise this email. For example, desired outcomes or complexity
+            </label>
+            <input class="govuk-input" id="email-category" name="email-category" type="text">
+          </div>
+          <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="message">
               Message
             </label>
@@ -39,7 +45,7 @@
           </div>
         </div>
         <button class="govuk-button" data-module="govuk-button">
-          Save and continue
+          Send email
         </button>
       </form>
     </div>
