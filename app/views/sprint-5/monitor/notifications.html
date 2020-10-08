@@ -61,6 +61,8 @@
     {% include "./includes/notifications/by-type.html" %}
   {% elif sortBy == 'service-users' %}
     {% include "./includes/notifications/by-service-user.html" %}
+  {% elif sortBy == 'priority' %}
+    {% include "./includes/notifications/by-priority.html" %}
   {% endif %}
 </div>
 {% endblock %}

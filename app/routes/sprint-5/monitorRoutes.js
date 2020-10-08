@@ -90,10 +90,14 @@ router.get("/notifications", (req, res) => {
 
   const notificationsByServiceUser = groupBy(allNotifications, "serviceUser");
 
+  const notificationsByPriority = groupBy(allNotifications, "priority");
+
   res.render("sprint-5/monitor/notifications", {
     notifications: notifications,
     notificationsByType: notificationsByType,
     notificationsByServiceUser: notificationsByServiceUser,
+    priorityNotifications: notificationsByPriority.true,
+    nonPriorityNotifications: notificationsByPriority.false,
     sortBy: req.query.sort_by,
     currentPage: "notifications",
   });
