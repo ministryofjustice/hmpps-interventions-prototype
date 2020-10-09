@@ -30,7 +30,7 @@
 </dl>
 
 {% if intervention.initialAssessmentStatus === "scheduled" %}
-  <form>
+  <form method="post" action="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/initial-assessment-delivered">
     <div class="govuk-form-group">
       <div class="govuk-checkboxes">
         <div class="govuk-checkboxes__item">
