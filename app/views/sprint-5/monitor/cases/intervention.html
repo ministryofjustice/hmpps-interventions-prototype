@@ -206,7 +206,7 @@
 
               <h2 class="govuk-heading-m">Intervention sessions</h2>
 
-              {% if intervention.monitor.completed %}
+              {% if intervention.monitor.completed or intervention.monitor.awaitingPostSessionQuestionnaire %}
               <p class="govuk-body">
                 These show the progress of this intervention.
               </p>

@@ -49,14 +49,16 @@ router.get("/cases", (req, res) => {
     );
   });
 
-  const referralsOverdue = referrals.filter((referral) => {
-    return referral.interventions.some(
-      (intervention) =>
-        intervention.monitor.inProgress &&
-        intervention.monitor.overdue &&
-        !intervention.monitor.completed
-    );
-  });
+  const referralsAwaitingPostSessionQuestionnaire = referrals.filter(
+    (referral) => {
+      return referral.interventions.some(
+        (intervention) =>
+          intervention.monitor.inProgress &&
+          intervention.monitor.awaitingPostSessionQuestionnaire &&
+          !intervention.monitor.completed
+      );
+    }
+  );
 
   const referralsCompleted = referrals.filter((referral) => {
     return referral.interventions.some(
@@ -70,7 +72,7 @@ router.get("/cases", (req, res) => {
     referralsAwaitingAssessment: referralsAwaitingAssessment,
     referralsWithActionPlan: referralsWithActionPlan,
     referralsInProgress: referralsInProgress,
-    referralsOverdue: referralsOverdue,
+    referralsAwaitingPostSessionQuestionnaire: referralsAwaitingPostSessionQuestionnaire,
     referralsCompleted: referralsCompleted,
     groupBy: req.query.group_by,
     currentPage: "cases",
