@@ -23,39 +23,35 @@
         <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar--grey govuk-!-margin-top-6">
           <ul class="govuk-list govuk-list--case-summary">
             <li>
-              <strong>Type</strong>
-              <br>Delivery partner
-            </li>
-            <li>
-              <strong>Needs referred</strong>
-              <br>
-              {% for need in serviceUser.needs.criminogenicNeeds %}
-                {{ need }}
-              {% endfor %}
-            </li>
-            <li>
               <strong>Provider</strong>
               <br>{{ intervention.providerName }}
             </li>
             <li>
               <strong>Date referred</strong>
-              <br>1 Aug 2020
+              <br>01/09/20
             </li>
             <li>
               <strong>Assessment date</strong>
-              <br>8 Aug 2020
+              <br>{{ intervention.monitor.initialAssessmentDate }}
             </li>
             <li>
               <strong>Date of action plan</strong>
               <br>
+              {% if intervention.monitor.actionPlanApproved %}
+                {{ intervention.monitor.actionPlanDate }}
+              {% elif intervention.monitor.actionPlanSubmitted %}
+                Action plan not yet approved
+              {% else %}
+                Action plan not yet submitted
+              {% endif %}
             </li>
             <li>
               <strong>Date started</strong>
-              <br>22 Aug 2020
+              <br>22/09/20
             </li>
             <li>
               <strong>Target end date</strong>
-              <br>5 Sep 2020
+              <br>12/12/20
             </li>
             <li>
               <strong>End of service review</strong>
@@ -125,7 +121,9 @@
               progress on this page.
             </p>
 
-            <h3 class="govuk-heading-m">Initial assessment</h2>
+            <h2 class="govuk-heading-m">Initial assessment</h2>
+
+            {% if intervention.assignedCaseworker %}
             <p class="govuk-body">
               This is the initial assessment date scheduled by the service provider and service user.
             </p>
@@ -141,24 +139,34 @@
               </thead>
 
               <tbody class="govuk-table__body">
-                {% if intervention.assignedCaseworker %}
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">{{ intervention.assignedCaseworker}}</td>
-                    <td class="govuk-table__cell">10/02/2020</td>
+                    <td class="govuk-table__cell">{{ intervention.monitor.initialAssessmentDate }}</td>
                     <td class="govuk-table__cell">
+                      {% if intervention.monitor.initialAssessmentCompleted %}
                       <strong class="govuk-tag">
                         completed
                       </strong>
+                      {% else %}
+                      <strong class="govuk-tag">
+                        scheduled
+                      </strong>
+                      {% endif %}
                     </td>
                     <td class="govuk-table__cell">
                       <a class="govuk-link" href="#">View</a>
                     </td>
                   </tr>
-                {% endif %}
               </tbody>
             </table>
 
+            {% else %}
+              <p class="govuk-body">Once a caseworker has been assigned the initial assessment will be booked.</p>
+            {% endif %}
+
             <h2 class="govuk-heading-m">Service user action plan</h2>
+
+            {% if intervention.assignedCaseworker and intervention.monitor.actionPlanSubmitted %}
             <p class="govuk-body">
               This is the action plan created by the service provider. When there are changes submitted by the service provider, you will need to review it and decide if you want to approve it.
             </p>
@@ -173,7 +181,6 @@
               </thead>
 
               <tbody class="govuk-table__body">
-                {% if intervention.assignedCaseworker and intervention.monitor.actionPlanSubmitted %}
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">{{ intervention.assignedCaseworker}}</td>
                     <td class="govuk-table__cell">
@@ -191,10 +198,15 @@
                       <a href="#" class="govuk-link">View</td>
                     </tr>
                   </tbody>
-                {% endif %}
               </table>
 
+              {% else %}
+              <p class="govuk-body">Action plan not yet submitted.</p>
+              {% endif %}
+
               <h2 class="govuk-heading-m">Intervention sessions</h2>
+
+              {% if intervention.monitor.completed or intervention.monitor.awaitingPostSessionQuestionnaire %}
               <p class="govuk-body">
                 These show the progress of this intervention.
               </p>
@@ -213,7 +225,7 @@
                 <tbody class="govuk-table__body">
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Session 1</td>
-                    <td class="govuk-table__cell">19/02/2020</td>
+                    <td class="govuk-table__cell">07/10/20</td>
                     <td class="govuk-table__cell">Jenny Thompson</td>
                     <td class="govuk-table__cell">
                       <strong class="govuk-tag">
@@ -226,7 +238,92 @@
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Session 2</td>
-                    <td class="govuk-table__cell">26/02/2020</td>
+                    <td class="govuk-table__cell">14/10/20</td>
+                    <td class="govuk-table__cell">Jenny Thompson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 3</td>
+                    <td class="govuk-table__cell">21/10/20</td>
+                    <td class="govuk-table__cell">Jenny Thompson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 4</td>
+                    <td class="govuk-table__cell">29/10/20</td>
+                    <td class="govuk-table__cell">Jenny Thompson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 5</td>
+                    <td class="govuk-table__cell">06/11/20</td>
+                    <td class="govuk-table__cell">Jenny Thompson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              {% elif intervention.monitor.inProgress %}
+              <p class="govuk-body">
+                These show the progress of this intervention.
+              </p>
+
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Session title</th>
+                    <th scope="col" class="govuk-table__header">Date</th>
+                    <th scope="col" class="govuk-table__header">Facilitator</th>
+                    <th scope="col" class="govuk-table__header">Status</th>
+                    <th scope="col" class="govuk-table__header">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 1</td>
+                    <td class="govuk-table__cell">07/10/20</td>
+                    <td class="govuk-table__cell">Jenny Thompson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 2</td>
+                    <td class="govuk-table__cell">14/10/20</td>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">
                       <strong class="govuk-tag govuk-tag--grey">
@@ -239,31 +336,34 @@
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Session 3</td>
-                    <td class="govuk-table__cell">05/03/2020</td>
+                    <td class="govuk-table__cell">21/10/20</td>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell"></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Session 4</td>
-                    <td class="govuk-table__cell">12/03/2020</td>
+                    <td class="govuk-table__cell">29/10/20</td>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell"></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Session 5</td>
-                    <td class="govuk-table__cell">19/03/2020</td>
+                    <td class="govuk-table__cell">06/11/20</td>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell"></td>
                   </tr>
                 </tbody>
               </table>
+              {% else %}
+                <p class="govuk-body">No sessions have been scheduled.</p>
+              {% endif %}
 
               <h2 class="govuk-heading-m">End of service report</h2>
               <p class="govuk-body">
-                Complete and submit the end of service report. An intervention ready for an end of service assessment will appear below once all the post-session feedback forms of the intervention are completed.
+                An intervention ready for an end of service assessment will appear below once all the post-session feedback forms of the intervention are completed.
               </p>
             </div>
 

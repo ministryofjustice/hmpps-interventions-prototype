@@ -1,7 +1,11 @@
 <table class="govuk-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header" aria-sort="ascending">Time</th>
+      {% if timeOrDate == "time" %}
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Time</th>
+      {% else %}
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Date</th>
+      {% endif %}
       <th scope="col" class="govuk-table__header" aria-sort="none">Type</th>
       <th scope="col" class="govuk-table__header" aria-sort="none">Service user</th>
       <th scope="col" class="govuk-table__header" aria-sort="none">Priority</th>
@@ -10,15 +14,23 @@
   </thead>
 
   <tbody class="govuk-table__body">
-    {% for notification in notificationsForDate %}
+    {% for notification in notificationsToDisplay %}
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         {% if notification.unread %}
           <strong>
-            {{ notification.date }}
+            {% if timeOrDate == 'time' %}
+              {{ notification.time }}
+            {% else %}
+              {{ notification.date }} {{ notification.time }}
+            {% endif %}
           </strong>
         {% else %}
-          {{ notification.date }}
+          {% if timeOrDate == 'time' %}
+            {{ notification.time }}
+          {% else %}
+            {{ notification.date }} {{ notification.time }}
+          {% endif %}
         {% endif %}
       </td>
       <td class="govuk-table__cell">

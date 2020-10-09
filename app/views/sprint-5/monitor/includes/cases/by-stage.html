@@ -23,16 +23,16 @@
   </ul>
 
   <div class="govuk-tabs__panel" id="referral">
-    <h2 class="govuk-heading-m">
-      Awaiting a caseworker to be assigned
-    </h2>
     {% set referralsToDisplay = referralsWithSomeUnassigned %}
+    <h2 class="govuk-heading-m">
+      Awaiting a caseworker to be assigned (2)
+    </h2>
     {% include "./table.html"%}
 
-    <h2 class="govuk-heading-m">
-      Awaiting assessment
-    </h2>
     {% set referralsToDisplay = referralsAwaitingAssessment %}
+    <h2 class="govuk-heading-m">
+      Awaiting assessment (2)
+    </h2>
     {% include "./table.html"%}
   </div>
 
@@ -42,16 +42,16 @@
   </div>
 
   <div class="govuk-tabs__panel" id="intervention-progress">
-    <h2 class="govuk-heading-m">
-      Interventions in progress
-    </h2>
     {% set referralsToDisplay = referralsInProgress %}
+    <h2 class="govuk-heading-m">
+      Intervention in progress (6)
+    </h2>
     {% include "./table.html"%}
 
     <h2 class="govuk-heading-m">
-      Session assessment overdue
+    {% set referralsToDisplay = referralsAwaitingPostSessionQuestionnaire %}
+      Post-session questionnaire to complete (3)
     </h2>
-    {% set referralsToDisplay = referralsOverdue %}
     {% include "./table.html"%}
   </div>
 
