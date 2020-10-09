@@ -9,7 +9,11 @@
   {% if section.id === "initialAssessment" %}
     {% set html %}
     <p class="govuk-body">
-    Enter the date of the initial assessment. If it is not scheduled, use the communications tool to contact the probation practitioner online.
+    {% if intervention.initialAssessment == null %}
+      Enter the date of the initial assessment. If it is not scheduled, use the communications tool to contact the probation practitioner online.
+    {% else %}
+      The initial assessment appointment is outlined below.
+    {% endif %}
     </p>
 
     {% if section.populateContent %}
