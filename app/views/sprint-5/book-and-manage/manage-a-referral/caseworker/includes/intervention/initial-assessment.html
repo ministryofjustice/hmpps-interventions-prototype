@@ -18,8 +18,12 @@
     <dd class="govuk-summary-list__value">
       {% if intervention.initialAssessment != null %}
         <ul class="govuk-list">
-          <li class="govuk-!-margin-bottom-3"><a class="govuk-link" href="#">View / edit appointment</a></li>
-          <li><a class="govuk-link" href="#">Add notes about the assessment</a></li>
+          {% if intervention.initialAssessmentStatus === "delivered" %}
+            <li><a class="govuk-link" href="#">View notes</a></li>
+          {% else %}
+            <li class="govuk-!-margin-bottom-3"><a class="govuk-link" href="#">View / edit appointment</a></li>
+            <li><a class="govuk-link" href="#">Add notes about the assessment</a></li>
+          {% endif %}
         </ul>
       {% else %}
         <a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/initial-assessment">Schedule</a>
