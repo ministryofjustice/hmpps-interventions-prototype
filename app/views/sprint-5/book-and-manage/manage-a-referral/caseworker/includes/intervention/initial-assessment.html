@@ -9,14 +9,43 @@
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Action
+      {% if intervention.initialAssessment != null %}
+        Actions
+      {% else %}
+        Action
+      {% endif %}
     </dt>
     <dd class="govuk-summary-list__value">
       {% if intervention.initialAssessment != null %}
-        <a class="govuk-link" href="#">View</a>
+        <ul class="govuk-list">
+          {% if intervention.initialAssessmentStatus === "delivered" %}
+            <li><a class="govuk-link" href="#">View notes</a></li>
+          {% else %}
+            <li class="govuk-!-margin-bottom-3"><a class="govuk-link" href="#">View / edit appointment</a></li>
+            <li><a class="govuk-link" href="#">Add notes about the assessment</a></li>
+          {% endif %}
+        </ul>
       {% else %}
         <a class="govuk-link" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/initial-assessment">Schedule</a>
       {% endif %}
     </dd>
   </div>
+
 </dl>
+
+{% if intervention.initialAssessmentStatus === "scheduled" %}
+  <form method="post" action="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/initial-assessment-delivered">
+    <div class="govuk-form-group">
+      <div class="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="initial-assessment-delivered" name="delivered" type="checkbox" value="yes">
+          <label class="govuk-label govuk-checkboxes__label" for="initial-assessment-delivered">
+            Initial assessment has been completed
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <button class="govuk-button">Update initial assessment</button>
+  </form>
+{% endif %}

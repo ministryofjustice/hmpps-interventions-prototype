@@ -42,6 +42,8 @@ function findReferralByIndex(req, index) {
 	// Populate initial assessment status based on which events have occurred.
 	if (intervention.initialAssessment == null) {
 	    intervention.initialAssessmentStatus = "not scheduled";
+	} else if (intervention.initialAssessment.delivered) {
+	    intervention.initialAssessmentStatus = "delivered";
 	} else {
 	    intervention.initialAssessmentStatus = "scheduled";
 	}
@@ -116,6 +118,7 @@ function findIntervention(req) {
 function cssClassForInitialAssessmentStatus(initialAssessmentStatus) {
     switch (initialAssessmentStatus) {
 	case "scheduled":
+	case "delivered":
 	    return "govuk-tag";
 	case "not scheduled":
 	    return "govuk-tag govuk-tag--grey";
@@ -199,13 +202,16 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
 
     // TODO the isTaskCompleted should be DRY-ed up with the blue tag logic
     // from the cssClassFor… functions
+    //
+    // (the only discrepancy is initial assessment, which uses blue tag for
+    // "scheduled" status, which is still considered a to-do task)
 
     const showInitialAssessment = true;
     const populateInitialAssessmentContent = true;
     if (showInitialAssessment) {
 	const section = { id: "initialAssessment", populateContent: populateInitialAssessmentContent }
 
-	const isTaskCompleted = intervention.initialAssessmentStatus === "scheduled";
+	const isTaskCompleted = intervention.initialAssessmentStatus === "delivered";
 	if (isTaskCompleted) {
 	    viewModel.completedTasksSections.push(section);
 	} else {
@@ -214,7 +220,7 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
     }
 
     const showActionPlan = populateInitialAssessmentContent;
-    const populateActionPlanContent = intervention.initialAssessmentStatus === "scheduled";
+    const populateActionPlanContent = intervention.initialAssessmentStatus === "delivered";
     if (showActionPlan) {
 	const section = { id: "actionPlan", populateContent: populateActionPlanContent };
 
@@ -427,6 +433,23 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/initial-
     const intervention = findIntervention(req);
 
     intervention.initialAssessment = req.body;
+
+    res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
+});
+
+router.post("/referrals/:referralIndex/interventions/:interventionIndex/initial-assessment-delivered", (req, res) => {
+    const intervention = findIntervention(req);
+
+    // Because of whatever magic auto-store-data.js is doing, we get "yes" if
+    // JS disabled, and ["yes"] if JS enabled 🤷
+    //
+    // Aaand, asking the Internet ”JavaScript array equality”, it seems like
+    // there isn’t a built-in thing 🤷🤷
+    //
+    // Looks like utils.js#addCheckedFunction has to handle the same bumps
+    if (req.body.delivered === "yes" || req.body.delivered.length === 1 && req.body.delivered[0] === "yes") {
+	intervention.initialAssessment.delivered = true;
+    }
 
     res.redirect(`/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });

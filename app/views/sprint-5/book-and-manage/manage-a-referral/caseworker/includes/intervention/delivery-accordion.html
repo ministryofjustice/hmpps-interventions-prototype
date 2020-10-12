@@ -9,7 +9,11 @@
   {% if section.id === "initialAssessment" %}
     {% set html %}
     <p class="govuk-body">
-    Enter the date of the initial assessment. If it is not scheduled, use the communications tool to contact the probation practitioner online.
+    {% if intervention.initialAssessment == null %}
+      Enter the date of the initial assessment. If it is not scheduled, use the communications tool to contact the probation practitioner online.
+    {% else %}
+      The initial assessment appointment is outlined below.
+    {% endif %}
     </p>
 
     {% if section.populateContent %}
@@ -30,9 +34,10 @@
   {% if section.id === "actionPlan" %}
     {% set html %}
     <p class="govuk-body">
-    Create the action plan and submit it to the probation practitioner for approval.
-    {% if not section.populateContent %}
-      Action plans that are ready to be created will appear below when the initial assessment is scheduled.
+    {% if section.populateContent %}
+      Create the action plan and submit it to the probation practitioner for approval.
+    {% else %}
+      The action plan can only be completed once the initial assessment has taken place.
     {% endif %}
     </p>
     {% if section.populateContent %}
@@ -60,8 +65,9 @@
   {% if section.id === "interventionSessions" %}
     {% set html %}
     <p class="govuk-body">
-    Track the progress of each intervention session.
-    {% if not section.populateContent %}
+    {% if section.populateContent %}
+      Track the progress of each intervention session.
+    {% else %}
       Intervention sessions that are ready to be tracked will appear below once the action plan is approved.
     {% endif %}
     </p>
