@@ -30,9 +30,3 @@
     </dd>
   </div>
 </dl>
-
-{% if intervention.actionPlanStatus === "pending approval" %}
-  <p class="govuk-body">
-  <a class="govuk-link govuk-link--app-fast-forward" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/fast-forward/action-plan-approved">Fast-forward to action plan approved</a>
-  </p>
-{% endif %}

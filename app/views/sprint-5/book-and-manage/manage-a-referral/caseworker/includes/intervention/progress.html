@@ -29,9 +29,3 @@
     </tr>
   {% endfor %}
 </table>
-
-{% if not allSessionsAssessed %}
-  <p class="govuk-body">
-  <a class="govuk-link govuk-link--app-fast-forward" href="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/fast-forward/sessions-completed">Fast-forward to sessions completed</a>
-  </p>
-{% endif %}

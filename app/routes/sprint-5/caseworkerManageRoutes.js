@@ -207,9 +207,9 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
     // "scheduled" status, which is still considered a to-do task)
 
     const showInitialAssessment = true;
-    const populateInitialAssessmentContent = true;
+    viewModel.populateInitialAssessmentContent = true;
     if (showInitialAssessment) {
-	const section = { id: "initialAssessment", populateContent: populateInitialAssessmentContent }
+	const section = { id: "initialAssessment", populateContent: viewModel.populateInitialAssessmentContent }
 
 	const isTaskCompleted = intervention.initialAssessmentStatus === "delivered";
 	if (isTaskCompleted) {
@@ -219,12 +219,12 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
 	}
     }
 
-    const showActionPlan = populateInitialAssessmentContent;
-    const populateActionPlanContent = intervention.initialAssessmentStatus === "delivered";
+    const showActionPlan = viewModel.populateInitialAssessmentContent;
+    viewModel.populateActionPlanContent = intervention.initialAssessmentStatus === "delivered";
     if (showActionPlan) {
-	const section = { id: "actionPlan", populateContent: populateActionPlanContent };
+	const section = { id: "actionPlan", populateContent: viewModel.populateActionPlanContent };
 
-	const isTaskCompleted = populateActionPlanContent && intervention.actionPlanStatus === "approved";
+	const isTaskCompleted = viewModel.populateActionPlanContent && intervention.actionPlanStatus === "approved";
 	if (isTaskCompleted) {
 	    viewModel.completedTasksSections.push(section);
 	} else {
@@ -232,12 +232,12 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
 	}
     }
 
-    const showInterventionSessions = populateActionPlanContent;
-    const populateInterventionSessionsContent = intervention.actionPlanStatus === "approved";
+    const showInterventionSessions = viewModel.populateActionPlanContent;
+    viewModel.populateInterventionSessionsContent = intervention.actionPlanStatus === "approved";
     if (showInterventionSessions) {
-	const section = { id: "interventionSessions", populateContent: populateInterventionSessionsContent };
+	const section = { id: "interventionSessions", populateContent: viewModel.populateInterventionSessionsContent };
 
-	const isTaskCompleted = populateInterventionSessionsContent && intervention.sessionsStatus === "completed";
+	const isTaskCompleted = viewModel.populateInterventionSessionsContent && intervention.sessionsStatus === "completed";
 	if (isTaskCompleted) {
 	    viewModel.completedTasksSections.push(section);
 	} else {
@@ -246,9 +246,9 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
     }
 
     const showEndOfServiceReport = true;
-    const populateEndOfServiceReportContent = true;
+    viewModel.populateEndOfServiceReportContent = true;
     if (showEndOfServiceReport) {
-	const section = { id: "endOfServiceReport", populateContent: populateEndOfServiceReportContent };
+	const section = { id: "endOfServiceReport", populateContent: viewModel.populateEndOfServiceReportContent };
 
 	const isTaskCompleted = ["completed", "terminated"].includes(intervention.endOfServiceReportStatus);
 	if (isTaskCompleted) {

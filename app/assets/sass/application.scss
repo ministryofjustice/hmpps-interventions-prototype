@@ -107,10 +107,11 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .govuk-link--app-fast-forward {
-  border: 1px solid red;
-  padding: 3px;
-  color: red;
-  font-weight: bold;
+  color: govuk-colour("pink") !important;
+
+  &:visited {
+    color: govuk-colour("pink") !important;
+  }
 }
 
 // TODO This didn’t work with the class there only once (just uses the 960px of
