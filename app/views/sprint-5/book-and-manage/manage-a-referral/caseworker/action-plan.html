@@ -140,22 +140,22 @@
 	{% set definitionClass = "govuk-body govuk-!-margin-left-0" %}
 
 	<dt class="{{ termClass }}">Relevant sentence</dt>
-	<dd class="{{ definitionClass }}">{{ referral.relevantSentenceHTML | safe }}</dd>
+	<dd class="{{ definitionClass }}">{{ intervention.relevantSentenceHTML | safe }}</dd>
 
 	<dt class="{{ termClass }}">Desired outcomes</dt>
-	<dd class="{{ definitionClass }}">{{ referral.desiredOutcomes }}</dd>
+	<dd class="{{ definitionClass }}">{{ intervention.desiredOutcomes }}</dd>
 
 	<dt class="{{ termClass }}">Required complexity</dt>
-	<dd class="{{ definitionClass }}">{{ referral.requiredComplexityHTML | safe }}</dd>
+	<dd class="{{ definitionClass }}">{{ intervention.requiredComplexityHTML | safe }}</dd>
 
 	<dt class="{{ termClass }}">Completion date required</dt>
-	<dd class="{{ definitionClass }}">{{ moment(referral.completionDateRequired).format("D/M/YYYY") }}</dd>
+	<dd class="{{ definitionClass }}">{{ moment(intervention.completionDateRequired).format("D/M/YYYY") }}</dd>
 
 	<dt class="{{ termClass }}">Maximum number of RAR days</dt>
-	<dd class="{{ definitionClass }}">{{ referral.maximumRARDays }}</dd>
+	<dd class="{{ definitionClass }}">{{ intervention.maximumRARDays }}</dd>
 
 	<dt class="{{ termClass }}">Further information</dt>
-	<dd class="{{ definitionClass }} govuk-!-margin-bottom-0">{{ referral.furtherInformation }}</dd>
+	<dd class="{{ definitionClass }} govuk-!-margin-bottom-0">{{ intervention.furtherInformation }}</dd>
       </dl>
     </div>
   </div>
