@@ -4,7 +4,7 @@
       Sentence information
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ referral.relevantSentenceHTML | safe }}
+      {{ intervention.relevantSentenceHTML | safe }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -12,7 +12,7 @@
       Desired outcome
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ referral.desiredOutcomes }}
+      {{ intervention.desiredOutcomes }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -20,7 +20,7 @@
       Complexity level
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ referral.requiredComplexityHTML | safe }}
+      {{ intervention.requiredComplexityHTML | safe }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -28,7 +28,7 @@
       Date to be completed by
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ moment(referral.completionDateRequired).format("D/M/YYYY") }}
+      {{ moment(intervention.completionDateRequired).format("D/M/YYYY") }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -36,7 +36,7 @@
       Maximum number of RAR days
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ referral.maximumRARDays }}
+      {{ intervention.maximumRARDays }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -44,7 +44,7 @@
       Further information for the provider
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ referral.furtherInformation }}
+      {{ intervention.furtherInformation }}
     </dd>
   </div>
 </dl>
