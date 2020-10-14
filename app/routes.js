@@ -42,7 +42,7 @@ router.get("/service-user-details/show", async function (req, res, next) {
   }
 });
 
-const sprints = ["sprint-3", "sprint-4", "sprint-5"];
+const sprints = ["sprint-3", "sprint-4", "sprint-5", "sprint-6"];
 const sprintRouters = {};
 for (sprint of sprints) {
   router.use(
@@ -56,7 +56,10 @@ for (sprint of sprints) {
   );
 }
 
-router.use("/sprint-5/monitor", require("./routes/sprint-5/monitorRoutes"));
+const monitorSprints = ["sprint-5", "sprint-6"];
+for (sprint of monitorSprints) {
+  router.use(`/${sprint}/monitor`, require(`./routes/${sprint}/monitorRoutes`));
+}
 
 async function createAuthenticatedApiClient() {
   const client = new HmppsOffenderAssessmentApi.ApiClient();

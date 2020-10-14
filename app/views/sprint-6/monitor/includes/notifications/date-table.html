@@ -1,0 +1,65 @@
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      {% if timeOrDate == "time" %}
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Time</th>
+      {% else %}
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Date</th>
+      {% endif %}
+      <th scope="col" class="govuk-table__header" aria-sort="none">Type</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Service user</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Priority</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Action</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    {% for notification in notificationsToDisplay %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        {% if notification.unread %}
+          <strong>
+            {% if timeOrDate == 'time' %}
+              {{ notification.time }}
+            {% else %}
+              {{ notification.date }} {{ notification.time }}
+            {% endif %}
+          </strong>
+        {% else %}
+          {% if timeOrDate == 'time' %}
+            {{ notification.time }}
+          {% else %}
+            {{ notification.date }} {{ notification.time }}
+          {% endif %}
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell">
+        {% if notification.unread %}
+          <strong>
+            {{ notification.type }}
+          </strong>
+        {% else %}
+          {{ notification.type }}
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell">
+        {% if notification.unread %}
+          <strong>
+            {{ notification.serviceUser }}
+          </strong>
+        {% else %}
+          {{ notification.serviceUser }}
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell">
+        {% if notification.priority %}
+          !
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell">
+        <a class="govuk-link" href="#">{{ notification.action | capitalize }}</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
