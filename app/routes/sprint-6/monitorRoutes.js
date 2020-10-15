@@ -147,4 +147,61 @@ router.get(
   }
 );
 
+router.get(
+  "/cases/:referralNumber/interventions/:interventionId/action-plan",
+  (req, res) => {
+    const referralNumber = req.params.referralNumber;
+    const interventionId = req.params.interventionId;
+
+    const referral = findReferral(
+      req.session.data.sprint6.referrals,
+      referralNumber
+    );
+
+    const intervention = referral.interventions.find(
+      (intervention) => interventionId === intervention.id
+    );
+
+    const serviceUser = referral ? referral.serviceUser : {};
+
+    res.render("sprint-6/monitor/cases/action-plan-review", {
+      referral: referral,
+      intervention: intervention,
+      serviceUser: serviceUser,
+      currentPage: intervention.name,
+    });
+  }
+);
+
+router.post(
+  "/cases/:referralNumber/interventions/:interventionId",
+  (req, res) => {
+    const referralNumber = req.params.referralNumber;
+    const interventionId = req.params.interventionId;
+
+    const actionPlanApproved =
+      req.session.data["approve-action-plan"] === "yes";
+
+    const referral = findReferral(
+      req.session.data.sprint6.referrals,
+      referralNumber
+    );
+
+    const intervention = referral.interventions.find(
+      (intervention) => interventionId === intervention.id
+    );
+
+    intervention.monitor.actionPlanApproved = actionPlanApproved;
+
+    const serviceUser = referral ? referral.serviceUser : {};
+
+    res.render("sprint-6/monitor/cases/intervention", {
+      referral: referral,
+      intervention: intervention,
+      serviceUser: serviceUser,
+      currentPage: intervention.name,
+    });
+  }
+);
+
 module.exports = router;

@@ -52,6 +52,12 @@ $govuk-assets-path: '/govuk/assets/';
   padding: 0 !important;
 }
 
+.conditional-section {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  border-left: none !important;
+}
+
 .govuk-panel--sidebar {
   border-top: $govuk-border-width solid $govuk-brand-colour !important;
   border-left: none !important;
