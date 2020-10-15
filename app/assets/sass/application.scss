@@ -48,6 +48,10 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
+.govuk-warning-text {
+  padding: 0 !important;
+}
+
 .govuk-panel--sidebar {
   border-top: $govuk-border-width solid $govuk-brand-colour !important;
   border-left: none !important;
