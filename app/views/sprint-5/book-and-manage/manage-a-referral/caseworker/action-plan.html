@@ -125,7 +125,7 @@
 	</form>
       {% endif %}
 
-      {% if not intervention.monitor.actionPlanSubmitted %}
+      {% if not intervention.actionPlanSubmitted %}
 	<form method="post" action="/sprint-5/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/action-plan-submission">
 	  <input class="govuk-button" data-module="govuk-button" type="submit" value="Submit for approval">
 	</form>
