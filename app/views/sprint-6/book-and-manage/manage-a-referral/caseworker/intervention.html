@@ -71,6 +71,16 @@
 	<a class="govuk-link govuk-link--app-fast-forward" href="/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/fast-forward/action-plan-approved">User research example: fast-forward to action plan approved</a>
 	</p>
       {% endif %}
+
+      {% if viewModel.noShowSessionIndex !== -1 %}
+	<p class="govuk-body">
+	<a class="govuk-link govuk-link--app-fast-forward" href="/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/sessions/{{viewModel.noShowSessionIndex}}/fast-forward/probation-practitioner-judgement/acceptable">User research example: fast-forward session {{ viewModel.noShowSessionIndex + 1 }} to acceptable absence</a>
+	</p>
+
+	<p class="govuk-body">
+	<a class="govuk-link govuk-link--app-fast-forward" href="/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/sessions/{{viewModel.noShowSessionIndex}}/fast-forward/probation-practitioner-judgement/unacceptable">User research example: fast-forward session {{ viewModel.noShowSessionIndex + 1 }} to unacceptable absence</a>
+	</p>
+      {% endif %}
     </div>
 
   </div>

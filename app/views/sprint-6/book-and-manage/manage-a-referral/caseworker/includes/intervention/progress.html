@@ -5,6 +5,7 @@
       <th class="govuk-table__header" scope="col">Date</th>
       <th class="govuk-table__header" scope="col">Time</th>
       <th class="govuk-table__header" scope="col">Status</th>
+      <th class="govuk-table__header" scope="col">Attendance</th>
       <th class="govuk-table__header" scope="col">Action</th>
     </tr>
   </thead>
@@ -17,6 +18,21 @@
       <td class="govuk-table__cell ">
         {% if session.status != "not started" %}
           <strong class="{{ cssClassForSessionStatus(session.status) }}">{{ session.status }}</strong>
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell ">
+        {% if session.assessment != null %}
+          {% if session.assessment.attended == "no" %}
+            {% if session.absenceJudgement == "acceptable" %}
+              No, but acceptable
+            {% elif session.absenceJudgement == "unacceptable" %}
+              No, and unacceptable
+            {% else %}
+              No, awaiting judgement
+            {% endif %}
+          {% else %}
+            Yes
+          {% endif %}
         {% endif %}
       </td>
       <td class="govuk-table__cell">

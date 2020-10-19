@@ -258,6 +258,8 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex", (req, r
 	}
     }
 
+    viewModel.noShowSessionIndex = intervention.sessions.findIndex(session => (session.assessment != null && session.assessment.attended === "no" && session.absenceJudgement == null));
+
     res.render("sprint-6/book-and-manage/manage-a-referral/caseworker/intervention", { referral, intervention, referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, allSessionsAssessed, canChangeActionPlan, cssClassForInitialAssessmentStatus, cssClassForSessionStatus, cssClassForInterventionSessionsStatus, cssClassForActionPlanStatus, cssClassForEndOfServiceReportStatus, initialAssessmentScheduled, viewModel });
 });
 
@@ -374,12 +376,22 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/sessions
     res.redirect(`/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });
 
+router.get("/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/fast-forward/probation-practitioner-judgement/:judgement", (req, res) => {
+    const intervention = findIntervention(req);
+    const sessionIndex = parseInt(req.params.sessionIndex);
+    const session = intervention.sessions[sessionIndex];
+
+    session.absenceJudgement = req.params.judgement;
+
+    res.redirect(`/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
+});
+
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/fast-forward/sessions-completed", (req, res) => {
     const intervention = findIntervention(req);
 
     for (session of intervention.sessions) {
 	if (session.assessment == null) {
-	    session.assessment = {};
+	    session.assessment = { attended: "yes" };
 	}
     }
 
