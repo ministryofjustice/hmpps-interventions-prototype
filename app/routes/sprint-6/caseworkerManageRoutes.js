@@ -324,16 +324,25 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex/sessions/
     res.redirect(`/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/sessions/${req.params.sessionIndex}/assessment/attended`);
 });
 
-for (const page of ["attended", "details"]) {
-    router.get(`/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/assessment/${page}`, (req, res) => {
-	const intervention = findIntervention(req);
-	const referral = findReferral(req);
+router.get(`/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/assessment/attended`, (req, res) => {
+    const intervention = findIntervention(req);
+    const referral = findReferral(req);
 
-	const sessionIndex = parseInt(req.params.sessionIndex);
+    const sessionIndex = parseInt(req.params.sessionIndex);
 
-	res.render(`sprint-6/book-and-manage/manage-a-referral/caseworker/assessment-${page}`, { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, sessionIndex, referral });
-    });
-}
+    res.render(`sprint-6/book-and-manage/manage-a-referral/caseworker/assessment-attended`, { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, sessionIndex, referral });
+});
+
+router.get(`/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/assessment/details`, (req, res) => {
+    const intervention = findIntervention(req);
+    const referral = findReferral(req);
+
+    const sessionIndex = parseInt(req.params.sessionIndex);
+    const session = intervention.sessions[sessionIndex];
+    const attended = session.wipAssessment.attended !== "no";
+
+    res.render(`sprint-6/book-and-manage/manage-a-referral/caseworker/assessment-details`, { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, sessionIndex, referral, attended });
+});
 
 function updateWipAssessmentFromRequest(req) {
     const intervention = findIntervention(req);
