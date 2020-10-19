@@ -326,7 +326,7 @@ app.use(function (req, res, next) {
 
 // Display error
 app.use(function (err, req, res, next) {
-  console.error(err.message)
+  console.error(err.message, err.stack)
   res.status(err.status || 500)
   res.send(err.message)
 })
