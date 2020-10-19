@@ -4,35 +4,25 @@
   MoJ Interventions - make referrals
 {% endblock %}
 
-{% block beforeContent %}
-
-  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "prototype"
-    },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
-  }) }}
-
-    {{ govukBackLink({
-    text: "Back",
-    href: "service-user-id"
-  }) }}
-
+{% block header %}
+  {{ super() }}
+  {% include "../../includes/primary-navigation.html" %}
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Confirm service user personal details
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        Alex's information
       </h1>
-      <form action="risk-information" method="post" class="form">
+      <p class="govuk-body-m">This information has been exported from nDelius</p>
+
+      <form action="referral-task-list" method="post" class="form govuk-!-margin-top-8">
+        <h2 class="govuk-heading-l">Service user information</h2>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key govuk-!-width-one-third">
-             Title
+              Title
             </dt>
             <dd class="govuk-summary-list__value">
               Mr
@@ -40,7 +30,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key govuk-!-width-one-third">
-             Name
+              Name
             </dt>
             <dd class="govuk-summary-list__value">
               Alex Rivasur
@@ -48,7 +38,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key govuk-!-width-one-third">
-             Other names
+              Other names
             </dt>
             <dd class="govuk-summary-list__value">
               Shorty
@@ -75,7 +65,7 @@
               NOMIS number
             </dt>
             <dd class="govuk-summary-list__value">
-              xxxxxxxxxxxx
+              0203394
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -94,7 +84,132 @@
               Flat 2<br>27 Test Walk<br>SY16 1AQ<br><br>Private rental
             </dd>
           </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              OGRS score
+            </dt>
+            <dd class="govuk-summary-list__value">
+              50
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              ROSHA score
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Medium
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              RM2000 score
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Medium
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              SARA score
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Low
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Needs
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Thinking and attitudes<br>Relationships<br>Accommodation<br>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Gender
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Male
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Ethnicity
+            </dt>
+            <dd class="govuk-summary-list__value">
+              White British
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Preferred language
+            </dt>
+            <dd class="govuk-summary-list__value">
+              English
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Religion or belief
+            </dt>
+            <dd class="govuk-summary-list__value">
+              None
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Sexual orientation
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Heterosexual
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Disabilities
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Autism spectrum condition
+            </dd>
+          </div>
         </dl>
+
+        <h2 class="govuk-heading-l">Responsible officer information</h2>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Adam Michaels
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Adam.Michaels@justice.gov.uk
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Office address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              44 Bouverie Road<br>WESTON LULLINGFIELDS<br>SY4 0RE
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Manager name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Tony Richardson
+            </dd>
+          </div>
+        </dl>
+
         <input type="hidden" name="service-user-details-completed" value="yes"/>
         <button class="govuk-button" data-module="govuk-button">Continue</button>
       </form>
