@@ -321,20 +321,46 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex/fast-forw
 });
 
 router.get("/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/assessment", (req, res) => {
-    const intervention = findIntervention(req);
-    const referral = findReferral(req);
-
-    const sessionIndex = parseInt(req.params.sessionIndex);
-
-    res.render("sprint-6/book-and-manage/manage-a-referral/caseworker/assessment", { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, sessionIndex, referral });
+    res.redirect(`/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/sessions/${req.params.sessionIndex}/assessment/attended`);
 });
 
-router.post("/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/assessment", (req, res) => {
+for (const page of ["attended", "details"]) {
+    router.get(`/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/assessment/${page}`, (req, res) => {
+	const intervention = findIntervention(req);
+	const referral = findReferral(req);
+
+	const sessionIndex = parseInt(req.params.sessionIndex);
+
+	res.render(`sprint-6/book-and-manage/manage-a-referral/caseworker/assessment-${page}`, { referralIndex: req.params.referralIndex, interventionIndex: req.params.interventionIndex, intervention, sessionIndex, referral });
+    });
+}
+
+function updateWipAssessmentFromRequest(req) {
     const intervention = findIntervention(req);
-
     const sessionIndex = parseInt(req.params.sessionIndex);
+    const session = intervention.sessions[sessionIndex];
 
-    intervention.sessions[sessionIndex].assessment = req.body;
+    if (session.wipAssessment === undefined) {
+	session.wipAssessment = {};
+    }
+    Object.assign(session.wipAssessment, req.body);
+}
+
+router.post("/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/assessment/attended", (req, res) => {
+    updateWipAssessmentFromRequest(req);
+
+    res.redirect(`/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/sessions/${req.params.sessionIndex}/assessment/details`);
+});
+
+router.post("/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/assessment/details", (req, res) => {
+    updateWipAssessmentFromRequest(req);
+
+    // Commit the WIP assessment
+    const intervention = findIntervention(req);
+    const sessionIndex = parseInt(req.params.sessionIndex);
+    const session = intervention.sessions[sessionIndex];
+    session.assessment = session.wipAssessment;
+    delete session.wipAssessment;
 
     res.redirect(`/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });
