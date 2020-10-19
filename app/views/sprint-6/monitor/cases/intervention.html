@@ -243,7 +243,7 @@
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Session 1</td>
                     <td class="govuk-table__cell">07/10/20</td>
-                    <td class="govuk-table__cell">Jenny Thompson</td>
+                    <td class="govuk-table__cell">{{intervention.assignedCaseworker}}</td>
                     <td class="govuk-table__cell">
                       <strong class="govuk-tag">
                         completed
@@ -256,14 +256,14 @@
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Session 2</td>
                     <td class="govuk-table__cell">14/10/20</td>
-                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell">{{intervention.assignedCaseworker}}</td>
                     <td class="govuk-table__cell">
-                      <strong class="govuk-tag govuk-tag--grey">
-                        not started
+                      <strong class="govuk-tag govuk-tag--red">
+                        missed
                       </strong>
                     </td>
                     <td class="govuk-table__cell">
-                      <a class="govuk-link" href="#">View</a>
+                      <a class="govuk-link" href="/sprint-6/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}/sessions/0/absence-review">Review</a>
                     </td>
                   </tr>
                   <tr class="govuk-table__row">

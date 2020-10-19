@@ -61,7 +61,7 @@
         {% endif %}
       </td>
       <td class="govuk-table__cell">
-        <a class="govuk-link" href="#">{{ notification.action | capitalize }}</a>
+        <a class="govuk-link" href="{{ notification.href }}">{{ notification.action | capitalize }}</a>
       </td>
     </tr>
     {% endfor %}
