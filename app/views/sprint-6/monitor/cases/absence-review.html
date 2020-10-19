@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage intervention referrals
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+          {{ serviceUser.name }}
+        </h1>
+        {% set currentPage = intervention.name %}
+        {% include "./side-navigation.html" %}
+        {% include "./intervention-sidebar.html" %}
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-tabs" data-module="govuk-tabs">
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="/sprint-6/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#progress">
+                Progress
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="/sprint-6/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#paper-trail">
+                Paper trail
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="/sprint-6/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#statistics">
+                Statistics
+              </a>
+            </li>
+          </ul>
+
+          <div class="govuk-tabs__panel govuk-tabs__panel" id="intervention-progress">
+            <a href="/sprint-6/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#progress" class="govuk-back-link govuk-!-margin-bottom-6">Back to Progress</a>
+            <h2 class="govuk-heading-l">
+              Review {{ serviceUser.name }}'s absence
+            </h2>
+            <h3 class="govuk-heading-m">
+              Session 2: 14/10/20
+            </h3>
+            <p class="govuk-body-m">
+              {{ serviceUser.name }} overslept and missed the session.
+            </p>
+              <div class="govuk-form-group">
+                <form action="/sprint-6/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}" method="post" class="form">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      <h2 class="govuk-fieldset__heading">
+                        Was this an acceptable reason for missing the session?
+                      </h2>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="approve-action-plan" name="approve-action-plan" value="yes" type="radio" data-aria-controls="conditional-approve-action-plan">
+                        <label class="govuk-label govuk-radios__label" for="approve-action-plan">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="reject-action-plan" name="approve-action-plan" value="no" type="radio" data-aria-controls="conditional-reject-action-plan">
+                        <label class="govuk-label govuk-radios__label" for="reject-action-plan">
+                          No
+                        </label>
+                      </div>
+                      <div class="conditional-section govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reject-action-plan">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="reasons-for-rejection">
+                            Please explain why it was not acceptable:
+                          </label>
+                          <textarea class="govuk-textarea" id="reasons-for-rejection" rows="5" name="reasons-for-rejection"></textarea>
+                        </div>
+
+                        <button class="govuk-button" data-module="govuk-button">
+                          Reject
+                        </button>
+                      </div>
+
+                      <div class="conditional-section govuk-radios__conditional govuk-radios__conditional--hidden govuk-!-margin-top-6" id="conditional-approve-action-plan">
+                        <button class="govuk-button" data-module="govuk-button">
+                          Approve
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
