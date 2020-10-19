@@ -4,6 +4,11 @@
   MoJ Interventions - make referrals
 {% endblock %}
 
+{% block header %}
+  {{ super() }}
+  {% include "../../includes/primary-navigation.html" %}
+{% endblock %}
+
 {% block beforeContent %}
 
   {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
