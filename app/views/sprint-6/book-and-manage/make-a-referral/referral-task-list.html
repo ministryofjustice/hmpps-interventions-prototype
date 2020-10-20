@@ -74,7 +74,7 @@
           </h2>
           <ul class="moj-task-list__items">
             <li class="moj-task-list__item">
-              {% if data["service-user-details-completed"] %}
+              {% if data["service-user-details-completed"] or data["found-interventions"] %}
                 <a class="moj-task-list__task-name" href="find-an-intervention/find-multi-select">Find and select service user interventions</a>
               {% else %}
                 <span class="app-task-list__task-name">
@@ -84,7 +84,7 @@
             </li>
             <li class="moj-task-list__item">
               {% if data["found-interventions"] %}
-                <a class="moj-task-list__task-name" href="#">Confirm interventions</a>
+                <a class="moj-task-list__task-name" href="find-an-intervention/confirm-selected-interventions">Confirm interventions</a>
               {% else %}
                 <span class="app-task-list__task-name">
                   Confirm interventions
@@ -116,7 +116,7 @@
           </h2>
           <ul class="moj-task-list__items">
             <li class="moj-task-list__item">
-              {% if data["service-user-id"]%}
+              {% if data["found-interventions"]%}
                 <a class="moj-task-list__task-name" href="service-user-personal-information">Service user's personal information</a>
               {% else %}
                 <span class="app-task-list__task-name">
