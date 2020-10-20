@@ -60,11 +60,6 @@
       <p>
       <a class="govuk-link" href="/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/communication-archive">View communication history</a>
       </p>
-      {% if viewModel.populateInterventionSessionsContent and not allSessionsAssessed %}
-	<p>
-	<a class="govuk-link govuk-link--app-fast-forward-subtler" href="/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/fast-forward/sessions-completed">User research example: fast-forward to sessions completed</a>
-	</p>
-      {% endif %}
 
       {% if viewModel.populateActionPlanContent and intervention.actionPlanStatus === "pending approval" %}
 	<p class="govuk-body">
@@ -79,6 +74,10 @@
 
 	<p class="govuk-body">
 	<a class="govuk-link govuk-link--app-fast-forward-subtler" href="/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/sessions/{{viewModel.noShowSessionIndex}}/fast-forward/probation-practitioner-judgement/unacceptable">User research example: fast-forward session {{ viewModel.noShowSessionIndex + 1 }} to unacceptable absence</a>
+	</p>
+      {% elif viewModel.populateInterventionSessionsContent and not allSessionsAssessed %}
+	<p>
+	<a class="govuk-link govuk-link--app-fast-forward-subtler" href="/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/fast-forward/sessions-completed">User research example: fast-forward to sessions completed</a>
 	</p>
       {% endif %}
     </div>
