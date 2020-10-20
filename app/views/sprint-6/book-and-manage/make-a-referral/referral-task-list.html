@@ -17,7 +17,7 @@
 
       <ol class="moj-task-list">
         <li>
-          {% if data["service-user-details-completed"] %}
+          {% if data["service-user-details-checked"] %}
             <strong class="govuk-tag govuk-tag app-task-list__tag">
               completed
             </strong>
@@ -57,7 +57,7 @@
             <strong class="govuk-tag govuk-tag app-task-list__tag">
               completed
             </strong>
-          {% elseif data["service-user-details-completed"] %}
+          {% elseif data["service-user-details-checked"] %}
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
               not started
             </strong>
@@ -74,7 +74,7 @@
           </h2>
           <ul class="moj-task-list__items">
             <li class="moj-task-list__item">
-              {% if data["service-user-details-completed"] or data["found-interventions"] %}
+              {% if data["service-user-details-checked"] or data["found-interventions"] %}
                 <a class="moj-task-list__task-name" href="find-an-intervention/find-multi-select">Find and select service user interventions</a>
               {% else %}
                 <span class="app-task-list__task-name">
@@ -99,7 +99,7 @@
             <strong class="govuk-tag govuk-tag app-task-list__tag">
               completed
             </strong>
-          {% elseif data["service-user-id"] %}
+          {% elseif data["service-user-details-completed"] %}
             <strong class="govuk-tag govuk-tag app-task-list__tag">
               in progress
             </strong>
