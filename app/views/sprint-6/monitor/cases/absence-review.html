@@ -44,56 +44,50 @@
           <div class="govuk-tabs__panel govuk-tabs__panel" id="intervention-progress">
             <a href="/sprint-6/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#progress" class="govuk-back-link govuk-!-margin-bottom-6">Back to Progress</a>
             <h2 class="govuk-heading-l">
-              Review {{ serviceUser.name }}'s absence
+              Review
+              {{ serviceUser.name }}'s absence from session 2
             </h2>
             <h3 class="govuk-heading-m">
-              Session 2: 14/10/20
+              Date: 14/10/20
             </h3>
             <p class="govuk-body-m">
-              {{ serviceUser.name }} overslept and missed the session.
+              {{ serviceUser.name }}
+              overslept and missed the session.
             </p>
-              <div class="govuk-form-group">
-                <form action="/sprint-6/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}" method="post" class="form">
-                  <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                      <h2 class="govuk-fieldset__heading">
-                        Was this an acceptable reason for missing the session?
-                      </h2>
-                    </legend>
-                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="approve-action-plan" name="approve-action-plan" value="yes" type="radio" data-aria-controls="conditional-approve-action-plan">
-                        <label class="govuk-label govuk-radios__label" for="approve-action-plan">
-                          Yes
-                        </label>
-                      </div>
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="reject-action-plan" name="approve-action-plan" value="no" type="radio" data-aria-controls="conditional-reject-action-plan">
-                        <label class="govuk-label govuk-radios__label" for="reject-action-plan">
-                          No
-                        </label>
-                      </div>
-                      <div class="conditional-section govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reject-action-plan">
-                        <div class="govuk-form-group">
-                          <label class="govuk-label" for="reasons-for-rejection">
-                            Please explain why it was not acceptable:
-                          </label>
-                          <textarea class="govuk-textarea" id="reasons-for-rejection" rows="5" name="reasons-for-rejection"></textarea>
-                        </div>
-
-                        <button class="govuk-button" data-module="govuk-button">
-                          Reject
-                        </button>
-                      </div>
-
-                      <div class="conditional-section govuk-radios__conditional govuk-radios__conditional--hidden govuk-!-margin-top-6" id="conditional-approve-action-plan">
-                        <button class="govuk-button" data-module="govuk-button">
-                          Approve
-                        </button>
-                      </div>
+            <div class="govuk-form-group">
+              <form action="/sprint-6/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}" method="post" class="form">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                      Was this an acceptable reason for missing the session?
+                    </h2>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="approve-absence" name="approve-absence" value="yes" type="radio">
+                      <label class="govuk-label govuk-radios__label" for="approve-absence">
+                        Yes
+                      </label>
                     </div>
-                  </fieldset>
-                </form>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="reject-absence" name="approve-absence" value="no" type="radio">
+                      <label class="govuk-label govuk-radios__label" for="reject-absence">
+                        No
+                      </label>
+                    </div>
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="explain-absence-review">
+                        Please provide further information
+                      </label>
+                      <textarea class="govuk-textarea" id="reasons-for-rejection" rows="5" name="reasons-for-rejection"></textarea>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">
+                      Save and continue
+                    </button>
+                  </div>
+                </fieldset>
+              </form>
             </div>
           </div>
         </div>
