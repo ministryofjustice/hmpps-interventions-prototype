@@ -61,4 +61,19 @@ router.post("/:interventionId/details", function (req, res) {
   );
 });
 
+router.get("/confirm-selected-interventions", function (req, res) {
+  const interventions = req.session.data.sprint6.findAnIntervention;
+
+  const selectedInterventions = interventions.filter(
+    (intervention) => intervention.selected
+  );
+
+  res.render(
+    "sprint-6/book-and-manage/make-a-referral/find-an-intervention/confirm-selected-interventions",
+    {
+      selectedInterventions: selectedInterventions,
+    }
+  );
+});
+
 module.exports = router;
