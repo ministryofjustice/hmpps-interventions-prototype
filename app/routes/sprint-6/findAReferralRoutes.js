@@ -1,6 +1,21 @@
 const express = require("express");
 const router = express.Router();
 
+router.get("/find-multi-select", function (req, res) {
+  const interventions = req.session.data.sprint6.findAnIntervention;
+
+  const selectedInterventions = interventions.filter(
+    (intervention) => intervention.selected
+  );
+
+  res.render(
+    "sprint-6/book-and-manage/make-a-referral/find-an-intervention/find-multi-select",
+    {
+      selectedInterventions: selectedInterventions,
+    }
+  );
+});
+
 router.get("/results", function (req, res) {
   const interventions = req.session.data.sprint6.findAnIntervention;
   const selectedInterventions = interventions.filter(
