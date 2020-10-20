@@ -8,7 +8,6 @@ router.use(function (req, res, next) {
     res.locals.serviceName = "Manage interventions and services";
     res.locals.serviceHref = "/sprint-6/book-and-manage/manage-a-referral/caseworker/dashboard";
     res.locals.loggedInUserName = req.session.data.sprint6.caseworkers[0].firstName;
-    res.locals.extraWide = true;
     next()
 })
 

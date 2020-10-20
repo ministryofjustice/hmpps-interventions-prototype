@@ -13,6 +13,12 @@ router.use((req, res, next) => {
   next();
 });
 
+// In sprint 6, everything is extra-wide
+router.get("/sprint-6/*", function (req, res, next) {
+  res.locals.extraWide = true;
+  next();
+});
+
 router.get("/*/book-and-manage/make-a-referral(/*)?", function (req, res, next) {
   res.locals.serviceName = "Make a referral";
   next();
