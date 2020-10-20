@@ -173,6 +173,32 @@ router.get(
   }
 );
 
+router.get(
+  "/cases/:referralNumber/interventions/:interventionId/sessions/:sessionId/absence-review",
+  (req, res) => {
+    const referralNumber = req.params.referralNumber;
+    const interventionId = req.params.interventionId;
+
+    const referral = findReferral(
+      req.session.data.sprint6.referrals,
+      referralNumber
+    );
+
+    const intervention = referral.interventions.find(
+      (intervention) => interventionId === intervention.id
+    );
+
+    const serviceUser = referral ? referral.serviceUser : {};
+
+    res.render("sprint-6/monitor/cases/absence-review", {
+      referral: referral,
+      intervention: intervention,
+      serviceUser: serviceUser,
+      currentPage: intervention.name,
+    });
+  }
+);
+
 router.post(
   "/cases/:referralNumber/interventions/:interventionId",
   (req, res) => {

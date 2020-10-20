@@ -19,75 +19,7 @@
         </h1>
         {% set currentPage = intervention.name %}
         {% include "./side-navigation.html" %}
-
-        <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar--grey govuk-!-margin-top-6">
-          <ul class="govuk-list govuk-list--case-summary">
-            <li>
-              <strong>Provider</strong>
-              <br>{{ intervention.providerName }}
-            </li>
-            <li>
-              <strong>Date referred</strong>
-              <br>01/09/20
-            </li>
-            <li>
-              <strong>Assessment date</strong>
-              <br>{{ intervention.monitor.initialAssessmentDate }}
-            </li>
-            <li>
-              <strong>Date of action plan</strong>
-              <br>
-              {% if intervention.monitor.actionPlanApproved %}
-                {{ intervention.monitor.actionPlanDate }}
-              {% elif intervention.monitor.actionPlanSubmitted %}
-                Action plan not yet approved
-              {% else %}
-                Action plan not yet submitted
-              {% endif %}
-            </li>
-            <li>
-              <strong>Date started</strong>
-              <br>22/09/20
-            </li>
-            <li>
-              <strong>Target end date</strong>
-              <br>12/12/20
-            </li>
-            <li>
-              <strong>End of service review</strong>
-              <br>To be confirmed
-            </li>
-            <li>
-              <strong>RAR days allocation</strong>
-              <br>10 days
-            </li>
-            <li>
-              <strong>Appointments offered</strong>
-              <br>8
-            </li>
-            <li>
-              <strong>Appointments attended</strong>
-              <br>7
-            </li>
-            <li>
-              <strong>Acceptable absences</strong>
-              <br>1
-            </li>
-            <li>
-              <strong>Unacceptable absences</strong>
-              <br>0
-            </li>
-            <li>
-              <strong>Provider case notes</strong>
-              <br>
-              <a href="#" class="govuk-link">View notes</a>
-            </li>
-            <li>
-              <strong>Contact number</strong>
-              <br>0300 4560021
-            </li>
-          </ul>
-        </div>
+        {% include "./intervention-sidebar.html" %}
       </div>
 
       <div class="govuk-grid-column-two-thirds">
@@ -311,7 +243,7 @@
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Session 1</td>
                     <td class="govuk-table__cell">07/10/20</td>
-                    <td class="govuk-table__cell">Jenny Thompson</td>
+                    <td class="govuk-table__cell">{{intervention.assignedCaseworker}}</td>
                     <td class="govuk-table__cell">
                       <strong class="govuk-tag">
                         completed
@@ -324,14 +256,14 @@
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Session 2</td>
                     <td class="govuk-table__cell">14/10/20</td>
-                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell">{{intervention.assignedCaseworker}}</td>
                     <td class="govuk-table__cell">
-                      <strong class="govuk-tag govuk-tag--grey">
-                        not started
+                      <strong class="govuk-tag govuk-tag--red">
+                        failed to attend
                       </strong>
                     </td>
                     <td class="govuk-table__cell">
-                      <a class="govuk-link" href="#">View</a>
+                      <a class="govuk-link" href="/sprint-6/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}/sessions/0/absence-review">Review</a>
                     </td>
                   </tr>
                   <tr class="govuk-table__row">
