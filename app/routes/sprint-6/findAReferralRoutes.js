@@ -7,8 +7,6 @@ router.get("/results", function (req, res) {
     (intervention) => intervention.selected
   );
 
-  console.log(selectedInterventions);
-
   res.render(
     "sprint-6/book-and-manage/make-a-referral/find-an-intervention/results",
     {
