@@ -99,8 +99,8 @@
               </a>
             </li>
             <li class="govuk-tabs__list-item">
-              <a class="govuk-tabs__tab" href="#paper-trail">
-                Paper trail
+              <a class="govuk-tabs__tab" href="#case-notes">
+                Case notes
               </a>
             </li>
             <li class="govuk-tabs__list-item">
@@ -367,9 +367,14 @@
               </p>
             </div>
 
-            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="paper-trail">
-              <h2 class="govuk-heading-l">Paper trail</h2>
-              {% include "./paper-trail.html" %}
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="case-notes">
+              <div class="case-notes-header">
+                <h2 class="govuk-heading-l">Case notes</h2>
+                <div class="contact-log-link-panel">
+                  <a href="#" class="govuk-link">Open in Contact Log</a>
+                </div>
+              </div>
+              {% include "./case-notes.html" %}
             </div>
             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="statistics">
               <h2 class="govuk-heading-l">Statistics</h2>
