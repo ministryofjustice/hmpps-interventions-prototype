@@ -62,6 +62,11 @@ for (sprint of sprints) {
   );
 }
 
+router.use(
+  `/sprint-6/book-and-manage/make-a-referral/find-an-intervention`,
+  require(`./routes/sprint-6/findAReferralRoutes`)
+);
+
 const monitorSprints = ["sprint-5", "sprint-6"];
 for (sprint of monitorSprints) {
   router.use(`/${sprint}/monitor`, require(`./routes/${sprint}/monitorRoutes`));

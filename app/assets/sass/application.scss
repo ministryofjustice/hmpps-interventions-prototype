@@ -23,6 +23,11 @@ $govuk-assets-path: '/govuk/assets/';
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "autoCompleteMultiselects";
 
+.shortlist {
+  background: govuk-colour("light-grey");
+  padding: govuk-spacing(5) !important;
+}
+
 .group-by {
   display: flex;
 
