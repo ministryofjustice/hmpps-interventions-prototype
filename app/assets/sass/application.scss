@@ -125,7 +125,7 @@ $govuk-assets-path: '/govuk/assets/';
 // the Design System’s govuk-width-container rule) - understand what was
 // happening specificity/ordering-wise
 .govuk-width-container--app-extra-wide.govuk-width-container--app-extra-wide {
-  @include govuk-width-container(1100px);
+  @include govuk-width-container(1220px);
 }
 
 .app-information-sidebar {
