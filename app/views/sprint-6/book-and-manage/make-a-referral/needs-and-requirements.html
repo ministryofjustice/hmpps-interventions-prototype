@@ -5,18 +5,9 @@
 {% endblock %}
 
 {% block beforeContent %}
-
-  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "prototype"
-    },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
-  }) }}
-
   {{ govukBackLink({
     text: "Back",
-    href: "service-user-details"
+    href: "javascript: window.history.go(-1)"
   }) }}
 {% endblock %}
 
