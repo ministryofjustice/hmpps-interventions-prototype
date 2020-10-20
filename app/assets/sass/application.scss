@@ -121,6 +121,14 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
+.govuk-link--app-fast-forward-subtler {
+  color: govuk-colour("dark-grey") !important;
+
+  &:visited {
+    color: govuk-colour("dark-grey") !important;
+  }
+}
+
 // TODO This didn’t work with the class there only once (just uses the 960px of
 // the Design System’s govuk-width-container rule) - understand what was
 // happening specificity/ordering-wise
