@@ -6,13 +6,14 @@
 
 {% block header %}
   {{ super() }}
+  {% set currentPage = "make-a-referral" %}
   {% include "../../includes/primary-navigation.html" %}
 {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "referral-task-list"
+    href: "javascript: window.history.go(-1)"
   }) }}
 {% endblock %}
 
