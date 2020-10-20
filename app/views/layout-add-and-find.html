@@ -37,6 +37,10 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
+{% if extraWide %}
+  {% set containerClasses = "govuk-width-container--app-extra-wide" %}
+{% endif %}
+
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
@@ -44,7 +48,7 @@
     homepageUrl: "/",
     serviceName: serviceName,
     serviceUrl: "/",
-    containerClasses: "govuk-width-container"
+    containerClasses: containerClasses
   }) }}
 {% endblock %}
 
@@ -64,7 +68,8 @@
             text: "Clear data"
           }
         ]
-      }
+      },
+      containerClasses: containerClasses
     }) }}
   {% endblock %}
 {% endif %}
