@@ -145,43 +145,10 @@
           </ul>
         </li>
 
-        <li>
-          {% if data["responsible-officer-information-completed"] %}
-            <strong class="govuk-tag govuk-tag app-task-list__tag">
-              completed
-            </strong>
-          {% elseif data["service-user-details-completed"] %}
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
-              not started
-            </strong>
-          {% else %}
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
-              cannot start yet
-            </strong>
-          {% endif %}
-
-          <h2 class="moj-task-list__section">
-            <span class="moj-task-list__section-number">4.
-            </span>
-            Review responsible officer's information
-          </h2>
-          <ul class="moj-task-list__items">
-            <li class="moj-task-list__item">
-              {% if data["risk-information-completed"] %}
-                <a class="moj-task-list__task-name" href="responsible-officer-information">Responsible officer information</a>
-              {% else %}
-                <span class="app-task-list__task-name">
-                  Responsible officer information
-                </span>
-              {% endif %}
-            </li>
-          </ul>
-        </li>
-
         {% if data["found-interventions"] %}
           <li>
             <h2 class="moj-task-list__section">
-              <span class="moj-task-list__section-number">5.
+              <span class="moj-task-list__section-number">4.
               </span>
               Add intervention referrals detail
             </h2>
@@ -206,7 +173,7 @@
               </strong>
             {% endif %}
             <h2 class="moj-task-list__section">
-              <span class="moj-task-list__section-number govuk-!-padding-right-2">5.1.
+              <span class="moj-task-list__section-number govuk-!-padding-right-2">4.1.
               </span>
               Accommodation referral
             </h2>
@@ -288,7 +255,7 @@
             {% endif %}
 
             <h2 class="moj-task-list__section">
-              <span class="moj-task-list__section-number govuk-!-padding-right-2">5.2.
+              <span class="moj-task-list__section-number govuk-!-padding-right-2">4.2.
               </span>
               Social inclusion referral
             </h2>
@@ -356,7 +323,7 @@
               cannot start yet
             </strong>
             <h2 class="moj-task-list__section">
-              <span class="moj-task-list__section-number">5.
+              <span class="moj-task-list__section-number">4.
               </span>
               Add intervention referrals detail
             </h2>
@@ -369,6 +336,39 @@
             </ul>
           </li>
         {% endif %}
+
+        <li>
+          {% if data["responsible-officer-information-completed"] %}
+            <strong class="govuk-tag govuk-tag app-task-list__tag">
+              completed
+            </strong>
+          {% elseif data["service-user-details-completed"] %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
+              not started
+            </strong>
+          {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
+              cannot start yet
+            </strong>
+          {% endif %}
+
+          <h2 class="moj-task-list__section">
+            <span class="moj-task-list__section-number">5.
+            </span>
+            Review responsible officer's information
+          </h2>
+          <ul class="moj-task-list__items">
+            <li class="moj-task-list__item">
+              {% if data["risk-information-completed"] %}
+                <a class="moj-task-list__task-name" href="responsible-officer-information">Responsible officer information</a>
+              {% else %}
+                <span class="app-task-list__task-name">
+                  Responsible officer information
+                </span>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
 
           <li>
           {% if data["social-inclusion-more-information-completed"] and data["accommodation-more-info-completed"] and data["responsible-officer-information-completed"] %}
