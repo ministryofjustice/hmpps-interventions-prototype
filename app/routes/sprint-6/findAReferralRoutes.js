@@ -70,6 +70,7 @@ router.post("/:interventionId/details", function (req, res) {
     {
       intervention: intervention,
       selectedInterventions: selectedInterventions,
+      interventionAdded: true,
     }
   );
 });
