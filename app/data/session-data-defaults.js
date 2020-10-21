@@ -1961,6 +1961,22 @@ module.exports = {
         href: "#",
       },
     ],
+    findAnIntervention: [
+      {
+        title: "Accommodation",
+        description: "Accommodation description",
+        id: "0",
+        selected: false,
+        provider: "Harmony Living",
+      },
+      {
+        title: "Social inclusion",
+        description: "Social inclusion description",
+        id: "1",
+        selected: false,
+        provider: "Harmony Living",
+      },
+    ],
   },
 };
 

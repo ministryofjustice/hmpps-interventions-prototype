@@ -4,12 +4,26 @@
   Find an intervention
 {% endblock %}
 
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "make-a-referral" %}
+  {% include "../../../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/sprint-6/book-and-manage/make-a-referral/find-an-intervention/results"
+  }) }}
+{% endblock %}
+
+{% set extraWide = true %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-three-quarters">
       <h1 class="govuk-heading-xl">Thinking skills programme</h1>
-
       <p>
         The Thinking Skills Programme (TSP) is a cognitive skills programme for men and women designed to help develop skills in:
       </p>
@@ -25,19 +39,18 @@
       <p>
         TSP has been designed to incorporate maximum responsivity and flexibility of delivery format.
       </p>
+
+      <form action="/sprint-6/book-and-manage/make-a-referral/find-an-intervention/{{intervention.id}}/details?selectedIntervention={{intervention.id}}" method="post" class="form">
+        <button class="govuk-button" data-module="govuk-button">
+          Add to shortlist
+        </button>
+      </form>
     </div>
+
+    {% include "./includes/sidebar-shortlist.html" %}
   </div>
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <button class="govuk-button" data-module="govuk-button">
-        Add to shortlist
-      </button>
-    </div>
-  </div>
-
-  <div class="govuk-grid-row">
-
     <div class="govuk-grid-column-full">
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
@@ -237,4 +250,4 @@
 
   </div>
 
-    {% endblock %}
+{% endblock %}
