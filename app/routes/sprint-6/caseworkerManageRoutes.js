@@ -280,9 +280,7 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/goals", 
     res.redirect(`/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/action-plan#goals`);
 });
 
-router.post("/referrals/:referralIndex/interventions/:interventionIndex/sessions", (req, res) => {
-    const intervention = findIntervention(req);
-
+function addSessionToIntervention(intervention) {
     // We don’t yet have a proper “add session” page, so start tomorrow and
     // increment by a week each time
     var date;
@@ -294,6 +292,12 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/sessions
 
     const session = { title: `Session ${intervention.sessions.length + 1}`, date: date, startTime: "17:00", endTime: "18:00" }
     intervention.sessions.push(session);
+}
+
+router.post("/referrals/:referralIndex/interventions/:interventionIndex/sessions", (req, res) => {
+    const intervention = findIntervention(req);
+
+    addSessionToIntervention(intervention);
 
     res.redirect(`/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/action-plan#sessions`);
 });
@@ -375,12 +379,26 @@ router.post("/referrals/:referralIndex/interventions/:interventionIndex/sessions
     res.redirect(`/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });
 
-router.get("/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/fast-forward/probation-practitioner-judgement/:judgement", (req, res) => {
+router.get("/referrals/:referralIndex/interventions/:interventionIndex/sessions/:sessionIndex/fast-forward/probation-practitioner-judgement", (req, res) => {
     const intervention = findIntervention(req);
     const sessionIndex = parseInt(req.params.sessionIndex);
     const session = intervention.sessions[sessionIndex];
 
-    session.absenceJudgement = req.params.judgement;
+    // We want to demonstrate what an acceptable and an unacceptable absence
+    // look like.
+
+    // Fake a judgement as an acceptable absence.
+    session.absenceJudgement = "acceptable";
+
+    // If there are no more sessions after this one, then add another one.
+    if (sessionIndex == intervention.sessions.length - 1) {
+	addSessionToIntervention(intervention);
+    }
+
+    const nextSession = intervention.sessions[sessionIndex + 1];
+    // Fake an assessment and a judgement as an unacceptable absence.
+    nextSession.assessment = { attended: "no" };
+    nextSession.absenceJudgement = "unacceptable";
 
     res.redirect(`/sprint-6/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });
