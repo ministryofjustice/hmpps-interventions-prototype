@@ -99,7 +99,7 @@
             <strong class="govuk-tag govuk-tag app-task-list__tag">
               completed
             </strong>
-          {% elseif data["service-user-details-completed"] %}
+          {% elseif data["risk-information-completed"] %}
             <strong class="govuk-tag govuk-tag app-task-list__tag">
               in progress
             </strong>
@@ -112,20 +112,11 @@
           <h2 class="moj-task-list__section">
             <span class="moj-task-list__section-number">3.
             </span>
-            Review Service user's information
+            Review service user's information
           </h2>
           <ul class="moj-task-list__items">
             <li class="moj-task-list__item">
-              {% if data["found-interventions"]%}
-                <a class="moj-task-list__task-name" href="service-user-personal-information">Service user's personal information</a>
-              {% else %}
-                <span class="app-task-list__task-name">
-                  Service user's personal information
-                </span>
-              {% endif %}
-            </li>
-            <li class="moj-task-list__item">
-              {% if data["risk-information-completed"] %}
+              {% if data["found-interventions"] %}
                 <a class="moj-task-list__task-name" href="risk-information">Service user's risk information</a >
               {% else %}
                 <span class="app-task-list__task-name">
@@ -342,7 +333,7 @@
             <strong class="govuk-tag govuk-tag app-task-list__tag">
               completed
             </strong>
-          {% elseif data["service-user-details-completed"] %}
+          {% elif data["risk-information-completed"] %}
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
               not started
             </strong>
