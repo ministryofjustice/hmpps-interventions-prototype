@@ -81,66 +81,36 @@
                   <td class="govuk-table__cell">Session 1</td>
                   <td class="govuk-table__cell">07/10/20</td>
                   <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
-                  <td class="govuk-table__cell">
-                    <strong class="govuk-tag">
-                      completed
-                    </strong>
-                  </td>
-                  <td class="govuk-table__cell">
-                    <a class="govuk-link" href="#">View</a>
-                  </td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">Session 2</td>
                   <td class="govuk-table__cell">14/10/20</td>
                   <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
-                  <td class="govuk-table__cell">
-                    <strong class="govuk-tag">
-                      completed
-                    </strong>
-                  </td>
-                  <td class="govuk-table__cell">
-                    <a class="govuk-link" href="#">View</a>
-                  </td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">Session 3</td>
                   <td class="govuk-table__cell">21/10/20</td>
                   <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
-                  <td class="govuk-table__cell">
-                    <strong class="govuk-tag">
-                      completed
-                    </strong>
-                  </td>
-                  <td class="govuk-table__cell">
-                    <a class="govuk-link" href="#">View</a>
-                  </td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">Session 4</td>
                   <td class="govuk-table__cell">29/10/20</td>
                   <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
-                  <td class="govuk-table__cell">
-                    <strong class="govuk-tag">
-                      completed
-                    </strong>
-                  </td>
-                  <td class="govuk-table__cell">
-                    <a class="govuk-link" href="#">View</a>
-                  </td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">Session 5</td>
                   <td class="govuk-table__cell">06/11/20</td>
                   <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
-                  <td class="govuk-table__cell">
-                    <strong class="govuk-tag">
-                      completed
-                    </strong>
-                  </td>
-                  <td class="govuk-table__cell">
-                    <a class="govuk-link" href="#">View</a>
-                  </td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
                 </tr>
               </tbody>
             </table>
@@ -157,33 +127,27 @@
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="approve-action-plan" name="approve-action-plan" value="yes" type="radio" data-aria-controls="conditional-approve-action-plan">
                       <label class="govuk-label govuk-radios__label" for="approve-action-plan">
-                        Yes, approved.
+                        Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="reject-action-plan" name="approve-action-plan" value="no" type="radio" data-aria-controls="conditional-reject-action-plan">
                       <label class="govuk-label govuk-radios__label" for="reject-action-plan">
-                        No, I would like to reject it and make some comments.
+                        Suggest changes
                       </label>
                     </div>
                     <div class="conditional-section govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reject-action-plan">
                       <div class="govuk-form-group">
                         <label class="govuk-label" for="reasons-for-rejection">
-                          Please enter the reasons why you reject it:
+                          Suggested changes:
                         </label>
                         <textarea class="govuk-textarea" id="reasons-for-rejection" rows="5" name="reasons-for-rejection"></textarea>
                       </div>
-
-                      <button class="govuk-button" data-module="govuk-button">
-                        Reject
-                      </button>
                     </div>
 
-                    <div class="conditional-section govuk-radios__conditional govuk-radios__conditional--hidden govuk-!-margin-top-6" id="conditional-approve-action-plan">
-                      <button class="govuk-button" data-module="govuk-button">
-                        Approve
-                      </button>
-                    </div>
+                    <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+                      Save and continue
+                    </button>
                   </div>
                 </fieldset>
 

@@ -28,6 +28,15 @@ $govuk-assets-path: '/govuk/assets/';
   padding: govuk-spacing(5) !important;
 }
 
+.intervention-added {
+  background-color: #cdffcf !important;
+  color: #1a1818 !important;
+  text-transform: none !important;
+  width: 95% !important;
+  margin-bottom: govuk-spacing(5) !important;
+  letter-spacing: normal !important;
+}
+
 .group-by {
   display: flex;
 

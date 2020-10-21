@@ -23,6 +23,12 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
+      {% if interventionAdded %}
+        <strong class="govuk-tag intervention-added">
+          Intervention added to shortlist
+        </strong>
+      {% endif %}
+
       {% if intervention.title == "Accommodation" %}
         <h1 class="govuk-heading-xl">Accommodation</h1>
         <p>
