@@ -23,22 +23,52 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <h1 class="govuk-heading-xl">Thinking skills programme</h1>
-      <p>
-        The Thinking Skills Programme (TSP) is a cognitive skills programme for men and women designed to help develop skills in:
-      </p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>pro-social problem solving</li>
-        <li>perspective taking</li>
-        <li>developing and managing relationships</li>
-        <li>self-management</li>
-      </ul>
-      <p>
-        It also encourages pro-social attitudes, behaviour and goals for the future.
-      </p>
-      <p>
-        TSP has been designed to incorporate maximum responsivity and flexibility of delivery format.
-      </p>
+      {% if intervention.title == "Accommodation" %}
+        <h1 class="govuk-heading-xl">Accommodation</h1>
+        <p>
+          Available for all service users who have an accommodation need in brokerage or retention, the service aims are to support in securing settled accommodation. Having safe and permanent accommodation can play a significant role in helping someone to stop reoffending, we also seek to address the areas which prevent someone from sustaining or moving onto secure accommodation long term.
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Support to identify and secure suitable accommodation in line with Homelessness Reduction Act 2017.</li>
+          <li>Support to complete Housing applications and associated processes.</li>
+          <li>Advising on rent or mortgage arrears, possession action and repayment schemes.</li>
+          <li>Advocacy on landlord issues to resolve disputes.</li>
+          <li>Advising on rights and responsibilities.</li>
+          <li>Referrals for legal assistance.</li>
+          <li>One to one support to maintain independent & healthy living.</li>
+          <li>Support to access wider housing needs (charity, furniture, benefits etc).</li>
+        </ul>
+        <p>
+          Activities will include a combination of face to face, telephone and advocacy support
+        </p>
+
+      {% else %}
+        <h1 class="govuk-heading-xl">{{ intervention.title | capitalize }}</h1>
+        <p>
+          Fusce hendrerit laoreet fermentum. Vivamus egestas dignissim tortor id vestibulum. Duis euismod, nulla ut congue condimentum, nisl dolor semper nunc, vel imperdiet massa enim vel sapien. Suspendisse ullamcorper in neque.
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            Aliquam quis fermentum velit. Donec libero elit, mollis in laoreet.
+          </li>
+          <li>
+            Ut at nulla ac lectus aliquam euismod. Pellentesque habitant morbi.
+          </li>
+          <li>
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra.
+          </li>
+          <li>
+            Mauris faucibus purus nec eros dapibus, a facilisis lorem convallis.
+          </li>
+          <li>
+            Nullam ipsum turpis, placerat dapibus blandit id, porta eget enim.
+          </li>
+        </ul>
+        <p>
+          Vestibulum tincidunt dictum mauris non vestibulum. Aliquam eu rutrum est.
+        </p>
+
+      {% endif %}
 
       <form action="/sprint-6/book-and-manage/make-a-referral/find-an-intervention/{{intervention.id}}/details?selectedIntervention={{intervention.id}}" method="post" class="form">
         <button class="govuk-button" data-module="govuk-button">
@@ -55,12 +85,13 @@
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Type of interventions</dt>
-          <dd class="govuk-summary-list__value">Accredited Programme - CRC provided</dd>
+          <dd class="govuk-summary-list__value">Class aptent taciti sociosqu ad litora torquent per conubia nostra.</dd>
         </div>
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Number of sessions</dt>
-          <dd class="govuk-summary-list__value">19</dd>
+          <dd class="govuk-summary-list__value">Up to a maximum of 12 sessions depending on complexity which will be agreed with the Probation Practitioner. Low – 4 Med – 8 High - 12
+          </dd>
         </div>
 
         <div class="govuk-summary-list__row">
@@ -69,18 +100,27 @@
         </div>
 
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Location</dt>
-          <dd class="govuk-summary-list__value">Bedfordshire, Bristol, Cambridgeshire, Cheshire, Cornwall, Cumbria, Derbyshire, Devon, Dorset, Durham, Essex, Gloucestershire, Greater Manchester, Hampshire, Hertfordshire, Humberside, Isle of Wight, Kent, Lancashire, Leicestershire, Lincolnshire, London, Merseyside, Norfolk, Northamptonshire, Northumbria, North Yorkshire, Nottinghamshire, Rutland, Somerset, Staffordshire, Suffolk, Surrey, Sussex, Tees Valley, Thames Valley, Warwickshire, West Mercia, West Midlands, West Yorkshire, Wiltshire</dd>
+          <dt class="govuk-summary-list__key">Locations</dt>
+          <dd class="govuk-summary-list__value">
+            <div>
+              <strong>Office one:</strong><br>
+              44 Bouverie Road<br>Weston Lullingfields<br>SY4 0RE
+            </div>
+            <div class="govuk-!-margin-top-4">
+              <strong>Office two:</strong><br>
+              27 Test Walk<br>Newtown<br>SY16 1AQ
+            </div>
+          </dd>
         </div>
 
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Stage of sentence</dt>
+          <dt class="govuk-summary-list__key">Type of sentence</dt>
           <dd class="govuk-summary-list__value">On Licence, On PSS, On RAR, Pre-sentence</dd>
         </div>
 
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Offence seriousness</dt>
-          <dd class="govuk-summary-list__value">High, Low, Medium</dd>
+          <dt class="govuk-summary-list__key">Risk of harm and reoffending</dt>
+          <dd class="govuk-summary-list__value">Low, Medium, High</dd>
         </div>
 
       </dl>
@@ -143,12 +183,12 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Needs</dt>
-            <dd class="govuk-summary-list__value">Thinking and attitudes</dd>
+            <dd class="govuk-summary-list__value">{{intervention.title | capitalize}}</dd>
           </div>
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Excluded Needs</dt>
-            <dd class="govuk-summary-list__value">Learning disability, Mental health - severe</dd>
+            <dd class="govuk-summary-list__value">Class aptent taciti sociosqu ad litora torquent per conubia nostra.</dd>
           </div>
 
           <div class="govuk-summary-list__row">
