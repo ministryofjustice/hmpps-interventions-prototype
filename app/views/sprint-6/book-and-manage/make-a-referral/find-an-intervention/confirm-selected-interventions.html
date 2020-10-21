@@ -26,7 +26,7 @@
       </h1>
 
       {% if selectedInterventions | length > 0 %}
-        <p class="govuk-body-m">Please review your shortlisted interventions:</p>
+        <p class="govuk-body-m">Please review your selected interventions:</p>
 
         {% for intervention in selectedInterventions %}
           <div class="govuk-!-margin-bottom-8">
@@ -46,7 +46,7 @@
         </form>
       {% else %}
         <p class="govuk-body-m">
-          You have not shortlisted any interventions yet
+          You have not selected any interventions yet
         </p>
         <a href="/sprint-6/book-and-manage/make-a-referral/find-an-intervention/results">Go back to search results</a>
       {% endif %}
