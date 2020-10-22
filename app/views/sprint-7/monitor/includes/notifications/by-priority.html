@@ -1,0 +1,11 @@
+<h2 class="govuk-heading-m">
+  Tasks to complete (Probation practitioner)
+</h2>
+{% set notificationsToDisplay = priorityNotifications %}
+{% include "./date-table.html" %}
+
+<h2 class="govuk-heading-m">
+  Tasks to complete (Service provider)
+</h2>
+{% set notificationsToDisplay = nonPriorityNotifications %}
+{% include "./date-table.html" %}

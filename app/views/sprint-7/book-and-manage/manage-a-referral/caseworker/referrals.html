@@ -1,0 +1,344 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Interventions and services
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column">
+      <h1 class="govuk-heading-xl">
+	Interventions and services
+      </h1>
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+	<h2 class="govuk-tabs__title">
+	  Contents
+	</h2>
+	<ul class="govuk-tabs__list">
+	  <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+	    <a class="govuk-tabs__tab" href="#awaiting-assessment">
+	      Awaiting initial assessment
+	    </a>
+	  </li>
+	  <li class="govuk-tabs__list-item">
+	    <a class="govuk-tabs__tab" href="#in-progress">
+	      Ongoing interventions
+	    </a>
+	  </li>
+	  <li class="govuk-tabs__list-item">
+	    <a class="govuk-tabs__tab" href="#complete">
+	      Completed interventions
+	    </a>
+	  </li>
+	  <li class="govuk-tabs__list-item">
+	    <a class="govuk-tabs__tab" href="#incomplete">
+	      Terminated interventions
+	    </a>
+	  </li>
+	</ul>
+
+	<div class="govuk-tabs__panel" id="awaiting-assessment">
+	  <h2 class="govuk-heading-l">Awaiting initial assessment</h2>
+
+	  <p class="govuk-body">
+	  Schedule an initial assessment for each intervention
+	  </p>
+
+	  {# This is so clunky, there must be a better way? #}
+	  {% set interventionIndexesByReferral = [] %}
+	  {% set hasReferrals = false %}
+	  {% for referral in referrals %}
+	    {% set referralIndex = loop.index0 %}
+	    {{ interventionIndexesByReferral.push([]) and null }}
+	    {% for intervention in referral.interventions %}
+	      {% if intervention.status !== "terminated" and intervention.initialAssessmentStatus === "not scheduled" %}
+		{% set hasReferrals = true %}
+		{{ interventionIndexesByReferral[referralIndex].push(loop.index0) and null }}
+	      {% endif %}
+	    {% endfor %}
+	  {% endfor %}
+
+	  {% if hasReferrals %}
+	    <table class="govuk-table">
+	      <thead class="govuk-table__head">
+		<tr class="govuk-table__row">
+		  <th scope="col" class="govuk-table__header">Referral</th>
+		  <th scope="col" class="govuk-table__header">Date received</th>
+		  <th scope="col" class="govuk-table__header">Service user</th>
+		  <th scope="col" class="govuk-table__header">Probation practitioner</th>
+		  <th scope="col" class="govuk-table__header">Intervention</th>
+		  <th scope="col" class="govuk-table__header">Action</th>
+		</tr>
+	      </thead>
+	      <tbody class="govuk-table__body">
+		{% for referral in referrals %}
+		  {% set referralIndex = loop.index0 %}
+		  {% set interventionIndexes = interventionIndexesByReferral[referralIndex] %}
+		  {% set hasOutputReferral = false %}
+
+		  {% for intervention in referral.interventions %}
+		    {% if interventionIndexes.includes(loop.index0) %}
+		      <tr class="govuk-table__row">
+			{% if not (hasOutputReferral or interventionIndexes.length === 0) %}
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{referral.reference}}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ moment(referral.receivedAt).format("D/M/YYYY") }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.serviceUser.name }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.probationPractitioner.name }}</td>
+			  {% set hasOutputReferral = true %}
+			{% endif %}
+
+			<td class="govuk-table__cell">{{ intervention.name }}</td>
+			<td class="govuk-table__cell"><a href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}">Arrange</a></td>
+		      </tr>
+		    {% endif %}
+		  {% endfor %}
+		{% endfor %}
+	      </tbody>
+	    </table>
+	  {% endif %}
+
+	  <h2 class="govuk-heading-l">Next assessment appointment</h2>
+	  <p class="govuk-body">Upcoming assessments for each intervention</p>
+
+	  {# This is so clunky, there must be a better way? #}
+	  {% set interventionIndexesByReferral = [] %}
+	  {% set hasReferrals = false %}
+	  {% for referral in referrals %}
+	    {% set referralIndex = loop.index0 %}
+	    {{ interventionIndexesByReferral.push([]) and null }}
+	    {% for intervention in referral.interventions %}
+	      {% if intervention.initialAssessmentStatus === "scheduled" and intervention.actionPlanStatus === "not submitted" and intervention.status !== "terminated" %}
+		{% set hasReferrals = true %}
+		{{ interventionIndexesByReferral[referralIndex].push(loop.index0) and null }}
+	      {% endif %}
+	    {% endfor %}
+	  {% endfor %}
+
+	  {% if hasReferrals %}
+	    <table class="govuk-table">
+	      <thead class="govuk-table__head">
+		<tr class="govuk-table__row">
+		  <th scope="col" class="govuk-table__header">Referral</th>
+		  <th scope="col" class="govuk-table__header">Service user</th>
+		  <th scope="col" class="govuk-table__header">Location</th>
+		  <th scope="col" class="govuk-table__header">Date</th>
+		  <th scope="col" class="govuk-table__header">Time</th>
+		  <th scope="col" class="govuk-table__header">Action</th>
+		</tr>
+	      </thead>
+	      <tbody class="govuk-table__body">
+		{% for referral in referrals %}
+		  {% set referralIndex = loop.index0 %}
+		  {% set interventionIndexes = interventionIndexesByReferral[referralIndex] %}
+		  {% set hasOutputReferral = false %}
+
+		  {% for intervention in referral.interventions %}
+		    {% if interventionIndexes.includes(loop.index0) %}
+		      <tr class="govuk-table__row">
+			{% if not (hasOutputReferral or interventionIndexes.length === 0) %}
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{referral.reference}}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.serviceUser.name }}</td>
+			  {% set hasOutputReferral = true %}
+			{% endif %}
+
+			<td class="govuk-table__cell">{{ intervention.initialAssessment.address }}</td>
+			<td class="govuk-table__cell">{{ intervention.initialAssessment.date }}</td>
+			<td class="govuk-table__cell">{{ intervention.initialAssessment.time }}</td>
+			<td class="govuk-table__cell"><a href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}/initial-assessment">Edit</a></td>
+		      </tr>
+		    {% endif %}
+		  {% endfor %}
+		{% endfor %}
+	      </tbody>
+	    </table>
+	  {% endif %}
+
+	</div>
+
+	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="in-progress">
+	  <h2 class="govuk-heading-l">Ongoing interventions</h2>
+
+	  <p class="govuk-body">Monitor the progress of interventions assigned to you</p>
+
+	  {# This is so clunky, there must be a better way? #}
+	  {% set interventionIndexesByReferral = [] %}
+	  {% set hasReferrals = false %}
+	  {% for referral in referrals %}
+	    {% set referralIndex = loop.index0 %}
+	    {{ interventionIndexesByReferral.push([]) and null }}
+	    {% for intervention in referral.interventions %}
+	      {% if intervention.status === "in progress" %}
+		{% set hasReferrals = true %}
+		{{ interventionIndexesByReferral[referralIndex].push(loop.index0) and null }}
+	      {% endif %}
+	    {% endfor %}
+	  {% endfor %}
+
+	  {% if hasReferrals %}
+	    <table class="govuk-table">
+	      <thead class="govuk-table__head">
+		<tr class="govuk-table__row">
+		  <th scope="col" class="govuk-table__header">Referral</th>
+		  <th scope="col" class="govuk-table__header">Date received</th>
+		  <th scope="col" class="govuk-table__header">Service user</th>
+		  <th scope="col" class="govuk-table__header">Probation practitioner</th>
+		  <th scope="col" class="govuk-table__header">Intervention</th>
+		  <th scope="col" class="govuk-table__header">Action</th>
+		</tr>
+	      </thead>
+	      <tbody class="govuk-table__body">
+		{% for referral in referrals %}
+		  {% set referralIndex = loop.index0 %}
+		  {% set interventionIndexes = interventionIndexesByReferral[referralIndex] %}
+		  {% set hasOutputReferral = false %}
+
+		  {% for intervention in referral.interventions %}
+		    {% if interventionIndexes.includes(loop.index0) %}
+		      <tr class="govuk-table__row">
+			{% if not (hasOutputReferral or interventionIndexes.length === 0) %}
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{referral.reference}}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ moment(referral.receivedAt).format("D/M/YYYY") }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.serviceUser.name }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.probationPractitioner.name }}</td>
+			  {% set hasOutputReferral = true %}
+			{% endif %}
+
+			<td class="govuk-table__cell">{{ intervention.name }}</td>
+			<td class="govuk-table__cell"><a href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}">View</a></td>
+		      </tr>
+		    {% endif %}
+		  {% endfor %}
+		{% endfor %}
+	      </tbody>
+	    </table>
+	  {% endif %}
+	</div>
+
+	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="complete">
+	  <h2 class="govuk-heading-l">Completed interventions</h2>
+
+	  <p class="govuk-body">Interventions that have been successfully completed</p>
+
+	  {# This is so clunky, there must be a better way? #}
+	  {% set interventionIndexesByReferral = [] %}
+	  {% set hasReferrals = false %}
+	  {% for referral in referrals %}
+	    {% set referralIndex = loop.index0 %}
+	    {{ interventionIndexesByReferral.push([]) and null }}
+	    {% for intervention in referral.interventions %}
+	      {% if intervention.status === "completed" %}
+		{% set hasReferrals = true %}
+		{{ interventionIndexesByReferral[referralIndex].push(loop.index0) and null }}
+	      {% endif %}
+	    {% endfor %}
+	  {% endfor %}
+
+	  {% if hasReferrals %}
+	    <table class="govuk-table">
+	      <thead class="govuk-table__head">
+		<tr class="govuk-table__row">
+		  <th scope="col" class="govuk-table__header">Referral</th>
+		  <th scope="col" class="govuk-table__header">Date received</th>
+		  <th scope="col" class="govuk-table__header">Service user</th>
+		  <th scope="col" class="govuk-table__header">Probation practitioner</th>
+		  <th scope="col" class="govuk-table__header">Intervention</th>
+		  <th scope="col" class="govuk-table__header">Date completed</th>
+		  <th scope="col" class="govuk-table__header">Action</th>
+		</tr>
+	      </thead>
+	      <tbody class="govuk-table__body">
+		{% for referral in referrals %}
+		  {% set referralIndex = loop.index0 %}
+		  {% set interventionIndexes = interventionIndexesByReferral[referralIndex] %}
+		  {% set hasOutputReferral = false %}
+
+		  {% for intervention in referral.interventions %}
+		    {% if interventionIndexes.includes(loop.index0) %}
+		      <tr class="govuk-table__row">
+			{% if not (hasOutputReferral or interventionIndexes.length === 0) %}
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{referral.reference}}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ moment(referral.receivedAt).format("D/M/YYYY") }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.serviceUser.name }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.probationPractitioner.name }}</td>
+			  {% set hasOutputReferral = true %}
+			{% endif %}
+
+			<td class="govuk-table__cell">{{ intervention.name }}</td>
+			<td class="govuk-table__cell">{{ moment(intervention.actionPlanApprovedAt).format("D/M/YYYY") }}</td>
+			<td class="govuk-table__cell"><a href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}">View</a></td>
+		      </tr>
+		    {% endif %}
+		  {% endfor %}
+		{% endfor %}
+	      </tbody>
+	    </table>
+	  {% endif %}
+	</div>
+
+	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="incomplete">
+	  <h2 class="govuk-heading-l">Terminated interventions</h2>
+
+	  <p class="govuk-body">Interventions that have been terminated</p>
+
+	  {# This is so clunky, there must be a better way? #}
+	  {% set interventionIndexesByReferral = [] %}
+	  {% set hasReferrals = false %}
+	  {% for referral in referrals %}
+	    {% set referralIndex = loop.index0 %}
+	    {{ interventionIndexesByReferral.push([]) and null }}
+	    {% for intervention in referral.interventions %}
+	      {% if intervention.status === "terminated" %}
+		{% set hasReferrals = true %}
+		{{ interventionIndexesByReferral[referralIndex].push(loop.index0) and null }}
+	      {% endif %}
+	    {% endfor %}
+	  {% endfor %}
+
+	  {% if hasReferrals %}
+	    <table class="govuk-table">
+	      <thead class="govuk-table__head">
+		<tr class="govuk-table__row">
+		  <th scope="col" class="govuk-table__header">Referral</th>
+		  <th scope="col" class="govuk-table__header">Date received</th>
+		  <th scope="col" class="govuk-table__header">Service user</th>
+		  <th scope="col" class="govuk-table__header">Probation practitioner</th>
+		  <th scope="col" class="govuk-table__header">Intervention</th>
+		  <th scope="col" class="govuk-table__header">Reason for termination</th>
+		  <th scope="col" class="govuk-table__header">Action</th>
+		</tr>
+	      </thead>
+	      <tbody class="govuk-table__body">
+		{% for referral in referrals %}
+		  {% set referralIndex = loop.index0 %}
+		  {% set interventionIndexes = interventionIndexesByReferral[referralIndex] %}
+		  {% set hasOutputReferral = false %}
+
+		  {% for intervention in referral.interventions %}
+		    {% if interventionIndexes.includes(loop.index0) %}
+		      <tr class="govuk-table__row">
+			{% if not (hasOutputReferral or interventionIndexes.length === 0) %}
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{referral.reference}}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ moment(referral.receivedAt).format("D/M/YYYY") }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.serviceUser.name }}</td>
+			  <td class="govuk-table__cell" rowspan="{{interventionIndexes.length}}">{{ referral.probationPractitioner.name }}</td>
+			  {% set hasOutputReferral = true %}
+			{% endif %}
+
+			<td class="govuk-table__cell">{{ intervention.name }}</td>
+			<td class="govuk-table__cell">{{ intervention.endOfServiceReport["termination-short-reason"] }}</td>
+			<td class="govuk-table__cell"><a href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}">View</a></td>
+		      </tr>
+		    {% endif %}
+		  {% endfor %}
+		{% endfor %}
+	      </tbody>
+	    </table>
+	  {% endif %}
+
+	</div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

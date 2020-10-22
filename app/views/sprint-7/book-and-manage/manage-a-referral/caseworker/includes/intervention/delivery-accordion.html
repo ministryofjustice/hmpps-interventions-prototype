@@ -1,0 +1,123 @@
+{% set items = [] %}
+{% set expanded = expandFirstItem %}
+
+{% set sectionIds = "" %}
+
+{% for section in accordionSections %}
+  {% set sectionIds = sectionIds + "-" + section.id %}
+
+  {% if section.id === "initialAssessment" %}
+    {% set html %}
+    <p class="govuk-body">
+    {% if intervention.initialAssessment == null %}
+      Enter the date of the initial assessment. If it is not scheduled, use the communications tool to contact the probation practitioner online.
+    {% else %}
+      The initial assessment appointment is outlined below.
+    {% endif %}
+    </p>
+
+    {% if section.populateContent %}
+      {% include "./initial-assessment.html" %}
+    {% endif %}
+    {% endset %}
+
+    {% set headingHTML %}
+    Initial assessment <span class="app-accordion-tag-container"><strong class="{{ cssClassForInitialAssessmentStatus(intervention.initialAssessmentStatus) }} govuk-tag--app-accordion-tag">{{ intervention.initialAssessmentStatus }}</strong></span>
+    {% endset %}
+
+    {% set item = { heading: { html: headingHTML}, content: { html: html }, expanded: expanded } %}
+    {{ items.push(item) and undefined }}
+
+    {% set expanded = false %}
+  {% endif %}
+
+  {% if section.id === "actionPlan" %}
+    {% set html %}
+    <p class="govuk-body">
+    {% if section.populateContent %}
+      Create the action plan and submit it to the probation practitioner for approval.
+    {% else %}
+      The action plan can only be completed once the initial assessment has taken place.
+    {% endif %}
+    </p>
+    {% if section.populateContent %}
+      {% include "./action-plan.html" %}
+    {% endif %}
+    {% endset %}
+
+    {% set headingHTML %}
+    Service user action plan
+    <span class="app-accordion-tag-container">
+      {% if section.populateContent %}
+        <strong class="{{cssClassForActionPlanStatus(intervention.actionPlanStatus)}} govuk-tag--app-accordion-tag">{{intervention.actionPlanStatus}}</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--grey govuk-tag--app-accordion-tag">Cannot start yet</strong>
+      {% endif %}
+    </span>
+    {% endset %}
+
+    {% set item = { heading: { html: headingHTML }, content: { html: html }, expanded: expanded } %}
+    {{ items.push(item) and undefined }}
+
+    {% set expanded = false %}
+  {% endif %}
+
+  {% if section.id === "interventionSessions" %}
+    {% set html %}
+    <p class="govuk-body">
+    {% if section.populateContent %}
+      Track the progress of each intervention session.
+    {% else %}
+      Intervention sessions that are ready to be tracked will appear below once the action plan is approved.
+    {% endif %}
+    </p>
+    {% if section.populateContent %}
+      {% include "./progress.html" %}
+    {% endif %}
+    {% endset %}
+
+    {% set headingHTML %}
+    Intervention sessions
+    <span class="app-accordion-tag-container">
+      {% if section.populateContent %}
+        <strong class="{{cssClassForInterventionSessionsStatus(intervention.sessionsStatus)}} govuk-tag--app-accordion-tag">{{ intervention.sessionsStatus }}</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--grey govuk-tag--app-accordion-tag">Cannot start yet</strong>
+      {% endif %}
+    </span>
+    {% endset %}
+
+    {% set item = { heading: { html: headingHTML }, content: { html: html }, expanded: expanded } %}
+    {{ items.push(item) and undefined }}
+
+    {% set expanded = false %}
+  {% endif %}
+
+  {% if section.id === "endOfServiceReport" %}
+    {% set html %}
+    <p class="govuk-body">
+    Complete and submit the end of service report when the service user has met the conditions for this intervention. If the service user has not met the conditions of the intervention the service provider can also terminate and generate an end of service report at any time.
+    </p>
+    {% if section.populateContent %}
+      {% include "./end-of-service-report.html" %}
+    {% endif %}
+    {% endset %}
+
+    {% set headingHTML %}
+    End of service report <span class="app-accordion-tag-container"><strong class="{{ cssClassForEndOfServiceReportStatus(intervention.endOfServiceReportStatus) }} govuk-tag--app-accordion-tag">{{ intervention.endOfServiceReportStatus }}</strong></span>
+    {% endset %}
+
+    {% set item = { heading: { html: headingHTML }, content: { html: html }, expanded: expanded } %}
+    {{ items.push(item) and undefined }}
+
+    {% set expanded = false %}
+  {% endif %}
+
+{% endfor %}
+
+{{ govukAccordion({
+  id: ("accordion-intervention-delivery-" + referralIndex + "-" + interventionIndex + "-" + accordionId + "-" + data["accordionSessionId"] + sectionIds),
+  items: items,
+  classes: "govuk-accordion--app-badged",
+  headingLevel: 4
+}) }}

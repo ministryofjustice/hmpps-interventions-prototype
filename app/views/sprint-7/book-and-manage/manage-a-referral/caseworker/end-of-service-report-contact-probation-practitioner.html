@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  End of service report
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript: window.history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Contact the probation practitioner before terminating the service
+      </h1>
+
+      <p class="govuk-body">
+      You can contact the probation practitioner by either:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="send-email" class="govuk-link">sending an email to the probation practitioner</a></li>
+        <li>contacting by telephone on {{ referral.probationPractitioner.phone }}</li>
+      </ul>
+
+      <p class="govuk-body">
+      <a class="govuk-link" href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}">Back to {{ referral.serviceUser.firstName }}’s referral page</a>
+      </p>
+    </div>
+
+    <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar">
+      <h2>Subsection</h2>
+      <p>
+      <a class="govuk-link" href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/send-email">Send email to probation practitioner</a>
+      </p>
+      <p>
+      <a class="govuk-link" href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/upload-case-notes">Add case notes</a>
+      </p>
+      <p>
+      <a class="govuk-link" href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/communication-archive">View communication history</a>
+      </p>
+    </div>
+
+  </div>
+{% endblock %}
