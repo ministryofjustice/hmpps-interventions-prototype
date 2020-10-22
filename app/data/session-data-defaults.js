@@ -1889,7 +1889,7 @@ module.exports = {
         priority: true,
         action: "review",
         unread: true,
-        href: "cases/NR0005/interventions/0/action-plan",
+        href: "cases/NR0001/interventions/0/action-plan",
       },
       {
         date: "08/11/20",
@@ -2840,7 +2840,7 @@ module.exports = {
         priority: true,
         action: "review",
         unread: true,
-        href: "cases/NR0005/interventions/0/action-plan",
+        href: "cases/NR0001/interventions/0/action-plan",
       },
       {
         date: "08/11/20",
