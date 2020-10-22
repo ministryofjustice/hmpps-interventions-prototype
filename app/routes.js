@@ -13,13 +13,20 @@ router.use((req, res, next) => {
   next();
 });
 
-// In sprint 6, everything is extra-wide
-router.get("/sprint-6/*", function (req, res, next) {
-  res.locals.extraWide = true;
-  next();
-});
+// In sprint 6 & beyond, everything is extra-wide
+const wideSprints = ["sprint-6", "sprint-7"];
+for (sprint of wideSprints) {
+  router.get(`/${sprint}/*`, function (req, res, next) {
+    res.locals.extraWide = true;
+    next();
+  });
+}
 
-router.get("/*/book-and-manage/make-a-referral(/*)?", function (req, res, next) {
+router.get("/*/book-and-manage/make-a-referral(/*)?", function (
+  req,
+  res,
+  next
+) {
   res.locals.serviceName = "Make a referral";
   next();
 });
@@ -48,26 +55,28 @@ router.get("/service-user-details/show", async function (req, res, next) {
   }
 });
 
-const sprints = ["sprint-3", "sprint-4", "sprint-5", "sprint-6"];
-const sprintRouters = {};
+const sprints = ["sprint-3", "sprint-4", "sprint-5", "sprint-6", "sprint-7"];
 for (sprint of sprints) {
   router.use(
     `/${sprint}/book-and-manage/manage-a-referral/caseworker`,
-    require(`./routes/${sprint}/caseworkerManageRoutes`),
+    require(`./routes/${sprint}/caseworkerManageRoutes`)
   );
 
   router.use(
     `/${sprint}/book-and-manage/manage-a-referral/manager`,
-    require(`./routes/${sprint}/managerManageRoutes`),
+    require(`./routes/${sprint}/managerManageRoutes`)
   );
 }
 
-router.use(
-  `/sprint-6/book-and-manage/make-a-referral/find-an-intervention`,
-  require(`./routes/sprint-6/findAReferralRoutes`)
-);
+const findSprints = ["sprint-6", "sprint-7"];
+for (sprint of findSprints) {
+  router.use(
+    `/${sprint}/book-and-manage/make-a-referral/find-an-intervention`,
+    require(`./routes/${sprint}/findAReferralRoutes`)
+  );
+}
 
-const monitorSprints = ["sprint-5", "sprint-6"];
+const monitorSprints = ["sprint-5", "sprint-6", "sprint-7"];
 for (sprint of monitorSprints) {
   router.use(`/${sprint}/monitor`, require(`./routes/${sprint}/monitorRoutes`));
 }

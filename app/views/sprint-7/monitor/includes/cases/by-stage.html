@@ -1,0 +1,62 @@
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#referral">
+        Referral
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#action-plan">
+        Action plan
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#intervention-progress">
+        Intervention progress
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#completed-interventions">
+        Completed interventions
+      </a>
+    </li>
+  </ul>
+
+  <div class="govuk-tabs__panel" id="referral">
+    {% set referralsToDisplay = referralsWithSomeUnassigned %}
+    <h2 class="govuk-heading-m">
+      Awaiting a caseworker to be assigned (2)
+    </h2>
+    {% include "./table.html"%}
+
+    {% set referralsToDisplay = referralsAwaitingAssessment %}
+    <h2 class="govuk-heading-m">
+      Awaiting assessment (2)
+    </h2>
+    {% include "./table.html"%}
+  </div>
+
+  <div class="govuk-tabs__panel" id="action-plan">
+    {% set referralsToDisplay = referralsWithActionPlan %}
+    {% include "./table.html"%}
+  </div>
+
+  <div class="govuk-tabs__panel" id="intervention-progress">
+    {% set referralsToDisplay = referralsInProgress %}
+    <h2 class="govuk-heading-m">
+      Intervention in progress (6)
+    </h2>
+    {% include "./table.html"%}
+
+    <h2 class="govuk-heading-m">
+    {% set referralsToDisplay = referralsAwaitingPostSessionQuestionnaire %}
+      Post-session questionnaire to complete (3)
+    </h2>
+    {% include "./table.html"%}
+  </div>
+
+  <div class="govuk-tabs__panel" id="completed-interventions">
+    {% set referralsToDisplay = referralsCompleted %}
+    {% include "./table.html"%}
+  </div>
+</div>
