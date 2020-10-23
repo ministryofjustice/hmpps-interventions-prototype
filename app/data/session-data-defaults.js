@@ -2015,6 +2015,7 @@ module.exports = {
               initialAssessmentCompleted: false,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2046,6 +2047,7 @@ module.exports = {
               initialAssessmentCompleted: false,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2094,6 +2096,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2127,6 +2130,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2160,6 +2164,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2206,6 +2211,7 @@ module.exports = {
               initialAssessmentCompleted: false,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2252,6 +2258,7 @@ module.exports = {
               initialAssessmentCompleted: false,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2300,6 +2307,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2348,6 +2356,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: true,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2396,6 +2405,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: true,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2444,6 +2454,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: true,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2492,6 +2503,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: true,
+              endOfServiceReportSubmitted: true
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2540,6 +2552,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2588,6 +2601,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2636,6 +2650,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2684,6 +2699,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2732,6 +2748,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2780,6 +2797,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: true,
               completed: true,
+              endOfServiceReportSubmitted: false
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
