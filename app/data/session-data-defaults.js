@@ -2004,7 +2004,6 @@ module.exports = {
             id: "0",
             name: "Accommodation",
             providerName: "Harmony Living",
-            assignedCaseworker: "Jenny Thompson",
             monitor: {
               actionPlanSubmitted: false,
               actionPlanApproved: false,
