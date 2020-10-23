@@ -198,6 +198,59 @@ router.get(
   }
 );
 
+router.get(
+  "/cases/:referralNumber/interventions/:interventionId/action-plan",
+  (req, res) => {
+    const referralNumber = req.params.referralNumber;
+    const interventionId = req.params.interventionId;
+
+    const referral = findReferral(
+      req.session.data.sprint7.referrals,
+      referralNumber
+    );
+
+    const intervention = referral.interventions.find(
+      (intervention) => interventionId === intervention.id
+    );
+
+    const serviceUser = referral ? referral.serviceUser : {};
+
+    res.render("sprint-7/monitor/cases/action-plan-review", {
+      referral: referral,
+      intervention: intervention,
+      serviceUser: serviceUser,
+      currentPage: intervention.name,
+    });
+  }
+);
+
+
+router.get(
+  "/cases/:referralNumber/interventions/:interventionId/end-of-service-report",
+  (req, res) => {
+    const referralNumber = req.params.referralNumber;
+    const interventionId = req.params.interventionId;
+
+    const referral = findReferral(
+      req.session.data.sprint7.referrals,
+      referralNumber
+    );
+
+    const intervention = referral.interventions.find(
+      (intervention) => interventionId === intervention.id
+    );
+
+    const serviceUser = referral ? referral.serviceUser : {};
+
+    res.render("sprint-7/monitor/cases/end-of-service-report", {
+      referral: referral,
+      intervention: intervention,
+      serviceUser: serviceUser,
+      currentPage: intervention.name,
+    });
+  }
+);
+
 router.post(
   "/cases/:referralNumber/interventions/:interventionId",
   (req, res) => {
