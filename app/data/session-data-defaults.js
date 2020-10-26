@@ -2021,7 +2021,7 @@ module.exports = {
             assigned: false,
             sessions: [],
             relevantSentenceHTML:
-              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+              "Burglary<br>Sub category: Theft act, 1968<br>End of sentence date: 01/04/2021<br>Order: Suspended sentence",
             desiredOutcomes: [
               { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
               { text: "Service user secures early post-release engagement with community based services.", activities: [] }
@@ -2054,7 +2054,7 @@ module.exports = {
             assigned: false,
             sessions: [],
             relevantSentenceHTML:
-              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+              "Burglary<br>Sub category: Theft act, 1968<br>End of sentence date: 01/04/2021<br>Order: Suspended sentence",
             desiredOutcomes: [
               { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
               { text: "Service user secures early post-release engagement with community based services.", activities: [] }
