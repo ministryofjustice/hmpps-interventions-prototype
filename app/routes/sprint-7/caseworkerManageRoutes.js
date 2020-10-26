@@ -353,15 +353,17 @@ router.get(
 );
 
 router.post(
-  "/referrals/:referralIndex/interventions/:interventionIndex/goals",
+  "/referrals/:referralIndex/interventions/:interventionIndex/desired-outcomes/:desiredOutcomeIndex/activities",
   (req, res) => {
     const intervention = findIntervention(req);
 
-    const goal = { text: req.body.text };
-    intervention.goals.push(goal);
+    const desiredOutcome = intervention.desiredOutcomes[req.params.desiredOutcomeIndex];
+
+    const activity = { text: req.body.text };
+    desiredOutcome.activities.push(activity);
 
     res.redirect(
-      `/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/action-plan#goals`
+      `/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}/action-plan#activities-${req.params.desiredOutcomeIndex}`
     );
   }
 );

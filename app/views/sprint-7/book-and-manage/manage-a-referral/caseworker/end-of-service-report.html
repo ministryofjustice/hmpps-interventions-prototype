@@ -86,40 +86,40 @@
           </div>
         {% endif %}
 
-        {% for goal in intervention.goals %}
+        {% for desiredOutcome in intervention.desiredOutcomes %}
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h2 class="govuk-fieldset__heading">Did {{ referral.serviceUser.firstName }} achieve goal {{ loop.index }}?</h2>
+                <h2 class="govuk-fieldset__heading">Did {{ referral.serviceUser.firstName }} achieve desired outcome {{ loop.index }}?</h2>
               </legend>
 
-              <p class="govuk-body">{{ intervention.goals[loop.index0].text }}</p>
+              <p class="govuk-body">{{ intervention.desiredOutcomes[loop.index0].text }}</p>
 
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="goal-{{loop.index0}}-achieved" name="goal-{{loop.index0}}" type="radio" value="achieved">
-                  <label class="govuk-label govuk-radios__label" for="goal-{{loop.index0}}-achieved">Achieved</label>
+                  <input class="govuk-radios__input" id="desired-outcome-{{loop.index0}}-achieved" name="desired-outcome-{{loop.index0}}" type="radio" value="achieved">
+                  <label class="govuk-label govuk-radios__label" for="desired-outcome-{{loop.index0}}-achieved">Achieved</label>
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="goal-{{loop.index0}}-partially-achieved" name="goal-{{loop.index0}}" type="radio" value="partially-achieved">
-                  <label class="govuk-label govuk-radios__label" for="goal-{{loop.index0}}-partially-achieved">Partially achieved</label>
+                  <input class="govuk-radios__input" id="desired-outcome-{{loop.index0}}-partially-achieved" name="desired-outcome-{{loop.index0}}" type="radio" value="partially-achieved">
+                  <label class="govuk-label govuk-radios__label" for="desired-outcome-{{loop.index0}}-partially-achieved">Partially achieved</label>
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="goal-{{loop.index0}}-not-achieved" name="goal-{{loop.index0}}" type="radio" value="not-achieved">
-                  <label class="govuk-label govuk-radios__label" for="goal-{{loop.index0}}-not-achieved">Not achieved</label>
+                  <input class="govuk-radios__input" id="desired-outcome-{{loop.index0}}-not-achieved" name="desired-outcome-{{loop.index0}}" type="radio" value="not-achieved">
+                  <label class="govuk-label govuk-radios__label" for="desired-outcome-{{loop.index0}}-not-achieved">Not achieved</label>
                 </div>
               </div>
             </fieldset>
           </div>
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="goal-{{loop.index0}}-details">
+            <label class="govuk-label" for="desired-outcome-{{loop.index0}}-details">
               Provide details about {{ referral.serviceUser.firstName }}’s performance during the intervention.
             </label>
 
-            <textarea class="govuk-textarea" id="goal-{{loop.index0}}-details" name="goal-{{loop.index0}}-details"></textarea>
+            <textarea class="govuk-textarea" id="desired-outcome-{{loop.index0}}-details" name="desired-outcome-{{loop.index0}}-details"></textarea>
           </div>
         {% endfor %}
 
