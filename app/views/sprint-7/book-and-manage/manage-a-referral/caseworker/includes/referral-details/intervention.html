@@ -9,10 +9,14 @@
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-third">
-      Desired outcome
+      Desired outcomes
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ intervention.desiredOutcomes }}
+      <ul class="govuk-list">
+        {% for desiredOutcome in intervention.desiredOutcomes %}
+          <li>{{ desiredOutcome }}</li>
+        {% endfor %}
+      </ul>
     </dd>
   </div>
   <div class="govuk-summary-list__row">

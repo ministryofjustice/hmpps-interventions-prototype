@@ -143,7 +143,13 @@
 	<dd class="{{ definitionClass }}">{{ intervention.relevantSentenceHTML | safe }}</dd>
 
 	<dt class="{{ termClass }}">Desired outcomes</dt>
-	<dd class="{{ definitionClass }}">{{ intervention.desiredOutcomes }}</dd>
+	<dd class="{{ definitionClass }}">
+	    <ul class="govuk-list">
+	      {% for desiredOutcome in intervention.desiredOutcomes %}
+		<li>{{ desiredOutcome }}</li>
+	      {% endfor %}
+	    </ul>
+	</dd>
 
 	<dt class="{{ termClass }}">Required complexity</dt>
 	<dd class="{{ definitionClass }}">{{ intervention.requiredComplexityHTML | safe }}</dd>
