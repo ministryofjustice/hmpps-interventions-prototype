@@ -3122,15 +3122,14 @@ function createReferralWithoutInterventions(params, index) {
         },
         needs: {
           criminogenicNeeds: [
-            "Thinking and attitudes",
-            "Relationships",
             "Accommodation",
+            "Social inclusion"
           ],
           identifyNeeds: "N/A",
           otherNeeds: "N/A",
           interpreterNeeded: "No",
           languageNeeds: "English",
-          responsibilities: "Yes",
+          responsibilities: "No",
           timesUnavailable: "N/A",
         },
       },
