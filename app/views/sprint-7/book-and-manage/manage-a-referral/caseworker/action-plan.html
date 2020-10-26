@@ -163,7 +163,7 @@
 	<dd class="{{ definitionClass }}">{{ intervention.maximumRARDays }}</dd>
 
 	<dt class="{{ termClass }}">Further information</dt>
-	<dd class="{{ definitionClass }} govuk-!-margin-bottom-0">{{ intervention.furtherInformation }}</dd>
+	<dd class="{{ definitionClass }} govuk-!-margin-bottom-0">{{ intervention.furtherInformationHTML | safe }}</dd>
       </dl>
     </div>
   </div>
