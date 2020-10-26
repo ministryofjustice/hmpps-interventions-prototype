@@ -3125,7 +3125,13 @@ function createReferralWithoutInterventions(params, index) {
             "Accommodation",
             "Social inclusion"
           ],
-          identifyNeeds: "N/A",
+          identifyNeedsHTML: `
+            Alex has been rough sleeping and sofa surfing for the past two years, following the breakdown of his long-term relationship due to his substance misuse and failure to contribute financially to living expenses.  Following his last stint in prison (12 months ago) he shared that he was determined to address his substance misuse and was able to abstain during his sentence, however on release having no accommodation he resumed association with peers and fell back into chaotic substance misuse, resulting in his current conviction for Burglary.
+            <br><br>
+            For the past three weeks Alex has been staying in the garage of his aunt’s home as she is unable to accommodate him in her home due to being fearful of his associates or that he may steal from her. His aunt has supported him to get help and Alex has reported making contact with the local drug treatment agency which he has been attending during the current court matter. He also reported that he is trying to stay away from his peers as they ‘get him into trouble’.
+            <br><br>
+            Having lived at the family home prior to moving in with his ex-partner Alex has never had accommodation of his own. In addition to needing somewhere to live Alex is likely to benefit from independent living and tenancy sustainment skills.
+          `,
           otherNeeds: "N/A",
           interpreterNeeded: "No",
           languageNeeds: "English",
