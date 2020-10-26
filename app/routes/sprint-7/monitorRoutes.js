@@ -229,4 +229,40 @@ router.post(
   }
 );
 
+router.get(
+  "/cases/:referralNumber/interventions/:interventionId/fast-forward",
+  (req, res) => {
+    const toState = req.query.to;
+
+    const referralNumber = req.params.referralNumber;
+    const interventionId = req.params.interventionId;
+
+    const referral = findReferral(
+      req.session.data.sprint7.referrals,
+      referralNumber
+    );
+
+    const intervention = referral.interventions.find(
+      (intervention) => interventionId === intervention.id
+    );
+
+    switch (toState) {
+      case "assignedCaseworker":
+        intervention.assignedCaseworker = "Jenny Thompson";
+        break;
+      case "initialAssessmentCompleted":
+        intervention.monitor.initialAssessmentCompleted = true;
+        break;
+      case "actionPlanSubmitted":
+        intervention.monitor.actionPlanSubmitted = true;
+        break;
+      case "inProgress":
+        intervention.monitor.inProgress = true;
+        break;
+    }
+
+    res.redirect(`/sprint-7/monitor/cases/${req.params.referralNumber}/interventions/${req.params.interventionId}`);
+  }
+);
+
 module.exports = router;

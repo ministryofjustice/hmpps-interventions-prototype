@@ -66,3 +66,28 @@
     </li>
   </ul>
 </div>
+
+{% if showFastForwardLinks %}
+  {% set fastForwardToState = null %}
+  {% set fastForwardText = null %}
+
+  {% if not intervention.assignedCaseworker %}
+    {% set fastForwardToState = "assignedCaseworker" %}
+    {% set fastForwardText = "caseworker assigned" %}
+  {% elif not intervention.monitor.initialAssessmentCompleted %}
+    {% set fastForwardToState = "initialAssessmentCompleted" %}
+    {% set fastForwardText = "initial assessment completed" %}
+  {% elif not intervention.monitor.actionPlanSubmitted %}
+    {% set fastForwardToState = "actionPlanSubmitted" %}
+    {% set fastForwardText = "action plan submitted" %}
+  {% elif intervention.monitor.actionPlanApproved and not intervention.monitor.inProgress %}
+    {% set fastForwardToState = "inProgress" %}
+    {% set fastForwardText = "in progress" %}
+  {% endif %}
+
+  {% if fastForwardToState != null %}
+    <p class="govuk-body">
+    <a class="govuk-link govuk-link--app-fast-forward-subtler" href="/sprint-7/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}/fast-forward?to={{fastForwardToState}}">Demo: fast-forward to {{ fastForwardText }}</a>
+    </p>
+  {% endif %}
+{% endif %}
