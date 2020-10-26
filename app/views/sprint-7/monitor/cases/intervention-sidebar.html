@@ -80,9 +80,17 @@
   {% elif not intervention.monitor.actionPlanSubmitted %}
     {% set fastForwardToState = "actionPlanSubmitted" %}
     {% set fastForwardText = "action plan submitted" %}
-  {% elif intervention.monitor.actionPlanApproved and not intervention.monitor.inProgress %}
-    {% set fastForwardToState = "inProgress" %}
-    {% set fastForwardText = "in progress" %}
+  {% elif intervention.monitor.actionPlanApproved %}
+    {% if not intervention.monitor.inProgress %}
+      {% set fastForwardToState = "inProgress" %}
+      {% set fastForwardText = "in progress" %}
+    {% elif not intervention.monitor.completed %}
+      {% set fastForwardToState = "completed" %}
+      {% set fastForwardText = "sessions completed" %}
+    {% elif not intervention.monitor.endOfServiceReportSubmitted %}
+      {% set fastForwardToState = "endOfServiceReportSubmitted" %}
+      {% set fastForwardText = "end of service report submitted" %}
+    {% endif %}
   {% endif %}
 
   {% if fastForwardToState != null %}

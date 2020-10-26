@@ -278,6 +278,12 @@ router.get(
       case "inProgress":
         intervention.monitor.inProgress = true;
         break;
+      case "completed":
+        intervention.monitor.completed = true;
+        break;
+      case "endOfServiceReportSubmitted":
+        intervention.monitor.endOfServiceReportSubmitted = true;
+        break;
     }
 
     res.redirect(`/sprint-7/monitor/cases/${req.params.referralNumber}/interventions/${req.params.interventionId}`);
