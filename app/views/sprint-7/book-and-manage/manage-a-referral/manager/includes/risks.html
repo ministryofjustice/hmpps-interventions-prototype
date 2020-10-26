@@ -36,7 +36,7 @@
       Risk scores information
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ serviceUser.risks.scoresInformation }}
+      {{ serviceUser.risks.scoresInformationHTML | safe }}
     </dd>
   </div>
 </dl>

@@ -3118,7 +3118,14 @@ function createReferralWithoutInterventions(params, index) {
           RM2000Score: "Medium",
           ROSHAScore: "Medium",
           SARAScore: "Low",
-          scoresInformation: "N/A",
+          scoresInformationHTML: `
+            Alex has previous convictions primarily for Burglary, Possession of Class A and shoplifting.  He has one Robbery and Assault PC conviction which was 10 years ago.  The service users’ high reoffending score is due to the early age at which he commenced offending and the violent convictions noted.
+            Alex’s risk of harm and further offending is greatest when in company of offending peers, relapses into chaotic substance misuse and to fund his drug habit. These identifiable factors are currently present / recently being addressed and is why the risk of harm has been identified as medium. The previous violent offences took place with peers to obtain money for illicit substances, given the burglary convictions are dwellings, this is also a factor of concern, in relation to his response if he were to be disturbed during the commission of the offence.
+            <br><br>
+            At present Alex appears to be motivated and has taken steps to address his substance misuse and desist from association with offending peers, if he is able to sustain this then the likelihood of further offending and therefore risk of harm is likely to reduce.
+            <br><br>
+            Although, there is a previous offence for Assault PC my assessment is that there are no immediate risks to staff, the service user tends to engage well with staff, however due to his autism he can at times become frustrated when he feels misunderstood and has in the past been verbally abusive.
+          `,
         },
         needs: {
           criminogenicNeeds: [
