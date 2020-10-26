@@ -22,7 +22,7 @@
       Other mobility, disability or accessibility needs
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ referral.serviceUser.needs.otherNeeds }}
+      {{ referral.serviceUser.needs.otherNeedsHTML | safe }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">

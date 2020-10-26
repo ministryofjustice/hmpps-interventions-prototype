@@ -3139,7 +3139,11 @@ function createReferralWithoutInterventions(params, index) {
             <br><br>
             Having lived at the family home prior to moving in with his ex-partner Alex has never had accommodation of his own. In addition to needing somewhere to live Alex is likely to benefit from independent living and tenancy sustainment skills.
           `,
-          otherNeeds: "N/A",
+          otherNeedsHTML: `
+            Alex is Autistic and finds it hard to communicate with other people or understand how they think and feel, this has led to a deterioration in family relationships and has also contributed in part to the breakdown of his relationship with his ex-partner. He gets anxious or upset unfamiliar situations and tends to take longer to understand information.
+            <br><br>
+            Alex favours routine and gets very anxious if this changes, in providing support it would be useful to ensure that appointments are kept at the same time and days where possible and that if changes need to be made that advanced notice is given to reduce his anxiety and stress.  The service user may sometimes come across as being blunt or rude without meaning to and finds it challenging to say how he feels. He has shared that he has been taken advantage of by peers which recently has led to a growing mistrust.
+          `,
           interpreterNeeded: "No",
           languageNeeds: "English",
           responsibilities: "No",
