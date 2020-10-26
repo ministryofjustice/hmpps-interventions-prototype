@@ -13,7 +13,11 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Make a referral</h1>
+      <h1 class="govuk-heading-xl">Make a referral
+        {% if data["service-user-id"] %}
+          &ndash; Alex River
+        {% endif %}
+      </h1>
 
       <ol class="moj-task-list">
         <li>

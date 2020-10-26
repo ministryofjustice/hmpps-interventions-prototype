@@ -4,6 +4,12 @@
   MoJ Interventions - make referrals
 {% endblock %}
 
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "make-a-referral" %}
+  {% include "../../../includes/primary-navigation.html" %}
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",

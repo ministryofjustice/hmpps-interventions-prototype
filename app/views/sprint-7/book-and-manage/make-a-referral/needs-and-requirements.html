@@ -4,6 +4,12 @@
   Needs and requirements
 {% endblock %}
 
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "make-a-referral" %}
+  {% include "../../includes/primary-navigation.html" %}
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
@@ -23,7 +29,7 @@
             Needs
           </dt>
           <dd class="govuk-summary-list__value">
-            Thinking and attitudes<br>Relationships<br>Accommodation<br>
+            Accommodation<br>Social inclusion
           </dd>
         </div>
         <div class="govuk-summary-list__row">

@@ -4,6 +4,12 @@
   Select social inclusion service
 {% endblock %}
 
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "make-a-referral" %}
+  {% include "../../../includes/primary-navigation.html" %}
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
@@ -26,13 +32,13 @@
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="burglary" name="social-inclusion-sentence" type="radio" value="Burglary" {{ checked("social-inclusion-sentence", "Burglary") }}>
               <label class="govuk-label govuk-radios__label" for="burglary">
-                Burglary<br>Sub category: Theft act, 1968<br>Date: 01/04/2021<br>Order: Suspended sentence
+                Burglary<br>Sub category: Theft act, 1968<br>End of sentence date: 01/04/2021<br>Order: Suspended sentence
               </label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="armed-robbery" name="social-inclusion-sentence" type="radio" value="Armed robbery" {{ checked("social-inclusion-sentence", "Armed robbery") }}>
               <label class="govuk-label govuk-radios__label" for="armed-robbery">
-                Armed robbery<br>Sub category: Serious crime act, 1969<br>Date: 01/05/2025<br>Order: Suspended sentence
+                Armed robbery<br>Sub category: Serious crime act, 1969<br>End of sentence date: 01/05/2025<br>Order: Suspended sentence
               </label>
             </div>
         </fieldset>

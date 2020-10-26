@@ -32,8 +32,13 @@
           <div class="govuk-!-margin-bottom-8">
             <h2 class="govuk-heading-l">{{ intervention.title }}</h2>
             <p class="govuk-body-m">Service provider:
-              {{ intervention.provider }}</p>
-            <p class="govuk-body-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mattis orci a lacinia rutrum.</p>
+              {{ intervention.provider }}
+            </p>
+            {% if intervention.title == 'Accommodation' %}
+              <p class="govuk-body-m">Available for all service users who have an accommodation need in brokerage or retention, the service aims are to support in securing settled accommodation. Having safe and permanent accommodation can play a significant role in helping someone to stop reoffending, we also seek to address the areas which prevent someone from sustaining or moving onto secure accommodation long term.</p>
+            {% else %}
+              <p class="govuk-body-m">Fusce hendrerit laoreet fermentum. Vivamus egestas dignissim tortor id vestibulum. Duis euismod, nulla ut congue condimentum, nisl dolor semper nunc, vel imperdiet massa enim vel sapien. Suspendisse ullamcorper in neque.</p>
+            {% endif %}
             <a href="#" class="govuk-link">x remove this intervention</a>
           </div>
         {% endfor%}
