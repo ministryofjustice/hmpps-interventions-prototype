@@ -14,7 +14,7 @@
     <dd class="govuk-summary-list__value">
       <ul class="govuk-list">
         {% for desiredOutcome in intervention.desiredOutcomes %}
-          <li>{{ desiredOutcome }}</li>
+          <li>{{ desiredOutcome.text }}</li>
         {% endfor %}
       </ul>
     </dd>

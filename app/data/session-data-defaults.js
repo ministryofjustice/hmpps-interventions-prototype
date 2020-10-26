@@ -2018,13 +2018,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2051,13 +2050,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 Sessions (pre-release virtual contact)] Service User has a low risk of reoffending. Service User has limited family support.",
@@ -2101,13 +2099,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2136,13 +2133,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 Sessions (pre-release virtual contact)] Service User has a low risk of reoffending. Service User has limited family support.",
@@ -2171,13 +2167,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2219,13 +2214,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2267,13 +2261,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2317,13 +2310,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2367,13 +2359,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2417,13 +2408,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2467,13 +2457,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2517,13 +2506,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2567,13 +2555,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2617,13 +2604,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2667,13 +2653,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2717,13 +2702,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2767,13 +2751,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2817,13 +2800,12 @@ module.exports = {
             actionPlanSubmitted: false,
             actionPlanApproved: false,
             assigned: false,
-            goals: [],
             sessions: [],
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
-              "Service user secures early post-release engagement with community based services."
+              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
+              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",

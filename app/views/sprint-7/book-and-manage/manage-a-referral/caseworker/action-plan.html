@@ -60,26 +60,28 @@
 	</div>
       </dl>
 
-      <h2 class="govuk-heading-l" id="goals">Goals</h2>
-      <p class="govuk-body">
-      Add the goals of the intervention.
-      </p>
-      {% for goal in intervention.goals %}
-	<h3 class="govuk-heading-m">
-	  Goal {{ loop.index }}
-	  <a href="#" class="govuk-link govuk-!-margin-left-3 govuk-!-font-size-19 govuk-!-font-weight-regular">Edit</a>
-	</h3>
-	<p class="govuk-body">{{ goal.text }}</p>
+      {% for desiredOutcome in intervention.desiredOutcomes %}
+	<h2 class="govuk-heading-l" id="activities-{{loop.index0}}">Desired outcome {{ loop.index }}</h2>
+	<p class="govuk-body">
+	{{ desiredOutcome.text }}
+	</p>
+	{% for activity in desiredOutcome.activities %}
+	  <h3 class="govuk-heading-m">
+	    Activity {{ loop.index }}
+	    <a href="#" class="govuk-link govuk-!-margin-left-3 govuk-!-font-size-19 govuk-!-font-weight-regular">Edit</a>
+	  </h3>
+	  <p class="govuk-body">{{ activity.text }}</p>
+	{% endfor %}
+	{% if canChangeActionPlan %}
+	  <form method="post" action="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/desired-outcomes/{{loop.index0}}/activities">
+	    <div class="govuk-form-group">
+	      <label class="govuk-heading-m" for="text">Activity {{ desiredOutcome.activities.length + 1 }}</label>
+	      <textarea class="govuk-textarea" id="text" name="text"></textarea>
+	    </div>
+	    <input class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="Add activity">
+	  </form>
+	{% endif %}
       {% endfor %}
-      {% if canChangeActionPlan %}
-	<form method="post" action="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/goals">
-	  <div class="govuk-form-group">
-	    <label class="govuk-heading-m" for="text">Goal {{ intervention.goals.length + 1 }}</label>
-	    <textarea class="govuk-textarea" id="text" name="text"></textarea>
-	  </div>
-	  <input class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="Add new goal">
-	</form>
-      {% endif %}
 
       <h2 class="govuk-heading-l" id="sessions">Sessions</h2>
 
@@ -146,7 +148,7 @@
 	<dd class="{{ definitionClass }}">
 	    <ul class="govuk-list">
 	      {% for desiredOutcome in intervention.desiredOutcomes %}
-		<li>{{ desiredOutcome }}</li>
+		<li>{{ desiredOutcome.text }}</li>
 	      {% endfor %}
 	    </ul>
 	</dd>

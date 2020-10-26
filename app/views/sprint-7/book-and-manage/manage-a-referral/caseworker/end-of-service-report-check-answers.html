@@ -69,9 +69,9 @@
           <p class="govuk-body">{{ endOfServiceReport["termination-reason"] }}</p>
         {% endif %}
 
-        {% for goal in intervention.goals %}
-          {% set name = "goal-" + loop.index0 %}
-          {% set detailsName = "goal-" + loop.index0 + "-details" %}
+        {% for desiredOutcome in intervention.desiredOutcomes %}
+          {% set name = "desired-outcome-" + loop.index0 %}
+          {% set detailsName = "desired-outcome-" + loop.index0 + "-details" %}
 
           <h2 class="govuk-heading-l">Outcome {{ loop.index }} – {{ endOfServiceReport[name] | capitalize | replace("-", " ") }}</h2>
           <p class="govuk-body">{{ endOfServiceReport[detailsName] }}</p>
