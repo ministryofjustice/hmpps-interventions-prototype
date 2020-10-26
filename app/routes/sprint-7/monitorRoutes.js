@@ -218,14 +218,7 @@ router.post(
 
     intervention.monitor.actionPlanApproved = actionPlanApproved;
 
-    const serviceUser = referral ? referral.serviceUser : {};
-
-    res.render("sprint-7/monitor/cases/intervention", {
-      referral: referral,
-      intervention: intervention,
-      serviceUser: serviceUser,
-      currentPage: intervention.name,
-    });
+    res.redirect(`/sprint-7/monitor/cases/${referralNumber}/interventions/${interventionId}`);
   }
 );
 
