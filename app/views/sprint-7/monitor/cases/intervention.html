@@ -128,7 +128,7 @@
                       {% endif %}
                     </td>
                     <td class="govuk-table__cell">
-                      <a href="{{intervention.id}}/action-plan" class="govuk-link">View</td>
+                      <a href="{{intervention.id}}/action-plan" class="govuk-link">View</a></td>
                     </tr>
                   </tbody>
               </table>
@@ -294,10 +294,52 @@
                 <p class="govuk-body">No sessions have been scheduled.</p>
               {% endif %}
 
+
               <h2 class="govuk-heading-m">End of service report</h2>
+              
+              {% if intervention.monitor.completed and intervention.monitor.completed %}
+              <p class="govuk-body">
+                This is the end of service report created by the service provider. When it is submitted by the service provider, you will be able to read it.
+              </p>
+
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Caseworker</th>
+                    <th scope="col" class="govuk-table__header">Status</th>
+                    <th scope="col" class="govuk-table__header">Action</th>
+                  </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">{{ intervention.assignedCaseworker}}</td>
+                    <td class="govuk-table__cell">
+                      {% if intervention.monitor.endOfServiceReportSubmitted %}
+                        <strong class="govuk-tag">
+                          completed
+                        </strong>
+                      {% else %}
+                        <strong class="govuk-tag govuk-tag--grey">
+                          not started
+                        </strong>
+                      {% endif %}
+                    </td>
+                    <td class="govuk-table__cell">
+                      {% if intervention.monitor.endOfServiceReportSubmitted %}
+                        <a href="{{intervention.id}}/end-of-service-report" class="govuk-link">View</a>
+                      {% else %}
+                      {% endif %}
+                    </td>
+                    </tr>
+                </tbody>
+              </table>
+
+              {% else %}
               <p class="govuk-body">
                 An intervention ready for an end of service assessment will appear below once all the post-session feedback forms of the intervention are completed.
               </p>
+              {% endif %}
             </div>
 
             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="case-notes">
