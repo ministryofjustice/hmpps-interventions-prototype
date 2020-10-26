@@ -3141,6 +3141,7 @@ function createReferralWithoutInterventions(params, index) {
         name: "Jessica Reel",
         phone: "01909 234 567",
         email: "j.reel@justice.gov.uk",
+        team: "OMU Team1",
         addressHTML: "44 Bouverie Road<br>Weston Lullingfields<br>SY4 0RE",
       },
       params.probationPractitioner
