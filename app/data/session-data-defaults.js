@@ -2024,12 +2024,12 @@ module.exports = {
               "Burglary<br>Sub category: Theft act, 1968<br>End of sentence date: 01/04/2021<br>Order: Suspended sentence",
             desiredOutcomes: [
               {
-                text: "Service user makes progress in obtaining accommodation.",
+                text: "Service user makes progress in obtaining accommodation",
                 activities: [],
               },
               {
                 text:
-                  "Service user is helped to secure a tenancy in the private rented sector (PRS).",
+                  "Service user is helped to secure a tenancy in the private rented sector (PRS)",
                 activities: [],
               },
             ],
