@@ -45,19 +45,41 @@
     </li>
     <li>
       <strong>Appointments offered</strong>
-      <br>{{ referral.sessions | length }}
+      <br>
+      {% if intervention.monitor.actionPlanApproved %}
+        10
+      {% else %}
+        0
+      {% endif %}
     </li>
     <li>
       <strong>Appointments attended</strong>
-      <br>{{ referral.sessions | length }}
+      <br>
+      {% if intervention.monitor.completed %}
+        10
+      {% elif intervention.monitor.inProgress %}
+        1
+      {% else %}
+        0
+      {% endif %}
     </li>
     <li>
       <strong>Acceptable absences</strong>
-      <br>0
+      <br>
+      {% if data['approve-absence'] == 'yes' %}
+        1
+      {% else %}
+        0
+      {% endif %}
     </li>
     <li>
       <strong>Unacceptable absences</strong>
-      <br>0
+      <br>
+      {% if data['approve-absence'] == 'no' %}
+        1
+      {% else %}
+        0
+      {% endif %}
     </li>
     <li>
       <strong>Provider case notes</strong>
