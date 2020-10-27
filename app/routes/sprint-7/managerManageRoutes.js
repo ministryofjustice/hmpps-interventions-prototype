@@ -12,6 +12,8 @@ router.use(function (req, res, next) {
   res.locals.serviceName = "Receive intervention referrals";
   res.locals.serviceHref =
     "/sprint-7/book-and-manage/manage-a-referral/manager/dashboard";
+  res.locals.loggedInUserName =
+    req.session.data.sprint7.caseworkers[3].firstName;
   next();
 });
 

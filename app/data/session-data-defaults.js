@@ -2021,7 +2021,7 @@ module.exports = {
             assigned: false,
             sessions: [],
             relevantSentenceHTML:
-              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+              "Burglary<br>Sub category: Theft act, 1968<br>End of sentence date: 01/04/2021<br>Order: Suspended sentence",
             desiredOutcomes: [
               { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
               { text: "Service user secures early post-release engagement with community based services.", activities: [] }
@@ -2030,7 +2030,9 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: `Alex requires support to obtain accommodation, he is motivated to get his life back on track, however I am concerned that his current living arrangements and attempt to desist from association with offending peers will be short lived if he does not receive urgent support. In the past Alex has failed to attend appointments with the local council or when he has attended appointments failed to understand what was being shared and has become very frustrated resulted in him being verbally abusive to staff. He will require support to complete forms and to attend appointments.
+            <br><br>
+            He also has appointments with the local drug agency and I am also doing a referral for employment and training support. There is a need to ensure that appointments are co-ordinated.  Alex is in receipt of benefits and reported just spending money on what he needs and needing help with budgeting.  He is able to do his washing and gets food from his aunt whom he gives £25 per fortnight.`,
           },
           {
             id: "1",
@@ -2054,7 +2056,7 @@ module.exports = {
             assigned: false,
             sessions: [],
             relevantSentenceHTML:
-              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+              "Burglary<br>Sub category: Theft act, 1968<br>End of sentence date: 01/04/2021<br>Order: Suspended sentence",
             desiredOutcomes: [
               { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
               { text: "Service user secures early post-release engagement with community based services.", activities: [] }
@@ -2063,7 +2065,7 @@ module.exports = {
               "Low complexity<br>[up to 4 Sessions (pre-release virtual contact)] Service User has a low risk of reoffending. Service User has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -2113,7 +2115,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
           {
             id: "1",
@@ -2148,7 +2150,7 @@ module.exports = {
               "Low complexity<br>[up to 4 Sessions (pre-release virtual contact)] Service User has a low risk of reoffending. Service User has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
           {
             id: "3",
@@ -2183,7 +2185,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -2231,7 +2233,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -2279,7 +2281,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -2329,7 +2331,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -2379,7 +2381,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -2429,7 +2431,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -2479,7 +2481,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -2529,7 +2531,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -2579,7 +2581,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -2629,7 +2631,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -2679,7 +2681,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -2729,7 +2731,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -2779,7 +2781,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -2829,7 +2831,7 @@ module.exports = {
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
-            furtherInformation: "N/A",
+            furtherInformationHTML: "N/A",
           },
         ],
       },
@@ -3116,19 +3118,35 @@ function createReferralWithoutInterventions(params, index) {
           RM2000Score: "Medium",
           ROSHAScore: "Medium",
           SARAScore: "Low",
-          scoresInformation: "N/A",
+          scoresInformationHTML: `
+            Alex has previous convictions primarily for Burglary, Possession of Class A and shoplifting.  He has one Robbery and Assault PC conviction which was 10 years ago.  The service users’ high reoffending score is due to the early age at which he commenced offending and the violent convictions noted.
+            Alex’s risk of harm and further offending is greatest when in company of offending peers, relapses into chaotic substance misuse and to fund his drug habit. These identifiable factors are currently present / recently being addressed and is why the risk of harm has been identified as medium. The previous violent offences took place with peers to obtain money for illicit substances, given the burglary convictions are dwellings, this is also a factor of concern, in relation to his response if he were to be disturbed during the commission of the offence.
+            <br><br>
+            At present Alex appears to be motivated and has taken steps to address his substance misuse and desist from association with offending peers, if he is able to sustain this then the likelihood of further offending and therefore risk of harm is likely to reduce.
+            <br><br>
+            Although, there is a previous offence for Assault PC my assessment is that there are no immediate risks to staff, the service user tends to engage well with staff, however due to his autism he can at times become frustrated when he feels misunderstood and has in the past been verbally abusive.
+          `,
         },
         needs: {
           criminogenicNeeds: [
-            "Thinking and attitudes",
-            "Relationships",
             "Accommodation",
+            "Social inclusion"
           ],
-          identifyNeeds: "N/A",
-          otherNeeds: "N/A",
+          identifyNeedsHTML: `
+            Alex has been rough sleeping and sofa surfing for the past two years, following the breakdown of his long-term relationship due to his substance misuse and failure to contribute financially to living expenses.  Following his last stint in prison (12 months ago) he shared that he was determined to address his substance misuse and was able to abstain during his sentence, however on release having no accommodation he resumed association with peers and fell back into chaotic substance misuse, resulting in his current conviction for Burglary.
+            <br><br>
+            For the past three weeks Alex has been staying in the garage of his aunt’s home as she is unable to accommodate him in her home due to being fearful of his associates or that he may steal from her. His aunt has supported him to get help and Alex has reported making contact with the local drug treatment agency which he has been attending during the current court matter. He also reported that he is trying to stay away from his peers as they ‘get him into trouble’.
+            <br><br>
+            Having lived at the family home prior to moving in with his ex-partner Alex has never had accommodation of his own. In addition to needing somewhere to live Alex is likely to benefit from independent living and tenancy sustainment skills.
+          `,
+          otherNeedsHTML: `
+            Alex is Autistic and finds it hard to communicate with other people or understand how they think and feel, this has led to a deterioration in family relationships and has also contributed in part to the breakdown of his relationship with his ex-partner. He gets anxious or upset unfamiliar situations and tends to take longer to understand information.
+            <br><br>
+            Alex favours routine and gets very anxious if this changes, in providing support it would be useful to ensure that appointments are kept at the same time and days where possible and that if changes need to be made that advanced notice is given to reduce his anxiety and stress.  The service user may sometimes come across as being blunt or rude without meaning to and finds it challenging to say how he feels. He has shared that he has been taken advantage of by peers which recently has led to a growing mistrust.
+          `,
           interpreterNeeded: "No",
           languageNeeds: "English",
-          responsibilities: "Yes",
+          responsibilities: "No",
           timesUnavailable: "N/A",
         },
       },
@@ -3140,6 +3158,7 @@ function createReferralWithoutInterventions(params, index) {
         name: "Jessica Reel",
         phone: "01909 234 567",
         email: "j.reel@justice.gov.uk",
+        team: "OMU Team1",
         addressHTML: "44 Bouverie Road<br>Weston Lullingfields<br>SY4 0RE",
       },
       params.probationPractitioner
