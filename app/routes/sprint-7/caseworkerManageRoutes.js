@@ -377,7 +377,7 @@ function addSessionToIntervention(intervention) {
       .add(1, "week")
       .toDate();
   } else {
-    date = moment(new Date()).add(1, "day").toDate();
+    date = moment(new Date()).add(4, "day").toDate();
   }
 
   const session = {
