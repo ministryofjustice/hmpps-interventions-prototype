@@ -2010,7 +2010,7 @@ module.exports = {
               assigned: false,
               inProgress: false,
               initialAssessmentScheduled: true,
-              initialAssessmentDate: "10/02/2020",
+              initialAssessmentDate: "30/10/2020",
               initialAssessmentCompleted: false,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
@@ -2035,7 +2035,7 @@ module.exports = {
             ],
             requiredComplexityHTML:
               "Low complexity<br>Service User has some capacity and means to secure and/or maintain suitable accommodation but requires some support and guidance to do so.",
-            completionDateRequired: moment().add("2", "months").toDate(),
+            completionDateRequired: "27/12/2020",
             maximumRARDays: "10",
             furtherInformationHTML: `Alex requires support to obtain accommodation, he is motivated to get his life back on track, however I am concerned that his current living arrangements and attempt to desist from association with offending peers will be short lived if he does not receive urgent support. In the past Alex has failed to attend appointments with the local council or when he has attended appointments failed to understand what was being shared and has become very frustrated resulted in him being verbally abusive to staff. He will require support to complete forms and to attend appointments.
             <br><br>
@@ -2052,7 +2052,7 @@ module.exports = {
               assigned: false,
               inProgress: false,
               initialAssessmentScheduled: true,
-              initialAssessmentDate: "10/10/2020",
+              initialAssessmentDate: "30/10/2020",
               initialAssessmentCompleted: false,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
@@ -2078,7 +2078,7 @@ module.exports = {
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 Sessions (pre-release virtual contact)] Service User has a low risk of reoffending. Service User has limited family support.",
-            completionDateRequired: moment().add("2", "months").toDate(),
+            completionDateRequired: "01/02/2021",
             maximumRARDays: "10",
             furtherInformationHTML: "N/A",
           },

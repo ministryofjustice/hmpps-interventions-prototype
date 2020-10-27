@@ -6,17 +6,21 @@
     </li>
     <li>
       <strong>Date referred</strong>
-      <br>01/09/20
+      <br>27/10/2020
     </li>
     <li>
       <strong>Assessment date</strong>
-      <br>{{ intervention.monitor.initialAssessmentDate }}
+      {% if intervention.monitor.assigned %}
+        <br>{{ intervention.monitor.initialAssessmentDate }}
+      {% else %}
+        <br>Not yet booked
+      {% endif %}
     </li>
     <li>
       <strong>Date of action plan</strong>
       <br>
       {% if intervention.monitor.actionPlanApproved %}
-        {{ intervention.monitor.actionPlanDate }}
+        31/10/2020
       {% elif intervention.monitor.actionPlanSubmitted %}
         Action plan not yet approved
       {% else %}
@@ -25,11 +29,11 @@
     </li>
     <li>
       <strong>Date started</strong>
-      <br>22/09/20
+      <br>28/10/2020
     </li>
     <li>
       <strong>Target end date</strong>
-      <br>12/12/20
+      <br>{{ intervention.completionDateRequired}}
     </li>
     <li>
       <strong>End of service review</strong>
@@ -41,15 +45,15 @@
     </li>
     <li>
       <strong>Appointments offered</strong>
-      <br>8
+      <br>{{ referral.sessions | length }}
     </li>
     <li>
       <strong>Appointments attended</strong>
-      <br>7
+      <br>{{ referral.sessions | length }}
     </li>
     <li>
       <strong>Acceptable absences</strong>
-      <br>1
+      <br>0
     </li>
     <li>
       <strong>Unacceptable absences</strong>
