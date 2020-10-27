@@ -464,7 +464,7 @@ router.get(
     const sessionIndex = parseInt(req.params.sessionIndex);
 
     res.render(
-      `sprint-7/book-and-manage/manage-a-referral/caseworker/assessment-attended`,
+      `sprint-7/book-and-manage/manage-a-referral/caseworker/assessment/attended`,
       {
         referralIndex: req.params.referralIndex,
         interventionIndex: req.params.interventionIndex,
@@ -487,7 +487,7 @@ router.get(
     const attended = session.wipAssessment.attended !== "no";
 
     res.render(
-      `sprint-7/book-and-manage/manage-a-referral/caseworker/assessment-details`,
+      `sprint-7/book-and-manage/manage-a-referral/caseworker/assessment/details`,
       {
         referralIndex: req.params.referralIndex,
         interventionIndex: req.params.interventionIndex,
