@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Session {{sessionIndex + 1}}: post-session feedback
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Session {{sessionIndex + 1}}: post-session feedback</h1>
+
+      <form method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">Did {{ referral.serviceUser.firstName }} meet any of their outcomes?</h2>
+            </legend>
+
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="any-outcomes-met-no" name="any-outcomes-met" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="any-outcomes-met-no">No</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="any-outcomes-met-yes" name="any-outcomes-met" type="radio" value="yes" data-aria-controls="conditional-outcomes-met-yes">
+                <label class="govuk-label govuk-radios__label" for="any-outcomes-met-yes">Yes</label>
+              </div>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-outcomes-met-yes">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading">
+                        Which outcomes did {{ referral.serviceUser.firstName }} meet?
+                      </h3>
+                    </legend>
+                    <div id="waste-hint" class="govuk-hint">
+                      Select all that apply.
+                    </div>
+                    <div class="govuk-checkboxes">
+                      {% for desiredOutcome in intervention.desiredOutcomes %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="met-{{loop.index0}}" name="met-{{loop.index0}}" type="checkbox" value="true">
+                          <label class="govuk-label govuk-checkboxes__label" for="met-{{loop.index0}}">
+                            {{ desiredOutcome.text }}
+                          </label>
+                        </div>
+                      {% endfor %}
+                    </div>
+
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="outcomes-comment">
+            Add additional information about any outcomes met in this session.
+          </label>
+
+          <textarea class="govuk-textarea" id="outcomes-comment" name="outcomes-comment"></textarea>
+        </div>
+
+        <input type="submit" class="govuk-button" data-module="govuk-button" value="Continue">
+      </form>
+    </div>
+  </div>
+{% endblock %}
