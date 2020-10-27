@@ -63,7 +63,7 @@ function findReferralByIndex(req, index) {
 
     // Populate each session’s status based on which events have occurred.
     if (intervention.actionPlanApproved) {
-      var awaitingAssessment = true;
+      var awaitingFeedback = true;
       for (const session of intervention.sessions) {
         if (session.assessment != null) {
           if (session.assessment.attended === "no") {
@@ -71,9 +71,9 @@ function findReferralByIndex(req, index) {
           } else {
             session.status = "completed";
           }
-        } else if (awaitingAssessment) {
-          session.status = "awaiting assessment";
-          awaitingAssessment = false;
+        } else if (awaitingFeedback) {
+          session.status = "awaiting feedback";
+          awaitingFeedback = false;
         } else {
           session.status = "not started";
         }
@@ -83,10 +83,10 @@ function findReferralByIndex(req, index) {
     // Populate overall intervention sessions status.
     if (
       intervention.sessions.some(
-        (session) => session.status === "awaiting assessment"
+        (session) => session.status === "awaiting feedback"
       )
     ) {
-      intervention.sessionsStatus = "awaiting assessment";
+      intervention.sessionsStatus = "awaiting feedback";
     } else {
       intervention.sessionsStatus = "completed";
     }
