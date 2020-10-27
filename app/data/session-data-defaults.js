@@ -2028,7 +2028,7 @@ module.exports = {
             ],
             requiredComplexityHTML:
               "Low complexity<br>Service User has some capacity and means to secure and/or maintain suitable accommodation but requires some support and guidance to do so.",             completionDateRequired: moment().add("2", "months").toDate(),
-            maximumRARDays: "22",
+            maximumRARDays: "10",
             furtherInformationHTML: `Alex requires support to obtain accommodation, he is motivated to get his life back on track, however I am concerned that his current living arrangements and attempt to desist from association with offending peers will be short lived if he does not receive urgent support. In the past Alex has failed to attend appointments with the local council or when he has attended appointments failed to understand what was being shared and has become very frustrated resulted in him being verbally abusive to staff. He will require support to complete forms and to attend appointments.
             <br><br>
             He also has appointments with the local drug agency and I am also doing a referral for employment and training support. There is a need to ensure that appointments are co-ordinated.  Alex is in receipt of benefits and reported just spending money on what he needs and needing help with budgeting.  He is able to do his washing and gets food from his aunt whom he gives £25 per fortnight.`,
@@ -2063,7 +2063,7 @@ module.exports = {
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 Sessions (pre-release virtual contact)] Service User has a low risk of reoffending. Service User has limited family support.",
             completionDateRequired: moment().add("2", "months").toDate(),
-            maximumRARDays: "22",
+            maximumRARDays: "10",
             furtherInformationHTML: "N/A",
           },
         ],
