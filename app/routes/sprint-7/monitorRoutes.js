@@ -18,57 +18,122 @@ const groupBy = (items, key, sortingFunction = sortByDateAndTime) =>
 
 router.get("/cases", (req, res) => {
   const referrals = req.session.data.sprint7.referrals;
-  const referralsWithSomeUnassigned = referrals.filter((referral) => {
-    return referral.interventions.some(
-      (intervention) => !intervention.monitor.assigned
-    );
-  });
 
-  const referralsAwaitingAssessment = referrals.filter((referral) => {
-    return referral.interventions.some(
-      (intervention) =>
-        intervention.monitor.assigned &&
-        !intervention.monitor.actionPlanSubmitted
-    );
-  });
+  const unassignedReferrals = referrals
+    .filter((referral) =>
+      referral.interventions.some(
+        (intervention) => !intervention.monitor.assigned
+      )
+    )
+    .map((referral) => {
+      return {
+        ...referral,
+        interventions: referral.interventions.filter(
+          (intervention) => !intervention.monitor.assigned
+        ),
+      };
+    });
 
-  const referralsWithActionPlan = referrals.filter((referral) => {
-    return referral.interventions.some(
-      (intervention) =>
-        intervention.monitor.actionPlanSubmitted &&
-        !intervention.monitor.inProgress &&
-        !intervention.monitor.completed
-    );
-  });
-  const referralsInProgress = referrals.filter((referral) => {
-    return referral.interventions.some(
-      (intervention) =>
-        intervention.monitor.inProgress &&
-        !intervention.monitor.overdue &&
-        !intervention.monitor.completed
-    );
-  });
+  const referralsAwaitingAssessment = referrals
+    .filter((referral) =>
+      referral.interventions.some(
+        (intervention) =>
+          intervention.monitor.assigned &&
+          !intervention.monitor.actionPlanSubmitted
+      )
+    )
+    .map((referral) => {
+      return {
+        ...referral,
+        interventions: referral.interventions.filter(
+          (intervention) =>
+            intervention.monitor.assigned &&
+            !intervention.monitor.actionPlanSubmitted
+        ),
+      };
+    });
 
-  const referralsAwaitingPostSessionQuestionnaire = referrals.filter(
-    (referral) => {
-      return referral.interventions.some(
+  const referralsWithActionPlan = referrals
+    .filter((referral) =>
+      referral.interventions.some(
+        (intervention) =>
+          intervention.monitor.actionPlanSubmitted &&
+          !intervention.monitor.inProgress &&
+          !intervention.monitor.completed
+      )
+    )
+    .map((referral) => {
+      return {
+        ...referral,
+        interventions: referral.interventions.filter(
+          (intervention) =>
+            intervention.monitor.actionPlanSubmitted &&
+            !intervention.monitor.inProgress &&
+            !intervention.monitor.completed
+        ),
+      };
+    });
+
+  const referralsInProgress = referrals
+    .filter((referral) =>
+      referral.interventions.some(
+        (intervention) =>
+          intervention.monitor.inProgress &&
+          !intervention.monitor.overdue &&
+          !intervention.monitor.completed
+      )
+    )
+    .map((referral) => {
+      return {
+        ...referral,
+        interventions: referral.interventions.filter(
+          (intervention) =>
+            intervention.monitor.inProgress &&
+            !intervention.monitor.overdue &&
+            !intervention.monitor.completed
+        ),
+      };
+    });
+
+  const referralsAwaitingPostSessionQuestionnaire = referrals
+    .filter((referral) =>
+      referral.interventions.some(
         (intervention) =>
           intervention.monitor.inProgress &&
           intervention.monitor.awaitingPostSessionQuestionnaire &&
           !intervention.monitor.completed
-      );
-    }
-  );
+      )
+    )
+    .map((referral) => {
+      return {
+        ...referral,
+        interventions: referral.interventions.filter(
+          (intervention) =>
+            intervention.monitor.inProgress &&
+            intervention.monitor.awaitingPostSessionQuestionnaire &&
+            !intervention.monitor.completed
+        ),
+      };
+    });
 
-  const referralsCompleted = referrals.filter((referral) => {
-    return referral.interventions.some(
-      (intervention) => intervention.monitor.completed
-    );
-  });
+  const referralsCompleted = referrals
+    .filter((referral) =>
+      referral.interventions.some(
+        (intervention) => intervention.monitor.completed
+      )
+    )
+    .map((referral) => {
+      return {
+        ...referral,
+        interventions: referral.interventions.filter(
+          (intervention) => intervention.monitor.completed
+        ),
+      };
+    });
 
   res.render("sprint-7/monitor/cases", {
     referrals: req.session.data.sprint7.referrals,
-    referralsWithSomeUnassigned: referralsWithSomeUnassigned,
+    unassignedReferrals: unassignedReferrals,
     referralsAwaitingAssessment: referralsAwaitingAssessment,
     referralsWithActionPlan: referralsWithActionPlan,
     referralsInProgress: referralsInProgress,
