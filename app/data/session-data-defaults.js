@@ -2007,7 +2007,7 @@ module.exports = {
             monitor: {
               actionPlanSubmitted: false,
               actionPlanApproved: false,
-              assigned: true,
+              assigned: false,
               inProgress: false,
               initialAssessmentScheduled: true,
               initialAssessmentDate: "10/02/2020",
