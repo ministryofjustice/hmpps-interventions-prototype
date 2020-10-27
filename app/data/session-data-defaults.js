@@ -2023,12 +2023,11 @@ module.exports = {
             relevantSentenceHTML:
               "Burglary<br>Sub category: Theft act, 1968<br>End of sentence date: 01/04/2021<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              { text: "Service user makes progress in obtaining accommodation.", activities: [] },
+              { text: "Service user is helped to secure a tenancy in the private rented sector (PRS).", activities: [] }
             ],
             requiredComplexityHTML:
-              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
-            completionDateRequired: moment().add("2", "months").toDate(),
+              "Low complexity<br>Service User has some capacity and means to secure and/or maintain suitable accommodation but requires some support and guidance to do so.",             completionDateRequired: moment().add("2", "months").toDate(),
             maximumRARDays: "22",
             furtherInformationHTML: `Alex requires support to obtain accommodation, he is motivated to get his life back on track, however I am concerned that his current living arrangements and attempt to desist from association with offending peers will be short lived if he does not receive urgent support. In the past Alex has failed to attend appointments with the local council or when he has attended appointments failed to understand what was being shared and has become very frustrated resulted in him being verbally abusive to staff. He will require support to complete forms and to attend appointments.
             <br><br>
