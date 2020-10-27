@@ -79,6 +79,7 @@ router.get("/cases", (req, res) => {
       referral.interventions.some(
         (intervention) =>
           intervention.monitor.inProgress &&
+          !intervention.monitor.awaitingPostSessionQuestionnaire &&
           !intervention.monitor.overdue &&
           !intervention.monitor.completed
       )
@@ -89,6 +90,7 @@ router.get("/cases", (req, res) => {
         interventions: referral.interventions.filter(
           (intervention) =>
             intervention.monitor.inProgress &&
+            !intervention.monitor.awaitingPostSessionQuestionnaire &&
             !intervention.monitor.overdue &&
             !intervention.monitor.completed
         ),
