@@ -2045,11 +2045,11 @@ module.exports = {
             id: "1",
             name: "Social inclusion",
             providerName: "Harmony Living",
-            assignedCaseworker: "Jenny Thompson",
+            assignedCaseworker: "",
             monitor: {
               actionPlanSubmitted: false,
               actionPlanApproved: false,
-              assigned: true,
+              assigned: false,
               inProgress: false,
               initialAssessmentScheduled: true,
               initialAssessmentDate: "10/10/2020",
