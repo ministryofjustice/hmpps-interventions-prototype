@@ -133,8 +133,12 @@ router.get("/cases", (req, res) => {
       };
     });
 
+  const count = (referrals) =>
+    referrals.flatMap((referral) => referral.interventions).length;
+
   res.render("sprint-7/monitor/cases", {
     referrals: req.session.data.sprint7.referrals,
+    count: count,
     unassignedReferrals: unassignedReferrals,
     referralsAwaitingAssessment: referralsAwaitingAssessment,
     referralsWithActionPlan: referralsWithActionPlan,
