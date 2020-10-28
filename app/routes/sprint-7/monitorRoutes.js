@@ -315,7 +315,9 @@ router.post(
 
     intervention.monitor.actionPlanApproved = actionPlanApproved;
 
-    res.redirect(`/sprint-7/monitor/cases/${referralNumber}/interventions/${interventionId}`);
+    res.redirect(
+      `/sprint-7/monitor/cases/${referralNumber}/interventions/${interventionId}`
+    );
   }
 );
 
@@ -357,7 +359,9 @@ router.get(
         break;
     }
 
-    res.redirect(`/sprint-7/monitor/cases/${req.params.referralNumber}/interventions/${req.params.interventionId}`);
+    res.redirect(
+      `/sprint-7/monitor/cases/${req.params.referralNumber}/interventions/${req.params.interventionId}`
+    );
   }
 );
 
