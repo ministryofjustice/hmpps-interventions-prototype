@@ -22,14 +22,14 @@ router.get("/cases", (req, res) => {
   const unassignedReferrals = referrals
     .filter((referral) =>
       referral.interventions.some(
-        (intervention) => !intervention.monitor.assigned
+        (intervention) => !intervention.assignedCaseworker
       )
     )
     .map((referral) => {
       return {
         ...referral,
         interventions: referral.interventions.filter(
-          (intervention) => !intervention.monitor.assigned
+          (intervention) => !intervention.assignedCaseworker
         ),
       };
     });
@@ -38,7 +38,7 @@ router.get("/cases", (req, res) => {
     .filter((referral) =>
       referral.interventions.some(
         (intervention) =>
-          intervention.monitor.assigned &&
+          intervention.assignedCaseworker &&
           !intervention.monitor.actionPlanSubmitted
       )
     )
@@ -47,7 +47,7 @@ router.get("/cases", (req, res) => {
         ...referral,
         interventions: referral.interventions.filter(
           (intervention) =>
-            intervention.monitor.assigned &&
+            intervention.assignedCaseworker &&
             !intervention.monitor.actionPlanSubmitted
         ),
       };
@@ -334,8 +334,7 @@ router.get(
 
     switch (toState) {
       case "assignedCaseworker":
-        intervention.assignedCaseworker = "Jenny Thompson";
-        intervention.monitor.assigned = true;
+        intervention.assignedCaseworker = "Liam Johnson";
         break;
       case "initialAssessmentCompleted":
         intervention.monitor.initialAssessmentCompleted = true;
