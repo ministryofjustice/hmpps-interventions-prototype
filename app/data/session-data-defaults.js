@@ -2010,11 +2010,11 @@ module.exports = {
               assigned: false,
               inProgress: false,
               initialAssessmentScheduled: true,
-              initialAssessmentDate: "10/02/2020",
+              initialAssessmentDate: "30/10/2020",
               initialAssessmentCompleted: false,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2023,11 +2023,19 @@ module.exports = {
             relevantSentenceHTML:
               "Burglary<br>Sub category: Theft act, 1968<br>End of sentence date: 01/04/2021<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user makes progress in obtaining accommodation.", activities: [] },
-              { text: "Service user is helped to secure a tenancy in the private rented sector (PRS).", activities: [] }
+              {
+                text: "Service user makes progress in obtaining accommodation",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user is helped to secure a tenancy in the private rented sector (PRS)",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
-              "Low complexity<br>Service User has some capacity and means to secure and/or maintain suitable accommodation but requires some support and guidance to do so.",             completionDateRequired: moment().add("2", "months").toDate(),
+              "Low complexity<br>Service User has some capacity and means to secure and/or maintain suitable accommodation but requires some support and guidance to do so.",
+            completionDateRequired: "27/12/2020",
             maximumRARDays: "10",
             furtherInformationHTML: `Alex requires support to obtain accommodation, he is motivated to get his life back on track, however I am concerned that his current living arrangements and attempt to desist from association with offending peers will be short lived if he does not receive urgent support. In the past Alex has failed to attend appointments with the local council or when he has attended appointments failed to understand what was being shared and has become very frustrated resulted in him being verbally abusive to staff. He will require support to complete forms and to attend appointments.
             <br><br>
@@ -2037,18 +2045,18 @@ module.exports = {
             id: "1",
             name: "Social inclusion",
             providerName: "Harmony Living",
-            assignedCaseworker: "Jenny Thompson",
+            assignedCaseworker: "",
             monitor: {
               actionPlanSubmitted: false,
               actionPlanApproved: false,
-              assigned: true,
+              assigned: false,
               inProgress: false,
               initialAssessmentScheduled: true,
-              initialAssessmentDate: "10/10/2020",
+              initialAssessmentDate: "30/10/2020",
               initialAssessmentCompleted: false,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2057,12 +2065,20 @@ module.exports = {
             relevantSentenceHTML:
               "Burglary<br>Sub category: Theft act, 1968<br>End of sentence date: 01/04/2021<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 Sessions (pre-release virtual contact)] Service User has a low risk of reoffending. Service User has limited family support.",
-            completionDateRequired: moment().add("2", "months").toDate(),
+            completionDateRequired: "01/02/2021",
             maximumRARDays: "10",
             furtherInformationHTML: "N/A",
           },
@@ -2098,7 +2114,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2107,8 +2123,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2133,7 +2157,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2142,8 +2166,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 Sessions (pre-release virtual contact)] Service User has a low risk of reoffending. Service User has limited family support.",
@@ -2168,7 +2200,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2177,8 +2209,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2216,7 +2256,7 @@ module.exports = {
               initialAssessmentCompleted: false,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2225,8 +2265,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2264,7 +2312,7 @@ module.exports = {
               initialAssessmentCompleted: false,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2273,8 +2321,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2314,7 +2370,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2323,8 +2379,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2364,7 +2428,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: true,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2373,8 +2437,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2414,7 +2486,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: true,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2423,8 +2495,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2464,7 +2544,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: true,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2473,8 +2553,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2514,7 +2602,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: true,
-              endOfServiceReportSubmitted: true
+              endOfServiceReportSubmitted: true,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2523,8 +2611,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2564,7 +2660,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2573,8 +2669,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2614,7 +2718,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2623,8 +2727,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2664,7 +2776,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2673,8 +2785,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2714,7 +2834,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2723,8 +2843,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2764,7 +2892,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: false,
               completed: false,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2773,8 +2901,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -2814,7 +2950,7 @@ module.exports = {
               initialAssessmentCompleted: true,
               awaitingPostSessionQuestionnaire: true,
               completed: true,
-              endOfServiceReportSubmitted: false
+              endOfServiceReportSubmitted: false,
             },
             actionPlanSubmitted: false,
             actionPlanApproved: false,
@@ -2823,8 +2959,16 @@ module.exports = {
             relevantSentenceHTML:
               "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
             desiredOutcomes: [
-              { text: "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.", activities: [] },
-              { text: "Service user secures early post-release engagement with community based services.", activities: [] }
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
             ],
             requiredComplexityHTML:
               "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
@@ -3127,10 +3271,7 @@ function createReferralWithoutInterventions(params, index) {
           `,
         },
         needs: {
-          criminogenicNeeds: [
-            "Accommodation",
-            "Social inclusion"
-          ],
+          criminogenicNeeds: ["Accommodation", "Social inclusion"],
           identifyNeedsHTML: `
             Alex has been rough sleeping and sofa surfing for the past two years, following the breakdown of his long-term relationship due to his substance misuse and failure to contribute financially to living expenses.  Following his last stint in prison (12 months ago) he shared that he was determined to address his substance misuse and was able to abstain during his sentence, however on release having no accommodation he resumed association with peers and fell back into chaotic substance misuse, resulting in his current conviction for Burglary.
             <br><br>

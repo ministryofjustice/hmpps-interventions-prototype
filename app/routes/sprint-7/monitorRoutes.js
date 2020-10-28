@@ -335,6 +335,7 @@ router.get(
     switch (toState) {
       case "assignedCaseworker":
         intervention.assignedCaseworker = "Jenny Thompson";
+        intervention.monitor.assigned = true;
         break;
       case "initialAssessmentCompleted":
         intervention.monitor.initialAssessmentCompleted = true;
