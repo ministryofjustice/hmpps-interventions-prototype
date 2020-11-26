@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Communications history
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
+{% block content %}
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Communications history
+      </h1>
+
+      <div class="app-archive__controls govuk-!-margin-bottom-6">
+        <span>
+          <label for="sort-by" class="govuk-label">Sort by</label>
+          <select class="govuk-select" id="sort-by">
+            <option>Date</option>
+          </select>
+          <select class="govuk-select" id="order">
+            <option>Ascending</option>
+          </select>
+        </span>
+
+        <span class="app-archive__controls-filter">
+          <label for="filter-by" class="govuk-label">Filter by</label>
+          <select class="govuk-select" id="filter-by">
+            <option>Email</option>
+          </select>
+          <select class="govuk-select" id="tag">
+            <option>Desired outcomes</option>
+          </select>
+        </span>
+      </div>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">View</th>
+            <th scope="col" class="govuk-table__header">Tag</th>
+            <th scope="col" class="govuk-table__header">Type</th>
+            <th scope="col" class="govuk-table__header">Submitted</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a class="govuk-link" href="#">NR0001</a></td>
+            <td class="govuk-table__cell">Desired outcomes</td>
+            <td class="govuk-table__cell">Email</td>
+            <td class="govuk-table__cell">13 October 2020 8:56</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a class="govuk-link" href="#">NR0001</a></td>
+            <td class="govuk-table__cell">Desired outcomes</td>
+            <td class="govuk-table__cell">Email</td>
+            <td class="govuk-table__cell">14 October 2020 9:00</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a class="govuk-link" href="#">NR0001</a></td>
+            <td class="govuk-table__cell">Complexity</td>
+            <td class="govuk-table__cell">Email</td>
+            <td class="govuk-table__cell">16 October 2020 10:15</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a class="govuk-link" href="#">NR0001</a></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">Case notes</td>
+            <td class="govuk-table__cell">16 October 2020 14:50</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a class="govuk-link" href="#">NR0001</a></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">Case notes</td>
+            <td class="govuk-table__cell">16 October 2020 16:00</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="app-pagination">
+        <span class="govuk-body">Showing 1-5 of 100 items</span>
+        <ul class="app-pagination__controls govuk-list">
+          <li><a href="#" class="govuk-link">Previous</a></li>
+          <li><a href="#" class="govuk-link">1</a></li>
+          <li><a href="#" class="govuk-link">2</a></li>
+          <li><a href="#" class="govuk-link">3</a></li>
+          <li><a href="#" class="govuk-link">4</a></li>
+          <li><a href="#" class="govuk-link">Next</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar">
+      <h2>Subsection</h2>
+      <p>
+      <a class="govuk-link" href="/sprint-7/book-and-manage/manage-a-referral/manager/referrals/{{referralIndex}}/interventions/{{interventionId}}/send-email">Send email to probation practitioner</a>
+      </p>
+      <p>
+      <a class="govuk-link" href="/sprint-7/book-and-manage/manage-a-referral/manager/referrals/{{referralIndex}}/interventions/{{interventionId}}/upload-case-notes">Add case notes</a>
+      </p>
+      <p>
+      <a class="govuk-link" href="/sprint-7/book-and-manage/manage-a-referral/manager/referrals/{{referralIndex}}/interventions/{{interventionId}}/communication-archive">View communication history</a>
+      </p>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage intervention referrals
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals" class="govuk-back-link">Return to cases and referrals</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-visually-hidden">Intervention details</h1>
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+	<h2 class="govuk-tabs__title">
+	  Contents
+	</h2>
+	<ul class="govuk-tabs__list">
+	  <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+	    <a class="govuk-tabs__tab" href="#intervention-progress">
+	      Intervention progress
+	    </a>
+	  </li>
+	  <li class="govuk-tabs__list-item">
+	    <a class="govuk-tabs__tab" href="#referral-details">
+	      Referral details
+	    </a>
+	  </li>
+	</ul>
+	<div class="govuk-tabs__panel" id="intervention-progress">
+	  <h2 class="govuk-heading-xl">Intervention progress: {{intervention.name | lower }}</h2>
+
+	  {% include "./includes/intervention/delivery.html" %}
+	</div>
+
+	<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="referral-details">
+	  <h2 class="govuk-heading-l">Referral details</h2>
+
+	  {% include "./includes/referral-details.html" %}
+	</div>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar">
+      <h2>Subsection</h2>
+      <p>
+      <a class="govuk-link" href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/send-email">Send email to probation practitioner</a>
+      </p>
+      <p>
+      <a class="govuk-link" href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/upload-case-notes">Add case notes</a>
+      </p>
+      <p>
+      <a class="govuk-link" href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/communication-archive">View communication history</a>
+      </p>
+      {% if viewModel.populateActionPlanContent and intervention.actionPlanStatus === "pending approval" %}
+	<p class="govuk-body">
+	<a class="govuk-link govuk-link--app-fast-forward-subtler" href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/fast-forward/action-plan-approved">User research example: fast-forward to action plan approved</a>
+	</p>
+      {% endif %}
+
+      {% if viewModel.noShowSessionIndex !== -1 %}
+	<p class="govuk-body">
+	<a class="govuk-link govuk-link--app-fast-forward-subtler" href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/sessions/{{viewModel.noShowSessionIndex}}/fast-forward/probation-practitioner-judgement">User research example: fast-forward to PP judgement</a>
+	</p>
+      {% elif viewModel.populateInterventionSessionsContent and not allSessionsAssessed %}
+	<p>
+	<a class="govuk-link govuk-link--app-fast-forward-subtler" href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/fast-forward/sessions-completed">User research example: fast-forward to sessions completed</a>
+	</p>
+      {% endif %}
+    </div>
+
+  </div>
+{% endblock %}

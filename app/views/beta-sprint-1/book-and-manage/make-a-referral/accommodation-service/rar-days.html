@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  MoJ Interventions - make referrals
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "make-a-referral" %}
+  {% include "../../../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript: window.history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="further-information" method="post" class="form">
+        {% set rarDaysHTML %}
+        {{ govukInput({
+          id: "accommodation-rar-days",
+          name: "accommodation-rar-days",
+          spellcheck: false,
+          classes: "govuk-input--width-3",
+          value: data["accommodation-rar-days"],
+          label: {
+            text: "What is the maximum number of RAR days for the accommodation service?\n\nDays" | striptags(true) | escape | nl2br
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "accommodation-using-rar-days-conditional",
+          name: "accommodation-using-rar-days",
+          fieldset: {
+            legend: {
+              text: "Are you using RAR days for the accommodation service?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: rarDaysHTML
+              },
+              checked: data["accommodation-using-rar-days"] == "yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: data["accommodation-using-rar-days"] == "no"
+            }
+          ]
+        }) }}
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

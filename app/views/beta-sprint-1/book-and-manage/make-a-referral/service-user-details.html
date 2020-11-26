@@ -1,0 +1,193 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  MoJ Interventions - make referrals
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "make-a-referral" %}
+  {% include "../../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript: window.history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        Alex's information
+      </h1>
+      <p class="govuk-body-m">This information has been exported from nDelius</p>
+
+      <form action="referral-task-list" method="post" class="form govuk-!-margin-top-8">
+        <h2 class="govuk-heading-l">Service user information</h2>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Title
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Mr
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Alex River
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Other names
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Shorty
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              PNC number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              2014/1234786A
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              CRN
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['service-user-id'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              NOMIS number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              0203394
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              10/08/1980
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Flat 2<br>27 Test Walk<br>SY16 1AQ<br><br>Private rental
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              OGRS score
+            </dt>
+            <dd class="govuk-summary-list__value">
+              50
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              ROSHA score
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Medium
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              RM2000 score
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Medium
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              SARA score
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Low
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Needs
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Accommodation<br>Social inclusion
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Gender
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Male
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Ethnicity
+            </dt>
+            <dd class="govuk-summary-list__value">
+              White British
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Preferred language
+            </dt>
+            <dd class="govuk-summary-list__value">
+              English
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Religion or belief
+            </dt>
+            <dd class="govuk-summary-list__value">
+              None
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Sexual orientation
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Heterosexual
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Disabilities
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Autism spectrum condition
+            </dd>
+          </div>
+        </dl>
+
+        <input type="hidden" name="service-user-details-checked" value="yes"/>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+      <a href="../make-a-referral/service-user-id" class="govuk-link">
+        Enter case identifier again
+      </a>
+    </div>
+  </div>
+{% endblock %}

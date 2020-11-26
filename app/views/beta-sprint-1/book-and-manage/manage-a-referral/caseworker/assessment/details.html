@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Session {{sessionIndex + 1}}: post-session feedback
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Session {{sessionIndex + 1}}: post-session feedback</h1>
+
+      <form method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="additional-info">
+            Please submit any additional information about {{ referral.serviceUser.firstName }}.
+          </label>
+
+          <textarea class="govuk-textarea" id="additional-info" name="additional-info"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <label for="facilitator" class="govuk-label">
+            <h2 class="govuk-fieldset__heading">Who delivered this session?</h2>
+          </label>
+
+          <input class="govuk-input" id="facilitator" name="facilitator">
+        </div>
+
+        <input type="submit" class="govuk-button" data-module="govuk-button" value="Submit the feedback">
+      </form>
+    </div>
+  </div>
+{% endblock %}
