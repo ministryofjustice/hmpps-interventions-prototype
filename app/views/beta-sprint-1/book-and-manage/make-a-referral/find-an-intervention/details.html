@@ -13,7 +13,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "/sprint-7/book-and-manage/make-a-referral/find-an-intervention/results"
+    href: "/beta-sprint-1/book-and-manage/make-a-referral/find-an-intervention/results"
   }) }}
 {% endblock %}
 
@@ -76,7 +76,7 @@
 
       {% endif %}
 
-      <form action="/sprint-7/book-and-manage/make-a-referral/find-an-intervention/{{intervention.id}}/details?selectedIntervention={{intervention.id}}" method="post" class="form">
+      <form action="/beta-sprint-1/book-and-manage/make-a-referral/find-an-intervention/{{intervention.id}}/details?selectedIntervention={{intervention.id}}" method="post" class="form">
         <button class="govuk-button" data-module="govuk-button">
           Add to shortlist
         </button>

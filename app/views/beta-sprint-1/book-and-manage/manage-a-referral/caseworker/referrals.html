@@ -89,7 +89,7 @@
 			{% endif %}
 
 			<td class="govuk-table__cell">{{ intervention.name }}</td>
-			<td class="govuk-table__cell"><a href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}">Arrange</a></td>
+			<td class="govuk-table__cell"><a href="/beta-sprint-1/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}">Arrange</a></td>
 		      </tr>
 		    {% endif %}
 		  {% endfor %}
@@ -145,7 +145,7 @@
 			<td class="govuk-table__cell">{{ intervention.initialAssessment.address }}</td>
 			<td class="govuk-table__cell">{{ intervention.initialAssessment.date }}</td>
 			<td class="govuk-table__cell">{{ intervention.initialAssessment.time }}</td>
-			<td class="govuk-table__cell"><a href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}/initial-assessment">Edit</a></td>
+			<td class="govuk-table__cell"><a href="/beta-sprint-1/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}/initial-assessment">Edit</a></td>
 		      </tr>
 		    {% endif %}
 		  {% endfor %}
@@ -205,7 +205,7 @@
 			{% endif %}
 
 			<td class="govuk-table__cell">{{ intervention.name }}</td>
-			<td class="govuk-table__cell"><a href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}">View</a></td>
+			<td class="govuk-table__cell"><a href="/beta-sprint-1/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}">View</a></td>
 		      </tr>
 		    {% endif %}
 		  {% endfor %}
@@ -266,7 +266,7 @@
 
 			<td class="govuk-table__cell">{{ intervention.name }}</td>
 			<td class="govuk-table__cell">{{ moment(intervention.actionPlanApprovedAt).format("D/M/YYYY") }}</td>
-			<td class="govuk-table__cell"><a href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}">View</a></td>
+			<td class="govuk-table__cell"><a href="/beta-sprint-1/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}">View</a></td>
 		      </tr>
 		    {% endif %}
 		  {% endfor %}
@@ -327,7 +327,7 @@
 
 			<td class="govuk-table__cell">{{ intervention.name }}</td>
 			<td class="govuk-table__cell">{{ intervention.endOfServiceReport["termination-short-reason"] }}</td>
-			<td class="govuk-table__cell"><a href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}">View</a></td>
+			<td class="govuk-table__cell"><a href="/beta-sprint-1/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}">View</a></td>
 		      </tr>
 		    {% endif %}
 		  {% endfor %}

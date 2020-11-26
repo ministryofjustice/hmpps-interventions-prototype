@@ -73,7 +73,7 @@
 	  <p class="govuk-body">{{ activity.text }}</p>
 	{% endfor %}
 	{% if canChangeActionPlan %}
-	  <form method="post" action="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/desired-outcomes/{{loop.index0}}/activities">
+	  <form method="post" action="/beta-sprint-1/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/desired-outcomes/{{loop.index0}}/activities">
 	    <div class="govuk-form-group">
 	      <label class="govuk-heading-m" for="text">Activity {{ desiredOutcome.activities.length + 1 }}</label>
 	      <textarea class="govuk-textarea" id="text" name="text"></textarea>
@@ -122,13 +122,13 @@
       </table>
 
       {% if canChangeActionPlan %}
-	<form method="post" action="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/sessions">
+	<form method="post" action="/beta-sprint-1/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/sessions">
 	  <input class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="Add new session">
 	</form>
       {% endif %}
 
       {% if not intervention.actionPlanSubmitted %}
-	<form method="post" action="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/action-plan-submission">
+	<form method="post" action="/beta-sprint-1/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/action-plan-submission">
 	  <input class="govuk-button" data-module="govuk-button" type="submit" value="Submit for approval">
 	</form>
       {% endif %}

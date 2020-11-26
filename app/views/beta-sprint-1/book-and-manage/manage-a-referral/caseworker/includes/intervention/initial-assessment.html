@@ -26,7 +26,7 @@
           {% endif %}
         </ul>
       {% else %}
-        <a class="govuk-link" href="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/initial-assessment">Schedule</a>
+        <a class="govuk-link" href="/beta-sprint-1/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/initial-assessment">Schedule</a>
       {% endif %}
     </dd>
   </div>
@@ -34,7 +34,7 @@
 </dl>
 
 {% if intervention.initialAssessmentStatus === "scheduled" %}
-  <form method="post" action="/sprint-7/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/initial-assessment-delivered">
+  <form method="post" action="/beta-sprint-1/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/initial-assessment-delivered">
     <div class="govuk-form-group">
       <div class="govuk-checkboxes">
         <div class="govuk-checkboxes__item">
