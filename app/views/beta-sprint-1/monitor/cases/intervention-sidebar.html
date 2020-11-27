@@ -2,20 +2,62 @@
   <ul class="govuk-list govuk-list--case-summary">
     <li>
       <strong>Provider</strong>
-      <br>{{ intervention.providerName }}
+      <br>Name: {{ intervention.providerName }}
+      <br>Contact number: 0300 4560021
     </li>
     <li>
-      <strong>Date referred</strong>
-      <br>27/10/2020
+      <strong>Dates</strong>
+      <br>Referral date: 1 Sep 2020
+      <br>Action plan start date: 22 Sep 2020
+      <br>Action plan target end date: 12 Dec 2020
     </li>
     <li>
-      <strong>Assessment date</strong>
+      <strong>Initial assessment</strong>
       {% if intervention.monitor.assigned %}
         <br>{{ intervention.monitor.initialAssessmentDate }}
       {% else %}
         <br>Not yet booked
       {% endif %}
     </li>
+    <li>
+      <strong>RAR days</strong>
+      <br>Remaining: 8
+      <br>Total: 10
+    </li>
+    <li>
+      <strong>Absences</strong>
+      <br>Acceptable: {% if data['approve-absence'] == 'yes' %}
+        1
+      {% else %}
+        0
+      {% endif %}
+      <br>Unacceptable: {% if data['approve-absence'] == 'no' %}
+        1
+      {% else %}
+        0
+      {% endif %}
+    </li>
+    <li>
+      <strong>Sessions</strong>
+      <br>Offered: 8
+      <br>Attended: 1
+    </li>
+    <li>
+      <strong>Action plan</strong>
+      <br>{% if intervention.monitor.actionPlanApproved %}
+            31/10/2020
+          {% elif intervention.monitor.actionPlanSubmitted %}
+            Action plan not yet approved
+          {% else %}
+            Action plan not yet submitted
+          {% endif %}
+    </li>
+    <li>
+      <strong>End of service review</strong>
+      <br>Date: To be confirmed
+    </li>
+
+    <!--
     <li>
       <strong>Date of action plan</strong>
       <br>
@@ -90,6 +132,7 @@
       <strong>Contact number</strong>
       <br>0300 4560021
     </li>
+    -->
   </ul>
 </div>
 
