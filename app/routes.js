@@ -14,7 +14,7 @@ router.use((req, res, next) => {
 });
 
 // In sprint 6 & beyond, everything is extra-wide
-const wideSprints = ["sprint-6", "sprint-7"];
+const wideSprints = ["sprint-6", "sprint-7", "beta-sprint-1"];
 for (sprint of wideSprints) {
   router.get(`/${sprint}/*`, function (req, res, next) {
     res.locals.extraWide = true;
