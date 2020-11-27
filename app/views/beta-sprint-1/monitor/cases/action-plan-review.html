@@ -1,0 +1,196 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage intervention referrals
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+          {{ serviceUser.name }}
+        </h1>
+        {% set currentPage = intervention.name %}
+        {% include "./side-navigation.html" %}
+        {% include "./intervention-sidebar.html" %}
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-tabs" data-module="govuk-tabs">
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#progress">
+                Progress
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#paper-trail">
+                Paper trail
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#statistics">
+                Statistics
+              </a>
+            </li>
+          </ul>
+
+          <div class="govuk-tabs__panel govuk-tabs__panel" id="intervention-progress">
+            <a href="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#progress" class="govuk-back-link govuk-!-margin-bottom-6">Back to Progress</a>
+            <h2 class="govuk-heading-l">
+              Action plan review
+            </h2>
+            <p class="govuk-body">
+              The service provider has created an action plan for {{ serviceUser.name }}’s {{ intervention.name | lower }} intervention. Please review the following action plan and decide whether you want to approve or reject it.
+            </p>
+
+            <h2 class="govuk-heading-m">Outcomes</h2>
+
+            <h2 class="govuk-heading-s">Outcome 1 - {{ intervention.desiredOutcomes[0].text }}</h2>
+            <p class="govuk-body">
+              Engage with key worker and attend appointments as required.
+            </p>
+
+            <h2 class="govuk-heading-s">Outcome 2 - {{ intervention.desiredOutcomes[1].text }}</h2>
+            <p class="govuk-body">
+              Engage with accommodation providers and schedule appointments.
+            </p>
+
+            <h2 class="govuk-heading-m">Sessions</h2>
+
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Session title</th>
+                  <th scope="col" class="govuk-table__header">Date</th>
+                  <th scope="col" class="govuk-table__header">Facilitator</th>
+                  <th scope="col" class="govuk-table__header">Status</th>
+                  <th scope="col" class="govuk-table__header">Actions</th>
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Session 1</td>
+                  <td class="govuk-table__cell">01/11/20</td>
+                  <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Session 2</td>
+                  <td class="govuk-table__cell">08/11/20</td>
+                  <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Session 3</td>
+                  <td class="govuk-table__cell">15/11/20</td>
+                  <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Session 4</td>
+                  <td class="govuk-table__cell">22/11/20</td>
+                  <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Session 5</td>
+                  <td class="govuk-table__cell">29/11/20</td>
+                  <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Session 6</td>
+                  <td class="govuk-table__cell">06/12/20</td>
+                  <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Session 7</td>
+                  <td class="govuk-table__cell">13/12/20</td>
+                  <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Session 8</td>
+                  <td class="govuk-table__cell">20/11/20</td>
+                  <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Session 9</td>
+                  <td class="govuk-table__cell">24/11/20</td>
+                  <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Session 10</td>
+                  <td class="govuk-table__cell">27/11/20</td>
+                  <td class="govuk-table__cell">{{ intervention.assignedCaseworker }}</td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="govuk-form-group">
+              <form action="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}" method="post" class="form">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                      Do you want to approve this action plan?
+                    </h2>
+                  </legend>
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="approve-action-plan" name="approve-action-plan" value="yes" type="radio" data-aria-controls="conditional-approve-action-plan">
+                      <label class="govuk-label govuk-radios__label" for="approve-action-plan">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="reject-action-plan" name="approve-action-plan" value="no" type="radio" data-aria-controls="conditional-reject-action-plan">
+                      <label class="govuk-label govuk-radios__label" for="reject-action-plan">
+                        Suggest changes
+                      </label>
+                    </div>
+                    <div class="conditional-section govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reject-action-plan">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="reasons-for-rejection">
+                          Suggested changes:
+                        </label>
+                        <textarea class="govuk-textarea" id="reasons-for-rejection" rows="5" name="reasons-for-rejection"></textarea>
+                      </div>
+                    </div>
+
+                    <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+                      Save and continue
+                    </button>
+                  </div>
+                </fieldset>
+
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    {% endblock %}

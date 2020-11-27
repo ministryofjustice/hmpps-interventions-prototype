@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Session {{sessionIndex + 1}}: assessment
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Session {{sessionIndex + 1}}: post-session feedback</h1>
+
+      <form method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">Did {{ referral.serviceUser.firstName }} attend session {{sessionIndex + 1}}?</h2>
+            </legend>
+
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="attended-on-time" name="attended" type="radio" value="on-time">
+                <label class="govuk-label govuk-radios__label" for="attended-on-time">Yes, on time</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="attended-late" name="attended" type="radio" value="late">
+                <label class="govuk-label govuk-radios__label" for="attended-late">Late arrival</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="attended-no" name="attended" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="attended-no">No</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="attendance-comment">
+            Add additional information about Alex’s attendance (optional)
+          </label>
+
+          <textarea class="govuk-textarea" id="attendance-comment" name="attendance-comment"></textarea>
+        </div>
+
+        <input type="submit" class="govuk-button" data-module="govuk-button" value="Continue">
+      </form>
+    </div>
+  </div>
+{% endblock %}

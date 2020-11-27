@@ -14,7 +14,7 @@ router.use((req, res, next) => {
 });
 
 // In sprint 6 & beyond, everything is extra-wide
-const wideSprints = ["sprint-6", "sprint-7"];
+const wideSprints = ["sprint-6", "sprint-7", "beta-sprint-1"];
 for (sprint of wideSprints) {
   router.get(`/${sprint}/*`, function (req, res, next) {
     res.locals.extraWide = true;
@@ -55,7 +55,14 @@ router.get("/service-user-details/show", async function (req, res, next) {
   }
 });
 
-const sprints = ["sprint-3", "sprint-4", "sprint-5", "sprint-6", "sprint-7"];
+const sprints = [
+  "sprint-3",
+  "sprint-4",
+  "sprint-5",
+  "sprint-6",
+  "sprint-7",
+  "beta-sprint-1",
+];
 for (sprint of sprints) {
   router.use(
     `/${sprint}/book-and-manage/manage-a-referral/caseworker`,
@@ -68,7 +75,7 @@ for (sprint of sprints) {
   );
 }
 
-const findSprints = ["sprint-6", "sprint-7"];
+const findSprints = ["sprint-6", "sprint-7", "beta-sprint-1"];
 for (sprint of findSprints) {
   router.use(
     `/${sprint}/book-and-manage/make-a-referral/find-an-intervention`,
@@ -76,7 +83,7 @@ for (sprint of findSprints) {
   );
 }
 
-const monitorSprints = ["sprint-5", "sprint-6", "sprint-7"];
+const monitorSprints = ["sprint-5", "sprint-6", "sprint-7", "beta-sprint-1"];
 for (sprint of monitorSprints) {
   router.use(`/${sprint}/monitor`, require(`./routes/${sprint}/monitorRoutes`));
 }

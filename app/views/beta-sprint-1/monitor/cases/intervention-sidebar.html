@@ -1,0 +1,127 @@
+<div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar--grey govuk-!-margin-top-6">
+  <ul class="govuk-list govuk-list--case-summary">
+    <li>
+      <strong>Provider</strong>
+      <br>{{ intervention.providerName }}
+    </li>
+    <li>
+      <strong>Date referred</strong>
+      <br>27/10/2020
+    </li>
+    <li>
+      <strong>Assessment date</strong>
+      {% if intervention.monitor.assigned %}
+        <br>{{ intervention.monitor.initialAssessmentDate }}
+      {% else %}
+        <br>Not yet booked
+      {% endif %}
+    </li>
+    <li>
+      <strong>Date of action plan</strong>
+      <br>
+      {% if intervention.monitor.actionPlanApproved %}
+        31/10/2020
+      {% elif intervention.monitor.actionPlanSubmitted %}
+        Action plan not yet approved
+      {% else %}
+        Action plan not yet submitted
+      {% endif %}
+    </li>
+    <li>
+      <strong>Date started</strong>
+      <br>28/10/2020
+    </li>
+    <li>
+      <strong>Target end date</strong>
+      <br>{{ intervention.completionDateRequired}}
+    </li>
+    <li>
+      <strong>End of service review</strong>
+      <br>To be confirmed
+    </li>
+    <li>
+      <strong>RAR days allocation</strong>
+      <br>10 days
+    </li>
+    <li>
+      <strong>Appointments offered</strong>
+      <br>
+      {% if intervention.monitor.actionPlanApproved %}
+        10
+      {% else %}
+        0
+      {% endif %}
+    </li>
+    <li>
+      <strong>Appointments attended</strong>
+      <br>
+      {% if intervention.monitor.completed %}
+        10
+      {% elif intervention.monitor.inProgress %}
+        1
+      {% else %}
+        0
+      {% endif %}
+    </li>
+    <li>
+      <strong>Acceptable absences</strong>
+      <br>
+      {% if data['approve-absence'] == 'yes' %}
+        1
+      {% else %}
+        0
+      {% endif %}
+    </li>
+    <li>
+      <strong>Unacceptable absences</strong>
+      <br>
+      {% if data['approve-absence'] == 'no' %}
+        1
+      {% else %}
+        0
+      {% endif %}
+    </li>
+    <li>
+      <strong>Provider case notes</strong>
+      <br>
+      <a href="#" class="govuk-link">View notes</a>
+    </li>
+    <li>
+      <strong>Contact number</strong>
+      <br>0300 4560021
+    </li>
+  </ul>
+</div>
+
+{% if showFastForwardLinks %}
+  {% set fastForwardToState = null %}
+  {% set fastForwardText = null %}
+
+  {% if not intervention.assignedCaseworker %}
+    {% set fastForwardToState = "assignedCaseworker" %}
+    {% set fastForwardText = "caseworker assigned" %}
+  {% elif not intervention.monitor.initialAssessmentCompleted %}
+    {% set fastForwardToState = "initialAssessmentCompleted" %}
+    {% set fastForwardText = "initial assessment completed" %}
+  {% elif not intervention.monitor.actionPlanSubmitted %}
+    {% set fastForwardToState = "actionPlanSubmitted" %}
+    {% set fastForwardText = "action plan submitted" %}
+  {% elif intervention.monitor.actionPlanApproved %}
+    {% if not intervention.monitor.inProgress %}
+      {% set fastForwardToState = "inProgress" %}
+      {% set fastForwardText = "in progress" %}
+    {% elif not intervention.monitor.completed %}
+      {% set fastForwardToState = "completed" %}
+      {% set fastForwardText = "sessions completed" %}
+    {% elif not intervention.monitor.endOfServiceReportSubmitted %}
+      {% set fastForwardToState = "endOfServiceReportSubmitted" %}
+      {% set fastForwardText = "end of service report submitted" %}
+    {% endif %}
+  {% endif %}
+
+  {% if fastForwardToState != null %}
+    <p class="govuk-body">
+    <a class="govuk-link govuk-link--app-fast-forward-subtler" href="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}/fast-forward?to={{fastForwardToState}}">Demo: fast-forward to {{ fastForwardText }}</a>
+    </p>
+  {% endif %}
+{% endif %}

@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage intervention referrals
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+          {{ serviceUser.name }}
+        </h1>
+        {% set currentPage = intervention.name %}
+        {% include "./side-navigation.html" %}
+        {% include "./intervention-sidebar.html" %}
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-tabs" data-module="govuk-tabs">
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#progress">
+                Progress
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#paper-trail">
+                Paper trail
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#statistics">
+                Statistics
+              </a>
+            </li>
+          </ul>
+
+          <div class="govuk-tabs__panel govuk-tabs__panel" id="intervention-progress">
+            <a href="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#progress" class="govuk-back-link govuk-!-margin-bottom-6">Back to Progress</a>
+            <h2 class="govuk-heading-l">
+              Review
+              {{ serviceUser.name }}'s absence from session 2
+            </h2>
+            <h3 class="govuk-heading-m">
+              Date: 08/11/20
+            </h3>
+            <p class="govuk-body-m">
+            {{ serviceUser.firstName}} told me that childcare arrangements fell through, so they could not make the session.
+            </p>
+            <div class="govuk-form-group">
+              <form action="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}" method="post" class="form">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                      Do you want to mark this as an unacceptable absence?
+                    </h2>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="approve-absence" name="approve-absence" value="yes" type="radio">
+                      <label class="govuk-label govuk-radios__label" for="approve-absence">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="reject-absence" name="approve-absence" value="no" type="radio">
+                      <label class="govuk-label govuk-radios__label" for="reject-absence">
+                        No
+                      </label>
+                    </div>
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="explain-absence-review">
+                        Please provide further information
+                      </label>
+                      <textarea class="govuk-textarea" id="reasons-for-rejection" rows="5" name="reasons-for-rejection"></textarea>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">
+                      Save and continue
+                    </button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

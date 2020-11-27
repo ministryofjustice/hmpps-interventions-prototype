@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage intervention referrals
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+          {{ serviceUser.name }}
+        </h1>
+        {% set currentPage = intervention.name %}
+        {% include "./side-navigation.html" %}
+        {% include "./intervention-sidebar.html" %}
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-tabs" data-module="govuk-tabs">
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#progress">
+                Progress
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#paper-trail">
+                Paper trail
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#statistics">
+                Statistics
+              </a>
+            </li>
+          </ul>
+
+          <div class="govuk-tabs__panel govuk-tabs__panel" id="intervention-progress">
+            <a href="/beta-sprint-1/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#progress" class="govuk-back-link govuk-!-margin-bottom-6">Back to Progress</a>
+            <h2 class="govuk-heading-l">
+              End of service report
+            </h2>
+            <p class="govuk-body">
+              The service provider has created an end of service report for {{ serviceUser.name }}’s {{ intervention.name | lower }} intervention. Please view the following end of service report.
+            </p>
+
+            <h2 class="govuk-heading-m">Outcomes</h2>
+
+            <h2 class="govuk-heading-s">{{ intervention.desiredOutcomes[0].text }} - Achieved</h2>
+            <p class="govuk-body">
+              {{ serviceUser.firstName }}’s council application was successful and he is registered.  At the appropriate time he will bid for property and we will support him to do this.
+            </p>
+
+            <h2 class="govuk-heading-s">{{ intervention.desiredOutcomes[0].text }} - Partially achieved</h2>
+            <p class="govuk-body">
+              {{ serviceUser.firstName }} remains a resident in the specialist hostel, the aim is that he would be able to bid on suitable accommodation over the next three months, if this is not possible we will support {{ serviceUser.firstName }}  with PRS options.
+            </p>
+
+            <h2 class="govuk-heading-m">Summary of all post-session feedback forms</h2>
+            <p class="govuk-body">
+              {{ serviceUser.firstName }} has completed all sessions. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus tellus vel erat consequat, ut sodales ligula dictum. Aliquam erat volutpat. Ut blandit convallis fringilla. Nullam convallis mauris at tristique laoreet.
+            </p>
+
+            <h2 class="govuk-heading-m">Service user's feedback on the intervention</h2>
+            <p class="govuk-body">
+              {{ serviceUser.name }} said lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus tellus vel erat consequat, ut sodales ligula dictum. Aliquam erat volutpat. Ut blandit convallis fringilla. Nullam convallis mauris at tristique laoreet.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    {% endblock %}

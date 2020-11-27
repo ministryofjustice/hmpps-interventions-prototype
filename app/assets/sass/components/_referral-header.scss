@@ -29,7 +29,7 @@
   }
 
   .govuk-width-container {
-    @include govuk-width-container(1100px);
+    @include govuk-width-container(1220px);
     display: flex;
     flex-wrap: nowrap;
   }
@@ -78,6 +78,6 @@
   }
 
   .govuk-width-container {
-    @include govuk-width-container(1100px);
+    @include govuk-width-container(1220px);
   }
 }

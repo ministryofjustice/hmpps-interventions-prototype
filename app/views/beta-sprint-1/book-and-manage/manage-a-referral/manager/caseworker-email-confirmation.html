@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Intervention assigned</h1>
+      </div>
+      <h2 class="govuk-heading-l">
+        Service user details
+      </h2>
+       <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ serviceUser.name }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Referral number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ referralNumber }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Type of referral
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ intervention.name }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Assigned to
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ intervention.assignedCaseworker }}
+            </dd>
+          </div>
+        </dl>
+      <br>
+      <a class="govuk-link" href="/beta-sprint-1/book-and-manage/manage-a-referral/manager/referrals">Return to referrals dashboard</a>
+    </div>
+    <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar">
+      <h2>Subsection</h2>
+      <p>
+        <a class="govuk-link" href="upload-case-notes">Add case notes</a>
+      </p>
+      <p>
+        <a class="govuk-link" href="communication-archive">View communication history</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}
