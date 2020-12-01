@@ -139,7 +139,157 @@
 
               <h2 class="govuk-heading-m">Intervention sessions</h2>
 
-              {% if intervention.monitor.completed or intervention.monitor.awaitingPostSessionQuestionnaire %}
+              {% if serviceUser.name == 'Natasha Mackey' %}
+              <p class="govuk-body">
+                These show the progress of this intervention.
+              </p>
+
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Session title</th>
+                    <th scope="col" class="govuk-table__header">Date</th>
+                    <th scope="col" class="govuk-table__header">Facilitator</th>
+                    <th scope="col" class="govuk-table__header">Status</th>
+                    <th scope="col" class="govuk-table__header">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 1</td>
+                    <td class="govuk-table__cell">01/11/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="{{intervention.id}}/natasha-mackey-session-1">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 2</td>
+                    <td class="govuk-table__cell">08/11/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 3</td>
+                    <td class="govuk-table__cell">15/11/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag govuk-tag--red">
+                        failed to attend
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="{{intervention.id}}/natasha-mackey-session-3">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 4</td>
+                    <td class="govuk-table__cell">22/11/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 5</td>
+                    <td class="govuk-table__cell">29/11/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 6</td>
+                    <td class="govuk-table__cell">06/12/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 7</td>
+                    <td class="govuk-table__cell">13/12/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 8</td>
+                    <td class="govuk-table__cell">20/12/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 9</td>
+                    <td class="govuk-table__cell">24/12/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 10</td>
+                    <td class="govuk-table__cell">27/11/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              {% elif intervention.monitor.completed or intervention.monitor.awaitingPostSessionQuestionnaire %}
               <p class="govuk-body">
                 These show the progress of this intervention.
               </p>

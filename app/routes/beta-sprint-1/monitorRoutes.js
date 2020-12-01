@@ -244,6 +244,58 @@ router.get(
 );
 
 router.get(
+  "/cases/:referralNumber/interventions/:interventionId/natasha-mackey-session-1",
+  (req, res) => {
+    const referralNumber = req.params.referralNumber;
+    const interventionId = req.params.interventionId;
+
+    const referral = findReferral(
+      req.session.data.betaSprint1.referrals,
+      referralNumber
+    );
+
+    const intervention = referral.interventions.find(
+      (intervention) => interventionId === intervention.id
+    );
+
+    const serviceUser = referral ? referral.serviceUser : {};
+
+    res.render("beta-sprint-1/monitor/cases/natasha-mackey-session-1", {
+      referral: referral,
+      intervention: intervention,
+      serviceUser: serviceUser,
+      currentPage: intervention.name,
+    });
+  }
+);
+
+router.get(
+  "/cases/:referralNumber/interventions/:interventionId/natasha-mackey-session-3",
+  (req, res) => {
+    const referralNumber = req.params.referralNumber;
+    const interventionId = req.params.interventionId;
+
+    const referral = findReferral(
+      req.session.data.betaSprint1.referrals,
+      referralNumber
+    );
+
+    const intervention = referral.interventions.find(
+      (intervention) => interventionId === intervention.id
+    );
+
+    const serviceUser = referral ? referral.serviceUser : {};
+
+    res.render("beta-sprint-1/monitor/cases/natasha-mackey-session-3", {
+      referral: referral,
+      intervention: intervention,
+      serviceUser: serviceUser,
+      currentPage: intervention.name,
+    });
+  }
+);
+
+router.get(
   "/cases/:referralNumber/interventions/:interventionId/sessions/:sessionId/absence-review",
   (req, res) => {
     const referralNumber = req.params.referralNumber;
