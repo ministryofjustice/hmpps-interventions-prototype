@@ -24,6 +24,39 @@
       </div>
 
       <div class="govuk-grid-column-two-thirds">
+
+        {% if serviceUser.name == 'Richard Smith' %}
+        <h2 class="govuk-heading-l">Intervention - 
+          {{ intervention.name | capitalize }}
+        </h2>
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Attendance:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              8 out of 9
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Next session:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              27/11/20
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Actions waiting for you:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              None
+            </dd>
+          </div>
+        </dl>
+        {% endif %}
+
         <div class="govuk-tabs" data-module="govuk-tabs">
           <ul class="govuk-tabs__list">
             <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
@@ -44,9 +77,12 @@
           </ul>
 
           <div class="govuk-tabs__panel govuk-tabs__panel" id="intervention-progress">
+            {% if serviceUser.name != 'Richard Smith' %}
             <h2 class="govuk-heading-l">
               {{ intervention.name | capitalize }}
             </h2>
+            {% endif %}
+
             <p class="govuk-body">
               You can see
               {{ serviceUser.name }}'s
@@ -284,6 +320,153 @@
                     </td>
                     <td class="govuk-table__cell">
                       <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              {% elif serviceUser.name == 'Richard Smith' %}
+              <p class="govuk-body">
+                These show the progress of this intervention.
+              </p>
+
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Session title</th>
+                    <th scope="col" class="govuk-table__header">Date</th>
+                    <th scope="col" class="govuk-table__header">Facilitator</th>
+                    <th scope="col" class="govuk-table__header">Status</th>
+                    <th scope="col" class="govuk-table__header">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 1</td>
+                    <td class="govuk-table__cell">01/11/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 2</td>
+                    <td class="govuk-table__cell">08/11/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 3</td>
+                    <td class="govuk-table__cell">15/11/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 4</td>
+                    <td class="govuk-table__cell">22/11/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 5</td>
+                    <td class="govuk-table__cell">29/11/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 6</td>
+                    <td class="govuk-table__cell">06/12/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 7</td>
+                    <td class="govuk-table__cell">13/12/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 8</td>
+                    <td class="govuk-table__cell">20/12/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 9</td>
+                    <td class="govuk-table__cell">24/12/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        completed
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="#">View</a>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Session 10</td>
+                    <td class="govuk-table__cell">27/11/20</td>
+                    <td class="govuk-table__cell">Liam Johnson</td>
+                    <td class="govuk-table__cell">
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
                     </td>
                   </tr>
                 </tbody>
