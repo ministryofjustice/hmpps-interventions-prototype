@@ -4247,6 +4247,1137 @@ module.exports = {
       },
     ],
   },
+  betaSprint2: {
+    referrals: [
+      {
+        serviceUser: {
+          name: "Alex River",
+          firstName: "Alex",
+          title: "Mr",
+          gender: "Male",
+          email: "alex.river@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Jessica Reel",
+          email: "j.reel@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Accommodation",
+            providerName: "Harmony Living",
+            monitor: {
+              actionPlanSubmitted: false,
+              actionPlanApproved: false,
+              assigned: false,
+              inProgress: false,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "30/10/2020",
+              initialAssessmentCompleted: false,
+              awaitingPostSessionQuestionnaire: false,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Burglary<br>Sub category: Theft act, 1968<br>End of sentence date: 01/04/2021<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text: "Service user makes progress in obtaining accommodation",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user is helped to secure a tenancy in the private rented sector (PRS)",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>Service User has some capacity and means to secure and/or maintain suitable accommodation but requires some support and guidance to do so.",
+            completionDateRequired: "27/12/2020",
+            maximumRARDays: "10",
+            furtherInformationHTML: `Alex requires support to obtain accommodation, he is motivated to get his life back on track, however I am concerned that his current living arrangements and attempt to desist from association with offending peers will be short lived if he does not receive urgent support. In the past Alex has failed to attend appointments with the local council or when he has attended appointments failed to understand what was being shared and has become very frustrated resulted in him being verbally abusive to staff. He will require support to complete forms and to attend appointments.
+            <br><br>
+            He also has appointments with the local drug agency and I am also doing a referral for employment and training support. There is a need to ensure that appointments are co-ordinated.  Alex is in receipt of benefits and reported just spending money on what he needs and needing help with budgeting.  He is able to do his washing and gets food from his aunt whom he gives £25 per fortnight.`,
+          },
+          {
+            id: "1",
+            name: "Social inclusion",
+            providerName: "Harmony Living",
+            assignedCaseworker: "",
+            monitor: {
+              actionPlanSubmitted: false,
+              actionPlanApproved: false,
+              assigned: false,
+              inProgress: false,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "30/10/2020",
+              initialAssessmentCompleted: false,
+              awaitingPostSessionQuestionnaire: false,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Burglary<br>Sub category: Theft act, 1968<br>End of sentence date: 01/04/2021<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 Sessions (pre-release virtual contact)] Service User has a low risk of reoffending. Service User has limited family support.",
+            completionDateRequired: "01/02/2021",
+            maximumRARDays: "10",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+      {
+        serviceUser: {
+          name: "Bob Brown",
+          firstName: "Bob",
+          title: "Mr",
+          gender: "Male",
+          email: "bob.brown@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Jessica Reel",
+          email: "j.reel@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Accommodation",
+            providerName: "Home Trust",
+            assignedCaseworker: "Liam Johnson",
+            monitor: {
+              actionPlanSubmitted: true,
+              actionPlanApproved: false,
+              actionPlanDate: "07/10/2020",
+              dateStarted: "01/10/2020",
+              assigned: true,
+              inProgress: false,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "06/10/2020",
+              initialAssessmentCompleted: true,
+              awaitingPostSessionQuestionnaire: false,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+          {
+            id: "1",
+            name: "Social inclusion",
+            providerName: "Safe Living Ltd.",
+            assignedCaseworker: "Rebecca Green",
+            monitor: {
+              actionPlanSubmitted: true,
+              actionPlanApproved: false,
+              actionPlanDate: "07/10/2020",
+              dateStarted: "05/10/2020",
+              assigned: true,
+              inProgress: false,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "06/10/2020",
+              initialAssessmentCompleted: true,
+              awaitingPostSessionQuestionnaire: false,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 Sessions (pre-release virtual contact)] Service User has a low risk of reoffending. Service User has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+          {
+            id: "3",
+            name: "Independent living",
+            providerName: "Home Trust",
+            assignedCaseworker: "Samantha Jones",
+            monitor: {
+              actionPlanSubmitted: true,
+              actionPlanApproved: false,
+              actionPlanDate: "07/10/2020",
+              dateStarted: "05/10/2020",
+              assigned: true,
+              inProgress: false,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "06/10/2020",
+              initialAssessmentCompleted: true,
+              awaitingPostSessionQuestionnaire: false,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+      {
+        serviceUser: {
+          name: "Emma Thompson",
+          firstName: "Emma",
+          title: "Ms",
+          gender: "Female",
+          email: "emma.thompson@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Josie Bart",
+          email: "j.bart@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Independent living",
+            providerName: "New Beginnings Ltd.",
+            assignedCaseworker: "",
+            monitor: {
+              actionPlanSubmitted: false,
+              actionPlanApproved: false,
+              assigned: false,
+              inProgress: false,
+              initialAssessmentScheduled: false,
+              initialAssessmentDate: "N/A",
+              initialAssessmentCompleted: false,
+              awaitingPostSessionQuestionnaire: false,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+      {
+        serviceUser: {
+          name: "Rosie Palma",
+          firstName: "Rosie",
+          title: "Ms",
+          gender: "Female",
+          email: "rosie.palma@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Claire Phill",
+          email: "c.phill@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Independent living",
+            providerName: "New Beginnings Ltd.",
+            assignedCaseworker: "",
+            monitor: {
+              actionPlanSubmitted: false,
+              actionPlanApproved: false,
+              assigned: false,
+              inProgress: false,
+              initialAssessmentScheduled: false,
+              initialAssessmentDate: "N/A",
+              initialAssessmentCompleted: false,
+              awaitingPostSessionQuestionnaire: false,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+      {
+        serviceUser: {
+          name: "Macy Flem",
+          firstName: "Macy",
+          title: "Ms",
+          gender: "Female",
+          email: "macy.flem@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Claire Phill",
+          email: "c.phill@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Social Inclusion",
+            providerName: "Helping Hands",
+            assignedCaseworker: "Rebecca Green",
+            monitor: {
+              actionPlanSubmitted: true,
+              actionPlanApproved: true,
+              actionPlanDate: "07/10/2020",
+              dateStarted: "05/10/2020",
+              assigned: true,
+              inProgress: true,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "06/10/2020",
+              initialAssessmentCompleted: true,
+              awaitingPostSessionQuestionnaire: false,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+      {
+        serviceUser: {
+          name: "Robert Watkins",
+          firstName: "Robert",
+          title: "Mr",
+          gender: "Male",
+          email: "robert.watkins@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Claire Phill",
+          email: "c.phill@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Accommodation",
+            providerName: "Harmony Living",
+            assignedCaseworker: "Jenny Thompson",
+            monitor: {
+              actionPlanSubmitted: true,
+              actionPlanApproved: true,
+              actionPlanDate: "07/10/2020",
+              dateStarted: "05/10/2020",
+              assigned: true,
+              inProgress: true,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "06/10/2020",
+              initialAssessmentCompleted: true,
+              awaitingPostSessionQuestionnaire: true,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+      {
+        serviceUser: {
+          name: "Mary Moore",
+          firstName: "Mary",
+          title: "Ms",
+          gender: "Female",
+          email: "mary.moore@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Claire Phill",
+          email: "c.phill@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Independent living",
+            providerName: "Ready to Go London",
+            assignedCaseworker: "Samantha Jones",
+            monitor: {
+              actionPlanSubmitted: true,
+              actionPlanApproved: true,
+              actionPlanDate: "07/10/2020",
+              dateStarted: "05/10/2020",
+              assigned: true,
+              inProgress: true,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "06/10/2020",
+              initialAssessmentCompleted: true,
+              awaitingPostSessionQuestionnaire: true,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+      {
+        serviceUser: {
+          name: "Anthony Hughes",
+          firstName: "Anthony",
+          title: "Mr",
+          gender: "Male",
+          email: "anthony.hughes@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Claire Phill",
+          email: "c.phill@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Social Inclusion",
+            providerName: "Better Ltd.",
+            assignedCaseworker: "Rebecca Green",
+            monitor: {
+              actionPlanSubmitted: true,
+              actionPlanApproved: true,
+              actionPlanDate: "07/10/2020",
+              dateStarted: "05/10/2020",
+              assigned: true,
+              inProgress: true,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "06/10/2020",
+              initialAssessmentCompleted: true,
+              awaitingPostSessionQuestionnaire: true,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+      {
+        serviceUser: {
+          name: "Fernando Willis",
+          firstName: "Fernando",
+          title: "Mr",
+          gender: "Male",
+          email: "fernando.willis@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Claire Phill",
+          email: "c.phill@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Accommodation",
+            providerName: "Live Well",
+            assignedCaseworker: "Jenny Thompson",
+            monitor: {
+              actionPlanSubmitted: true,
+              actionPlanApproved: true,
+              actionPlanDate: "07/10/2020",
+              dateStarted: "05/10/2020",
+              assigned: true,
+              inProgress: true,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "06/10/2020",
+              initialAssessmentCompleted: true,
+              awaitingPostSessionQuestionnaire: false,
+              completed: true,
+              endOfServiceReportSubmitted: true,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+      {
+        serviceUser: {
+          name: "Marion Clemmons",
+          firstName: "Marion",
+          title: "Ms",
+          gender: "Female",
+          email: "marion.clemmons@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Claire Phill",
+          email: "c.phill@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Independent living",
+            providerName: "New Beginnings Ltd.",
+            assignedCaseworker: "Samantha Jones",
+            monitor: {
+              actionPlanSubmitted: true,
+              actionPlanApproved: true,
+              actionPlanDate: "07/10/2020",
+              dateStarted: "05/10/2020",
+              assigned: true,
+              inProgress: true,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "06/10/2020",
+              initialAssessmentCompleted: true,
+              awaitingPostSessionQuestionnaire: false,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+      {
+        serviceUser: {
+          name: "Ross Gutierrez",
+          firstName: "Ross",
+          title: "Mr",
+          gender: "Male",
+          email: "ross.g@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Claire Phill",
+          email: "c.phill@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Social Inclusion",
+            providerName: "Live Well",
+            assignedCaseworker: "Rebecca Green",
+            monitor: {
+              actionPlanSubmitted: true,
+              actionPlanApproved: true,
+              actionPlanDate: "07/10/2020",
+              dateStarted: "05/10/2020",
+              assigned: true,
+              inProgress: true,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "06/10/2020",
+              initialAssessmentCompleted: true,
+              awaitingPostSessionQuestionnaire: false,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+      {
+        serviceUser: {
+          name: "Louis Wing",
+          firstName: "Louis",
+          title: "Mr",
+          gender: "Male",
+          email: "l.wing@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Claire Phill",
+          email: "c.phill@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Accommodation",
+            providerName: "Harmony Living",
+            assignedCaseworker: "Jenny Thompson",
+            monitor: {
+              actionPlanSubmitted: true,
+              actionPlanApproved: true,
+              actionPlanDate: "07/10/2020",
+              dateStarted: "05/10/2020",
+              assigned: true,
+              inProgress: true,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "06/10/2020",
+              initialAssessmentCompleted: true,
+              awaitingPostSessionQuestionnaire: false,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+      {
+        serviceUser: {
+          name: "Richard Smith",
+          firstName: "Richard",
+          title: "Mr",
+          gender: "Male",
+          email: "rich@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Claire Phill",
+          email: "c.phill@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Independent living",
+            providerName: "Better Ltd.",
+            assignedCaseworker: "Samantha Jones",
+            monitor: {
+              actionPlanSubmitted: true,
+              actionPlanApproved: true,
+              actionPlanDate: "07/10/2020",
+              dateStarted: "05/10/2020",
+              assigned: true,
+              inProgress: true,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "06/10/2020",
+              initialAssessmentCompleted: true,
+              awaitingPostSessionQuestionnaire: false,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+      {
+        serviceUser: {
+          name: "Alma Pearson",
+          firstName: "Alma",
+          title: "Ms",
+          gender: "Female",
+          email: "alma.pearson@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Claire Phill",
+          email: "c.phill@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Social Inclusion",
+            providerName: "Live Well",
+            assignedCaseworker: "Rebecca Green",
+            monitor: {
+              actionPlanSubmitted: true,
+              actionPlanApproved: true,
+              actionPlanDate: "07/10/2020",
+              dateStarted: "05/10/2020",
+              assigned: true,
+              inProgress: true,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "06/10/2020",
+              initialAssessmentCompleted: true,
+              awaitingPostSessionQuestionnaire: false,
+              completed: false,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+      {
+        serviceUser: {
+          name: "Natasha Mackey",
+          firstName: "Natasha",
+          title: "Ms",
+          gender: "Female",
+          email: "natasha@gmail.com",
+        },
+        probationPractitioner: {
+          name: "Claire Phill",
+          email: "c.phill@justice.gov.uk",
+        },
+        interventions: [
+          {
+            id: "0",
+            name: "Independent living",
+            providerName: "Better Ltd.",
+            assignedCaseworker: "Samantha Jones",
+            monitor: {
+              actionPlanSubmitted: true,
+              actionPlanApproved: true,
+              actionPlanDate: "07/10/2020",
+              dateStarted: "05/10/2020",
+              assigned: true,
+              inProgress: true,
+              initialAssessmentScheduled: true,
+              initialAssessmentDate: "06/10/2020",
+              initialAssessmentCompleted: true,
+              awaitingPostSessionQuestionnaire: true,
+              completed: true,
+              endOfServiceReportSubmitted: false,
+            },
+            actionPlanSubmitted: false,
+            actionPlanApproved: false,
+            assigned: false,
+            sessions: [],
+            relevantSentenceHTML:
+              "Misuse of Drugs Act 1971 s.4(3)<br>Sub category: Misuse of Drugs Act 1971, s.5(3)<br>Date: 01/01/2020<br>Order: Suspended sentence",
+            desiredOutcomes: [
+              {
+                text:
+                  "Service user develops resilience and perseverance to cope with challenges and barriers on return to the community.",
+                activities: [],
+              },
+              {
+                text:
+                  "Service user secures early post-release engagement with community based services.",
+                activities: [],
+              },
+            ],
+            requiredComplexityHTML:
+              "Low complexity<br>[up to 4 sessions (pre-release virtual contact)] Service user has a low risk of reoffending. Service user has limited family support.",
+            completionDateRequired: moment().add("2", "months").toDate(),
+            maximumRARDays: "22",
+            furtherInformationHTML: "N/A",
+          },
+        ],
+      },
+    ].map(createReferralWithoutInterventions),
+    caseworkers: [
+      {
+        name: "Liam Johnson",
+        firstName: "Liam",
+      },
+      {
+        name: "Rebecca Green",
+        firstName: "Rebecca",
+      },
+      {
+        name: "Jenny Thompson",
+        firstName: "Jenny",
+      },
+      {
+        name: "Kelly Clarkson",
+        firstName: "Kelly",
+      },
+      {
+        name: "Samantha Jones",
+        firstName: "Samantha",
+      },
+    ],
+    notifications: [
+      {
+        date: "09/11/20",
+        time: "12:43",
+        type: "Service user absent from Session 2",
+        serviceUser: "Macy Flem",
+        priority: true,
+        action: "review",
+        unread: true,
+        href: "cases/NR0005/interventions/0/sessions/0/absence-review",
+      },
+      {
+        date: "09/11/20",
+        time: "12:43",
+        type: "Approve service user action plan",
+        serviceUser: "Alex River",
+        priority: true,
+        action: "review",
+        unread: true,
+        href: "cases/NR0001/interventions/0/action-plan",
+      },
+      {
+        date: "08/11/20",
+        time: "10:12",
+        type: "Attended Session 2",
+        serviceUser: "Bob Brown",
+        priority: false,
+        action: "view",
+        unread: false,
+        href: "#",
+      },
+      {
+        date: "08/11/20",
+        time: "09:51",
+        type: "Safeguarding issues identified",
+        serviceUser: "Alex River",
+        priority: true,
+        action: "view",
+        unread: false,
+        href: "#",
+      },
+      {
+        date: "08/11/20",
+        time: "09:42",
+        type: "Initial assessment completed",
+        serviceUser: "Mary Moore",
+        priority: false,
+        action: "view",
+        unread: false,
+        href: "#",
+      },
+      {
+        date: "08/11/20",
+        time: "11:02",
+        type: "Safeguarding issues identified",
+        serviceUser: "Robert Watkins",
+        priority: true,
+        action: "view",
+        unread: false,
+        href: "#",
+      },
+      {
+        date: "07/11/20",
+        time: "16:10",
+        type: "Did not attend initial assessment",
+        serviceUser: "Macy Flem",
+        priority: true,
+        action: "view",
+        unread: false,
+        href: "#",
+      },
+      {
+        date: "07/11/20",
+        time: "15:23",
+        type: "Approve end of service report",
+        serviceUser: "Robert Watkins",
+        priority: true,
+        action: "review",
+        href: "#",
+      },
+      {
+        date: "07/11/20",
+        time: "11:35",
+        type: "Initial assessment completed",
+        serviceUser: "Richard Smith",
+        priority: false,
+        action: "view",
+        unread: false,
+        href: "#",
+      },
+    ],
+    findAnIntervention: [
+      {
+        title: "Accommodation",
+        description: "Accommodation description",
+        id: "0",
+        selected: false,
+        provider: "Harmony Living",
+      },
+      {
+        title: "Social inclusion",
+        description: "Social inclusion description",
+        id: "1",
+        selected: false,
+        provider: "Harmony Living",
+      },
+      {
+        title: "Employment",
+        description: "Employment description",
+        id: "2",
+        selected: false,
+        provider: "Harmony Living",
+      },
+    ],
+  },
 };
 
 function createReferral(params, index) {

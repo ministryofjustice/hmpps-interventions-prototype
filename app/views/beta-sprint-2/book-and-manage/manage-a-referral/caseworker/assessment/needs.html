@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Session {{sessionIndex + 1}}: post-session feedback
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Session {{sessionIndex + 1}}: post-session feedback</h1>
+
+      <form method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">Are {{ referral.serviceUser.firstName }}’s basic needs being met?</h2>
+            </legend>
+
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="needs-being-met-no" name="needs-being-met" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="needs-being-met-no">No</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="needs-being-met-yes" name="needs-being-met" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="needs-being-met-yes">Yes</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="needs-comment">
+            Add additional information about {{ referral.serviceUser.firstName }}’s basic needs.
+          </label>
+
+          <textarea class="govuk-textarea" id="needs-comment" name="needs-comment"></textarea>
+        </div>
+
+        <input type="submit" class="govuk-button" data-module="govuk-button" value="Continue">
+      </form>
+    </div>
+  </div>
+{% endblock %}

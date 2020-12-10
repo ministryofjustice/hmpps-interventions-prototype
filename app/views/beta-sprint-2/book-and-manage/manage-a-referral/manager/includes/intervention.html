@@ -1,0 +1,54 @@
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Sentence information
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ intervention.relevantSentenceHTML | safe }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Desired outcomes
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <ul class="govuk-list">
+        {% for desiredOutcome in intervention.desiredOutcomes %}
+          <li>{{ desiredOutcome.text }}</li>
+        {% endfor %}
+      </ul>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Complexity level
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ intervention.requiredComplexityHTML | safe }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Date to be completed by
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ intervention.completionDateRequired }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Maximum number of RAR days
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ intervention.maximumRARDays }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+      Further information for the provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ intervention.furtherInformationHTML | safe }}
+    </dd>
+  </div>
+</dl>

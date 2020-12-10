@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage intervention referrals
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+          {{ serviceUser.name }}
+        </h1>
+        {% set currentPage = intervention.name %}
+        {% include "./side-navigation.html" %}
+        {% include "./intervention-sidebar.html" %}
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-tabs" data-module="govuk-tabs">
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="/beta-sprint-2/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#progress">
+                Progress
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="/beta-sprint-2/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#paper-trail">
+                Paper trail
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="/beta-sprint-2/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#statistics">
+                Statistics
+              </a>
+            </li>
+          </ul>
+
+          <div class="govuk-tabs__panel govuk-tabs__panel" id="intervention-progress">
+            <a href="/beta-sprint-2/monitor/cases/{{referral.reference}}/interventions/{{intervention.id}}#progress" class="govuk-back-link govuk-!-margin-bottom-6">Back to Progress</a>
+            <h2 class="govuk-heading-l">
+              Session 1 feedback
+            </h2>
+            <p class="govuk-body">
+              You can see service provider’s feedback on Natasha Mackey's performance in session 1 on this page.
+            </p>
+
+            <h3 class="govuk-heading-m">Did Natasha attend session 1?</h3>
+            <p class="govuk-body">
+              Yes, on time.
+            </p>
+
+            <h3 class="govuk-heading-m">Were any safeguarding issues identified?</h3>
+            <p class="govuk-body">
+              Yes.
+            </p>
+            <p class="govuk-body">
+              She looks nervous all the time.
+            </p>
+
+            <h3 class="govuk-heading-m">Are Natasha’s basic needs being met?</h3>
+            <p class="govuk-body">
+              Yes.
+            </p>
+
+            <h3 class="govuk-heading-m">Have you learned about any changes to Natasha’s life circumstances, such as change of address?</h3>
+            <p class="govuk-body">
+              Yes.
+            </p>
+            <p class="govuk-body">
+              She has changed her address.
+            </p>
+
+            <h3 class="govuk-heading-m">Did Natasha meet any of their outcomes?</h3>
+            <p class="govuk-body">
+              Yes.
+            </p>
+            <p class="govuk-body">
+              Service user makes progress in obtaining accommodation
+            </p>
+
+            <h3 class="govuk-heading-m">What was Natasha’s engagement like in this session?</h3>
+            <p class="govuk-body">
+              Neutral.
+            </p>
+
+            <h3 class="govuk-heading-m">What was Natasha’s understanding like in this session?</h3>
+            <p class="govuk-body">
+              Poor
+            </p>
+            <p class="govuk-body">
+              She doesn’t look interested in the topic at all.
+            </p>
+            
+            <h3 class="govuk-heading-m">What was Natasha’s presentation like in this session?</h3>
+            <p class="govuk-body">
+              Neutral.
+            </p>
+
+            <h3 class="govuk-heading-m">Additional information about Natasha</h3>
+            <p class="govuk-body">
+              She looks tired all the time.
+            </p>
+
+            <h3 class="govuk-heading-m">Who delivered this session?</h3>
+            <p class="govuk-body">
+              Liam Johnson
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    {% endblock %}

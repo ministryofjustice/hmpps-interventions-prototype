@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  End of service report
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript: window.history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Did you let the probation practitioner know that you are about to terminate the service?
+              </h1>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contacted-probation-practitioner-yes" name="contacted-probation-practitioner" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="contacted-probation-practitioner-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contacted-probation-practitioner-no" name="contacted-probation-practitioner" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="contacted-probation-practitioner-no">
+                  No, I need to contact them
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+        <input type="submit" class="govuk-button" data-module="govuk-button" value="Continue">
+      </form>
+    </div>
+
+    <div class="govuk-grid-column-one-third govuk-panel govuk-panel--sidebar">
+      <h2>Subsection</h2>
+      <p>
+      <a class="govuk-link" href="/beta-sprint-2/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/send-email">Send email to probation practitioner</a>
+      </p>
+      <p>
+      <a class="govuk-link" href="/beta-sprint-2/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/upload-case-notes">Add case notes</a>
+      </p>
+      <p>
+      <a class="govuk-link" href="/beta-sprint-2/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/communication-archive">View communication history</a>
+      </p>
+    </div>
+
+  </div>
+{% endblock %}
