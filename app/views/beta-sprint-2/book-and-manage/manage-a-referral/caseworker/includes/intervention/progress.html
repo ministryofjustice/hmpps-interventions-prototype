@@ -1,0 +1,47 @@
+<table class="govuk-table govuk-!-margin-bottom-5">
+  <thead class="govuk-table__header" class="govuk-table__head">
+    <tr class="govuk-table-row">
+      <th class="govuk-table__header" scope="col">Session title</th>
+      <th class="govuk-table__header" scope="col">Date</th>
+      <th class="govuk-table__header" scope="col">Time</th>
+      <th class="govuk-table__header" scope="col">Status</th>
+      <th class="govuk-table__header" scope="col">Attendance</th>
+      <th class="govuk-table__header" scope="col">Action</th>
+    </tr>
+  </thead>
+
+  {% for session in intervention.sessions %}
+    <tr class="govuk-table-row">
+      <td class="govuk-table__cell">{{ session.title }}</td>
+      <td class="govuk-table__cell">{{ moment(session.date).format("D/M/YYYY") }}</td>
+      <td class="govuk-table__cell">{{ session.startTime }} to {{ session.endTime }}</td>
+      <td class="govuk-table__cell ">
+        {% if session.status != "not started" %}
+          <strong class="{{ cssClassForSessionStatus(session.status) }}">{{ session.status }}</strong>
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell ">
+        {% if session.assessment != null %}
+          {% if session.assessment.attended == "no" %}
+            {% if session.absenceJudgement == "acceptable" %}
+              No, but acceptable
+            {% elif session.absenceJudgement == "unacceptable" %}
+              No, and unacceptable
+            {% else %}
+              No, awaiting judgement
+            {% endif %}
+          {% else %}
+            Yes
+          {% endif %}
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell">
+        {% if session.status === "awaiting feedback" %}
+          <a class="govuk-link" href="/beta-sprint-2/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/sessions/{{loop.index0}}/assessment">Give feedback</a>
+        {% else %}
+          <a class="govuk-link" href="#">View</a>
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+</table>

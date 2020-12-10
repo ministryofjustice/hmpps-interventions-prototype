@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  End of service report
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% include "../includes/referral-header.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">End of service report</h1>
+
+      <h2 class="govuk-heading-l">Personal details</h2>
+
+      <dl class="govuk-summary-list">
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Other names</dt>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.otherNames }}</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Address</dt>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.addressHTML | safe }}
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Nationality</dt>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.nationality }}</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Ethnic group</dt>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.ethnicGroup }}</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Preferred language</dt>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.preferredLanguage }}</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Sex</dt>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.sexuality }}</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Religion or belief</dt>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.religionOrBelief }}</dd>
+	</div>
+
+	<div class="govuk-summary-list__row">
+	  <dt class="govuk-summary-list__key">Disabilities</dt>
+          <dd class="govuk-summary-list__value">{{ referral.serviceUser.disabilities }}</dd>
+	</div>
+      </dl>
+
+      <form method="post" action="/beta-sprint-2/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{interventionIndex}}/end-of-service-report">
+
+        {% if isTermination %}
+          <h2 class="govuk-heading-l">
+            Reason for termination
+          </h2>
+
+          <p class="govuk-body">{{ endOfServiceReport["termination-short-reason"] }}</p>
+          <p class="govuk-body">{{ endOfServiceReport["termination-reason"] }}</p>
+        {% endif %}
+
+        {% for desiredOutcome in intervention.desiredOutcomes %}
+          {% set name = "desired-outcome-" + loop.index0 %}
+          {% set detailsName = "desired-outcome-" + loop.index0 + "-details" %}
+
+          <h2 class="govuk-heading-l">Outcome {{ loop.index }} – {{ endOfServiceReport[name] | capitalize | replace("-", " ") }}</h2>
+          <p class="govuk-body">{{ endOfServiceReport[detailsName] }}</p>
+        {% endfor %}
+
+        <h2 class="govuk-heading-l">Summary of all post-session feedback forms here…</h2>
+        <p class="govuk-body">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+        </p>
+
+        <h2 class="govuk-heading-l">Service user’s feedback on the intervention</h2>
+        <p class="govuk-body">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+        </p>
+
+        {# Relay all of the POST data #}
+        {% for name, value in endOfServiceReport %}
+          <input type="hidden" name="{{name}}" value="{{value}}">
+        {% endfor %}
+
+        <input type="submit" class="govuk-button" data-module="govuk-button" value="Submit the report">
+      </form>
+    </div>
+  </div>
+{% endblock %}
