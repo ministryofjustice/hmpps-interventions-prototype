@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  MoJ Interventions - make referrals
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "make-a-referral" %}
+  {% include "../../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript: window.history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <form action="desired-outcomes" method="post" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-6">
+                Select the relevant sentence for the accommodation service referral
+              </h1>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="burglary" name="accommodation-sentence" type="radio" value="Burglary" {{ checked("accommodation-sentence", "Burglary") }}>
+                <label class="govuk-label govuk-radios__label" for="burglary">
+                  Burglary<br>Sub category: Theft act, 1968<br>End of sentence date: 01/04/2021<br>Order: Suspended sentence
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="armed-robbery" name="accommodation-sentence" type="radio" value="Armed robbery" {{ checked("accommodation-sentence", "Armed robbery") }}>
+                <label class="govuk-label govuk-radios__label" for="armed-robbery">
+                  Armed robbery<br>Sub category: Serious crime act, 1969<br>End of sentence date: 01/05/2025<br>Order: Suspended sentence
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        <button class="govuk-button govuk-!-margin-top-7" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

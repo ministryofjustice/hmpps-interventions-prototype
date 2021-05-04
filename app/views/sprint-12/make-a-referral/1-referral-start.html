@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  MoJ Interventions - make referrals
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "make-a-referral" %}
+  {% include "../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Make a referral
+      </h1>
+
+      <p class="govuk-body-m">You can make a new referral here:</p>
+
+      <a href="2-service-user-id" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
+        Start
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+      <div>
+        <h2 class="govuk-heading-m">
+          Draft referrals
+        </h2>
+        <p>You do not have any draft referrals at the moment.</p>
+      </div>
+    </div>
+  {% endblock %}
