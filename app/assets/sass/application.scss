@@ -167,3 +167,13 @@ $govuk-assets-path: '/govuk/assets/';
   // Line up the tag with the accordion’s plus/minus button
   align-items: center;
 }
+
+// Robs additions
+
+.moj-label-strong {
+  font-weight: 600 !important;
+}
+.moj-confirm-box {
+  padding: 30px 15px;
+  background-color: #f3f2f1;
+}

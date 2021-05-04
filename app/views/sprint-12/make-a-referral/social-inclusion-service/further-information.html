@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Further social inclusion information
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "make-a-referral" %}
+  {% include "../../../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript: window.history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="../referral-task-list" method="post" class="form">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group govuk-!-margin-bottom-9">
+           <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="previous-offences">
+                Do you have any further information for the social inclusion service provider? (optional)
+              </label>
+            </h1>
+            <div id="more-detail-hint" class="govuk-hint">
+              For example, relevant previous offences, previously completed programmes or further reasons for this referral
+            </div>
+            <textarea class="govuk-textarea" id="more-detail" name="social-inclusion-further-information" rows="5" aria-describedby="social-inclusion-further-information">{{ data["social-inclusion-further-information"] }}</textarea>
+          </div>
+        </fieldset>
+        <input type="hidden" name="social-inclusion-more-information-completed" value="yes">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
