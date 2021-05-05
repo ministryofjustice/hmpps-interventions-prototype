@@ -31,7 +31,38 @@
           <strong class="govuk-tag govuk-tag--red">
               High
           </strong>
-          <a href="#">Edit risk</a>
+           <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Change risk score
+              </span>
+            </summary>
+            {{ govukRadios({
+              idPrefix: "where-do-you-live",
+              name: "where-do-you-live",
+              fieldset: {
+                legend: {
+                  text: "Risk scores",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s margin-top-15"
+                }
+              },
+              items: [
+                {
+                  value: "high",
+                  text: "High"
+                },
+                {
+                  value: "medium",
+                  text: "Medium"
+                },
+                {
+                  value: "low",
+                  text: "Low"
+                }
+              ]
+            }) }}
+          </details>
           <div class="govuk-form-group">
           <label class="govuk-label" for="more-detail">
             Additional information for the provider about Alex’s risks 
@@ -44,7 +75,38 @@
           <strong class="govuk-tag govuk-tag--green">
               Low
           </strong>
-          <a href="#">Edit risk</a>
+           <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Change risk score
+              </span>
+            </summary>
+            {{ govukRadios({
+              idPrefix: "where-do-you-live",
+              name: "where-do-you-live",
+              fieldset: {
+                legend: {
+                  text: "Risk scores",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s margin-top-15"
+                }
+              },
+              items: [
+                {
+                  value: "high",
+                  text: "High"
+                },
+                {
+                  value: "medium",
+                  text: "Medium"
+                },
+                {
+                  value: "low",
+                  text: "Low"
+                }
+              ]
+            }) }}
+          </details>
          <div class="govuk-form-group">
           <label class="govuk-label" for="more-detail">
             Additional information for the provider about Alex’s risks <strong>(optional)</strong>
@@ -57,7 +119,38 @@
           <strong class="govuk-tag govuk-tag--orange">
               Medium
           </strong>
-          <a href="#">Edit risk</a>
+           <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Change risk score
+              </span>
+            </summary>
+            {{ govukRadios({
+              idPrefix: "where-do-you-live",
+              name: "where-do-you-live",
+              fieldset: {
+                legend: {
+                  text: "Risk scores",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s margin-top-15"
+                }
+              },
+              items: [
+                {
+                  value: "high",
+                  text: "High"
+                },
+                {
+                  value: "medium",
+                  text: "Medium"
+                },
+                {
+                  value: "low",
+                  text: "Low"
+                }
+              ]
+            }) }}
+          </details>
         <div class="govuk-form-group">
           <label class="govuk-label" for="more-detail">
             Additional information for the provider about Alex’s risks 
@@ -70,7 +163,38 @@
           <strong class="govuk-tag govuk-tag--orange">
               Medium
           </strong>
-          <a href="#">Edit risk</a>
+           <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Change risk score
+              </span>
+            </summary>
+            {{ govukRadios({
+              idPrefix: "where-do-you-live",
+              name: "where-do-you-live",
+              fieldset: {
+                legend: {
+                  text: "Risk scores",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s margin-top-15"
+                }
+              },
+              items: [
+                {
+                  value: "high",
+                  text: "High"
+                },
+                {
+                  value: "medium",
+                  text: "Medium"
+                },
+                {
+                  value: "low",
+                  text: "Low"
+                }
+              ]
+            }) }}
+          </details>
         <div class="govuk-form-group">
           <label class="govuk-label" for="more-detail">
             Additional information for the provider about Alex’s risks 
