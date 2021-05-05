@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Risk information
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "make-a-referral" %}
+  {% include "../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript: window.history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Alex's risk information
+      </h1>
+      <p class="gov-uk-body">Here are Alex’s risks as captured in OASys. This is what the service provider will see. In case you consider any of them to be out of date, please select a score that better represents the current level of risk.</p>
+      <p class="gov-uk-body">Note: Any updates to risk information will not be captured in OASys and an assessment will need to be completed.</p>
+      
+      <h2 class="govuk-heading-m">Risk to adult</h2> 
+        <p>  
+          <strong class="govuk-tag govuk-tag--red">
+              High
+          </strong>
+          <a href="#">Edit risk</a>
+          <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Additional information for the provider about Alex’s risks 
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+        </div>
+        </p>
+        <h2 class="govuk-heading-m">Risk to public</h2> 
+        <p>  
+          <strong class="govuk-tag govuk-tag--green">
+              Low
+          </strong>
+          <a href="#">Edit risk</a>
+         <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Additional information for the provider about Alex’s risks 
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+        </div>
+        </p>
+        <h2 class="govuk-heading-m">Risk to children</h2> 
+        <p>  
+          <strong class="govuk-tag govuk-tag--orange">
+              Medium
+          </strong>
+          <a href="#">Edit risk</a>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Additional information for the provider about Alex’s risks 
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+        </div>
+        </p>
+        <h2 class="govuk-heading-m">Risk of self harm</h2> 
+        <p>  
+          <strong class="govuk-tag govuk-tag--orange">
+              Medium
+          </strong>
+          <a href="#">Edit risk</a>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Additional information for the provider about Alex’s risks 
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+        </div>
+        </p>
+        <h2 class="govuk-heading-m">Risk to staff</h2> 
+        <p>  
+          <strong class="govuk-tag govuk-tag--green">
+              Low
+          </strong>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Change risk score
+              </span>
+            </summary>
+            {{ govukRadios({
+              idPrefix: "where-do-you-live",
+              name: "where-do-you-live",
+              fieldset: {
+                legend: {
+                  text: "Where do you live?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "high",
+                  text: "High"
+                },
+                {
+                  value: "medium",
+                  text: "medium"
+                },
+                {
+                  value: "low",
+                  text: "low"
+                }
+              ]
+            }) }}
+          </details>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Additional information for the provider about Alex’s risks 
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+        </div>
+        </p>
+    </div> 
+    <div class="govuk-grid-column-one-third">
+        <p class="govuk-body"><a href="5-risk-information" title="Version 2 of risk design">Version 1</a></p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="6-needs-and-requirements" method="post" class="form">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group govuk-!-margin-bottom-9 moj-confirm-box">
+            {{ govukCheckboxes({
+              idPrefix: "confirm-risk",
+              name: "confirm-risk",
+              fieldset: {
+                legend: {
+                  text: "Please confirm that Alex's risk information is up to date",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "confirm-risk",
+                  text: "I confirm that this is the most up to date risk information"
+                }
+              ]
+            }) }}
+          </div>
+        </fieldset>
+
+        <input type="hidden" name="risk-information-completed" value="yes"/>
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
