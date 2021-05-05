@@ -21,20 +21,10 @@
 
       <ol class="moj-task-list">
         <li>
-          {% if data["service-user-details-checked"] %}
+          
             <strong class="govuk-tag govuk-tag app-task-list__tag">
               in progress
             </strong>
-          {% elseif data["service-user-id"] %}
-            <strong class="govuk-tag govuk-tag app-task-list__tag">
-              completed
-            </strong>
-          {% else %}
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
-              not started
-            </strong>
-          {% endif %}
-
           <h2 class="moj-task-list__section">
             <span class="moj-task-list__section-number">1.
             </span>
@@ -58,6 +48,7 @@
             </li>
           </li>
         </ul>
+        
 
         <li>
           {% if data["found-interventions"] %}
@@ -103,7 +94,7 @@
             </strong>
           {% else %}
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
-              not started
+              cannot start yet
             </strong>
           {% endif %}
 
@@ -115,7 +106,7 @@
           <ul class="moj-task-list__items">
             <li class="moj-task-list__item">
               {% if data["found-interventions"] %}
-                <a class="moj-task-list__task-name" href="risk-information">Details of this part will depend on the services you choose</a >
+                <a class="moj-task-list__task-name" href="risk-information">Details of this part will depend on the services you choose</a>
               {% else %}
                 <span class="app-task-list__task-name">
                   Details of this part will depend on the services you choose
@@ -124,8 +115,11 @@
             </li>
           </ul>
         </li>
+        <li>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
+              Cannot start yet
+            </strong>
 
-      
           <h2 class="moj-task-list__section">
             <span class="moj-task-list__section-number">4.
             </span>
@@ -147,7 +141,7 @@
           <li>
           {% if data["social-inclusion-more-information-completed"] and data["accommodation-more-info-completed"] and data["responsible-officer-information-completed"] %}
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
-              not started
+              cannot start yet
             </strong>
           {% else %}
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
