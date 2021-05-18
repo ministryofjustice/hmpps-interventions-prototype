@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  MoJ Interventions - make referrals
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "make-a-referral" %}
+  {% include "../../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript: window.history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/index" method="post" class="form">
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--xl" for="service-user-id">
+              How many enforceable days will you use for this service?
+            </label>
+          </h1>
+          <div id="service-user-id-hint" class="govuk-hint">
+            Note: You are setting the maximum number of enforceable days (including RAR days). Any unused days will be given back.
+          </div>
+          <input class="govuk-input" id="service-user-id" name="service-user-id" type="text" spellcheck="false" aria-describedby="account-number-hint">
+        </div>
+        <button class="govuk-button">
+          Save & Continue
+        </button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
