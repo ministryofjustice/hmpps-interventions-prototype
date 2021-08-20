@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  MoJ Interventions - make referrals
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+     tag: {
+      text: "prototype"
+     },
+     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Accessibility statement
+      </h1>
+
+      <p>
+      This part contains prototypes created for the Interventions alpha in HMPPS.
+      </p>
+      <h2 class="govuk-heading-l">
+        Accessibility statement
+      </h2>
+      <p>View the <a href="" title="accessibility statement">accessibility statement</a> for Refer and monitor an intervention.</p>
+     <h2 class="govuk-heading-l">
+        Sprint 12
+      </h2>
+      <p class="gov-uk-body">In this sprint we are looking at the following designs.</p>
+       <a href="sprint-12/make-a-referral" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
+          Refer a service user to a cohort intervention
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+          </svg>
+        </a>
+        <h3 class="govuk-heading-m">Designs addressing sprint 12 specific tickets</h3>
+        <ul class="govuk-list">
+          <li><a href="sprint-12/make-a-referral/womens-services/enforceable-days" title="Enforceable Days design">IC-1574 Enforceable Days to Use Design</li>
+        </ul>
+        <hr class="margin-bottom-8" />
+      <h2 class="govuk-heading-l margin-top-3">
+        Sprint 2
+      </h2>
+    </div>
+  </div>
+
+{% endblock %}
