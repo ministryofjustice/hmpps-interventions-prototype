@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{# {% block pageTitle %}
+  MoJ Interventions - make referrals
+{% endblock %} #}
+
+{% block beforeContent %}
+
+  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+     tag: {
+      text: "prototype"
+     },
+     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+       Refer and monitor an intervention - prototypes
+      </h1>
+
+      <p>
+      This site contains the prototypes for the Refer and monitor an interventions service. 
+      </p>
+      <h2 class="govuk-heading-m">Find an intervention</h2>
+      <p>'Find an intervention' is a capability where the Probation Practitioner can view a list of available services/interventions, including filtering the list to their own specific requirements in terms of the person on probation</p>
+      <h2 class="govuk-heading-m">Refer and monitor</h2>
+      <p>'Refer and monitor an intervention' is the part of our service where delivery of a referral is managed and monitored. </p>
+      <a href="refer-and-monitor/index" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
+          View prototype
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+          </svg>
+      </a>
+      <h2 class="govuk-heading-m">Related links</h2>
+      
+    </div>
+  </div>
+
+{% endblock %}

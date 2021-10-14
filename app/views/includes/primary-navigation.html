@@ -1,0 +1,34 @@
+<div class="moj-primary-navigation">
+  <div class="moj-primary-navigation__container {{containerClasses}}">
+    <div class="moj-primary-navigation__nav">
+      <nav class="moj-primary-navigation" aria-label="Primary navigation">
+        <ul class="moj-primary-navigation__list">
+          <li class="moj-primary-navigation__item">
+            {% if currentPage == 'cases' %}
+            <a class="moj-primary-navigation__link" aria-current="cases" href="/sprint-7/monitor/cases">My cases</a>
+            {% else %}
+              <a class="moj-primary-navigation__link" href="/sprint-7/monitor/cases">My cases</a>
+            {% endif %}
+          </li>
+          {# <li class="moj-primary-navigation__item">
+            {% if currentPage == 'notifications' %}
+              <a class="moj-primary-navigation__link" aria-current="notifications" href="/sprint-7/monitor/notifications">My notifications
+            {% else %}
+              <a class="moj-primary-navigation__link" href="/sprint-7/monitor/notifications">My notifications
+            {% endif %}
+              <span id="notifications" class="moj-notification-badge">2</span>
+            </a>
+          </li> #}
+          <li class="moj-primary-navigation__item">
+            {% if currentPage == 'make-a-referral' %}
+              <a class="moj-primary-navigation__link" aria-current="make-a-referral" href="/sprint-7/book-and-manage/make-a-referral/referral-task-list">Find interventions
+            {% else %}
+              <a class="moj-primary-navigation__link" href="/sprint-7/book-and-manage/make-a-referral/referral-start">Find interventions
+            {% endif %}
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
