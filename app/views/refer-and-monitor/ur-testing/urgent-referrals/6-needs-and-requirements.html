@@ -1,0 +1,204 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Needs and requirements
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "make-a-referral" %}
+  {% include "../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript: window.history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Alex's needs and requirements
+      </h1>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Needs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Accommodation<br>Social inclusion
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Gender
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Female
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Ethnicity
+          </dt>
+          <dd class="govuk-summary-list__value">
+            White British
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Preferred language
+          </dt>
+          <dd class="govuk-summary-list__value">
+            English
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Religion or belief
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Sexual orientation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Heterosexual
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Disabilities
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Autism spectrum condition
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="3-referral-task-list" method="post" class="form">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group govuk-!-margin-bottom-9">
+            <label class="govuk-label govuk-label--s" for="service-user-more-needs">
+              Additional information about Alex's needs (optional)
+              <span class="govuk-visually-hidden">Additional information about Alex's needs (optional)</span>
+            </label>
+            <textarea class="govuk-textarea" id="service-user-more-needs" name="service-user-more-needs" rows="5" aria-describedby="service-user-more-needs">{{ data["service-user-more-needs"] }}</textarea>
+          </div>
+        </fieldset>
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group govuk-!-margin-bottom-9">
+            <label class="govuk-fieldset__legend--s" for="service-user-disability-needs">
+              Does Alex have any other mobility, disability or accessibility needs? (optional)
+              <span class="govuk-visually-hidden">Does Alex have any other mobility, disability or accessibility needs? (optional)</span>
+              <div id="changed-name-hint" class="govuk-hint govuk-!-margin-top-2">
+              For example, if they use a wheelchair, use a hearing aid or have a learning difficulty
+            </div>
+            </label>
+            <textarea class="govuk-textarea" id="sevice-user-disability-needs" name="service-user-disability-needs" rows="5" aria-describedby="service-user-disability-needs">{{ data["service-user-disability-needs"] }}</textarea>
+          </div>
+        </fieldset>
+
+        {% set interpreterHTML %}
+        {{ govukInput({
+          id: "interpreter-language",
+          name: "interpreter-language",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          value: data["interpreter-language"],
+          label: {
+            text: "What language?"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "needs-interpreter-conditional",
+          name: "needs-interpreter",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l",
+          fieldset: {
+            legend: {
+              text: "Does Alex need an interpreter?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: interpreterHTML
+              },
+              checked: data["needs-interpreter"] == "yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: data["needs-interpreter"] == "no"
+            }
+          ]
+        }) }}
+
+        {% set responsibilitiesHTML %}
+        {{ govukInput({
+          id: "when-unavailable",
+          name: "when-unavailable",
+          value: data["when-unavailable"],
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Provide details of when Alex will not be able to attend sessions"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "has-responsibilities-conditional",
+          name: "has-responsibilities",
+          fieldset: {
+            legend: {
+              text: "Does Alex have caring or employment responsibilities?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, times and dates when they are at work."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: responsibilitiesHTML
+              },
+              checked: data["has-responsibilities"] == "yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: data["has-responsibilities"] == "no"
+            }
+          ]
+        }) }}
+
+        <input type="hidden" name="needs-and-requirements-completed" value="yes"/>
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

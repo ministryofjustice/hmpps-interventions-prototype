@@ -3,21 +3,21 @@
 {% block header %}
   {{ super() }}
   {% set currentPage = "pp-dashboard" %}
-  {% include "./../includes/primary-navigation.html" %}
+  {% include "../includes/primary-navigation.html" %}
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">My cases</h1>
+    <h1 class="govuk-heading-xl">Open cases</h1>
   
     <table class="govuk-table sortable">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="0">Date sent</button></th>
           <th scope="col" class="govuk-table__header" aria-sort="ascending"><button type="button" data-index="1">Referral</button></th>
-          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2">Service User</button></th>
-          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="3">Intervention category</button></th>
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2">Person on probation</button></th>
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="3">Intervention type</button></th>
           <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="4">Provider</button></th>
           <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="5">Caseworker</button></th>
           <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="6">Action</button></th>
@@ -46,7 +46,7 @@
                 Rob King
               </td>
               <td class="govuk-table__cell">
-                <a class="govuk-link" href="">View</a>
+                <a class="govuk-link" href="4-service-user-details">View</a>
               </td>
             </tr>
             <tr class="govuk-table__row">
@@ -466,7 +466,74 @@
      </tr>
       </tbody>
     </table>
+    <table>
   </div>   
 </div>
+  <div class="govuk-tabs" data-module="govuk-tabs">
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#unassigned-referrals">
+              Unassigned referrals
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#assigned-referrals">
+              Assigned referrals
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-tabs__panel" id="unassigned-referrals">
+          <h2 class="govuk-heading-l">Unassigned referrals</h2>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Referral</th>
+                <th scope="col" class="govuk-table__header">Probation practitioner</th>
+                <th scope="col" class="govuk-table__header">Admin action</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              {% for practitioner in probationPractitioners %}
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="referrals/0">
+                      {{ practitioner.referralNumber }}</td>
+                  </a>
+                  <td class="govuk-table__cell">{{ practitioner.name }}</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="assigned-referrals">
+          <h2 class="govuk-heading-l">Assigned referrals</h2>
 
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Referral</th>
+                <th scope="col" class="govuk-table__header">Probation practitioner</th>
+                <th scope="col" class="govuk-table__header">Admin action</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              {% for practitioner in probationPractitioners %}
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="#">
+                      {{ practitioner.referralNumber }}</td>
+                  </a>
+                  <td class="govuk-table__cell">{{ practitioner.name }}</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
 {% endblock %}

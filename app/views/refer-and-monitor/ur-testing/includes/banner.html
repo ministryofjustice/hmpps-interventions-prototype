@@ -1,0 +1,53 @@
+{%- from "moj/components/header/macro.njk" import mojHeader -%}
+
+{% if extraWide %}
+  {% set containerClasses = "govuk-width-container govuk-width-container--app-extra-wide" %}
+{% else %}
+  {% set containerClasses = "govuk-width-container" %}
+{% endif %}
+
+{# Set serviceName & organisation name in config.js. #}
+{% if isLoggedInPage %}
+
+{{ mojHeader({
+  homepageUrl: "/",
+  organisationLabel: {
+    text: organisationName,
+    href: "/"
+  },
+  serviceLabel: {
+    text: serviceName,
+    href: serviceHref | default("/book-and-manage/make-a-referral/referral-start")
+  },
+  serviceUrl: "/",
+  containerClasses: containerClasses,
+  navigation: {
+    label: "Account navigation",
+    items: [{
+      text: loggedInUserName | default("Christine Phillips"),
+      href: "#"
+    },
+    {
+      text: "Sign out",
+      href: "/"
+    }]
+  }
+}) }}
+
+{% else %}
+
+{{ mojHeader({
+  homepageUrl: "/",
+  organisationLabel: {
+    text: organisationName,
+    href: "/"
+  },
+  serviceLabel: {
+    text: serviceName,
+    href: serviceHref | default("/book-and-manage/make-a-referral/referral-start")
+  },
+  serviceUrl: "/",
+  containerClasses: containerClasses
+}) }}
+
+{% endif %}
