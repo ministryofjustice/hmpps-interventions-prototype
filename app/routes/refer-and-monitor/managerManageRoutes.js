@@ -9,9 +9,7 @@ router.use(function (req, res, next) {
 });
 
 router.get("/pp-dashboard", (req, res) => {
-  console.log("================================")
-  console.log(staticData)
-  res.render("/refer-and-monitor/ur-testing/urgent-referrals", {
+  res.render("refer-and-monitor/ur-testing/urgent-referrals/pp-dashboard", {
     probationPractitioners: staticData.probationPractitioners,
   });
 });

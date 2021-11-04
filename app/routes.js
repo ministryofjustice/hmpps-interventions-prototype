@@ -89,6 +89,11 @@ for (sprint of monitorSprints) {
   router.use(`/${sprint}/monitor`, require(`./routes/${sprint}/monitorRoutes`));
 }
 
+router.use(
+  "/refer-and-monitor/ur-testing/urgent-referrals",
+  require(`./routes/refer-and-monitor/managerManageRoutes`)
+);
+
 async function createAuthenticatedApiClient() {
   const client = new HmppsOffenderAssessmentApi.ApiClient();
 
