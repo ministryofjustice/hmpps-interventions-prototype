@@ -1,0 +1,539 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "pp-dashboard" %}
+  {% include "../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Open cases</h1>
+  
+    <table class="govuk-table sortable">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="0">Date sent</button></th>
+          <th scope="col" class="govuk-table__header" aria-sort="ascending"><button type="button" data-index="1">Referral</button></th>
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2">Person on probation</button></th>
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="3">Intervention type</button></th>
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="4">Provider</button></th>
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="5">Caseworker</button></th>
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="6">Action</button></th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                21 Oct 2021
+              </td>
+              <td class="govuk-table__cell">
+                NR0001
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Alex" river="">
+                  Alex River
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Accommodation">
+                  Accommodation
+              </td>
+              <td class="govuk-table__cell">
+                Harmony Living
+              </td>
+              <td class="govuk-table__cell">
+                Rob King
+              </td>
+              <td class="govuk-table__cell">
+                <a class="govuk-link" href="4-service-user-details">View</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                21 Oct 2021
+              </td>
+              <td class="govuk-table__cell">
+                NR0001
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Alex" river="">
+                  Alex River
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Social" inclusion="">
+                  Social inclusion
+              </td>
+              <td class="govuk-table__cell">
+                Harmony Living
+              </td>
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">
+                <a class="govuk-link" href="">View</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                30 May 2020
+              </td>
+              <td class="govuk-table__cell">
+                NR0002
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Bob" brown="">
+                  Bob Brown
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Accommodation">
+                  Accommodation
+              </td>
+              <td class="govuk-table__cell">
+                Home Trust
+              </td>
+              <td class="govuk-table__cell">
+                Liam Johnson
+              </td>
+              <td class="govuk-table__cell">
+                  <a class="govuk-link" href="">View</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                30 May 2020
+              </td>
+              <td class="govuk-table__cell">
+                NR0002
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Bob" brown="">
+                  Bob Brown
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Social" inclusion="">
+                  Social inclusion
+              </td>
+              <td class="govuk-table__cell">
+                Safe Living Ltd.
+              </td>
+              <td class="govuk-table__cell">
+                Rebecca Green
+              </td>
+              <td class="govuk-table__cell">
+                  <a class="govuk-link" href="">View</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                30 May 2020
+              </td>
+              <td class="govuk-table__cell">
+                NR0002
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Bob" brown="">
+                  Bob Brown
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Independent" living="">
+                  Independent Living
+              </td>
+              <td class="govuk-table__cell">
+                Home Trust
+              </td>
+              <td class="govuk-table__cell">
+                Samantha Jones
+              </td>
+              <td class="govuk-table__cell">
+                <a class="govuk-link" href="">View</a>
+              </td>
+          </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+               25 Aug 2020
+              </td>
+              <td class="govuk-table__cell">
+                NR0003
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Emma" thompson="">
+                  Emma Thompson
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Independent" living="">
+                  Independent living
+              </td>
+              <td class="govuk-table__cell">
+                New Beginnings Ltd.
+              </td>
+              <td class="govuk-table__cell">   
+              </td>
+              <td class="govuk-table__cell">
+                <a class="govuk-link" href="">View</a>
+              </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                30 May 2020
+              </td>
+            <td class="govuk-table__cell">
+              NR0004
+            </td>
+            <td class="govuk-table__cell" data-sort-value="Rosie" palma="">
+                Rosie Palma
+            </td>
+            <td class="govuk-table__cell" data-sort-value="Independent" living="">
+                Independent living
+            </td>
+            <td class="govuk-table__cell">
+              New Beginnings Ltd.
+            </td>
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">
+                <a class="govuk-link" href="">View</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                21 Oct 2021
+            </td>
+            <td class="govuk-table__cell">
+              NR0005
+            </td>
+            <td class="govuk-table__cell" data-sort-value="Macy" flem="">
+                Macy Flem
+            </td>
+            <td class="govuk-table__cell" data-sort-value="Social" inclusion="">
+                Social inclusion
+            </td>
+            <td class="govuk-table__cell">
+              Helping Hands
+            </td>
+            <td class="govuk-table__cell">
+              Rebecca Green
+            </td>
+            <td class="govuk-table__cell">
+                <a class="govuk-link" href="">View</a>
+            </td>
+        </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                21 Oct 2021
+              </td>
+              <td class="govuk-table__cell">
+                NR0006
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Robert" watkins="">
+                  Robert Watkins
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Accommodation">
+                  Accommodation
+              </td>
+              <td class="govuk-table__cell">
+                Harmony Living
+              </td>
+              <td class="govuk-table__cell">
+                Jenny Thompson
+              </td>
+              <td class="govuk-table__cell">
+                <a class="govuk-link" href="">View</a>
+              </td>
+          </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                  21 Oct 2021
+                </td>
+              <td class="govuk-table__cell">
+                NR0007
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Mary" moore="">
+                  Mary Moore
+              </td>
+              <td class="govuk-table__cell" data-sort-value="Independent" living="">
+                  Independent living
+              </td>
+              <td class="govuk-table__cell">
+                Ready to Go London
+              </td>
+              <td class="govuk-table__cell">
+                Samantha Jones
+              </td>
+              <td class="govuk-table__cell">
+                <a class="govuk-link" href="">View</a>
+              </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                21 Oct 2021
+              </td>
+            <td class="govuk-table__cell">
+              NR0008
+            </td>
+            <td class="govuk-table__cell" data-sort-value="Anthony" hughes="">
+                Anthony Hughes
+            </td>
+            <td class="govuk-table__cell" data-sort-value="Social" inclusion="">
+                Social inclusion
+            </td>
+            <td class="govuk-table__cell">
+              Better Ltd.
+            </td>
+            <td class="govuk-table__cell">
+              Rebecca Green
+            </td>
+            <td class="govuk-table__cell">
+                <a class="govuk-link" href="">View</a>
+              </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            21 Oct 2021
+          </td>
+          <td class="govuk-table__cell">
+            NR0009
+          </td>
+          <td class="govuk-table__cell" data-sort-value="Fernando" willis="">
+              Fernando Willis
+          </td>
+          <td class="govuk-table__cell" data-sort-value="Accommodation">
+            <a class="govuk-link" href="cases/NR0009/interventions/0">
+              Accommodation
+            </a>
+          </td>
+          <td class="govuk-table__cell">
+            Live Well
+          </td>
+          <td class="govuk-table__cell">
+            Jenny Thompson
+          </td>
+          <td class="govuk-table__cell">
+              <a class="govuk-link" href="">View</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            21 Oct 2021
+          </td>
+          <td class="govuk-table__cell">
+            NR0010
+          </td>
+          <td class="govuk-table__cell" data-sort-value="Marion" clemmons="">
+            <a class="govuk-link" href="cases/NR0010/service-user">
+              Marion Clemmons
+            </a>
+          </td>
+
+          <td class="govuk-table__cell" data-sort-value="Independent" living="">
+            <a class="govuk-link" href="cases/NR0010/interventions/0">
+              Independent living
+            </a>
+          </td>
+          <td class="govuk-table__cell">
+            New Beginnings Ltd.
+          </td>
+          <td class="govuk-table__cell">
+            Samantha Jones
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="">View</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            21 Oct 2021
+          </td>
+          <td class="govuk-table__cell">
+            NR0011
+          </td>
+          <td class="govuk-table__cell" data-sort-value="Ross" gutierrez="">
+            <a class="govuk-link" href="cases/NR0011/service-user">
+              Ross Gutierrez
+            </a>
+          </td>
+          <td class="govuk-table__cell" data-sort-value="Social" inclusion="">
+            <a class="govuk-link" href="cases/NR0011/interventions/0">
+              Social inclusion
+            </a>
+          </td>
+          <td class="govuk-table__cell">
+            Live Well
+          </td>
+          <td class="govuk-table__cell">
+            Rebecca Green
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="">View</a>
+          </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          01 Sep 2021
+        </td>
+        <td class="govuk-table__cell">
+          NR0012
+        </td>
+        <td class="govuk-table__cell" data-sort-value="Louis" wing="">
+          <a class="govuk-link" href="cases/NR0012/service-user">
+            Louis Wing
+          </a>
+        </td>
+        <td class="govuk-table__cell" data-sort-value="Accommodation">
+          <a class="govuk-link" href="cases/NR0012/interventions/0">
+            Accommodation
+          </a>
+        </td>
+        <td class="govuk-table__cell">
+          Harmony Living
+        </td>
+        <td class="govuk-table__cell">
+          Jenny Thompson
+        </td>
+        <td class="govuk-table__cell">
+          <a class="govuk-link" href="">View</a>
+        </td>
+      </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            01 Sep 2021
+          </td>
+          <td class="govuk-table__cell">
+            NR0013
+          </td>
+          <td class="govuk-table__cell" data-sort-value="Richard" smith="">
+            <a class="govuk-link" href="cases/NR0013/service-user">
+              Richard Smith
+            </a>
+          </td>
+          <td class="govuk-table__cell" data-sort-value="Independent" living="">
+            <a class="govuk-link" href="cases/NR0013/interventions/0">
+              Independent living
+            </a>
+          </td>
+          <td class="govuk-table__cell">
+            Better Ltd.
+          </td>
+          <td class="govuk-table__cell">
+            Samantha Jones
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="">View</a>
+          </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          01 Sep 2021
+        </td>
+        <td class="govuk-table__cell">
+          NR0014
+        </td>
+        <td class="govuk-table__cell" data-sort-value="Alma" pearson="">
+          <a class="govuk-link" href="cases/NR0014/service-user">
+            Alma Pearson
+          </a>
+        </td>
+        <td class="govuk-table__cell" data-sort-value="Social" inclusion="">
+          <a class="govuk-link" href="cases/NR0014/interventions/0">
+            Social inclusion
+          </a>
+        </td>
+        <td class="govuk-table__cell">
+          Live Well
+        </td>
+        <td class="govuk-table__cell">
+          Rebecca Green
+        </td>
+        <td class="govuk-table__cell">
+          <a class="govuk-link" href="">View</a>
+        </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        01 Sep 2021
+      </td>
+      <td class="govuk-table__cell">
+        NR0015
+      </td>
+      <td class="govuk-table__cell" data-sort-value="Natasha" mackey="">
+        <a class="govuk-link" href="cases/NR0015/service-user">
+          Natasha Mackey
+        </a>
+      </td>
+      <td class="govuk-table__cell" data-sort-value="Independent" living="">
+        <a class="govuk-link" href="cases/NR0015/interventions/0">
+          Independent living
+        </a>
+      </td>
+      <td class="govuk-table__cell">
+        Better Ltd.
+      </td>
+      <td class="govuk-table__cell">
+        Samantha Jones
+      </td>
+      <td class="govuk-table__cell">
+        <a class="govuk-link" href="">View</a>
+      </td>
+     </tr>
+      </tbody>
+    </table>
+    <table>
+  </div>   
+</div>
+  <div class="govuk-tabs" data-module="govuk-tabs">
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#unassigned-referrals">
+              Unassigned referrals
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#assigned-referrals">
+              Assigned referrals
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-tabs__panel" id="unassigned-referrals">
+          <h2 class="govuk-heading-l">Unassigned referrals</h2>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Referral</th>
+                <th scope="col" class="govuk-table__header">Probation practitioner</th>
+                <th scope="col" class="govuk-table__header">Admin action</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              {% for practitioner in probationPractitioners %}
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="referrals/0">
+                      {{ practitioner.referralNumber }}</td>
+                  </a>
+                  <td class="govuk-table__cell">{{ practitioner.name }}</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="assigned-referrals">
+          <h2 class="govuk-heading-l">Assigned referrals</h2>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Referral</th>
+                <th scope="col" class="govuk-table__header">Probation practitioner</th>
+                <th scope="col" class="govuk-table__header">Admin action</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              {% for practitioner in probationPractitioners %}
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="#">
+                      {{ practitioner.referralNumber }}</td>
+                  </a>
+                  <td class="govuk-table__cell">{{ practitioner.name }}</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+{% endblock %}

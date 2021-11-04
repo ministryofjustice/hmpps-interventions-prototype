@@ -1,0 +1,241 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Risk information
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "make-a-referral" %}
+  {% include "../includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript: window.history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Alex's risk information
+      </h1>
+      <p class="gov-uk-body">Here are Alex’s risks as captured in OASys. This is what the service provider will see. In case you consider any of them to be out of date, please select a score that better represents the current level of risk.</p>
+      <p class="gov-uk-body">Note: Any updates to risk information will not be captured in OASys and an assessment will need to be completed.</p>
+      {# {% from "govuk/components/select/macro.njk" import govukSelect %} #}
+
+        {{ govukSelect({
+          id: "risk-to-adult",
+          name: "risk-to-adult",
+          label: {
+            text: "Risk to known adult",
+            classes: 'moj-label-strong'
+
+          },
+          items: [
+            {
+              value: "high",
+              text: "High"
+            },
+            {
+              value: "medium",
+              text: "Medium"
+            },
+            {
+              value: "low",
+              text: "Low"
+            },
+            {
+              value: "please-select",
+              text: "Please select",
+              selected: true
+            }
+          ]
+        }) }}
+        {{ govukSelect({
+          id: "risk-to-public",
+          name: "risk-to-public",
+          label: {
+            text: "Risk to public",
+            classes: 'moj-label-strong'
+
+          },
+          items: [
+            {
+              value: "high",
+              text: "High"
+            },
+            {
+              value: "medium",
+              text: "Medium",
+              selected: true
+            },
+            {
+              value: "low",
+              text: "Low"
+            },
+            {
+              value: "please-select",
+              text: "Please select"
+            }
+          ]
+        }) }}
+          <div class="govuk-radios__conditional" id="conditional-contact">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label" for="more-detail">
+                Additional information for the provider about risk to public
+              </label>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          </div>
+        </div>
+         {{ govukSelect({
+          id: "risk-to-children",
+          name: "risk-to-children",
+          label: {
+            text: "Risk to children",
+            classes: 'moj-label-strong'
+
+          },
+          items: [
+            {
+              value: "high",
+              text: "High"
+            },
+            {
+              value: "medium",
+              text: "Medium"
+            },
+            {
+              value: "low",
+              text: "Low",
+              selected: true
+            },
+            {
+             value: "please-select",
+             text: "Please select"
+            }
+          ]
+        }) }}
+         <div class="govuk-radios__conditional" id="conditional-contact">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label" for="more-detail">
+                Additional information for the provider about risk to staff <strong>(Optional)</strong>
+              </label>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          </div>
+        </div>
+        {{ govukSelect({
+          id: "risk-self-harm",
+          name: "risk-self-harm",
+          label: {
+            text: "Risk of self harm",
+            classes: 'moj-label-strong'
+
+          },
+          items: [
+            {
+              value: "high",
+              text: "High"
+            },
+            {
+              value: "medium",
+              text: "Medium"
+            },
+            {
+              value: "low",
+              text: "Low",
+              selected: true
+            },
+            {
+              value: "please-select",
+              text: "Please select"
+            }
+          ]
+        }) }}
+         <div class="govuk-radios__conditional" id="conditional-contact">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label" for="more-detail">
+                Additional information for the provider about risk to staff <strong>(Optional)</strong>
+              </label>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          </div>
+        </div>
+        {{ govukSelect({
+          id: "risk-to-staff",
+          name: "risk-to-staff",
+          label: {
+            text: "Risk to staff",
+            classes: 'moj-label-strong'
+
+          },
+          items: [
+            {
+              value: "high",
+              text: "High",
+              selected: true
+            },
+            {
+              value: "medium",
+              text: "Medium"
+            },
+            {
+              value: "low",
+              text: "Low"
+            },
+            {
+              value: "please-select",
+              text: "Please select"
+            }
+          ]
+        }) }}
+          <div class="govuk-radios__conditional" id="conditional-contact">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label" for="more-detail">
+                Additional information for the provider about risk to staff
+              </label>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          </div>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <p class="govuk-body"><a href="5a-risk-information" title="Version 2 of risk design">Version 2</a></p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="6-needs-and-requirements" method="post" class="form">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group govuk-!-margin-bottom-9 moj-confirm-box">
+            {{ govukCheckboxes({
+              idPrefix: "confirm-risk",
+              name: "confirm-risk",
+              fieldset: {
+                legend: {
+                  text: "Please confirm that Alex's risk information is up to date",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "confirm-risk",
+                  text: "I confirm that this is the most up to date risk information"
+                }
+              ]
+            }) }}
+          </div>
+        </fieldset>
+
+        <input type="hidden" name="risk-information-completed" value="yes"/>
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
