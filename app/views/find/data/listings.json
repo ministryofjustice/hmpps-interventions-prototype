@@ -1,0 +1,17 @@
+{
+    "listings": [
+        {
+            "title":"Women's Services for London (south",
+            "intro":"Women in Prison only support women living or returning to the following London boroughs: Bromley, Croydon, Lambeth, Lewisham, Merton, Southwark, Sutton, Wandsworth.",
+            "type":"CSR",
+            "region":"London",
+            "location":"London (Metropolitan Police)",
+            "serviceCategories": [
+                "Accommodation","Dependency and recovery (d&r)"
+            ],
+            "provider":"Women in Prison",
+            "ageGroup":"18+",
+            "gender":"Female"
+        }
+    ]
+}

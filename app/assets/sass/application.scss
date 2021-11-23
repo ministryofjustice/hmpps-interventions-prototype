@@ -185,3 +185,11 @@ $govuk-assets-path: '/govuk/assets/';
 .margin-bottom-8 {
   margin-bottom: 30px;
 }
+
+// Filters
+
+.refer-and-monitor__filters .govuk-form-group {
+  margin-bottom: 35px;
+  max-height:450px;
+  overflow-y: scroll;
+}

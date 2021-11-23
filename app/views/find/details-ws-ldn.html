@@ -1,0 +1,280 @@
+{% extends "layout-add-and-find.html" %}
+
+{% block pageTitle %}
+  Find an intervention
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  {% set currentPage = "make-a-referral" %}
+  {% include "./includes/primary-navigation.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript: window.history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% set extraWide = true %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl"> Women's Services for London (south)</h1>
+
+      <p class="govuk-body">Women in Prison only support women living or returning to the following London boroughs: Bromley, Croydon, Lambeth, Lewisham, Merton, Southwark, Sutton, Wandsworth.<br>
+<br>
+A holistic service for women which secure improved outcomes in relation to the following rehabilitative needs:<br>
+• Accommodation<br>
+• ETE<br>
+• Dependency and Recovery<br>
+• Finance, Benefits and Debt<br>
+• Emotional Wellbeing<br>
+• Family and Significant Others<br>
+• Lifestyle and Associates<br>
+• Social Inclusion, including mentoring<br>
+<br>
+The Women's Specific Service is intended to ensure that the Interventions are responsive to the specific needs and characteristics of Women Service Users. The service will be delivered in an environment which is safe and suitable for women and by staff who are trained in trauma-informed and trauma-responsive approaches and also in women-only group(s) and/or with the option for woman member of the Supplier Personnel.<br>
+<br>
+Services are available for female Service Users, irrespective of risk level or complexity level, on a Community/ Suspended Sentence Order with a RAR or on Licence/Post-Sentence Supervision. The Accommodation and Social Inclusion ‘mentoring’ service will also be delivered pre-release for those who will be released under Probation supervision (to be consistent with accommodation one). Appointments which are part of sentence delivery will be enforceable.<br>
+<br>
+A range of approaches will be used including direct delivery of interventions, support and advocacy, and advice and guidance. Interventions need to be tailored to reflect the complexity of an individual woman’s needs and to recognise and respond to barriers (including child-care commitments, social isolation, religion, language and other cultural barriers, sexual orientation, domestic abuse, involvement with the sex industry, childhood sexual &amp; physical abuse, controlling coercive relationships; substance dependency and lack of self-esteem) to achieving personal change.<br>
+<br>
+Activities:<br>
+<br>
+Accommodation:<br>
+One to one; Lambeth, Wandsworth, Croydon, Sutton, Lewisham, Southwark, Bromley, Merton<br>
+• Finding new/suitable accommodation<br>
+• Homelessness prevention and management<br>
+• Housing Benefit Assistance<br>
+• Tailored practical housing support<br>
+• Tenancy Management<br>
+<br>
+ETE:<br>
+One to one; Lambeth, Wandsworth, Croydon, Sutton, Lewisham, Southwark, Bromley, Merton<br>
+• Applying for education/training opportunities<br>
+• Job application guidance<br>
+• Peer mentor supprt applying for education/training opportunities<br>
+• Tailored practical ETE support<br>
+<br>
+Dependency &amp; Recovery:<br>
+One to one; Lambeth, Wandsworth, Croydon, Sutton, Lewisham, Southwark, Bromley, Merton<br>
+• Substance misuse advice and guidance<br>
+• Substance misuse emotional support<br>
+• Substance misuse practical support<br>
+• Substance misuse risk management<br>
+<br>
+Dependency &amp; Recovery:<br>
+Group; Lambeth, Wandsworth, Croydon, Sutton, Lewisham, Southwark, Bromley, Merton<br>
+• Addiction clinic<br>
+• Coffee Morning<br>
+• Mindfulness workshop<br>
+<br>
+Finance Benefits &amp; Debt:<br>
+One to one; Lambeth, Wandsworth, Croydon, Sutton, Lewisham, Southwark, Bromley, Merton<br>
+• Benefit applications and management<br>
+• Debt management<br>
+• Money management<br>
+<br>
+Emotional Wellbeing:<br>
+One to one; Lambeth, Wandsworth, Croydon, Sutton, Lewisham, Southwark, Bromley, Merton<br>
+• Emotional Support<br>
+• Mental health risk management<br>
+• Mental health support<br>
+• Peer mentor emotional support<br>
+<br>
+Emotional Wellbeing:<br>
+Group; Lambeth, Wandsworth, Croydon, Sutton, Lewisham, Southwark, Bromley, Merton<br>
+• Coffee Morning<br>
+• Mindfulness workshop<br>
+<br>
+Family &amp; Significant Others:<br>
+One to one; Lambeth, Wandsworth, Croydon, Sutton, Lewisham, Southwark, Bromley, Merton<br>
+• Childcare proceedings supoprt advice and guidance<br>
+• Domestic abuse advice and guidance, and support.<br>
+• Domestic abuse legal remedies<br>
+• Domestic abuse risk management<br>
+• Emotional support regarding child removal and childcare proceedings<br>
+• Legal support regarding child contact and childcare proceedings<br>
+<br>
+Lifestyle &amp; Associates:<br>
+One to one; Lambeth, Wandsworth, Croydon, Sutton, Lewisham, Southwark, Bromley, Merton<br>
+• Lifestyle support<br>
+• Peer Mentor Lifestyle support<br>
+<br>
+Lifestyle &amp; Associates:<br>
+Group; Lambeth, Wandsworth, Croydon, Sutton, Lewisham, Southwark, Bromley, Merton<br>
+• Art Fridays<br>
+• Coffee Morning<br>
+• Theatre Workshops<br>
+• Weekly Drop In<br>
+<br>
+Social Inclusion:<br>
+One to one; Lambeth, Wandsworth, Croydon, Sutton, Lewisham, Southwark, Bromley, Merton<br>
+• Reducing barriers to social inclusion</p>
+  
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Commissioned Rehabilitative Service</p>
+        </dd>
+        
+      </div>
+    
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Region
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">London</p>
+        </dd>
+        
+      </div>
+    
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Location
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">London (Metropolitan Police)</p>
+        </dd>
+        
+      </div>
+    
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Service categories
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet"><li>Accommodation</li>
+        <li>Dependency and recovery (d&amp;r)</li>
+        <li>Education, training and employment (ete)</li>
+        <li>Emotional wellbeing</li>
+        <li>Family and significant others</li>
+        <li>Finance, benefits and debt (fbd)</li>
+        <li>Lifestyle and associates</li>
+        <li>Social inclusion</li></ul>
+        </dd>
+        
+      </div>
+    
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Provider
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Women in Prison</p>
+        </dd>
+        
+      </div>
+    
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Age group
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">18+</p>
+        </dd>
+        
+      </div>
+    
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Gender
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Female</p>
+        </dd>
+        
+      </div>
+    
+  
+</dl>
+
+
+      <form action="/intervention/3a9f1e51-92d7-4d39-b46c-12925edcdb8a/refer" method="GET">
+        
+
+  
+    
+  
+
+<button class="govuk-button" data-module="govuk-button">
+  Make a referral
+</button>
+
+      </form>
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  
+  <ul class="govuk-tabs__list" role="tablist">
+    
+      
+        
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation">
+          <a class="govuk-tabs__tab" href="#service-provider-tab" id="tab_service-provider-tab" role="tab" aria-controls="service-provider-tab" aria-selected="true" tabindex="0">
+            Service Provider
+          </a>
+        </li>
+      
+    
+  </ul>
+  
+  
+    
+      
+      <div class="govuk-tabs__panel" id="service-provider-tab" role="tabpanel" aria-labelledby="tab_service-provider-tab">
+        
+
+
+  
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Women in Prison</p>
+        </dd>
+        
+      </div>
+    
+  
+</dl>
+
+      </div>
+    
+  
+</div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
