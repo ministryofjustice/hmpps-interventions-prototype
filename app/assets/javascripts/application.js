@@ -111,3 +111,104 @@ validator.addValidator('dob-day', [{
     year: document.getElementById('dob-year')
   }
 }]);
+
+//Filter
+
+function locationFilter() {
+
+  //Create a variable to determine whether listing should be shown or not
+  var showListing;
+
+  //Create an array of checked locations
+  var checkedLocations = $('.region-checkboxes input:checked').map(function(){
+    return $(this).val();
+  }).get();
+
+  //Create an array of checked genders
+  var checkedGenders = $('.gender-checkboxes input:checked').map(function(){
+    return $(this).val();
+  }).get();ç
+
+  //Hide all listings
+  $('.listing').hide();
+
+  //Loop through each element that has the locations-list class
+  $('.listing').each(function(i, obj) {
+
+    var matchesLocationFilter = false;
+    var matchesGenderFilter = false;
+    
+
+    if(checkedLocations.length === 0) {
+      matchesLocationFilter = true;
+    } else {
+
+      //Create a variable from its data-locations attribute. This is a list of locations. Turn that into an array.
+      var locations = $(this).find('.locations-list').attr('data-locations');
+      var locationArray = locations.split(", ");
+
+      //Check if any element in the array matches any element in the checked checkboxes array. If so, hide the closest element with the listing class.
+      if (checkedLocations.some((val) => locationArray.indexOf(val) !== -1)) {
+        matchesLocationFilter = true;
+      };
+    };
+
+    if(checkedGenders.length === 0) {
+      matchesGenderFilter = true;
+    } else {
+
+      var genders = $(this).find('.genders').attr('data-genders');
+      var genderArray = genders.split(", ");
+
+      if (checkedGenders.sort().join(',') === genderArray.sort().join(',')) {
+        matchesGenderFilter = true;
+      };
+    };
+
+    if(matchesLocationFilter == true && matchesGenderFilter == true) {
+      $(this).show();
+    } else {
+      $(this).hide();
+    };
+    
+  });
+
+  //Update the number of results
+  var numResults = $('.listing:visible').length;
+  $('#results-number').html(numResults);
+
+  //Scroll to top
+  window.scrollTo(0, 0);
+
+
+};
+
+
+
+// function locationFilter() {
+
+//   //Create an array of the values of checked checkboxes
+//   var checkedLocations = $('.region-checkboxes input:checked').map(function(){
+//     return $(this).val();
+//   }).get();
+
+//   if(checkedLocations.length === 0) {
+//     $('.listing').show();
+//   } else {
+
+//   //Hide all listings
+//   $('.listing').hide();
+
+//   //Loop through each element that has the locations-list class
+//   $('.locations-list').each(function(i, obj) {
+
+//     //Create a variable from its data-locations attribute. This is a list of locations. Turn that into an array.
+//     var locations = $(this).attr('data-locations');
+//     var locationArray = locations.split(", ");
+    
+//     //Check if any element in the array matches any element in the checked checkboxes array. If so, hide the closest element with the listing class.
+//     if (checkedLocations.some((val) => locationArray.indexOf(val) !== -1)) {
+//       $(this).closest('.listing').show();
+//     };
+//   });
+// }
