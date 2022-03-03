@@ -11,6 +11,8 @@ router.use(function (req, res, next) {
 router.get("/pp-dashboard", (req, res) => {
   res.render("refer-and-monitor/ur-testing/urgent-referrals/pp-dashboard", {
     probationPractitioners: staticData.probationPractitioners,
+    serviceUser: staticData.serviceUser,
+    serviceUser1: staticData.serviceUser1,
   });
 });
 

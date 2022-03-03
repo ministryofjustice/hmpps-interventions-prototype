@@ -501,7 +501,7 @@
                   </a>
                   <td class="govuk-table__cell">{{ practitioner.name }}</td>
                   <td class="govuk-table__cell">
-                    <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                    <strong class="govuk-tag govuk-tag--grey">Status</strong>
                   </td>
                 </tr>
               {% endfor %}
@@ -528,7 +528,7 @@
                   </a>
                   <td class="govuk-table__cell">{{ practitioner.name }}</td>
                   <td class="govuk-table__cell">
-                    <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                    <strong class="govuk-tag govuk-tag--grey">Completed</strong>
                   </td>
                 </tr>
               {% endfor %}
@@ -536,4 +536,37 @@
           </table>
         </div>
       </div>
+
+    
+   {% for serviceUser in serviceUser %}
+   
+      <p class="govuk-body"><strong>{{ serviceUser.crn.crnID }}</strong></p>
+      <ul class="govuk-list">
+        <li>
+           {{ serviceUser.personalDetails.address.line1 }}
+        </li>
+        <li>
+         {{ serviceUser.personalDetails.address.type }}
+        </li>
+        <li>
+          {{ serviceUser.personalDetails.address.postcode }}
+        </li>
+      </ul>
+    {% endfor %}
+    {% for serviceUser1 in serviceUser1 %}
+   
+      <p class="govuk-body"><strong>{{ serviceUser1.crn.crnID }}</strong></p>
+       <p class="govuk-body"><strong>{{ serviceUser1.crn.prisonerID }}</strong></p>
+      <ul class="govuk-list">
+        <li>
+           {{ serviceUser1.personalDetails.address.line1 }}
+        </li>
+        <li>
+         {{ serviceUser1.personalDetails.address.type }}
+        </li>
+        <li>
+          {{ serviceUser1.personalDetails.address.postcode }}
+        </li>
+      </ul>
+    {% endfor %}
 {% endblock %}
