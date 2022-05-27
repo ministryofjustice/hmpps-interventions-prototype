@@ -1,23 +1,134 @@
-{% extends "layout.html" %}
-
-{% block header %}
-  {{ super() }}
-  {% set currentPage = "pp-dashboard" %}
-  {% include "../includes/primary-navigation.html" %}
-{% endblock %}
-
+{% extends "layout-pp.html" %}
+{%- from "moj/components/search/macro.njk" import mojSearch -%}
+{%- from "moj/components/pagination/macro.njk" import mojPagination -%}
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
 {% block content %}
 <div class="govuk-grid-row">
+<h1 class="govuk-heading-xl">{{ pages[pageName].title }}</h1>
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="#1">My cases</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="#2">All open cases</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="#3">Unassigned cases (20)</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="#3">Completed cases</a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <form class="horizontal-form" data-test="homepage-search-form">
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="keywords">Name or prison number</label> <input class="govuk-input" data-test="homepage-search-keywords" id="keywords" name="keywords" type="text">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="location">Residential location</label> <select class="govuk-select" data-test="homepage-search-location" id="location" name="location">
+                    <option value="WRI">
+                        Ranby (HMP)
+                    </option>
+                    <option value="WRI-A">
+                        A
+                    </option>
+                    <option value="WRI-B">
+                        B
+                    </option>
+                    <option value="WRI-C">
+                        C
+                    </option>
+                    <option value="WRI-D">
+                        D
+                    </option>
+                    <option value="WRI-E">
+                        E
+                    </option>
+                    <option value="WRI-F">
+                        F
+                    </option>
+                    <option value="WRI-H">
+                        H
+                    </option>
+                    <option value="WRI-S">
+                        S
+                    </option>
+                </select>
+                </div><button class="govuk-button" data-module="govuk-button" type="submit" onclick="showAlert()">Search</button>
+            </form>
+ <div class="case-search"> 
+   <div class="moj-search">
+      <form class="horizontal-form" action="#" method="post">
+        <div class="govuk-form-group">
+          <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+            Find a person
+          </label>
+
+          <div id="search-hint" class="govuk-hint moj-search__hint ">
+            You can search by name, date of birth or national insurance number
+          </div>
+          <input class="govuk-input govuk-!-width-one-third moj-search__input" id="two-thirds" name="two-thirds" type="text" id="search" name="search" type="search" aria-describedby="search-hint">
+         <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Sort by
+          </label>
+            <select class="govuk-select" id="sort" name="sort">
+              <option value="published">Search by</option>
+              <option value="person" selected>Person on probation</option>
+              <option value="email">Caseworker email</option>
+            </select> 
+          </div>
+          <button class="govuk-button moj-search__button " data-module="govuk-button">
+          Search
+        </button>
+        </div>
+      </form>
+    </div>
+  </div>
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">Open cases</h1>
-  
+    {{ mojPagination({
+      items: [{
+        text: '1',
+        href: '/page=1',
+        selected: true
+      }, {
+        text: '2',
+        href: '/page=2'
+      }, {
+        text: '3',
+        href: '/page=3'
+      }, {
+        type: 'dots'
+      }, {
+        text: '5',
+        href: '/page=5'
+      }],
+      results: {
+        count: 30,
+        from: 10,
+        to: 20,
+        text: 'pages'
+      },
+      previous: {
+        text: 'Previous',
+        href: ''
+      },
+      next: {
+        text: 'Next',
+        href: ''
+      }
+    }) }}
     <table class="govuk-table sortable">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="0">Date sent</button></th>
           <th scope="col" class="govuk-table__header" aria-sort="ascending"><button type="button" data-index="1">Referral</button></th>
           <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2">Person on probation</button></th>
-          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="3">Intervention type</button></th>
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="3">Intervention category</button></th>
           <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="4">Provider</button></th>
           <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="5">Caseworker</button></th>
           <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="6">Action</button></th>
@@ -46,7 +157,7 @@
                 Rob King
               </td>
               <td class="govuk-table__cell">
-                <a class="govuk-link" href="4-service-user-details">View</a>
+                <a class="govuk-link" href="">View</a>
               </td>
             </tr>
             <tr class="govuk-table__row">
@@ -466,107 +577,7 @@
      </tr>
       </tbody>
     </table>
-    <table>
   </div>   
 </div>
-  <div class="govuk-tabs" data-module="govuk-tabs">
-        <ul class="govuk-tabs__list">
-          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-            <a class="govuk-tabs__tab" href="#unassigned-referrals">
-              Unassigned referrals
-            </a>
-          </li>
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#assigned-referrals">
-              Assigned referrals
-            </a>
-          </li>
-        </ul>
-        <div class="govuk-tabs__panel" id="unassigned-referrals">
-          <h2 class="govuk-heading-l">Unassigned referrals</h2>
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Referral</th>
-                <th scope="col" class="govuk-table__header">Probation practitioner</th>
-                <th scope="col" class="govuk-table__header">Admin action</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              {% for practitioner in probationPractitioners %}
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <a class="govuk-link" href="referrals/0">
-                      {{ practitioner.referralNumber }}</td>
-                  </a>
-                  <td class="govuk-table__cell">{{ practitioner.name }}</td>
-                  <td class="govuk-table__cell">
-                    <strong class="govuk-tag govuk-tag--grey">Status</strong>
-                  </td>
-                </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="assigned-referrals">
-          <h2 class="govuk-heading-l">Assigned referrals</h2>
 
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Referral</th>
-                <th scope="col" class="govuk-table__header">Probation practitioner</th>
-                <th scope="col" class="govuk-table__header">Admin action</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              {% for practitioner in probationPractitioners %}
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <a class="govuk-link" href="#">
-                      {{ practitioner.referralNumber }}</td>
-                  </a>
-                  <td class="govuk-table__cell">{{ practitioner.name }}</td>
-                  <td class="govuk-table__cell">
-                    <strong class="govuk-tag govuk-tag--grey">Completed</strong>
-                  </td>
-                </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-   
-   {% for serviceUser in serviceUser %}
-   
-      <p class="govuk-body"><strong>{{ serviceUser.crn.crnID }}</strong></p>
-      <ul class="govuk-list">
-        <li>
-           {{ serviceUser.personalDetails.address.line1 }}
-        </li>
-        <li>
-         {{ serviceUser.personalDetails.address.type }}
-        </li>
-        <li>
-          {{ serviceUser.personalDetails.address.postcode }}
-        </li>
-      </ul>
-    {% endfor %}
-    {% for serviceUser1 in serviceUser1 %}
-   
-      <p class="govuk-body"><strong>{{ serviceUser1.crn.crnID }}</strong></p>
-       <p class="govuk-body"><strong>{{ serviceUser1.crn.prisonerID }}</strong></p>
-      <ul class="govuk-list">
-        <li>
-           {{ serviceUser1.personalDetails.address.line1 }}
-        </li>
-        <li>
-         {{ serviceUser1.personalDetails.address.type }}
-        </li>
-        <li>
-          {{ serviceUser1.personalDetails.address.postcode }}
-        </li>
-      </ul>
-    {% endfor %}
 {% endblock %}

@@ -197,3 +197,20 @@ $govuk-assets-path: '/govuk/assets/';
 .test {
   color:#f3f2f1;
 }
+
+// New 'Search' area
+
+.case-search {
+    background: govuk-colour("light-grey");
+    padding: 30px 40px;
+    margin: 20px 0px;
+  
+  .horizontal-form {
+      display: flex;
+      flex-flow: row wrap;
+  }
+  .moj-search__button {
+    margin-left: 5px;
+    margin-top: 2px;
+  }
+}
