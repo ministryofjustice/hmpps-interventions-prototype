@@ -1,275 +1,66 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
-{# {% block pageTitle %}
-  MoJ Interventions - make referrals
-{% endblock %} #}
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
 
 {% block beforeContent %}
-
-  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
   {{ govukPhaseBanner({
-     tag: {
+    tag: {
       text: "prototype"
-     },
-     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    },
+    html: 'This is not a live service.'
   }) }}
-
-{% endblock %}
+  {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-       Refer and monitor an intervention - prototypes
-      </h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <p>
-      This part contains prototypes created for the Interventions alpha in HMPPS.
-      </p>
-      <h2 class="govuk-heading-l">
-        Accessibility statements
-      </h2>
-      <p>View the <a href="static-site-pages/accessibility-statement" title="accessibility statement">accessibility statement</a> for Refer and monitor an intervention.</p>
-     <h2 class="govuk-heading-l">
-        Sprint 12
-      </h2>
-      <p class="gov-uk-body">In this sprint we are looking at the following designs.</p>
-       <a href="sprint-12/make-a-referral" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Refer a service user to a cohort intervention
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-        <h3 class="govuk-heading-m">Designs addressing sprint 12 specific tickets</h3>
-        <ul class="govuk-list">
-          <li><a href="sprint-12/make-a-referral/womens-services/enforceable-days" title="Enforceable Days design">IC-1574 Enforceable Days to Use Design</li>
-        </ul>
-        <hr class="margin-bottom-8" />
-      <h2 class="govuk-heading-l margin-top-3">
-        Sprint 2
-      </h2>
-      <ul class="govuk-list">
-        <a href="sprint-2/book-and-manage/make-a-referral" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Refer a service user to an intervention
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-        <a href="sprint-2/find-an-intervention/find-multi-select" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Find an intervention
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-        <a href="sprint-2/find-an-intervention/find-free-text" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Find an intervention (free-text risks and needs)
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-        <a href="sprint-2/find-an-intervention/results" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Search results
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-        <a href="sprint-2/find-an-intervention/details-crc" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Intervention details example — CRC Accredited Programme
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-        <a href="sprint-2/find-an-intervention/details-dynamic-framework" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Intervention details example — Dynamic Framework
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-      </ul>
+    <form method="post">
 
-      <h2 class="govuk-heading-l">
-        Sprint 3
-      </h2>
-      <ul class="govuk-list">
-        <a href="sprint-3/book-and-manage/manage-a-referral/caseworker/referrals" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
-          Case worker: manage intervention referrals
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-        <a href="sprint-3/book-and-manage/manage-a-referral/manager/referrals" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Manager: manage intervention referrals
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-      </ul>
+    <p>This prototype is a way of exploring ideas for the Refer and monitor an intervention service.</p>
 
-      <h2 class="govuk-heading-l">
-        Sprint 4
-      </h2>
-      <ul class="govuk-list">
-        <a href="sprint-4/book-and-manage/manage-a-referral/caseworker/email-notification" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
-          Case worker: manage intervention referrals
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-        <a href="sprint-4/book-and-manage/manage-a-referral/manager/email-notification" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Manager: manage intervention referrals
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-      </ul>
+        <p>Contact <a href="mailto:emma.hidalgo-law@digital.justice.gov.uk">Emma Hidalgo-Law</a> (Interaction Designer),
+          <a href="mailto:helen.nickols@digital.justice.gov.uk">Helen Nickols</a> (Content Designer) or
+          <a href="mailto:marianne.canty@digital.justice.gov.uk">Marianne Canty</a> (Content Designer) if you have any questions.</p>
+        <br><br>
 
-      <h2 class="govuk-heading-l">
-        Sprint 5
-      </h2>
-      <ul class="govuk-list">
-        <a href="sprint-5/monitor/cases" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Monitor a service user's progress
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-        <a href="sprint-5/book-and-manage/manage-a-referral/caseworker/email-notification" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
-          Case worker: manage intervention referrals
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-        <a href="sprint-5/book-and-manage/manage-a-referral/manager/email-notification" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Manager: manage intervention referrals
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-      </ul>
+        <h1 class="govuk-heading-l">Current prototype</h1>
 
-      <h2 class="govuk-heading-l">
-        Sprint 6
-      </h2>
-      <h3 class="govuk-heading-m">
-        Probation practitioner
-      </h3>
-      <ul class="govuk-list">
-        <a href="sprint-6/monitor/cases" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Monitor a service user's progress
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-        <a href="sprint-6/book-and-manage/make-a-referral" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Book and manage interventions (full journey)
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-      </ul>
-      <h3 class="govuk-heading-m">
-        Service provider
-      </h3>
-      <ul class="govuk-list">
-        <a href="sprint-6/book-and-manage/manage-a-referral/caseworker/email-notification" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
-          Case worker: manage intervention referrals
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-        <a href="sprint-6/book-and-manage/manage-a-referral/manager/email-notification" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Manager: manage intervention referrals
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-      </ul>
+        <p>Each new prototype is used to test designs. These designs may change before they're developed.</p>
 
-      <h2 class="govuk-heading-l">
-        Sprint 6 - final iterations
-      </h2>
-      <h3 class="govuk-heading-m">
-        Probation practitioner
-      </h3>
-      <ul class="govuk-list">
-        <a href="sprint-7/book-and-manage/make-a-referral" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Book and manage interventions (full journey)
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-      </ul>
-      <h3 class="govuk-heading-m">
-        Service provider
-      </h3>
-      <ul class="govuk-list">
-        <a href="sprint-7/book-and-manage/manage-a-referral/caseworker/email-notification" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
-          Case worker: manage intervention referrals
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-        <a href="sprint-7/book-and-manage/manage-a-referral/manager/email-notification" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Manager: manage intervention referrals
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-      </ul>
 
-      <h2 class="govuk-heading-l">
-        Technical demos
-      </h2>
-      <ul class="govuk-list">
-        <a href="service-user-details/search" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Look up service user from nDelius Community API
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-        <a href="service-user-assessments/search" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Look up service user from Assessments API
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-      </ul>
+        <table class="govuk-table">
 
-      <p>
-      This part contains prototypes created for the Interventions beta in HMPPS.
-      </p>
-      <h2 class="govuk-heading-l">
-        Sprint 1
-      </h2>
-      <h3 class="govuk-heading-m">
-        Probation practitioner
-      </h3>
-      <ul class="govuk-list">
-        <a href="beta-sprint-1/monitor/cases" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Monitor a service user's progress
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-      </ul>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Version</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Sprint</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-half">Comments</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
 
-      <h2 class="govuk-heading-l">
-        Sprint 2
-      </h2>
-      <h3 class="govuk-heading-m">
-        Probation practitioner
-      </h3>
-      <ul class="govuk-list">
-        <a href="beta-sprint-2/monitor/cases" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-          Monitor a service user's progress
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-          </svg>
-        </a>
-      </ul>
-    <a href="/index_new" class="govuk-link">Temp link to new page</a>
-    </div>
-  </div>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="v1/first-page">V1</a>
+              <td class="govuk-table__cell">14</td>
+              <td class="govuk-table__cell">
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>Add what we've done here</li>
+                </ul>
+                </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+
+        <p>You can <a href="https://hmpps-interventions-prototype.apps.live.cloud-platform.service.justice.gov.uk/">
+          view prototypes from the alpha and beta phases</a>
+          <br>Username: refer
+          <br>Password: interventions</p>
 
 {% endblock %}
