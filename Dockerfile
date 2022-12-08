@@ -1,23 +1,17 @@
-FROM node:15.7-alpine
+FROM node:16.14-bullseye-slim
 
 ENV NODE_ENV=production
 
-RUN addgroup -g 1017 -S appgroup \
-  && adduser -u 1017 -S appuser -G appgroup \
-  && apk update \
-  && apk add build-base python
+RUN addgroup --gid 1017 --system appgroup \
+  && adduser --uid 1017 --system appuser --gid 1017
 
 WORKDIR /app
 
-COPY package*.json ./
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y make python3
 
-COPY app/ ./app
-COPY assessments-api-client ./assessments-api-client
-COPY docs/ ./docs
-COPY gulp/ ./gulp
-COPY lib/ ./lib
-COPY *.js ./
-COPY start.sh ./
+COPY . .
 
 RUN npm install
 
