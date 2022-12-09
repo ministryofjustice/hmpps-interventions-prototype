@@ -8,6 +8,9 @@
     "@ministryofjustice/frontend": "^1.6.3",
     "govuk-frontend": "^4.4.0",
     "govuk-prototype-kit": "^13.0.0",
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-nodemon": "^2.5.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0"
   }
 }
