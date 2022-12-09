@@ -16,12 +16,12 @@ https://prototype-kit.service.gov.uk/docs/layouts
   },
   serviceLabel: {
     text: serviceName,
-    href: '#'
+    href: 'open-cases'
   },
   navigation: {
     label: 'Account navigation',
     items: [{
-      text: 'Account name',
+      text: 'Alex River',
       href: '#',
       active: true
     }, {
@@ -30,6 +30,24 @@ https://prototype-kit.service.gov.uk/docs/layouts
     }]
   }
 
+}) }}
+
+
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
+{{ mojPrimaryNavigation({
+  label: 'Primary navigation',
+  items: [
+    {
+      text: 'Referrals',
+      href: '#1',
+      active: true
+    },
+    {
+      text: 'Find interventions',
+      href: '#2'
+    }
+  ]
 }) }}
 
 {% endblock %}
