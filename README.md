@@ -14,9 +14,9 @@ Create a new branch, work on the changes locally, raise a pull request from the 
 
 Once merged, the changes will deploy automatically.
 
-## Updating Protype Kit
+## Updating Prototype Kit
 
-To update protype kit in this repository see the [update guide](https://govuk-prototype-kit.herokuapp.com/docs/updating-the-kit).
+To update prototype kit in this repository see the [update guide](https://govuk-prototype-kit.herokuapp.com/docs/updating-the-kit).
 
 [Gov.UK Prototype Kit]: https://govuk-prototype-kit.herokuapp.com/docs
 [MoJ Cloud Platform]: https://user-guide.cloud-platform.service.justice.gov.uk/documentation/concepts/about-the-cloud-platform.html
