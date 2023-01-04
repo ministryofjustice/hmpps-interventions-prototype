@@ -16,7 +16,7 @@ Once merged, the changes will deploy automatically.
 
 ## Updating Prototype Kit
 
-To update prototype kit in this repository see the [update guide](https://govuk-prototype-kit.herokuapp.com/docs/updating-the-kit).
+To update prototype kit in this repository see the [update guide](https://prototype-kit.service.gov.uk/v12/docs/updating-the-kit).
 
 [Gov.UK Prototype Kit]: https://govuk-prototype-kit.herokuapp.com/docs
 [MoJ Cloud Platform]: https://user-guide.cloud-platform.service.justice.gov.uk/documentation/concepts/about-the-cloud-platform.html
