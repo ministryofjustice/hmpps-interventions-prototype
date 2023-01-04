@@ -1,8 +1,10 @@
-//
-// For guidance on how to add JavaScript see:
-// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-//
+/* global $ */
 
-window.GOVUKPrototypeKit.documentReady(() => {
-window.MOJFrontend.initAll()
+// Warn about using the kit in production
+if (window.console && window.console.info) {
+  window.console.info('GOV.UK Prototype Kit - do not use for production')
+}
+
+$(document).ready(function () {
+  window.GOVUKFrontend.initAll()
 })
