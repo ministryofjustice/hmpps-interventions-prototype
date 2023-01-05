@@ -4,3 +4,50 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block header %}
+
+{%- from "moj/components/header/macro.njk" import mojHeader -%}
+
+{{ mojHeader({
+  organisationLabel: {
+    text: 'HMPPS',
+    href: '#'
+  },
+  serviceLabel: {
+    text: serviceName,
+    href: 'open-cases'
+  },
+  navigation: {
+    label: 'Account navigation',
+    items: [{
+      text: 'Alex River',
+      href: '#',
+      active: true
+    }, {
+      text: 'Sign out',
+      href: '#'
+    }]
+  }
+
+}) }}
+
+
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
+{{ mojPrimaryNavigation({
+  label: 'Primary navigation',
+  items: [
+    {
+      text: 'Referrals',
+      href: '#1',
+      active: true
+    },
+    {
+      text: 'Find interventions',
+      href: '#2'
+    }
+  ]
+}) }}
+
+{% endblock %}
