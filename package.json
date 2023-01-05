@@ -50,7 +50,7 @@
     "nunjucks": "^3.2.3",
     "portscanner": "^2.2.0",
     "require-dir": "^1.2.0",
-    "sass": "^1.52.3",
+    "sass": "^1.57.1",
     "standard": "^17.0.0",
     "start-server-and-test": "^1.14.0",
     "supertest": "^6.2.3",
