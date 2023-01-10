@@ -1,0 +1,176 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Make a referral
+{% endblock %}
+
+{% block beforeContent %}
+{% include "./includes/primary-nav.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+        <h1 class="govuk-heading-l">
+          Make a referral
+        </h1>
+
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Submission incomplete</h2>
+        <p class="govuk-body govuk-!-margin-bottom-7">You have completed {{sectionscompleted}} of 4 sections.</p>
+
+
+        <ol class="app-task-list">
+
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">1. </span> Review Alex River's information
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="waste-codes-and-description" aria-describedby="eligibility-status">
+                    Confirm personal details
+                  </a>
+                </span>
+                {% if data['usual-description-of-the-waste-status'] == null or data['usual-description-of-the-waste-status'] == 'Not started' %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="provide-waste-identification-details-status">Not started</strong>
+                {% elif data['usual-description-of-the-waste-status'] == 'Completed' %}
+                  <strong class="govuk-tag app-task-list__tag" id="provide-waste-identification-details-status">Completed</strong>
+                {% endif %}
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="quantity" aria-describedby="read-declaration-status">
+                    Risk information
+                  </a>
+                </span>
+                {% if data['usual-description-of-the-waste-status'] == null or data['usual-description-of-the-waste-status'] == 'Not started' and
+                data['quantity-status'] == null or data['quantity-status'] == 'Not started' %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-export">Not started</strong>
+                {% elseif data['quantity-status'] == null or data['quantity-status'] == 'Not started' %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="quantity-status">Not started</strong>
+                {% elif data['quantity-status'] == 'Completed' %}
+                  <strong class="govuk-tag app-task-list__tag" id="quantity-status">Completed</strong>
+                {% endif %}
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="date-of-shipment" aria-describedby="read-declaration-status">
+                  Needs and requirements
+                  </a>
+                </span>
+                {% if data['date-of-shipment-status'] == null or data['date-of-shipment-status'] == 'Not started' %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="date-of-shipment-status">Not started</strong>
+                {% elif data['date-of-shipment-status'] == 'Completed' %}
+                  <strong class="govuk-tag app-task-list__tag" id="date-of-shipment-status">Completed</strong>
+                {% endif %}
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="current-location" aria-describedby="read-declaration-status">
+                  Submit Alex's current location
+                  </a>
+                </span>
+                {% if data['date-of-shipment-status'] == null or data['date-of-shipment-status'] == 'Not started' %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="date-of-shipment-status">Not started</strong>
+                {% elif data['date-of-shipment-status'] == 'Completed' %}
+                  <strong class="govuk-tag app-task-list__tag" id="date-of-shipment-status">Completed</strong>
+                {% endif %}
+              </li>
+            </ul>
+          </li>
+
+
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">2. </span> Choose service types
+            </h2>
+
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="exporter-postcode" aria-describedby="eligibility-status">
+                    Select service types for the Women's <br> services referral
+                  </a>
+                </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="person-arranging-the-shipment-status">Cannot start yet</strong>
+              </li>
+            </ul>
+          </li>
+
+
+
+
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">3. </span> Add intervention referrals detail
+            </h2>
+
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="carrier-add-1" aria-describedby="eligibility-status">
+                    Details of this part will depend on the services <br> you choose
+                  </a>
+                </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="carrier-status">Cannot start yet</strong>
+              </li>
+            </ul>
+          </li>
+
+
+
+
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">4. </span> Review probation contact details
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                    <a href="recovery-facility-laboratory" aria-describedby="eligibility-status">
+                    Probation contact details
+                  </a>
+                </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="recovery-facility-or-laboratory-status">Cannot start yet</strong>
+              </li>
+            </ul>
+
+
+
+
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">4. </span> Check your answers
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                      <a href="recovery-facility-laboratory" aria-describedby="eligibility-status">
+                      Check your answers
+                    </a>
+                  </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="recovery-facility-or-laboratory-status">Cannot start yet</strong>
+                </li>
+              </ul>
+            </li>
+
+        </ol>
+
+
+
+
+
+
+      </div>
+    </div>
+
+
+{% endblock %}

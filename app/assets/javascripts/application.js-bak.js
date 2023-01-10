@@ -5,102 +5,12 @@ if (window.console && window.console.info) {
   window.console.info('GOV.UK Prototype Kit - do not use for production')
 }
 
-// Accessible Modal
-$(document).ready(function() {
-  var findModal = function(elem) {
-
-    var tabbable = elem.find('select, input, textarea, button, a').filter(':visible');
-
-    var firstTabbable = tabbable.first();
-    var lastTabbable = tabbable.last();
-    // set focus on first tabbable element
-    // NOTE:  If this doesn't exist, then the user is able to tab through all of the page
-    //        page elements that sit behind the modal dialog...
-    //        Work around being that the 'Continue' button is on focus, with tabbing
-    //        through not being permissiable
-    firstTabbable.focus();
-
-    // send last tabbable back to first
-    lastTabbable.on('keydown', function (e) {
-       if ((e.which === 9 && !e.shiftKey)) {
-           e.preventDefault();
-           firstTabbable.focus();
-       }
-    });
-
-    // send last shift tabbable back to last
-    firstTabbable.on('keydown', function (e) {
-        if ((e.which === 9 && e.shiftKey)) {
-            e.preventDefault();
-            lastTabbable.focus();
-        }
-    });
-
-    // allow esc to close Modal
-    elem.on('keyup', function(e){
-      if (e.keyCode === 27 ) {
-        elem.hide();
-        $('.govuk-modal-overlay').hide();
-        $('html').removeClass("noscroll");
-      };
-    });
-  };
-
-  // show modal and overlay and lock scroll
-  // $('.show-modal').click(function(e){
-  //   e.preventDefault();
-  //
-  //   $('.govuk-modal').show();
-  //   $('.govuk-modal-overlay').show();
-  //   $('html').addClass("noscroll");
-  //   findModal($('.govuk-modal'));
-  // });
-
-  if(document.querySelector(".govuk-modal")){
-    setTimeout(function(){
-      $('.govuk-modal').show();
-      $('.govuk-modal-overlay').show();
-      $('html').addClass("noscroll");
-      findModal($('.govuk-modal'));
-    }, 15000); // timed delay in nano-seconds (set to 15 seconds)
-  }
-
-  //hide modal and overlay
-  $('.close-modal').click(function(e){
-    e.preventDefault();
-
-    $('.govuk-modal').hide();
-    $('.govuk-modal-overlay').hide();
-    $('html').removeClass("noscroll");
-  });
-
-});
-
-  // MOJ Filter component
-  new MOJFrontend.FilterToggleButton({
-    bigModeMediaQuery: "(min-width: 48.063em)",
-    startHidden: true,
-    toggleButton: {
-      container: $(".moj-action-bar__filter"),
-      showText: "Show filter",
-      hideText: "Hide filter",
-      classes: "govuk-button--secondary",
-    },
-    closeButton: {
-      container: $(".moj-filter__header-action"),
-      text: "Close",
-    },
-    filter: {
-      container: $(".moj-filter"),
-    },
-  });
-
  // Add new element
  $(".add").click(function(){
 
   // Finding total number of elements added
   var total_element = $(".govuk-form-group").length;
-
+ 
   // last <div> with element class id
   var lastid = $(".govuk-form-group:last").attr("id");
   var split_id = lastid.split("_");
@@ -114,18 +24,18 @@ $(document).ready(function() {
 
    // Adding label to <div>
    $("#div_" + nextindex).append("<label class='govuk-label govuk-!-font-weight-bold' for='transit-country_"+ nextindex +"'>Transit country "+ nextindex +" (optional)</label>");
-
+ 
    // Adding element to <div>
    $("#div_" + nextindex).append("<input class='govuk-input' autocomplete='off' maxlength='9' type='text' name='transit-country_"+ nextindex +"'> <span style='float:right' id='remove_" + nextindex + "' class='govuk-button govuk-button--warning govuk-!-margin-top-2 govuk-!-margin-bottom-4 remove' >Remove country " + nextindex +"</span>");
    //Trying to make it a link: $("#div_" + nextindex).append("<input class='govuk-input' autocomplete='off' maxlength='9' type='text' name='transit-country_"+ nextindex +"'> <a href='#' class='govuk-link' id='remove_" + nextindex + "'>Remove country " + nextindex +"</a>");
-
+   
   }
-
+ 
  });
 
  // Remove element
  $('.container').on('click','.remove',function(){
-
+ 
   var id = this.id;
   var split_id = id.split("_");
   var deleteindex = split_id[1];
@@ -158,7 +68,22 @@ const recoveryOperation = [
   'R10: Land treatment resulting in benefit to agriculture or ecological improvement',
   'R11: Use of wastes obtained from any of the operations numbered R01 to R11',
   'R12: Exchange of wastes for submission to any of the operations numbered R01 to R11',
-  'R13: Storage of wastes pending any of the operations numbered R01 to R12 (excluding temporary storage, pending collection, on the site where it is produced).'
+  'R13: Storage of wastes pending any of the operations numbered R01 to R12 (excluding temporary storage, pending collection, on the site where it is produced).',  
+  'D1: Deposit into or onto land',
+  'D2: Land Treatment',
+  'D3: Deep injection',
+  'D4: Surface impoundment',
+  'D5: Specially engineered landfill',
+  'D6: Release into a water body except seas/oceans',
+  'D7: Release into seas/oceans including seabed insertion',
+  'D8: Biological treatment not specified elsewhere which results in final compounds or mixtures which are disposed of by any of the operations numbered D01 to D12',
+  'D9: Physico-chemical treatment not specified elsewhere which results in final compounds or mixtures which are disposed of by any of the operations numbered D01 to D12',
+  'D10: Incineration on land',
+  'D11: Incineration at sea',
+  'D12: Permanent storage',
+  'D13: Blending or mixing prior to submission to any of the operations numbered D01 to D12',
+  'D14: Repackaging prior to submission to any of the operations numbered D01 to D12',
+  'D15: Storage pending any of the operations numbered D01 to D14 (excluding temporary storage, pending collection, on the site where it is produced).'
   ]
 
 if ($('#recovery-operation-typeahead-container').length > 0) {
@@ -177,192 +102,14 @@ if ($('#recovery-operation-typeahead-container').length > 0) {
   })
 }
 
-// D-code autocomplete
-const dCode = [
-  'D1: Deposit into or onto land',
-  'D2: Land Treatment',
-  'D3: Deep injection',
-  'D4: Surface impoundment',
-  'D5: Specially engineered landfill',
-  'D6: Release into a water body except seas/oceans',
-  'D7: Release into seas/oceans including seabed insertion',
-  'D8: Biological treatment not specified elsewhere which results in final compounds or mixtures which are disposed of by any of the operations numbered D01 to D12',
-  'D9: Physico-chemical treatment not specified elsewhere which results in final compounds or mixtures which are disposed of by any of the operations numbered D01 to D12',
-  'D10: Incineration on land',
-  'D11: Incineration at sea',
-  'D12: Permanent storage',
-  'D13: Blending or mixing prior to submission to any of the operations numbered D01 to D12',
-  'D14: Repackaging prior to submission to any of the operations numbered D01 to D12',
-  'D15: Storage pending any of the operations numbered D01 to D14 (excluding temporary storage, pending collection, on the site where it is produced).'
-  ]
+// R-code and D-code specifically for Exporter v4
+// Added 23rd August 2021 and hopefully addresses the issue experienced in Google Chrome
+let selectElement = document.querySelector('#recoveryOperation-exporter-v4')
 
-if ($('#d-code-typeahead-container').length > 0) {
-  element = document.querySelector('#d-code-typeahead-container')
-  id = 'd-code-typeahead' // To match it to the existing <label>.
-
-  accessibleAutocomplete ({
-    element: element,
-    defaultValue: element.getAttribute('data-default-value'),
-    id: id,
-    name: id,
-    source: dCode,
-    minLength: 1,
-    showAllValues: true,
-    dropdownArrow: () => ''
-  })
-}
-
-// Recovery operation final code autocomplete
-const recoveryOperationFinal = [
-  'R1: Use principally as a fuel or other means to generate energy',
-  'R2: Solvent reclamation/regeneration',
-  'R3: Recycling/reclamation of organic substances which are not used as solvents (including composting and other biological transformation processes)',
-  'R4: Recycling/reclamation of metals and metal compounds',
-  'R5: Recycling/reclamation of other inorganic materials',
-  'R6: Regeneration of acids or bases',
-  'R7: Recovery of components used for pollution abatement',
-  'R8: Recovery of components from catalysts',
-  'R9: Oil refining or other re-uses of oil',
-  'R10: Land treatment resulting in benefit to agriculture or ecological improvement',
-  'R11: Use of wastes obtained from any of the operations numbered R01 to R11',
-  'D1: Deposit into or onto land',
-  'D2: Land Treatment',
-  'D3: Deep injection',
-  'D4: Surface impoundment',
-  'D5: Specially engineered landfill',
-  'D6: Release into a water body except seas/oceans',
-  'D7: Release into seas/oceans including seabed insertion',
-  'D8: Biological treatment not specified elsewhere which results in final compounds or mixtures which are disposed of by any of the operations numbered D01 to D12',
-  'D9: Physico-chemical treatment not specified elsewhere which results in final compounds or mixtures which are disposed of by any of the operations numbered D01 to D12',
-  'D10: Incineration on land',
-  'D11: Incineration at sea',
-  'D12: Permanent storage',
-  'D13: Blending or mixing prior to submission to any of the operations numbered D01 to D12',
-  'D14: Repackaging prior to submission to any of the operations numbered D01 to D12',
-  'D15: Storage pending any of the operations numbered D01 to D14 (excluding temporary storage, pending collection, on the site where it is produced).'
-  ]
-
-if ($('#recovery-operation-final-typeahead-container').length > 0) {
-  element = document.querySelector('#recovery-operation-final-typeahead-container')
-  id = 'recovery-operation-final-typeahead' // To match it to the existing <label>.
-
-  accessibleAutocomplete ({
-    element: element,
-    defaultValue: element.getAttribute('data-default-value'),
-    id: id,
-    name: id,
-    source: recoveryOperationFinal,
-    minLength: 1,
-    showAllValues: true,
-    dropdownArrow: () => ''
-  })
-}
-
-// Combined Annex IX, OECD, Annex IIIA, Annex IIIB, and Basel Annex IIIB autocomplete
-const combinedWasteCodes = [
-  'B1010: Metal and metal-alloy wastes in metallic, non-dispersible form',
-  'B1020: Clean, uncontaminated metal scrap, including alloys, in bulk finished form',
-  'B1030: Refractory metals containing residues',
-  'B1031: Molybdenum, tungsten, titanium, tantalum, niobium and rhenium metal and metal alloy',
-  'B1040: Scrap assemblies from electrical power generation not contaminated with lubricating oil',
-  'B1050: Mixed non-ferrous metal, heavy fraction scrap',
-  'B1060: Waste Selenium and Tellurium in metallic elemental form including powder',
-  'B1070: Waste of copper and copper alloys in dispersible form',
-  'B1080: Zinc ash and residues including zinc alloys residues in dispersible form',
-  'B1090: Waste batteries conforming to a specification, excluding those made with lead, cadmium or mercury',
-  'B1100: Metal-bearing wastes arising from melting, smelting and refining of metals:',
-  'B1115: Waste metal cables coated or insulated with plastics',
-  'B1120: Spent catalysts excluding liquids used as catalysts',
-  'B1130: Cleaned spent precious-metal-bearing catalysts',
-  'B1140: Precious-metal-bearing residues in solid form which contain traces of inorganic cyanides',
-  'B1150: Precious metals and alloy wastes (gold, silver, the platinum group, but not mercury) ',
-  'B1160: Precious-metal ash from the incineration of printed circuit boards ',
-  'B1170: Precious-metal ash from the incineration of photographic film',
-  'B1180: Waste photographic film containing silver halides and metallic silver',
-  'B1190: Waste photographic paper containing silver halides and metallic silver',
-  'B1200: Granulated slag arising from the manufacture of iron and steel',
-  'B1210: Slag arising from the manufacture of iron and steel ',
-  'B1220: Slag from zinc production, chemically stabilised, having a high iron content (above 20 %)',
-  'B1230: Mill scaling arising from the manufacture of iron and steel',
-  'B1240: Copper oxide mill-scale',
-  'B1250: Waste end-of-life motor vehicles',
-  'B2010: Wastes from mining operations in non-dispersible form',
-  'B2020: Glass waste in non-dispersible form',
-  'B2030: Ceramic wastes in non-dispersible form',
-  'B2040: Other wastes containing principally inorganic constituents',
-  'B2060: Spent activated carbon ',
-  'B2070: Calcium fluoride sludge',
-  'B2080: Waste gypsum arising from chemical industry processes ',
-  'B2090: Waste anode butts from steel or aluminium production made of petroleum coke or bitumen',
-  'B2100: Waste hydrates of aluminium and waste alumina and residues from alumina production',
-  'B2110: Bauxite residue (red mud) (pH moderated to less than 11,5)',
-  'B2120: Waste acidic or basic solutions with a pH greater than 2 and less than 11,5',
-  'B2130: Bituminous material (asphalt waste) from road construction and maintenance',
-  'B3011: Plastics (shipped outside EU) provided it is destined for recycling/reclamation in an environmentally sound manner and almost free from contamination and other types of wastes',
-  'EU3011: Plastics (shipped within EU) provided it is almost free from contamination and other types of waste',
-  'B3020: Paper, paperboard and paper product wastes',
-  'B3026: Non-seperable plastic fraction or non-separable plastic-aluminium fraction waste from the pre-treatment of used liquid packages',
-  'B3027: Self-adhesive label laminate waste containing raw materials used in label material production',
-  'B3030: Textile wastes',
-  'B3035: Waste textile floor coverings, carpets',
-  'B3040: Rubber wastes',
-  'B3050: Untreated cork and wood waste',
-  'B3060: Wastes arising from agro-food industries provided it is not infectious',
-  'B3065: Waste edible fats and oils of animal or vegetable origin (e.g. frying oils)',
-  'B3070: The following wastes: Human Hair, Straw, Deacticated fungus mycelium from penicillin production to be used as animal feed',
-  'B3080: Waste parings and scrap of rubber',
-  'B3090: Paring and other wastes of leather or of composition leather',
-  'B3100: Leather dust, ash, sludges or flours not containing hexavalent chromium compounds',
-  'B3110: Fellmongery wastes not containing hexavalent chromium compounds',
-  'B3120: Wastes consisting of food dyes',
-  'B3130: Waste polymer ethers and waste non-hazardous monomer ethers',
-  'B3140: Waste pneumatic tyres, excluding those destined for Annex IVA operations',
-  'B4010: Wastes consisting mainly of water-based/latex paints, inks and hardened varnishes not',
-  'B4020: Wastes from production, formulation and use of resins, latex, plasticisers',
-  'B4030: Used single use cameras, with batteries not included on list A',
-  'GB040: Slags from precious metals and copper processing for further refining',
-  'GC010: Electrical assemblies consisting only of metals or alloys',
-  'GC020: Electronic scrap (e.g. printed circuit boards, electronic components, wire, etc.)',
-  'GC030: Vessels and other floating structures for breaking up',
-  'GC050: Spent fluid catalytic cracking (FCC) catalysts (e.g. aluminium oxide, zeolites)',
-  'GE020: Glass fibre waste',
-  'GF010: Ceramic wastes which have been fired after shaping, including ceramic vessels',
-  'GG030: Bottom ash and slag tap from coal fired power plants',
-  'GG040: Coal fired power plants fly ash',
-  'GN010: Waste of pigs’, hogs’ or boars’ bristles and hair or of badger hair and other brush making hair',
-  'GN020: Horsehair waste, whether or not put up as a layer with or without supporting material',
-  'GN030: Waste of skins and other parts of birds, with their feathers or down',
-  'B1010 and B1050: mixtures of wastes classified under Basel entries B1010 and B1050',
-  'B1010 and B1070: mixtures of wastes classified under Basel entries B1010 and B1070',
-  'B3040 and B3080: mixtures of wastes classified under Basel entries B3040 and B3080',
-  'GB040 and B1100: mixtures of wastes classified under (OECD) entry GB040 and under Basel entry B1100 restricted to hard zinc spelter, zinc-containing drosses, aluminium skimmings (or skims) excluding salt slag and wastes of refractory linings, including crucibles, originating from copper smelting',
-  'GB040, B1070, and B1100: mixtures of wastes classified under (OECD) entry GB040, under Basel entry B1070 and under Basel entry B1100 restricted to wastes of refractory linings, including crucibles, originating from copper smelting',
-  'B1010: mixtures of wastes classified under Basel entry B1010',
-  'B2010: mixtures of wastes classified under Basel entry B2010',
-  'B2030: mixtures of wastes classified under Basel entry B2030',
-  'B3020: mixtures of wastes classified under Basel entry B3020 restricted to unbleached paper or paperboard or of corrugated paper or paperboard, other paper or paperboard, made mainly of bleached chemical pulp, not coloured in the mass, paper or paperboard made mainly of mechanical pulp (for example, newspapers, journals and similar printed matter)',
-  'B3030: mixtures of wastes classified under Basel entry B3030',
-  'B3040: mixtures of wastes classified under Basel entry B3040',
-  'B3050: mixtures of wastes classified under Basel entry B3050',
-  'BEU04: Composite packaging consisting of mainly paper and some plastic, not containing residues and not covered by Basel entry B3020',
-  'BEU05: Clean biodegradable waste from agriculture, horticulture, forestry, gardens, parks and cemeteries'
-]
-
-if ($('#combinedWasteCodes-typeahead-container').length > 0) {
-  element = document.querySelector('#combinedWasteCodes-typeahead-container')
-  id = 'combinedWasteCodes-typeahead' // To match it to the existing <label>.
-
-  accessibleAutocomplete ({
-    element: element,
-    defaultValue: element.getAttribute('data-default-value'),
-    id: id,
-    name: id,
-    source: combinedWasteCodes,
-    minLength: 1,
-    showAllValues: true,
-    dropdownArrow: () => ''
-  })
-}
+accessibleAutocomplete.enhanceSelectElement({
+  defaultValue: '',
+  selectElement: selectElement
+})
 
 // Basel Annex IX autocomplete
 const baselAnnexIX = [
@@ -446,6 +193,7 @@ if ($('#basel-annex-ix-typeahead-container').length > 0) {
 
 // OECD autocomplete
 const oecd = [
+  '0000: Not applicable',
   'GB040: Slags from precious metals and copper processing for further refining',
   'GC010: Electrical assemblies consisting only of metals or alloys',
   'GC020: Electronic scrap (e.g. printed circuit boards, electronic components, wire, etc.)',
@@ -478,6 +226,7 @@ if ($('#oecd-typeahead-container').length > 0) {
 
 // Basel Annex IIIA autocomplete
 const annexIIIA = [
+  '0000: Not applicable',
   'B1010 and B1050: mixtures of wastes classified under Basel entries B1010 and B1050',
   'B1010 and B1070: mixtures of wastes classified under Basel entries B1010 and B1070',
   'B3040 and B3080: mixtures of wastes classified under Basel entries B3040 and B3080',
@@ -510,6 +259,7 @@ if ($('#annex-iiia-typeahead-container').length > 0) {
 
 // Basel Annex IIIB autocomplete
 const annexIIIB = [
+  '0000: Not applicable',
   'BEU04: Composite packaging consisting of mainly paper and some plastic, not containing residues and not covered by Basel entry B3020',
   'BEU05: Clean biodegradable waste from agriculture, horticulture, forestry, gardens, parks and cemeteries'
 ]
@@ -532,6 +282,7 @@ if ($('#annex-iiib-typeahead-container').length > 0) {
 
 // EC wastes autocomplete
 const ecWastes = [
+  '0000: Not applicable',
   '010101: wastes from mineral metalliferous excavation',
   '010102: wastes from mineral non-metalliferous excavation',
   '010304*: acid-generating tailings from processing of sulphide ore',
@@ -1422,30 +1173,6 @@ if ($('#national-code-typeahead-container').length > 0) {
   })
 }
 
-// Nation autocomplete
-const nationList = [
-  'England',
-  'Scotland',
-  'Wales',
-  'Northern Ireland'
-]
-
-if ($('#nation-typeahead-container').length > 0) {
-  element = document.querySelector('#nation-typeahead-container')
-  id = 'nation-typeahead' // To match it to the existing <label>.
-
-  accessibleAutocomplete ({
-    element: element,
-    defaultValue: element.getAttribute('data-default-value'),
-    id: id,
-    name: id,
-    source: nationList,
-    minLength: 1,
-    showAllValues: true,
-    dropdownArrow: () => ''
-  })
-}
-
 // Export/dispatch & Transit & Import/destination autocomplete
 const countryList = [
   'Afghanistan (AF)',
@@ -1682,11 +1409,7 @@ const countryList = [
   'Uganda (UG)',
   'Ukraine (UA)',
   'United Arab Emirates (AE)',
-  //'United Kingdom (GB)',
-  'United Kingdom (England)',
-  'United Kingdom (Northern Ireland)',
-  'United Kingdom (Scotland)',
-  'United Kingdom (Wales)',
+  'United Kingdom (GB)',
   'United States (US)',
   'United States Minor Outlying Islands (UM)',
   'Uruguay (UY)',
@@ -1707,23 +1430,6 @@ const countryList = [
 if ($('#export-dispatch-typeahead-container').length > 0) {
   element = document.querySelector('#export-dispatch-typeahead-container')
   id = 'export-dispatch-typeahead' // To match it to the existing <label>.
-
-  accessibleAutocomplete ({
-    element: element,
-    defaultValue: element.getAttribute('data-default-value'),
-    id: id,
-    name: id,
-    source: countryList,
-    minLength: 1,
-    showAllValues: true,
-    dropdownArrow: () => ''
-  })
-}
-
-// Interim site autocomplete
-if ($('#interim-site-typeahead-container').length > 0) {
-  element = document.querySelector('#interim-site-typeahead-container')
-  id = 'interim-site-typeahead' // To match it to the existing <label>.
 
   accessibleAutocomplete ({
     element: element,
@@ -1758,108 +1464,6 @@ if ($('#transit-typeahead-container').length > 0) {
 if ($('#import-destination-typeahead-container').length > 0) {
   element = document.querySelector('#import-destination-typeahead-container')
   id = 'import-destination-typeahead' // To match it to the existing <label>.
-
-  accessibleAutocomplete ({
-    element: element,
-    defaultValue: element.getAttribute('data-default-value'),
-    id: id,
-    name: id,
-    source: countryList,
-    minLength: 1,
-    showAllValues: true,
-    dropdownArrow: () => ''
-  })
-}
-
-// Importer/consignee autocomplete
-if ($('#importer-consignee-typeahead-container').length > 0) {
-  element = document.querySelector('#importer-consignee-typeahead-container')
-  id = 'importer-consignee-typeahead' // To match it to the existing <label>.
-
-  accessibleAutocomplete ({
-    element: element,
-    defaultValue: element.getAttribute('data-default-value'),
-    id: id,
-    name: id,
-    source: countryList,
-    minLength: 1,
-    showAllValues: true,
-    dropdownArrow: () => ''
-  })
-}
-
-// First carrier autocomplete
-if ($('#first-carrier-typeahead-container').length > 0) {
-  element = document.querySelector('#first-carrier-typeahead-container')
-  id = 'first-carrier-typeahead' // To match it to the existing <label>.
-
-  accessibleAutocomplete ({
-    element: element,
-    defaultValue: element.getAttribute('data-default-value'),
-    id: id,
-    name: id,
-    source: countryList,
-    minLength: 1,
-    showAllValues: true,
-    dropdownArrow: () => ''
-  })
-}
-
-// Second carrier autocomplete
-if ($('#second-carrier-typeahead-container').length > 0) {
-  element = document.querySelector('#second-carrier-typeahead-container')
-  id = 'second-carrier-typeahead' // To match it to the existing <label>.
-
-  accessibleAutocomplete ({
-    element: element,
-    defaultValue: element.getAttribute('data-default-value'),
-    id: id,
-    name: id,
-    source: countryList,
-    minLength: 1,
-    showAllValues: true,
-    dropdownArrow: () => ''
-  })
-}
-
-// Third carrier autocomplete
-if ($('#third-carrier-typeahead-container').length > 0) {
-  element = document.querySelector('#third-carrier-typeahead-container')
-  id = 'third-carrier-typeahead' // To match it to the existing <label>.
-
-  accessibleAutocomplete ({
-    element: element,
-    defaultValue: element.getAttribute('data-default-value'),
-    id: id,
-    name: id,
-    source: countryList,
-    minLength: 1,
-    showAllValues: true,
-    dropdownArrow: () => ''
-  })
-}
-
-// Importer autocomplete
-if ($('#importer-typeahead-container').length > 0) {
-  element = document.querySelector('#importer-typeahead-container')
-  id = 'importer-typeahead' // To match it to the existing <label>.
-
-  accessibleAutocomplete ({
-    element: element,
-    defaultValue: element.getAttribute('data-default-value'),
-    id: id,
-    name: id,
-    source: countryList,
-    minLength: 1,
-    showAllValues: true,
-    dropdownArrow: () => ''
-  })
-}
-
-// Facility or lab autocomplete
-if ($('#facility-or-lab-typeahead-container').length > 0) {
-  element = document.querySelector('#facility-or-lab-typeahead-container')
-  id = 'facility-or-lab-typeahead' // To match it to the existing <label>.
 
   accessibleAutocomplete ({
     element: element,

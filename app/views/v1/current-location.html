@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Submit current location
+{% endblock %}
+
+{% block beforeContent %}
+{% include "./includes/primary-nav.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post">
+
+            <div class="govuk-form-group">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Submit Alex River's current location
+                  </h1>
+                </legend>
+
+                  <p class="govuk-body">This enables the service provider to prioritise the intervention and allocate it to the right caseworker.</p>
+
+
+                <h2 class="govuk-heading-m">Where is Alex today?</h2>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ec-code" name="ec-code" type="radio" value="Yes" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-radios__label" for="ec-code">
+                      Custody (select even if Alex is due to be released today)
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact" name="eccode">
+                    <p class="govuk-body">Which establishment is Alex in?</p>
+
+
+                    <div id="contact-hint" class="govuk-hint">
+                      Start typing, then choose from the list
+                    </div>
+                    <div class="govuk-form-group">
+                      <div id="ec-wastes-typeahead-container" data-default-value="{{ data['ec-wastes-typeahead'] }}">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ec-code" name="ec-code" type="radio" value="No" data-aria-controls="conditional-contact-2">
+                    <label class="govuk-label govuk-radios__label" for="ec-code">
+                      Community
+                    </label>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
+          </div>
+
+
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

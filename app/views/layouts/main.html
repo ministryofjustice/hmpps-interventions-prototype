@@ -32,22 +32,4 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 }) }}
 
-
-{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
-
-{{ mojPrimaryNavigation({
-  label: 'Primary navigation',
-  items: [
-    {
-      text: 'Referrals',
-      href: '#1',
-      active: true
-    },
-    {
-      text: 'Find interventions',
-      href: '#2'
-    }
-  ]
-}) }}
-
 {% endblock %}
