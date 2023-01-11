@@ -1,10 +1,9 @@
-module.exports = function(router) {
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
 
-    var version = 'v1';
+        var version = 'v1'
 
-    // current-location
-    router.post('/current-location', function(req, res) {
-        res.redirect('release-date');
-    })
-
-    };
+        // current-location
+        router.post('/'+ version +'/current-location', function(request, response) {
+            response.redirect('release-date');
+        })
