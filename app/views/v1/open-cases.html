@@ -4,10 +4,13 @@
   Open casess
 {% endblock %}
 
+{% block main %}
+{% include "./includes/primary-nav.html" %}
+{{ super() }}
+{% endblock %}
 
 {% block content %}
 
-{% include "./includes/primary-nav.html" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">

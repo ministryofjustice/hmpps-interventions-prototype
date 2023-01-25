@@ -4,8 +4,9 @@
   Submit current location
 {% endblock %}
 
-{% block beforeContent %}
-{% include "./includes/primary-nav.html" %}
+{% block main %}
+{% include "./includes/key-details-bar.html" %}
+{{ super() }}
 {% endblock %}
 
 {% block content %}

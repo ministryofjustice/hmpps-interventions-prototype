@@ -1,0 +1,23 @@
+key-details-bar {
+    background-color: #1d70b8;
+}
+.key-details-bar .govuk-body, .key-details-bar .govuk-body-l {
+    color: #fff;
+}
+.key-details-bar span {
+    white-space: nowrap;
+}
+.key-details-bar .key-details-bar__key-details {
+    padding: 20px 0;
+    position: relative;
+}
+.key-details-bar .key-details-bar__key-details .key-details-bar__name {
+    line-height: 1.04167;
+    line-height: 1.11111;
+    margin-inline-start: 0;
+    margin-right: 10px;
+}
+.key-details-bar .key-details-bar__key-details .key-details-bar__bottom-block {
+    margin-top: 6px;
+    padding-top: 10px;
+}
