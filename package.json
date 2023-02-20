@@ -7,7 +7,7 @@
   "dependencies": {
     "@ministryofjustice/frontend": "^1.6.3",
     "govuk-frontend": "^4.4.0",
-    "govuk-prototype-kit": "^13.0.0",
+    "govuk-prototype-kit": "^13.3.0",
     "jquery": "^3.6.1"
   }
 }
