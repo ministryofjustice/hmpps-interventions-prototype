@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Submit current location
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post" >
+
+            <div class="govuk-form-group">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <span class="govuk-caption-xl">Alex River (CRN: D002399)</span>
+                  <h1 class="govuk-fieldset__heading">
+                    What type of referral is this?
+                  </h1>
+                </legend>
+
+                  <p class="govuk-body">Alex River is currently:</p>
+
+
+                  <dl class="govuk-summary-list">
+          
+
+
+                  <div class="govuk-radios" data-module="govuk-radios">
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="ec-code" name="ec-code" type="radio" value="No" data-aria-controls="conditional-contact-2">
+                      <label class="govuk-label govuk-radios__label" for="ec-code">
+                        In prison (pre-release)
+                      </label>
+                    </div>
+
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="ec-code" name="ec-code" type="radio" value="Yes" data-aria-controls="conditional-contact">
+                      <label class="govuk-label govuk-radios__label" for="ec-code">
+                        In the community
+                      </label>
+                    </div>
+                    
+
+                  </div>
+
+
+              </fieldset>
+            </div>
+          </div>
+
+
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

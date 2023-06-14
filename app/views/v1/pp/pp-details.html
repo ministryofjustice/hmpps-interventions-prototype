@@ -1,0 +1,156 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Submit current location
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post" >
+
+            <div class="govuk-form-group">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <span class="govuk-caption-xl">Alex River (CRN: D002399)</span>
+                  <h1 class="govuk-fieldset__heading">
+                    Confirm probation practitioner details
+                  </h1>
+                </legend>
+
+                  <p class="govuk-body">These contact details will be sent to the service provider for the referral. Are they correct?</p>
+
+
+                  <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Sarah Philips
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Email
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        sarah.philips@justice.gov.uk
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        PDU (probation delivery unit)
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        TBC
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Probation office
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        <p class="govuk-body">TBC</p>
+                      </dd>
+                    </div>
+                  </dl>
+
+
+
+                  <div class="govuk-radios" data-module="govuk-radios">
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="ec-code" name="ec-code" type="radio" value="No" data-aria-controls="conditional-contact-2">
+                      <label class="govuk-label govuk-radios__label" for="ec-code">
+                        Yes
+                      </label>
+                    </div>
+
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="ec-code" name="ec-code" type="radio" value="Yes" data-aria-controls="conditional-contact">
+                      <label class="govuk-label govuk-radios__label" for="ec-code">
+                        No
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact" name="eccode">
+
+                      <p class="govuk-body">Enter the correct contact details to be sent to the service provider.</p>
+
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="width-20">
+                          Name
+                        </label>
+                        <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text">
+                      </div>
+
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="width-20">
+                          Email
+                        </label>
+                        <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text">
+                      </div>
+
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="full">
+                          PDU (probation delivery unit)
+                        </label>
+                        <div id="contact-hint" class="govuk-hint">
+                          Start typing, then choose from the list.
+                        </div>
+                        <input class="govuk-input govuk-!-width-full" id="full" name="full" type="text">
+                      </div>
+
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="full">
+                          Probation office
+                        </label>
+                        <div id="contact-hint" class="govuk-hint">
+                          Start typing, then choose from the list.
+                        </div>
+                        <input class="govuk-input govuk-!-width-full" id="full" name="full" type="text">
+                      </div>
+                    </div>
+
+
+
+                  </div>
+
+
+              </fieldset>
+            </div>
+          </div>
+
+
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

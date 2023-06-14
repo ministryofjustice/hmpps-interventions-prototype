@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Do you know the expected release date?
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post" action="make-a-referral-2">
+
+            <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Scenarios
+              </h1>
+            </legend>
+
+
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Alex river (CRN: RY2127AG)</h2>
+                <p class="govuk-body govuk-!-font-weight-bold">COM allocated pre-release</p>
+                <p class="govuk-body">Alex river is leaving HMP Manchester soon, they already have an allocated community probation 
+                  practitioner, who needs to make a CRS referral for them so they can try to get accommodation</p>
+                <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
+                  Continue
+                </a>
+              </section>
+            </article>
+
+
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">This is a heading 2</h2>
+                <p class="govuk-body">Alex river is leaving HMP Manchester soon, they already have an allocated community probation 
+                  practitioner, who needs to make a CRS referral for them so they can try to get accommodation</p>
+                <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
+                  Continue
+                </a>
+              </section>
+            </article>
+
+
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">This is a heading 2</h2>
+                <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
+                  Continue
+                </a>
+              </section>
+            </article>
+
+
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">This is a heading 2</h2>
+                <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
+                  Continue
+                </a>
+              </section>
+            </article>
+            
+
+
+
+                  </fieldset>
+        </div>
+      </div>
+      </div>
+
+
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+
+{% endblock %}
