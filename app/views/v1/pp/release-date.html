@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block main %}
-{% include "../includes/key-details-bar-alex.html" %}
 {{ super() }}
 {% endblock %}
 
@@ -21,7 +20,7 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-          <form class="form" method="post" action="make-a-referral-2">
+          <form class="form" method="post" action="make-a-referral-prerelease">
 
             <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
@@ -38,52 +37,52 @@ href: "javascript:history.back()"
 
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="actual-or-estimate-date" name="actual-or-estimate-date" type="radio" value="no" data-aria-controls="conditional-contact-2">
-                <label class="govuk-label govuk-radios__label" for="actual-or-estimate-date">
+                <input class="govuk-radios__input" id="release-date" name="release-date" type="radio" value="yes" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="release-date">
                   Expected release date - 15 Sept 2023
                 </label>
               </div>
 
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="actual-or-estimate-date" name="actual-or-estimate-date" type="radio" value="yes" data-aria-controls="conditional-contact">
-                <label class="govuk-label govuk-radios__label" for="actual-or-estimate-date">
+                <input class="govuk-radios__input" id="release-date" name="release-date" type="radio" value="no" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="release-date">
                   Enter date
                 </label>
               </div>
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact" name="quantityactual">
-                <fieldset class="govuk-fieldset" role="group" aria-describedby="actual-shipment-hint">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="input-date-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                     <h2 class="govuk-fieldset__heading">
                       Add the expected release date
                     </h2>
                   </legend>
-                  <div id="actual-shipment-hint" class="govuk-hint">
+                  <div id="input-date-hint" class="govuk-hint">
                     <p class="govuk-body">
                       For example, 27 3 2022
                     </p>
                   </div>
-                  <div class="govuk-date-input" id="actual-shipment">
+                  <div class="govuk-date-input" id="input-date">
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="actual-shipment-day">
+                        <label class="govuk-label govuk-date-input__label" for="input-date-day">
                           Day
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="actual-shipment-day" name="actual-shipment-day" value="{{ data['actual-shipment-day'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="input-date-day" name="input-date-day" value="{{ data['input-date-day'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                     </div>
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="actual-shipment-month">
+                        <label class="govuk-label govuk-date-input__label" for="input-date-month">
                           Month
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="actual-shipment-month" name="actual-shipment-month" value="{{ data['actual-shipment-month'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="input-date-month" name="input-date-month" value="{{ data['input-date-month'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                     </div>
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="actual-shipment-year">
+                        <label class="govuk-label govuk-date-input__label" for="input-date-year">
                           Year
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="actual-shipment-year" name="actual-shipment-year" value="{{ data['actual-shipment-year'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="input-date-year" name="input-date-year" value="{{ data['input-date-year'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                     </div>
                   </div>
                 </fieldset>
