@@ -20,8 +20,13 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-          <form class="form" method="post" action="make-a-referral-prerelease">
-
+    {% if data ['referral-type'] == "prison" %}
+    <form class="form" method="post" action="make-a-referral-prerelease">
+      {% elseif data ['referral-type'] == "community" %}
+      <form class="form" method="post" action="make-a-referral-community">
+        {% elseif data ['referral-type-nocom'] == "yes" %}
+        <form class="form" method="post" action="make-a-referral-nocom-prerelease2">
+    {% endif %}
          
 
 

@@ -28,13 +28,32 @@ href: "javascript:history.back()"
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  {% if data ['referral-type'] == "prison" %}
                   <span class="govuk-caption-xl">Alex River (CRN: D002399)</span>
+                  {% elseif data ['referral-type-nocom'] == "yes" %}
+                  <span class="govuk-caption-xl">Darren Wicks (CRN: D927438)</span>
+                  {% elseif data ['referral-type-nocom'] == "no" %}
+                  <span class="govuk-caption-xl">John Smith (CRN: D182933)</span>
+                  {% endif %}
+
                   <h1 class="govuk-fieldset__heading">
-                    Is Alex River is currently in HMP Leeds?
+                    Confirm 
+                    {% if data ['referral-type'] == "prison" %} Alex River's
+                    {% elseif data ['referral-type-nocom'] == "yes" %} Darren Wicks'
+                    {% elseif data ['referral-type-nocom'] == "no" %} John Smith's
+                    current location
+                    {% endif %}
+
                   </h1>
                 </legend>
 
-                  <p class="govuk-body">Need this?</p>
+                <p class="govuk-body govuk-!-font-weight-bold">Is 
+                  {% if data ['referral-type'] == "prison" %} Alex River 
+                  {% elseif data ['referral-type-nocom'] == "yes" %} Darren Wicks
+                  {% elseif data ['referral-type-nocom'] == "no" %} John Smith
+                  in HMP Leeds?</p>
+                  {% endif %}
+
 
 
                 <div class="govuk-radios" data-module="govuk-radios">
@@ -56,7 +75,12 @@ href: "javascript:history.back()"
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact" name="eccode">
                     <div class="govuk-form-group">
                       <label class="govuk-label" for="establishment">
-                        Which establishment is Alex in?
+                        Which establishment is 
+                        {% if data ['referral-type'] == "prison" %} Alex 
+                        {% elseif data ['referral-type-nocom'] == "yes" %} Darren
+                        {% elseif data ['referral-type-nocom'] == "no" %} John
+                         in?                   {% endif %}
+
                       </label>
                       <div id="contact-hint" class="govuk-hint">
                         Start typing, then choose from the list.
@@ -75,7 +99,12 @@ href: "javascript:history.back()"
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
               <span class="govuk-warning-text__assistive">Warning</span>
-              If Alex's location changes, you will need to make direct contact with the service provider.
+              If 
+              {% if data ['referral-type'] == "prison" %} Alex's 
+              {% elseif data ['referral-type-nocom'] == "yes" %} Darren's
+              {% elseif data ['referral-type-nocom'] == "no" %} John's
+              location changes, you will need to make direct contact with the service provider.
+              {% endif %}
             </strong>
           </div>
 
