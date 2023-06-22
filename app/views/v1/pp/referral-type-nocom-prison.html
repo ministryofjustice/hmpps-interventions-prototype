@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Submit current location
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post" action="">
+
+            <div class="govuk-form-group">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <span class="govuk-caption-xl">John Smith (CRN: D182933)</span>
+                  <h1 class="govuk-fieldset__heading">
+                    Will John Smith be released from prison during the intervention?
+                  </h1>
+                </legend>
+
+
+                  
+          
+                  <div class="govuk-radios" data-module="govuk-radios">
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="referral-type" name="referral-type" type="radio" value="prison" data-aria-controls="conditional-contact-2">
+                      <label class="govuk-label govuk-radios__label" for="referral-type">
+                        Yes
+                      </label>
+                      <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                        John is due to be released in the next 12 weeks.                      </div>
+                    </div>
+
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="referral-type" name="referral-type" type="radio" value="community" data-aria-controls="conditional-contact">
+                      <label class="govuk-label govuk-radios__label" for="referral-type">
+                        No
+                      </label>
+                      <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                        John has just arrived in prison.                      </div>
+                    </div>
+                    
+
+                  </div>
+
+
+              </fieldset>
+            </div>
+          </div>
+
+
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

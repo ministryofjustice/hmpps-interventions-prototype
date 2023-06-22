@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Do you know the expected release date?
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post" action="make-a-referral-prerelease">
+
+         
+
+
+            <div class="govuk-form-group">
+              <span class="govuk-caption-xl">Alex River (CRN: D002399)</span>
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="more-detail">
+                  Enter why the expected release date is not known
+                </label>
+              </h1>
+              <!-- <div id="more-detail-hint" class="govuk-hint">
+                Do not include personal or financial information, like your National Insurance number or credit card details.
+              </div> -->
+              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            </div>
+
+
+
+
+
+
+                  <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                      <span class="govuk-warning-text__assistive">Warning</span>
+                  When you know the date, you will need to update the service provider.
+                </strong>
+              </div>
+
+
+
+
+                  
+      </div>
+      </div>
+    
+
+
+
+
+        {{ govukButton({
+          text: 'Save and continue'
+        }) }}
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+
+{% endblock %}

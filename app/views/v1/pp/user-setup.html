@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Submit current location
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="scenarios">
+
+
+            <div class="govuk-form-group">
+
+
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        User scenario set up
+                      </h1>
+                    </legend>
+                    <p class="govuk-body">Something here?</p>
+
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="user-name">
+                        Name
+                      </label>
+                      <input class="govuk-input govuk-!-width-two-thirds" id="user-name" name="user-name" type="text" autocomplete="address-level2">
+                    </div>
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="user-email">
+                        Email
+                      </label>
+                      <input class="govuk-input govuk-!-width-two-thirds" id="user-email" name="user-email" type="text" autocomplete="postal-code">
+                    </div>
+                  </fieldset>
+
+
+
+                  <br>
+                  <br>
+
+                  <p class="govuk-body">Something here?</p>
+
+
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          PDU (Probation Delivery Unit)
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          Manchester North
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Probation office
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <p class="govuk-body">Redfern Building</p>
+                        </dd>
+                      </div>
+                    </dl>
+
+
+
+                  </div>
+
+
+              </fieldset>
+            </div>
+          </div>
+
+
+
+          {{ govukButton({
+            text: 'Continue'
+          }) }}
+
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

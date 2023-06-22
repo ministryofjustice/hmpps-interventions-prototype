@@ -1,0 +1,284 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Submit current location
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if data ['referral-type'] == "prison" %}
+    <form class="form" method="post" action="make-a-referral-prerelease">
+      {% elseif data ['referral-type'] == "community" %}
+      <form class="form" method="post" action="make-a-referral-community">
+        {% elseif data ['referral-type-nocom'] == "yes" %}
+        <form class="form" method="post" action="make-a-referral-nocom-prerelease2">
+        {% endif %}
+
+            <div class="govuk-form-group">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  {% if data ['referral-type'] == "prison" %}
+                  <span class="govuk-caption-xl">Alex River (CRN: D007615)</span>
+                  {% elseif data ['referral-type'] == "community" %}
+                  <span class="govuk-caption-xl">Mohammed Singh (CRN: D743927)</span>
+                  {% endif %}
+                  <h1 class="govuk-fieldset__heading">
+                    OASys risk information
+                  </h1>
+                </legend>
+
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
+            
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Who is at risk<br>
+                          <br>
+                          <p class="govuk-body">
+                            Medium ROSH to the public<br>
+                            Low ROSH in all other areas
+                          </p>
+                        </dt>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          What is the nature of the risk<br>
+                          <br>
+                          <p class="govuk-body">
+                          Previous Convictions:
+                            numerous acquisitive offences since the age of 14 –
+                            Theft from Shop x 26;
+                            Street Robbery x1;
+                            Theft from person x 4;
+                            Prostitution x 6;
+                            Possession of class A drug (heroin) x 2;
+                            Criminal damage x 1;
+                            Assault Police x 2
+                            Silver Cymbal has a history of offending since the age of 14. She is currently on
+                            license for an offence of supplying class A drugs as part of a county lines gang
+                            A712$**.
+                            In this offence the driver of the gang would take her to the Saturn Pub in Space
+                            Town in his pink ford focus Reg no ABC 123Y. She would wait at the entrance
+                            wearing a pink baseball cap so people would know to approach her for drugs.
+                            She would sell heroin, cocaine and cannabis, which she kept in a NIKKK
+                            backpack. When the police arrested her, she threw the backpack at the officer –
+                            missing him and she ran away, but he gave chase and arrested her around the
+                            corner in the garden of Moon Beam’s house. Forrest Mercury the car driver was
+                            also arrested and charged with drug related offences.
+                            A number of gang members are still in custody servicing longer sentences.
+                            However, she is both fearful of members in the community and at risk of
+                            returning to offending. She says that she carries a knife in case she bumps into
+                            any gang member and has been warned not to do so by PC999 Plod, her local
+                            officer (mob-0123 987654). She previously had a relationship with one gang
+                            member Orange Trumpet who is the father of her son Purple (Dob: 10:11:13). His
+                            new partner is Gold Viola, and they have a child Yellow Trumpet Dob: 21:02:17)
+                            Colleen has recently been released from custody and is residing with her sister
+                            (also known to probation) but this is only temporary as she has indicated that the
+                            is in the early stages of pregnancy and her sister is unable to support this.
+                            Colleen has no other family member who she can reside with and although her
+                            family support her, they do not offer the pro-social influence required to keep her
+                            from offending.
+                            Since release Colleen is on a methadone script and requires support and
+                            encouragement to continue with it as historically, she relapses quickly after
+                            release.
+                            Following her last sentence her child Purple Trumpet (who had been with a foster
+                            family (Avril & Teal Timpani) has been adopted to a family in the Acorn area of
+                            Oaktree Village so that he can continue to attend Oaktree School where he has
+                            been since being in foster care. She is struggling to come to terms with this.</p>
+                        </dt>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          When is the risk likely to be greatest
+                          <br>
+                          <p class="govuk-body">
+                          Silver Cymbal has a history of offending since the age of 14. She is currently on
+                          license for an offence of supplying class A drugs as part of a county lines gang
+                          A712$**. A number of gang members are still in custody servicing longer
+                          sentences. However, she is both fearful of members in the community and at risk
+                          of returning to offending. She says that she carries a knife in case she bumps
+                          into any gang member and has been warned not to do so by PC999 Plod, her
+                          local officer (mob-0123 987654). She previously had a relationship with one gang
+                          member Orange Trumpet who is the father of her son Purple (Dob: 10:11:13). His
+                          new partner is Gold Viola, and they have a child Yellow Trumpet Dob: 21:02:17)
+                          In this offence the driver of the gang would take her to the Saturn Pub in Space
+                          Town in his pink ford focus Reg no ABC 123Y. She would wait at the entrance
+                          wearing a pink baseball cap so people would know to approach her for drugs.
+                          She would sell heroin, cocaine and cannabis, which she kept in a NIKKK
+                          backpack. When the police arrested her, she threw the backpack at the officer –
+                          missing him and she ran away, but he gave chase and arrested her around the
+                          corner in the garden of Moon Beam’s house. Forrest Mercury the car driver was
+                          also arrested and charged with drug related offences.
+                          Colleen has recently been released from custody and is residing with her sister
+                          (also known to probation) but this is only temporary as she has indicated that the
+                          is in the early stages of pregnancy and her sister is unable to support this.
+                          Colleen has no other family member who she can reside with and although her
+                          family support her, they do not offer the pro-social influence required to keep her
+                          from offending.
+                          Since release Colleen is on a methadone script and requires support and
+                          encouragement to continue with it as historically, she relapses quickly after
+                          release.
+                          Following her last sentence her child Purple Trumpet (who had been with a foster
+                          family (Avril & Teal Timpani) has been adopted to a family in the Acorn area of
+                          Oaktree Village so that he can continue to attend Oaktree School where he has
+                          been since nursery. She is struggling to come to terms with this.</p>
+                        </dt>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Concerns in relation to self-harm<br>
+                          <br>
+                          <p class="govuk-body">Don't know</p>
+                        </dt>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Concerns in relation to suicide<br>
+                          <br>
+                          <p class="govuk-body">Don't know</p>
+                        </dt>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Concerns in relation to coping in a hostel setting<br>
+                          <br>
+                          <p class="govuk-body">Silver Cymbal has a history of offending since the age of 14. She is currently on
+                            license for an offence of supplying class A drugs as part of a county lines gang
+                            A712$**. A number of gang members are still in custody servicing longer
+                            sentences. However, she is both fearful of members in the community and at risk
+                            of returning to offending. She says that she carries a knife in case she bumps
+                            into any gang member and has been warned not to do so by PC999 Plod, her
+                            local officer (mob-0123 987654). She previously had a relationship with one gang
+                            member Orange Trumpet who is the father of her son Purple (Dob: 10:11:13). His
+                            new partner is Gold Viola, and they have a child Yellow Trumpet Dob: 21:02:17)
+                            Colleen has recently been released from custody and is residing with her sister
+                            (also known to probation) but this is only temporary as she has indicated that the
+                            is in the early stages of pregnancy and her sister is unable to support this.
+                            Colleen has no other family member who she can reside with and although her
+                            family support her, they do not offer the pro-social influence required to keep her
+                            from offending.</p>
+                        </dt>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Concerns in relation to vulnerability<br>
+                          <br>
+                          <p class="govuk-body">Silver Cymbal has a history of offending since the age of 14. She is currently on
+                            license for an offence of supplying class A drugs as part of a county lines gang
+                            A712$**. A number of gang members are still in custody servicing longer
+                            sentences. However, she is both fearful of members in the community and at risk
+                            of returning to offending. She says that she carries a knife in case she bumps
+                            into any gang member and has been warned not to do so by PC999 Plod, her
+                            local officer (mob-0123 987654). She previously had a relationship with one gang
+                            member Orange Trumpet who is the father of her son Purple (Dob: 10:11:13). His
+                            new partner is Gold Viola, and they have a child Yellow Trumpet Dob: 21:02:17)
+                            Colleen has recently been released from custody and is residing with her sister
+                            (also known to probation) but this is only temporary as she has indicated that the
+                            is in the early stages of pregnancy and her sister is unable to support this.
+                            Colleen has no other family member who she can reside with and although her
+                            family support her, they do not offer the pro-social influence required to keep her
+                            from offending.
+                            Since release Colleen is on a methadone script and requires support and
+                            encouragement to continue with it as historically, she relapses quickly after
+                            release.
+                            Following her last sentence her child Purple Trumpet (who had been with a foster
+                            family (Avril & Teal Timpani) has been adopted to a family in the Acorn area of
+                            Oaktree Village so that he can continue to attend Oaktree School where he has
+                            been since nursery. She is struggling to come to terms with this.</p>
+                        </dt>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Additional information<br>
+                          <br>
+                          <p class="govuk-body">None</p>
+                        </dt>
+                      </div>
+                    </dl>
+
+                    <h3 class="govuk-heading-m">Do you want to edit this OASys risk information for the Service Provider?
+                    </h3>
+
+                    <div class="govuk-radios" data-module="govuk-radios">
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="risk-info" name="risk-info" type="radio" value="yes" data-aria-controls="conditional-contact-2">
+                        <label class="govuk-label govuk-radios__label" for="risk-info">
+                          Yes
+                        </label>
+                      </div>
+  
+  
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="risk-info" name="risk-info" type="radio" value="no" data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-radios__label" for="risk-info">
+                          No
+                        </label>
+                      </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact" name="eccode">
+  
+                        <div class="govuk-warning-text">
+                          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                          <strong class="govuk-warning-text__text">
+                            <span class="govuk-warning-text__assistive">Warning</span>
+                            You have not edited any of the OASys information. Selecting save and continue will share it with the service provider 
+                            in its current form. Make sure there are no sensitive details included. You will be responsible for the information that is shared.
+                          </strong>
+                        </div>
+
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                            <label class="govuk-label govuk-checkboxes__label" for="waste">
+                              I understand this information will be shared with the Service Provider
+                            </label>
+                          </div>
+                        </div>
+  
+
+                      </div>
+  
+  
+  
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+
+
+
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

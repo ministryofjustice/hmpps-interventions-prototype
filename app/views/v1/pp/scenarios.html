@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Do you know the expected release date?
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post" action="make-a-referral-2">
+
+            <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <!-- <h1 class="govuk-fieldset__heading">
+                Set up
+              </h1> -->
+            </legend>
+
+
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Alex River (CRN: D007615)</h2>
+                <p class="govuk-body govuk-!-font-weight-bold">COM allocated pre-release</p>
+                <p class="govuk-body">Alex river is leaving HMP Manchester soon, they already have an allocated community probation 
+                  practitioner, who needs to make a CRS referral for them so they can try to get accommodation.</p>
+                  <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="referral-type-prison">Continue</a>
+              </section>
+            </article>
+
+
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Mohammed Singh (CRN: D743927)</h2>
+                <p class="govuk-body govuk-!-font-weight-bold">COM allocated community</p>
+                <p class="govuk-body">Mohammed Singh is based in the community and managed by a probation practitioner 
+                  who is based at the Redfern building probation office in Greater Manchester. He needs a CRS referral for ETE.</p>
+                <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="referral-type-community">Continue</a>
+              </section>
+            </article>
+
+
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Darren Wicks (CRN: D927438)</h2>
+                <p class="govuk-body govuk-!-font-weight-bold">COM not allocated pre-release</p>
+                <p class="govuk-body">Darren Wicks has been in HMP Manchester for 9months now, and is being released shortly but due to staffing shortages he doesn't yet have an 
+                  allocated probation practitioner... he needs a CRS referral for accommodation or he'll be homeless.</p>
+                <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="referral-type-nocom-prerelease">Continue</a>
+              </section>
+            </article>
+
+
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">John Smith (CRN: D182933)</h2>
+                <p class="govuk-body govuk-!-font-weight-bold">COM not allocated prison - prison</p>
+                <p class="govuk-body">John Smith just arrived in HMP Manchester. He'll be there for another 21 months so he doesn't yet have a Probation practitioner allocated to him. 
+                  However, he needs a FBD referral to help with stopping his credit card debt accruing whilst he's in prison.</p>
+                <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="referral-type-nocom-prison">Continue</a>
+              </section>
+            </article>
+
+
+
+            
+
+
+
+                  </fieldset>
+        </div>
+      </div>
+      </div>
+
+
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+
+{% endblock %}
