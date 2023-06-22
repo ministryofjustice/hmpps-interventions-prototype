@@ -58,7 +58,7 @@ href: "javascript:history.back()"
                           Name
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          {{ data['user-name'] }}
+                          {{data['user-name']}}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
@@ -71,7 +71,7 @@ href: "javascript:history.back()"
                           Email address
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          {{ data['user-email'] }}
+                          {{data['user-email']}}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
@@ -84,7 +84,7 @@ href: "javascript:history.back()"
                           PDU (Probation Delivery Unit) 
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          Manchester North
+                          {{data['pp-pdu'] | default("Manchester North")}}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
@@ -97,7 +97,7 @@ href: "javascript:history.back()"
                           Probation office
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          Redfern Building
+                          {{data['pp-office'] | default("Redfern Building")}}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">

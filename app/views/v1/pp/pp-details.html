@@ -50,7 +50,7 @@ href: "javascript:history.back()"
                         Name
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{ data['user-name'] }}
+                        {{data['user-name'] | default("Sarah Galliver")}}
                       </dd>
                     </div>
                     <div class="govuk-summary-list__row">
@@ -58,7 +58,7 @@ href: "javascript:history.back()"
                         Email
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{ data['user-email'] }}
+                        {{data['user-email'] | default("sarah.galliver@justice.gov.uk")}}
                       </dd>
                     </div>
                     <div class="govuk-summary-list__row">
