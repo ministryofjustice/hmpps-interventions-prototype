@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
 {{ super() }}
 {% endblock %}
 
@@ -20,7 +21,7 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-          <form class="form" method="post" >
+          <form class="form" method="post" action="confirmation">
 
             <div class="govuk-form-group">
 
@@ -28,7 +29,11 @@ href: "javascript:history.back()"
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  <span class="govuk-caption-xl">Alex River (CRN: D002399)</span>
+                  {% if data ['referral-type'] == "prison" %}
+                  <span class="govuk-caption-xl">Alex River (CRN: D007615)</span>
+                  {% elseif data ['referral-type'] == "community" %}
+                  <span class="govuk-caption-xl">Mohammed Singh (CRN: D743927)</span>
+                  {% endif %}                  
                   <h1 class="govuk-fieldset__heading">
                     Check all referral information
                   </h1>
@@ -44,10 +49,6 @@ href: "javascript:history.back()"
                   <div class="govuk-summary-card__title-wrapper">
                     <h2 class="govuk-summary-card__title">Probation practitioner details</h2>
                     <ul class="govuk-summary-card__actions">
-                      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-                          Change<span class="govuk-visually-hidden"></span>
-                        </a>
-                      </li>
                     </ul>
                   </div>
                   <div class="govuk-summary-card__content">
@@ -57,7 +58,12 @@ href: "javascript:history.back()"
                           Name
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          Sarah Philips
+                          {{ data['user-name'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> location</span>
+                          </a>
                         </dd>
                       </div>
                       <div class="govuk-summary-list__row">
@@ -65,15 +71,25 @@ href: "javascript:history.back()"
                           Email address
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          sarah.philips@justice.gov.uk
+                          {{ data['user-email'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> location</span>
+                          </a>
                         </dd>
                       </div>
                       <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                          PDU (probation delivery unit) 
+                          PDU (Probation Delivery Unit) 
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          East Kent
+                          Manchester North
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> location</span>
+                          </a>
                         </dd>
                       </div>
                       <div class="govuk-summary-list__row">
@@ -81,7 +97,12 @@ href: "javascript:history.back()"
                           Probation office
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          Kent: Mainstone Probation Office
+                          Redfern Building
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> location</span>
+                          </a>
                         </dd>
                       </div>
                     </dl>
@@ -89,85 +110,15 @@ href: "javascript:history.back()"
                 </div>
 
 
-
-
-
-
-
-
-
-
                 <div class="govuk-grid-row">
                   <div class="govuk-grid-column-full">
 
-                    <!-- <div class="govuk-summary-card">
-                      <div class="govuk-summary-card__title-wrapper">
-                        <h2 class="govuk-summary-card__title">Probation practitioner details</h2>
-                      </div>
-                      <div class="govuk-summary-card__content">
-                        <dl class="govuk-summary-list">
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Name
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              Sarah Philips
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                              <a class="govuk-link" href="#">
-                                Change<span class="govuk-visually-hidden"> age</span>
-                              </a>
-                            </dd>
-                          </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Email address
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              sarah.philips@justice.gov.uk
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                              <a class="govuk-link" href="#">
-                                Change<span class="govuk-visually-hidden"> age</span>
-                              </a>
-                            </dd>
-                          </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              PDU (probation delivery unit) 
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              TBC
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                              <a class="govuk-link" href="#">
-                                Change<span class="govuk-visually-hidden"> age</span>
-                              </a>
-                            </dd>
-                          </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Probation office
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              TBC
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                              <a class="govuk-link" href="#">
-                                Change<span class="govuk-visually-hidden"> age</span>
-                              </a>
-                            </dd>
-                          </div>
-                        </dl>
-                      </div>
-                      </div> -->
-
-
-
+                    {% if data ['referral-type'] == "prison" %}
 
                       <div class="govuk-summary-card">
                         <div class="govuk-summary-card__title-wrapper">
-                          <h2 class="govuk-summary-card__title">Alex River's location and expected release date</h2>
+                          <h2 class="govuk-summary-card__title">
+                            Alex River's location and expected release date
                         </div>
                         <div class="govuk-summary-card__content">
                           <dl class="govuk-summary-list">
@@ -176,7 +127,11 @@ href: "javascript:history.back()"
                                 Location at time of referral
                               </dt>
                               <dd class="govuk-summary-list__value">
-                                Five Wells (HMP)
+                                {% if data ['location'] == "yes" %}
+                                <p class="govuk-body">HMP Leeds</p>
+                                {% elseif data ['location'] == "no" %}
+                                <p class="govuk-body">{{data['establishment']}}</p>
+                                {% endif %}
                               </dd>
                               <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="#">
@@ -189,7 +144,11 @@ href: "javascript:history.back()"
                                 Expected release date
                               </dt>
                               <dd class="govuk-summary-list__value">
-                                12 Aug 2023
+                                {% if data ['release-date'] == "yes" %}
+                                <p class="govuk-body">15 Sept 2023</p>
+                                {% elseif data ['release-date'] == "no" %}
+                                <p class="govuk-body">{{data['input-date-day']}} {{data['input-date-month']}} {{data['input-date-year']}}</p>
+                                {% endif %}
                               </dd>
                               <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="#">
@@ -201,13 +160,20 @@ href: "javascript:history.back()"
                         </div>
                         </div>
 
+                        {% elseif data ['referral-type'] == "community" %}
+  
+                        {% endif %}
 
 
 
-            
+
+
+                        {% if data ['referral-type'] == "prison" %}
+
                     <div class="govuk-summary-card">
                       <div class="govuk-summary-card__title-wrapper">
-                        <h2 class="govuk-summary-card__title">Alex River's personal details</h2>
+                        <h2 class="govuk-summary-card__title">
+                          Alex River's personal details
                       </div>
                       <div class="govuk-summary-card__content">
                         <dl class="govuk-summary-list">
@@ -248,7 +214,7 @@ href: "javascript:history.back()"
                               Address
                             </dt>
                             <dd class="govuk-summary-list__value">
-                              1 Lunar Lane<br>Sheffield<br>South Yorkshire<br>S10 1AG
+                              1 Lunar Lane<br>Manchester<br>M14 9PR
                             </dd>
                           </div>
                           <div class="govuk-summary-list__row">
@@ -256,7 +222,7 @@ href: "javascript:history.back()"
                               Phone number
                             </dt>
                             <dd class="govuk-summary-list__value">
-                              07612 634 653
+                              07849 372981
                             </dd>
                           </div>
                           <div class="govuk-summary-list__row">
@@ -303,12 +269,128 @@ href: "javascript:history.back()"
                       </div>
                       </div>
 
+                      {% elseif data ['referral-type'] == "community" %}
+
+                      <div class="govuk-summary-card">
+                        <div class="govuk-summary-card__title-wrapper">
+                          <h2 class="govuk-summary-card__title">
+                            Mohammed Singh's personal details
+                        </div>
+                        <div class="govuk-summary-card__content">
+                          <dl class="govuk-summary-list">
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                First name
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Mohammed
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Last name(s)
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Singh
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Date of birth
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                1 Aug 1954 (68 years old)
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Gender
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Male
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Address
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                174b Hillton Avenue<br>Manchester<br>M4 7EU
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Phone number
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                07482 473982
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Email address
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Not found
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Ethnicity
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Indonesian
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Preferred language
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                English
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Disabilities
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                None
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Religion or belief
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Muslim
+                              </dd>
+                            </div>
+                          </dl>
+                        </div>
+                        </div>
+                      {% endif %}
+
+
+
+
+
+
+
+
+
 
 
 
                       <div class="govuk-summary-card">
                         <div class="govuk-summary-card__title-wrapper">
-                          <h2 class="govuk-summary-card__title">Alex River's risk information</h2>
+                          <h2 class="govuk-summary-card__title">
+                            {% if data ['referral-type'] == "prison" %}
+                            Alex River's risk information
+                            {% elseif data ['referral-type'] == "community" %}
+                            Mohammed Singh's risk information</h2>
+                            {% endif %} 
+                          </h2>
                           <ul class="govuk-summary-card__actions">
                             <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
                                 Change<span class="govuk-visually-hidden"></span>
@@ -325,8 +407,6 @@ href: "javascript:history.back()"
                                 Medium ROSH to the public<br>
                                 Medium ROSH to staff<br>
                                 High ROSH to her children (neglect)
-                              </p>
-                              </dt>
                             </div>
                             <div class="govuk-summary-list__row">
                               <dt class="govuk-summary-list__key">
@@ -373,7 +453,6 @@ href: "javascript:history.back()"
                     Oaktree Village so that he can continue to attend Oaktree School where he has
                     been since being in foster care. She is struggling to come to terms with this.
                     </p>
-                              </dt>
                             </div>
                             <div class="govuk-summary-list__row">
                               <dt class="govuk-summary-list__key">
@@ -410,17 +489,16 @@ href: "javascript:history.back()"
                     Oaktree Village so that he can continue to attend Oaktree School where he has
                     been since nursery. She is struggling to come to terms with this.
                     </p>
-                              </dt>
                             </div>
                             <div class="govuk-summary-list__row">
                               <dt class="govuk-summary-list__key">
-                                Concerns relating to self harm
-                              </dt>
+                                Concerns relating to self harm<br>
+                                <p class="govuk-body">Don't know</p>
                             </div>
                             <div class="govuk-summary-list__row">
                               <dt class="govuk-summary-list__key">
-                                Concerns relating to suicide
-                              </dt>
+                                Concerns relating to suicide<br>
+                                <p class="govuk-body">Don't know</p>
                             </div>
                             <div class="govuk-summary-list__row">
                               <dt class="govuk-summary-list__key">
@@ -441,7 +519,6 @@ href: "javascript:history.back()"
                     Colleen has no other family member who she can reside with and although her
                     family support her, they do not offer the pro-social influence required to keep her
                     from offending.</p>
-                              </dt>
                             </div>
                             <div class="govuk-summary-list__row">
                               <dt class="govuk-summary-list__key">
@@ -469,26 +546,29 @@ href: "javascript:history.back()"
                     family (Avril & Teal Timpani) has been adopted to a family in the Acorn area of
                     Oaktree Village so that he can continue to attend Oaktree School where he has
                     been since nursery. She is struggling to come to terms with this.</p>
-                              </dt>
                             </div>
                             <div class="govuk-summary-list__row">
                               <dt class="govuk-summary-list__key">
-                                Additional risk information
-                              </dt>
+                                Additional risk information<br>
+                                <p class="govuk-body">None</p>
                             </div>
                           </dl>
                         </div>
-                        </div>
+                      </div>
+
+
+                      
                     
                     
                       <div class="govuk-summary-card">
                         <div class="govuk-summary-card__title-wrapper">
-                          <h2 class="govuk-summary-card__title">Alex River's needs and requirements</h2>
+                          <h2 class="govuk-summary-card__title">
+                            {% if data ['referral-type'] == "prison" %}
+                            Alex River's needs and requirements
+                            {% elseif data ['referral-type'] == "community" %}
+                            Mohammed Singh's needs and requirements</h2>
+                            {% endif %} 
                           <ul class="govuk-summary-card__actions">
-                            <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-                                Change<span class="govuk-visually-hidden"></span>
-                              </a>
-                            </li>
                           </ul>
                         </div>
                         <div class="govuk-summary-card__content">
@@ -500,6 +580,11 @@ href: "javascript:history.back()"
                               <dd class="govuk-summary-list__value">
                                 N/A
                               </dd>
+                              <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                  Change<span class="govuk-visually-hidden"> location</span>
+                                </a>
+                              </dd>
                             </div>
                             <div class="govuk-summary-list__row">
                               <dt class="govuk-summary-list__key">
@@ -507,6 +592,11 @@ href: "javascript:history.back()"
                               </dt>
                               <dd class="govuk-summary-list__value">
                                 N/A
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                  Change<span class="govuk-visually-hidden"> location</span>
+                                </a>
                               </dd>
                             </div>
                             <div class="govuk-summary-list__row">
@@ -516,6 +606,11 @@ href: "javascript:history.back()"
                               <dd class="govuk-summary-list__value">
                                 No
                               </dd>
+                              <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                  Change<span class="govuk-visually-hidden"> location</span>
+                                </a>
+                              </dd>
                             </div>
                             <div class="govuk-summary-list__row">
                               <dt class="govuk-summary-list__key">
@@ -523,6 +618,11 @@ href: "javascript:history.back()"
                               </dt>
                               <dd class="govuk-summary-list__value">
                                 N/A
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                  Change<span class="govuk-visually-hidden"> location</span>
+                                </a>
                               </dd>
                             </div>
                             <div class="govuk-summary-list__row">
@@ -532,21 +632,23 @@ href: "javascript:history.back()"
                               <dd class="govuk-summary-list__value">
                                 N/A
                               </dd>
+                              <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                  Change<span class="govuk-visually-hidden"> location</span>
+                                </a>
+                              </dd>
                             </div>
                             <div class="govuk-summary-list__row">
                               <dt class="govuk-summary-list__key">
                                 Caring or employment responsibilities
                               </dt>
                               <dd class="govuk-summary-list__value">
-                                English
-                              </dd>
-                            </div>
-                            <div class="govuk-summary-list__row">
-                              <dt class="govuk-summary-list__key">
-                                Details of when Alex will not be able to attend sessions
-                              </dt>
-                              <dd class="govuk-summary-list__value">
                                 None
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                  Change<span class="govuk-visually-hidden"> location</span>
+                                </a>
                               </dd>
                             </div>
                           </dl>
@@ -557,7 +659,7 @@ href: "javascript:history.back()"
 
                         <div class="govuk-summary-card">
                           <div class="govuk-summary-card__title-wrapper">
-                            <h2 class="govuk-summary-card__title">Sentence information</h2>
+                            <h2 class="govuk-summary-card__title">Sentence Information</h2>
                           </div>
                           <div class="govuk-summary-card__content">
                             <dl class="govuk-summary-list">
@@ -566,7 +668,7 @@ href: "javascript:history.back()"
                                   Sentence
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                  
+                                  Stealing from shops and stalls (shoplifting)
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
                                   <a class="govuk-link" href="#">
@@ -579,7 +681,59 @@ href: "javascript:history.back()"
                                   Subcategory
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                  
+                                  Stealing from shops and stalls (shoplifting)
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden"> release date</span>
+                                  </a>
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  End of sentence date	
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Not found
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden"> release date</span>
+                                  </a>
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Maximum number of enforceable days	
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  5
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden"> release date</span>
+                                  </a>
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Date intervention to be completed by	
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  4 December 2023
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden"> release date</span>
+                                  </a>
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Further information for the service provider	
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  None
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
                                   <a class="govuk-link" href="#">
@@ -590,6 +744,48 @@ href: "javascript:history.back()"
                             </dl>
                           </div>
                           </div>
+
+
+
+                          <div class="govuk-summary-card">
+                            <div class="govuk-summary-card__title-wrapper">
+                              <h2 class="govuk-summary-card__title">Accommodation referral details                              </h2>
+                            </div>
+                            <div class="govuk-summary-card__content">
+                              <dl class="govuk-summary-list">
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Complexity level
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    Medium complexity
+                                    <br>
+                                    Service user is at risk of homelessness/is homeless, or will be on release from prison. Service user has had some success in 
+                                    maintaining a tenancy but may have additional needs e.g. Learning Difficulties and/or Learning Disabilities or other challenges currently.
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="#">
+                                      Change<span class="govuk-visually-hidden"> location</span>
+                                    </a>
+                                  </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Desired outcomes	
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    All barriers as identified in the Service user action plan, for example financial, behavioural, physical, 
+                                    mental or offence-type related), to obtaining or sustaining accommodation, are successfully removed.
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="#">
+                                      Change<span class="govuk-visually-hidden"> release date</span>
+                                    </a>
+                                  </dd>
+                                </div>
+                              </dl>
+                            </div>
+                            </div>
 
 
 

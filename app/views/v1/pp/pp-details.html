@@ -20,7 +20,11 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-          <form class="form" method="post" >
+    {% if data ['referral-type'] == "prison" %}
+    <form class="form" method="post" action="make-a-referral-prerelease">
+      {% elseif data ['referral-type'] == "community" %}
+      <form class="form" method="post" action="make-a-referral-community">
+    {% endif %}
 
             <div class="govuk-form-group">
 
@@ -28,7 +32,11 @@ href: "javascript:history.back()"
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  <span class="govuk-caption-xl">Alex River (CRN: D002399)</span>
+                  {% if data ['referral-type'] == "prison" %}
+                  <span class="govuk-caption-xl">Alex River (CRN: D007615)</span>
+                  {% elseif data ['referral-type'] == "community" %}
+                  <span class="govuk-caption-xl">Mohammed Singh (CRN: D743927)</span>
+                  {% endif %}
                   <h1 class="govuk-fieldset__heading">
                     Confirm probation practitioner details
                   </h1>
@@ -36,14 +44,13 @@ href: "javascript:history.back()"
 
                   <p class="govuk-body">These contact details will be sent to the service provider for the referral. Are they correct?</p>
 
-
                   <dl class="govuk-summary-list">
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
                         Name
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        Sarah Philips
+                        {{ data['user-name'] }}
                       </dd>
                     </div>
                     <div class="govuk-summary-list__row">
@@ -51,15 +58,15 @@ href: "javascript:history.back()"
                         Email
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        sarah.philips@justice.gov.uk
+                        {{ data['user-email'] }}
                       </dd>
                     </div>
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        PDU (probation delivery unit)
+                        PDU (Probation Delivery Unit)
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        TBC
+                        Manchester North
                       </dd>
                     </div>
                     <div class="govuk-summary-list__row">
@@ -67,26 +74,26 @@ href: "javascript:history.back()"
                         Probation office
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        <p class="govuk-body">TBC</p>
+                        <p class="govuk-body">Redfern Building</p>
                       </dd>
                     </div>
                   </dl>
-
+                  
 
 
                   <div class="govuk-radios" data-module="govuk-radios">
 
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="ec-code" name="ec-code" type="radio" value="No" data-aria-controls="conditional-contact-2">
-                      <label class="govuk-label govuk-radios__label" for="ec-code">
+                      <input class="govuk-radios__input" id="pp-details" name="pp-details" type="radio" value="yes" data-aria-controls="conditional-contact-2">
+                      <label class="govuk-label govuk-radios__label" for="pp-details">
                         Yes
                       </label>
                     </div>
 
 
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="ec-code" name="ec-code" type="radio" value="Yes" data-aria-controls="conditional-contact">
-                      <label class="govuk-label govuk-radios__label" for="ec-code">
+                      <input class="govuk-radios__input" id="pp-details" name="pp-details" type="radio" value="no" data-aria-controls="conditional-contact">
+                      <label class="govuk-label govuk-radios__label" for="pp-details">
                         No
                       </label>
                     </div>
@@ -110,7 +117,7 @@ href: "javascript:history.back()"
 
                       <div class="govuk-form-group">
                         <label class="govuk-label" for="full">
-                          PDU (probation delivery unit)
+                          PDU (Probation Delivery Unit)
                         </label>
                         <div id="contact-hint" class="govuk-hint">
                           Start typing, then choose from the list.

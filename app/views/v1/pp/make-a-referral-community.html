@@ -21,7 +21,9 @@
         <p class="govuk-body govuk-!-margin-bottom-7">This information will be sent to the service provider.</p>
 
         <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Submission incomplete</h2>
-        {% if data ['pp-details'] == "yes" or data ['pp-details'] == "no" %}
+        {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
+        <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 5 sections.</p>
+        {% elseif data ['pp-details'] == "yes" or data ['pp-details'] == "no" %}
         <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 5 sections.</p>
         {% else %}
         <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 5 sections.</p>
@@ -57,16 +59,20 @@
 
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">2. </span> Review Alex River's information
+              <span class="app-task-list__section-number">2. </span> Review Mohammed Singh's information
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
-                  <a href="" aria-describedby="">
+                  <a href="personal-details-mo" aria-describedby="">
                     Personal details
                   </a>
                 </span>
+                {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+                {% else %}
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
+                {% endif %}
               </li>
 
               <li class="app-task-list__item">
@@ -75,7 +81,11 @@
                     Risk information
                   </a>
                 </span>
+                {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+                {% else %}
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
+                {% endif %}
               </li>
 
               <li class="app-task-list__item">
@@ -84,7 +94,11 @@
                   Needs and requirements
                   </a>
                 </span>
+                {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+                {% else %}
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
+                {% endif %}
               </li>
             </ul>
           </li>
@@ -94,72 +108,140 @@
 
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">3. </span> Add Accommodation referral details
+              <span class="app-task-list__section-number">3. </span>Add Education, training and employment (ete) referral details
             </h2>
+
+            {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
+
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
-                    Confirm the relevant sentence for the <br> Accommodation referral
+                  <a href="" aria-describedby="">
+                  Confirm the relevant sentence for the Education,<br>training and employment (ete) referral
                 </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
               </li>
 
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
+                  <a href="" aria-describedby="">
                     Select desired outcomes
                 </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
               </li>
 
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
+                  <a href="" aria-describedby="">
                     Select required complexity level
                 </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
               </li>
 
 
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
+              <a href="" aria-describedby="">
                 Enter enforceable days used
             </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+            <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
           </li>
 
 
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
-            Enter when the Accommodation service <br> needs to be completed
+          <a href="" aria-describedby="">
+            Enter when the  Education, training <br>and employment (ete) service needs to <br>be completed
           </span>
-        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
-      </li>
+          <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+        </li>
 
 
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
+      <a href="" aria-describedby="">
         Further information for service provider
     </span>
-    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+    <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
   </li>
 </ul>
 </li>
 
 
+{% else %}
+
+<ul class="app-task-list__items">
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+      Confirm the relevant sentence for the Education,<br>training and employment (ete) referral
+      
+    </span>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+  </li>
+
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+        Select desired outcomes
+    </span>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+  </li>
+
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+        Select required complexity level
+    </span>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+  </li>
 
 
-          <li>
-            <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">4. </span> Check all referral information and submit referral
-            </h2>
-            <ul class="app-task-list__items">
-              <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                  Check referral information
-                </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
-              </li>
-            </ul>
-          </li>
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+    Enter enforceable days used
+</span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+</li>
+
+
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+Enter when the  Education, training <br>and employment (ete) service needs to <br>be completed
+</span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+</li>
+
+
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+Further information for service provider
+</span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+</li>
+</ul>
+</li>
+{% endif %}
+
+
+
+
+
+<li>
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">5. </span> Check all referral information and submit referral
+  </h2>
+  <ul class="app-task-list__items">
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="check-answers" aria-describedby="">
+        Check referral information</a>
+      </span>
+      {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
+      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
+      {% else %}
+      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+      {% endif %}              
+    </li>
+  </ul>
+</li>
 
         </ol>
 

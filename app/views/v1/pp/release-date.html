@@ -20,7 +20,12 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-          <form class="form" method="post" action="make-a-referral-prerelease">
+    {% if data ['referral-type-nocom'] == "yes" %}
+    <form class="form" method="post" action="make-a-referral-nocom-prerelease2">
+      {% else %}
+      <form class="form" method="post" action="make-a-referral-prerelease">
+        {% endif %}
+
 
             <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="contact-hint">

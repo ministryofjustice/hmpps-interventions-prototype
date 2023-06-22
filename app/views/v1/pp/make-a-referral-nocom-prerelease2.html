@@ -14,7 +14,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <span class="govuk-caption-xl">Alex River (CRN: D007615)</span>
+    <span class="govuk-caption-xl">Darren Wicks (CRN: D927438)</span>
 <h1 class="govuk-heading-xl">Make a referral</h1>
 
 
@@ -28,7 +28,7 @@
         {% elseif data ['pp-details'] == "yes" or data ['pp-details'] == "no" %}
         <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 5 sections.</p>
         {% else %}
-        <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 5 sections.</p>
+        <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 5 sections.</p>
         {% endif %}
 
 
@@ -36,20 +36,16 @@
 
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">1. </span> Confirm probation practitioner details 
+              <span class="app-task-list__section-number">1. </span>Review referral contact details
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
-                  <a href="pp-details" aria-describedby="">
+                  <a href="main-contact-details" aria-describedby="">
                     Name, email and location
                   </a>
                 </span>
-                {% if data ['pp-details'] == "yes" or data ['pp-details'] == "no" %}
-                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
-                {% else %}
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
-                {% endif %}              
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>             
               </li>
             </ul>
           </li>
@@ -59,7 +55,7 @@
 
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">2. </span> Confirm Alex River's location and expected release date
+              <span class="app-task-list__section-number">2. </span> Confirm Darren Wicks' location and expected release date
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
@@ -95,12 +91,12 @@
 
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">3. </span> Review Alex River's information
+              <span class="app-task-list__section-number">3. </span> Review Darren Wicks' information
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
-                  <a href="personal-details-alex" aria-describedby="">
+                  <a href="personal-details-darren" aria-describedby="">
                     Personal details
                   </a>
                 </span>
