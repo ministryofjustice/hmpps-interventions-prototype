@@ -5,7 +5,19 @@
 {% endblock %}
 
 {% block main %}
+{% if data ['referral-type'] == "prison" %}
 {% include "../includes/key-details-bar-alex.html" %}
+
+{% elseif data ['referral-type'] == "community" %}
+{% include "../includes/key-details-bar-mo.html" %}
+
+{% elseif data ['referral-type-nocom'] == "yes" %}
+{% include "../includes/key-details-bar-darren.html" %}
+
+{% elseif data ['referral-type-nocom'] == "no" %}
+{% include "../includes/key-details-bar-john.html" %}
+
+{% endif %}
 {{ super() }}
 {% endblock %}
 
@@ -33,6 +45,10 @@ href: "javascript:history.back()"
                   <span class="govuk-caption-xl">Alex River (CRN: D007615)</span>
                   {% elseif data ['referral-type'] == "community" %}
                   <span class="govuk-caption-xl">Mohammed Singh (CRN: D743927)</span>
+                  {% elseif data ['referral-type-nocom'] == "yes" %}
+                  <span class="govuk-caption-xl">Darren Wicks (CRN: D927438)</span>
+                  {% elseif data ['referral-type-nocom'] == "no" %}
+                  <span class="govuk-caption-xl">John Smith (CRN: D182933)</span>
                   {% endif %}                  
                   <h1 class="govuk-fieldset__heading">
                     Check all referral information
@@ -43,7 +59,7 @@ href: "javascript:history.back()"
 
 
 
-
+                {% if data ['referral-type'] == "prison" or data ['referral-type'] == "community" %}
 
                 <div class="govuk-summary-card">
                   <div class="govuk-summary-card__title-wrapper">
@@ -58,7 +74,7 @@ href: "javascript:history.back()"
                           Name
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          {{ data['user-name'] }}
+                          {{data['user-name']}}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
@@ -71,7 +87,7 @@ href: "javascript:history.back()"
                           Email address
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          {{ data['user-email'] }}
+                          {{data['user-email']}}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
@@ -84,7 +100,7 @@ href: "javascript:history.back()"
                           PDU (Probation Delivery Unit) 
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          Manchester North
+                          {{data['pp-pdu'] | default("Manchester North")}}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
@@ -97,7 +113,7 @@ href: "javascript:history.back()"
                           Probation office
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          Redfern Building
+                          {{data['pp-office'] | default("Redfern Building")}}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
@@ -108,6 +124,61 @@ href: "javascript:history.back()"
                     </dl>
                   </div>
                 </div>
+
+                {% elseif data ['referral-type-nocom'] == "yes" %}
+                <div class="govuk-summary-card">
+                  <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Main point of contact details</h2>
+                    <ul class="govuk-summary-card__actions">
+                    </ul>
+                  </div>
+                  <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{data['contact-name']}}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> location</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Email address
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{data['contact-email']}}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> location</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Establishment
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{data['contact-establishment'] | default("Not provided")}}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> location</span>
+                          </a>
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+                </div>
+                {% endif %}                  
+
+
 
 
                 <div class="govuk-grid-row">
@@ -128,7 +199,7 @@ href: "javascript:history.back()"
                               </dt>
                               <dd class="govuk-summary-list__value">
                                 {% if data ['location'] == "yes" %}
-                                <p class="govuk-body">HMP Leeds</p>
+                                <p class="govuk-body">HMP Manchester</p>
                                 {% elseif data ['location'] == "no" %}
                                 <p class="govuk-body">{{data['establishment']}}</p>
                                 {% endif %}
@@ -160,7 +231,86 @@ href: "javascript:history.back()"
                         </div>
                         </div>
 
-                        {% elseif data ['referral-type'] == "community" %}
+                        {% elseif data ['referral-type-nocom'] == "yes" %}
+
+                        <div class="govuk-summary-card">
+                          <div class="govuk-summary-card__title-wrapper">
+                            <h2 class="govuk-summary-card__title">
+                              Darren Wicks' location and expected release date
+                          </div>
+                          <div class="govuk-summary-card__content">
+                            <dl class="govuk-summary-list">
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Location at time of referral
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  {% if data ['location'] == "yes" %}
+                                  <p class="govuk-body">HMP Manchester</p>
+                                  {% elseif data ['location'] == "no" %}
+                                  <p class="govuk-body">{{data['establishment']}}</p>
+                                  {% endif %}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden"> location</span>
+                                  </a>
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Expected release date
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  {% if data ['release-date'] == "yes" %}
+                                  <p class="govuk-body">15 Sept 2023</p>
+                                  {% elseif data ['release-date'] == "no" %}
+                                  <p class="govuk-body">{{data['input-date-day']}} {{data['input-date-month']}} {{data['input-date-year']}}</p>
+                                  {% endif %}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden"> release date</span>
+                                  </a>
+                                </dd>
+                              </div>
+                            </dl>
+                          </div>
+                          </div>
+
+                          {% elseif data ['referral-type-nocom'] == "no" %}
+
+                          <div class="govuk-summary-card">
+                            <div class="govuk-summary-card__title-wrapper">
+                              <h2 class="govuk-summary-card__title">
+                                John Smith's location and expected release date
+                            </div>
+                            <div class="govuk-summary-card__content">
+                              <dl class="govuk-summary-list">
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Location at time of referral
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    {% if data ['location'] == "yes" %}
+                                    <p class="govuk-body">HMP Manchester</p>
+                                    {% elseif data ['location'] == "no" %}
+                                    <p class="govuk-body">{{data['establishment']}}</p>
+                                    {% endif %}
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="#">
+                                      Change<span class="govuk-visually-hidden"> location</span>
+                                    </a>
+                                  </dd>
+                                </div>
+                              </dl>
+                            </div>
+                            </div>
+
+                          
+                          {% elseif data ['referral-type'] == "community" %}
+
   
                         {% endif %}
 
@@ -388,7 +538,12 @@ href: "javascript:history.back()"
                             {% if data ['referral-type'] == "prison" %}
                             Alex River's risk information
                             {% elseif data ['referral-type'] == "community" %}
-                            Mohammed Singh's risk information</h2>
+                            Mohammed Singh's risk information
+                            {% elseif data ['referral-type-nocom'] == "yes" %}
+                            Darren Wicks' risk information
+                            {% elseif data ['referral-type-nocom'] == "no" %}
+                            John Smith's risk information
+                          </h2>
                             {% endif %} 
                           </h2>
                           <ul class="govuk-summary-card__actions">
@@ -566,7 +721,13 @@ href: "javascript:history.back()"
                             {% if data ['referral-type'] == "prison" %}
                             Alex River's needs and requirements
                             {% elseif data ['referral-type'] == "community" %}
-                            Mohammed Singh's needs and requirements</h2>
+                            Mohammed Singh's needs and requirements
+                            {% elseif data ['referral-type-nocom'] == "yes" %}
+                            Darren Wicks' needs and requirements
+                            {% elseif data ['referral-type-nocom'] == "no" %}
+                            John Smith's needs and requirements
+
+                          </h2>
                             {% endif %} 
                           <ul class="govuk-summary-card__actions">
                           </ul>

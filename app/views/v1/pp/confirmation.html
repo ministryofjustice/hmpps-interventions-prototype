@@ -7,8 +7,16 @@
 {% block main %}
 {% if data ['referral-type'] == "prison" %}
 {% include "../includes/key-details-bar-alex.html" %}
+
 {% elseif data ['referral-type'] == "community" %}
 {% include "../includes/key-details-bar-mo.html" %}
+
+{% elseif data ['referral-type-nocom'] == "yes" %}
+{% include "../includes/key-details-bar-darren.html" %}
+
+{% elseif data ['referral-type-nocom-prison'] == "yes" %}
+{% include "../includes/key-details-bar-john.html" %}
+
 {% endif %}
 {{ super() }}
 {% endblock %}
