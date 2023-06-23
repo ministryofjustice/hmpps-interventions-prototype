@@ -215,11 +215,7 @@ href: "javascript:history.back()"
                                 Expected release date
                               </dt>
                               <dd class="govuk-summary-list__value">
-                                {% if data ['release-date'] == "yes" %}
                                 <p class="govuk-body">15 Sept 2023</p>
-                                {% elseif data ['release-date'] == "no" %}
-                                <p class="govuk-body">{{data['input-date-day']}} {{data['input-date-month']}} {{data['input-date-year']}}</p>
-                                {% endif %}
                               </dd>
                               <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="#">
@@ -262,11 +258,7 @@ href: "javascript:history.back()"
                                   Expected release date
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                  {% if data ['release-date'] == "yes" %}
                                   <p class="govuk-body">15 Sept 2023</p>
-                                  {% elseif data ['release-date'] == "no" %}
-                                  <p class="govuk-body">{{data['input-date-day']}} {{data['input-date-month']}} {{data['input-date-year']}}</p>
-                                  {% endif %}
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
                                   <a class="govuk-link" href="#">
@@ -283,7 +275,7 @@ href: "javascript:history.back()"
                           <div class="govuk-summary-card">
                             <div class="govuk-summary-card__title-wrapper">
                               <h2 class="govuk-summary-card__title">
-                                John Smith's location and expected release date
+                                John Smith's location
                             </div>
                             <div class="govuk-summary-card__content">
                               <dl class="govuk-summary-list">

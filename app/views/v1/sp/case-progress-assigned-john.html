@@ -23,8 +23,6 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form class="form" method="post" action="case-progress-assigned-john">
-
 
     <h1 class="govuk-heading-l">John Smith: case progress</h1>
 
@@ -50,21 +48,8 @@ href: "javascript:history.back()"
 
     </nav>
 
-    <div class="govuk-form-group">
-      <h2 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--m" for="assign">
-          Who do you want to assign this referral to?
-        </label>
-      </h2>
-      <p class="govuk-body">Enter the email address of the caseworker</p>
-
-      <input class="govuk-input govuk-!-width-one-half" id="assign" name="assign" type="text">
-    </div>
-
-
-    <button class="govuk-button" data-module="govuk-button">
-      Save and continue
-    </button>
+    <p class="govuk-body">This intervention is assigned to R&M Active Probation Practitioner ({{data['assign']}}).
+    </p>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
