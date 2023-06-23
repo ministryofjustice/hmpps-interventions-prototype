@@ -31,15 +31,18 @@ href: "javascript:history.back()"
 
 
             <div class="govuk-form-group">
+              {% if data ['referral-type'] == "prison" %}
               <span class="govuk-caption-xl">Alex River (CRN: D002399)</span>
+              {% elseif data ['referral-type-nocom'] == "yes" %}
+              <span class="govuk-caption-xl">Darren Wicks (CRN: D927438)</span>
+              {% elseif data ['referral-type-nocom'] == "no" %}
+              <span class="govuk-caption-xl">John Smith (CRN: D182933)</span>
+              {% endif %}               
               <h1 class="govuk-label-wrapper">
                 <label class="govuk-label govuk-label--l" for="more-detail">
                   Enter why the expected release date is not known
                 </label>
               </h1>
-              <!-- <div id="more-detail-hint" class="govuk-hint">
-                Do not include personal or financial information, like your National Insurance number or credit card details.
-              </div> -->
               <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
             </div>
 
