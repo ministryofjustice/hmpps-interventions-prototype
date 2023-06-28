@@ -74,7 +74,15 @@ href: "javascript:history.back()"
                           Name
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          {{data['user-name']}}
+                        {% if data ['user-name2'] == "" %}
+                          {% if data ['user-name'] == "" %}
+                            Sarah Galliver
+                          {% else %}
+                            {{data['user-name'] | default("Sarah Galliver")}}
+                          {% endif %}
+                        {% else %}
+                          {{data ['user-name2']}}
+                        {% endif %}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
@@ -87,7 +95,15 @@ href: "javascript:history.back()"
                           Email address
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          {{data['user-email']}}
+                        {% if data ['user-email2'] == "" %}
+                          {% if data ['user-email'] == "" %}
+                            Sarah Galliver
+                          {% else %}
+                            {{data['user-email'] | default("Sarah Galliver")}}
+                          {% endif %}
+                        {% else %}
+                          {{data ['user-email2']}}
+                        {% endif %}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="#">
@@ -125,7 +141,9 @@ href: "javascript:history.back()"
                   </div>
                 </div>
 
-                {% elseif data ['referral-type-nocom'] == "yes" %}
+
+                {% elseif data ['referral-type-nocom'] == "yes" or data ['referral-type-nocom'] == "no" %}
+
                 <div class="govuk-summary-card">
                   <div class="govuk-summary-card__title-wrapper">
                     <h2 class="govuk-summary-card__title">Main point of contact details</h2>
@@ -511,6 +529,210 @@ href: "javascript:history.back()"
                           </dl>
                         </div>
                         </div>
+
+
+                        {% elseif data ['referral-type-nocom'] == "yes" %}
+                        <div class="govuk-summary-card">
+                          <div class="govuk-summary-card__title-wrapper">
+                            <h2 class="govuk-summary-card__title">
+                              Darren Wicks' personal details
+                          </div>
+                          <div class="govuk-summary-card__content">
+                            <dl class="govuk-summary-list">
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  First name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Darren
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Last name(s)
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Wicks
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Date of birth
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  17 Jun 1978 (45 years old)
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Gender
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Male
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Address
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  18 Derry Close<br>Manchester<br>M2 1AA
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Phone number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  07374 982734
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Email address
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Not found
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Ethnicity
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Mixed: other
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Preferred language
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  English
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Disabilities
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  None
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Religion or belief
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Atheist
+                                </dd>
+                              </div>
+                            </dl>
+                          </div>
+                          </div>
+
+
+                        {% elseif data ['referral-type-nocom'] == "no" %}
+
+                        <div class="govuk-summary-card">
+                          <div class="govuk-summary-card__title-wrapper">
+                            <h2 class="govuk-summary-card__title">
+                              John Smith's personal details
+                          </div>
+                          <div class="govuk-summary-card__content">
+                            <dl class="govuk-summary-list">
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  First name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  John
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Last name(s)
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Smith
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Date of birth
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  4 Dec 1987 (35 years old)
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Gender
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Male
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Address
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Flat 98<br>Tilbolt Hall<br>Manchester<br>M1 1AD
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Phone number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  07328 281982
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Email address
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  johnfsmith554@hotmail.com
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Ethnicity
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  White British
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Preferred language
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  English
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Disabilities
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  None
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Religion or belief
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Catholic
+                                </dd>
+                              </div>
+                            </dl>
+                          </div>
+                          </div>
+
                       {% endif %}
 
 
