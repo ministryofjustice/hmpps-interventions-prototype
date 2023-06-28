@@ -26,6 +26,8 @@ href: "javascript:history.back()"
       <form class="form" method="post" action="make-a-referral-community">
         {% elseif data ['referral-type-nocom'] == "yes" %}
         <form class="form" method="post" action="make-a-referral-nocom-prerelease2">
+          {% elseif data ['referral-type-nocom'] == "no" %}
+          <form class="form" method="post" action="make-a-referral-nocom-prison2">
         {% endif %}
 
             <div class="govuk-form-group">
