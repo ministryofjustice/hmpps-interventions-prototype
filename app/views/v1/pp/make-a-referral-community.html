@@ -17,8 +17,9 @@
     <span class="govuk-caption-xl">Mohammed Singh (CRN: D743927)</span>
 <h1 class="govuk-heading-xl">Make a referral</h1>
 
-
-        <p class="govuk-body govuk-!-margin-bottom-7">This information will be sent to the service provider.</p>
+<div class="govuk-inset-text">
+  This information will be sent to the service provider.
+</div>
 
         <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Submission incomplete</h2>
         {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
@@ -41,7 +42,7 @@
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="pp-details" aria-describedby="">
-                    Name, email and location
+                    Name, email address and location
                   </a>
                 </span>
                 {% if data ['pp-details'] == "yes" or data ['pp-details'] == "no" %}
@@ -232,7 +233,7 @@ Further information for service provider
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">
         <a href="check-answers" aria-describedby="">
-        Check referral information</a>
+        Check all referral information</a>
       </span>
       {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
       <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
