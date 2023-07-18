@@ -23,13 +23,13 @@ const router = govukPrototypeKit.requests.setupRouter()
             response.redirect('make-a-referral-community');
         }
         })
-
-
-
-
-
-
-
-
-
-
+    
+        router.post('/IPB-265/sp/did-session-happen', function(request, response) {
+            if (request.session.data['did-session-happen']== 'Yes, and something was delivered towards the intervention') {
+                response.redirect('session-happen')
+            } else if (request.session.data['did-session-happen']== 'Yes, but something was delivered') {
+                response.redirect('something-delivered')
+            } else {
+                response.redirect('nothing-delivered')
+            }  
+        })
