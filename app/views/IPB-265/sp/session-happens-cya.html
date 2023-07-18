@@ -1,0 +1,283 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">Check your answers</h2>
+      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+     
+      <h3 class="govuk-heading-m">Confirm session details</h3>
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Session details"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Date"
+            },
+            value: {
+              html: "17 August 2023"
+            },
+            actions: {
+              items: [
+                {
+                  
+                  visuallyHiddenText: "Date"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Time"
+            },
+            value: {
+              html: "1:15PM"
+            },
+            actions: {
+              items: [
+                {
+                
+                  visuallyHiddenText: "Time"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Duration"
+            },
+            value: {
+              html: "1 hour"
+            },
+            actions: {
+              items: [
+                {
+                  
+                  visuallyHiddenText: "Duration"
+                }
+                
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Method"
+            },
+            value: {
+              html: "Video call"
+            },
+            actions: {
+              items: [
+                {
+                  
+                  visuallyHiddenText: "Video call"
+                }
+                
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Case worker"
+            },
+            value: {
+              html: "Tim Smith"
+            },
+            actions: {
+              items: [
+                {
+                  
+                  visuallyHiddenText: "Case worker"
+                }
+                
+              ]
+            }
+          }
+
+        ]
+      }) }}
+      
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Session"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Did the session happen"
+            },
+            value: {
+              text: data['did-session-happen']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "whether details are known"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Relationship to lead tenant"
+            },
+            value: {
+              html: "Partner"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "relationship to lead tenant"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Age"
+            },
+            value: {
+              html: "42"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "age"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Working situation"
+            },
+            value: {
+              html: "Unable to work because of long-term sickness or disability"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "working situation"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+      
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Person 3"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Details known"
+            },
+            value: {
+              html: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "whether details are known"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Relationship to lead tenant"
+            },
+            value: {
+              html: "Child"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "relationship to lead tenant"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Age"
+            },
+            value: {
+              html: "7"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "age"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Working situation"
+            },
+            value: {
+              html: "Child under 16"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "working situation"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+      
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,135 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Do you know the expected release date?
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if data ['referral-type'] == "prison" %}
+    <form class="form" method="post" action="make-a-referral-prerelease">
+      {% elseif data ['referral-type'] == "community" %}
+      <form class="form" method="post" action="make-a-referral-community">
+        {% elseif data ['referral-type-nocom'] == "yes" %}
+        <form class="form" method="post" action="make-a-referral-nocom-prerelease2">
+          {% elseif data ['referral-type-nocom'] == "no" %}
+          <form class="form" method="post" action="make-a-referral-nocom-prison2">
+    {% endif %}
+
+
+            <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              {% if data ['referral-type'] == "prison" %}
+              <span class="govuk-caption-xl">Alex River (CRN: D002399)</span>
+              {% elseif data ['referral-type-nocom'] == "yes" %}
+              <span class="govuk-caption-xl">Darren Wicks (CRN: D927438)</span>
+              {% elseif data ['referral-type-nocom'] == "no" %}
+              <span class="govuk-caption-xl">John Smith (CRN: D182933)</span>
+              {% endif %}              
+              <h1 class="govuk-fieldset__heading">
+                Select 
+                {% if data ['referral-type'] == "prison" %} Alex River's
+                {% elseif data ['referral-type-nocom'] == "yes" %} Darren Wicks'
+                {% elseif data ['referral-type-nocom'] == "no" %} John Smith's
+                current location
+                {% endif %}
+                expected release date
+              </h1>
+            </legend>
+
+
+
+            <div class="govuk-radios" data-module="govuk-radios">
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="release-date" name="release-date" type="radio" value="yes" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="release-date">
+                  Expected release date - 15 Sep 2023
+                </label>
+              </div>
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="release-date" name="release-date" type="radio" value="no" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="release-date">
+                  Choose a different date
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact" name="quantityactual">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="input-date-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h2 class="govuk-fieldset__heading">
+                      Enter the expected release date
+                    </h2>
+                  </legend>
+                  <div id="input-date-hint" class="govuk-hint">
+                    <p class="govuk-body">
+                      For example, 27 5 2023
+                    </p>
+                  </div>
+                  <div class="govuk-date-input" id="input-date">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="input-date-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="input-date-day" name="input-date-day" value="{{ data['input-date-day'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="input-date-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="input-date-month" name="input-date-month" value="{{ data['input-date-month'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="input-date-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="input-date-year" name="input-date-year" value="{{ data['input-date-year'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+
+
+                </div>
+                  </fieldset>
+        </div>
+      </div>
+      </div>
+
+      <p class="govuk-body"><a href="release-date-not-known" class="govuk-link">I don't know the expected release date</a></p>
+
+
+        {{ govukButton({
+          text: 'Save and continue'
+        }) }}
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+
+{% endblock %}
