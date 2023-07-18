@@ -76,36 +76,50 @@ href: "javascript:history.back()"
         
         
         
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-0">
+              <h2 class="govuk-fieldset__heading">
+                Did anything concern you about Alex River?
+              </h2>
+            </legend>
+            <div class="govuk-inset-text">
+              
+              If you select yes, the probation practitioner will get an email about your concerns.           
+             </div>
+
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="anything-concern-you" name="anything-concern-you" type="radio" value="yes" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="anything-concern-you">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="anything-concern-you">
+                    Add enough detail to help the probation practitioner understand what's happened.                   </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="anything-concern-you" name="contact-by-email" type="text" spellcheck="false" autocomplete="email">
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  No
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                
+              </div>
+              
+             
+            </div>
+          </fieldset>
+        </div>
         
-        {{ govukRadios({
-          name: "anything-concern-you",
-          fieldset: {
-            legend: {
-              text: "Did anything concern you about Alex River?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-            
-          },
-          
-          items: [
-            {
-              value: "Yes",
-              text: "Yes",
-              conditional: {
-                html: emailHtml
-              }
-            },
-            {
-              value: "No",
-              text: "No",
-              conditional: {
-                html: phoneHtml
-              }
-            
-            }
-          ]
-        }) }}
+        
         <div class="govuk-!-padding-bottom-5"></div>
         
         <h2 class="govuk-heading-l">Plans for next session</h2>
