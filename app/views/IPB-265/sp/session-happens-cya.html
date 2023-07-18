@@ -137,61 +137,51 @@ href: "javascript:history.back()"
             actions: {
               items: [
                 {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "whether details are known"
+                  visuallyHiddenText: "Did the session happen"
                 }
               ]
             }
           },
           {
             key: {
-              text: "Relationship to lead tenant"
+              text: "What did you do in the session"
             },
             value: {
-              html: "Partner"
+              text: data['what-did-you-do']
             },
             actions: {
               items: [
                 {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "relationship to lead tenant"
+                 visuallyHiddenText: "What did you do in the session?"
                 }
               ]
             }
           },
           {
             key: {
-              text: "Age"
+              text: "How did Alex River respond to the session?"
             },
             value: {
-              html: "42"
+              text: data['how-did-they-respond']
             },
             actions: {
               items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "age"
+              {               
+                  visuallyHiddenText: "How did Alex River respond to the session"
                 }
               ]
             }
           },
           {
             key: {
-              text: "Working situation"
+              text: "Did anything concern you about Alex River"
             },
             value: {
-              html: "Unable to work because of long-term sickness or disability"
+              text: data['anything-concern-you']
             },
             actions: {
               items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "working situation"
-                }
+                
               ]
             }
           }
@@ -201,80 +191,35 @@ href: "javascript:history.back()"
       {{ govukSummaryList({
         card: {
           title: {
-            text: "Person 3"
+            text: "Plans for next session"
           }
         },
         rows: [
           {
             key: {
-              text: "Details known"
+              text: "Add anything you have planned for the next session (optional)"
             },
             value: {
-              html: "Yes"
+              text: data['details-next-session']
             },
             actions: {
               items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "whether details are known"
-                }
+                
               ]
             }
-          },
-          {
-            key: {
-              text: "Relationship to lead tenant"
-            },
-            value: {
-              html: "Child"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "relationship to lead tenant"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Age"
-            },
-            value: {
-              html: "7"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "age"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Working situation"
-            },
-            value: {
-              html: "Child under 16"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "working situation"
-                }
-              ]
-            }
+          
           }
         ]
       }) }}
+      
+
+      {{ govukButton({
+        text: "Save and continue",
+        href:"/IPB-265/sp/case-progress-assigned-alex_feedback_given.html"
+        
+      }) }}
+
+      
       
 
     </div>

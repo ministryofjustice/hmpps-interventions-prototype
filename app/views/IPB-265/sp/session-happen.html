@@ -26,20 +26,12 @@ href: "javascript:history.back()"
         Add session feedback and plans
       </h1>
 
-      <form class="form" action="/path/of/next/page" method="post">
+      <form class="form" action="session-happens-cya" method="post">
 
-        <p>
-          [Insert question content here - see the
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-          for examples]
-        </p>
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        
         {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
+          name: "what-did-you-do",
+          id: "what-did-you-do",
           label: {
             text: "What did you do in the session?",
             classes: "govuk-label--m",
@@ -50,18 +42,17 @@ href: "javascript:history.back()"
           }
         }) }}
         
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
         
         {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
+          name: "how-did-they-respond",
+          id: "how-did-they-respond",
           label: {
-            text: "How did Harold Nader respond to the session?",
+            text: "How did Alex River respond to the session?",
             classes: "govuk-label--m",
             isPageHeading: true
           },
           hint: {
-            text: "Add whether Harold seemed engaged, including any progress or positive changes. This helps the probation practitioner to support Harold Nader."
+            text: "Add whether Alex seemed engaged, including any progress or positive changes. This helps the probation practitioner to support Alex River."
           }
         }) }}
         
@@ -87,10 +78,10 @@ href: "javascript:history.back()"
         
         
         {{ govukRadios({
-          name: "contact",
+          name: "anything-concern-you",
           fieldset: {
             legend: {
-              text: "Did anything concern you about Harold Nader?",
+              text: "Did anything concern you about Alex River?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -120,8 +111,8 @@ href: "javascript:history.back()"
         <h2 class="govuk-heading-l">Plans for next session</h2>
         
         {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
+          name: "details-next-session",
+          id: "details-next-session",
           label: {
             text: "Add anything you have planned for the next session (optional)",
             classes: "govuk-label--m",
@@ -136,8 +127,7 @@ href: "javascript:history.back()"
         {% from "govuk/components/button/macro.njk" import govukButton %}
         
         {{ govukButton({
-          text: "Save and continue",
-          href:"/IPB-265/sp/session-happens-cya.html"
+          text: "Save and continue"
         }) }}
             </div>
           </div>

@@ -24,7 +24,7 @@ href: "javascript:history.back()"
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-     <form class="form" action="/path/of/next/page" method="post">
+     <form class="form" action="did-session-happen" method="post">
 
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -44,8 +44,8 @@ href: "javascript:history.back()"
       text: "Yes, and something was delivered towards the intervention"
     },
     {
-      value: "Yes, but nothing was delivered",
-      text: "Yes, but nothing was deliverd"
+      value: "Yes, but something was delivered",
+      text: "Yes, but something was delivered"
     },
     {
       value: "No",
@@ -58,8 +58,7 @@ href: "javascript:history.back()"
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
-  text: "Save and continue",
-  href:"/IPB-265/sp/session-happen.html"
+  text: "Save and continue"
 }) }}
 
     </form>
