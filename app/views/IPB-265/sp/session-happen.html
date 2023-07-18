@@ -1,0 +1,150 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Add session feedback and plans
+      </h1>
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+        <p>
+          [Insert question content here - see the
+          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
+          for examples]
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "What did you do in the session?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Add details about what you did, anything that was achieved and what came out of the session."
+          }
+        }) }}
+        
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "How did Harold Nader respond to the session?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Add whether Harold seemed engaged, including any progress or positive changes. This helps the probation practitioner to support Harold Nader."
+          }
+        }) }}
+        
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        
+        {% set emailHtml %}
+        {{ govukInput({
+          id: "contact-by-email",
+          name: "contact-by-email",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Add enough detail to help the probation practitioner understand what happened. "
+          }
+        }) }}
+        {% endset -%}
+        
+        
+        
+        
+        
+        {{ govukRadios({
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Did anything concern you about Harold Nader?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+            
+          },
+          
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+                html: emailHtml
+              }
+            },
+            {
+              value: "No",
+              text: "No",
+              conditional: {
+                html: phoneHtml
+              }
+            
+            }
+          ]
+        }) }}
+        <div class="govuk-!-padding-bottom-5"></div>
+        
+        <h2 class="govuk-heading-l">Plans for next session</h2>
+        
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "Add anything you have planned for the next session (optional)",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "You’ll be able to view these plans in this service, for example before you hold the next session. "
+          }
+        }) }}
+        
+        
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        
+        {{ govukButton({
+          text: "Save and continue",
+          href:"/IPB-265/sp/session-happens-cya.html"
+        }) }}
+            </div>
+          </div>
+        
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
