@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Was the session delivered?
+      </h1>
+    </legend>
+    <div id="session-delivered-hint" class="govuk-hint">
+      You’ll need an account to prove your identity and complete your Self Assessment.
+    </div>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="was-session-delivered" name="was-session-delivered" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="was-session-delivered">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="was-session-delivered-2" name="was-session-delivered" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="was-session-delivered-2">
+         No
+        </label>
+      </div>
+      </div>
+      
+      
+  </fieldset>
+</div>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+
+{% endblock %}
