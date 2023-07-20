@@ -34,6 +34,16 @@ const router = govukPrototypeKit.requests.setupRouter()
             }  
         })
 
+        router.post('/IPB-265/sp/did-they-come-to-session', function(request, response) {
+            if (request.session.data['did-they-come-to-session']== 'Yes, they were on time') {
+                response.redirect('was-the-session-delivered.html')
+            } else if (request.session.data['did-they-come-to-session']== 'Yes, but they were late') {
+                response.redirect('person-was-late')
+            } else {
+                response.redirect('did-not-attend')
+            }  
+        })
+
         router.post('/IPB-265/sp/was-the-session-delivered', function(request, response) {
             if (request.session.data['was-the-session-delivered'] == 'Yes') {
             response.redirect('session-happen');

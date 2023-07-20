@@ -1,4 +1,3 @@
-
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
@@ -19,33 +18,31 @@ href: "javascript:history.back()"
 {% endblock %}
 
 {% block content %}
+<div class="govuk-!-padding-bottom-2"></div>
 
-
- 
-
-
-
-     <form class="form" action="were-they-on-time" method="post">
+     <form class="form" action="would-you-like-to-reschedule" method="post">
 
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "were-they-on-time",
+  name: "would-you-like-to-reschedule",
   fieldset: {
     legend: {
-      text: "Was Alex River on?",
+      text: "Would you like to reschedule?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--l"
     }
+  },
+  hint: {
+    text: "You’ll also be able to reschedule it later."
   },
   items: [
     {
-      value: "Yes, and something was delivered towards the intervention",
+      value: "Yes",
       text: "Yes"
     },
 
-   
     {
       value: "No",
       text: "No"
@@ -55,11 +52,7 @@ href: "javascript:history.back()"
   
 }) }}
 
-{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
-{{ govukWarningText({
-  text: "Only select no if Alex did not come to the session."
-}) }}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({

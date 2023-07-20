@@ -88,13 +88,13 @@ href: "javascript:history.back()"
   </dl>
   <div class="govuk-!-padding-bottom-4"></div>
 
-     <form class="form" action="did-session-happen" method="post">
+     <form class="form" action="did-they-come-to-session" method="post">
 
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "did-session-happen",
+  name: "did-they-come-to-session",
   fieldset: {
     legend: {
       text: "Did Alex River come to the session?",
@@ -104,12 +104,12 @@ href: "javascript:history.back()"
   },
   items: [
     {
-      value: "Yes, and something was delivered towards the intervention",
+      value: "Yes, they were on time",
       text: "Yes, they were on time"
     },
 
     {
-      value: "Yes, but something was delivered",
+      value: "Yes, but they were late",
       text: "Yes, but they were late"
     },
     {

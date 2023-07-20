@@ -23,94 +23,53 @@ href: "javascript:history.back()"
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        You told us Alex River was late for the session   </h1>
+        You told us Alex river did not attend the session </h1>
 
 
-      <form class="form" action="session-happens-cya" method="post">
+      <form class="form" action="did-not-attend" method="post">
+
+
 
         
-        {{ govukTextarea({
-          name: "why-were-they-late",
-          id: "why-were-they-late",
-          label: {
-            text: "Do you know anything about why Alex River was late?",
-            classes: "govuk-label--m",
-            isPageHeading: true
-          },
-          hint: {
-            text: "Add the reason that was given to you. This will help the probation practitioner to make a decision about the reason."
-          }
-        }) }}
         
+
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h1 class="govuk-fieldset__heading">
-                Were you told before the session that they were going to be late?              </h1>
+                Would you like to reschedule this session?
+              </h1>
             </legend>
-
+            <div id="reschedule-session" class="govuk-hint">
+              If you select no, you’ll still be able to reschedule it later.    </div>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
-                <label class="govuk-label govuk-radios__label" for="contact">
+                <input class="govuk-radios__input" id="reschedule-session" name="reschedule-session" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="reschedule-session">
                   Yes
                 </label>
               </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="contact-by-email">
-                    Add who contacted you and when.                  </label>
-                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false" autocomplete="email">
-                </div>
-              </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
-                <label class="govuk-label govuk-radios__label" for="contact-2">
-                  No
+                <input class="govuk-radios__input" id="reschedule-session-2" name="reschedule-session" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="reschedule-sessiond-2">
+                 No
                 </label>
               </div>
-            </div>
-          </fieldset>
-        </div>
-
-
-            {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-{{ govukRadios({
-  name: "where-do-you-live",
-  fieldset: {
-    legend: {
-      text: "Could the session still be delivered?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "Yes",
-      text: "Yes"
-    },
-    {
-      value: "No",
-      text: "No"
-    
-    }
-  ]
-}) }}
-        
-       
-        
-{% from "govuk/components/button/macro.njk" import govukButton %}
-
-{{ govukButton({
-  text: "Save and continue"
-}) }}
+              </div>
+              
         
        
         
       </form>
-
+     
+      
     </div>
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
   </div>
 
+ 
 {% endblock %}
