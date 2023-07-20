@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-!-padding-bottom-4"></div>
+
+     <form class="form" action="was-the-session-delivered" method="post">
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "was-the-session-delivered",
+  fieldset: {
+    legend: {
+      text: "Was the session delivered?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "A session is delivered if it counts towards the action plan."},
+  items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+
+  
+}) }}
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

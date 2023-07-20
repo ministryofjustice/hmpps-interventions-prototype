@@ -30,21 +30,7 @@ href: "javascript:history.back()"
     
         
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Current caseworker
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p class="govuk-body">R&amp;M Active Probation Practitioner (<a href="mailto: interventions-devs@digital.justice.gov.uk">interventions-devs@digital.justice.gov.uk</a>)</p>
-          </dd>
-          
-        </div>
-      
-    
-      
-        
-      
-    
+       
       
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -68,7 +54,15 @@ href: "javascript:history.back()"
           
         </div>
       
-    
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Duration
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">1 hour</p>
+          </dd>
+          
+        </div>
       
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -79,18 +73,28 @@ href: "javascript:history.back()"
           </dd>
           
         </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Current caseworker
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">R&amp;M Active Probation Practitioner (<a href="mailto: interventions-devs@digital.justice.gov.uk">interventions-devs@digital.justice.gov.uk</a>)</p>
+          </dd>
+          
+        </div>
       
       
   </dl>
   <div class="govuk-!-padding-bottom-4"></div>
 
-     <form class="form" action="did-session-happen" method="post">
+     <form class="form" action="did-they-come-to-session" method="post">
 
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "did-session-happen",
+  name: "did-they-come-to-session",
   fieldset: {
     legend: {
       text: "Did Alex River come to the session?",
@@ -100,13 +104,13 @@ href: "javascript:history.back()"
   },
   items: [
     {
-      value: "Yes, and something was delivered towards the intervention",
-      text: "Yes, and something was delivered towards the intervention"
+      value: "Yes, they were on time",
+      text: "Yes, they were on time"
     },
 
     {
-      value: "Yes, but something was delivered",
-      text: "Yes, but something was delivered"
+      value: "Yes, but they were late",
+      text: "Yes, but they were late"
     },
     {
       value: "No",
@@ -116,6 +120,14 @@ href: "javascript:history.back()"
 
   
 }) }}
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    Only select no if Harold did not come to the session.
+  </strong>
+</div>
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({

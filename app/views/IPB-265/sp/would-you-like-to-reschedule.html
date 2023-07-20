@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-!-padding-bottom-2"></div>
+
+     <form class="form" action="session-happens-cya" method="post">
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "would-you-like-to-reschedule",
+  fieldset: {
+    legend: {
+      text: "Would you like to reschedule?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "You’ll also be able to reschedule it later."
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+
+  
+}) }}
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

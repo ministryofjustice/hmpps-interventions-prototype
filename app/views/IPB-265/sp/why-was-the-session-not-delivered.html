@@ -1,0 +1,129 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Why was the session not delivered
+      </h1>
+    </legend>
+    <div id="session-delivered-hint" class="govuk-hint">
+      This helps the probation practitioner to choose the right category for the absence.
+    </div>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="was-session-delivered" name="was-session-delivered" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="was-session-delivered">
+          They were under the influence of alcohol or drugs 
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="wwas-session-delivered-2" name="was-session-delivered" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="was-session-delivered-2">
+          They were unable to engage due to their mental health 
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="wwas-session-delivered-2" name="was-session-delivered" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="was-session-delivered-2">
+          They refused to engage
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="wwas-session-delivered-2" name="was-session-delivered" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="was-session-delivered-2">
+          The caseworker could not attend
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="wwas-session-delivered-2" name="was-session-delivered" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="was-session-delivered-2">
+          Logistics, for example a fire alarm
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="wwas-session-delivered-2" name="was-session-delivered" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="was-session-delivered-2">
+          There was an issue with a group participant
+        </label>
+      </div>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+          <label class="govuk-label govuk-radios__label" for="contact">
+            Something else (please add)          </label>
+        </div>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+          <div class="govuk-form-group">
+            
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+        </div>
+      
+      
+  </fieldset>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Would you like to reschedule this session?
+      </h1>
+    </legend>
+    <div id="reschedule-session" class="govuk-hint">
+      If you select no, you’ll still be able to reschedule it later.    </div>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reschedule-session" name="reschedule-session" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="reschedule-session">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reschedule-session-2" name="reschedule-session" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="reschedule-sessiond-2">
+         No
+        </label>
+      </div>
+      </div>
+      
+      
+  </fieldset>
+</div>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Save and continue",
+  href:"/IPB-265/sp/session-happens-cya.html"
+}) }}
+
+{% endblock %}
