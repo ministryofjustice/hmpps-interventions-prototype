@@ -1,14 +1,14 @@
-  {% extends "layouts/main.html" %}
-
+{% extends "layouts/main.html" %}
+​
 {% block pageTitle %}
   Case progress
 {% endblock %}
-
+​
 {% block main %}
 {% include "../includes/key-details-bar-alex.html" %}
 {{ super() }}
 {% endblock %}
-
+​
 {% block beforeContent %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {{ govukBackLink({
@@ -16,22 +16,100 @@
 href: "javascript:history.back()"
 }) }}
 {% endblock %}
-
+​
 {% block content %}
-
+​
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+​
       <h1 class="govuk-heading-l">
         You told us Alex river did not attend the session </h1>
-
-
-      <form class="form" action="did-not-attend" method="post">
-
-
-
-        
-        
+​
+​
+      <form class="form" action="session-happens-cya.html" method="post">
+​
+​
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Do you know anything about why Alex River did not attend?
+              </h1>
+            </legend>
+            <div id="contact-hint" class="govuk-hint">
+              This might be something you were told by Harold or someone else. 
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="yes-i-know-why" name="reason-not-attended" type="radio" value="yes" data-aria-controls="attend-yes">
+                <label class="govuk-label govuk-radios__label" for="yes-i-know-why">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="attend-yes">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="yes-i-know-why">
+                    This might be something you were told by Alex River or someone else. 
+                  </label>
+                  <textarea class="govuk-textarea" id="more-detail" name="yes-i-know-why" rows="5"></textarea>
+​
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no-i-dont-know-why" name="reason-not-attended" type="radio" value="no" data-aria-controls="attend-no">
+                <label class="govuk-label govuk-radios__label" for="no-i-dont-know-why">
+                  No
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="attend-no">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-phone">
+                    Add details about how you tried to contact them and if they picked up the phone or replied to a text.
+                  </label>
+                  <textarea class="govuk-textarea" id="more-detail" name="no-i-dont-know-why" rows="5"></textarea>
+                </div>
+              </div>
+              
+              
+            </div>
+          </fieldset>
+        </div>
+​
+​
+​
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Were you told before the session that they were going to be late?
+              </h1>
+            </legend>
+           
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="yes" name="know-about-lateness-yes" type="radio" value="yes" data-aria-controls="lateness-yes">
+                <label class="govuk-label govuk-radios__label" for="yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="lateness-yes">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-email">
+                    Add who contacted you and when.
+                  </label>
+                  <textarea class="govuk-textarea" id="more-detail" name="yes-i-know-why" rows="5"></textarea>                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no" name="know-about-lateness-no" type="radio" value="no" data-aria-controls="lateness-no">
+                <label class="govuk-label govuk-radios__label" for="no">
+                  No
+                </label>
+              </div>
+              
+              
+            </div>
+          </fieldset>
+        </div>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
@@ -41,7 +119,7 @@ href: "javascript:history.back()"
               </h1>
             </legend>
             <div id="reschedule-session" class="govuk-hint">
-              If you select no, you’ll still be able to reschedule it later.    </div>
+              If you select no, you'll still be able to reschedule it later.    </div>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="reschedule-session" name="reschedule-session" type="radio" value="yes">
@@ -65,11 +143,11 @@ href: "javascript:history.back()"
       
     </div>
     {% from "govuk/components/button/macro.njk" import govukButton %}
-
+​
     {{ govukButton({
       text: "Save and continue"
     }) }}
   </div>
-
+​
  
 {% endblock %}
