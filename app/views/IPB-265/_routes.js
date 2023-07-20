@@ -26,10 +26,20 @@ const router = govukPrototypeKit.requests.setupRouter()
     
         router.post('/IPB-265/sp/did-session-happen', function(request, response) {
             if (request.session.data['did-session-happen']== 'Yes, and something was delivered towards the intervention') {
-                response.redirect('session-happen')
+                response.redirect('was-the-session-delivered.html')
             } else if (request.session.data['did-session-happen']== 'Yes, but something was delivered') {
                 response.redirect('something-delivered')
             } else {
                 response.redirect('nothing-delivered')
             }  
         })
+
+        router.post('/IPB-265/sp/was-the-session-delivered', function(request, response) {
+            if (request.session.data['was-the-session-delivered'] == 'Yes') {
+            response.redirect('session-happen');
+        } else if (request.session.data['was-the-session-delivered'] == 'No') {
+            response.redirect('why-was-the-session-not-delivered');
+        }
+        })
+
+        

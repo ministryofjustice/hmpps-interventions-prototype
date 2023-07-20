@@ -18,39 +18,46 @@ href: "javascript:history.back()"
 {% endblock %}
 
 {% block content %}
+<div class="govuk-!-padding-bottom-4"></div>
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
-        Was the session delivered?
-      </h1>
-    </legend>
-    <div id="session-delivered-hint" class="govuk-hint">
-      A session is delivered if it counts towards the action plan.    </div>
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="was-session-delivered" name="was-session-delivered" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="was-session-delivered">
-          Yes
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="was-session-delivered-2" name="was-session-delivered" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="was-session-delivered-2">
-         No
-        </label>
-      </div>
-      </div>
-      
-      
-  </fieldset>
-</div>
+     <form class="form" action="was-the-session-delivered" method="post">
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "was-the-session-delivered",
+  fieldset: {
+    legend: {
+      text: "Was the session delivered?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+
+  
+}) }}
+
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
   text: "Save and continue"
 }) }}
+
+    </form>
+    </div>
+  </div>
 
 {% endblock %}
