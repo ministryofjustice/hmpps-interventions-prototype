@@ -52,4 +52,10 @@ const router = govukPrototypeKit.requests.setupRouter()
         }
         })
 
-        
+        router.post('/IPB-265/sp/person-was-late', function(request, response) {
+            if (request.session.data['could-the-session-still-be-delivered'] == 'Yes') {
+            response.redirect('session-happen');
+        } else if (request.session.data['could-the-session-still-be-delivered'] == 'No') {
+            response.redirect('would-you-like-to-reschedule');
+        }
+        })

@@ -26,7 +26,7 @@ href: "javascript:history.back()"
         You told us Alex River was late for the session   </h1>
 
 
-      <form class="form" action="session-happens-cya" method="post">
+      <form class="form" action="person-was-late" method="post">
 
         
         {{ govukTextarea({
@@ -78,7 +78,7 @@ href: "javascript:history.back()"
             {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "where-do-you-live",
+  name: "could-the-session-still-be-delivered",
   fieldset: {
     legend: {
       text: "Could the session still be delivered?",

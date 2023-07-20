@@ -25,8 +25,7 @@ href: "javascript:history.back()"
       <h1 class="govuk-heading-l">
         You told us Alex river did not attend the session </h1>
 ​
-​
-      <form class="form" action="session-happens-cya.html" method="post">
+<form class="form" action="session-happens-cya" method="post">
 ​
 ​
         <div class="govuk-form-group">
@@ -73,10 +72,8 @@ href: "javascript:history.back()"
               
             </div>
           </fieldset>
-        </div>
-​
-​
-​
+          <div class="govuk-!-padding-bottom-6"></div>
+
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -110,6 +107,7 @@ href: "javascript:history.back()"
             </div>
           </fieldset>
         </div>
+        <div class="govuk-!-padding-bottom-3"></div>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
@@ -134,19 +132,21 @@ href: "javascript:history.back()"
                 </label>
               </div>
               </div>
-              
-        
-       
+            
+              <div class="govuk-!-padding-bottom-7"></div>
+ 
+          
+     {% from "govuk/components/button/macro.njk" import govukButton %}
+              ​
+      {{ govukButton({
+            text: "Save and continue"
+                  }) }}
         
       </form>
      
       
     </div>
-    {% from "govuk/components/button/macro.njk" import govukButton %}
-​
-    {{ govukButton({
-      text: "Save and continue"
-    }) }}
+    
   </div>
 ​
  
