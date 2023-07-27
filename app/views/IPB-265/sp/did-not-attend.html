@@ -35,9 +35,7 @@ href: "javascript:history.back()"
                 Do you know anything about why Alex River did not attend?
               </h1>
             </legend>
-            <div id="contact-hint" class="govuk-hint">
-              This might be something you were told by Harold or someone else. 
-            </div>
+            
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="yes-i-know-why" name="reason-not-attended" type="radio" value="yes" data-aria-controls="attend-yes">
@@ -78,9 +76,11 @@ href: "javascript:history.back()"
           <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h1 class="govuk-fieldset__heading">
-                Were you told before the session that they were going to be late?
+                Were you told before the session that they were not going to attend?
               </h1>
             </legend>
+            <div id="changed-name-hint" class="govuk-hint">
+              This helps the probation practitioner to understand the absence.             </div>
            
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
@@ -92,9 +92,45 @@ href: "javascript:history.back()"
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="lateness-yes">
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="contact-by-email">
-                    Add who contacted you and when.
+                    Add when contact was made
                   </label>
-                  <textarea class="govuk-textarea" id="more-detail" name="yes-i-know-why" rows="5"></textarea>                </div>
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                      
+                      <div id="passport-issued-hint" class="govuk-hint">
+                        For example, 27 3 2007
+                      </div>
+                      <div class="govuk-date-input" id="passport-issued">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                              Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                              Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                              Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+</div>
+
+
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="no" name="know-about-lateness-no" type="radio" value="no" data-aria-controls="lateness-no">
