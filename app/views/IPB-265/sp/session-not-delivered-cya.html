@@ -1,0 +1,193 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">Check your answers</h2>
+      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+     
+      <h3 class="govuk-heading-m">Confirm session details</h3>
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Session details"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Date"
+            },
+            value: {
+              html: "17 August 2023"
+            },
+            actions: {
+              items: [
+                {
+                  
+                  visuallyHiddenText: "Date"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Time"
+            },
+            value: {
+              html: "1:15PM"
+            },
+            actions: {
+              items: [
+                {
+                
+                  visuallyHiddenText: "Time"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Duration"
+            },
+            value: {
+              html: "1 hour"
+            },
+            actions: {
+              items: [
+                {
+                  
+                  visuallyHiddenText: "Duration"
+                }
+                
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Method"
+            },
+            value: {
+              html: "Video call"
+            },
+            actions: {
+              items: [
+                {
+                  
+                  visuallyHiddenText: "Video call"
+                }
+                
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Case worker"
+            },
+            value: {
+              html: "Tim Smith"
+            },
+            actions: {
+              items: [
+                {
+                  
+                  visuallyHiddenText: "Case worker"
+                }
+                
+              ]
+            }
+          }
+
+        ]
+      }) }}
+      
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Session"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Did Alex River come to the session"
+            },
+            value: {
+              text: "Yes, they were on time"
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "Did the session happen"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Why was the session not delivered"
+            },
+            value: {
+              text:"          They were under the influence of alcohol or drugs 
+              "
+            },
+            actions: {
+              items: [
+                {
+                 visuallyHiddenText: "Why was the session not delivered"
+                }
+              ]
+            }
+          },
+         
+          {
+            key: {
+              text: "Would you like to reschedule this session "
+            },
+            value: {
+              text: data['reschedule-session']
+            },
+            actions: {
+              items: [
+                
+              ]
+            }
+          }
+        ]
+      }) }}
+      
+      
+      
+
+      {{ govukButton({
+        text: "Save and continue",
+        href:"/IPB-265/sp/case-progress-assigned-alex_feedback_given.html"
+        
+      }) }}
+
+      
+      
+
+    </div>
+  </div>
+
+{% endblock %}
