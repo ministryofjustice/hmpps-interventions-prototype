@@ -144,40 +144,40 @@ href: "javascript:history.back()"
           },
           {
             key: {
-              text: "What did you do in the session"
+              text: "Do you know anything about why Alex River did not attend"
             },
             value: {
-              text: data['what-did-you-do']
+              text: data['reason-not-attended']
             },
             actions: {
               items: [
                 {
-                 visuallyHiddenText: "What did you do in the session?"
+                 visuallyHiddenText: "Do you know anything about why Alex River did not attend"
                 }
               ]
             }
           },
           {
             key: {
-              text: "How did Alex River respond to the session?"
+              text: "Were you told before the session that they were not going to attend"
             },
             value: {
-              text: data['how-did-they-respond']
+              text: data['know-about-lateness-yes']
             },
             actions: {
               items: [
               {               
-                  visuallyHiddenText: "How did Alex River respond to the session"
+                  visuallyHiddenText: "Were you told before the session that they were not going to attend"
                 }
               ]
             }
           },
           {
             key: {
-              text: "Did anything concern you about Alex River"
+              text: "Would you like to reschedule this session "
             },
             value: {
-              text: data['anything-concern-you']
+              text: data['reschedule-session']
             },
             actions: {
               items: [
@@ -188,29 +188,7 @@ href: "javascript:history.back()"
         ]
       }) }}
       
-      {{ govukSummaryList({
-        card: {
-          title: {
-            text: "Plans for next session"
-          }
-        },
-        rows: [
-          {
-            key: {
-              text: "Add anything you have planned for the next session (optional)"
-            },
-            value: {
-              text: data['details-next-session']
-            },
-            actions: {
-              items: [
-                
-              ]
-            }
-          
-          }
-        ]
-      }) }}
+      
       
 
       {{ govukButton({
