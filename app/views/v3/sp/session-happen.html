@@ -1,0 +1,182 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="session-happens-cya" method="post">
+
+        <h1 class="govuk-heading-l">You told us that the session happened</h1>
+
+        
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  name: "were-they-on-time",
+  fieldset: {
+    legend: {
+      text: "Was Alex River on time?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m
+    "
+    }
+  },
+ hint: {
+   text:"This helps the probation practitioner to support Alex Rive"
+  },
+  
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+        
+        {{ govukTextarea({
+          name: "what-did-you-do",
+          id: "what-did-you-do",
+          label: {
+            text: "What did you do in the session?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Add details about what you did, anything that was achieved and what came out of the session."
+          }
+        }) }}
+        
+        
+        {{ govukTextarea({
+          name: "how-did-they-respond",
+          id: "how-did-they-respond",
+          label: {
+            text: "How did Alex River respond to the session?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Add whether Alex seemed engaged, including any progress or positive changes. This helps the probation practitioner to support Alex River."
+          }
+        }) }}
+        
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        
+        {% set emailHtml %}
+        {{ govukInput({
+          id: "contact-by-email",
+          name: "contact-by-email",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Add enough detail to help the probation practitioner understand what happened. "
+          }
+        }) }}
+        {% endset -%}
+        
+        
+        
+        
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-0">
+              <h2 class="govuk-fieldset__heading">
+                Did anything concern you about Alex River?
+              </h2>
+            </legend>
+            <div class="govuk-inset-text">
+              
+              If you select yes, the probation practitioner will get an email about your concerns.           
+             </div>
+
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="anything-concern-you" name="anything-concern-you" type="radio" value="yes" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="anything-concern-you">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="anything-concern-you">
+                    Add enough detail to help the probation practitioner understand what's happened.                   </label>
+                    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  No
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                
+              </div>
+              
+             
+            </div>
+          </fieldset>
+        </div>
+        
+        
+      
+        
+        {{ govukTextarea({
+          name: "details-next-session",
+          id: "details-next-session",
+          label: {
+            text: "Add anything you have planned for the next session (optional)",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "You’ll be able to view these plans in this service, for example before you hold the next session. "
+          }
+        }) }}
+        
+        
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+            </div>
+          </div>
+        
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

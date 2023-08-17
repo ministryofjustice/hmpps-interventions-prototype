@@ -1,0 +1,137 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    
+      <div>
+
+        <h1 class="govuk-heading-l">Session details</h1>
+  
+          <p>The date and time of the session are a permanent record of where this person was.</p>
+         
+
+        <dl class="govuk-summary-list">
+      
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">Tuesday 18 July 2023</p>
+            </dd>
+            
+          </div>
+        
+      
+        
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Time
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">9:13am to 9:28am</p>
+            </dd>
+            
+          </div>
+        
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Duration
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">1 hour</p>
+            </dd>
+            
+          </div>
+        
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Method
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">Phone call</p>
+            </dd>
+            
+          </div>
+  
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Current caseworker
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">R&amp;M Active Probation Practitioner (<a href="mailto: interventions-devs@digital.justice.gov.uk">interventions-devs@digital.justice.gov.uk</a>)</p>
+            </dd>
+            
+          </div>
+        
+        
+    </dl>
+      </div>
+     
+
+
+
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Did the session happen?
+      </h2>
+    </legend>
+    <div id="changed-name-hint" class="govuk-hint">
+      The session happened if something was delivered.
+    </div>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="did-the-session-happen" name="did-the-session-happen" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="did-the-session-happen">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="did-the-session-happen-2" name="did-the-session-happen" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="did-the-session-happen-2">
+          No
+        </label>
+      </div>
+      
+    </div>
+
+    
+  </fieldset>
+  
+</div>
+{{ govukButton({
+  text: "Save and continue",
+  href:"/v3/sp/did-they-attend.html"
+  
+}) }}
+</div>
+
+</div>
+     
+
+   
+
+{% endblock %}
