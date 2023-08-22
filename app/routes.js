@@ -11,5 +11,6 @@ const router = govukPrototypeKit.requests.setupRouter()
 require('./views/v1/_routes')
 require('./views/v2/_routes')
 require('./views/IPB-265/_routes')
+require('./views/v3/_routes')
 
 module.exports = router
