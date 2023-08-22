@@ -8,8 +8,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 // Add your routes here
-require('./views/v1/_routes')
-require('./views/v2/_routes')
-require('./views/IPB-265/_routes')
-require('./views/v3/_routes')
-
+require('./views/v1/_routes')(router);
+require('./views/v2/_routes')(router);
+require('./views/IPB-265/_routes')(router);
+require('./views/v3/_routes')(router);
