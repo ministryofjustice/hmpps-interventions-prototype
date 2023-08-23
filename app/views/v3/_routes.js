@@ -7,10 +7,10 @@ module.exports = function (router) {
     //than show you-told-us-that-the-person-did-attend
     //if anything else == you-told-us-that-the-person-didnt-attend 
 
-      router.post ('/' + version + '/sp/did-the-session-happen', function (req, res) {
+      router.post ('/' + version + '/sp/did-they-attend-answer', function (request, response) {
        
-        var didTheSessionHappen = req.session.data['/'+ version + 'did-the-session-happen']
-        var didTheyAttend = req.session.data['/'+ version + 'did-they-attend']
+        var didTheSessionHappen = request.session.data['did-the-session-happen']
+        var didTheyAttend = request.session.data['did-they-attend']
         
         if (didTheSessionHappen == "yes" && didTheyAttend == "yes"){
             response.redirect('session-happen')
@@ -19,7 +19,7 @@ module.exports = function (router) {
             response.redirect('you-told-us-that-the-person-attended')
             
         } else {
-            res.redirect('sp/you-told-us-that-the-person-didnt-attend')
+            response.redirect('you-told-us-that-the-person-didnt-attend')
         }
       });
  }
