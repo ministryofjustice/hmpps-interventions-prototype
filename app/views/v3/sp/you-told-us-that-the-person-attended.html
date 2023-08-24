@@ -28,47 +28,47 @@ href: "javascript:history.back()"
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
-{% set emailHtml %}
-{{ govukInput({
-  id: "contact-by-email",
-  name: "contact-by-email",
-  type: "email",
-  
-  classes: "govuk-!-width-one-third",
+
+
+
+{% set somethingtodowiththepersononprobationHtml %}
+{{ govukTextarea({
+  id: "what-happened-who-was-involved",
+  name: "what-happened-who-was-involved",
+  type: "text",
+  classes: "govuk-label--l",
   label: {
-    text: "Something to do with the person on probation"
+    text: "Explain what happened and who was involved"
   }
 }) }}
 {% endset -%}
 
-{% set phoneHtml %}
-{{ govukInput({
-  id: "contact-by-phone",
-  name: "contact-by-phone",
-  type: "tel",
-  autocomplete: "tel",
-  classes: "govuk-!-width-one-third",
+{% set somethingtodowiththeserviceproviderHtml %}
+{{ govukTextarea({
+  id: "something-to-so-with-the-service-provider",
+  name: "something-to-so-with-the-service-provider",
+  type: "text",
+  classes: "govuk-label--l",
   label: {
-    text: "Phone number"
+    text: "Explain what happened and who was involved"
   }
 }) }}
 {% endset -%}
 
-{% set textHtml %}
-{{ govukInput({
-  id: "contact-by-text",
-  name: "contact-by-text",
-  type: "tel",
-  autocomplete: "tel",
-  classes: "govuk-!-width-one-third",
+{% set otherHtml %}
+{{ govukTextarea({
+  id: "what-happened-who-was-involved",
+  name: "what-happened-who-was-involved",
+  type: "text",
+  classes: "govuk-label--l",
   label: {
-    text: "Mobile phone number"
+    text: "Explain what happened and who was involved"
   }
 }) }}
 {% endset -%}
 
 {{ govukRadios({
-  name: "contact",
+  name: "why-did-the-session-not-happen",
   fieldset: {
     legend: {
       text: "Why did the session not happen?",
@@ -82,21 +82,21 @@ href: "javascript:history.back()"
       value: "something-to-do-with-the-person-on-probation",
       text: "Something to do with the person on probation",
       conditional: {
-        html: emailHtml
+        html: somethingtodowiththepersononprobationHtml
       }
     },
     {
       value: "something-to-do-with-the-service-provider",
       text: "Something to do with the service provider or logistics, for example a room booking or fire alarm",
       conditional: {
-        html: phoneHtml
+        html: somethingtodowiththeserviceproviderHtml
       }
     },
     {
       value: "other",
       text: "Other",
       conditional: {
-        html: textHtml
+        html: otherHtml
       }
     }
   ]
