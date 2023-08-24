@@ -138,7 +138,7 @@ href: "javascript:history.back()"
         rows: [
           {
             key: {
-              text: "Did the session happen?"
+              text: "Did the session happen"
             },
             value: {
               text: "No"
@@ -174,7 +174,7 @@ href: "javascript:history.back()"
         rows: [
           {
             key: {
-              text: "Did Alex River attend"
+              text: "Did John Smith attend"
             },
             value: {
               text: "No"
@@ -199,10 +199,7 @@ href: "javascript:history.back()"
           },
           actions: {
             items: [
-              {
-                href: "/v3/sp/you-told-us-that-the-person-didnt-attend",
-                  text: "Change"
-              }
+              
             ]
             }
         },
@@ -213,7 +210,7 @@ href: "javascript:history.back()"
               text: "Add anything you know about why they did not attend and how you tried to contact them"
             },
             value: {
-              text: data['more-detail']
+              text:"Add anything you know why they did not attend and how you tried to contact them. I called John on his mobile phone ending 675 but it went to voicemail. I tried this 4 times. I spoke to his PP last week and they said he was developing a cough and had had a day off sick to recover. I'll check in with him again later tomorrow to see if everything is OK."
             },
             actions: {
               items: [
@@ -226,7 +223,7 @@ href: "javascript:history.back()"
 
                 {
                   key: {
-                    text: "Did anything concern you about Alex River?"
+                    text: "Did anything concern you about John Smith"
                   },
                   value: {
                     text: "No"
@@ -243,7 +240,7 @@ href: "javascript:history.back()"
                       text: "Would you like to reschedule this session now "
                     },
                     value: {
-                      text: data['reschedule-session']
+                      text: "No"
                     },
                     actions: {
                       items: [
@@ -259,11 +256,9 @@ href: "javascript:history.back()"
       
       
 
-      {{ govukButton({
-        text: "Confirm and send",
-        href:"/v3/sp/case-progress-assigned-alex.html"
+     
         
-      }) }}
+     
 
       
       
