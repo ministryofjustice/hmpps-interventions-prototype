@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-{% include "../includes/key-details-bar-alex.html" %}
+{% include "../includes/key-details-bar-john.html" %}
 {{ super() }}
 {% endblock %}
 
@@ -129,8 +129,7 @@ href: "javascript:history.back()"
           actions: {
             items: [
               {
-                href: "/v3/sp/did-the-session-happen",
-                  text: "Change"
+                
               }
             ]
             }
@@ -142,7 +141,7 @@ href: "javascript:history.back()"
               text: "Did the session happen?"
             },
             value: {
-              text: data['did-the-session-happen']
+              text: "No"
             },
             actions: {
               items: [
@@ -166,8 +165,7 @@ href: "javascript:history.back()"
           actions: {
             items: [
               {
-                href: "/v3/sp/did-they-attend",
-                  text: "Change"
+                
               }
             ]
             }
@@ -179,7 +177,7 @@ href: "javascript:history.back()"
               text: "Did Alex River attend"
             },
             value: {
-              text: data['did-they-attend']
+              text: "No"
             },
             actions: {
               items: [
@@ -194,27 +192,6 @@ href: "javascript:history.back()"
           
       }) }}
 
-      {% set whyDidTheSessionNotHappen %}
-      
-      {% if data['why-did-the-session-not-happen'] == 'something-to-do-with-the-person-on-probation' %} 
-      <p>Something to do with the person on probation</p>
-
-      <p>{{ data['what-happened-who-was-involved'] | textInputWithLineBreaks}}</p>
-      {% elseif data['why-did-the-session-not-happen'] == 'something-to-do-with-the-service-provider' %} 
-      <p>Something to do with the service provider</p>
-
-      <p>{{ data['what-happened-service-provider'] |textInputWithLineBreaks}}</p>
-      {% elseif data['why-did-the-session-not-happen'] == 'other' %} 
-      <p>Other</p>
-
-      <p>{{ data['what-happened-other']|textInputWithLineBreaks}}</p>
-      {% endif %}
-      {% endset %}
-
-
-
-
-      
       {{ govukSummaryList({
         card: {
           title: {
@@ -223,7 +200,7 @@ href: "javascript:history.back()"
           actions: {
             items: [
               {
-                href: "/v3/sp/you-told-us-that-the-person-attended",
+                href: "/v3/sp/you-told-us-that-the-person-didnt-attend",
                   text: "Change"
               }
             ]
@@ -233,10 +210,10 @@ href: "javascript:history.back()"
         rows: [
           {
             key: {
-              text: "Why did the session not happen"
+              text: "Add anything you know about why they did not attend and how you tried to contact them"
             },
             value: {
-              html: whyDidTheSessionNotHappen
+              text: data['more-detail']
             },
             actions: {
               items: [
@@ -263,10 +240,10 @@ href: "javascript:history.back()"
 
                   {
                     key: {
-                      text: "Would you like to reschedule this session now"
+                      text: "Would you like to reschedule this session now "
                     },
                     value: {
-                      text: "No"
+                      text: data['reschedule-session']
                     },
                     actions: {
                       items: [
