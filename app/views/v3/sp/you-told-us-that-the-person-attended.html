@@ -28,7 +28,7 @@ href: "javascript:history.back()"
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
-
+<form class="form" action="person-attends-check-your-answers" method="post">
 
 
 {% set somethingtodowiththepersononprobationHtml %}
@@ -103,7 +103,7 @@ href: "javascript:history.back()"
 }) }}
 
 
- <div class="govuk-form-group" action="session-happens-check-your-answers" method="post">
+ <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-0">
               <h2 class="govuk-fieldset__heading">
@@ -183,5 +183,7 @@ href: "javascript:history.back()"
     </form>
     </div>
   </div>
+
+</form>
 
 {% endblock %}
