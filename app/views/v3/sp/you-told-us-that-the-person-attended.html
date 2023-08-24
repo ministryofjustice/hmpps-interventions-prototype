@@ -38,31 +38,31 @@ href: "javascript:history.back()"
   type: "text",
   classes: "govuk-label--l",
   label: {
-    text: "Explain what happened and who was involved"
+    text: "Explain what happened and who was involved."
   }
 }) }}
 {% endset -%}
 
 {% set somethingtodowiththeserviceproviderHtml %}
 {{ govukTextarea({
-  id: "something-to-so-with-the-service-provider",
-  name: "something-to-so-with-the-service-provider",
+  id: "what-happened-service-provider",
+  name: "what-happened-service-provider",
   type: "text",
   classes: "govuk-label--l",
   label: {
-    text: "Explain what happened and who was involved"
+    text: "Explain what happened and whether the person was told about it."
   }
 }) }}
 {% endset -%}
 
 {% set otherHtml %}
 {{ govukTextarea({
-  id: "what-happened-who-was-involved",
-  name: "what-happened-who-was-involved",
+  id: "what-happened-other",
+  name: "what-happened-other",
   type: "text",
   classes: "govuk-label--l",
   label: {
-    text: "Explain what happened and who was involved"
+    text: "Explain what happened and who was involved."
   }
 }) }}
 {% endset -%}
@@ -130,7 +130,7 @@ href: "javascript:history.back()"
                     <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>                </div>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <input class="govuk-radios__input" id="contact-2" name="anything-concern-you" type="radio" value="phone" data-aria-controls="conditional-contact-2">
                 <label class="govuk-label govuk-radios__label" for="contact-2">
                   No
                 </label>
