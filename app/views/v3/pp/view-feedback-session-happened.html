@@ -24,7 +24,7 @@ href: "javascript:history.back()"
       <h2 class="govuk-heading-l">Check your answers</h2>
       {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
      
-      <h3 class="govuk-heading-m">Confirm session details</h3>
+      <h3 class="govuk-heading-m">Session feedback</h3>
 
       {{ govukSummaryList({
         card: {
@@ -134,7 +134,7 @@ href: "javascript:history.back()"
               text: "Did the session happen?"
             },
             value: {
-              text: data['did-the-session-happen']
+              text: "Yes"
             },
             actions: {
               items: [
@@ -163,7 +163,7 @@ href: "javascript:history.back()"
               text: "Did Alex River attend"
             },
             value: {
-              text: data['did-they-attend']
+              text: "Yes"
             },
             actions: {
               items: [
@@ -191,7 +191,7 @@ href: "javascript:history.back()"
               text: "Was Alex River on time"
             },
             value: {
-              text: data['were-they-on-time']
+              text: "Yes"
             },
             actions: {
               items: [
@@ -205,7 +205,7 @@ href: "javascript:history.back()"
                 text: "What did you do in the session"
               },
               value: {
-                text: data['what-did-you-do']
+                text: "We talked about Alex's  work history before his time in prison. We put together a draft CV and Alex will go away, confirm dates and bring it back to the next session. We talked about different options for a job and Alex said he was keen to get his HGV licence. This fits with his caring responsibility with his nan. "
               },
               actions: {
                 items: [
@@ -219,7 +219,7 @@ href: "javascript:history.back()"
                   text: "How did Alex River respond to the session"
                 },
                 value: {
-                  text: data['how-did-they-respond']
+                  text: "Alex seemed quite nervous"
                 },
                 actions: {
                   items: [
@@ -247,7 +247,7 @@ href: "javascript:history.back()"
                       text: "Add anything you have planned for the next session (optional)"
                     },
                     value: {
-                      text: data['details-next-session']
+                      text: ""
                     },
                     actions: {
                       items: [
@@ -262,12 +262,6 @@ href: "javascript:history.back()"
       
       
       
-
-      {{ govukButton({
-        text: "Save and continue",
-        href:"/v3/sp/case-progress-assigned-alex.html"
-        
-      }) }}
 
       
       

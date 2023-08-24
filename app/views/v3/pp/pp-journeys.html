@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Probation Practioner journeys
+      </h1>
+
+      
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="/v3/pp/alex-case-progress-session-happened">Journey 1</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/v3/pp/john-case-progress-didn't-attend.html">Journey 2</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/v3/pp/mo-case-progress-attended-session-did-not-happen">Journey 3</a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}
