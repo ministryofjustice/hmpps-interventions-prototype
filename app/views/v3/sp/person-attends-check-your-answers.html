@@ -194,6 +194,22 @@ href: "javascript:history.back()"
           
       }) }}
 
+      {% set whyDidTheSessionNotHappen %}
+      
+      {% if data['why-did-the-session-not-happen'] == 'something-to-do-with-the-person-on-probation' %} 
+      <p>Something to do with the person on probation</p>
+
+      <p>{{ data['what-happened-who-was-involved'] | textInputWithLineBreaks}}</p>
+      {% elseif data['why-did-the-session-not-happen'] == 'something-to-do-with-the-service-provider' %} 
+      <p>Something to do with the service provider</p>
+
+      <p>{{ data['what-happened-service-provider'] |textInputWithLineBreaks}}</p>
+      {% elseif data['why-did-the-session-not-happen'] == 'other' %} 
+      <p>Other</p>
+
+      <p>{{ data['what-happened-other']|textInputWithLineBreaks}}</p>
+      {% endif %}
+      {% endset %}
       {{ govukSummaryList({
         card: {
           title: {
@@ -215,7 +231,7 @@ href: "javascript:history.back()"
               text: "Why did the session not happen"
             },
             value: {
-              text: data['why-did-the-session-not-happen']
+              html: whyDidTheSessionNotHappen
             },
             actions: {
               items: [
@@ -242,7 +258,7 @@ href: "javascript:history.back()"
 
                   {
                     key: {
-                      text: "Would you like to reschedule this session now                      "
+                      text: "Would you like to reschedule this session now"
                     },
                     value: {
                       text: data['reschedule-session']
