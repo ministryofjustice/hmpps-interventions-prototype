@@ -129,8 +129,7 @@ href: "javascript:history.back()"
           actions: {
             items: [
               {
-                href: "/v3/sp/did-the-session-happen",
-                  text: "Change"
+               
               }
             ]
             }
@@ -139,10 +138,10 @@ href: "javascript:history.back()"
         rows: [
           {
             key: {
-              text: "Did the session happen?"
+              text: "Did the session happen"
             },
             value: {
-              text: data['did-the-session-happen']
+              text: "No"
             },
             actions: {
               items: [
@@ -165,10 +164,7 @@ href: "javascript:history.back()"
           },
           actions: {
             items: [
-              {
-                href: "/v3/sp/did-they-attend",
-                  text: "Change"
-              }
+              
             ]
             }
         },
@@ -176,10 +172,10 @@ href: "javascript:history.back()"
         rows: [
           {
             key: {
-              text: "Did Alex River attend"
+              text: "Did Mohammed Singh attend"
             },
             value: {
-              text: data['did-they-attend']
+              text: "Yes"
             },
             actions: {
               items: [
@@ -194,22 +190,7 @@ href: "javascript:history.back()"
           
       }) }}
 
-      {% set whyDidTheSessionNotHappen %}
       
-      {% if data['why-did-the-session-not-happen'] == 'something-to-do-with-the-person-on-probation' %} 
-      <p>Something to do with the person on probation</p>
-
-      <p>{{ data['what-happened-who-was-involved'] | textInputWithLineBreaks}}</p>
-      {% elseif data['why-did-the-session-not-happen'] == 'something-to-do-with-the-service-provider' %} 
-      <p>Something to do with the service provider</p>
-
-      <p>{{ data['what-happened-service-provider'] |textInputWithLineBreaks}}</p>
-      {% elseif data['why-did-the-session-not-happen'] == 'other' %} 
-      <p>Other</p>
-
-      <p>{{ data['what-happened-other']|textInputWithLineBreaks}}</p>
-      {% endif %}
-      {% endset %}
 
 
 
@@ -222,10 +203,7 @@ href: "javascript:history.back()"
           },
           actions: {
             items: [
-              {
-                href: "/v3/sp/you-told-us-that-the-person-attended",
-                  text: "Change"
-              }
+             
             ]
             }
         },
@@ -236,7 +214,7 @@ href: "javascript:history.back()"
               text: "Why did the session not happen"
             },
             value: {
-              html: whyDidTheSessionNotHappen
+              text: "Other - We started a group on managing conflict at work, It started well but one of the group participants got very angry about a former boss. They were not able to manage this and unfortunately disrupted the group. As group leader I had to manage the situation, including calling in security. Unfortunately that meant that we couldn't deliver the session which was planned. I'll replan it once I've caught up with paperwork."
             },
             actions: {
               items: [
@@ -249,7 +227,7 @@ href: "javascript:history.back()"
 
                 {
                   key: {
-                    text: "Did anything concern you about Alex River?"
+                    text: "Did anything concern you about Mohammed Singh"
                   },
                   value: {
                     text: "No"
