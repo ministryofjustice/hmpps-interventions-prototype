@@ -142,57 +142,40 @@ href: "javascript:history.back()"
               text: "Did the session happen?"
             },
             value: {
-              text: data['did-the-session-happen']
+              text: "No"
             },
             actions: {
               items: [
                 {
-                  visuallyHiddenText: "Did the session happen"
+                  visuallyHiddenText: "Did the session happen?"
                 }
               ]
               }
-            }
+            },
+            {
+              key: {
+                text: "Did Alex River attend the session?"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    visuallyHiddenText: "Did the session happen"
+                  }
+                ]
+                }
+              }
           ]
           
           
       }) }}
 
 
-      {{ govukSummaryList({
-        card: {
-          title: {
-            text: "Attendance"
-          },
-          actions: {
-            items: [
-              {
-                href: "/v3/sp/did-they-attend",
-                  text: "Change"
-              }
-            ]
-            }
-        },
-
-        rows: [
-          {
-            key: {
-              text: "Did Alex River attend"
-            },
-            value: {
-              text: data['did-they-attend']
-            },
-            actions: {
-              items: [
-                {
-                  visuallyHiddenText: "Did the session happen"
-                }
-              ]
-              }
-            }
-          ]
+      
           
-          
-      }) }}
+     
 
       {% set whyDidTheSessionNotHappen %}
       
@@ -233,7 +216,7 @@ href: "javascript:history.back()"
         rows: [
           {
             key: {
-              text: "Why did the session not happen"
+              text: "Why did the session not happen?"
             },
             value: {
               html: whyDidTheSessionNotHappen
@@ -284,7 +267,7 @@ href: "javascript:history.back()"
 
       {{ govukButton({
         text: "Confirm and send",
-        href:"/v3/sp/case-progress-assigned-alex.html"
+        href:"/v4/sp/alex-river-summary-attends-session-does-not-happen"
         
       }) }}
 

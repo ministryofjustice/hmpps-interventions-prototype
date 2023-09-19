@@ -17,9 +17,12 @@ module.exports = function (router) {
             
         } else if (didTheSessionHappen == "no" && didTheyAttend == "yes"){
             response.redirect('you-told-us-that-the-person-attended')
+
+        } else if (didTheSessionHappen == "no" && didTheyAttend == "no"){
+            response.redirect('you-told-us-that-the-person-didnt-attend')
             
         } else {
-            response.redirect('you-told-us-that-the-person-didnt-attend')
+            response.redirect('dont-know-if-person-attended')
         }
       });
  }

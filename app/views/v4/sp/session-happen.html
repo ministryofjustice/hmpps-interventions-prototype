@@ -34,13 +34,13 @@ href: "javascript:history.back()"
 
 
 {% set noHtml %}
-{{ govukInput({
+{{ govukTextarea({
   id: "were-they-on-time-no",
   name: "wereTheyOnTimeNo",
   type: "text",
-  classes: "govuk-!-width-one-third",
+  
   label: {
-    text: "lorem ipsum"
+    text: "Add how late they were and anything you know about the reason."
   }
 }) }}
 {% endset -%}

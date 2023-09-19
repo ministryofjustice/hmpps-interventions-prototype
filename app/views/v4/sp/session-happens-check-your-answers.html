@@ -142,7 +142,7 @@ href: "javascript:history.back()"
               text: "Did the session happen?"
             },
             value: {
-              text: data['did-the-session-happen']
+              text: "Yes"
             },
             actions: {
               items: [
@@ -152,47 +152,15 @@ href: "javascript:history.back()"
               ]
               }
             }
+            
+            
           ]
           
           
       }) }}
 
 
-      {{ govukSummaryList({
-        card: {
-          title: {
-            text: "Attendance"
-          },
-          actions: {
-            items: [
-              {
-                href: "/v3/sp/did-they-attend",
-                  text: "Change"
-              }
-            ]
-            }
-        },
-
-        rows: [
-          {
-            key: {
-              text: "Did Alex River attend"
-            },
-            value: {
-              text: data['did-they-attend']
-            },
-            actions: {
-              items: [
-                {
-                  visuallyHiddenText: "Did the session happen"
-                }
-              ]
-              }
-            }
-          ]
-          
-          
-      }) }}
+    
 
       {{ govukSummaryList({
         card: {
@@ -212,10 +180,12 @@ href: "javascript:history.back()"
         rows: [
           {
             key: {
-              text: "Was Alex River on time"
+              text: "Was Alex River on time?"
             },
             value: {
-              text: data['were-they-on-time']
+              text: "No"
+              
+              
             },
             actions: {
               items: [
@@ -226,7 +196,7 @@ href: "javascript:history.back()"
 
             {
               key: {
-                text: "What did you do in the session"
+                text: "What did you do in the session?                "
               },
               value: {
                 text: data['what-did-you-do']
@@ -240,7 +210,7 @@ href: "javascript:history.back()"
 
               {
                 key: {
-                  text: "How did Alex River respond to the session"
+                  text: "How did Alex River respond to the session?"
                 },
                 value: {
                   text: data['how-did-they-respond']
@@ -289,7 +259,7 @@ href: "javascript:history.back()"
 
       {{ govukButton({
         text: "Confirm and send",
-        href:"/v3/sp/case-progress-assigned-alex.html"
+        href:"/v4/sp/case-progress-assigned-alex_feedback_given"
         
       }) }}
 

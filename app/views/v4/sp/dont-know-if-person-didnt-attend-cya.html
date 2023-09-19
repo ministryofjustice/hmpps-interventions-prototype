@@ -121,9 +121,6 @@ href: "javascript:history.back()"
         ]
       }) }}
       
-      
-
-
       {{ govukSummaryList({
         card: {
           title: {
@@ -132,7 +129,7 @@ href: "javascript:history.back()"
           actions: {
             items: [
               {
-                href: "/v4/sp/did-the-session-happen",
+                href: "/v3/sp/did-the-session-happen",
                   text: "Change"
               }
             ]
@@ -160,7 +157,7 @@ href: "javascript:history.back()"
                 text: "Did Alex River attend the session?"
               },
               value: {
-                text: "No"
+                text: "I don't know"
               },
               actions: {
                 items: [
@@ -175,6 +172,8 @@ href: "javascript:history.back()"
           
       }) }}
 
+
+
       {{ govukSummaryList({
         card: {
           title: {
@@ -183,33 +182,21 @@ href: "javascript:history.back()"
           actions: {
             items: [
               {
-                href: "/v4/sp/you-told-us-that-the-person-didnt-attend",
+                href: "/v3/sp/you-told-us-that-the-person-didnt-attend",
                   text: "Change"
               }
             ]
             }
         },
 
-        rows: [
-          {
-            key: {
-              text: "Add anything you know about why they did not attend and how you tried to contact them"
-            },
-            value: {
-              text: data['more-detail']
-            },
-            actions: {
-              items: [
-                
-              ]
-              }
-            },
+        
 
             
-
+        rows: [
                 {
                   key: {
-                    text: "Did anything concern you about Alex River?"
+                    text: "Do you have any concerns to share about Alex River?
+                    "
                   },
                   value: {
                     text: "No"
@@ -223,7 +210,7 @@ href: "javascript:history.back()"
 
                   {
                     key: {
-                      text: "Would you like to reschedule this session now "
+                      text: "Would you like to reschedule this session now? "
                     },
                     value: {
                       text: data['reschedule-session']
@@ -244,7 +231,7 @@ href: "javascript:history.back()"
 
       {{ govukButton({
         text: "Confirm and send",
-        href:"/v4/sp/alex-river-summary-did-not-attend"
+        href:"/v4/sp/alex-river-summary-attends-session-does-not-happen"
         
       }) }}
 
