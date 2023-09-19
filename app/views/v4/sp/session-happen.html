@@ -27,36 +27,53 @@ href: "javascript:history.back()"
 
         <h1 class="govuk-heading-l">You told us that the session happened</h1>
 
-        
-
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+
+
+{% set noHtml %}
+{{ govukInput({
+  id: "were-they-on-time-no",
+  name: "wereTheyOnTimeNo",
+  type: "text",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "lorem ipsum"
+  }
+}) }}
+{% endset -%}
 
 {{ govukRadios({
-  classes: "govuk-radios--inline",
   name: "were-they-on-time",
   fieldset: {
     legend: {
       text: "Was Alex River on time?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--m
-    "
+      classes: "govuk-fieldset__legend--m"
     }
   },
- hint: {
-   text:"This helps the probation practitioner to support Alex River."
-  },
-  
+  hint: {
+    text: "This helps the probation practitioner to support Alex River."},
   items: [
     {
       value: "yes",
-      text: "Yes"
+      text: "Yes",
+      conditional: {
+        html: yesHtml
+      }
     },
     {
       value: "no",
-      text: "No"
+      text: "No",
+      conditional: {
+        html: noHtml
+      }
     }
   ]
 }) }}
+
 
 
         
