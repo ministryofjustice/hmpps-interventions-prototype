@@ -1,0 +1,280 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">Check your answers</h2>
+      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+     
+      <h3 class="govuk-heading-m">Confirm session details</h3>
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Session details"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Date"
+            },
+            value: {
+              html: "	
+              Tuesday 18 July 2023"
+            },
+            actions: {
+              items: [
+                {
+                  
+                  visuallyHiddenText: "Date"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Time"
+            },
+            value: {
+              html: "9:13am to 9:28am"
+            },
+            actions: {
+              items: [
+                {
+                
+                  visuallyHiddenText: "Time"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Duration"
+            },
+            value: {
+              html: "1 hour"
+            },
+            actions: {
+              items: [
+                {
+                  
+                  visuallyHiddenText: "Duration"
+                }
+                
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Method"
+            },
+            value: {
+              html: "Phone call"
+            },
+            actions: {
+              items: [
+                {
+                  
+                  visuallyHiddenText: "Phone call"
+                }
+                
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Case worker"
+            },
+            value: {
+              html: "Tim Smith"
+            },
+            actions: {
+              items: [
+                {
+                  
+                  visuallyHiddenText: "Case worker"
+                }
+                
+              ]
+            }
+          }
+
+        ]
+      }) }}
+      
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Session"
+          },
+          actions: {
+            items: [
+              {
+                href: "/v3/sp/did-the-session-happen",
+                  text: "Change"
+              }
+            ]
+            }
+        },
+
+        rows: [
+          {
+            key: {
+              text: "Did the session happen?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "Did the session happen?"
+                }
+              ]
+              }
+            },
+            {
+              key: {
+                text: "Did Alex River attend the session?"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    visuallyHiddenText: "Did the session happen"
+                  }
+                ]
+                }
+              }
+          ]
+          
+          
+      }) }}
+
+
+      
+          
+     
+
+      {% set whyDidTheSessionNotHappen %}
+      
+      {% if data['why-did-the-session-not-happen'] == 'something-to-do-with-the-person-on-probation' %} 
+      <p>Something to do with the person on probation</p>
+
+      <p>{{ data['what-happened-who-was-involved'] | textInputWithLineBreaks}}</p>
+      {% elseif data['why-did-the-session-not-happen'] == 'something-to-do-with-the-service-provider' %} 
+      <p>Something to do with the service provider</p>
+
+      <p>{{ data['what-happened-service-provider'] |textInputWithLineBreaks}}</p>
+      {% elseif data['why-did-the-session-not-happen'] == 'other' %} 
+      <p>Other</p>
+
+      <p>{{ data['what-happened-other']|textInputWithLineBreaks}}</p>
+      {% endif %}
+      {% endset %}
+
+
+
+
+      
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Session contents"
+          },
+          actions: {
+            items: [
+              {
+                href: "/v3/sp/you-told-us-that-the-person-attended",
+                  text: "Change"
+              }
+            ]
+            }
+        },
+
+        rows: [
+          {
+            key: {
+              text: "Why did the session not happen?"
+            },
+            value: {
+              html: whyDidTheSessionNotHappen
+            },
+            actions: {
+              items: [
+                
+              ]
+              }
+            },
+
+            
+
+                {
+                  key: {
+                    text: "Did anything concern you about Alex River?"
+                  },
+                  value: {
+                    text: "No"
+                  },
+                  actions: {
+                    items: [
+                      
+                    ]
+                    }
+                  },
+
+                  {
+                    key: {
+                      text: "Would you like to reschedule this session now"
+                    },
+                    value: {
+                      text: "No"
+                    },
+                    actions: {
+                      items: [
+                        
+                      ]
+                      }
+                    }
+          ]
+          
+          
+      }) }}
+      
+      
+      
+
+      {{ govukButton({
+        text: "Confirm and send",
+        href:"/v4/sp/alex-river-summary-attends-session-does-not-happen"
+        
+      }) }}
+
+      
+      
+
+    </div>
+  </div>
+
+{% endblock %}
