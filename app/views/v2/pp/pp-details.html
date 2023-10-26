@@ -42,7 +42,9 @@ href: "javascript:history.back()"
                   </h1>
                 </legend>
 
-                  <p class="govuk-body">Are these contact details correct?</p>
+                  <p class="govuk-body">These contact details will be sent to the service provider for the referral.
+                  </p>
+                  <p class="govuk-body">You should update any information that is incorrect or missing.</p>
 
                   <dl class="govuk-summary-list">
                     <div class="govuk-summary-list__row">
@@ -56,10 +58,15 @@ href: "javascript:history.back()"
                           {{data['user-name'] | default("Sarah Galliver")}}
                         {% endif %}
                       </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="change-pp-name">
+                          Change<span class="govuk-visually-hidden"> location</span>
+                        </a>
+                      </dd>
                     </div>
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        Email
+                        Email address
                       </dt>
                       <dd class="govuk-summary-list__value">
                         {% if data ['user-email'] == "" %}
@@ -67,6 +74,24 @@ href: "javascript:history.back()"
                         {% else %}
                           {{data['user-email'] | default("sarah.galliver@justice.gov.uk")}}
                         {% endif %}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="change-pp-email">
+                          Change<span class="govuk-visually-hidden"> location</span>
+                        </a>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Phone number
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          07526 621576
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="change-pp-phone">
+                          Change<span class="govuk-visually-hidden"> location</span>
+                        </a>
                       </dd>
                     </div>
                     <div class="govuk-summary-list__row">
@@ -76,6 +101,11 @@ href: "javascript:history.back()"
                       <dd class="govuk-summary-list__value">
                         Manchester North
                       </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="change-pp-pdu">
+                          Change<span class="govuk-visually-hidden"> location</span>
+                        </a>
+                      </dd>
                     </div>
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
@@ -84,70 +114,30 @@ href: "javascript:history.back()"
                       <dd class="govuk-summary-list__value">
                         <p class="govuk-body">Redfern Building</p>
                       </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="change-pp-office">
+                          Change<span class="govuk-visually-hidden"> location</span>
+                        </a>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Team phone number
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          01939 273845
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="change-pp-team-phone">
+                          Change<span class="govuk-visually-hidden"> location</span>
+                        </a>
+                      </dd>
                     </div>
                   </dl>
-                  
-
-
-                  <div class="govuk-radios" data-module="govuk-radios">
-
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="pp-details" name="pp-details" type="radio" value="yes" data-aria-controls="conditional-contact-2">
-                      <label class="govuk-label govuk-radios__label" for="pp-details">
-                        Yes
-                      </label>
                     </div>
-
-
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="pp-details" name="pp-details" type="radio" value="no" data-aria-controls="conditional-contact">
-                      <label class="govuk-label govuk-radios__label" for="pp-details">
-                        No
-                      </label>
-                    </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact" name="eccode">
-
-                      <p class="govuk-body">Enter the correct contact details to be sent to the service provider.</p>
-
-                      <div class="govuk-form-group">
-                        <label class="govuk-label" for="width-20">
-                          Name
-                        </label>
-                        <input class="govuk-input govuk-input--width-20" id="user-name2" name="user-name2" type="text">
-                      </div>
-
-                      <div class="govuk-form-group">
-                        <label class="govuk-label" for="width-20">
-                          Email address
-                        </label>
-                        <input class="govuk-input govuk-input--width-20" id="user-email2" name="user-email2" type="text">
-                      </div>
-
-                      <div class="govuk-form-group">
-                        <label class="govuk-label" for="full">
-                          PDU (Probation Delivery Unit)
-                        </label>
-                        <div id="contact-hint" class="govuk-hint">
-                          Start typing then choose from the list.
-                        </div>
-                        <input class="govuk-input govuk-!-width-full" id="pp-pdu" name="pp-pdu" type="text">
-                      </div>
-
-                      <div class="govuk-form-group">
-                        <label class="govuk-label" for="full">
-                          Probation office
-                        </label>
-                        <div id="contact-hint" class="govuk-hint">
-                          Start typing, then choose from the list.
-                        </div>
-                        <input class="govuk-input govuk-!-width-full" id="pp-office" name="pp-office" type="text">
-                      </div>
-                    </div>
-
-
-
                   </div>
 
+                  <p class="govuk-body"><a href="change-pp" class="govuk-link">Change to a different probation practitioner</a></p>
 
               </fieldset>
             </div>

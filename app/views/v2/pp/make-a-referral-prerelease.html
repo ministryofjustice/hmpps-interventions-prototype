@@ -14,7 +14,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <span class="govuk-caption-xl">Alex River (CRN: D007615)</span>
+    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Name: </strong>Alex River
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="govuk-!-font-weight-bold">CRN: </strong>D007615
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="govuk-!-font-weight-bold">Prison number: </strong>A8362HF</p>
+
+
+
 <h1 class="govuk-heading-xl">Make a referral</h1>
 
 
@@ -45,7 +50,7 @@
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="pp-details" aria-describedby="">
-                    Name, email address and location
+                    Name, contact details and location
                   </a>
                 </span>
                 {% if data ['pp-details'] == "yes" or data ['pp-details'] == "no" %}
@@ -62,13 +67,13 @@
 
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">2. </span> Confirm Alex River's location and expected release date
+              <span class="app-task-list__section-number">2. </span> Confirm Alex River's current location and expected release details
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="current-location" aria-describedby="">
-                    Establishment
+                    Current location
                   </a>
                 </span>
                 {% if data ['location'] == "yes" or data ['location'] == "no" %}
@@ -147,7 +152,7 @@
 
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">4. </span> Add Accommodation referral details
+              <span class="app-task-list__section-number">4. </span> Add intervention referral details
             </h2>
 
             {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
@@ -197,7 +202,7 @@
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
       <a href="" aria-describedby="">
-        Further information for service provider</a>
+        Reason for referral and further information for service provider</a>
     </span>
     <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
   </li>
@@ -247,7 +252,7 @@ Enter when the Accommodation service <br> needs to be completed</a>
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
-Further information for service provider</a>
+  Reason for referral and further information<br> for service provider</a>
 </span>
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
 </li>
@@ -267,7 +272,7 @@ Further information for service provider</a>
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="check-answers" aria-describedby="">
-                  Check all referral information</a>
+                  Check referral information</a>
                 </span>
                 {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
