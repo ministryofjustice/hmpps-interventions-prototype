@@ -14,7 +14,10 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <span class="govuk-caption-xl">John Smith (CRN: D182933)</span>
+    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Name: </strong>John Smith
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="govuk-!-font-weight-bold">CRN: </strong>D182933
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="govuk-!-font-weight-bold">Prison number: </strong>H7634YG</p>
+
 <h1 class="govuk-heading-xl">Make a referral</h1>
 
 
@@ -38,20 +41,20 @@
 
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">1. </span>Review referral contact details
+              <span class="app-task-list__section-number">1. </span>Confirm main point of contact details
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="main-contact-details" aria-describedby="">
-                    Name, email address and location
+                    Name, contact details and location
                   </a>
                 </span>
-                {% if data ['pp-details'] == "yes" or data ['pp-details'] == "no" %}
+                {% if data ['contact-location'] == "prison" or data ['contact-location'] == "office" %}
                 <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
                 {% else %}
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
-                {% endif %}              
+                {% endif %}             
               </li>
             </ul>
           </li>
@@ -76,19 +79,6 @@
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
                 {% endif %}               
                </li>
-
-              <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                  <a href="release-date" aria-describedby="">
-                    Expected release date
-                  </a>
-                </span>
-                {% if data ['location'] == "yes" or data ['location'] == "no" %}
-                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
-                {% else %}
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
-                {% endif %}               
-              </li>
             </ul>
           </li>
 

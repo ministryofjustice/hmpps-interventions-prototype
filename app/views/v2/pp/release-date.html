@@ -25,7 +25,7 @@ href: "javascript:history.back()"
       {% elseif data ['referral-type'] == "community" %}
       <form class="form" method="post" action="make-a-referral-community">
         {% elseif data ['referral-type-nocom'] == "yes" %}
-        <form class="form" method="post" action="make-a-referral-nocom-prerelease2">
+        <form class="form" method="post" action="referral-reason-unallocated">
           {% elseif data ['referral-type-nocom'] == "no" %}
           <form class="form" method="post" action="make-a-referral-nocom-prison2">
     {% endif %}
@@ -60,7 +60,8 @@ href: "javascript:history.back()"
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="release-date" name="release-date" type="radio" value="yes" data-aria-controls="conditional-contact-2">
                 <label class="govuk-label govuk-radios__label" for="release-date">
-                  Expected release date - 15 Sep 2023
+                  <p class="govuk-body"><strong class="govuk-!-font-weight-regular">Expected release date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                    <strong class="govuk-!-font-weight-bold">15 Sep 2023 (Saturday)</strong></p>
                 </label>
               </div>
 
@@ -107,7 +108,79 @@ href: "javascript:history.back()"
                     </div>
                   </div>
                 </fieldset>
+                <br>
+
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Need to change the month to a number format?
+                    </span>
+                  </summary>
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Month</th>
+                        <th scope="col" class="govuk-table__header">Month as a number</th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">January</th>
+                        <td class="govuk-table__cell">1</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">February</th>
+                        <td class="govuk-table__cell">2</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">March</th>
+                        <td class="govuk-table__cell">3</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">April</th>
+                        <td class="govuk-table__cell">4</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">May</th>
+                        <td class="govuk-table__cell">5</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">June</th>
+                        <td class="govuk-table__cell">6</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">July</th>
+                        <td class="govuk-table__cell">7</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">August</th>
+                        <td class="govuk-table__cell">8</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">September</th>
+                        <td class="govuk-table__cell">9</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">October</th>
+                        <td class="govuk-table__cell">10</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">November</th>
+                        <td class="govuk-table__cell">11</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">December</th>
+                        <td class="govuk-table__cell">12</td>
+                      </tr>
+                      </tr>
+                      </tr>
+                    </tbody>
+                  </table>
+                </details>
+
               </div>
+
+
 
 
 

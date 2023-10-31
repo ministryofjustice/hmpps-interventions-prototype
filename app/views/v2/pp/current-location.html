@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Submit current location
+  Confirm current location
 {% endblock %}
 
 {% block main %}
@@ -75,7 +75,7 @@ href: "javascript:history.back()"
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact" name="eccode">
                     <div class="govuk-form-group">
                       <label class="govuk-label" for="establishment">
-                        Which establishment is 
+                        Which prison establishment is 
                         {% if data ['referral-type'] == "prison" %} Alex 
                         {% elseif data ['referral-type-nocom'] == "yes" %} Darren
                         {% elseif data ['referral-type-nocom'] == "no" %} John
@@ -84,7 +84,7 @@ href: "javascript:history.back()"
 
                       </label>
                       <div id="contact-hint" class="govuk-hint">
-                        Start typing, then choose from the list.
+                        Start typing, then choose prison name from the list.
                       </div>
                       <input class="govuk-input govuk-!-width-full" id="establishment" name="establishment" type="text">
                     </div>

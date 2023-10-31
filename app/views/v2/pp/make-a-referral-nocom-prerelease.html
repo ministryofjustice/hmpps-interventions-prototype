@@ -14,7 +14,10 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <span class="govuk-caption-xl">Darren Wicks (CRN: D927438)</span>
+    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Name: </strong>Darren Wicks
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="govuk-!-font-weight-bold">CRN: </strong>D927438
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="govuk-!-font-weight-bold">Prison number: </strong>K8321JK</p>
+
 <h1 class="govuk-heading-xl">Make a referral</h1>
 
 
@@ -38,16 +41,29 @@
 
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">1. </span>Review referral contact details
+              <span class="app-task-list__section-number">1. </span>Confirm main point of contact details
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="main-contact-details" aria-describedby="">
-                    Name, email address and location
+                    Name, contact details and location
                   </a>
                 </span>
-                {% if data ['pp-details'] == "yes" or data ['pp-details'] == "no" %}
+                {% if data ['contact-location'] == "prison" or data ['contact-location'] == "office" %}
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
+                {% endif %}              
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="referral-reason-unallocated" aria-describedby="">
+                    Reason for unallocated referral
+                  </a>
+                </span>
+                {% if data ['contact-location'] == "prison" or data ['contact-location'] == "office" %}
                 <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
                 {% else %}
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
@@ -67,7 +83,7 @@
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="current-location" aria-describedby="">
-                    Establishment
+                    Current location
                   </a>
                 </span>
                 {% if data ['location'] == "yes" or data ['location'] == "no" %}
@@ -81,6 +97,19 @@
                 <span class="app-task-list__task-name">
                   <a href="release-date" aria-describedby="">
                     Expected release date
+                  </a>
+                </span>
+                {% if data ['location'] == "yes" or data ['location'] == "no" %}
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
+                {% endif %}               
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="release-date" aria-describedby="">
+                    Expected release location
                   </a>
                 </span>
                 {% if data ['location'] == "yes" or data ['location'] == "no" %}
@@ -196,7 +225,7 @@
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
       <a href="" aria-describedby="">
-        Further information for service provider</a>
+        Reason for referral and further information<br> for service provider</a>
     </span>
     <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
   </li>
@@ -246,7 +275,7 @@ Enter when the Accommodation service <br> needs to be completed</a>
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
-Further information for service provider</a>
+  Reason for referral and further information <br>for service provider</a>
 </span>
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
 </li>

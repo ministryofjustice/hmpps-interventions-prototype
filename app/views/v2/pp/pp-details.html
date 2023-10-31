@@ -35,7 +35,7 @@ href: "javascript:history.back()"
                   {% if data ['referral-type'] == "prison" %}
                   <span class="govuk-caption-xl">Alex River (CRN: D007615)</span>
                   {% elseif data ['referral-type'] == "community" %}
-                  <span class="govuk-caption-xl">Mohammed Singh (CRN: D743927)</span>
+                  <span class="govuk-caption-xl">Mohammed Salah (CRN: D743927)</span>
                   {% endif %}
                   <h1 class="govuk-fieldset__heading">
                     Confirm probation practitioner details
@@ -86,7 +86,7 @@ href: "javascript:history.back()"
                         Phone number
                       </dt>
                       <dd class="govuk-summary-list__value">
-                          07526 621576
+                        {{data['pp-phone']}}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="change-pp-phone">
@@ -125,7 +125,7 @@ href: "javascript:history.back()"
                         Team phone number
                       </dt>
                       <dd class="govuk-summary-list__value">
-                          01939 273845
+                        {{data['pp-team-phone']}}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="change-pp-team-phone">
