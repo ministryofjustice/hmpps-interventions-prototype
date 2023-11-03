@@ -5,100 +5,192 @@
 {% endblock %}
 
 {% block main %}
-{% include "../includes/key-details-bar.html" %}
 {{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-          <form class="form" method="post" action="make-a-referral-2">
+    {% if data ['referral-type'] == "prison" %}
+    <form class="form" method="post" action="make-a-referral-prerelease">
+      {% elseif data ['referral-type'] == "community" %}
+      <form class="form" method="post" action="make-a-referral-community">
+        {% elseif data ['referral-type-nocom'] == "yes" %}
+        <form class="form" method="post" action="referral-reason-unallocated">
+          {% elseif data ['referral-type-nocom'] == "no" %}
+          <form class="form" method="post" action="make-a-referral-nocom-prison2">
+    {% endif %}
+
 
             <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              {% if data ['referral-type'] == "prison" %}
+              <span class="govuk-caption-xl">Alex River (CRN: D002399)</span>
+              {% elseif data ['referral-type-nocom'] == "yes" %}
+              <span class="govuk-caption-xl">Darren Wicks (CRN: D927438)</span>
+              {% elseif data ['referral-type-nocom'] == "no" %}
+              <span class="govuk-caption-xl">John Smith (CRN: D182933)</span>
+              {% endif %}              
               <h1 class="govuk-fieldset__heading">
-                Do you know the expected release date?
+                Select 
+                {% if data ['referral-type'] == "prison" %} Alex River's
+                {% elseif data ['referral-type-nocom'] == "yes" %} Darren Wicks'
+                {% elseif data ['referral-type-nocom'] == "no" %} John Smith's
+                current location
+                {% endif %}
+                expected release date
               </h1>
             </legend>
-            <p class="govuk-body">
-              You can find this in nDelius and NOMIS.
-            </p>
+
+
+
             <div class="govuk-radios" data-module="govuk-radios">
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="actual-or-estimate-date" name="actual-or-estimate-date" type="radio" value="yes" data-aria-controls="conditional-contact">
-                <label class="govuk-label govuk-radios__label" for="actual-or-estimate-date">
-                  Yes
+                <input class="govuk-radios__input" id="release-date" name="release-date" type="radio" value="yes" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="release-date">
+                  <p class="govuk-body"><strong class="govuk-!-font-weight-regular">Expected release date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                    <strong class="govuk-!-font-weight-bold">15 September 2023 (Saturday)</strong></p>
+                </label>
+              </div>
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="release-date" name="release-date" type="radio" value="no" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="release-date">
+                  Choose a different date
                 </label>
               </div>
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact" name="quantityactual">
-                <fieldset class="govuk-fieldset" role="group" aria-describedby="actual-shipment-hint">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="input-date-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                     <h2 class="govuk-fieldset__heading">
-                      Add the expected release date
+                      Enter the expected release date
                     </h2>
                   </legend>
-                  <div id="actual-shipment-hint" class="govuk-hint">
+                  <div id="input-date-hint" class="govuk-hint">
                     <p class="govuk-body">
-                      For example, 27 3 2022
+                      For example, 27 5 2023
                     </p>
                   </div>
-                  <div class="govuk-date-input" id="actual-shipment">
+                  <div class="govuk-date-input" id="input-date">
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="actual-shipment-day">
+                        <label class="govuk-label govuk-date-input__label" for="input-date-day">
                           Day
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="actual-shipment-day" name="actual-shipment-day" value="{{ data['actual-shipment-day'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="input-date-day" name="input-date-day" value="{{ data['input-date-day'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                     </div>
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="actual-shipment-month">
+                        <label class="govuk-label govuk-date-input__label" for="input-date-month">
                           Month
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="actual-shipment-month" name="actual-shipment-month" value="{{ data['actual-shipment-month'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="input-date-month" name="input-date-month" value="{{ data['input-date-month'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                     </div>
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="actual-shipment-year">
+                        <label class="govuk-label govuk-date-input__label" for="input-date-year">
                           Year
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="actual-shipment-year" name="actual-shipment-year" value="{{ data['actual-shipment-year'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="input-date-year" name="input-date-year" value="{{ data['input-date-year'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                     </div>
                   </div>
                 </fieldset>
+                <br>
+
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Need to change the month to a number format?
+                    </span>
+                  </summary>
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Month</th>
+                        <th scope="col" class="govuk-table__header">Month as a number</th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">January</th>
+                        <td class="govuk-table__cell">1</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">February</th>
+                        <td class="govuk-table__cell">2</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">March</th>
+                        <td class="govuk-table__cell">3</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">April</th>
+                        <td class="govuk-table__cell">4</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">May</th>
+                        <td class="govuk-table__cell">5</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">June</th>
+                        <td class="govuk-table__cell">6</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">July</th>
+                        <td class="govuk-table__cell">7</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">August</th>
+                        <td class="govuk-table__cell">8</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">September</th>
+                        <td class="govuk-table__cell">9</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">October</th>
+                        <td class="govuk-table__cell">10</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">November</th>
+                        <td class="govuk-table__cell">11</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">December</th>
+                        <td class="govuk-table__cell">12</td>
+                      </tr>
+                      </tr>
+                      </tr>
+                    </tbody>
+                  </table>
+                </details>
+
               </div>
 
 
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="actual-or-estimate-date" name="actual-or-estimate-date" type="radio" value="no" data-aria-controls="conditional-contact-2">
-                <label class="govuk-label govuk-radios__label" for="actual-or-estimate-date">
-                  No
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2" name="quantityestimate">
-                <p class="govuk-body">Enter why the expected release date is not known.</p>
-                    <textarea class="govuk-textarea" id="transit-countries" name="transit-countries" rows="5">{{ data['transit-countries'] }}</textarea>
 
-                    <div class="govuk-warning-text">
-                      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                      <strong class="govuk-warning-text__text">
-                        <span class="govuk-warning-text__assistive">Warning</span>
-                    When you know the date, you will need to update the service provider.
-                  </strong>
-                </div>
-                  </div>
+
 
                 </div>
-
-
                   </fieldset>
         </div>
       </div>
       </div>
 
-
+      <p class="govuk-body"><a href="release-date-not-known" class="govuk-link">I don't know the expected release date</a></p>
 
 
         {{ govukButton({

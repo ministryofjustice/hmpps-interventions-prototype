@@ -1,0 +1,279 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Make a referral
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+      <span class="govuk-caption-l">John Smith &nbsp;&nbsp;&nbsp;&nbsp;CRN: D182933&nbsp;&nbsp;&nbsp;&nbsp; Prison number: H7634YG</span>
+<h1 class="govuk-heading-xl">Make a referral</h1>
+
+
+<div class="govuk-inset-text">
+  This information will be sent to the service provider.
+</div>
+
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Submission incomplete</h2>
+        {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
+        <p class="govuk-body govuk-!-margin-bottom-7">You have completed 4 of 5 sections.</p>
+        {% elseif data ['location'] == "yes" or data ['location'] == "no" %}
+        <p class="govuk-body govuk-!-margin-bottom-7">You have completed 2 of 5 sections.</p>
+        {% elseif data ['pp-details'] == "yes" or data ['pp-details'] == "no" %}
+        <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 5 sections.</p>
+        {% else %}
+        <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 5 sections.</p>
+        {% endif %}
+
+
+        <ol class="app-task-list">
+
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">1. </span>Confirm main point of contact details
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="main-contact-details" aria-describedby="">
+                    Name, contact details and location
+                  </a>
+                </span>
+                {% if data ['contact-location'] == "prison" or data ['contact-location'] == "office" %}
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
+                {% endif %}             
+              </li>
+            </ul>
+          </li>
+
+
+
+
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">2. </span> Confirm Alex River's current location
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="current-location" aria-describedby="">
+                    Current location
+                  </a>
+                </span>
+                {% if data ['location'] == "yes" or data ['location'] == "no" %}
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
+                {% endif %}               
+               </li>
+            </ul>
+          </li>
+
+
+
+
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">3. </span> Review John Smith's information
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="personal-details-john" aria-describedby="">
+                    Personal details
+                  </a>
+                </span>
+                {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
+                {% endif %}
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="risk-info" aria-describedby="">
+                    Risk information
+                  </a>
+                </span>
+                {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
+                {% endif %}
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="" aria-describedby="">
+                  Needs and requirements
+                  </a>
+                </span>
+                {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
+                {% endif %}
+              </li>
+            </ul>
+          </li>
+
+
+
+
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">4. </span> Add Accommodation referral details
+            </h2>
+
+            {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="" aria-describedby="">
+                    Confirm the relevant sentence for the <br> Accommodation referral</a>
+                </span>
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="" aria-describedby="">Select desired outcomes</a>
+                </span>
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="" aria-describedby="">
+                    Select required complexity level</a>
+                </span>
+                <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>            
+              </li>
+
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="" aria-describedby="">
+                Enter enforceable days used</a>
+            </span>
+            <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>     
+          </li>
+
+
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="" aria-describedby="">
+            Enter when the Accommodation service <br> needs to be completed by</a>
+        </span>
+        <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>     
+      </li>
+
+
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+      <a href="" aria-describedby="">
+        Reason for referral and further information<br> for service provider</a>
+    </span>
+    <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+  </li>
+</ul>
+</li>
+
+
+{% else %}
+<ul class="app-task-list__items">
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+        Confirm the relevant sentence for the <br> Accommodation referral</a>
+    </span>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+  </li>
+
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+        Select desired outcomes</a>
+    </span>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+  </li>
+
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+        Select required complexity level</a>
+    </span>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+  </li>
+
+
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+    Enter enforceable days used</a>
+</span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+</li>
+
+
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+Enter when the Accommodation service <br> needs to be completed by</a>
+</span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+</li>
+
+
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+  Reason for referral and further information<br> for service provider</a>
+</span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+</li>
+</ul>
+</li>
+{% endif %}
+
+
+
+
+
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">5. </span> Check all referral information and submit referral
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="check-answers" aria-describedby="">
+                  Check all referral information</a>
+                </span>
+                {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
+                {% endif %}              
+              </li>
+            </ul>
+          </li>
+
+        </ol>
+
+
+
+
+
+
+      </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,561 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Referral details
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-mo.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Mohammed Salah: referral details</h1>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="case-progress-mo">Case progress</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"  aria-current="page" href="referral-details-mo">Referral details</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"  href="">Case notes</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="">Change log</a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Intervention details</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Service type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              ETE services
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sentence
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Frauds by company directors
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Subcategory
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Fraudulently inducing persons to invest money
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              End of sentence date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              10 Aug 2023
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Maximum number of enforceable days
+            </dt>
+            <dd class="govuk-summary-list__value">
+            10  
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date intervention to be completed by
+            </dt>
+            <dd class="govuk-summary-list__value">
+              29 Jul 2023
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Further information
+            </dt>
+            <dd class="govuk-summary-list__value">
+              None
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    
+    
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">ETE intervention</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Complexity level
+            </dt>
+            <dd class="govuk-summary-list__value">
+              MEDIUM COMPLEXITY<br>
+              Service user is at risk of homelessness/is homeless, or will be on release from prison. Service user has had some success in maintaining a tenancy but may have additional needs e.g. Learning Difficulties and/or Learning Disabilities or other challenges currently.
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Desired outcomes
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Service user makes progress in obtaining accommodation.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">Mohammed Salah's probation practitioner</h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Ian Williams
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Email address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    ian.williams@justice.gov.uk
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Probation office
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Greater Manchester: Redfern Building
+                  </dd>
+                </div>
+            </dl>
+          </div>
+        </div>
+    
+    
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Mohammed Salah's location</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Location at time of referral
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Community
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+
+<div class="govuk-summary-card">
+<div class="govuk-summary-card__title-wrapper">
+  <h2 class="govuk-summary-card__title">Mohammed Salah's personal details</h2>
+</div>
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        First name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Mohammed
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last name(s)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Salah
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Gender
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Male
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="govuk-summary-list__value">
+        1 Aug 1954 (68 years old)
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Ethnicity
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Indonesian
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Preferred language
+      </dt>
+      <dd class="govuk-summary-list__value">
+        English
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Disabilities
+      </dt>
+      <dd class="govuk-summary-list__value">
+        None
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Religion or belief
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Muslim
+      </dd>
+    </div>
+  </dl>
+</div>
+</div>
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Mohammed Salah's address and contact details</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          174b Hillton Avenue<br>Manchester<br>M4 7EU
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          07482 473982
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not found
+        </dd>
+      </div>
+    </dl>
+  </div>
+  </div>
+
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">Mohammed Salah's risk information</h2>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Who is at risk<br>
+            <p class="govuk-body">
+            Medium ROSH to the public<br>
+            Medium ROSH to staff<br>
+            High ROSH to her children (neglect)
+          </p>
+          </dt>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nature of risk<br>
+            <p class="govuk-body">
+            Previous Convictions:
+numerous acquisitive offences since the age of 14 –
+Theft from Shop x 26;
+Street Robbery x1;
+Theft from person x 4;
+Prostitution x 6;
+Possession of class A drug (heroin) x 2;
+Criminal damage x 1;
+Assault Police x 2
+Silver Cymbal has a history of offending since the age of 14. He is currently on
+license for an offence of supplying class A drugs as part of a county lines gang
+A712$**.
+In this offence the driver of the gang would take him to the Saturn Pub in Space
+Town in his pink ford focus Reg no ABC 123Y. He would wait at the entrance
+wearing a green baseball cap so people would know to approach him for drugs.
+He would sell heroin, cocaine and cannabis, which he kept in a NIKKK
+backpack. When the police arrested him, he threw the backpack at the officer –
+missing him and ran away, but he gave chase and arrested him around the
+corner in the garden of Moon Beam’s house. Forrest Mercury the car driver was
+also arrested and charged with drug related offences.
+A number of gang members are still in custody servicing longer sentences.
+However, he is both fearful of members in the community and at risk of
+returning to offending. He says that he carries a knife in case he bumps into
+any gang member and has been warned not to do so by PC999 Plod, his local
+officer (mob-0123 987654). He previously had a relationship with one gang
+member Orange Trumpet who is the mother of his son Purple (Dob: 10:11:13). Her
+new partner is Gold Viola, and they have a child Yellow Trumpet Dob: 21:02:17)
+He has recently been released from custody and is residing with his sister
+(also known to probation) but this is only temporary.
+He has no other family member who he can reside with and although his
+family support him, they do not offer the pro-social influence required to keep him
+from offending.
+Since release he is on a methadone script and requires support and
+encouragement to continue with it as historically, he relapses quickly after
+release.
+Following his last sentence his child Purple Trumpet (who had been with a foster
+family (Avril & Teal Timpani) has been adopted to a family in the Acorn area of
+Oaktree Village so that he can continue to attend Oaktree School where he has
+been since being in foster care. He is struggling to come to terms with this.
+</p>
+          </dt>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When risk is likely to be greatest<br>
+            <p class="govuk-body">
+              Silver Cymbal has a history of offending since the age of 14. He is currently on
+              license for an offence of supplying class A drugs as part of a county lines gang
+              A712$**.
+              In this offence the driver of the gang would take him to the Saturn Pub in Space
+              Town in his pink ford focus Reg no ABC 123Y. He would wait at the entrance
+              wearing a green baseball cap so people would know to approach him for drugs.
+              He would sell heroin, cocaine and cannabis, which he kept in a NIKKK
+              backpack. When the police arrested him, he threw the backpack at the officer –
+              missing him and ran away, but he gave chase and arrested him around the
+              corner in the garden of Moon Beam’s house. Forrest Mercury the car driver was
+              also arrested and charged with drug related offences.
+              A number of gang members are still in custody servicing longer sentences.
+              However, he is both fearful of members in the community and at risk of
+              returning to offending. He says that he carries a knife in case he bumps into
+              any gang member and has been warned not to do so by PC999 Plod, his local
+              officer (mob-0123 987654). He previously had a relationship with one gang
+              member Orange Trumpet who is the mother of his son Purple (Dob: 10:11:13). Her
+              new partner is Gold Viola, and they have a child Yellow Trumpet Dob: 21:02:17)
+              He has recently been released from custody and is residing with his sister
+              (also known to probation) but this is only temporary.
+              He has no other family member who he can reside with and although his
+              family support him, they do not offer the pro-social influence required to keep him
+              from offending.
+              Since release he is on a methadone script and requires support and
+              encouragement to continue with it as historically, he relapses quickly after
+              release.
+              Following his last sentence his child Purple Trumpet (who had been with a foster
+              family (Avril & Teal Timpani) has been adopted to a family in the Acorn area of
+              Oaktree Village so that he can continue to attend Oaktree School where he has
+              been since being in foster care. He is struggling to come to terms with this.
+</p>
+          </dt>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Concerns relating to self harm
+            <p class="govuk-body">None</p>
+          </dt>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Concerns relating to suicide
+            <p class="govuk-body">None</p>
+          </dt>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Concerns relating to coping in a hotel setting<br>
+            <p class="govuk-body">
+              Silver Cymbal has a history of offending since the age of 14. He is currently on
+              license for an offence of supplying class A drugs as part of a county lines gang
+              A712$**.
+              In this offence the driver of the gang would take him to the Saturn Pub in Space
+              Town in his pink ford focus Reg no ABC 123Y. He would wait at the entrance
+              wearing a green baseball cap so people would know to approach him for drugs.
+              He would sell heroin, cocaine and cannabis, which he kept in a NIKKK
+              backpack. When the police arrested him, he threw the backpack at the officer –
+              missing him and ran away, but he gave chase and arrested him around the
+              corner in the garden of Moon Beam’s house. Forrest Mercury the car driver was
+              also arrested and charged with drug related offences.
+              A number of gang members are still in custody servicing longer sentences.
+              However, he is both fearful of members in the community and at risk of
+              returning to offending. He says that he carries a knife in case he bumps into
+              any gang member and has been warned not to do so by PC999 Plod, his local
+              officer (mob-0123 987654). He previously had a relationship with one gang
+              member Orange Trumpet who is the mother of his son Purple (Dob: 10:11:13). Her
+              new partner is Gold Viola, and they have a child Yellow Trumpet Dob: 21:02:17)
+              He has recently been released from custody and is residing with his sister
+              (also known to probation) but this is only temporary.
+              He has no other family member who he can reside with and although his
+              family support him, they do not offer the pro-social influence required to keep him
+              from offending.</p>
+          </dt>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Concerns relating to vulnerability<br>
+            <p class="govuk-body">
+              Silver Cymbal has a history of offending since the age of 14. He is currently on
+              license for an offence of supplying class A drugs as part of a county lines gang
+              A712$**.
+              In this offence the driver of the gang would take him to the Saturn Pub in Space
+              Town in his pink ford focus Reg no ABC 123Y. He would wait at the entrance
+              wearing a green baseball cap so people would know to approach him for drugs.
+              He would sell heroin, cocaine and cannabis, which he kept in a NIKKK
+              backpack. When the police arrested him, he threw the backpack at the officer –
+              missing him and ran away, but he gave chase and arrested him around the
+              corner in the garden of Moon Beam’s house. Forrest Mercury the car driver was
+              also arrested and charged with drug related offences.
+              Following his last sentence his child Purple Trumpet (who had been with a foster
+              family (Avril & Teal Timpani) has been adopted to a family in the Acorn area of
+              Oaktree Village so that he can continue to attend Oaktree School where he has
+              been since being in foster care. He is struggling to come to terms with this.</p>
+          </dt>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Additional risk information
+            <p class="govuk-body">None</p>
+          </dt>
+        </div>
+      </dl>
+    </div>
+    </div>
+
+
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">Mohammed Salah's needs and requirements</h2>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Identify needs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Mobility, disability or accessibility needs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Interpreter required
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Interpreter language
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Primary language
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Not found
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Caring or employment responsibilities
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None
+          </dd>
+        </div>
+      </dl>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+{% endblock %}

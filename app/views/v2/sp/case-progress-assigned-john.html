@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-{% include "../includes/key-details-bar.html" %}
+{% include "../includes/key-details-bar-john.html" %}
 {{ super() }}
 {% endblock %}
 
@@ -24,17 +24,17 @@ href: "javascript:history.back()"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l">Alex River: case progress</h1>
+    <h1 class="govuk-heading-l">John Smith: case progress</h1>
 
     <nav class="moj-sub-navigation" aria-label="Sub navigation">
 
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" aria-current="page" href="case-progress">Case progress</a>
+          <a class="moj-sub-navigation__link" aria-current="page" href="case-progress-john">Case progress</a>
         </li>
 
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link"  href="referral-details">Referral details</a>
+          <a class="moj-sub-navigation__link"  href="referral-details-john">Referral details</a>
         </li>
 
         <li class="moj-sub-navigation__item">
@@ -48,21 +48,8 @@ href: "javascript:history.back()"
 
     </nav>
 
-    <div class="govuk-form-group">
-      <h2 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--m" for="event-name">
-          Who do you want to assign this referral to?
-        </label>
-      </h2>
-      <p class="govuk-body">Enter the email address of the caseworker</p>
-
-      <input class="govuk-input govuk-!-width-one-half" id="event-name" name="event-name" type="text">
-    </div>
-
-
-    <button class="govuk-button" data-module="govuk-button">
-      Save and continue
-    </button>
+    <p class="govuk-body">This intervention is assigned to R&M Active Probation Practitioner ({{data['assign']}}).
+    </p>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 

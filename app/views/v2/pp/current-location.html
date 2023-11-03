@@ -1,19 +1,31 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Submit current location
+  Confirm current location
 {% endblock %}
 
 {% block main %}
-{% include "../includes/key-details-bar.html" %}
 {{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-          <form action="current-location" class="form" method="post">
+
+          {% if data ['referral-type-nocom'] == "no" %}
+          <form class="form" method="post" action="make-a-referral-nocom-prison">
+            {% else %}
+            <form class="form" method="post" action="release-date">
+            {% endif %}
 
             <div class="govuk-form-group">
 
@@ -21,46 +33,85 @@
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  {% if data ['referral-type'] == "prison" %}
+                  <span class="govuk-caption-xl">Alex River (CRN: D002399)</span>
+                  {% elseif data ['referral-type-nocom'] == "yes" %}
+                  <span class="govuk-caption-xl">Darren Wicks (CRN: D927438)</span>
+                  {% elseif data ['referral-type-nocom'] == "no" %}
+                  <span class="govuk-caption-xl">John Smith (CRN: D182933)</span>
+                  {% endif %}
+
                   <h1 class="govuk-fieldset__heading">
-                    Submit Alex River's current location
+                    Confirm 
+                    {% if data ['referral-type'] == "prison" %} Alex River's
+                    {% elseif data ['referral-type-nocom'] == "yes" %} Darren Wicks'
+                    {% elseif data ['referral-type-nocom'] == "no" %} John Smith's
+                    {% endif %}
+                    current location
+
                   </h1>
                 </legend>
 
-                  <p class="govuk-body">This enables the service provider to prioritise the intervention and allocate it to the right caseworker.</p>
+                <p class="govuk-body govuk-!-font-weight-bold">Is 
+                  {% if data ['referral-type'] == "prison" %} Alex River 
+                  {% elseif data ['referral-type-nocom'] == "yes" %} Darren Wicks
+                  {% elseif data ['referral-type-nocom'] == "no" %} John Smith
+                  {% endif %}
+                  in HMP Manchester?</p>
 
 
-                <h2 class="govuk-heading-m">Where is Alex today?</h2>
 
                 <div class="govuk-radios" data-module="govuk-radios">
+
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="ec-code" name="ec-code" type="radio" value="Yes" data-aria-controls="conditional-contact">
-                    <label class="govuk-label govuk-radios__label" for="ec-code">
-                      Custody (select even if Alex is due to be released today)
+                    <input class="govuk-radios__input" id="location" name="location" type="radio" value="yes" data-aria-controls="conditional-contact-2">
+                    <label class="govuk-label govuk-radios__label" for="location">
+                      Yes
+                    </label>
+                  </div>
+
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="location" name="location" type="radio" value="no" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-radios__label" for="location">
+                      No
                     </label>
                   </div>
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact" name="eccode">
                     <div class="govuk-form-group">
-                      <label class="govuk-label" for="width-20">
-                        Add the expected release date
+                      <label class="govuk-label" for="establishment">
+                        Which prison establishment is 
+                        {% if data ['referral-type'] == "prison" %} Alex 
+                        {% elseif data ['referral-type-nocom'] == "yes" %} Darren
+                        {% elseif data ['referral-type-nocom'] == "no" %} John
+                        {% endif %}
+                        in? 
+
                       </label>
                       <div id="contact-hint" class="govuk-hint">
-                        Start typing, then choose from the list.
+                        Start typing, then choose prison name from the list.
                       </div>
-                      <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text">
+                      <input class="govuk-input govuk-!-width-full" id="establishment" name="establishment" type="text">
                     </div>
-
-
                   </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="ec-code" name="ec-code" type="radio" value="No" data-aria-controls="conditional-contact-2">
-                    <label class="govuk-label govuk-radios__label" for="ec-code">
-                      Community
-                    </label>
-                  </div>
+
                 </div>
 
               </fieldset>
             </div>
+          </div>
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              If 
+              {% if data ['referral-type'] == "prison" %} Alex's 
+              {% elseif data ['referral-type-nocom'] == "yes" %} Darren's
+              {% elseif data ['referral-type-nocom'] == "no" %} John's
+              {% endif %}
+              location changes, you will need to make direct contact with the service provider.
+            </strong>
           </div>
 
 
