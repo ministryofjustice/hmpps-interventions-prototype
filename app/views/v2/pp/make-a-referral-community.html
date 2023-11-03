@@ -14,10 +14,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Name: </strong>Mohammed Salah
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="govuk-!-font-weight-bold">CRN: </strong>D743927
-
-    
+      <span class="govuk-caption-l">Mohammed Salah (CRN: D743927)</span>
     <h1 class="govuk-heading-xl">Make a referral</h1>
 
 <div class="govuk-inset-text">
@@ -48,11 +45,11 @@
                     Name, contact details and location
                   </a>
                 </span>
-                {% if data ['pp-details'] == "yes" or data ['pp-details'] == "no" %}
+                {% if (data['pp-details'] == "complete") %}
                 <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
                 {% else %}
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
-                {% endif %}
+                {% endif %}  
               </li>
             </ul>
           </li>
@@ -155,7 +152,7 @@
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
           <a href="" aria-describedby="">
-            Enter when the  Education, training <br>and employment (ete) service needs to <br>be completed
+            Enter when the  Education, training <br>and employment (ete) service needs to <br>be completed by
           </span>
           <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
         </li>
@@ -208,7 +205,7 @@
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
-Enter when the  Education, training <br>and employment (ete) service needs to <br>be completed
+Enter when the  Education, training <br>and employment (ete) service needs to <br>be completed by
 </span>
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
 </li>

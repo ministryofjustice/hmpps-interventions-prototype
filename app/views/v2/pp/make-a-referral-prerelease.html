@@ -14,11 +14,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Name: </strong>Alex River
+    <!-- <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Name: </strong>Alex River
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="govuk-!-font-weight-bold">CRN: </strong>D007615
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="govuk-!-font-weight-bold">Prison number: </strong>A8362HF</p>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="govuk-!-font-weight-bold">Prison number: </strong>A8362HF</p> -->
 
 
+       <span class="govuk-caption-l">Alex River &nbsp;&nbsp;&nbsp;&nbsp;CRN: D002399&nbsp;&nbsp;&nbsp;&nbsp; Prison number: A8362HF</span>
 
 <h1 class="govuk-heading-xl">Make a referral</h1>
 
@@ -53,7 +54,7 @@
                     Name, contact details and location
                   </a>
                 </span>
-                {% if data ['pp-details'] == "yes" or data ['pp-details'] == "no" %}
+                {% if (data['pp-details'] == "complete") %}
                 <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
                 {% else %}
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Not started</strong>
@@ -193,7 +194,7 @@
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
           <a href="" aria-describedby="">
-            Enter when the Accommodation service <br> needs to be completed</a>
+            Enter when the Accommodation service <br> needs to be completed by</a>
         </span>
         <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>     
       </li>
@@ -244,7 +245,7 @@
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
-Enter when the Accommodation service <br> needs to be completed</a>
+Enter when the Accommodation service <br> needs to be completed by</a>
 </span>
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
 </li>

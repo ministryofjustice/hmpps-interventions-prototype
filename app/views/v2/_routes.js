@@ -2,10 +2,6 @@ module.exports = function (router) {
 
     var version = 'v2'
 
-    router.post('/'+ version +'/pp/current-location', function(request, response) {
-        response.redirect('release-date');
-    })
-
 
     router.post('/'+ version +'/pp/referral-type-prison', function(request, response) {
         if (request.session.data['referral-type'] == 'prison') {

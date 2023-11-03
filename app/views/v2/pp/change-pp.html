@@ -20,8 +20,8 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" method="post" action="pp-details">
 
+      
             <div class="govuk-form-group">
 
 
@@ -29,9 +29,9 @@ href: "javascript:history.back()"
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   {% if data ['referral-type'] == "prison" %}
-                  <span class="govuk-caption-xl">Alex River (CRN: D007615)</span>
+                  <span class="govuk-caption-l">Alex River (CRN: D007615)</span>
                   {% elseif data ['referral-type'] == "community" %}
-                  <span class="govuk-caption-xl">Mohammed Salah (CRN: D743927)</span>
+                  <span class="govuk-caption-l">Mohammed Salah (CRN: D743927)</span>
                   {% endif %}
                   <h1 class="govuk-fieldset__heading">
                     Update probation practitioner details
@@ -110,9 +110,22 @@ href: "javascript:history.back()"
 
 
 
-          {{ govukButton({
-            text: 'Save and continue'
-          }) }}
+          {% if data ['referral-type'] == "prison" %}
+          <form action="make-a-referral-prerelease?pp-details=complete" method="post" novalidate>
+            <input type="hidden" name="answers-checked" value="true">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+          </form>
+
+          {% elseif data ['referral-type'] == "community" %}
+          <form action="make-a-referral-community?pp-details=complete" method="post" novalidate>
+            <input type="hidden" name="answers-checked" value="true">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+          </form>
+          {% endif %}
 
 
 

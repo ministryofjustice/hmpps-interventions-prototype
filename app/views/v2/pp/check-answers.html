@@ -5,19 +5,7 @@ Check all referral information
 {% endblock %}
 
 {% block main %}
-{% if data ['referral-type'] == "prison" %}
-{% include "../includes/key-details-bar-alex.html" %}
 
-{% elseif data ['referral-type'] == "community" %}
-{% include "../includes/key-details-bar-mo.html" %}
-
-{% elseif data ['referral-type-nocom'] == "yes" %}
-{% include "../includes/key-details-bar-darren.html" %}
-
-{% elseif data ['referral-type-nocom'] == "no" %}
-{% include "../includes/key-details-bar-john.html" %}
-
-{% endif %}
 {{ super() }}
 {% endblock %}
 
@@ -40,7 +28,16 @@ href: "javascript:history.back()"
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">                
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l"> 
+                  {% if data ['referral-type'] == "prison" %}
+                  <span class="govuk-caption-l">Alex River (CRN: D007615)</span>
+                  {% elseif data ['referral-type'] == "community" %}
+                  <span class="govuk-caption-l">Mohammed Salah (CRN: D743927)</span>
+                  {% elseif data ['referral-type-nocom'] == "yes" %}
+                  <span class="govuk-caption-l">Darren Wicks (CRN: D927438)</span>
+                  {% elseif data ['referral-type-nocom'] == "no" %}
+                  <span class="govuk-caption-l">John Smith (CRN: D182933)</span>
+                  {% endif %}               
                   <h1 class="govuk-fieldset__heading">
                     Check all referral information
                   </h1>
@@ -203,6 +200,59 @@ href: "javascript:history.back()"
                           </dl>
                         </div>
                         </div>
+
+
+                        {% elseif data ['referral-type-nocom'] == "no" %}
+                        <div class="govuk-summary-card">
+                          <div class="govuk-summary-card__title-wrapper">
+                            <h2 class="govuk-summary-card__title">
+                              Identity details
+                          </div>
+                          <div class="govuk-summary-card__content">
+                            <dl class="govuk-summary-list">
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  First name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  John
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Last name(s)
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Smith
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Date of birth
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  4 Dec 1987 (35 years old)
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  CRN
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  D182933
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Prison number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  H7634YG
+                                </dd>
+                              </div>
+                            </dl>
+                          </div>
+                          </div>
                     {% endif %}
 
                     
@@ -212,7 +262,7 @@ href: "javascript:history.back()"
                       <div class="govuk-summary-card">
                         <div class="govuk-summary-card__title-wrapper">
                           <h2 class="govuk-summary-card__title">
-                            Alex River's current location and expected release date
+                            Alex River's current location and release details
                         </div>
                         <div class="govuk-summary-card__content">
                           <dl class="govuk-summary-list">
@@ -273,7 +323,7 @@ href: "javascript:history.back()"
                         <div class="govuk-summary-card">
                           <div class="govuk-summary-card__title-wrapper">
                             <h2 class="govuk-summary-card__title">
-                             Mohammed Salah's current location and expected release date
+                             Mohammed Salah's current location and release details
                           </div>
                           <div class="govuk-summary-card__content">
                             <dl class="govuk-summary-list">
@@ -324,7 +374,7 @@ href: "javascript:history.back()"
                         <div class="govuk-summary-card">
                           <div class="govuk-summary-card__title-wrapper">
                             <h2 class="govuk-summary-card__title">
-                              Darren Wicks' location and expected release date
+                              Darren Wicks' current location and release details
                           </div>
                           <div class="govuk-summary-card__content">
                             <dl class="govuk-summary-list">
@@ -382,7 +432,7 @@ href: "javascript:history.back()"
                           <div class="govuk-summary-card">
                             <div class="govuk-summary-card__title-wrapper">
                               <h2 class="govuk-summary-card__title">
-                                John Smith's location
+                                John Smith's current location and expected release details
                             </div>
                             <div class="govuk-summary-card__content">
                               <dl class="govuk-summary-list">
@@ -403,12 +453,39 @@ href: "javascript:history.back()"
                                     </a>
                                   </dd>
                                 </div>
+
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Expected release date
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    <p class="govuk-body">-----</p>
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="#">
+                                      Change<span class="govuk-visually-hidden"> release date</span>
+                                    </a>
+                                  </dd>
+                                </div>
+    
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Expected probation office
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    <p class="govuk-body">-----</p>
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="#">
+                                      Change<span class="govuk-visually-hidden"> release date</span>
+                                    </a>
+                                  </dd>
+                                </div>
                               </dl>
                             </div>
                             </div>
 
                           
-                          {% elseif data ['referral-type'] == "community" %}
                         {% endif %}
 
 
@@ -508,7 +585,7 @@ href: "javascript:history.back()"
 
                           <div class="govuk-summary-card">
                             <div class="govuk-summary-card__title-wrapper">
-                              <h2 class="govuk-summary-card__title">Accommodation service</h2>
+                              <h2 class="govuk-summary-card__title">Accommodation intervention</h2>
                             </div>
                             <div class="govuk-summary-card__content">
                               <dl class="govuk-summary-list">
@@ -794,6 +871,7 @@ href: "javascript:history.back()"
                       </div>
                       {% endif %}
 
+                      {% if data ['referral-type-nocom'] == "yes" %}
                       <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                           Reason why referral is being made before probation practitioner allocated
@@ -807,6 +885,8 @@ href: "javascript:history.back()"
                           </a>
                         </dd>
                       </div>
+                      {% else %}
+                      {% endif %}
                     </dl>
                   </div>
                 </div>
@@ -815,8 +895,6 @@ href: "javascript:history.back()"
 
 
                 {% if data ['referral-type'] == "prison" %}
-
-
                 <div class="govuk-summary-card">
                   <div class="govuk-summary-card__title-wrapper">
                     <h2 class="govuk-summary-card__title">
@@ -911,7 +989,6 @@ href: "javascript:history.back()"
 
 
                   {% elseif data ['referral-type'] == "community" %}
-
                   <div class="govuk-summary-card">
                     <div class="govuk-summary-card__title-wrapper">
                       <h2 class="govuk-summary-card__title">
@@ -1003,7 +1080,6 @@ href: "javascript:history.back()"
 
 
                     {% elseif data ['referral-type-nocom'] == "yes" %}
-
                     <div class="govuk-summary-card">
                       <div class="govuk-summary-card__title-wrapper">
                         <h2 class="govuk-summary-card__title">
@@ -1093,49 +1169,16 @@ href: "javascript:history.back()"
 
 
                     {% elseif data ['referral-type-nocom'] == "no" %}
-
                     <div class="govuk-summary-card">
                       <div class="govuk-summary-card__title-wrapper">
                         <h2 class="govuk-summary-card__title">
-                          John Smith's personal details
+                          John Smith's last known address and contact details
                       </div>
                       <div class="govuk-summary-card__content">
                         <dl class="govuk-summary-list">
                           <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                              First name
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              John
-                            </dd>
-                          </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Last name(s)
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              Smith
-                            </dd>
-                          </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Date of birth
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              4 Dec 1987 (35 years old)
-                            </dd>
-                          </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Gender
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              Male
-                            </dd>
-                          </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Address
+                              Last known address
                             </dt>
                             <dd class="govuk-summary-list__value">
                               Flat 98<br>Tilbolt Hall<br>Manchester<br>M1 1AD
@@ -1154,7 +1197,28 @@ href: "javascript:history.back()"
                               Email address
                             </dt>
                             <dd class="govuk-summary-list__value">
-                              johnfsmith554@hotmail.com
+                              Not found
+                            </dd>
+                          </div>
+                        </dl>
+                      </div>
+                      </div>
+
+
+
+                    <div class="govuk-summary-card">
+                      <div class="govuk-summary-card__title-wrapper">
+                        <h2 class="govuk-summary-card__title">
+                          John Smith's personal details
+                      </div>
+                      <div class="govuk-summary-card__content">
+                        <dl class="govuk-summary-list">
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Gender
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              Male
                             </dd>
                           </div>
                           <div class="govuk-summary-list__row">

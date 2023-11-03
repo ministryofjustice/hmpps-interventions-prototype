@@ -20,11 +20,6 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {% if data ['referral-type'] == "prison" %}
-    <form class="form" method="post" action="make-a-referral-prerelease">
-      {% elseif data ['referral-type'] == "community" %}
-      <form class="form" method="post" action="make-a-referral-community">
-    {% endif %}
 
             <div class="govuk-form-group">
 
@@ -44,7 +39,9 @@ href: "javascript:history.back()"
 
                   <p class="govuk-body">These contact details will be sent to the service provider for the referral.
                   </p>
-                  <p class="govuk-body">You should update any information that is incorrect or missing.</p>
+                  <div class="govuk-inset-text">
+                    You should update any information that is incorrect or missing.
+                  </div>
 
                   <dl class="govuk-summary-list">
                     <div class="govuk-summary-list__row">
@@ -143,11 +140,23 @@ href: "javascript:history.back()"
             </div>
           </div>
 
+          {% if data ['referral-type'] == "prison" %}
+          <form action="make-a-referral-prerelease?pp-details=complete" method="post" novalidate>
+            <input type="hidden" name="answers-checked" value="true">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+          </form>
 
+          {% elseif data ['referral-type'] == "community" %}
+          <form action="make-a-referral-community?pp-details=complete" method="post" novalidate>
+            <input type="hidden" name="answers-checked" value="true">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+          </form>
+          {% endif %}
 
-          {{ govukButton({
-            text: 'Save and continue'
-          }) }}
 
 
 

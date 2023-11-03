@@ -14,10 +14,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Name: </strong>John Smith
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="govuk-!-font-weight-bold">CRN: </strong>D182933
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="govuk-!-font-weight-bold">Prison number: </strong>H7634YG</p>
 
+      <span class="govuk-caption-l">John Smith &nbsp;&nbsp;&nbsp;&nbsp;CRN: D182933&nbsp;&nbsp;&nbsp;&nbsp; Prison number: H7634YG</span>
 <h1 class="govuk-heading-xl">Make a referral</h1>
 
 
@@ -64,13 +62,13 @@
 
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">2. </span> Confirm John Smith's location and expected release date
+              <span class="app-task-list__section-number">2. </span> Confirm Alex River's current location
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="current-location" aria-describedby="">
-                    Establishment
+                    Current location
                   </a>
                 </span>
                 {% if data ['location'] == "yes" or data ['location'] == "no" %}
@@ -177,7 +175,7 @@
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
           <a href="" aria-describedby="">
-            Enter when the Accommodation service <br> needs to be completed</a>
+            Enter when the Accommodation service <br> needs to be completed by</a>
         </span>
         <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>     
       </li>
@@ -186,7 +184,7 @@
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
       <a href="" aria-describedby="">
-        Further information for service provider</a>
+        Reason for referral and further information<br> for service provider</a>
     </span>
     <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
   </li>
@@ -228,7 +226,7 @@
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
-Enter when the Accommodation service <br> needs to be completed</a>
+Enter when the Accommodation service <br> needs to be completed by</a>
 </span>
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
 </li>
@@ -236,7 +234,7 @@ Enter when the Accommodation service <br> needs to be completed</a>
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
-Further information for service provider</a>
+  Reason for referral and further information<br> for service provider</a>
 </span>
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
 </li>
