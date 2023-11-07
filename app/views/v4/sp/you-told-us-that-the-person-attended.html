@@ -38,7 +38,7 @@ href: "javascript:history.back()"
   type: "text",
   classes: "govuk-label--l",
   label: {
-    text: "Explain what happened and who was involved."
+    text: "Add details about their behaviour. You'll be asked separately about whether you have concerns about them."
   }
 }) }}
 {% endset -%}
@@ -50,7 +50,7 @@ href: "javascript:history.back()"
   type: "text",
   classes: "govuk-label--l",
   label: {
-    text: "Explain what happened and whether the person was told about it."
+    text: "Add details about the issue."
   }
 }) }}
 {% endset -%}
@@ -62,7 +62,7 @@ href: "javascript:history.back()"
   type: "text",
   classes: "govuk-label--l",
   label: {
-    text: "Explain what happened and who was involved."
+    text: "Add details about why they were not able to take part. You'll be asked separately about whether you have concerns about them."
   }
 }) }}
 {% endset -%}
@@ -80,9 +80,16 @@ href: "javascript:history.back()"
   items: [
     {
       value: "something-to-do-with-the-person-on-probation",
-      text: "Something to do with the person on probation",
+      text: "The person did not comply, for example they were disruptive or disengaged",
       conditional: {
         html: somethingtodowiththepersononprobationHtml
+      }
+    },
+    {
+      value: "other",
+      text: "The person could not take part, for example because of illness or a crisis",
+      conditional: {
+        html: otherHtml
       }
     },
     {
@@ -91,16 +98,10 @@ href: "javascript:history.back()"
       conditional: {
         html: somethingtodowiththeserviceproviderHtml
       }
-    },
-    {
-      value: "other",
-      text: "Other",
-      conditional: {
-        html: otherHtml
-      }
     }
   ]
 }) }}
+<div class=""> <p> <a href="">Send feedback about this question.</a></p></div>
 
 
  <div class="govuk-form-group">
