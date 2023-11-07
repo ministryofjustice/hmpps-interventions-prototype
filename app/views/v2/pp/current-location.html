@@ -34,11 +34,11 @@ href: "javascript:history.back()"
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   {% if data ['referral-type'] == "prison" %}
-                  <span class="govuk-caption-xl">Alex River (CRN: D002399)</span>
+                  <span class="govuk-caption-l">Alex River (CRN: D002399)</span>
                   {% elseif data ['referral-type-nocom'] == "yes" %}
-                  <span class="govuk-caption-xl">Darren Wicks (CRN: D927438)</span>
+                  <span class="govuk-caption-l">Darren Wicks (CRN: D927438)</span>
                   {% elseif data ['referral-type-nocom'] == "no" %}
-                  <span class="govuk-caption-xl">John Smith (CRN: D182933)</span>
+                  <span class="govuk-caption-l">John Smith (CRN: D182933)</span>
                   {% endif %}
 
                   <h1 class="govuk-fieldset__heading">
@@ -48,16 +48,16 @@ href: "javascript:history.back()"
                     {% elseif data ['referral-type-nocom'] == "no" %} John Smith's
                     {% endif %}
                     current location
-
                   </h1>
                 </legend>
 
-                <p class="govuk-body govuk-!-font-weight-bold">Is 
+                <h2 class="govuk-heading-m">                  
                   {% if data ['referral-type'] == "prison" %} Alex River 
                   {% elseif data ['referral-type-nocom'] == "yes" %} Darren Wicks
                   {% elseif data ['referral-type-nocom'] == "no" %} John Smith
                   {% endif %}
-                  in HMP Manchester?</p>
+                  in HMP Manchester?
+                </h2>
 
 
 
@@ -89,7 +89,7 @@ href: "javascript:history.back()"
 
                       </label>
                       <div id="contact-hint" class="govuk-hint">
-                        Start typing, then choose prison name from the list.
+                        Start typing then choose prison name from the list
                       </div>
                       <input class="govuk-input govuk-!-width-full" id="establishment" name="establishment" type="text">
                     </div>
