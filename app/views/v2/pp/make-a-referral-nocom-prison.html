@@ -8,6 +8,14 @@
 {{ super() }}
 {% endblock %}
 
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
 {% block content %}
 
 
@@ -142,7 +150,7 @@
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="" aria-describedby="">
-                    Confirm the relevant sentence for the <br> Accommodation referral</a>
+                    Confirm the relevant sentence</a>
                 </span>
                 <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
               </li>
@@ -157,7 +165,7 @@
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="" aria-describedby="">
-                    Select required complexity level</a>
+                    Select complexity level</a>
                 </span>
                 <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>            
               </li>
@@ -166,7 +174,7 @@
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="" aria-describedby="">
-                Enter enforceable days used</a>
+                Enter number of enforceable days used</a>
             </span>
             <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>     
           </li>
@@ -175,7 +183,7 @@
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
           <a href="" aria-describedby="">
-            Enter when the Accommodation service <br> needs to be completed by</a>
+            Enter when the intervention <br> needs to be completed by</a>
         </span>
         <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>     
       </li>
@@ -196,7 +204,7 @@
 <ul class="app-task-list__items">
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-        Confirm the relevant sentence for the <br> Accommodation referral</a>
+        Confirm the relevant sentence</a>
     </span>
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
   </li>
@@ -210,7 +218,7 @@
 
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-        Select required complexity level</a>
+        Select complexity level</a>
     </span>
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
   </li>
@@ -218,7 +226,7 @@
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
-    Enter enforceable days used</a>
+    Enter number of enforceable days used</a>
 </span>
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
 </li>
@@ -226,7 +234,7 @@
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
-Enter when the Accommodation service <br> needs to be completed by</a>
+Enter when the intervention <br> needs to be completed by</a>
 </span>
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
 </li>

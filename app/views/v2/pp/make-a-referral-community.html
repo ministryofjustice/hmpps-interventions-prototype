@@ -8,6 +8,16 @@
 {{ super() }}
 {% endblock %}
 
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+
+
 {% block content %}
 
 
@@ -109,7 +119,7 @@
 
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">3. </span>Add Education, training and employment (ete) referral details
+              <span class="app-task-list__section-number">3. </span>Add intervention referral details
             </h2>
 
             {% if data ['risk-info'] == "yes" or data ['risk-info'] == "no" %}
@@ -118,7 +128,7 @@
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="" aria-describedby="">
-                  Confirm the relevant sentence for the Education,<br>training and employment (ete) referral
+                  Confirm the relevant sentence
                 </span>
                 <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
               </li>
@@ -134,7 +144,7 @@
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="" aria-describedby="">
-                    Select required complexity level
+                    Select complexity level
                 </span>
                 <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
               </li>
@@ -143,7 +153,7 @@
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="" aria-describedby="">
-                Enter enforceable days used
+                Enter number of enforceable days used
             </span>
             <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
           </li>
@@ -152,7 +162,7 @@
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
           <a href="" aria-describedby="">
-            Enter when the  Education, training <br>and employment (ete) service needs to <br>be completed by
+            Enter when the intervention needs to <br>be completed by
           </span>
           <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
         </li>
@@ -174,7 +184,7 @@
 <ul class="app-task-list__items">
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-      Confirm the relevant sentence for the Education,<br>training and employment (ete) referral
+      Confirm the relevant sentence
       
     </span>
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
@@ -189,7 +199,7 @@
 
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-        Select required complexity level
+        Select complexity level
     </span>
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
   </li>
@@ -197,7 +207,7 @@
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
-    Enter enforceable days used
+    Enter number of enforceable days used
 </span>
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
 </li>
@@ -205,7 +215,7 @@
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
-Enter when the  Education, training <br>and employment (ete) service needs to <br>be completed by
+Enter when the intervention needs to <br>be completed by
 </span>
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">Cannot start yet</strong>
 </li>
