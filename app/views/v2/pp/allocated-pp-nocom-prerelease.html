@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Does Alex River have an allocated probation practitioner? 
+Does Darren Wicks have a probation practitioner?
 {% endblock %}
 
 {% block main %}
@@ -31,7 +31,7 @@ href: "javascript:history.back()"
    
                   <span class="govuk-caption-l">Darren Wicks (CRN: D927438)</span>
                   <h1 class="govuk-fieldset__heading">
-                    Does Darren Wicks have an allocated probation practitioner? 
+                    Does Darren Wicks have a probation practitioner? 
                   </h1>
 
 
@@ -49,16 +49,22 @@ href: "javascript:history.back()"
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="allocated-pp-nocom-prerelease" name="allocated-pp-nocom-prerelease" type="radio" value="yes" data-aria-controls="conditional-contact-2">
                       <label class="govuk-label govuk-radios__label" for="allocated-pp-nocom-prerelease">
-                        Yes - Darren has an allocated probation practitioner (community offender manager) on nDelius
+                        Yes
                       </label>
+                      <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                        John has a probation practitioner (community offender manager) on nDelius.                     
+                      </div>
                     </div>
 
 
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="allocated-pp-nocom-prerelease" name="allocated-pp-nocom-prerelease" type="radio" value="no" data-aria-controls="conditional-contact">
                       <label class="govuk-label govuk-radios__label" for="allocated-pp-nocom-prerelease">
-                        No - Darren does not have an allocated probation practitioner (community offender manager) on nDelius
+                        No
                       </label>
+                      <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                        John does not have a probation practitioner (community offender manager) on nDelius.                     
+                      </div>
                     </div>
                     
 
