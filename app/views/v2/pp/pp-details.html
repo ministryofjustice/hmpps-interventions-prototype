@@ -49,11 +49,12 @@ href: "javascript:history.back()"
                         Name
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {% if data ['user-name'] == "" %}
-                          Sarah Galliver
-                        {% else %}
-                          {{data['user-name'] | default("Sarah Galliver")}}
-                        {% endif %}
+                        Sarah Galliver
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="">
+                          <span class="govuk-visually-hidden"> location</span>
+                        </a>
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="change-pp-name">
@@ -66,11 +67,15 @@ href: "javascript:history.back()"
                         Email address
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {% if data ['user-email'] == "" %}
-                          sarah.galliver@justice.gov.uk
+                        {% if (data['pp-email'] == "delete") %}
                         {% else %}
-                          {{data['user-email'] | default("sarah.galliver@justice.gov.uk")}}
+                        sarah.galliver@justice.gov.uk
                         {% endif %}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="delete-pp-email">
+                          Delete<span class="govuk-visually-hidden"> location</span>
+                        </a>
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="change-pp-email">
@@ -86,6 +91,11 @@ href: "javascript:history.back()"
                         {{data['pp-phone']}}
                       </dd>
                       <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="delete-pp-phone">
+                          Delete<span class="govuk-visually-hidden"> location</span>
+                        </a>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="change-pp-phone">
                           Change<span class="govuk-visually-hidden"> location</span>
                         </a>
@@ -97,6 +107,11 @@ href: "javascript:history.back()"
                       </dt>
                       <dd class="govuk-summary-list__value">
                         Manchester North
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="">
+                          <span class="govuk-visually-hidden"> location</span>
+                        </a>
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="change-pp-pdu">
@@ -112,6 +127,11 @@ href: "javascript:history.back()"
                         <p class="govuk-body">Redfern Building</p>
                       </dd>
                       <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="delete-pp-office">
+                          Delete<span class="govuk-visually-hidden"> location</span>
+                        </a>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="change-pp-office">
                           Change<span class="govuk-visually-hidden"> location</span>
                         </a>
@@ -123,6 +143,11 @@ href: "javascript:history.back()"
                       </dt>
                       <dd class="govuk-summary-list__value">
                         {{data['pp-team-phone']}}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="delete-pp-team-phone">
+                          Delete<span class="govuk-visually-hidden"> location</span>
+                        </a>
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="change-pp-team-phone">
