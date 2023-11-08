@@ -42,7 +42,16 @@ href: "javascript:history.back()"
                   </h1>
                 </legend>
 
-                  <p class="govuk-body">These details will be sent to the service provider. When a probation practitioner is allocated these details will be replaced.</p>
+                {% if data ['referral-type-nocom'] == "yes" %}
+                <p class="govuk-body">These details will be sent to the service provider for the referral. 
+                </p>
+                <div class="govuk-inset-text">
+                  When a probation practitioner is allocated these details will be replaced.
+                </div>
+                {% else %}
+                  <p class="govuk-body">These details will be sent to the service provider for the referral.</p>
+                {% endif %}
+
 
 
                       <div class="govuk-form-group">
@@ -91,7 +100,7 @@ href: "javascript:history.back()"
                         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2" name="eccode">
                           <div class="govuk-form-group">
                             <div id="contact-hint" class="govuk-hint">
-                              Start typing, then choose prison name from the list.
+                              Start typing then choose prison name from the list
                             </div>
                             <input class="govuk-input govuk-!-width-full" id="contact-establishment" name="contact-establishment" type="text">
                           </div>
