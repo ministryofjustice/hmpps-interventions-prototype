@@ -1,0 +1,185 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Do you know the expected release date?
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if data ['referral-type'] == "prison" %}
+    <form class="form" method="post" action="make-a-referral-prerelease">
+      {% elseif data ['referral-type'] == "community" %}
+      <form class="form" method="post" action="make-a-referral-community">
+        {% elseif data ['referral-type-nocom'] == "yes" %}
+        <form class="form" method="post" action="referral-reason-unallocated">
+          {% elseif data ['referral-type-nocom'] == "no" %}
+          <form class="form" method="post" action="make-a-referral-nocom-prison2">
+    {% endif %}
+
+
+            <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              {% if data ['referral-type'] == "prison" %}
+              <span class="govuk-caption-l">Alex River (CRN: D002399)</span>
+              {% elseif data ['referral-type-nocom'] == "yes" %}
+              <span class="govuk-caption-l">Darren Wicks (CRN: D927438)</span>
+              {% elseif data ['referral-type-nocom'] == "no" %}
+              <span class="govuk-caption-l">John Smith (CRN: D182933)</span>
+              {% endif %}              
+              <h1 class="govuk-fieldset__heading">
+                Enter
+                {% if data ['referral-type'] == "prison" %} Alex River's
+                {% elseif data ['referral-type-nocom'] == "yes" %} Darren Wicks'
+                {% elseif data ['referral-type-nocom'] == "no" %} John Smith's
+                current location
+                {% endif %}
+                expected release date
+              </h1>
+            </legend>
+
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                <div id="passport-issued-hint" class="govuk-hint">
+                  For example, 27 3 2023
+                </div>
+                <div class="govuk-date-input" id="passport-issued">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+
+
+<br>
+
+
+
+
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      View months as numbers
+                    </span>
+                  </summary>
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Month</th>
+                        <th scope="col" class="govuk-table__header">Month as a number</th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">January</th>
+                        <td class="govuk-table__cell">1</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">February</th>
+                        <td class="govuk-table__cell">2</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">March</th>
+                        <td class="govuk-table__cell">3</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">April</th>
+                        <td class="govuk-table__cell">4</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">May</th>
+                        <td class="govuk-table__cell">5</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">June</th>
+                        <td class="govuk-table__cell">6</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">July</th>
+                        <td class="govuk-table__cell">7</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">August</th>
+                        <td class="govuk-table__cell">8</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">September</th>
+                        <td class="govuk-table__cell">9</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">October</th>
+                        <td class="govuk-table__cell">10</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">November</th>
+                        <td class="govuk-table__cell">11</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">December</th>
+                        <td class="govuk-table__cell">12</td>
+                      </tr>
+                      </tr>
+                      </tr>
+                    </tbody>
+                  </table>
+                </details>
+
+
+        </div>
+      </div>
+      </div>
+
+
+
+        {{ govukButton({
+          text: 'Save and continue'
+        }) }}
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+
+{% endblock %}

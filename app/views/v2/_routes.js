@@ -51,6 +51,24 @@ module.exports = function (router) {
     }
     })
 
+    
+    router.post('/'+ version +'/pp/release-date-answer', function(request, response) {
+        if (request.session.data['release-date'] == 'no') {
+            response.redirect('release-date-different');
+        } else if (request.session.data['release-date'] == 'yes') {
+            if (request.session.data['referral-type'] == 'prison') {
+                response.redirect('make-a-referral-prerelease');
+            } else if (request.session.data['referral-type'] == 'community') {
+                response.redirect('make-a-referral-community');
+            } else if (request.session.data['referral-type-nocom'] == 'yes') {
+                response.redirect('release-location');
+            } else if (request.session.data['referral-type-nocom'] == 'no') {
+                response.redirect('make-a-referral-nocom-prison2');
+            }
+        } else {
+            response.redirect('release-date')
+        }
+    })
 
 
   }

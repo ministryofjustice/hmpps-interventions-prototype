@@ -20,15 +20,7 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {% if data ['referral-type'] == "prison" %}
-    <form class="form" method="post" action="make-a-referral-prerelease">
-      {% elseif data ['referral-type'] == "community" %}
-      <form class="form" method="post" action="make-a-referral-community">
-        {% elseif data ['referral-type-nocom'] == "yes" %}
-        <form class="form" method="post" action="referral-reason-unallocated">
-          {% elseif data ['referral-type-nocom'] == "no" %}
-          <form class="form" method="post" action="make-a-referral-nocom-prison2">
-    {% endif %}
+    <form class="form" method="post" action="release-date-answer">
 
 
             <div class="govuk-form-group">
@@ -54,137 +46,41 @@ href: "javascript:history.back()"
 
 
 
-            <div class="govuk-radios" data-module="govuk-radios">
 
 
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="release-date" name="release-date" type="radio" value="yes" data-aria-controls="conditional-contact-2">
-                <label class="govuk-label govuk-radios__label" for="release-date">
-                  <p class="govuk-body"><strong class="govuk-!-font-weight-regular">Expected release date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
-                    <strong class="govuk-!-font-weight-bold">15 September 2023 (Saturday)</strong></p>
-                </label>
-              </div>
 
 
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="release-date" name="release-date" type="radio" value="no" data-aria-controls="conditional-contact">
-                <label class="govuk-label govuk-radios__label" for="release-date">
-                  Choose a different date
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact" name="quantityactual">
-                <fieldset class="govuk-fieldset" role="group" aria-describedby="input-date-hint">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                    <h2 class="govuk-fieldset__heading">
-                      Enter the expected release date
-                    </h2>
-                  </legend>
-                  <div id="input-date-hint" class="govuk-hint">
-                    <p class="govuk-body">
-                      For example, 27 5 2023
-                    </p>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="release-date" name="release-date" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="release-date">
+                      <p class="govuk-body"><strong class="govuk-!-font-weight-regular">Expected release date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                        <strong class="govuk-!-font-weight-bold">15 September 2023 (Saturday)</strong></p>
+                    </label>
                   </div>
-                  <div class="govuk-date-input" id="input-date">
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="input-date-day">
-                          Day
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="input-date-day" name="input-date-day" value="{{ data['input-date-day'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="input-date-month">
-                          Month
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="input-date-month" name="input-date-month" value="{{ data['input-date-month'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="input-date-year">
-                          Year
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="input-date-year" name="input-date-year" value="{{ data['input-date-year'] }}" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                    </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="release-date" name="release-date" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="release-date">
+                      Choose a different date
+                    </label>
                   </div>
-                </fieldset>
-                <br>
-
-                <details class="govuk-details" data-module="govuk-details">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      Need to change the month to a number format?
-                    </span>
-                  </summary>
-                  <table class="govuk-table">
-                    <thead class="govuk-table__head">
-                      <tr class="govuk-table__row">
-                        <th scope="col" class="govuk-table__header">Month</th>
-                        <th scope="col" class="govuk-table__header">Month as a number</th>
-                      </tr>
-                    </thead>
-                    <tbody class="govuk-table__body">
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">January</th>
-                        <td class="govuk-table__cell">1</td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">February</th>
-                        <td class="govuk-table__cell">2</td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">March</th>
-                        <td class="govuk-table__cell">3</td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">April</th>
-                        <td class="govuk-table__cell">4</td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">May</th>
-                        <td class="govuk-table__cell">5</td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">June</th>
-                        <td class="govuk-table__cell">6</td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">July</th>
-                        <td class="govuk-table__cell">7</td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">August</th>
-                        <td class="govuk-table__cell">8</td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">September</th>
-                        <td class="govuk-table__cell">9</td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">October</th>
-                        <td class="govuk-table__cell">10</td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">November</th>
-                        <td class="govuk-table__cell">11</td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">December</th>
-                        <td class="govuk-table__cell">12</td>
-                      </tr>
-                      </tr>
-                      </tr>
-                    </tbody>
-                  </table>
-                </details>
-
-              </div>
-
-
-
 
 
                 </div>
+              </fieldset>
+            </div>
+
+
+
+
+
+
+
+
+
                   </fieldset>
         </div>
       </div>
