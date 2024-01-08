@@ -1,0 +1,54 @@
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Referral cancelled 
+          </h1>
+          
+        </div>
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p class="govuk-body">
+          The referral has been cancelled. The service provider has been emailed. You can view the referral in the cancelled referrals list. 
+        </p>
+        <p class="govuk-body">
+          The service provider has been emailed. You can view the referral in the cancelled referrals list. 
+        </p>
+       
+      </div>
+    </div>
+  </main>
+</div>
+
+{{ govukButton({
+  text: "Confirm and send",
+  href:"/v4/pp/case-progress-assigned-alex-cancellation-request-sent"
+  
+}) }}
+
+
+
+{% endblock %}
