@@ -1,0 +1,54 @@
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Cancellation request sent
+          </h1>
+          
+        </div>
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p class="govuk-body">
+          Your request to cancel this referral has been sent to the probation practitioner.
+        </p>
+        <p class="govuk-body">
+          They've got an email asking them to cancel it. You will be notified about the Probation Practioner decision.
+        </p>
+       
+      </div>
+    </div>
+  </main>
+</div>
+
+{{ govukButton({
+  text: "Confirm and send",
+  href:"/v4/sp/case-progress-assigned-alex-cancellation-request-sent.html"
+  
+}) }}
+
+
+
+{% endblock %}
