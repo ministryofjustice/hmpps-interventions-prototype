@@ -22,9 +22,33 @@ href: "javascript:history.back()"
 
 
 <div class="govuk-grid-row">
+  <div class="govuk-width-container">
+    <div class="govuk-notification-banner govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Referral cancelled
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Referral cancelled 
+        </h3>
+        <p class="govuk-body">The referral has been cancelled. The service provider has been emailed. You can view the referral in the cancelled referrals list.</p>
+      </div>
+    </div>
+    
+        <div style="display: inline-block">
+            <h1 class="govuk-heading-l govuk-!-margin-0">Accommodation: progress
+             </h1>
+            </div>
+            
+              
+    </div>
+
+
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l">Education, Training And Employment (ETE): progress</h1>
+   
 
     <nav class="moj-sub-navigation" aria-label="Sub navigation">
 
@@ -47,6 +71,12 @@ href: "javascript:history.back()"
       </ul>
 
     </nav>
+
+    <p class="govuk-body">This intervention is assigned to R&M Active Probation Practitioner ({{data['assign']}}).
+    </p>
+
+    
+
 
     <h2 class="govuk-heading-m">Supplier assessment appointment</h2>
     <p class="govuk-body">Once a caseworker has been assigned the initial assessment can be booked.</p>
@@ -73,7 +103,7 @@ href: "javascript:history.back()"
             
               
               
-              <td class="govuk-table__cell">9:13am on Tuesday 18 July 2023</td>
+              <td class="govuk-table__cell">Tuesday 11 July 2023</td>
               
             
               
@@ -164,21 +194,22 @@ href: "javascript:history.back()"
             
               
               <td class="govuk-table__cell">Session 1</td>
-              <td class="govuk-table__cell">1:31pm Tuesday 18 July 2023</td>
+              <td class="govuk-table__cell">	
+                9am, Tuesday 18 July 2023</td>
               
             
               
               
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green" id="supplier-assessment-status">
-    completed
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red" id="supplier-assessment-status">
+    needs feedback
     </strong>
+    
     </td>
-              
-            
-              
-              
-              <td class="govuk-table__cell"><a class="govuk-link" href="/v3/pp/view-feedback-session-happened.html">View feedback</a></td>
-              
+      
+              <td class="govuk-table__cell"><a class="govuk-link" href="/v4/sp/did-the-session-happen">Give feedback</a> <br>
+                <a class="govuk-link" href="#">Reschedule</a>
+              </td> 
+
             
             </tr>
           
