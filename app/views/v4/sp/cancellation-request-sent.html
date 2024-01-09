@@ -20,7 +20,9 @@ href: "javascript:history.back()"
 
 {% block content %}
 
+
 <div class="govuk-width-container">
+
   <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -41,13 +43,15 @@ href: "javascript:history.back()"
       </div>
     </div>
   </main>
+
+  {{ govukButton({
+    text: "Confirm and send",
+    href:"/v4/sp/case-progress-assigned-alex-cancellation-request-sent.html"
+    
+  }) }}
 </div>
 
-{{ govukButton({
-  text: "Confirm and send",
-  href:"/v4/sp/case-progress-assigned-alex-cancellation-request-sent.html"
-  
-}) }}
+
 
 
 

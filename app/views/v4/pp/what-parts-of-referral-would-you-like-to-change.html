@@ -1,0 +1,86 @@
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+            What parts of Alex River referral would you like to change?
+        </h1>
+      </legend>
+      <div id="changedName-hint" class="govuk-hint">
+        Please select one
+      </div>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+            Maximum number of enforceable days
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+            Date intervention to be completed by
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+            Alex River's needs and requirements: Other mobility, disability or accessibility needs
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+            Alex River's needs and requirements: Interpreter required
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+              Alex River's needs and requirements: Caring or employment responsibilities
+            </label>
+          </div>
+          
+
+      </div>
+      
+    
+
+      
+  
+    </fieldset>
+    <div class="govuk-!-padding-bottom-7"></div>
+
+
+    {{ govukButton({
+        text: "Confirm",
+        href:"/v4/pp/are-you-sure-you-want-to-cancel.html"
+        
+      }) }}
+  </div>
+
+    
+
+{% endblock %}
