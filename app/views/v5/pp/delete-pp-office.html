@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Are you sure you want to delete the probation office?
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="pp-details">
+
+            <div class="govuk-form-group">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  {% if data ['referral-type'] == "prison" %}
+                  <span class="govuk-caption-l">Alex River (CRN: D007615)</span>
+                  {% elseif data ['referral-type'] == "community" %}
+                  <span class="govuk-caption-l">Mohammed Salah (CRN: D743927)</span>
+                  {% endif %}
+                  <h1 class="govuk-fieldset__heading">
+                    Are you sure you want to delete the probation office?
+                  </h1>
+                </legend>
+
+
+              </fieldset>
+            </div>
+          </div>
+          
+          
+          {{ govukButton({
+            text: 'Confirm and delete'
+          }) }}
+
+
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

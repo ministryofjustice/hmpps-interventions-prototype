@@ -1,0 +1,17 @@
+
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
+{{ mojPrimaryNavigation({
+  label: 'Primary navigation',
+  items: [
+    {
+      text: 'Referrals',
+      href: 'open-cases',
+      active: true
+    },
+    {
+      text: 'Reporting',
+      href: ''
+    }
+  ]
+}) }}

@@ -13,3 +13,4 @@ require('./views/v2/_routes')(router);
 require('./views/IPB-265/_routes')(router);
 require('./views/v3/_routes')(router);
 require('./views/v4/_routes')(router);
+require('./views/v5/_routes')(router);

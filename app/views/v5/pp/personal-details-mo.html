@@ -1,0 +1,172 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Review Mohammed Salah's information
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post" action="risk-info">
+
+            <div class="govuk-form-group">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <span class="govuk-caption-l">Mohammed Salah (CRN: D743927)</span>
+                  <h1 class="govuk-fieldset__heading">
+                    Review Mohammed Salah's information
+                  </h1>
+                </legend>
+
+                <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                  <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                    If these details are incorrect they should be updated in nDelius by someone with edit access.
+                  </strong>
+                </div>
+
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
+            
+                    <div class="govuk-summary-card">
+                      <div class="govuk-summary-card__title-wrapper">
+                        <h2 class="govuk-summary-card__title">Personal details</h2>
+                      </div>
+                      <div class="govuk-summary-card__content">
+                        <dl class="govuk-summary-list">
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              First name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              Mohammed
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Last name(s)
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              Salah
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Date of birth
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              1 Aug 1954 (68 years old)
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Gender
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              Male
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Ethnicity
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              Indonesian
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Preferred language
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              English
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Disabilities
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              None
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Religion or belief
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              Muslim
+                            </dd>
+                          </div>
+                        </dl>
+                      </div>
+                      </div>
+
+                      <div class="govuk-summary-card">
+                        <div class="govuk-summary-card__title-wrapper">
+                          <h2 class="govuk-summary-card__title">Last known address and contact details</h2>
+                        </div>
+                        <div class="govuk-summary-card__content">
+                          <dl class="govuk-summary-list">
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Last known address
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                174b Hillton Avenue<br>Manchester<br>M4 7EU
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Phone number
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                07482 473982
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Email address
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Not found
+                              </dd>
+                            </div>
+                          </dl>
+                        </div>
+                        </div>
+
+
+
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

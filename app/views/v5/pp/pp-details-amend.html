@@ -1,0 +1,149 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Submit current location
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-form-group">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Confirm probation practitioner details
+                  </h1>
+                </legend>
+
+
+                  <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Sarah Galliver
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="">
+                          <span class="govuk-visually-hidden"> location</span>
+                        </a>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="change-pp-name">
+                          Change<span class="govuk-visually-hidden"> location</span>
+                        </a>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Email address
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {% if (data['pp-email'] == "delete") %}
+                        {% else %}
+                        sarah.galliver@justice.gov.uk
+                        {% endif %}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="delete-pp-email">
+                          Delete<span class="govuk-visually-hidden"></span>
+                        </a>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="change-pp-email">
+                          Change<span class="govuk-visually-hidden"></span>
+                        </a>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Phone number
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{data['pp-phone']}}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="delete-pp-phone">
+                          Delete<span class="govuk-visually-hidden"></span>
+                        </a>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="change-pp-phone">
+                          Change<span class="govuk-visually-hidden"></span>
+                        </a>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Team phone number
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{data['pp-team-phone']}}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="delete-pp-team-phone">
+                          Delete<span class="govuk-visually-hidden"> location</span>
+                        </a>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="change-pp-team-phone">
+                          Change<span class="govuk-visually-hidden"> location</span>
+                        </a>
+                      </dd>
+                    </div>
+                  </dl>
+                    </div>
+                  </div>
+
+
+              </fieldset>
+            </div>
+          </div>
+
+          {% if data ['referral-type'] == "prison" %}
+          <form action="make-a-referral-prerelease?pp-details=complete" method="post" novalidate>
+            <input type="hidden" name="answers-checked" value="true">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+          </form>
+
+          {% elseif data ['referral-type'] == "community" %}
+          <form action="make-a-referral-community?pp-details=complete" method="post" novalidate>
+            <input type="hidden" name="answers-checked" value="true">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+          </form>
+          {% endif %}
+
+
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

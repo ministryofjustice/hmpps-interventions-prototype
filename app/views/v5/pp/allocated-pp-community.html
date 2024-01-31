@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Does Mohammed Salah have a probation practitioner? 
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post">
+
+            <div class="govuk-form-group">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+   
+                  <span class="govuk-caption-l">Mohammed Salah (CRN: D743927)</span>
+                  <h1 class="govuk-fieldset__heading">
+                    Does Mohammed Salah have a probation practitioner? 
+                  </h1>
+
+
+                </legend>
+
+                  
+
+
+                  <dl class="govuk-summary-list">
+          
+
+
+                  <div class="govuk-radios" data-module="govuk-radios">
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="allocated-pp-community" name="allocated-pp-community" type="radio" value="yes" data-aria-controls="conditional-contact-2">
+                      <label class="govuk-label govuk-radios__label" for="allocated-pp-community">
+                        Yes
+                      </label>
+                      <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                        Mohammed has a probation practitioner (community offender manager) on nDelius.                     
+                      </div>
+                    </div>
+
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="allocated-pp-community" name="allocated-pp-community" type="radio" value="no" data-aria-controls="conditional-contact">
+                      <label class="govuk-label govuk-radios__label" for="allocated-pp-community">
+                        No
+                      </label>
+                      <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                        Mohammed does not have a probation practitioner (community offender manager) on nDelius.                     
+                      </div>
+                    </div>
+                    
+
+                  </div>
+
+
+              </fieldset>
+            </div>
+          </div>
+
+
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

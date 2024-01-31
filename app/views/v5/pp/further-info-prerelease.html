@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Reason for referral
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post" >
+
+            <div class="govuk-form-group">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <span class="govuk-caption-l">Alex River (CRN: D002399)</span>
+                  <h1 class="govuk-fieldset__heading">
+                    Provide the reason for this referral and further information for the service provider
+
+                  </h1>
+                </legend>
+
+                <p class="govuk-body">Reason for the referral:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>why Alex wants the intervention</li>
+                  <li>what Alex hopes to achieve</li>
+                  <li>previously completed intervention programmes</li>
+                  <li>other support services Alex is currently engaging with</li>
+                </ul>
+<br>
+                <p class="govuk-body">Further information could include:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>safety warnings (sexual or violent offences, racist behaviour, arson) not covered elsewhere in the referral</li>
+                  <li>if Alex will be NFA (no fixed address) leaving custody</li>
+                  <li>Alex's gender identity (if relevant)</li>
+                </ul>
+
+
+                <div class="govuk-form-group">
+                  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="15" aria-describedby="more-detail-hint"></textarea>
+                </div>
+
+
+
+
+              </fieldset>
+            </div>
+          </div>
+
+
+
+
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

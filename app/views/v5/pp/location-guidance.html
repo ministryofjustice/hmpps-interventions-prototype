@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Submit current location
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="referral-details-alex"></form>
+
+            <div class="govuk-form-group">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    How to update Alex River's expected probation office
+                  </h1>
+                </legend>
+
+                <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                  <strong class="govuk-warning-text__text">
+                    <span class="govuk-visually-hidden">Warning</span>
+                    It is not possible to change the probation office within this service, as a change of location may affect the eligibility of the referral.
+                  </strong>
+                </div>
+                  
+                <h2 class="govuk-heading-m">Talk to the service provider</h2>
+                <p class="govuk-body">You must first discuss the change of probation office location with the service provider. They will let you know if they are still eligible to deliver the intervention.</p>
+
+                <h2 class="govuk-heading-m">Next steps</h2>
+                <h3 class="govuk-heading-s">If the referral is still eligible</h3>
+                <p class="govuk-body">Update the case notes to include the new probation office location.</p>
+
+                <h3 class="govuk-heading-s">If the referral is no longer eligible</h3>
+                <p class="govuk-body">Cancel the referral and create a new referral with a different service provider.</p>
+
+
+
+              </fieldset>
+            </div>
+          </div>
+
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}
