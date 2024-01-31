@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Submit current location
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-form-group">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Question page
+                  </h1>
+                </legend>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="question-amend" name="question-amend" type="radio" value="location">
+                        <label class="govuk-label govuk-radios__label" for="question-amend">
+                          Change location
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="question-amend" name="question-amend" type="radio" value="else">
+                        <label class="govuk-label govuk-radios__label" for="question-amend">
+                          Change anything else
+                        </label>
+                      </div>
+    
+    
+                    </div>
+                  </fieldset>
+                </div>
+
+
+              </fieldset>
+            </div>
+          </div>
+
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

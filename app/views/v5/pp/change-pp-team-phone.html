@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Update probation practitioner phone number
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="pp-details">
+
+            <div class="govuk-form-group">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  {% if data ['referral-type'] == "prison" %}
+                  <span class="govuk-caption-l">Alex River (CRN: D007615)</span>
+                  {% elseif data ['referral-type'] == "community" %}
+                  <span class="govuk-caption-l">Mohammed Salah (CRN: D743927)</span>
+                  {% endif %}
+                  <h1 class="govuk-fieldset__heading">
+                    Update team phone number
+                  </h1>
+                </legend>
+
+
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="width-20">
+                          Team phone number (if known)
+                        </label>
+                        <input class="govuk-input govuk-input--width-20" id="pp-team-phone" name="pp-team-phone" type="text">
+                      </div>
+
+
+                  <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                      <span class="govuk-warning-text__assistive">Warning</span>
+                      These details should also be updated in nDelius by someone with edit access.
+                    </strong>
+                  </div>
+
+              </fieldset>
+            </div>
+          </div>
+
+
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

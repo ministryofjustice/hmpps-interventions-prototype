@@ -1,0 +1,134 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Open cases
+{% endblock %}
+
+{% block main %}
+{% include "../includes/primary-nav-sp.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+    <h1 class="govuk-heading-xl">My cases</h1>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="my-cases">My cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="open-cases">All open cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="unassigned-cases">Unassigned cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="completed-cases">Completed cases</a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Name/CRN</th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">Referral number</th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">Intervention type</th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">Caseworker</th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">Date recieved</th>
+
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell"><a href="">Sid Harmen</a><br>
+            D102332</td>
+
+            <td class="govuk-table__cell">RY2127AG</td>
+
+          <td class="govuk-table__cell">ETE Services</td>
+          
+          <td class="govuk-table__cell">Jason Higgs</td>
+
+          <td class="govuk-table__cell">24 Mar 2023</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell"><a href="">Gary Rowson</a><br>
+                                            D103233</td>
+
+          <td class="govuk-table__cell">YE7432DD</td>
+
+          <td class="govuk-table__cell">Accommodation Services</td>
+
+          <td class="govuk-table__cell">Tatyana Ali</td>
+
+          <td class="govuk-table__cell">1 Apr 2023</td>
+
+        </tr>
+
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell"><a href="">Carlos Hernandez</a><br>
+                                            D273493</td>
+
+          <td class="govuk-table__cell">JE9392LG</td>
+
+          <td class="govuk-table__cell">Accommodation Services</td>
+
+          <td class="govuk-table__cell">Hayley Weir</td>
+
+          <td class="govuk-table__cell">26 Apr 2023</td>
+
+        </tr>
+
+
+
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+{% endblock %}

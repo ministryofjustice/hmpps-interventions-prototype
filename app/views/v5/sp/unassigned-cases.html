@@ -1,0 +1,202 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Unassigned cases
+{% endblock %}
+
+{% block main %}
+{% include "../includes/primary-nav-sp.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+    <h1 class="govuk-heading-xl">Unassigned cases</h1>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"  href="my-cases">My cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"  href="open-cases">All open cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="unassigned-cases">Unassigned cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="completed-cases">Completed cases</a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <div class="govuk-inset-text">
+      This information is correct at the time of referral.
+    </div>
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Name / CRN</th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Expected release date</th>
+
+          <th scope="col" class="govuk-table__header" >Location</th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">Referral number</th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">Intervention type</th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">Date received</th>
+
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell"><a href="referral-details-alex">Alex River</a><br>
+            D007615</td>
+
+          <td class="govuk-table__cell">10 Jul 2023</td>
+
+          <td class="govuk-table__cell">HMP Manchester</td>
+
+          <td class="govuk-table__cell">RY2127AG</td>
+
+          <td class="govuk-table__cell">Accommodation services</td>
+
+          <td class="govuk-table__cell">23 Jun 2023</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell"><a href="referral-details-mo">Mohammed Salah</a><br>
+                                            D743927</td>
+
+          <td class="govuk-table__cell">In community</td>
+
+          <td class="govuk-table__cell">Greater Manchester: Redfern Building</td>
+
+          <td class="govuk-table__cell">YE7432DD</td>
+
+          <td class="govuk-table__cell">ETE services</td>
+
+          <td class="govuk-table__cell">23 Jun 2023</td>
+
+        </tr>
+
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell"><a href="">Simon Tillman</a><br>
+                                            D201200</td>
+
+          <td class="govuk-table__cell">In community</td>
+
+          <td class="govuk-table__cell">Birmingham: Centre City Probation Office</td>
+
+          <td class="govuk-table__cell">JE9392LG</td>
+
+          <td class="govuk-table__cell">Dependency and recovery</td>
+
+          <td class="govuk-table__cell">23 Jun 2023</td>
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell"><a href="referral-details-john">John Smith</a><br>
+                                            D182933</td>
+
+          <td class="govuk-table__cell">------</td>
+
+          <td class="govuk-table__cell">HMP Manchester</td>
+
+          <td class="govuk-table__cell">YR2812JD</td>
+
+          <td class="govuk-table__cell">Finance, benefit and debt services</td>
+
+          <td class="govuk-table__cell">23 Jun 2023</td>
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell"><a href="referral-details-darren">Darren Wicks</a><br>
+                                            D927438</td>
+
+          <td class="govuk-table__cell">9 Aug 2023</td>
+
+          <td class="govuk-table__cell">HMP Manchester</td>
+
+          <td class="govuk-table__cell">HJ6273PL</td>
+
+          <td class="govuk-table__cell">Accommodation services</td>
+
+          <td class="govuk-table__cell">23 Jun 2023</td>
+
+        </tr>
+
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell"><a href="">Henry Mallot</a><br>
+                                            D926372</td>
+
+          <td class="govuk-table__cell">In community</td>
+
+          <td class="govuk-table__cell">Manchester North</td>
+
+          <td class="govuk-table__cell">RG1723OP</td>
+
+          <td class="govuk-table__cell">Accommodation services</td>
+
+          <td class="govuk-table__cell">23 Jun 2023</td>
+
+        </tr>
+
+
+
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+{% endblock %}

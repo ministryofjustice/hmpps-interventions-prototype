@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Confirm expected probation office
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="make-a-referral-nocom-prerelease">
+
+
+            <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Darren Wicks (CRN: D927438)</span>            
+              <h1 class="govuk-fieldset__heading">
+                Confirm Darren Wicks' expected probation office
+              </h1>
+            </legend>
+
+
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="full">
+                Probation office
+              </label>
+              <div id="contact-hint" class="govuk-hint">
+                Start typing then choose probation office from the list
+              </div>
+              <input class="govuk-input govuk-!-width-full" id="pp-office" name="pp-office" type="text">
+            </div>
+
+
+
+
+                  </fieldset>
+        </div>
+      </div>
+      </div>
+
+      <p class="govuk-body"><a href="office-not-known" class="govuk-link">I don't know the expected probation office</a></p>
+
+
+        {{ govukButton({
+          text: 'Save and continue'
+        }) }}
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+
+{% endblock %}

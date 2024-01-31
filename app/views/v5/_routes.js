@@ -1,0 +1,83 @@
+module.exports = function (router) {
+
+    var version = 'v5'
+
+
+    router.post('/'+ version +'/pp/referral-type-prison', function(request, response) {
+        if (request.session.data['referral-type'] == 'prison') {
+        response.redirect('make-a-referral-prerelease');
+    } else if (request.session.data['referral-type'] == 'community') {
+        response.redirect('make-a-referral-community');
+    }
+    })
+
+    router.post('/'+ version +'/pp/referral-type-community', function(request, response) {
+        if (request.session.data['referral-type'] == 'prison') {
+        response.redirect('make-a-referral-prerelease');
+    } else if (request.session.data['referral-type'] == 'community') {
+        response.redirect('make-a-referral-community');
+    }
+    })
+
+    router.post('/'+ version +'/pp/allocated-pp', function(request, response) {
+        if (request.session.data['allocated-pp'] == 'yes') {
+        response.redirect('referral-type-prison');
+    } else if (request.session.data['allocated-pp'] == 'no') {
+        response.redirect('');
+    }
+    })
+
+    router.post('/'+ version +'/pp/allocated-pp-community', function(request, response) {
+        if (request.session.data['allocated-pp-community'] == 'yes') {
+        response.redirect('referral-type-community');
+    } else if (request.session.data['allocated-pp-community'] == 'no') {
+        response.redirect('');
+    }
+    })
+
+    router.post('/'+ version +'/pp/allocated-pp-nocom-prerelease', function(request, response) {
+        if (request.session.data['allocated-pp-nocom-prerelease'] == 'yes') {
+        response.redirect('');
+    } else if (request.session.data['allocated-pp-nocom-prerelease'] == 'no') {
+        response.redirect('referral-type-nocom-prerelease');
+    }
+    })
+
+    router.post('/'+ version +'/pp/allocated-pp-nocom-prison', function(request, response) {
+        if (request.session.data['allocated-pp-nocom-prison'] == 'yes') {
+        response.redirect('');
+    } else if (request.session.data['allocated-pp-nocom-prison'] == 'no') {
+        response.redirect('referral-type-nocom-prison');
+    }
+    })
+
+    
+    router.post('/'+ version +'/pp/release-date-answer', function(request, response) {
+        if (request.session.data['release-date'] == 'no') {
+            response.redirect('release-date-different');
+        } else if (request.session.data['release-date'] == 'yes') {
+            if (request.session.data['referral-type'] == 'prison') {
+                response.redirect('make-a-referral-prerelease');
+            } else if (request.session.data['referral-type'] == 'community') {
+                response.redirect('make-a-referral-community');
+            } else if (request.session.data['referral-type-nocom'] == 'yes') {
+                response.redirect('release-location');
+            } else if (request.session.data['referral-type-nocom'] == 'no') {
+                response.redirect('make-a-referral-nocom-prison2');
+            }
+        } else {
+            response.redirect('release-date')
+        }
+    })
+
+
+    router.post('/'+ version +'/pp/pp-question-amend', function(request, response) {
+        if (request.session.data['question-amend'] == 'location') {
+        response.redirect('location-guidance');
+    } else if (request.session.data['question-amend'] == 'else') {
+        response.redirect('pp-details-amend');
+    }
+    })
+
+
+  }
