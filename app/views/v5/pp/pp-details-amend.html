@@ -21,6 +21,7 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="referral-details-alex">
 
             <div class="govuk-form-group">
 
@@ -29,7 +30,7 @@ href: "javascript:history.back()"
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h1 class="govuk-fieldset__heading">
-                    Confirm probation practitioner details
+                    H1
                   </h1>
                 </legend>
 
@@ -40,7 +41,7 @@ href: "javascript:history.back()"
                         Name
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        Sarah Galliver
+                        Esme Key
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="">
@@ -48,7 +49,7 @@ href: "javascript:history.back()"
                         </a>
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="change-pp-name">
+                        <a class="govuk-link" href="">
                           Change<span class="govuk-visually-hidden"> location</span>
                         </a>
                       </dd>
@@ -58,18 +59,15 @@ href: "javascript:history.back()"
                         Email address
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {% if (data['pp-email'] == "delete") %}
-                        {% else %}
-                        sarah.galliver@justice.gov.uk
-                        {% endif %}
+                        emse.key@justice.gov.uk
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="delete-pp-email">
+                        <a class="govuk-link" href="">
                           Delete<span class="govuk-visually-hidden"></span>
                         </a>
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="change-pp-email">
+                        <a class="govuk-link" href="">
                           Change<span class="govuk-visually-hidden"></span>
                         </a>
                       </dd>
@@ -79,15 +77,15 @@ href: "javascript:history.back()"
                         Phone number
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{data['pp-phone']}}
+                        {{data['amend-pp-phone'] | default('07427 879972') }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="delete-pp-phone">
+                        <a class="govuk-link" href="">
                           Delete<span class="govuk-visually-hidden"></span>
                         </a>
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="change-pp-phone">
+                        <a class="govuk-link" href="amend-pp-phone">
                           Change<span class="govuk-visually-hidden"></span>
                         </a>
                       </dd>
@@ -97,15 +95,15 @@ href: "javascript:history.back()"
                         Team phone number
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{data['pp-team-phone']}}
+                        0161 7281 872
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="delete-pp-team-phone">
+                        <a class="govuk-link" href="">
                           Delete<span class="govuk-visually-hidden"> location</span>
                         </a>
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="change-pp-team-phone">
+                        <a class="govuk-link" href="">
                           Change<span class="govuk-visually-hidden"> location</span>
                         </a>
                       </dd>
@@ -119,24 +117,11 @@ href: "javascript:history.back()"
             </div>
           </div>
 
-          {% if data ['referral-type'] == "prison" %}
-          <form action="make-a-referral-prerelease?pp-details=complete" method="post" novalidate>
-            <input type="hidden" name="answers-checked" value="true">
-            <button class="govuk-button" data-module="govuk-button">
-              Save and continue
-            </button>
-          </form>
-
-          {% elseif data ['referral-type'] == "community" %}
-          <form action="make-a-referral-community?pp-details=complete" method="post" novalidate>
-            <input type="hidden" name="answers-checked" value="true">
-            <button class="govuk-button" data-module="govuk-button">
-              Save and continue
-            </button>
-          </form>
-          {% endif %}
 
 
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
 
 
         </form>

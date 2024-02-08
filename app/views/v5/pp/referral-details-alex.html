@@ -30,7 +30,7 @@ href: "javascript:history.back()"
 
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" href="case-progress-alex">Case progress</a>
+          <a class="moj-sub-navigation__link" href="">Case progress</a>
         </li>
 
         <li class="moj-sub-navigation__item">
@@ -132,10 +132,11 @@ href: "javascript:history.back()"
                     Prison establishment
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    <p class="govuk-body">HMP Manchester</p>
+                    <p class="govuk-body">
+                      {{data['amend-prison'] | default('HMP Manchester') }}</p>
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
+                    <a class="govuk-link" href="amend-prison">
                       Change<span class="govuk-visually-hidden"> location</span>
                     </a>
                   </dd>
@@ -335,7 +336,7 @@ href: "javascript:history.back()"
                     Phone number
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    07427 871972
+                    {{data['amend-pp-phone'] | default('07427 879972') }}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
