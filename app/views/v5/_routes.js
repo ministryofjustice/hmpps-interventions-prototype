@@ -73,7 +73,7 @@ module.exports = function (router) {
 
     router.post('/'+ version +'/pp/pp-question-amend', function(request, response) {
         if (request.session.data['question-amend'] == 'location') {
-        response.redirect('location-guidance');
+        response.redirect('location-guidance-pp');
     } else if (request.session.data['question-amend'] == 'else') {
         response.redirect('pp-details-amend');
     }
