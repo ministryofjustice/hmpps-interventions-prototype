@@ -1,10 +1,11 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Confirm current location
+  Submit current location
 {% endblock %}
 
 {% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
 {{ super() }}
 {% endblock %}
 
@@ -20,9 +21,7 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-
-            <form class="form" method="post" action="referral-details-alex">
+    <form class="form" method="post" action="referral-details-alex">
 
             <div class="govuk-form-group">
 
@@ -30,35 +29,29 @@ href: "javascript:history.back()"
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-
                   <h1 class="govuk-fieldset__heading">
-                    Update Alex River's prison establishment
+                    How to update the probation office
                   </h1>
                 </legend>
-
-                
 
                 <div class="govuk-warning-text">
                   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                   <strong class="govuk-warning-text__text">
                     <span class="govuk-visually-hidden">Warning</span>
-                    If the prison location is changed this may affect the eligibility of the referral. Check with the service provider.
+                    It is not possible to change the probation office within this service, as a change of location may affect the eligibility of the referral.
                   </strong>
                 </div>
+                  
+                <h2 class="govuk-heading-m">Talk to the service provider</h2>
+                <p class="govuk-body">You must first discuss the change of probation office location with the service provider. They will let you know if they are still eligible to deliver the intervention.</p>
 
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="event-name">
-                    Which prison is Alex in?
-                  </label>
-                  <input class="govuk-input govuk-!-width-three-quarters" id="amend-prison" name="amend-prison" type="text">
-                </div>
+                <h2 class="govuk-heading-m">Next steps</h2>
+                <h3 class="govuk-heading-s">If the referral is still eligible</h3>
+                <p class="govuk-body">Update the case notes to include the new probation office location.</p>
 
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="more-detail">
-                    What is the reason for changing Alex's prison?
-                  </label>
-                  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
-                </div>
+                <h3 class="govuk-heading-s">If the referral is no longer eligible</h3>
+                <p class="govuk-body">Cancel the referral and create a new referral with a different service provider.</p>
+
 
 
               </fieldset>
@@ -66,12 +59,9 @@ href: "javascript:history.back()"
           </div>
 
 
-
-
           {{ govukButton({
-            text: 'Save and continue'
+            text: 'Back to referral details'
           }) }}
-
 
 
         </form>
