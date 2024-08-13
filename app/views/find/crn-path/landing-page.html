@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter the person's CRN
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="confirm-customer-details">
+          <div class="govuk-form-group">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    What is your case reference number (CRN)?
+                  </h1>
+                </legend>
+                  <p class="govuk-body">This will retrieve their details from nDelius. For example, ‘X123456’.</p>
+                  <div class="govuk-form-group">
+                    <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+                  </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <!-- {{ govukButton({
+            text: 'Continue'
+          }) }} -->
+          <div class="govuk-button-group">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+            <p> or <a class="govuk-link" href="#">manual search</a></p>
+          </div>
+
+      </form>
+    </div>
+  </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,162 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter the person's CRN
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-l">Check Alex River's details before sending your search</h1>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        If these details are incorrect they should be updated in nDelius or OASys by someone with edit access.<br>
+        To be aware that other systems like <a href="#">nDelius</a> or <a href="#">OASys</a> should be used for checking further info or check case notes.
+      </strong>
+    </div>
+    <h2 class="govuk-heading-m">Personal details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Sarah Philips
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Case reference number (CRN)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          X123456
+        </dd>
+        <!--<dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>  -->
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          5 January 1978
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Customer reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not provided
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          72 Guild Street<br>London<br>SE23 6FH
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Contact details
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">07700 900457</p>
+          <p class="govuk-body">sarah.phillips@example.com</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+        </dd>
+      </div>
+    </dl>
+    <h2 class="govuk-heading-m">Application details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Previous application number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          502135326
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Licence type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          For personal use
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Home address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          72 Guild Street<br>London<br>SE23 6FH
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> home address</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Licence period
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Valid for 6 months
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+        </dd>
+      </div>
+    </dl>
+    <h2 class="govuk-heading-m">Now send your application</h2>
+    <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+    <form action="/form-handler" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Accept and send
+      </button>
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}
