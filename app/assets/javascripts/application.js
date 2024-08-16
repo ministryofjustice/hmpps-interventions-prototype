@@ -79,7 +79,7 @@ $(document).ready(function() {
   // MOJ Filter component
   new MOJFrontend.FilterToggleButton({
     bigModeMediaQuery: "(min-width: 48.063em)",
-    startHidden: true,
+    startHidden: false,
     toggleButton: {
       container: $(".moj-action-bar__filter"),
       showText: "Show filter",
