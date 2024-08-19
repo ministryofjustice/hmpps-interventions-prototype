@@ -123,8 +123,8 @@
     }
 }
 
-@media (min-width: 40.0625em) {
-    .govuk-tag {
-        font-size: 1.1875rem;
-    }
-}
+.govuk-tag {
+    text-decoration: none;
+    text-transform: none;
+    font-size: 1.1875rem;
+  }
