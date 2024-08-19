@@ -122,3 +122,9 @@
         line-height: 1.3157894737;
     }
 }
+
+@media (min-width: 40.0625em) {
+    .govuk-tag {
+        font-size: 1.1875rem;
+    }
+}
