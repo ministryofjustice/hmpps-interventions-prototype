@@ -130,5 +130,13 @@
     display: inline-block;
     text-transform: none;
     letter-spacing: normal;
-    margin-right: 5px !important;
+    max-width:100%;
+    margin-right: 5px
+}
+
+ul.govuk-list.search-result-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }

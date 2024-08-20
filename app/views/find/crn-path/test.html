@@ -89,6 +89,85 @@ href: "javascript:history.back()"
             </label>
             <input class="govuk-input" id="keywords" name="keywords" type="text">
           </div>
+
+        <!--<div class="filter-item govuk-!-padding-top-4 govuk-!-margin-bottom-0">
+            <fieldset class="govuk-fieldset" data-module="display-selected">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h3 class="govuk-fieldset__heading">
+                        Publication date
+                    </h3>
+                </legend>
+                <p class="govuk-hint govuk-!-font-size-16">Not selected</p><details class="govuk-details govuk-!-margin-bottom-4" data-module="govuk-details">
+                    <summary class="govuk-details__summary" data-module="show-hide">Show</summary>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h3 class="govuk-fieldset__heading">From</h3>
+                            </legend>
+                            <div class="govuk-date-input" id="published-from">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="published-from-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="published-from-day" name="publishedFrom-day" type="text" inputmode="numeric" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="published-from-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="published-from-month" name="publishedFrom-month" type="text" inputmode="numeric" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="published-from-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="published-from-year" name="publishedFrom-year" type="text" inputmode="numeric" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h3 class="govuk-fieldset__heading">To</h3>
+                            </legend>
+                            <div class="govuk-date-input" id="published-to">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="published-to-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="published-to-day" name="publishedTo-day" type="text" inputmode="numeric" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="published-to-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="published-to-month" name="publishedTo-month" type="text" inputmode="numeric" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="published-to-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="published-to-year" name="publishedTo-year" type="text" inputmode="numeric" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </details>
+            </fieldset>
+        </div>-->
     
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -408,15 +487,15 @@ href: "javascript:history.back()"
             </div>
           </div>
         </div>
-        <div id="js-facet-tag-wrapper" class="facet-tags__container" aria-live="assertive">
+        <!--<div id="js-facet-tag-wrapper" class="facet-tags__container" aria-live="assertive">
             <span class="govuk-visually-hidden">
             461 results
             sorted by Relevance
             </span>
-        </div>
+        </div>-->
       </div>
 
-      <div class="govuk-caption-l live-search-loading-message" id="js-loading-message"></div>
+      <!--<div class="govuk-caption-l live-search-loading-message" id="js-loading-message"></div>
         <div id="js-sort-options" data-ga4-change-category="update-sort select">
           <div class="govuk-form-group sort-options gem-c-select">
             <label for="order" class="sort-options__label govuk-label">Sort by</label>
@@ -427,13 +506,14 @@ href: "javascript:history.back()"
                   <option value="updated-oldest">Updated (oldest)</option>
               </select>
           </div>
-        </div>
+        </div>-->
       <div id="js-results">
         <div class="finder-results js-finder-results">
           <ul class="gem-c-document-list gem-c-document-list--no-underline govuk-!-margin-bottom-5" style="font-size: 1.1875rem; line-height: 1.3157894737;margin: 0;
     padding: 0;">
 <!--first AcP-->
-            <li class="gem-c-document-list__item">
+            
+            <li class="gem-c-document-list__item" style="border-top: none;">
               <div class="gem-c-document-list__item-title">          
                 <a data-ga4-ecommerce-path="/government/people/bob-alexander" data-ga4-ecommerce-content-id="2dccb494-b707-461b-b48d-b44e069396ec" data-ga4-ecommerce-row="1" data-ga4-ecommerce-index="1" class="  govuk-link" href="#" style="font-weight: 700;">Thinking Skills Programme (TSP)</a>
                 <strong class="govuk-tag govuk-tag--red">Court order</strong>
