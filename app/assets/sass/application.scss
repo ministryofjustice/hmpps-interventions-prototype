@@ -123,8 +123,12 @@
     }
 }
 
-.govuk-tag {
-    text-decoration: none;
+.tag-filters{
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 0;
+    display: inline-block;
     text-transform: none;
-    font-size: 1.1875rem;
-  }
+    letter-spacing: normal;
+    margin-right: 5px !important;
+}
