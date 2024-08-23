@@ -144,3 +144,9 @@ ul.govuk-list.search-result-details {
 th.moj-fixed-width-40 {
     width: 40%;
 }
+
+@media (min-width: 40.0625em) {
+    .moj-identity-bar__container {
+        margin: 0 0px;
+    }
+}

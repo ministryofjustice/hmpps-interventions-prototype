@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Confirm customer details
+Main catalogue page
 {% endblock %}
 
 {% block main %}
@@ -20,9 +20,16 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <h1 class="govuk-heading-l">Alex River</h1>
-    <p id="company-number">CRN <strong>X123456</strong></p>
-    <p>placeholder</p>
+    <div class="moj-identity-bar">
+      <div class="moj-identity-bar__container">
+        <div class="moj-identity-bar__details">
+          <span class="moj-identity-bar__title"><b>Alex River</b>  | CRN X123456</span>
+        </div>
+      </div>
+    </div>
+    
+    <h1 class="govuk-heading-l">Search results</h1>
+    <p class="govuk-body">placeholder</p>
     <div class="govuk-warning-text">
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
@@ -53,7 +60,7 @@ href: "javascript:history.back()"
             </div>
 
             <div class="moj-filter__heading-action">
-              <p><a class="govuk-link govuk-link--no-visited-state" href="#">See selected filters</a>. They cannot be edit in here.</p>
+              <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="#">See selected filters</a>. They cannot be edit in here.</p>
             </div>
           </div>
     
@@ -156,14 +163,14 @@ href: "javascript:history.back()"
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
                     Thinking and behaviour (2)
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
                     Atitudes (2)
                   </label>
@@ -436,7 +443,7 @@ href: "javascript:history.back()"
 <!--first AcP-->
             <li class="gem-c-document-list__item">
               <div class="gem-c-document-list__item-title">          
-                <a data-ga4-ecommerce-path="/government/people/bob-alexander" data-ga4-ecommerce-content-id="2dccb494-b707-461b-b48d-b44e069396ec" data-ga4-ecommerce-row="1" data-ga4-ecommerce-index="1" class="  govuk-link" href="acp-single" style="font-weight: 700;">Thinking Skills Programme (TSP)</a>
+                <a class="govuk-link" href="acp-single" style="font-weight: 700;">Thinking Skills Programme (TSP)</a>
                 <strong class="govuk-tag govuk-tag--red">Court order</strong>
               </div>
               <ul class="govuk-list search-result-details">
@@ -494,13 +501,13 @@ href: "javascript:history.back()"
                   </dd>
                 </div>
               </dl>
-              <p class="gem-c-document-list__item-description ">An accredited cognitive skills offending behaviour programme delivered across HMPPS. It provides continuity of provision across community and custody, and it is the most attended of all accredited programmes.
+              <p class="gem-c-document-list__item-description">An accredited cognitive skills offending behaviour programme delivered across HMPPS. It provides continuity of provision across community and custody, and it is the most attended of all accredited programmes.
                 Focuses on developing people’s ability to manage their emotions, make decisions, solve problems, achieve their goals, manage the influence of anti-social relationships, and use pro-social interpersonal skills in their interactions with others...</p>
             </li>
 <!--second SI-->
             <li class="gem-c-document-list__item">
               <div class="gem-c-document-list__item-title">          
-                <a data-ga4-ecommerce-path="/government/people/bob-alexander" data-ga4-ecommerce-content-id="2dccb494-b707-461b-b48d-b44e069396ec" data-ga4-ecommerce-row="1" data-ga4-ecommerce-index="1" class="  govuk-link" href="#" style="font-weight: 700;">Stepwise Relationships</a>
+                <a class="govuk-link" href="si-single" style="font-weight: 700;">Stepwise Relationships</a>
                 <strong class="govuk-tag govuk-tag--light-blue">In progress</strong>
               </div>
 
@@ -549,6 +556,15 @@ href: "javascript:history.back()"
                   <dd class="govuk-summary-list__value">
                     in person, group
                   </dd>
+                </div>                
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Location [TBC]
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Location 1<br>
+                    Location 2
+                  </dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
@@ -564,7 +580,7 @@ href: "javascript:history.back()"
 <!--third CRS-->
             <li class="gem-c-document-list__item">
               <div class="gem-c-document-list__item-title">          
-                <a data-ga4-ecommerce-path="/government/people/bob-alexander" data-ga4-ecommerce-content-id="2dccb494-b707-461b-b48d-b44e069396ec" data-ga4-ecommerce-row="1" data-ga4-ecommerce-index="1" class="  govuk-link" href="#" style="font-weight: 700;">Finance, benefits and debt services</a>
+                <a class="  govuk-link" href="crs-single" style="font-weight: 700;">Finance, benefits and debt services</a>
                 <strong class="govuk-tag govuk-tag--yellow">Done before</strong>
               </div>
 
@@ -609,6 +625,15 @@ href: "javascript:history.back()"
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
+                    Location
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Location 1<br>
+                    Location 2
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
                     Average waiting time
                   </dt>
                   <dd class="govuk-summary-list__value">
@@ -621,7 +646,7 @@ href: "javascript:history.back()"
 <!--forth toolkits-->
             <li class="gem-c-document-list__item">
               <div class="gem-c-document-list__item-title">          
-                <a data-ga4-ecommerce-path="/government/people/bob-alexander" data-ga4-ecommerce-content-id="2dccb494-b707-461b-b48d-b44e069396ec" data-ga4-ecommerce-row="1" data-ga4-ecommerce-index="1" class="  govuk-link" href="#" style="font-weight: 700;">Toolkit name</a>
+                <a class="govuk-link" href="#" style="font-weight: 700;">Toolkit name</a>
               </div>
 
               <ul class="govuk-list search-result-details">
