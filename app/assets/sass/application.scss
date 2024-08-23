@@ -145,8 +145,7 @@ th.moj-fixed-width-40 {
     width: 40%;
 }
 
-@media (min-width: 40.0625em) {
-    .moj-identity-bar__container {
-        margin: 0 0px;
-    }
+.moj-badge--orange {
+    border-color: #a34e00;
+    color: #a34e00;
 }
