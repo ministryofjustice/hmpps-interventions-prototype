@@ -1,0 +1,449 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Search filter
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="moj-identity-bar">
+  <div class="moj-identity-bar__container">
+    <div class="moj-identity-bar__details">
+      <span class="moj-identity-bar__title"><b>Alex River</b>  | CRN: X123456</span>
+    </div>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-l">Search filter</h1>
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          If these details are incorrect they should be updated in <a href="#">nDelius</a> or <a href="#">OASys</a> by someone with edit access.
+        </strong>
+      </div>
+   
+<!--Personal details-->
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Personal details</caption>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Gender</th>
+          <td class="govuk-table__cell">Male</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Probation delivery unit (PDU)	</th>
+          <td class="govuk-table__cell">County Durham: Darlington Probation Office		</td>
+        </tr>
+      </tbody>
+    </table>
+<!--Predictor scores % and risk category-->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Predictor scores % and risk category</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header app-custom-class">Risk</th>
+          <th scope="col" class="govuk-table__header app-custom-class">1 year %</th>
+          <th scope="col" class="govuk-table__header app-custom-class">3 year %</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Category</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">OGRS3 probability of proven reoffending</th>
+          <td class="govuk-table__cell">55</td>
+          <td class="govuk-table__cell">71</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Medium</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">OGP probability of proven non-violent reoffending</th>
+          <td class="govuk-table__cell">64</td>
+          <td class="govuk-table__cell">76</td>
+          <td class="govuk-table__cell"><strong class="moj-badge moj-badge--red">High</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">OVP probability of proven violent-type reoffending</th>
+          <td class="govuk-table__cell">35</td>
+          <td class="govuk-table__cell">51</td>
+          <td class="govuk-table__cell"><strong class="moj-badge moj-badge--orange">Medium</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">OSP indecent image reoffending risk</th>
+          <td class="govuk-table__cell">n/a</td>
+          <td class="govuk-table__cell">n/a</td>
+          <td class="govuk-table__cell">n/a</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">OSP Contact sexual reoffending risk</th>
+          <td class="govuk-table__cell">n/a</td>
+          <td class="govuk-table__cell">n/a</td>
+          <td class="govuk-table__cell">n/a</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Risk of serious recidivism (RSR)</th>
+          <td class="govuk-table__cell">n/a</td>
+          <td class="govuk-table__cell">4.11</td>
+          <td class="govuk-table__cell"><strong class="moj-badge moj-badge--orange">Medium</strong> (DYNAMIC)</td>
+        </tr>
+      </tbody>
+    </table>
+<!--Risk information-->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Risk information</caption>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Who is at risk</th>
+          <td class="govuk-table__cell">[Placeholder]</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">What is the nature of the risk</th>
+          <td class="govuk-table__cell">[Placeholder]</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">When is the risk likely to be greatest</th>
+          <td class="govuk-table__cell">[Placeholder]</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Concerns in relation to self-harm</th>
+          <td class="govuk-table__cell">Don't know</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Concerns in relation to suicide</th>
+          <td class="govuk-table__cell">Don't know</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Concerns in relation to coping in a hostel setting</th>
+          <td class="govuk-table__cell">Don't know</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Additional information</th>
+          <td class="govuk-table__cell">[Placeholder]</td>
+        </tr>
+      </tbody>
+    </table>
+<!--SARA-->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Spousal assault risk assessment</caption>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Spousal assault risk assessment (SARA) </th>
+          <td class="govuk-table__cell"><strong class="moj-badge moj-badge--orange">Moderate</strong></td>
+        </tr>
+      </tbody>
+    </table>
+<!--Likelihood of serious harm to others-->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Likelihood of serious harm to others</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Risk</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Risk in community</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Risk in custody</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Children</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--orange">Medium</strong></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">Low</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Public</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--orange">Medium</strong></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">Low</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Known adult</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--orange">Medium</strong></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">Low</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Staff</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--orange">Medium</strong></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">Low</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Prisoners</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">n/a</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">Low</strong></td>
+        </tr>
+      </tbody>
+    </table>
+<!--Needs score-->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Needs score</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Risk</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Score</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Risk level</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Accommodation</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">5</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">Low</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Education, Training and Employment (ETE)</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">Low</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Finance</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">Low</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Relationships</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">Low</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Lifestyle and associates</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">Low</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Drug misuse</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">Low</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Alcohol misuse</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">Low</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Emotional wellbeing</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--green">Low</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Thinking and behaviour</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--orange">Medium</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Attitudes</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">4</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="moj-badge moj-badge--red">High</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+<!--Offence history-->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--s">Main offence (07839)</caption>
+      <h2 class="govuk-heading-m">Offence history</h2>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Offence</th>
+          <td class="govuk-table__cell">Publishing or causing to be published a tobacco advertisement - 09144</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell">Public Health Offence</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Offence date</th>
+          <td class="govuk-table__cell">11 June 2020</td>
+        </tr>
+      </tbody>
+    </table>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Additional offence(s)
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--s">Additional offence (09329)</caption>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Offence</th>
+              <td class="govuk-table__cell">Class unspecified - permitting premises to be used - 09329</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Category</th>
+              <td class="govuk-table__cell">Permitting premises to be used for unlawful (drug-related) purposes</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Offence date</th>
+              <td class="govuk-table__cell">11 June 2018</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--s">Additional offence (07352)</caption>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Offence</th>
+              <td class="govuk-table__cell">Class unspecified - permitting premises to be used - 09329</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Category</th>
+              <td class="govuk-table__cell">Permitting premises to be used for unlawful (drug-related) purposes</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Offence date</th>
+              <td class="govuk-table__cell">11 June 2016</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+<!--Sentence details-->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Sentence details</caption>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Sentence date</th>
+          <td class="govuk-table__cell">3 April 2018</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Remaining sentence time</th>
+          <td class="govuk-table__cell">7 years, 11 months</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Setting</th>
+          <td class="govuk-table__cell">community</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Rehabilitation Activity Requirement (RAR) days</th>
+          <td class="govuk-table__cell"><strong>14 days</strong> remaining out of 36 days</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Court ordered interventions</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Alcohol Dependence Treatment Programme (ADTP)</li>
+              <li>Becoming New Me+ (BNM+)</li>
+              <li>[Here is an example of a free text field where an intervention is described]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Licence conditions</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>[Exclusion zones to be added]</li>
+              <li>[Curfews to be added]</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+<!--Intervention history-->
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--m">Intervention history</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Intervention name</th>
+          <th scope="col" class="govuk-table__header">Provider name</th>
+          <th scope="col" class="govuk-table__header">Intervention date</th>
+          <th scope="col" class="govuk-table__header">Intervention status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Becoming New Me+ (BNM+)</th>
+          <td class="govuk-table__cell">HMPPS Interventions Services</td>
+          <td class="govuk-table__cell">3 April 2018</td> 
+          <td class="govuk-table__cell">Completed</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Becoming New Me+ (BNM+)</th>
+          <td class="govuk-table__cell">HMPPS Interventions Services</td>
+          <td class="govuk-table__cell">26 May 2017</td> 
+          <td class="govuk-table__cell">Incomplete</td>
+        </tr>
+      </tbody>
+    </table>
+<!--Employment-->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Employment</caption>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Employment subtype</th>
+          <td class="govuk-table__cell">zero hours contract</td>
+        </tr>
+      </tbody>
+    </table>
+<!--Disability and adjustments-->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Disability and adjustments</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Disability category</th>
+          <th scope="col" class="govuk-table__header">Disability condition</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">[Placeholder]</th>
+          <td class="govuk-table__cell">[Placeholder]</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">[Placeholder]</th>
+          <td class="govuk-table__cell">[Placeholder]</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">[Placeholder]</th>
+          <td class="govuk-table__cell">[Placeholder]</td>
+        </tr>
+      </tbody>
+    </table>
+<!--Equality monitoring-->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Equality monitoring</caption>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Preferred language</th>
+          <td class="govuk-table__cell">Polish</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Interpreter required</th>
+          <td class="govuk-table__cell">yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Pregnancy and maternity</th>
+          <td class="govuk-table__cell">[Placeholder]</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 class="govuk-heading-m">Now send your application</h2>
+    <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+    <form action="/form-handler" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Accept and send
+      </button>
+    </form>
+  </div>
+</div>
+    <form action="/find/crn-path/main-catalogue-page" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Accept and send
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}
