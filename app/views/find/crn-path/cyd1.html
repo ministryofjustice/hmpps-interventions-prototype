@@ -1,0 +1,154 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check Alex River's details
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-l">Check Alex River's details before sending your search</h1>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        If these details are incorrect they should be updated in nDelius or OASys by someone with edit access.<br>
+        To be aware that other systems like <a href="#">nDelius</a> or <a href="#">OASys</a> should be used for checking further info or check case notes.
+        Softer wording for "By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct."
+      </strong>
+    </div>
+  </div>
+</div>
+</div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="cyd1">Personal details</a>
+          </li>
+      
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="cyd2">Risks and needs</a>
+          </li>
+      
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="cyd3">Sentence and offence history</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="cyd4">Intervention history</a>
+          </li>
+        </ul>
+      </nav>
+
+      <h2 class="govuk-heading-l">Personal details</h2>
+<!--Personal details-->
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Personal details</caption>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="col" class="moj-fixed-width-40 govuk-table__header">Name</th>
+            <td class="govuk-table__cell">Alex River</th>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Case reference number (CRN)	</th>
+            <td class="govuk-table__cell">X123456</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Date of birth</th>
+            <td class="govuk-table__cell">5 January 1978 <br>(23 years, 6 months)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Gender</th>
+            <td class="govuk-table__cell">Male</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Accommodation status</th>
+            <td class="govuk-table__cell">Homeless - rough sleeping	</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Probation delivery unit (PDU)</th>
+            <td class="govuk-table__cell">County Durham: Darlington Probation Office</td>
+          </tr>
+        </tbody>
+      </table>
+
+<!--Employment-->
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Personal circumstances</caption>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="moj-fixed-width-40 govuk-table__header">Employment</th>
+            <td class="govuk-table__cell">Zero hours contract</td>
+          </tr>
+        </tbody>
+      </table>
+
+<!--Disability and adjustments-->
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Disability and adjustments</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="moj-fixed-width-40 govuk-table__header">Disability category</th>
+            <th scope="col" class="govuk-table__header">Disability condition</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="font-weight: normal;">Hearing disability</th>
+            <td class="govuk-table__cell">Hard of hearing</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="font-weight: normal;">Medical disability</th>
+            <td class="govuk-table__cell">Chronic Fatigue Syndrome (CFS)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="font-weight: normal;">Medical disability</th>
+            <td class="govuk-table__cell">Epilectic</td>
+          </tr>
+        </tbody>
+      </table>
+
+<!--Equality monitoring-->
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Equality monitoring</caption>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="moj-fixed-width-40 govuk-table__header">Preferred language</th>
+            <td class="govuk-table__cell">Polish</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Interpreter required</th>
+            <td class="govuk-table__cell">Yes</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Pregnancy and maternity</th>
+            <td class="govuk-table__cell">Not applicable</td>
+          </tr>
+        </tbody>
+      </table>
+      
+    <form action="/find/crn-path/main-catalogue-page" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Accept and send
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}
