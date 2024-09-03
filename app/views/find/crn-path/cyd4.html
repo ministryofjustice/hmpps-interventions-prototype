@@ -20,15 +20,9 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <h1 class="govuk-heading-l">Check Alex River's details before sending your search</h1>
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-visually-hidden">Warning</span>
-        If these details are incorrect they should be updated in nDelius or OASys by someone with edit access.<br>
-        To be aware that other systems like <a href="#">nDelius</a> or <a href="#">OASys</a> should be used for checking further info or check case notes.
-        Softer wording for "By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct."
-      </strong>
+    <h1 class="govuk-heading-l">Review Alex River’s information for the search</h1>
+    <div class="govuk-inset-text">
+      These details will be used to find suitable interventions for Alex, so they must be up to date.<br><br> If the details are incorrect, they should be updated in <a href="#">nDelius</a> or <a href="#">OASys</a> by someone with edit access.
     </div>
   </div>
 </div>
@@ -57,44 +51,100 @@ href: "javascript:history.back()"
       </nav>
 
       <h2 class="govuk-heading-l">Intervention history</h2>
+      <div class="govuk-inset-text">
+        Use for guidance only - this may not be a complete list of Alex River’s intervention history. 
+      </div>
+<!--Intervention history-->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Alex River’s intervention history
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Intervention</th>
+              <th scope="col" class="govuk-table__header">Service provider name</th>
+              <th scope="col" class="govuk-table__header">Referral date</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header" style="font-weight: normal;">Becoming New Me+ (BNM+)</th>
+              <td class="govuk-table__cell">HMPPS Interventions Services</td>
+              <td class="govuk-table__cell">3 Apr 2018</td> 
+              <td class="govuk-table__cell">Completed</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header" style="font-weight: normal;">Becoming New Me+ (BNM+)</th>
+              <td class="govuk-table__cell">HMPPS Interventions Services</td>
+              <td class="govuk-table__cell">26 May 2017</td> 
+              <td class="govuk-table__cell"><strong class="moj-badge moj-badge--grey">Incomplete</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="govuk-table" data-module="moj-sortable-table">
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+        
+              <th scope="col" class="govuk-table__header" aria-sort="ascending">Intervention</th>
+        
+              <th scope="col" class="govuk-table__header" aria-sort="none">Service provider name</th>
+        
+              <th scope="col" class="govuk-table__header" aria-sort="none">Referral date</th>
+        
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Status</th>
+        
+            </tr>
+          </thead>
+        
+          <tbody class="govuk-table__body">
+        
+            <tr class="govuk-table__row">
+        
+              <td class="govuk-table__cell">Becoming New Me+ (BNM+)	</td>
+        
+              <td class="govuk-table__cell" data-sort-value="6961">HMPPS Interventions Services	</td>
+        
+              <td class="govuk-table__cell">3 Apr 2018	</td>
+        
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Completed</td>
+        
+            </tr>
+        
+            <tr class="govuk-table__row">
+        
+              <td class="govuk-table__cell">Becoming New Me+ (BNM+)	</td>
+        
+              <td class="govuk-table__cell" data-sort-value="6194">HMPPS Interventions Services	</td>
+        
+              <td class="govuk-table__cell">26 May 2017	</td>
+        
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1913"><strong class="moj-badge moj-badge--grey">Incomplete</strong></td>
+        
+            </tr>
+        
+        
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+
+
+
       <!--Intervention history-->
-      <table class="govuk-table govuk-table--small-text-until-tablet">
-        <caption class="govuk-table__caption govuk-table__caption--m">Intervention history</caption>
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-visually-hidden">Warning</span>
-            be aware this is not the full list [reminder for content]
-          </strong>
-        </div>
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Intervention name</th>
-            <th scope="col" class="govuk-table__header">Provider name</th>
-            <th scope="col" class="govuk-table__header">Intervention date</th>
-            <th scope="col" class="govuk-table__header">Intervention status</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header" style="font-weight: normal;">Becoming New Me+ (BNM+)</th>
-            <td class="govuk-table__cell">HMPPS Interventions Services</td>
-            <td class="govuk-table__cell">3 April 2018</td> 
-            <td class="govuk-table__cell">Completed</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header" style="font-weight: normal;">Becoming New Me+ (BNM+)</th>
-            <td class="govuk-table__cell">HMPPS Interventions Services</td>
-            <td class="govuk-table__cell">26 May 2017</td> 
-            <td class="govuk-table__cell"><strong class="moj-badge moj-badge--grey">Incomplete</strong></td>
-          </tr>
-        </tbody>
-      </table>
+
   
     <form action="/find/crn-path/main-catalogue-page" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button type="submit" class="govuk-button" data-module="govuk-button">
-        Accept and send
+        Continue
       </button>
     </form>
   </div>

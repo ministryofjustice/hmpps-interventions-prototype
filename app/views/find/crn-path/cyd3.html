@@ -20,15 +20,9 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <h1 class="govuk-heading-l">Check Alex River's details before sending your search</h1>
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-visually-hidden">Warning</span>
-        If these details are incorrect they should be updated in nDelius or OASys by someone with edit access.<br>
-        To be aware that other systems like <a href="#">nDelius</a> or <a href="#">OASys</a> should be used for checking further info or check case notes.
-        Softer wording for "By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct."
-      </strong>
+    <h1 class="govuk-heading-l">Review Alex River’s information for the search</h1>
+    <div class="govuk-inset-text">
+      These details will be used to find suitable interventions for Alex, so they must be up to date.<br><br> If the details are incorrect, they should be updated in <a href="#">nDelius</a> or <a href="#">OASys</a> by someone with edit access.
     </div>
   </div>
 </div>
@@ -55,146 +49,231 @@ href: "javascript:history.back()"
     </nav>
 
     <h2 class="govuk-heading-l">Sentence and offence history</h2>
-    <!--Sentence details-->
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">Sentence details</caption>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="moj-fixed-width-40 govuk-table__header">Sentence date</th>
-          <td class="govuk-table__cell">3 April 2018</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Remaining sentence time</th>
-          <td class="govuk-table__cell">7 years, 11 months</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Setting</th>
-          <td class="govuk-table__cell">community</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Rehabilitation Activity Requirement (RAR) days</th>
-          <td class="govuk-table__cell">14 days <em>remaining</em> out of 36 days</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Court ordered interventions</th>
-          <td class="govuk-table__cell">
-            <ul class="govuk-list govuk-list--bullet">
-              <li>Alcohol Dependence Treatment Programme (ADTP)</li>
-              <li>Becoming New Me+ (BNM+)</li>
-              <li>[Here is an example of a free text field where an intervention is described]</li>
-            </ul>
-          </td>
-        </tr>         
-      </tbody>
-    </table>
-    <!--Licence conditions-->
-    <table class="govuk-table">
-      <h2 class="govuk-heading-m">Additional licence conditions</h2>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="moj-fixed-width-40 govuk-table__header">Exclusion Zones</th>
-          <td class="govuk-table__cell">Not applicable</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Non-Contact</th>
-          <td class="govuk-table__cell">Yes</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Electronic Monitoring</th>
-          <td class="govuk-table__cell">Not applicable</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Alcohol Monitoring on Licence (AML)</th>
-          <td class="govuk-table__cell">Not applicable</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Polygraph</th>
-          <td class="govuk-table__cell">Not applicable</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Child Contact</th>
-          <td class="govuk-table__cell">Not applicable</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Relationships</th>
-          <td class="govuk-table__cell">Yes</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Terrorist Personal Search Condition</th>
-          <td class="govuk-table__cell">Not applicable</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Other Terrorism/Extremism Related Licence Conditions</th>
-          <td class="govuk-table__cell">Not applicable</td>
-        </tr>
-      </tbody>
-    </table>
-      
-    <!--Offence history-->
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--s">Main offence (07839)</caption>
-      <h2 class="govuk-heading-m">Offence history</h2>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="moj-fixed-width-40 govuk-table__header">Offence</th>
-          <td class="govuk-table__cell">Domestic violence (IPV) - 09144</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Category</th>
-          <td class="govuk-table__cell">Public Health Offence</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Offence date</th>
-          <td class="govuk-table__cell">11 June 2020</td>
-        </tr>
-      </tbody>
-    </table>
+
+<!--Sentence details-->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Sentence and offence details 
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Offence type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Domestic violence (IPV) - 09144
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Offence category
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Public Health Offence
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Offence date	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              25 Sep 2020
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sentence date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              17 Nov 2024
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              End of sentence date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              25 Sep 2020
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Maximum number of enforceable days
+            </dt>
+            <dd class="govuk-summary-list__value">
+              36 days 
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date intervention to be completed by 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              25 Sep 2020
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Court ordered interventions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Alcohol Dependence Treatment Programme (ADTP) </li>
+                <li>Becoming New Me+ (BNM+)</li>
+                <li>An intervention to rebuild relationships</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+ <!--Licence conditions-->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Additional licence conditions
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Exclusion zones
+            </dt>
+            <dd class="govuk-summary-list__value">
+              -
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Non-contact	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Electronic monitoring
+            </dt>
+            <dd class="govuk-summary-list__value">
+              -
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Alcohol monitoring on licence (AML)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              -
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Polygraph
+            </dt>
+            <dd class="govuk-summary-list__value">
+              -
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Child contact
+            </dt>
+            <dd class="govuk-summary-list__value">
+              -
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Relationships
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Terrorist personal search condition
+            </dt>
+            <dd class="govuk-summary-list__value">
+              -
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Other terrorism/extremism related licence conditions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              -
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>  
+
+<!--Offence history-->
     <details class="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Additional offence(s)
-              </span>
-            </summary>
-    <div class="govuk-details__text">
-      <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--s">Additional offence (09329)</caption>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Offence</th>
-            <td class="govuk-table__cell">Class unspecified - permitting premises to be used - 09329</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Category</th>
-            <td class="govuk-table__cell">Permitting premises to be used for unlawful (drug-related) purposes</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Offence date</th>
-            <td class="govuk-table__cell">11 June 2018</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--s">Additional offence (07352)</caption>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Offence</th>
-            <td class="govuk-table__cell">Class unspecified - permitting premises to be used - 09329</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Category</th>
-            <td class="govuk-table__cell">Permitting premises to be used for unlawful (drug-related) purposes</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Offence date</th>
-            <td class="govuk-table__cell">11 June 2016</td>
-          </tr>
-        </tbody>
-      </table>
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Offence history
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Offence history
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <table class="govuk-table" data-module="moj-sortable-table">
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">      
+                  <th scope="col" class="govuk-table__header" aria-sort="ascending">Offence date</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Offence</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Category</th>
+                </tr>
+              </thead>
+            
+              <tbody class="govuk-table__body">
+            
+                <tr class="govuk-table__row">
+            
+                  <td class="govuk-table__cell">25 Sep 2020</td>
+            
+                  <td class="govuk-table__cell" data-sort-value="6961">Class unspecified - permitting premises to be used - 09329</td>
+            
+                  <td class="govuk-table__cell">Permitting premises to be used for unlawful (drug-related) purposes</td>
+            
+                </tr>
+            
+                <tr class="govuk-table__row">
+            
+                  <td class="govuk-table__cell">11 Nov 2018</td>
+            
+                  <td class="govuk-table__cell" data-sort-value="6194">Class unspecified - permitting premises to be used - 09329</td>
+            
+                  <td class="govuk-table__cell">Permitting premises to be used for unlawful (drug-related) purposes</td>
+            
+                </tr>
+            
+              </tbody>
+            </table>
+          </div>
+        </div>  
+      </div>
+    </details>
 
     <form action="/find/crn-path/main-catalogue-page" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button type="submit" class="govuk-button" data-module="govuk-button">
-        Accept and send
+        Continue
       </button>
     </form>
     </div>

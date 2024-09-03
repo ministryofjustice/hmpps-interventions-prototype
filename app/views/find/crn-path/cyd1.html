@@ -20,16 +20,12 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <h1 class="govuk-heading-l">Check Alex River's details before sending your search</h1>
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-visually-hidden">Warning</span>
-        If these details are incorrect they should be updated in nDelius or OASys by someone with edit access.<br>
-        To be aware that other systems like <a href="#">nDelius</a> or <a href="#">OASys</a> should be used for checking further info or check case notes.
-        Softer wording for "By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct."
-      </strong>
+    <h1 class="govuk-heading-l">Review Alex River’s information for the search</h1>
+
+    <div class="govuk-inset-text">
+      These details will be used to find suitable interventions for Alex, so they must be up to date. <br><br>If the details are incorrect, they should be updated in <a href="#">nDelius</a> or <a href="#">OASys</a> by someone with edit access.
     </div>
+
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -56,95 +52,227 @@ href: "javascript:history.back()"
 
     <h2 class="govuk-heading-l">Personal details</h2>
 <!--Personal details-->
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">Personal details</caption>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="col" class="moj-fixed-width-40 govuk-table__header">Name</th>
-          <td class="govuk-table__cell">Alex River</th>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Case reference number (CRN)	</th>
-          <td class="govuk-table__cell">X123456</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Date of birth</th>
-          <td class="govuk-table__cell">5 January 1978 <br>(23 years, 6 months)</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Gender</th>
-          <td class="govuk-table__cell">Male</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Accommodation status</th>
-          <td class="govuk-table__cell">Homeless - rough sleeping	</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Probation delivery unit (PDU)</th>
-          <td class="govuk-table__cell">County Durham: Darlington Probation Office</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Personal details
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Alex River
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              5 Jan 1978 (46 years old)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              CRN
+            </dt>
+            <dd class="govuk-summary-list__value">
+              X123456
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Gender
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Male
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Preferred language
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Polish
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Disabilities
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Hearing disability - Hard of hearing</li>
+                <li>Medical disability - Chronic Fatigue Syndrome (CFS)</li>
+                <li>Medical disability - Epilectic</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+<!--Current location-->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Alex River’s current location
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Location
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Community
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              PDU (Probation Delivery Unit)	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Durham
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+<!--Circumstances-->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Alex River’s circumstances
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Accommodation status	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Homeless - rough sleeping
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Employment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Zero hours contract
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Caring responsibilities	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              -
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Pregnant or new mother *	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              -
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+<!--Access needs-->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Alex River’s access needs
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Mobility, disability or accessibility needs	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              -
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Interpreter required
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Interpreter language	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Polish
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
 
-<!--Employment-->
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">Personal circumstances</caption>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="moj-fixed-width-40 govuk-table__header">Employment</th>
-          <td class="govuk-table__cell">Zero hours contract</td>
-        </tr>
-      </tbody>
-    </table>
-
-<!--Disability and adjustments-->
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">Disability and adjustments</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="moj-fixed-width-40 govuk-table__header">Disability category</th>
-          <th scope="col" class="govuk-table__header">Disability condition</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header" style="font-weight: normal;">Hearing disability</th>
-          <td class="govuk-table__cell">Hard of hearing</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header" style="font-weight: normal;">Medical disability</th>
-          <td class="govuk-table__cell">Chronic Fatigue Syndrome (CFS)</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header" style="font-weight: normal;">Medical disability</th>
-          <td class="govuk-table__cell">Epilectic</td>
-        </tr>
-      </tbody>
-    </table>
-
-<!--Equality monitoring-->
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">Equality monitoring</caption>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="moj-fixed-width-40 govuk-table__header">Preferred language</th>
-          <td class="govuk-table__cell">Polish</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Interpreter required</th>
-          <td class="govuk-table__cell">Yes</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Pregnancy and maternity</th>
-          <td class="govuk-table__cell">Not applicable</td>
-        </tr>
-      </tbody>
-    </table>
+<!--Circumstances-->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Alex River’s circumstances
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Accommodation status	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Homeless - rough sleeping
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Employment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Zero hours contract
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Caring responsibilities	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              -
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Pregnant or new mother *	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              -
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
     
   <form action="/find/crn-path/main-catalogue-page" method="post" novalidate>
     <input type="hidden" name="answers-checked" value="true">
     <button type="submit" class="govuk-button" data-module="govuk-button">
-      Accept and send
+      Continue
     </button>
   </form>
   </div>
