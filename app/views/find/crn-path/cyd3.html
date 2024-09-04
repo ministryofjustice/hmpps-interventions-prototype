@@ -54,7 +54,7 @@ href: "javascript:history.back()"
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
-          Sentence and offence details 
+          Sentence and main offence details 
         </h2>
       </div>
       <div class="govuk-summary-card__content">
@@ -69,7 +69,7 @@ href: "javascript:history.back()"
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Offence category
+              Category
             </dt>
             <dd class="govuk-summary-list__value">
               Public Health Offence
@@ -217,63 +217,67 @@ href: "javascript:history.back()"
     </div>  
 
 <!--Offence history-->
-    <details class="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Offence history
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Offence history
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <table class="govuk-table" data-module="moj-sortable-table">
+<h2 class="govuk-heading-m">Offence history</h2>
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">
+        Most recent offences
+      </h2>
+    </div>
+    <div class="govuk-summary-card__content">
+      <table class="govuk-table" data-module="moj-sortable-table">
 
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">      
-                  <th scope="col" class="govuk-table__header" aria-sort="ascending">Offence date</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Offence</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Category</th>
-                </tr>
-              </thead>
-            
-              <tbody class="govuk-table__body">
-            
-                <tr class="govuk-table__row">
-            
-                  <td class="govuk-table__cell">25 Sep 2020</td>
-            
-                  <td class="govuk-table__cell" data-sort-value="6961">Class unspecified - permitting premises to be used - 09329</td>
-            
-                  <td class="govuk-table__cell">Permitting premises to be used for unlawful (drug-related) purposes</td>
-            
-                </tr>
-            
-                <tr class="govuk-table__row">
-            
-                  <td class="govuk-table__cell">11 Nov 2018</td>
-            
-                  <td class="govuk-table__cell" data-sort-value="6194">Class unspecified - permitting premises to be used - 09329</td>
-            
-                  <td class="govuk-table__cell">Permitting premises to be used for unlawful (drug-related) purposes</td>
-            
-                </tr>
-            
-              </tbody>
-            </table>
-          </div>
-        </div>  
-      </div>
-    </details>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">      
+            <th scope="col" class="govuk-table__header" aria-sort="ascending">Offence date</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Offence</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Category</th>
+          </tr>
+        </thead>
+      
+        <tbody class="govuk-table__body">
+      
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell">25 Sep 2020</td>
+      
+            <td class="govuk-table__cell" data-sort-value="6961">Class unspecified - permitting premises to be used - 09329</td>
+      
+            <td class="govuk-table__cell">Permitting premises to be used for unlawful (drug-related) purposes</td>
+      
+          </tr>
+      
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell">11 Nov 2018</td>
+      
+            <td class="govuk-table__cell" data-sort-value="6194">Class unspecified - permitting premises to be used - 09329</td>
+      
+            <td class="govuk-table__cell">Permitting premises to be used for unlawful (drug-related) purposes</td>
+      
+          </tr>
+      
+        </tbody>
+      </table>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            See full offence history
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Alex River has no futher offences.
+        </div>
+      </details>
+    </div>
+  </div>  
+
+
 
     <form action="/find/crn-path/main-catalogue-page" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button type="submit" class="govuk-button" data-module="govuk-button">
-        Continue
+        Confirm and send
       </button>
     </form>
     </div>
