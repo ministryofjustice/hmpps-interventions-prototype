@@ -89,7 +89,9 @@ href: "javascript:history.back()"
             <label class="govuk-label govuk-label--m" for="keywords">
               PDU (Probation Delivery Unit)
             </label>
-            <details class="govuk-details">
+
+            <input class="govuk-input" id="keywords" name="keywords" type="text" value="Durham">
+            <details class="govuk-details" style="margin-top: 15px;">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
                   Want to change PDU?
@@ -99,7 +101,6 @@ href: "javascript:history.back()"
                 Only change PDU if Alex is being transferred. To change the PDU start typing in the box then choose new PDU from the list.
               </div>
             </details>
-            <input class="govuk-input" id="keywords" name="keywords" type="text" value="Durham">
           </div>
     
           <div class="govuk-form-group">
@@ -657,13 +658,13 @@ href: "javascript:history.back()"
       <nav class="moj-pagination" aria-label="Pagination navigation">
 
         <ul class="moj-pagination__list">
-          <li class="moj-pagination__item  moj-pagination__item--prev">
+          <!--<li class="moj-pagination__item  moj-pagination__item--prev">
             <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> page</span></a>
-          </li>
+          </li>-->
       
-          <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1" aria-label="Page 1 of 30">1</a></li>
-      
-          <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 2 of 30" aria-current="page">2</li>
+          <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 2 of 30" aria-current="page">1</li>
+
+          <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1" aria-label="Page 1 of 30">2</a></li>
       
           <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3" aria-label="Page 3 of 30">3</a></li>
       
