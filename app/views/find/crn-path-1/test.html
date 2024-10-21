@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Main catalogue page
+Confirm customer details
 {% endblock %}
 
 {% block main %}
@@ -20,10 +20,14 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <span class="govuk-caption-l">Alex River (CRN: X123456)</span>
-    <h1 class="govuk-heading-l">Search results</h1>
-    <div class="govuk-inset-text">
-      Be aware that in some cases we cannot match all the court orders with the search results.
+    <h1 class="govuk-heading-l">Alex River</h1>
+    <p id="company-number">CRN <strong>X123456</strong></p>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        Be aware that in come cases we cannot match all the court orders with the search results
+      </strong>
     </div>
   </div>
 </div>
@@ -48,7 +52,7 @@ href: "javascript:history.back()"
             </div>
 
             <div class="moj-filter__heading-action">
-              <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="search-filter">See selected filters</a>. They cannot be edit in here.</p>
+              <p><a class="govuk-link govuk-link--no-visited-state" href="#">See selected filters</a>. They cannot be edit in here.</p>
             </div>
           </div>
     
@@ -79,121 +83,250 @@ href: "javascript:history.back()"
             Apply filters
           </button>
     
-          <!--<div class="govuk-form-group">
+          <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="keywords">
               Keywords
             </label>
             <input class="govuk-input" id="keywords" name="keywords" type="text">
-          </div> -->
-
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="keywords">
-              PDU (Probation Delivery Unit)
-            </label>
-
-            <input class="govuk-input" id="keywords" name="keywords" type="text" value="Durham">
-            <details class="govuk-details" style="margin-top: 15px;">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Want to change PDU?
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                Only change PDU if Alex is being transferred. To change the PDU start typing in the box then choose new PDU from the list.
-              </div>
-            </details>
           </div>
+
+        <!--<div class="filter-item govuk-!-padding-top-4 govuk-!-margin-bottom-0">
+            <fieldset class="govuk-fieldset" data-module="display-selected">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h3 class="govuk-fieldset__heading">
+                        Publication date
+                    </h3>
+                </legend>
+                <p class="govuk-hint govuk-!-font-size-16">Not selected</p><details class="govuk-details govuk-!-margin-bottom-4" data-module="govuk-details">
+                    <summary class="govuk-details__summary" data-module="show-hide">Show</summary>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h3 class="govuk-fieldset__heading">From</h3>
+                            </legend>
+                            <div class="govuk-date-input" id="published-from">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="published-from-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="published-from-day" name="publishedFrom-day" type="text" inputmode="numeric" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="published-from-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="published-from-month" name="publishedFrom-month" type="text" inputmode="numeric" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="published-from-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="published-from-year" name="publishedFrom-year" type="text" inputmode="numeric" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h3 class="govuk-fieldset__heading">To</h3>
+                            </legend>
+                            <div class="govuk-date-input" id="published-to">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="published-to-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="published-to-day" name="publishedTo-day" type="text" inputmode="numeric" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="published-to-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="published-to-month" name="publishedTo-month" type="text" inputmode="numeric" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="published-to-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="published-to-year" name="publishedTo-year" type="text" inputmode="numeric" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </details>
+            </fieldset>
+        </div>-->
     
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 Needs
               </legend>
-              <!--<p class="govuk-hint govuk-!-font-size-16">2 selected</p>-->
+              <p class="govuk-hint govuk-!-font-size-16">2 selected</p>
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
     
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="type">
-                    Accommodation
+                    Accommodation (18)
                   </label>
                 </div>
     
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
+                  <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                    Education, training and employment (ETE) 
+                    Education, training and employment (ETE) (5)
                   </label>
                 </div>
     
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                    Finance
+                    Finance (2)
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                    Relationships
+                    Relationships (2)
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                    Lifestyle and associates
+                    Lifestyle and associates (2)
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                    Drug misuse
+                    Drug misuse (2)
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                    Alcohol misuse
+                    Alcohol misuse (2)
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                    Emotional wellbeing
-                  </label>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3" checked>
-                  <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                    Thinking and behaviour
+                    Emotional wellbeing (2)
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                    Atitudes
+                    Thinking and behaviour (2)
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                    Atitudes (2)
                   </label>
                 </div>
               </div>
             </fieldset>
           </div>
 
-          <!--<label class="govuk-label govuk-label--m" for="keywords">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="keywords">
+              Probation delivery unit (PDU)
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text" value="County Durham: Darlington Probation Office">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="keywords">
+              Probation office
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text" value="Newcastle upon Tyne Probation office">
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Accessibility facilities
+              </legend>
+              <p class="govuk-hint govuk-!-font-size-16">Not selected</p>
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+    
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete">
+                  <label class="govuk-label govuk-checkboxes__label" for="status">
+                    Disabled access
+                  </label>
+                </div>
+    
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
+                  <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                    Disabled toilet
+                  </label>
+                </div>
+    
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                  <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                    Limited disabled parking available
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                  <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                    Lift available
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                  <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                    Assistance dogs welcome ????
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                  <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                    Building has hearing enhancement facilities
+                  </label>
+                </div>
+    
+              </div>
+            </fieldset>
+          </div>
+
+          <label class="govuk-label govuk-label--m" for="keywords">
             Intervention details
-          </label>-->
+          </label>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 Intervention type
               </legend>
-              <!--<p class="govuk-hint govuk-!-font-size-16">6 selected</p>-->
+              <p class="govuk-hint govuk-!-font-size-16">6 selected</p>
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
                 <div class="govuk-checkboxes__item">
@@ -210,12 +343,19 @@ href: "javascript:history.back()"
                   </label>
                 </div>
     
-                <!--<div class="govuk-checkboxes__item">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                    Toolkits
+                  </label>
+                </div>
+    
+                <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="status-3">
                     Community Accommodation Services (CAS)
                   </label>
-                </div>-->
+                </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress" checked>
@@ -230,13 +370,6 @@ href: "javascript:history.back()"
                     Next generation AP
                   </label>
                 </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete" checked>
-                  <label class="govuk-label govuk-checkboxes__label" for="status-2">
-                    Toolkits
-                  </label>
-                </div>
     
               </div>
             </fieldset>
@@ -247,7 +380,7 @@ href: "javascript:history.back()"
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 Average waiting time
               </legend>
-              <!--<p class="govuk-hint govuk-!-font-size-16">Not selected</p>-->
+              <p class="govuk-hint govuk-!-font-size-16">Not selected</p>
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
     
                 <div class="govuk-checkboxes__item">
@@ -280,13 +413,13 @@ href: "javascript:history.back()"
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 Intervention format
               </legend>
-              <!--<p class="govuk-hint govuk-!-font-size-16">Not selected</p>-->
+              <p class="govuk-hint govuk-!-font-size-16">Not selected</p>
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
     
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete">
                   <label class="govuk-label govuk-checkboxes__label" for="status">
-                    One-to-one
+                    121
                   </label>
                 </div>
     
@@ -300,7 +433,7 @@ href: "javascript:history.back()"
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
                   <label class="govuk-label govuk-checkboxes__label" for="status-3">
-                    Mixed
+                    mixed
                   </label>
                 </div>
 
@@ -313,7 +446,7 @@ href: "javascript:history.back()"
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 Intervention type
               </legend>
-              <!--<p class="govuk-hint govuk-!-font-size-16">Not selected</p>-->
+              <p class="govuk-hint govuk-!-font-size-16">Not selected</p>
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
     
                 <div class="govuk-checkboxes__item">
@@ -354,16 +487,16 @@ href: "javascript:history.back()"
             </div>
           </div>
         </div>
-       <div id="js-facet-tag-wrapper" class="facet-tags__container" aria-live="assertive">
+        <!--<div id="js-facet-tag-wrapper" class="facet-tags__container" aria-live="assertive">
             <span class="govuk-visually-hidden">
             461 results
             sorted by Relevance
             </span>
-        </div>
+        </div>-->
       </div>
 
-      <div class="govuk-caption-l live-search-loading-message" id="js-loading-message"></div>
-        <!--<div id="js-sort-options" data-ga4-change-category="update-sort select">
+      <!--<div class="govuk-caption-l live-search-loading-message" id="js-loading-message"></div>
+        <div id="js-sort-options" data-ga4-change-category="update-sort select">
           <div class="govuk-form-group sort-options gem-c-select">
             <label for="order" class="sort-options__label govuk-label">Sort by</label>
               <select class="js-order-results govuk-select sort-options__select" name="order" id="order" aria-controls="js-search-results-info" data-default-sort-option="relevance" data-relevance-sort-option="relevance">
@@ -378,89 +511,16 @@ href: "javascript:history.back()"
         <div class="finder-results js-finder-results">
           <ul class="gem-c-document-list gem-c-document-list--no-underline govuk-!-margin-bottom-5" style="font-size: 1.1875rem; line-height: 1.3157894737;margin: 0;
     padding: 0;">
-
-<!--AcP 1-->
-            <li class="gem-c-document-list__item" style="border-top:none">
+<!--first AcP-->
+            
+            <li class="gem-c-document-list__item" style="border-top: none;">
               <div class="gem-c-document-list__item-title">          
-                <a class="govuk-link" href="acp-bbr" style="font-weight: 700;">Building better relationships (BBR)</a>
+                <a data-ga4-ecommerce-path="/government/people/bob-alexander" data-ga4-ecommerce-content-id="2dccb494-b707-461b-b48d-b44e069396ec" data-ga4-ecommerce-row="1" data-ga4-ecommerce-index="1" class="  govuk-link" href="#" style="font-weight: 700;">Thinking Skills Programme (TSP)</a>
                 <strong class="moj-badge moj-badge--red">Court order</strong>
               </div>
               <ul class="govuk-list search-result-details">
-                <!--<li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>-->
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
-                <!--<li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li> -->
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
-                <!--<li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>    -->             
-              </ul>
-              <dl class="govuk-summary-list" style="font-size: 1rem;">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Intervention type
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Accredited Programmes
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Risk criteria
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Medium risk of committing future IPV offence or high risk of SARA [TBC]
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Number of sessions
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    30-31 sessions (24 group sessions and 5 or 6 individual sessions)
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Time to complete
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    6 months
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Intervention format
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Group and one-to-one
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Average waiting time
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Under 6 months
-                  </dd>
-                </div>
-              </dl>
-              <p class="gem-c-document-list__item-description">A moderate intensity cognitive-behavioural group work intervention for adult male perpetrators convicted of an Intimate Partner Violence (IPV) related offence against a female partner. Its theory base reflects the growing view that IPV is a complex problem that is likely to have multiple causes. BBR is responsive to the needs of individual participants and provides opportunities to develop skills are introduced during the programme.</p>
-            </li>
-
-<!-- CRS Accommodation-->
-            <li class="gem-c-document-list__item">
-              <div class="gem-c-document-list__item-title">          
-                <a class="  govuk-link" href="crs-single" style="font-weight: 700;">Accommodation services - South West</a>
-                <strong class="moj-badge moj-badge--orange">Done before</strong>
-              </div>
-
-              <ul class="govuk-list search-result-details">
                 <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
-                <!--<li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
                 <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
                 <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
                 <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
@@ -469,72 +529,7 @@ href: "javascript:history.back()"
                 <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
                 <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
                 <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li> -->                 
-              </ul>
-
-              <dl class="govuk-summary-list" style="font-size: 1rem;">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Intervention type
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Commissioned rehabilitative services (CRS)
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Number of sessions
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Variable
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Intervention format
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Group, one-to-one sessions and online learning
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Location
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Location 1<br>
-                    Location 2
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Average waiting time
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Under 6 months
-                  </dd>
-                </div>
-              </dl>
-              <p class="gem-c-document-list__item-description">Services are available for all adult male Service Users, irrespective of risk level or complexity level, on a Community/ Suspended Sentence Order with a RAR or on Licence/Post-Sentence Supervision. They are also available to be delivered pre-release for those who will be under Probation supervision on release. Appointments which are part of sentence delivery will be enforceable.</p>
-            </li>
-
-<!--AcP 2-->
-            <li class="gem-c-document-list__item">
-              <div class="gem-c-document-list__item-title">          
-                <a class="govuk-link" href="acp-tsp" style="font-weight: 700;">Thinking skills programme</a>
-              </div>
-              <ul class="govuk-list search-result-details">
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
-                <!--<li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li> 
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>    -->             
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>                  
               </ul>
               <dl class="govuk-summary-list" style="font-size: 1rem;">
                 <div class="govuk-summary-list__row">
@@ -563,14 +558,6 @@ href: "javascript:history.back()"
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Time to complete
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    6 months
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
                     Intervention format
                   </dt>
                   <dd class="govuk-summary-list__value">
@@ -582,32 +569,96 @@ href: "javascript:history.back()"
                     Average waiting time
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    Under 6 months
+                    under 6 months
                   </dd>
                 </div>
               </dl>
-              <p class="gem-c-document-list__item-description">An accredited cognitive skills offending behaviour programme delivered across HMPPS. It provides continuity of provision across community and custody, and it is the most attended of all accredited programmes.
-                Focuses on developing people’s ability to manage their emotions, make decisions, solve problems, achieve their goals, manage the influence of anti-social relationships, and use pro-social interpersonal skills in their interactions with others.</p>
+              <p class="gem-c-document-list__item-description ">An accredited cognitive skills offending behaviour programme delivered across HMPPS. It provides continuity of provision across community and custody, and it is the most attended of all accredited programmes.
+                Focuses on developing people’s ability to manage their emotions, make decisions, solve problems, achieve their goals, manage the influence of anti-social relationships, and use pro-social interpersonal skills in their interactions with others...</p>
             </li>
-            
-<!--CRS-->
+<!--second SI-->
             <li class="gem-c-document-list__item">
               <div class="gem-c-document-list__item-title">          
-                <a class="  govuk-link" href="crs-double" style="font-weight: 700;">Personal wellbeing services</a>
+                <a data-ga4-ecommerce-path="/government/people/bob-alexander" data-ga4-ecommerce-content-id="2dccb494-b707-461b-b48d-b44e069396ec" data-ga4-ecommerce-row="1" data-ga4-ecommerce-index="1" class="  govuk-link" href="#" style="font-weight: 700;">Stepwise Relationships</a>
+                <strong class="govuk-tag govuk-tag--light-blue">In progress</strong>
               </div>
 
               <ul class="govuk-list search-result-details">
-                <!--<li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
                 <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
                 <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>-->
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
                 <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
-                <!--<li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>-->
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
                 <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
                 <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
-                <!--<li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
-                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>   -->               
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>                  
+              </ul>
+              <dl class="govuk-summary-list" style="font-size: 1rem;">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Intervention type
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Structured intervention
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Risk criteria
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    [TBC]
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Number of sessions
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    10 sessions (1 individual session, 9 group sessions)
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Intervention format
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    in person, group
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Average waiting time
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    under 6 months
+                  </dd>
+                </div>
+              </dl>
+              <p class="gem-c-document-list__item-description ">Aims to support desistance from Intimate Partner Violence (IPV) offending by enabling participants to overcome challenges such as: relationship problems; social skills deficits; attitudes that support relationship violence; aggression and anger; and, emotional mismanagement / self-regulation</p>
+            </li>
+<!--third CRS-->
+            <li class="gem-c-document-list__item">
+              <div class="gem-c-document-list__item-title">          
+                <a data-ga4-ecommerce-path="/government/people/bob-alexander" data-ga4-ecommerce-content-id="2dccb494-b707-461b-b48d-b44e069396ec" data-ga4-ecommerce-row="1" data-ga4-ecommerce-index="1" class="  govuk-link" href="#" style="font-weight: 700;">Finance, benefits and debt services</a>
+                <strong class="moj-badge moj-badge--orange">Done before</strong>
+              </div>
+
+              <ul class="govuk-list search-result-details">
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>                  
               </ul>
 
               <dl class="govuk-summary-list" style="font-size: 1rem;">
@@ -624,7 +675,7 @@ href: "javascript:history.back()"
                     Number of sessions
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    Variable
+                    variable
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -632,15 +683,7 @@ href: "javascript:history.back()"
                     Intervention format
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    Group, one-to-one, online
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Location
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Location 1
+                    one-to-one sessions and online learning
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -648,41 +691,93 @@ href: "javascript:history.back()"
                     Average waiting time
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    Over 1 year
+                    under 6 months
                   </dd>
                 </div>
               </dl>
-              <p class="gem-c-document-list__item-description">The Personal Wellbeing service is a holistic service that looks to address the following rehabilitative needs emotional wellbeing, family and significant other, lifestyle and associates, social inclusion. The Personal Wellbeing service is aimed at male individuals on a community or suspended sentence order with a RAR or on license/post-sentence supervision. The Social Inclusion ‘mentoring’ service will be delivered pre-release for individuals who will be on license. 
-                The Personal Wellbeing service provides a variety of interventions and outcomes based upon the individual’s risk category (low / medium / high).</p>
+              <p class="gem-c-document-list__item-description">Finance, Benefits and Debt (FBD) services help people on probation to understand banking, stabilise debt, and claim benefits. These services are part of the Ministry of Justice’s Commissioned Rehabilitative Services (CRS). Part of the probation system, these services are commissioned and delivered at a local and regional level to provide flexible, responsive services to help break the cycle of reoffending. </p>
             </li>
+<!--forth toolkits-->
+            <li class="gem-c-document-list__item">
+              <div class="gem-c-document-list__item-title">          
+                <a data-ga4-ecommerce-path="/government/people/bob-alexander" data-ga4-ecommerce-content-id="2dccb494-b707-461b-b48d-b44e069396ec" data-ga4-ecommerce-row="1" data-ga4-ecommerce-index="1" class="  govuk-link" href="#" style="font-weight: 700;">Toolkit name</a>
+              </div>
 
+              <ul class="govuk-list search-result-details">
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
+                <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>                  
+              </ul>
+              <dl class="govuk-summary-list" style="font-size: 1rem;">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Intervention type
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Toolkit
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Number of sessions
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Up to 20 sessions
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Intervention format
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    121 with Probation Practitioner or nominated professional (such as Probation Services Officer)
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Average waiting time
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    under 6 months
+                  </dd>
+                </div>
+              </dl>
+              <p class="gem-c-document-list__item-description">Toolkit description This is a short description of what the intervention is about and purpose. This should cover if you need to have a specific motive/sentence/offence for this intervention ...</p>
+            </li>
           </ul>
         </div>
       </div>
-      
-      <nav class="moj-pagination" aria-label="Pagination navigation">
+    <nav class="moj-pagination" aria-label="Pagination navigation">
 
-        <ul class="moj-pagination__list">
-          <!--<li class="moj-pagination__item  moj-pagination__item--prev">
-            <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> page</span></a>
-          </li>-->
-      
-          <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 2 of 30" aria-current="page">1</li>
-
-          <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1" aria-label="Page 1 of 30">2</a></li>
-      
-          <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3" aria-label="Page 3 of 30">3</a></li>
-      
-          <li class="moj-pagination__item moj-pagination__item--dots">…</li>
-      
-          <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=5" aria-label="Page 5 of 30">5</a></li>
-      
-          <li class="moj-pagination__item  moj-pagination__item--next">
-            <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> page</span></a>
-          </li>
-        </ul>
-        <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>30</b> pages</p>
-      </nav>
+      <ul class="moj-pagination__list">
+        <li class="moj-pagination__item  moj-pagination__item--prev">
+          <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> page</span></a>
+        </li>
+    
+        <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1" aria-label="Page 1 of 30">1</a></li>
+    
+        <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 2 of 30" aria-current="page">2</li>
+    
+        <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3" aria-label="Page 3 of 30">3</a></li>
+    
+        <li class="moj-pagination__item moj-pagination__item--dots">…</li>
+    
+        <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=5" aria-label="Page 5 of 30">5</a></li>
+    
+        <li class="moj-pagination__item  moj-pagination__item--next">
+          <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> page</span></a>
+        </li>
+      </ul>
+      <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>30</b> pages</p>
+    </nav>
     
   </div>
 </div>

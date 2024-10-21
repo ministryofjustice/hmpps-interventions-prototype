@@ -154,3 +154,47 @@ th.moj-fixed-width-40 {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+.rosh-widget--high {
+    border: 2px solid #d4351c;
+    padding: 20px;
+}
+
+.rosh-widget--medium {
+    border: 2px solid #f47738;
+    padding: 20px;
+}
+
+.rosh-widget--low {
+    border: 2px solid #85994b;
+    padding: 20px;
+}
+
+.risk-flag-widget {
+    border: 2px solid #93afc3;
+    background-color: #ebf7ff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.rosh-widget__risk--low {
+    color: #485b10;
+    font-weight: bold;
+    text-align: left;
+}
+
+.rosh-widget__risk--medium {
+    color: #a34e00;
+    font-weight: bold;
+    text-align: left;
+}
+
+.rosh-widget__risk--high {
+    color: #942514;
+    font-weight: bold;
+    text-align: left;
+}
+
+.rosh-widget__table tbody th {
+    font-weight: 400;
+}

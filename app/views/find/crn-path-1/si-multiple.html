@@ -1,0 +1,675 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Stepwise emotions
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="#">
+          <div class="govuk-form-group">
+            <span class="govuk-caption-l">Alex River (CRN: X123456)</span>
+            <h1 class="govuk-heading-l">Stepwise emotions</h1> 
+          </div>
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+          <dl class="govuk-summary-list" style="font-size: 1rem;">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Needs
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list search-result-details">
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>                  
+                </ul>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Intervention type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Structured Intervention
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Risk criteria [TBC]
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Medium, high or very high OSP (OASys Sexual Reconviction Predictor)
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Number of sessions
+              </dt>
+              <dd class="govuk-summary-list__value">
+                9 sessions (1 individual session and 8 group sessions)
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Time to complete
+              </dt>
+              <dd class="govuk-summary-list__value">
+                6 months
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Intervention format
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Varies (this is location specific) 
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Location
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="#location-1">Location 1 details</a>, 
+                <a href="#location-2">Location 2 details</a>,
+                <a href="#location-1">Location 3 details</a>,
+                <a href="#location-2">Location 4 details</a>,
+                <a href="#location-1">Location 5 details</a>,
+                <a href="#location-2">Location 6 details</a>,
+                <a href="#location-1">Location 7 details</a>, 
+                <a href="#location-2">Location 8 details</a>, 
+                <a href="#location-1">Location 9 details</a>,
+                <a href="#location-2">Location 10 details</a>,
+                <a href="#location-1">Location 11 details</a>,
+                <a href="#location-2">Location 12 details</a>,
+                <a href="#location-1">Location 13 details</a>,
+                <a href="#location-2">Location 14 details</a>,
+                <a href="#location-1">Location 15 details</a>,
+                <a href="#location-2">Location 16 details</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Average waiting time
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Varies (this is location specific) 
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Overview (Intervention summary)</h2>
+          <p class="govuk-body">Stepwise Emotions is a structured intervention. A structured intervention is a set of exercises
+            delivered by a regional interventions team to help participants work towards positive life goals and
+            deal with situations in ways that lead away from offending. Structured interventions help
+            participants build on strengths they already have and develop new skills for a better future.
+            Exercises enable them to manage challenging thoughts and emotions, work through problems, and
+            build better relationships with people in their life. Structured interventions may be completed as part
+            of a community order, suspended sentence order or as a licence condition</p>
+          <p class="govuk-body">Stepwise Emotions helps participants to manage their thoughts, feelings and behaviour towards
+            others. It combines accredited programme (AcP) content with content from legacy interventions
+            developed by community rehabilitation companies. Completing each session can be classed as
+            one day of a rehabilitation activity requirement.</p>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Who is eligible</h2>
+          <p class="govuk-body">You can refer for this intervention if all of the following apply:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>they are both male and female</li>
+            <li>they are aged 18 or over</li>
+            <li>If case is not suitable for an AcP, then OVP: 20+ (If No OVP, OGRS: 25+) </li>
+            <li>Need is evidenced by at least one of the following OASys criteria being satisfied, 11.3 = 2, Thinking & behaviour related RoSH, Attitudes related RoSH</li>
+          </ul>
+          <div class="govuk-inset-text">
+            [Placeholder] Please be aware that this intervention has a dependencies on others (for example you need to finish intervention <a href="#">[intervention name]</a> before starting this one)
+          </div>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">What they will study (Topics/curriculum)</h2>
+          <p class="govuk-body">Stepwise Emotions consists of a total of 34 exercises delivered across 9 sessions. It can only be
+            accessed by participants who have completed a pre-intervention module (or equivalent set of
+            activities) with their Probation Practitioner (or other nominated supporter) to help get them ‘group
+            room ready’. Stepwise Emotions can only be mandated therefore for participants with 10 or more
+            RAR days</p>
+          <p class="govuk-body">Modules</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Preliminary One-to-One Session (including Introducing Stepwise Emotions, Understanding Me, Life Map, Portfolio)</li>
+            <li>Foundation (includes Steps Towards Change, Identity, Role Call, Accessing to Community Supports: Survival Packs, Risk and Protective Factors - Goal Setting, Success Wheel, Tug of War, Understanding What I Do: Self-Monitoring & the Learning Log, Power of Breathing)</li>
+            <li>Emotions (including Understanding Stress, Triggers, Managing Stress, Time Out)</li>
+            <li>Thinking (including Seeing It As It Is, Reading Situations (Thinking Biases), Seeing the Bigger Picture (Helicopter View Tool), Here and Now Practice, Self-Talk, Personal Rules, Challenging Unhelpful Thinking (The RUN tool), The Great Eight)</li>
+            <li>Safe & Social (including Social Circles, Getting into the Right Frame of Mind to Talk, Communication Skills (The BRITE Tool), Being Assertive – Getting Yourself Across, Skills Practice, Dealing with Criticism, Staying on Track, Change, Accept, Let Go, Skills Practice, Affirmation Wheels, My Steps Towards Change, Reslience and Change, Moving Forward</li>
+          </ul>
+          <p class="govuk-body">Goals aiming to achieve</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>group session - build prosocial behaviour, review thoughts or questions from the previous session and get participants ready for learning. </li>
+            <li>exercises - developing a working alliance with the participant and strengthen your
+              working alliance by giving the participant an opportunity to describe aspects of their learning history that they feel comfortable sharing.</li>
+            <li>Although we don’t aim to address unresolved trauma on this
+              intervention, we know that participants are affected by their past and we will create a supportive
+              place to strengthen coping skills.</li>
+            <li>The Staying on Track skill aims to help
+              give participants a greater sense of control over their thinking, emotions and behaviours when they
+              are being pressurised by peers to do something against their interests.</li>
+            <li>[placeholder]</li>
+            <li>[placeholder]</li>
+            <li>[placeholder]</li>
+          </ul>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Locations:</h2>
+          <details class="govuk-details" id="location-1">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Location 1
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <h3 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+              <dl class="govuk-summary-list" style="font-size: 1rem;">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Location address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    100 Name Street, Postcode, City
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Intervention format
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Group
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Average waiting time
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    under 6 months
+                  </dd>
+                </div>
+              </dl>
+              <h3 class="govuk-heading-m">Accessibility and other info</h2>
+              <p class="govuk-body">[placeholder] This section can cover topics such as accessibility needs and how they are catered for and neurodivergence</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Disabled access</li>
+                <li>Disabled toilet</li>
+                <li>Limited disabled parking available</li>
+                <li>Lift available </li>
+                <li>Assistance dogs welcome ????</li>
+                <li>Building has hearing enhancement facilities</li>
+              </ul> 
+              
+              <h3 class="govuk-heading-m">Get help with your referal or intervention</h2>
+              <ul class="govuk-list">
+                <li>Phone: 020 7946 0101</li>
+                <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+                <li>Email: name@example.com</li>
+              </ul>
+            </div>
+          </details>
+          <details class="govuk-details" id="location-2">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Location 2
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <h3 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+              <dl class="govuk-summary-list" style="font-size: 1rem;">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Location address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    3 Name Street, Postcode, City
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Intervention format
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Group
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Average waiting time
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    1 year or over
+                  </dd>
+                </div>
+              </dl>
+              <h3 class="govuk-heading-m">Accessibility and other info</h2>
+              <p class="govuk-body">[placeholder] This section can cover topics such as accessibility needs and how they are catered for and neurodivergence</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Disabled access</li>
+                <li>Disabled toilet</li>
+                <li>Limited disabled parking available</li>
+                <li>Lift available </li>
+                <li>Assistance dogs welcome ????</li>
+                <li>Building has hearing enhancement facilities</li>
+              </ul>
+              
+              <h3 class="govuk-heading-m">Get help with your referal or intervention</h2>
+              <ul class="govuk-list">
+                <li>Phone: 020 7946 0101</li>
+                <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+                <li>Email: name@example.com</li>
+              </ul>
+            </div>
+          </details>
+          <details class="govuk-details" id="location-2">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Location 3
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <h3 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+              <dl class="govuk-summary-list" style="font-size: 1rem;">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Location address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    3 Name Street, Postcode, City
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Intervention format
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Group
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Average waiting time
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    1 year or over
+                  </dd>
+                </div>
+              </dl>
+              <h3 class="govuk-heading-m">Accessibility and other info</h2>
+              <p class="govuk-body">[placeholder] This section can cover topics such as accessibility needs and how they are catered for and neurodivergence</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Disabled access</li>
+                <li>Disabled toilet</li>
+                <li>Limited disabled parking available</li>
+                <li>Lift available </li>
+                <li>Assistance dogs welcome ????</li>
+                <li>Building has hearing enhancement facilities</li>
+              </ul>
+              
+              <h3 class="govuk-heading-m">Get help with your referal or intervention</h2>
+              <ul class="govuk-list">
+                <li>Phone: 020 7946 0101</li>
+                <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+                <li>Email: name@example.com</li>
+              </ul>
+            </div>
+          </details>
+          <details class="govuk-details" id="location-2">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Location 4
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <h3 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+              <dl class="govuk-summary-list" style="font-size: 1rem;">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Location address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    3 Name Street, Postcode, City
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Intervention format
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Group
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Average waiting time
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    1 year or over
+                  </dd>
+                </div>
+              </dl>
+              <h3 class="govuk-heading-m">Accessibility and other info</h2>
+              <p class="govuk-body">[placeholder] This section can cover topics such as accessibility needs and how they are catered for and neurodivergence</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Disabled access</li>
+                <li>Disabled toilet</li>
+                <li>Limited disabled parking available</li>
+                <li>Lift available </li>
+                <li>Assistance dogs welcome ????</li>
+                <li>Building has hearing enhancement facilities</li>
+              </ul>
+              
+              <h3 class="govuk-heading-m">Get help with your referal or intervention</h2>
+              <ul class="govuk-list">
+                <li>Phone: 020 7946 0101</li>
+                <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+                <li>Email: name@example.com</li>
+              </ul>
+            </div>
+          </details>
+          <details class="govuk-details" id="location-2">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Location 5
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <h3 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+              <dl class="govuk-summary-list" style="font-size: 1rem;">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Location address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    3 Name Street, Postcode, City
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Intervention format
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Group
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Average waiting time
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    1 year or over
+                  </dd>
+                </div>
+              </dl>
+              <h3 class="govuk-heading-m">Accessibility and other info</h2>
+              <p class="govuk-body">[placeholder] This section can cover topics such as accessibility needs and how they are catered for and neurodivergence</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Disabled access</li>
+                <li>Disabled toilet</li>
+                <li>Limited disabled parking available</li>
+                <li>Lift available </li>
+                <li>Assistance dogs welcome ????</li>
+                <li>Building has hearing enhancement facilities</li>
+              </ul>
+              
+              <h3 class="govuk-heading-m">Get help with your referal or intervention</h2>
+              <ul class="govuk-list">
+                <li>Phone: 020 7946 0101</li>
+                <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+                <li>Email: name@example.com</li>
+              </ul>
+            </div>
+          </details>
+          <details class="govuk-details" id="location-2">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Location 6
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <h3 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+              <dl class="govuk-summary-list" style="font-size: 1rem;">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Location address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    3 Name Street, Postcode, City
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Intervention format
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Group
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Average waiting time
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    1 year or over
+                  </dd>
+                </div>
+              </dl>
+              <h3 class="govuk-heading-m">Accessibility and other info</h2>
+              <p class="govuk-body">[placeholder] This section can cover topics such as accessibility needs and how they are catered for and neurodivergence</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Disabled access</li>
+                <li>Disabled toilet</li>
+                <li>Limited disabled parking available</li>
+                <li>Lift available </li>
+                <li>Assistance dogs welcome ????</li>
+                <li>Building has hearing enhancement facilities</li>
+              </ul>
+              
+              <h3 class="govuk-heading-m">Get help with your referal or intervention</h2>
+              <ul class="govuk-list">
+                <li>Phone: 020 7946 0101</li>
+                <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+                <li>Email: name@example.com</li>
+              </ul>
+            </div>
+          </details>
+          <details class="govuk-details" id="location-2">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Location 7
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <h3 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+              <dl class="govuk-summary-list" style="font-size: 1rem;">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Location address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    3 Name Street, Postcode, City
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Intervention format
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Group
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Average waiting time
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    1 year or over
+                  </dd>
+                </div>
+              </dl>
+              <h3 class="govuk-heading-m">Accessibility and other info</h2>
+              <p class="govuk-body">[placeholder] This section can cover topics such as accessibility needs and how they are catered for and neurodivergence</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Disabled access</li>
+                <li>Disabled toilet</li>
+                <li>Limited disabled parking available</li>
+                <li>Lift available </li>
+                <li>Assistance dogs welcome ????</li>
+                <li>Building has hearing enhancement facilities</li>
+              </ul>
+              
+              <h3 class="govuk-heading-m">Get help with your referal or intervention</h2>
+              <ul class="govuk-list">
+                <li>Phone: 020 7946 0101</li>
+                <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+                <li>Email: name@example.com</li>
+              </ul>
+            </div>
+          </details>
+          <details class="govuk-details" id="location-2">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Location 8
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <h3 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+              <dl class="govuk-summary-list" style="font-size: 1rem;">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Location address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    3 Name Street, Postcode, City
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Intervention format
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Group
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Average waiting time
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    1 year or over
+                  </dd>
+                </div>
+              </dl>
+              <h3 class="govuk-heading-m">Accessibility and other info</h2>
+              <p class="govuk-body">[placeholder] This section can cover topics such as accessibility needs and how they are catered for and neurodivergence</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Disabled access</li>
+                <li>Disabled toilet</li>
+                <li>Limited disabled parking available</li>
+                <li>Lift available </li>
+                <li>Assistance dogs welcome ????</li>
+                <li>Building has hearing enhancement facilities</li>
+              </ul>
+              
+              <h3 class="govuk-heading-m">Get help with your referal or intervention</h2>
+              <ul class="govuk-list">
+                <li>Phone: 020 7946 0101</li>
+                <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+                <li>Email: name@example.com</li>
+              </ul>
+            </div>
+          </details>
+          <details class="govuk-details" id="location-2">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Location 9
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <h3 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+              <dl class="govuk-summary-list" style="font-size: 1rem;">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Location address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    3 Name Street, Postcode, City
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Intervention format
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Group
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Average waiting time
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    1 year or over
+                  </dd>
+                </div>
+              </dl>
+              <h3 class="govuk-heading-m">Accessibility and other info</h2>
+              <p class="govuk-body">[placeholder] This section can cover topics such as accessibility needs and how they are catered for and neurodivergence</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Disabled access</li>
+                <li>Disabled toilet</li>
+                <li>Limited disabled parking available</li>
+                <li>Lift available </li>
+                <li>Assistance dogs welcome ????</li>
+                <li>Building has hearing enhancement facilities</li>
+              </ul>
+              
+              <h3 class="govuk-heading-m">Get help with your referal or intervention</h2>
+              <ul class="govuk-list">
+                <li>Phone: 020 7946 0101</li>
+                <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+                <li>Email: name@example.com</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- {{ govukButton({
+            text: 'Continue'
+          }) }} -->
+          <div class="govuk-button-group">
+            <a href="#" class="govuk-button">
+              Make a referral
+            </a>
+            <a href="#" class="govuk-button govuk-button--secondary">
+              Create a deeplink for nDelius
+            </a>
+          </div>
+
+      </form>
+    </div>
+  </div>
+
+
+
+{% endblock %}
