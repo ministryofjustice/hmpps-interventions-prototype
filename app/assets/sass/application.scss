@@ -69,10 +69,6 @@
     }
 }
 
-.gem-c-document-list--no-underline .gem-c-document-list__item-title .govuk-link {
-    text-decoration: none;
-}
-
 .govuk-grid-column-one-half {
     box-sizing: border-box;
     padding: 0 15px;
@@ -80,7 +76,7 @@
 
 @media (min-width: 40.0625em) {
     .gem-c-document-list__item-description, .gem-c-document-list__subtext {
-        font-size: 1rem;
+        font-size: 1.1875rem;
         line-height: 1.5;
     }
 }
@@ -99,7 +95,7 @@
 }
 @media (min-width: 40.0625em) {
     .gem-c-document-list__attribute {
-        font-size: 1rem;
+        font-size: 1.1875rem;
         line-height: 1.25;
     }
 }
