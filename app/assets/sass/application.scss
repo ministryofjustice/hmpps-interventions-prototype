@@ -204,3 +204,24 @@ th.moj-fixed-width-40 {
 .rosh-widget__table tbody th {
     font-weight: 400;
 }
+
+.govuk-width-container, .moj-primary-navigation__container, .moj-header__container, .key-details-bar .key-details-bar__key-details {
+    max-width: 1220px;
+    margin: 0 15px;
+  }
+  
+  @media (min-width: 40.0625em) {
+    .govuk-width-container, .moj-primary-navigation__container, .moj-header__container, .key-details-bar .key-details-bar__key-details {
+      margin: 0 30px;
+    }
+  }
+  @media (min-width: 1020px) {
+    .govuk-width-container, .moj-primary-navigation__container, .moj-header__container, .key-details-bar .key-details-bar__key-details {
+      margin: 0 30px;
+    }
+  }
+  @media (min-width: 1280px) {
+    .govuk-width-container, .moj-primary-navigation__container, .moj-header__container, .key-details-bar .key-details-bar__key-details {
+      margin: 0 auto;
+    }
+  }
