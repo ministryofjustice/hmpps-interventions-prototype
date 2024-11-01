@@ -256,7 +256,7 @@ href: "javascript:history.back()"
     </div>
 
     <div class="govuk-inset-text govuk-!-margin-top-8 govuk-!-margin-bottom-8">Imported from Nomis on 1 August 2023, last updated on 16 November 2022</div>
-
+    <div class="govuk-grid-column-two-thirds" style="padding:0px;">
 <!--who is at risk-->
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
@@ -379,12 +379,13 @@ href: "javascript:history.back()"
   </br>
 
 <!--Needs-->
-    <h3 class="govuk-heading-s">Alex River's needs</h3>
-    <table class="govuk-table" style="margin-bottom:0;">
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Alex River's needs</caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="moj-fixed-width-40 govuk-table__header">Need area</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric" style=" text-align: left;">Need level</th>
+          <th scope="col" class="govuk-table__header">Need area</th>
+          <th scope="col" class="govuk-table__header">Need level</th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
@@ -422,21 +423,22 @@ href: "javascript:history.back()"
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header" style="font-weight: normal;">Thinking and behaviour</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric rosh-widget__risk--medium">Medium</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric rosh-widget__risk--high">High</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header" style="font-weight: normal; border-bottom:none;">Attitudes</th>
-          <td class="govuk-table__cell rosh-widget__risk--low govuk-table__cell--numeric" style="border-bottom:none;">Low</td>
+          <th scope="row" class="govuk-table__header" style="font-weight: normal;">Attitudes</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric rosh-widget__risk--low">Low</td>
         </tr>
       </tbody>
     </table>
-  </br></br>
+
     <form action="/find/crn-path-1/main-catalogue-page" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Confirm and send
       </button>
     </form>
+  </div>
   </div>
 </div>
 {% endblock %}

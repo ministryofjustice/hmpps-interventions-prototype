@@ -48,7 +48,7 @@ href: "javascript:history.back()"
         </li>
       </ul>
     </nav>
-
+  <div class="govuk-grid-column-two-thirds" style="padding:0px;">
     <h2 class="govuk-heading-m">Sentence and offence history</h2>
 
 <!--Sentence details-->
@@ -270,61 +270,54 @@ href: "javascript:history.back()"
     </div>  
 
 <!--Offence history-->
-<h2 class="govuk-heading-m">Offence history</h2>
-  <div class="govuk-summary-card">
-    <div class="govuk-summary-card__title-wrapper">
-      <h2 class="govuk-summary-card__title">
-        Most recent offences
-      </h2>
-    </div>
-    <div class="govuk-summary-card__content">
-      <table class="govuk-table" data-module="moj-sortable-table">
 
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">      
-            <th scope="col" class="govuk-table__header" aria-sort="ascending">Offence date</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Offence</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Category</th>
-          </tr>
-        </thead>
-      
-        <tbody class="govuk-table__body">
-      
-          <tr class="govuk-table__row">
-      
-            <td class="govuk-table__cell">25 Sep 2020</td>
-      
-            <td class="govuk-table__cell" data-sort-value="6961">Class unspecified - permitting premises to be used - 09329</td>
-      
-            <td class="govuk-table__cell">Permitting premises to be used for unlawful (drug-related) purposes</td>
-      
-          </tr>
-      
-          <tr class="govuk-table__row">
-      
-            <td class="govuk-table__cell">11 Nov 2018</td>
-      
-            <td class="govuk-table__cell" data-sort-value="6194">Class unspecified - permitting premises to be used - 09329</td>
-      
-            <td class="govuk-table__cell">Permitting premises to be used for unlawful (drug-related) purposes</td>
-      
-          </tr>
-      
-        </tbody>
-      </table>
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            See full offence history
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          Alex River has no futher offences.
-        </div>
-      </details>
-    </div>
-  </div>  
+  <table class="govuk-table" data-module="moj-sortable-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Offence history</caption>
 
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">      
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Offence date</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Offence</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Category</th>
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+
+        <td class="govuk-table__cell">25 Sep 2020</td>
+
+        <td class="govuk-table__cell" data-sort-value="6961">Class unspecified - permitting premises to be used - 09329</td>
+
+        <td class="govuk-table__cell">Permitting premises to be used for unlawful (drug-related) purposes</td>
+
+      </tr>
+
+      <tr class="govuk-table__row">
+
+        <td class="govuk-table__cell">11 Nov 2018</td>
+
+        <td class="govuk-table__cell" data-sort-value="6194">Class unspecified - permitting premises to be used - 09329</td>
+
+        <td class="govuk-table__cell">Permitting premises to be used for unlawful (drug-related) purposes</td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+  <p class="govuk-body"> This includes the last x offences. For full content see <a href="#">nDelius</a>.</p>
+  <!--<details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        See full offence history
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      Alex River has no futher offences.
+    </div>
+  </details> -->
 
 
     <form action="/find/crn-path-1/main-catalogue-page" method="post" novalidate>
@@ -335,5 +328,6 @@ href: "javascript:history.back()"
     </form>
     </div>
   </div>
+</div>
 
 {% endblock %}
