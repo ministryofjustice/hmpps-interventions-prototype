@@ -5,9 +5,6 @@
 
 // Add extra styles here
 
-@import "node_modules/@ministryofjustice/frontend/moj/all";
-
-/* moj fe test */
 
 .key-details-bar {
     background-color: #1d70b8;
@@ -176,6 +173,11 @@ th.moj-fixed-width-40 {
     padding: 20px;
 }
 
+.mappa-widget--purple {
+    border: 2px solid #4C2C92;
+    padding: 20px;
+}
+
 .risk-flag-widget {
     border: 2px solid #93afc3;
     background-color: #ebf7ff;
@@ -226,7 +228,7 @@ th.moj-fixed-width-40 {
     }
   }
 
-  .gem-c-attachment {
+.gem-c-attachment {
     position: relative;
     font-family: "GDS Transport", arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -283,4 +285,20 @@ th.moj-fixed-width-40 {
     direction: ltr;
     line-height: 1.45em;
     color: #0b0c0c;
+}
+
+.red{
+    color: #942514;
+}
+
+.orange{
+    color: #a34e00;;
+}
+
+.green{
+    color: #485b10;
+}
+
+.purple{
+    color: #4C2C92;
 }

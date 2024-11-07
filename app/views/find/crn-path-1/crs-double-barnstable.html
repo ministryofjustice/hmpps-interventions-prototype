@@ -1,0 +1,112 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Accommodation services - South West
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="#">
+          <div class="govuk-form-group">
+            <span class="govuk-caption-l">Alex River (CRN: X123456)</span>
+            <h1 class="govuk-heading-l">Accommodation services - South West</h1> 
+            <strong class="moj-badge moj-badge--red">Court order</strong>
+          </div>
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Barnstable</h2>
+
+            <h3 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+            <dl class="govuk-summary-list" style="font-size: 1rem;">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Location address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  100 Name Street, Postcode, City
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Provider
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Provider name
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Intervention format
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Group, Online, 1-2-1;
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Average waiting time
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  under 6 months
+                </dd>
+              </div>
+            </dl>
+
+            <h3 class="govuk-heading-m">Topics/curriculum</h3>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Pre-tenancy training session</li>
+              <li>Tenancy Guidance</li>
+            </ul>
+
+            <h3 class="govuk-heading-m">Locations covered</h3>
+            <p class="govuk-body">Locations covered by this contract are Gloucestershire, Wiltshire, Somerset, Dorset, Devon and Cornwall with physical offices in the towns of Cheltenham, Gloucester, Swindon, Salisbury, Bath, Weston-Super-Mare, Bristol, Yeovil, Bridgewater, Bournmouth, Taunton, Kingswood/Staple Hill, Frome, Poole, Weymouth, Plymouth, Dartmoor, Torquay, Exeter, Barnstable, Bodmin, Cambourne, Truro, St Austell, RedRuth, Bude.</p>
+            
+            <h3 class="govuk-heading-m">Accessibility and other info</h2>
+            <p class="govuk-body">[placeholder] This section can cover topics such as accessibility needs and how they are catered for and neurodivergence</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Disabled access</li>
+              <li>Disabled toilet</li>
+              <li>Limited disabled parking available</li>
+              <li>Lift available </li>
+              <li>Assistance dogs welcome ????</li>
+              <li>Building has hearing enhancement facilities</li>
+            </ul>
+            
+            <h3 class="govuk-heading-m">Get help with your referal or intervention</h2>
+            <ul class="govuk-list">
+              <li>Phone: 020 7946 0101</li>
+              <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+              <li>Email: name@example.com</li>
+            </ul>
+
+          <!-- {{ govukButton({
+            text: 'Continue'
+          }) }} -->
+          <div class="govuk-button-group">
+            <a href="#" class="govuk-button">
+              Make a referral
+            </a>
+            <a href="#" class="govuk-button govuk-button--secondary">
+              Create a deeplink for nDelius
+            </a>
+          </div>
+
+      </form>
+    </div>
+  </div>
+
+
+
+{% endblock %}
