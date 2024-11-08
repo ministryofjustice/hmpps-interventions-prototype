@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter the person's CRN
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="missing-info">
+      <h1 class="govuk-heading-l">Missing information error</h1>    
+      <div class="rosh-widget rosh-widget--info-missing govuk-!-margin-bottom-6">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+          <span class="blue"><strong>INFORMATION MISSING</strong></span>
+        </h2>
+        <p class="govuk-body govuk-!-margin-bottom-1">There is not enough information in the layer 3 assessment to calculate the recommended programme pathway.[rewording]</p>
+      </div>
+      
+      <a href="landing-page" class="govuk-link govuk-link--no-visited-state">Go back to search page</a>
+          <!-- {{ govukButton({
+            text: 'Continue'
+          }) }} -->
+
+      </form>
+    </div>
+  </div>
+
+
+
+{% endblock %}
