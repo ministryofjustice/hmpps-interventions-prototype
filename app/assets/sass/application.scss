@@ -163,6 +163,16 @@ th.moj-fixed-width-40 {
     padding: 20px;
 }
 
+.rosh-widget--unknown {
+    border: 2px solid #ffdd00;
+    padding: 20px;
+}
+
+.rosh-widget--unable {
+    border: 2px solid #505a5f;
+    padding: 20px;
+}
+
 .rosh-widget--medium {
     border: 2px solid #f47738;
     padding: 20px;
@@ -309,4 +319,8 @@ th.moj-fixed-width-40 {
 
 .blue{
     color: #1d70b8;;
+}
+
+.grey{
+    color: #6e777a;
 }

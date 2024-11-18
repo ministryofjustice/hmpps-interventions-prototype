@@ -1,0 +1,388 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter the person's CRN
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-width-container">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Risk information examples</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <p class="govuk-body-l">You can find below jumplinks to get easier to the selected section:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="#high-rosh-community-custody" class="govuk-link">High ROSH community & custody</a></li>
+            <li><a href="#high-rosh-community" class="govuk-link">High ROSH just in community</a></li>
+            <li><a href="#high-rosh-custody" class="govuk-link">High ROSH just in custody</a></li>
+            <li><a href="#very-high-community-custody" class="govuk-link">Very high ROSH community & custody</a></li>
+            <li><a href="#very-high-community" class="govuk-link">Very high ROSH just in community</a></li>
+            <li><a href="#very-high-custody" class="govuk-link">Very high ROSH just in custody</a></li>
+            <li><a href="#unknown-rosh" class="govuk-link">Unknown ROSH</a></li>
+            <li><a href="#unable-rosh" class="govuk-link">Unable to optain ROSH</a></li>
+          </ul>
+        </div>
+        <div class="govuk-grid-column-one-third">
+
+
+          <h2 class="govuk-heading-l" id="high-rosh-community-custody">High ROSH community &custody</h2>
+<!--High ROSH community+custody-->
+          <h3 class="govuk-heading-m">Risk information</h2>
+          <div class="rosh-widget rosh-widget--high govuk-!-margin-bottom-6">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <span class="red"><strong>HIGH</strong> <span class="govuk-!-font-weight-regular">RoSH</span></span>
+            </h3>
+            <table class="govuk-table rosh-widget__table">
+              <caption class="govuk-!-text-align-left">
+                <p class="govuk-body-m govuk-!-margin-bottom-1">
+                  Risk of serious harm
+                </p>
+                <p class="text-secondary govuk-body-s grey">
+                  Last updated: 1 November 2022
+                </p>
+              </caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Risk to</th>
+                  <th class="govuk-table__header">Custody</th>
+                  <th class="govuk-table__header">Community</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Children</th>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Public</th>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                  <td class="govuk-table__cell rosh-widget__risk--medium">Medium</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Known adult</th>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                  <td class="govuk-table__cell rosh-widget__risk--high">High</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Staff</th>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Prisoners</th>
+                  <td class="govuk-table__cell">N/A</td>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="govuk-inset-text govuk-!-margin-top-8 govuk-!-margin-bottom-8">Imported from [xxx] on 1 August 2023, last updated on 16 November 2022</div>
+
+
+          <h2 class="govuk-heading-l" id="high-rosh-community">High ROSH just community</h2>
+<!--High ROSH community-->
+          <h3 class="govuk-heading-m">Risk information</h2>
+          <div class="rosh-widget rosh-widget--high govuk-!-margin-bottom-6">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <span class="red"><strong>HIGH</strong> <span class="govuk-!-font-weight-regular">RoSH</span></span>
+            </h3>
+            <table class="govuk-table rosh-widget__table">
+              <caption class="govuk-!-text-align-left">
+                <p class="govuk-body-m govuk-!-margin-bottom-1">
+                  Risk of serious harm
+                </p>
+                <p class="text-secondary govuk-body-s grey">
+                  Last updated: 1 November 2022
+                </p>
+              </caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Risk to</th>
+                  <th class="govuk-table__header">Community</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Children</th>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Public</th>
+                  <td class="govuk-table__cell rosh-widget__risk--medium">Medium</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Known adult</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">High</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Staff</th>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Prisoners</th>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <h2 class="govuk-heading-l" id="high-rosh-custody">High ROSH just custody</h2>
+<!--High ROSH custody-->
+          <h3 class="govuk-heading-m">Risk information</h2>
+          <div class="rosh-widget rosh-widget--high govuk-!-margin-bottom-6">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <span class="red"><strong>HIGH</strong> <span class="govuk-!-font-weight-regular">RoSH</span></span>
+            </h3>
+            <table class="govuk-table rosh-widget__table">
+              <caption class="govuk-!-text-align-left">
+                <p class="govuk-body-m govuk-!-margin-bottom-1">
+                  Risk of serious harm
+                </p>
+                <p class="text-secondary govuk-body-s grey">
+                  Last updated: 1 November 2022
+                </p>
+              </caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Risk to</th>
+                  <th class="govuk-table__header">Custody</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Children</th>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Public</th>
+                  <td class="govuk-table__cell rosh-widget__risk--medium">Medium</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Known adult</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">High</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Staff</th>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Prisoners</th>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <h2 class="govuk-heading-l" id="very-high-community-custody">Very high ROSH community & custody</h2>
+<!--Very high ROSH custody and community-->
+          <h3 class="govuk-heading-m">Risk information</h2>
+          <div class="rosh-widget rosh-widget--high govuk-!-margin-bottom-6">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <span class="red"><strong>VERY HIGH</strong> <span class="govuk-!-font-weight-regular">RoSH</span></span>
+            </h3>
+            <table class="govuk-table rosh-widget__table">
+              <caption class="govuk-!-text-align-left">
+                <p class="govuk-body-m govuk-!-margin-bottom-1">
+                  Risk of serious harm
+                </p>
+                <p class="text-secondary govuk-body-s grey">
+                  Last updated: 1 November 2022
+                </p>
+              </caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Risk to</th>
+                  <th class="govuk-table__header">Custody</th>
+                  <th class="govuk-table__header">Community</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Children</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Public</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Known adult</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Staff</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Prisoners</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <h2 class="govuk-heading-l" id="very-high-community">Very high ROSH just in community</h2>
+<!--Very high ROSH community-->
+          <h3 class="govuk-heading-m">Risk information</h2>
+          <div class="rosh-widget rosh-widget--high govuk-!-margin-bottom-6">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <span class="red"><strong>VERY HIGH</strong> <span class="govuk-!-font-weight-regular">RoSH</span></span>
+            </h3>
+            <table class="govuk-table rosh-widget__table">
+              <caption class="govuk-!-text-align-left">
+                <p class="govuk-body-m govuk-!-margin-bottom-1">
+                  Risk of serious harm
+                </p>
+                <p class="text-secondary govuk-body-s grey">
+                  Last updated: 1 November 2022
+                </p>
+              </caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Risk to</th>
+                  <th class="govuk-table__header">Community</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Children</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Public</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Known adult</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Staff</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Prisoners</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <h2 class="govuk-heading-l" id="very-high-custody">Very high ROSH just in custody</h2>
+<!--Very high ROSH custody-->
+          <h3 class="govuk-heading-m">Risk information</h2>
+          <div class="rosh-widget rosh-widget--high govuk-!-margin-bottom-6">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <span class="red"><strong>VERY HIGH</strong> <span class="govuk-!-font-weight-regular">RoSH</span></span>
+            </h3>
+            <table class="govuk-table rosh-widget__table">
+              <caption class="govuk-!-text-align-left">
+                <p class="govuk-body-m govuk-!-margin-bottom-1">
+                  Risk of serious harm
+                </p>
+                <p class="text-secondary govuk-body-s grey">
+                  Last updated: 1 November 2022
+                </p>
+              </caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Risk to</th>
+                  <th class="govuk-table__header">Custody</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Children</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Public</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Known adult</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Staff</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Prisoners</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">Very high</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 class="govuk-heading-l" id="unknown-rosh">Unknown RoSH</h2>
+<!--unknown-rosh-->
+          <h3 class="govuk-heading-m">Risk information</h2>
+          <div class="rosh-widget rosh-widget--unknown govuk-!-margin-bottom-6">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <span class="black"><strong>UNKNOWN LEVEL</strong> <span class="govuk-!-font-weight-regular">RoSH</span></span>
+            </h3>
+            <p class="govuk-body-m govuk-!-margin-bottom-1">
+              Risk of serious harm
+            </p>
+            <p class="text-secondary govuk-body-s grey">
+              A RoSH summary has not been completed for this individual. Check OASys for this persons current assessment status.
+            </p>
+          </div>
+
+          <h2 class="govuk-heading-l" id="unable-rosh">Unable RoSH</h2>
+<!--unable-rosh-->
+          <h3 class="govuk-heading-m">Risk information</h2>
+          <div class="rosh-widget rosh-widget--unable govuk-!-margin-bottom-6">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <span class="black"><strong>UNABLE LEVEL</strong> <span class="govuk-!-font-weight-regular">RoSH</span></span>
+            </h3>
+            <p class="govuk-body-m govuk-!-margin-bottom-1">
+              Risk of serious harm
+            </p>
+            <p class="text-secondary govuk-body-s grey">
+              Something went wrong. We are unable to show RoSH information at this time. Try again later.
+            </p>
+           
+          
+
+
+
+        </div>
+      </div>
+
+  </div>
+</div>
+
+
+
+{% endblock %}
