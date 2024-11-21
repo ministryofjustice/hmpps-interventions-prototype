@@ -1,0 +1,169 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Thinking skills programme (TSP)
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="#">
+          <div class="govuk-form-group">
+            <span class="govuk-caption-l">Alex River (CRN: X123456)</span>
+            <h1 class="govuk-heading-l">Thinking skills programme (TSP)</h1> 
+          </div>
+          <strong class="moj-badge moj-badge--orange">Done before</strong>
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+          <dl class="govuk-summary-list" style="font-size: 1rem;">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Needs
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list search-result-details">
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>                  
+                </ul>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Intervention type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Structured Intervention
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Risk criteria [TBC]
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Medium, high or very high OSP (OASys Sexual Reconviction Predictor)
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Number of sessions
+              </dt>
+              <dd class="govuk-summary-list__value">
+                10 sessions (1 individual session, 9 group sessions)
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Time to complete
+              </dt>
+              <dd class="govuk-summary-list__value">
+                6 months
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Intervention format
+              </dt>
+              <dd class="govuk-summary-list__value">
+                In person, group
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Location
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Location 1 details
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Average waiting time
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Under 6 months
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Overview (Intervention summary)</h2>
+          <p class="govuk-body">Aims to support desistance from Intimate Partner Violence (IPV) offending by enabling participants to overcome challenges such as: relationship problems; social skills deficits; attitudes that support relationship violence; aggression and anger; and, emotional mismanagement / self-regulation.</p>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Who is eligible</h2>
+          <p class="govuk-body">You can refer for this intervention if all of the following apply:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>they are available for all offence types</li>
+            <li>they are both male and female</li>
+            <li>they are aged 18 or over</li>
+            <li>If no SARA or Medium+ on SARA consider BBR</li>
+            <li>AND If case is not suitable for BBR, then OVP: 20+ (If no OVP, 25+ OGRS)</li>
+          </ul>
+          <div class="govuk-inset-text">
+            [Placeholder] Please be aware that this intervention has a dependencies on others (for example you need to finish intervention <a href="#">[intervention name]</a> before starting this one)
+          </div>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">What they will study (Topics/curriculum)</h2>
+          <p class="govuk-body">Modules</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>[placeholder]</li>
+            <li>[placeholder]</li>
+            <li>[placeholder]</li>
+          </ul>
+          <p class="govuk-body">Goals aiming to achieve</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>[placeholder]</li>
+            <li>[placeholder]</li>
+            <li>[placeholder]</li>
+            <li>[placeholder]</li>
+            <li>[placeholder]</li>
+            <li>[placeholder]</li>
+            <li>[placeholder]</li>
+          </ul>
+          
+          <h2 class="govuk-heading-m">Get help with your referal or intervention</h2>
+          <ul class="govuk-list">
+            <li>Phone: 020 7946 0101</li>
+            <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+            <li>Email: name@example.com</li>
+          </ul>
+
+
+          <!-- {{ govukButton({
+            text: 'Continue'
+          }) }} -->
+          <div class="govuk-button-group">
+            <a href="#" class="govuk-button">
+              Make a referral
+            </a>
+            <a href="#" class="govuk-button govuk-button--secondary">
+              Create a deeplink for nDelius
+            </a>
+          </div>
+
+      </form>
+    </div>
+  </div>
+
+
+
+{% endblock %}

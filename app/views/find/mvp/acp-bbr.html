@@ -1,0 +1,172 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Building better relationships (BBR)
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="#">
+          <div class="govuk-form-group">
+            <span class="govuk-caption-l">Alex River (CRN: X123456)</span>
+            <h1 class="govuk-heading-l">Building better relationships (BBR)</h1> 
+          </div>
+          <strong class="moj-badge moj-badge--orange">Done before</strong>
+          
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+          <dl class="govuk-summary-list" style="font-size: 1rem;">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Needs
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list search-result-details">
+                  <!--<li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>-->
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
+                  <!--<li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li> -->
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
+                  <!--<li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>    -->             
+                </ul>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Intervention type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Accredited Programmes
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Risk criteria
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Medium risk of committing future IPV offence or high risk of SARA [TBC]
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Number of sessions
+              </dt>
+              <dd class="govuk-summary-list__value">
+                30-31 sessions (24 group sessions and 5 or 6 individual sessions)
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Time to complete
+              </dt>
+              <dd class="govuk-summary-list__value">
+                6 months
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Intervention format
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Group, one-to-one
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Intervention type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                In person, online, hybrid [TBC]
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Average waiting time
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Under 6 months
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Overview (Intervention summary)</h2>
+          <p class="govuk-body">A moderate intensity cognitive-behavioural group work intervention for adult male perpetrators convicted of an Intimate Partner Violence (IPV) related offence against a female partner. Its theory base reflects the growing view that IPV is a complex problem that is likely to have multiple causes. BBR is responsive to the needs of individual participants and provides opportunities to develop skills are introduced during the programme.</p>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Who is eligible</h2>
+          <p class="govuk-body">You can refer for this intervention if all of the following apply:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>they are in community or custody setting</li>
+            <li>they are male</li>
+            <li>they are aged 18 or over</li>
+            <li>Convicted of an Intimate Partner Violence (IPV) related offence against a female partner</li>
+            <li>Moderate (in custody) or moderate to high (in the community only) risk of committing future IPV offences, as assessed using the Spousal Assault Risk Assessment (SARA)</li>
+            <li>In custody, men can also be referred to BBR if there is evidence of at least one episode of non-convicted IPV within a 2-year period leading up to their conviction for a non-IPV related index offence and they score Moderate or above using SARA. </li>
+            <li>In the community, men whose index offence is not IPV-related can also be referred to BBR if they are assessed as being a High Risk on the SARA and meet all other need criteria. These can include non-convicted incidents, stalking, or coercion.</li>
+            <li>Individuals who are transgender (including those who wish to permanently transition to an acquired gender, those who are intersex and those who identify as non-binary, gender fluid and / or transvestite) are eligible to participate in BBR if they have offended within a heterosexual relationship and identified as male when the offence was committed.</li>
+          </ul>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">What they will study (Topics/curriculum)</h2>
+          <p class="govuk-body">Modules</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>The Foundation Module is always delivered first and comprises of six 2.5-hour sessions which
+              must always be completed prior to the other modules. The remaining modules can then be
+              delivered as either a closed group or in a rolling format, with each module comprising of six 2.5-
+              hour groupwork sessions.</li>
+            <li>After each module participants have a one hour one-to-one session with their designated facilitator,
+              the purpose of which is to provide a bridge between modules, review learning and check progress
+              against goals.</li>
+          </ul>
+          <p class="govuk-body">Goals aiming to achieve</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Support and promote the use of positive behaviours in their intimate
+              relationships</li>
+            <li>to engage participants in visual, audio or kinaesthetic activity, such as role-play or communicating
+              through drawing, rather than relying solely on verbal discussion or reading/writing. </li>
+          </ul>
+
+          <h2 class="govuk-heading-m">Get help with your referal or intervention</h2>
+          <ul class="govuk-list">
+            <li>Phone: 020 7946 0101</li>
+            <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+            <li>Email: name@example.com</li>
+          </ul>
+
+
+          <!-- {{ govukButton({
+            text: 'Continue'
+          }) }} -->
+
+          <div class="govuk-button-group">
+            <a href="#" class="govuk-button">
+              Make a referral
+            </a>
+            <a href="#" class="govuk-button govuk-button--secondary">
+              Create a deeplink for nDelius
+            </a>
+          </div>
+
+      </form>
+    </div>
+  </div>
+
+
+
+{% endblock %}

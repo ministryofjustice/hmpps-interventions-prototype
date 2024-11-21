@@ -1,0 +1,419 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Search filter
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Alex River (CRN: X123456)</span>
+      <h1 class="govuk-heading-l">Search filter</h1>      
+
+      <div class="govuk-inset-text">
+        If the details are incorrect, they should be updated in <a href="#">nDelius</a> or <a href="#">OASys</a> by someone with edit access.
+      </div>
+   
+<!--Personal details-->
+    <!--Personal details-->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Personal details
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Gender
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Male
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+<!--Current location-->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Alex River’s current location
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Location
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Community
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              PDU (Probation Delivery Unit)	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Durham
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+<!--predictor scores-->
+    <h2 class="govuk-heading-s">Predictor scores and risk level</h2>
+    <table class="govuk-table rosh-widget__table">
+      <caption class="govuk-!-text-align-left">
+        <p class="text-secondary govuk-body-s grey">
+          Last updated: 1 November 2022
+        </p>
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Risk</th>
+          <th class="govuk-table__header">Year 1</th>
+          <th class="govuk-table__header">Year 2</th>
+          <th class="govuk-table__header">Risk level</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">OGRS3 probability of proven reoffending</th>
+          <td class="govuk-table__cell">55%</td>
+          <td class="govuk-table__cell">71%</td>
+          <td class="govuk-table__cell rosh-widget__risk--high">High</td>
+        </tr>
+        <tr>
+          <th class="govuk-table__header">OGP probability of proven non-violent reoffending</th>
+          <td class="govuk-table__cell">10%</td>
+          <td class="govuk-table__cell">10%	</td>
+          <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+        </tr>
+        <tr>
+          <th class="govuk-table__header">OVP probability of proven violent-type reoffending</th>
+          <td class="govuk-table__cell">35%</td>
+          <td class="govuk-table__cell">51%</td>
+          <td class="govuk-table__cell rosh-widget__risk--medium">Medium</td>
+        </tr>
+        <tr>
+          <th class="govuk-table__header">OSP indecent image reoffending risk</th>
+          <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span></td>
+          <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span></td>
+          <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span></td>
+        </tr>
+        <tr>
+          <th class="govuk-table__header">OSP contact sexual reoffending risk</th>
+          <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span></td>
+          <td class="govuk-table__cell">1.11%</td>
+          <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span></td>
+        </tr>
+        <tr>
+          <th class="govuk-table__header">Risk of serious recidivism (RSR)</th>
+          <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span></td> 
+          <td class="govuk-table__cell">1.11%</td>
+          <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+        </tr>
+      </tbody>
+    </table>
+
+<!--SARA-->
+    <h2 class="govuk-heading-s">Spousal assault risk assessment</h2>
+    <div class="rosh-widget rosh-widget--high govuk-!-margin-bottom-6">
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        <span class="red"><strong>HIGH</strong> <span class="govuk-!-font-weight-regular">SARA</span></span>
+      </h3>
+      <p class="govuk-body-m govuk-!-margin-bottom-1">Risk of violence towards partner</p>
+      <p class="text-secondary govuk-body-s govuk-!-margin-bottom-0 grey">Last updated: 1 November 2022</p>
+    </div>
+    <div class="rosh-widget rosh-widget--medium govuk-!-margin-bottom-6">
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        <span class="orange"><strong>MEDIUM</strong> <span class="govuk-!-font-weight-regular">SARA</span></span>
+      </h3>
+      <p class="govuk-body-m govuk-!-margin-bottom-1">Risk of violence towards others</p>
+      <p class="text-secondary govuk-body-s govuk-!-margin-bottom-0 grey">Last updated: 1 November 2022</p>
+    </div>
+
+<!--Rosh-->
+    <h2 class="govuk-heading-s">Risk of serious harm</h2>
+    <div class="rosh-widget rosh-widget--high govuk-!-margin-bottom-6">
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        <span class="red"><strong>HIGH</strong> <span class="govuk-!-font-weight-regular">RoSH</span></span>
+      </h3>
+      <table class="govuk-table rosh-widget__table">
+        <caption class="govuk-!-text-align-left">
+          <p class="govuk-body-m govuk-!-margin-bottom-1">
+            Risk of serious harm
+          </p>
+          <p class="text-secondary govuk-body-s grey">
+            Last updated: 1 November 2022
+          </p>
+        </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Risk to</th>
+            <th class="govuk-table__header">Custody</th>
+            <th class="govuk-table__header">Community</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Children</th>
+            <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+            <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+          </tr>
+          <tr>
+            <th class="govuk-table__header">Public</th>
+            <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+            <td class="govuk-table__cell rosh-widget__risk--medium">Medium</td>
+          </tr>
+          <tr>
+            <th class="govuk-table__header">Known adult</th>
+            <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+            <td class="govuk-table__cell rosh-widget__risk--high">High</td>
+          </tr>
+          <tr>
+            <th class="govuk-table__header">Staff</th>
+            <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+            <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+          </tr>
+          <tr>
+            <th class="govuk-table__header">Prisoners</th>
+            <td class="govuk-table__cell">               <span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span></td>
+            <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  <div class="govuk-inset-text govuk-!-margin-top-8 govuk-!-margin-bottom-8">Imported from nDelius on 1 August 2023, last updated on 16 November 2022</div>
+
+<!--Risk alerts-->
+    <h2 class="govuk-heading-s">Risk alerts</h2>
+    <div class="risk-flag-widget">
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Active alerts</h3>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      <ul class="govuk-list govuk-!-margin-top-1 govuk-!-margin-bottom-2">
+        <li>Gang member</li>
+        <li>Arsonist</li>
+        <li>Risk to females</li>
+      </ul>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      <p class="text-secondary govuk-body-s govuk-!-margin-top-2 govuk-!-margin-bottom-0 grey">Last updated: 2 February 2022</p>
+    </div>
+    </br>
+
+
+<!--Needs-->
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Alex River's needs</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Need area</th>
+          <th scope="col" class="govuk-table__header">Need level</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="font-weight: normal;">Accommodation</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric rosh-widget__risk--high">High</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="font-weight: normal;">Education, Training and Employment (ETE)</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric rosh-widget__risk--low">Low</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="font-weight: normal;">Finance</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric rosh-widget__risk--low">Low</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="font-weight: normal;">Relationships</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric rosh-widget__risk--low">Low</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="font-weight: normal;">Lifestyle and associates</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric rosh-widget__risk--low">Low</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="font-weight: normal;">Drug misuse</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric rosh-widget__risk--low">Low</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="font-weight: normal;">Alcohol misuse</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric rosh-widget__risk--low">Low</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="font-weight: normal;">Emotional wellbeing</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric rosh-widget__risk--low">Low</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="font-weight: normal;">Thinking and behaviour</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric rosh-widget__risk--high">High</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="font-weight: normal;">Attitudes</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric rosh-widget__risk--low">Low</td>
+        </tr>
+      </tbody>
+    </table>
+
+<!--Sentence and main offence details-->
+    <!--Sentence details-->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Sentence and main offence details 
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Offence type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Domestic violence (IPV) - 09144
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Category
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Public Health Offence
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Offence date	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              25 Sep 2020
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sentence date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              17 Dec 2024
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              End of sentence date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              10 Sep 2025
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sentence duration
+            </dt>
+            <dd class="govuk-summary-list__value">
+              9 months
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Maximum number of enforceable days
+            </dt>
+            <dd class="govuk-summary-list__value">
+              36 days 
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date intervention to be completed by 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              25 Sep 2026
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Court ordered interventions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Building Better Relationships (BBR)</li>
+                <li>An intervention to rebuild relationships</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <!--MAPPA-->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Multi Agency Public Protection Arrangement management (MAPPA)
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Has this case been referred for MAPPA Level 2 management
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Has this case been referred for Mappa Level 3 management	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Should this case be referred for MAPPA Level 2 management
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Should this case be referred for MAPPA Level 3 management
+            </dt>
+            <dd class="govuk-summary-list__value">
+             No
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>  
+
+    <form action="/find/crn-path-1/main-catalogue-page" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Return to search
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

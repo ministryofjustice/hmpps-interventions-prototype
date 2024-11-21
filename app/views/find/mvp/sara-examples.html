@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter the person's CRN
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-width-container">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Lorem ipsum</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-l">Lorem ipsum</h2>
+          <p class="govuk-body-l">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu ornare massa. Donec blandit velit at quam dapibus, non semper orci feugiat. Quisque posuere sem dapibus pellentesque accumsan. Quisque a ligula sem. Phasellus varius augue ex, sit amet tincidunt tellus lacinia at. Cras dictum commodo mi. Suspendisse quis tincidunt leo.</p>
+          <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu ornare massa. Donec blandit velit at quam dapibus, non semper orci feugiat. Quisque posuere sem dapibus pellentesque accumsan. Quisque a ligula sem. Phasellus varius augue ex, sit amet tincidunt tellus lacinia at. Cras dictum commodo mi. Suspendisse quis tincidunt leo.</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+<!--SARA-->
+          <h3 class="govuk-heading-m">Spousal assault risk assessment</h3>
+          <div class="rosh-widget rosh-widget--high govuk-!-margin-bottom-6">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <span class="red"><strong>HIGH</strong> <span class="govuk-!-font-weight-regular">SARA</span></span>
+            </h3>
+            <p class="govuk-body-m govuk-!-margin-bottom-1">Risk of violence towards partner</p>
+            <p class="text-secondary govuk-body-s govuk-!-margin-bottom-0 grey">Last updated: 1 November 2022</p>
+          </div>
+          <div class="rosh-widget rosh-widget--medium govuk-!-margin-bottom-6">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <span class="orange"><strong>MEDIUM</strong> <span class="govuk-!-font-weight-regular">SARA</span></span>
+            </h3>
+            <p class="govuk-body-m govuk-!-margin-bottom-1">Risk of violence towards others</p>
+            <p class="text-secondary govuk-body-s govuk-!-margin-bottom-0 grey">Last updated: 1 November 2022</p>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

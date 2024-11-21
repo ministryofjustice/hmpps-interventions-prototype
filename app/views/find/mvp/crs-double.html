@@ -1,0 +1,181 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Accommodation services - South West
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="#">
+          <div class="govuk-form-group">
+            <span class="govuk-caption-l">Alex River (CRN: X123456)</span>
+            <h1 class="govuk-heading-l">Accommodation services - South West</h1> 
+            <strong class="moj-badge moj-badge--red">Court order</strong>
+          </div>
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+          <dl class="govuk-summary-list" style="font-size: 1rem;">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Needs
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list search-result-details">
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>               
+                </ul>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Intervention type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Commissioned rehabilitative services (CRS)
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Number of sessions
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Variable
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Intervention format
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Group, one-to-one sessions and online learning
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Intervention type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                In person, online, hybrid [TBC]
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Location
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="#location-1">Location 1<br></a><br>
+                <a href="#location-2">Location 2<br></a><br>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Average waiting time
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Under 6 months
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Overview (Intervention summary)</h2>
+          <p class="govuk-body">Services are available for all adult male Service Users, irrespective of risk level or complexity level, on a Community/ Suspended Sentence Order with a RAR or on Licence/Post-Sentence Supervision. They are also available to be delivered pre-release for those who will be under Probation supervision on release. Appointments which are part of sentence delivery will be enforceable.</p>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">What they will study (Topics/curriculum)</h2>
+          <p class="govuk-body">A range of approaches need to be used including: direct delivery of interventions, support and advocacy, and advice and guidance.</p>
+          <p class="govuk-body">Interventions need to be tailored to reflect the complexity of a Service User’s needs and should aim to secure one or more of the following outcomes:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>All barriers as identified in the Service User Action Plan, for example financial, behavioural, physical, mental or offence-type related), to obtaining or sustaining accommodation, are successfully removed</li>
+            <li>Service User makes progress in obtaining accommodation</li>
+            <li>Service User is helped to secure social or supported housing</li>
+            <li>Service User is helped to secure a tenancy in the private rented sector (PRS)</li>
+            <li>Service User is helped to sustain existing accommodation</li>
+            <li>Service User is prevented from becoming homeless</li>
+            <li>Service User at risk of losing their tenancy are successfully helped to retain it</li>
+            <li>Service User has Settled Accommodation for at least three months (including for those serving custodial sentences of less than 6 months)</li>
+            <li>Service User has a strong prospect of sustaining Settled Accommodation for at least three months (including for those serving custodial sentences of less than 6 months)</li>
+          </ul>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Locations:</h2>
+          <p class="govuk-body govuk-!-margin-top-6">[placeholder]Locations where the programme runs and details for each one of them(how to contact them). If you select a location, you can refer.</p>
+
+          <table class="govuk-table" data-module="moj-sortable-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" aria-sort="ascending">Location</button></th>
+                <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2">PDU</button></th>
+                <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Location details</button></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+          <!--Table for community-->
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="crs-double-barnstable">Location 1</a></td>
+                <td class="govuk-table__cell">PDU name</td>
+                <td class="govuk-table__cell">Lorem ipsum dolor sit amet, consectetur adipiscing.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="crs-double-barnstable">Location 2</a></td>
+                <td class="govuk-table__cell">PDU name</td>
+                <td class="govuk-table__cell">Lorem ipsum dolor sit amet, consectetur adipiscing.</td>
+              </tr>
+              
+          <!--Table for custody-->         
+             <!-- <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="crs-double-aylesbury">Aylesbury (HMP)</a></td>
+                <td class="govuk-table__cell">Category C</td>
+                <td class="govuk-table__cell">Buckinghamshire</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Brinsford (HMP)</a></td>
+                <td class="govuk-table__cell">Category B/C</td>
+                <td class="govuk-table__cell">Wolverhampton</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Frankland (HMP)</a></td>
+                <td class="govuk-table__cell">Category A/B</td>
+                <td class="govuk-table__cell">Durham</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Stoke Heath (HMP)</a></td>
+                <td class="govuk-table__cell">Category C</td>
+                <td class="govuk-table__cell">Shropshire</td>
+                </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Swinton Hall (HMP)</a></td>
+                <td class="govuk-table__cell">Category C</td>
+                <td class="govuk-table__cell">Staffordshire</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="hmp-erlestoke">Erlestoke (HMP)</a></td>
+                <td class="govuk-table__cell">Category C</td>
+                <td class="govuk-table__cell">Wiltshire</td>
+              </tr>-->
+            </tbody>
+          </table> 
+
+          <!-- {{ govukButton({
+            text: 'Continue'
+          }) }} -->
+
+          
+
+      </form>
+    </div>
+  </div>
+
+
+
+{% endblock %}
