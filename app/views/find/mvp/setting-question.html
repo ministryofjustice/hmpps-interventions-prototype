@@ -21,29 +21,38 @@ href: "javascript:history.back()"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post" action="cyd1">
-          <div class="govuk-form-group">
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  <h1 class="govuk-fieldset__heading">
-                    Enter the person’s unique identifier
-                  </h1>
-                </legend>
-                  <p class="govuk-body">This can be CRN or prison number. This will retrieve their details from NDelius and OASys to help you find suitable interventions. </p>
-                  <div class="govuk-form-group">
-                    <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
-                  </div>
-              </fieldset>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Setting?
+            </h1>
+          </legend>
+          <div id="changedName-hint" class="govuk-hint">
+            This is a hint text.
+          </div>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changedName">
+                Community
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="changedName-2">
+                Custody
+              </label>
             </div>
           </div>
-
+        </fieldset>
+      </div>
           <!-- {{ govukButton({
             text: 'Continue'
           }) }} -->
 
           <div class="govuk-button-group govuk-!-margin-top-8">
             <a class="govuk-button" href="/find/mvp/cyd1">Continue</a>
-            <a class="govuk-button govuk-button--secondary" href="/find/mvp/manual-search">Browse interventions catalogue</a>
           </div>
 
           <!--<div class="govuk-button-group">
