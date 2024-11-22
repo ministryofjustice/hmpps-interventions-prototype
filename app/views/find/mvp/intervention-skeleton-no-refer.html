@@ -1,0 +1,253 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Intervention skeleton
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="#">
+          <div class="govuk-form-group">
+            <span class="govuk-caption-l">Alex River (CRN: X123456)</span>
+            <h1 class="govuk-heading-l">Intervention name</h1> 
+          </div>
+         
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+          <dl class="govuk-summary-list" style="font-size: 1rem;">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Needs
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list search-result-details">
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>            
+                </ul>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Intervention type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Setting
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Custody or community
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Gender
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Male or female
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Risk criteria
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum available for some interventions
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Suitable for people with learning disabilities or challenges (LDC)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes/No
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Number of sessions
+              </dt>
+              <dd class="govuk-summary-list__value">
+                e.g. X sessions (X group sessions and X individual sessions)
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Intervention format ('delivery method')
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Group, one-to-one, in person, online, hybrid, ...
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Time to complete
+              </dt>
+              <dd class="govuk-summary-list__value">
+                X months
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Overview (Intervention summary)</h2>
+          <p class="govuk-body">Long description ->>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta, nibh quis convallis pharetra, eros sem cursus dolor, sit amet euismod eros leo sed libero. Pellentesque posuere cursus dui, at placerat orci suscipit quis. Nam massa ex, scelerisque id finibus id, viverra vel dui. Phasellus malesuada arcu eget enim iaculis aliquet. Proin rutrum purus et est laoreet, rhoncus viverra leo pulvinar. Cras vel tellus sit amet lorem elementum faucibus tincidunt in tortor. Nulla non ornare arcu. Nulla lobortis tortor sit amet ante fringilla ultricies quis id ligula. Phasellus viverra facilisis tellus vel pulvinar. Curabitur commodo, ligula vitae posuere ornare, risus massa pellentesque nunc, nec dictum quam nisl ut velit.</p>
+          <p class="govuk-body">Sed dictum lectus eros, non sollicitudin enim mattis eu. Fusce at congue lectus. Fusce porttitor diam id iaculis dignissim. Duis mattis diam eget nibh ornare, eget venenatis tortor pharetra. Nulla efficitur varius lorem a tincidunt. Nullam finibus ornare tellus at dapibus. Vivamus accumsan leo sed malesuada aliquam. Duis nibh quam, pretium suscipit enim a, rhoncus malesuada velit. Aliquam pretium vehicula purus nec iaculis. Vestibulum pellentesque iaculis gravida. Integer commodo nisi vitae eros vulputate laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi id mattis mi.</p>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">What they will study (Topics/curriculum) [to be agreed if this section stays]</h2>
+          <p class="govuk-body">Modules</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            <li>Nullam venenatis magna sed massa vulputate blandit.</li>
+            <li>Sed congue sem vel felis tempor, in dapibus mauris posuere.</li>
+          </ul>
+          <p class="govuk-body">Goals aiming to achieve [to be agreed if this section stays]</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>In viverra ligula in lobortis finibus.</li>
+            <li>Proin aliquam metus id dignissim dictum.</li>
+            <li>Nam vulputate neque sed ligula mattis, sed pulvinar purus aliquet.</li>
+          </ul>
+
+          <h2 class="govuk-heading-m">Get help with your referal or intervention [TBC]</h2>
+          <ul class="govuk-list">
+            <li>Phone: 020 7946 0101</li>
+            <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+            <li>Email: name@example.com</li>
+          </ul>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Locations:</h2>
+          <p class="govuk-body govuk-!-margin-top-6">[placeholder]Locations where the programme runs and details for each one of them(how to contact them). If you select a location, you can refer.</p>
+         
+<!--Table for community-->
+          <h3 class="govuk-heading-s govuk-!-margin-top-8">Locations in community</h3>
+          <table class="govuk-table" data-module="moj-sortable-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" aria-sort="ascending"><button type="button" data-index="0">Location</button></th>
+                <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">PDU</button></th>
+                <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2">Location details</button></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">      
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="crs-double-aylesbury">Aylesbury (HMP)</a></td>
+                <td class="govuk-table__cell">PDU name</td>
+                <td class="govuk-table__cell">Lorem ipsum dolor sit amet, consectetur adipiscing.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Brinsford (HMP)</a></td>
+                <td class="govuk-table__cell">PDU name</td>
+                <td class="govuk-table__cell">Lorem ipsum dolor sit amet, consectetur adipiscing.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Frankland (HMP)</a></td>
+                <td class="govuk-table__cell">PDU name</td>
+                <td class="govuk-table__cell">Lorem ipsum dolor sit amet, consectetur adipiscing.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Stoke Heath (HMP)</a></td>
+                <td class="govuk-table__cell">PDU name</td>
+                <td class="govuk-table__cell">Lorem ipsum dolor sit amet, consectetur adipiscing.</td>
+                </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Swinton Hall (HMP)</a></td>
+                <td class="govuk-table__cell">PDU name</td>
+                <td class="govuk-table__cell">Lorem ipsum dolor sit amet, consectetur adipiscing.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="hmp-erlestoke">Erlestoke (HMP)</a></td>
+                <td class="govuk-table__cell">PDU name</td>
+                <td class="govuk-table__cell">Lorem ipsum dolor sit amet, consectetur adipiscing.</td>
+              </tr>
+            </tbody>
+          </table>
+
+<!--Table for custody-->
+          <h3 class="govuk-heading-s govuk-!-margin-top-8">Locations in custody</h3>
+          <table class="govuk-table" data-module="moj-sortable-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" aria-sort="ascending"><button type="button" data-index="0">Location</button></th>
+                <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Category</button></th>
+                <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2">Country</button></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">      
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="crs-double-aylesbury">Aylesbury (HMP)</a></td>
+                <td class="govuk-table__cell">Category C</td>
+                <td class="govuk-table__cell">Buckinghamshire</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Brinsford (HMP)</a></td>
+                <td class="govuk-table__cell">Category B/C</td>
+                <td class="govuk-table__cell">Wolverhampton</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Frankland (HMP)</a></td>
+                <td class="govuk-table__cell">Category A/B</td>
+                <td class="govuk-table__cell">Durham</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Stoke Heath (HMP)</a></td>
+                <td class="govuk-table__cell">Category C</td>
+                <td class="govuk-table__cell">Shropshire</td>
+                </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Swinton Hall (HMP)</a></td>
+                <td class="govuk-table__cell">Category C</td>
+                <td class="govuk-table__cell">Staffordshire</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="hmp-erlestoke">Erlestoke (HMP)</a></td>
+                <td class="govuk-table__cell">Category C</td>
+                <td class="govuk-table__cell">Wiltshire</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <!-- {{ govukButton({
+            text: 'Continue'
+          }) }} -->
+
+          <div class="govuk-button-group">
+            <!--<a href="#" class="govuk-button">
+              Make a referral
+            </a> -->
+            <a href="#" class="govuk-button govuk-button--secondary">
+              Create a deeplink for nDelius
+            </a>
+          </div>
+
+      </form>
+    </div>
+  </div>
+
+
+
+{% endblock %}
