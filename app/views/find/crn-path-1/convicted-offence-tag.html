@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Skills for relationship
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="#">
+          <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">Intervention name</h1> 
+          </div>
+
+          <strong class="govuk-tag govuk-tag--yellow" style="max-width: none; color: #0b0c0c">General violence offence</strong> <br><br>
+          <strong class="govuk-tag govuk-tag--green" style="max-width: none; color: #0b0c0c">Intimate partner violence offence</strong><br><br>
+          <strong class="govuk-tag govuk-tag--red" style="max-width: none;">Sexual offence</strong><br><br>
+          <strong class="govuk-tag govuk-tag--purple" style="max-width: none;">Gang-related offence</strong><br><br>
+          <strong class="govuk-tag govuk-tag--turquoise" style="max-width: none; ">Extremism offence</strong><br><br>
+          <strong class="govuk-tag govuk-tag--orange" style="max-width: none;">Acquisitive offence</strong><br><br>
+          <strong class="govuk-tag govuk-tag--pink" style="max-width: none;"> Driving offence</strong><br><br>
+          <strong class="govuk-tag govuk-tag--blue" style="max-width: none; ">Substance-related offence</strong><br><br>
+          <strong class="govuk-tag govuk-tag--light-blue" style="max-width: none;">All offences</strong><br><br>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Programme criteria</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Lorem ipsum
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum
+              </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Lorem ipsum
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Lorem ipsum
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Lorem ipsum
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Lorem ipsum
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">(...)</h2>
+        
+      </form>
+    </div>
+  </div>
+
+
+
+{% endblock %}
