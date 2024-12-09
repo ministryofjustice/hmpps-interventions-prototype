@@ -19,7 +19,11 @@ href: "javascript:history.back()"
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
+    <span class="govuk-caption-l">Alex River (CRN: X123456)</span>
     <h1 class="govuk-heading-l">Search results</h1>
+    <div class="govuk-inset-text">
+      Be aware that in some cases we cannot match all the court orders with the search results.
+    </div>
   </div>
 </div>
 
@@ -35,7 +39,7 @@ href: "javascript:history.back()"
       </div>  
     
       <div class="moj-filter__content">
-        <!--<div class="moj-filter__selected">
+        <div class="moj-filter__selected">
           <div class="moj-filter__selected-heading">
     
             <div class="moj-filter__heading-title">
@@ -43,36 +47,39 @@ href: "javascript:history.back()"
             </div>
 
             <div class="moj-filter__heading-action">
-              <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="confirm-customer-details">See selected filters</a>. They cannot be edit in here.</p>
+              <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
             </div>
           </div>
     
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Offence</h3>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Setting</h3>
           <ul class="moj-filter-tags">
-            <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Offence here</a></li>
+            <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Community</a></li>
+            <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Custody</a></li>
           </ul>
     
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Risk scores</h3>
-          <ul class="moj-filter-tags">
-            <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> PLACEHOLDER</a></li>
-          </ul>
-
           <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Gender</h3>
           <ul class="moj-filter-tags">
             <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Male</a></li>
           </ul>
 
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Setting</h3>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Intervention type</h3>
           <ul class="moj-filter-tags">
-            <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Community</a></li>
+            <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Accredited programme (AcP)</a></li>
+            <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Commissioned Rehabilitative Services (CRS)</a></li>
+          </ul>
+
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Needs</h3>
+          <ul class="moj-filter-tags">
+            <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Accommodation</a></li>
+            <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Finance</a></li>
+            <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Relationships</a></li>
+            <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Drug misuse</a></li>
           </ul> 
-        </div>-->
+        </div>
     
         <div class="moj-filter__options">
-    
-          <button type="submit" class="govuk-button" data-module="govuk-button" data-test-id="submit-button">
-            Apply filters
-          </button>
+
+          <a href="manual-search-filter" class="govuk-button">Apply filters</a>
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="keywords">
@@ -90,14 +97,14 @@ href: "javascript:history.back()"
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
     
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete">
+                  <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="status">
                     Community
                   </label>
                 </div>
     
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
+                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="status-2">
                     Custody
                   </label>
@@ -105,13 +112,6 @@ href: "javascript:history.back()"
 
               </div>
             </fieldset>
-          </div>
-
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="keywords">
-              Location (works both PDU and prison?)
-            </label>
-            <input class="govuk-input" id="keywords" name="keywords" type="text" value="">
           </div>
 
 
@@ -124,14 +124,14 @@ href: "javascript:history.back()"
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
     
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete">
+                  <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="male" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="status">
                     Male
                   </label>
                 </div>
     
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
+                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="female">
                   <label class="govuk-label govuk-checkboxes__label" for="status-2">
                     Female
                   </label>
@@ -150,42 +150,42 @@ href: "javascript:history.back()"
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete">
+                  <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="AcP" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="status">
                     Accredited programme (AcP)
                   </label>
                 </div>
                 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete">
+                  <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="CRS" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="status">
                     Commissioned Rehabilitative Services (CRS)
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
+                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="CFO">
                   <label class="govuk-label govuk-checkboxes__label" for="status-2">
                     Creating Future Opportunities (CFO)
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
+                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="ROIF">
                   <label class="govuk-label govuk-checkboxes__label" for="status-2">
                     Regional Outcome Innovation Fund (ROIF)
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                  <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="SI">
                   <label class="govuk-label govuk-checkboxes__label" for="status-3">
                     Structured interventions
                   </label>
                 </div>
     
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
+                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="Toolkits">
                   <label class="govuk-label govuk-checkboxes__label" for="status-2">
                     Toolkits
                   </label>
@@ -203,7 +203,7 @@ href: "javascript:history.back()"
               <!--<p class="govuk-hint govuk-!-font-size-16">Not selected</p>-->
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1">
+                  <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="type">
                     Accommodation
                   </label>
@@ -217,14 +217,14 @@ href: "javascript:history.back()"
                 </div>
     
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
                     Finance
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
                     Relationships
                   </label>
@@ -238,41 +238,48 @@ href: "javascript:history.back()"
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="4" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
                     Drug misuse
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="5">
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
                     Alcohol misuse
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="6">
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
                     Emotional wellbeing
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="7">
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
                     Thinking and behaviour
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                  <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="8">
                   <label class="govuk-label govuk-checkboxes__label" for="type-3">
                     Atitudes
                   </label>
                 </div>
               </div>
             </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="keywords">
+              Location (works both PDU and prison?)
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text" value="">
           </div>
 
           <!--<label class="govuk-label govuk-label--m" for="keywords">
