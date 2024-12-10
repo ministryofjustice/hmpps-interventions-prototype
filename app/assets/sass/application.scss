@@ -336,13 +336,13 @@ th.moj-fixed-width-40 {
     width: 10px;
 }
 
-.moj-filter__tag:link, .moj-filter__tag:visited {
-    color: #0b0c0c;
-}
-
 @media (min-width: 40.0625em) {
     .moj-filter__tag {
         font-size: 1rem;
         line-height: 1.25;
     }
+}
+
+.moj-filter__tag:hover:after {
+    background-image: url(../images/icon-tag-remove-cross-white.svg);
 }
