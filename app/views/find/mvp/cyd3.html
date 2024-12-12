@@ -49,7 +49,7 @@ href: "javascript:history.back()"
         </li>
 
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" href="cyd5">Intervention history  [TBC]</a>
+          <a class="moj-sub-navigation__link" href="cyd5">Intervention history [TBC]</a>
         </li>
       </ul>
     </nav>
@@ -83,19 +83,32 @@ href: "javascript:history.back()"
             <th class="govuk-table__header">OGRS3 probability of proven reoffending</th>
             <td class="govuk-table__cell">55%</td>
             <td class="govuk-table__cell">71%</td>
-            <td class="govuk-table__cell rosh-widget__risk--high">High</td>
+            <td class="govuk-table__cell">
+              <div class="predictor-timeline-item predictor-timeline-item--high">
+                <span class="predictor-timeline-item__level"><strong>HIGH</strong> OGRS3</span>
+              </div>
+            </td>
           </tr>
           <tr>
             <th class="govuk-table__header">OGP probability of proven non-violent reoffending</th>
             <td class="govuk-table__cell">10%</td>
             <td class="govuk-table__cell">10%	</td>
-            <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+            <td class="govuk-table__cell">              
+              <div class="predictor-timeline-item predictor-timeline-item--low">
+                <span class="predictor-timeline-item__level"><strong>LOW</strong> OGP</span>
+              </div>
+            </td>
           </tr>
           <tr>
             <th class="govuk-table__header">OVP probability of proven violent-type reoffending</th>
             <td class="govuk-table__cell">35%</td>
             <td class="govuk-table__cell">51%</td>
-            <td class="govuk-table__cell rosh-widget__risk--medium">Medium</td>
+            <td class="govuk-table__cell">
+              <div class="predictor-timeline-item predictor-timeline-item--medium">
+                <span class="predictor-timeline-item__level"><strong>MEDIUM</strong> OVP</span>
+              </div>
+            </td>
+            <!--<td class="govuk-table__cell rosh-widget__risk--medium">Medium</td>-->
           </tr>
           <tr>
             <th class="govuk-table__header">OSP indecent image reoffending risk</th>
@@ -113,7 +126,12 @@ href: "javascript:history.back()"
             <th class="govuk-table__header">Risk of serious recidivism (RSR)</th>
             <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span></td> 
             <td class="govuk-table__cell">1.11%</td>
-            <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+            <td class="govuk-table__cell">
+              <div class="predictor-timeline-item predictor-timeline-item--low">
+                <span class="predictor-timeline-item__level"><strong>LOW</strong> RSR</span>
+              </div>
+            </td>
+            <!--<td class="govuk-table__cell rosh-widget__risk--low">Low</td>-->
           </tr>
         </tbody>
       </table>
@@ -295,13 +313,20 @@ href: "javascript:history.back()"
           </dt>
           <dd class="govuk-summary-list__value">
             Education, Training and Employment (ETE)<br>
-              Finance<br>
               Relationships<br>
               Lifestyle and associates<br>
               Drug misuse	<br>
               Alcohol misuse	<br>
               Emotional wellbeing	<br>
               Attitudes
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Areas without a need score
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Finance
           </dd>
         </div>
       </dl>
