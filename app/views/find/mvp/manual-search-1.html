@@ -121,6 +121,45 @@ href: "javascript:history.back()"
           </div>
 
           <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="country">
+                Pick a country
+              </label>
+            </h1>
+            <select class="govuk-select" id="country" name="country"
+              data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
+              <option value="" selected disabled>Select an option</option>
+              <option value="Austria">Austria</option>
+              <option value="Belgium">Belgium</option>
+              <option value="Bulgaria">Bulgaria</option>
+              <option value="Croatia">Croatia</option>
+              <option value="Republic of Cyprus">Republic of Cyprus</option>
+              <option value="Czech Republic">Czech Republic</option>
+              <option value="Denmark">Denmark</option>
+              <option value="Estonia">Estonia</option>
+              <option value="Finland">Finland</option>
+              <option value="France">France</option>
+              <option value="Germany">Germany</option>
+              <option value="Greece">Greece</option>
+              <option value="Hungary">Hungary</option>
+              <option value="Ireland">Ireland</option>
+              <option value="Italy">Italy</option>
+              <option value="Latvia">Latvia</option>
+              <option value="Lithuania">Lithuania</option>
+              <option value="Luxembourg">Luxembourg</option>
+              <option value="Malta">Malta</option>
+              <option value="Netherlands">Netherlands</option>
+              <option value="Poland">Poland</option>
+              <option value="Portugal">Portugal</option>
+              <option value="Romania">Romania</option>
+              <option value="Slovakia">Slovakia</option>
+              <option value="Slovenia">Slovenia</option>
+              <option value="Spain">Spain</option>
+              <option value="Sweden">Sweden</option>
+            </select>
+          </div>
+
+          <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 Gender
@@ -655,5 +694,16 @@ href: "javascript:history.back()"
       </nav>
   </div>
 </div>
+
+<script type="text/javascript">
+  // update #course with whatever the ID is for the select you want to enhance
+  element = document.querySelector('#course')
+  accessibleAutocomplete.enhanceSelectElement({
+    showAllValues: true,
+    selectElement: element
+  })
+</script>
+<script type="module" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script type="module" src="/public/javascripts/accessible-autocomplete.min.js.map"></script>
 
 {% endblock %}
