@@ -32,7 +32,9 @@ href: "javascript:history.back()"
         </div>
         <div class="moj-filter__header-action">
         </div>
-      </div>  
+      </div> 
+      
+      
     
       <div class="moj-filter__content">
         <!--<div class="moj-filter__selected">
@@ -771,17 +773,21 @@ href: "javascript:history.back()"
   </div>
 </div>
 
-<script type="module" src="/public/javascripts/accessible-autocomplete.min.js"></script>
-<script type="module" src="/public/javascripts/accessible-autocomplete.min.js.map"></script>
 
-<script type="text/javascript">
-  // update #course with whatever the ID is for the select you want to enhance
-  element = document.querySelector('#country')
-  accessibleAutocomplete.enhanceSelectElement({
-    showAllValues: true,
-    selectElement: element
-  })
-</script>
+
+{% block pageScripts %}
+    <script type="module" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+    <script type="module" src="/public/javascripts/accessible-autocomplete.min.js.map"></script>
+
+    <script type="text/javascript">
+      // update #course with whatever the ID is for the select you want to enhance
+      element = document.querySelector('#country')
+      accessibleAutocomplete.enhanceSelectElement({
+        showAllValues: true,
+        selectElement: element
+      })
+    </script>
+{% endblock %}
 
 
 {% endblock %}
