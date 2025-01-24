@@ -34,8 +34,6 @@ href: "javascript:history.back()"
         </div>
       </div> 
       
-      
-    
       <div class="moj-filter__content">
         <!--<div class="moj-filter__selected">
           <div class="moj-filter__selected-heading">
@@ -102,9 +100,46 @@ href: "javascript:history.back()"
                       <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
                         <div class="govuk-form-group">
                           <label class="govuk-label" for="contact-by-email">
-                            Search by PDU
+                            <div class="govuk-form-group">
+                              <h1 class="govuk-label-wrapper">
+                                <label class="govuk-label govuk-label--s" for="country" id="countryLabel" style="font-weight:normal">
+                                  Select a PDU
+                                </label>
+                              </h1>
+                              <select class="govuk-select" id="country" name="country" aria-labelledby="countryLabel">
+                                <option value="" selected disabled>Select an option</option>
+                                <option value="Austria">Austria</option>
+                                <option value="Belgium">Belgium</option>
+                                <option value="Bulgaria">Bulgaria</option>
+                                <option value="Croatia">Croatia</option>
+                                <option value="Republic of Cyprus">Republic of Cyprus</option>
+                                <option value="Czech Republic">Czech Republic</option>
+                                <option value="Denmark">Denmark</option>
+                                <option value="Estonia">Estonia</option>
+                                <option value="Finland">Finland</option>
+                                <option value="France">France</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Greece">Greece</option>
+                                <option value="Hungary">Hungary</option>
+                                <option value="Ireland">Ireland</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Latvia">Latvia</option>
+                                <option value="Lithuania">Lithuania</option>
+                                <option value="Luxembourg">Luxembourg</option>
+                                <option value="Malta">Malta</option>
+                                <option value="Netherlands">Netherlands</option>
+                                <option value="Poland">Poland</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Romania">Romania</option>
+                                <option value="Slovakia">Slovakia</option>
+                                <option value="Slovenia">Slovenia</option>
+                                <option value="Spain">Spain</option>
+                                <option value="Sweden">Sweden</option>
+                              </select>
+                            </div>
+                  
                           </label>
-                          <input class="govuk-input" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                          
                         </div>
                       </div>
                       <div class="govuk-checkboxes__item">
@@ -113,52 +148,11 @@ href: "javascript:history.back()"
                           Custody
                         </label>
                       </div>
-
                     </div>
                   </fieldset>
                 </div>
-
               </div>
             </fieldset>
-          </div>
-
-        <div class="govuk-form-group">
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="country">
-                Pick a country
-              </label>
-            </h1>
-            <select class="govuk-select" id="country" name="country"
-              data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
-              <option value="" selected disabled>Select an option</option>
-              <option value="Austria">Austria</option>
-              <option value="Belgium">Belgium</option>
-              <option value="Bulgaria">Bulgaria</option>
-              <option value="Croatia">Croatia</option>
-              <option value="Republic of Cyprus">Republic of Cyprus</option>
-              <option value="Czech Republic">Czech Republic</option>
-              <option value="Denmark">Denmark</option>
-              <option value="Estonia">Estonia</option>
-              <option value="Finland">Finland</option>
-              <option value="France">France</option>
-              <option value="Germany">Germany</option>
-              <option value="Greece">Greece</option>
-              <option value="Hungary">Hungary</option>
-              <option value="Ireland">Ireland</option>
-              <option value="Italy">Italy</option>
-              <option value="Latvia">Latvia</option>
-              <option value="Lithuania">Lithuania</option>
-              <option value="Luxembourg">Luxembourg</option>
-              <option value="Malta">Malta</option>
-              <option value="Netherlands">Netherlands</option>
-              <option value="Poland">Poland</option>
-              <option value="Portugal">Portugal</option>
-              <option value="Romania">Romania</option>
-              <option value="Slovakia">Slovakia</option>
-              <option value="Slovenia">Slovenia</option>
-              <option value="Spain">Spain</option>
-              <option value="Sweden">Sweden</option>
-            </select>
           </div>
 
           <div class="govuk-form-group">
@@ -776,16 +770,15 @@ href: "javascript:history.back()"
 <style>.autocomplete__wrapper{position:relative}.autocomplete__hint,.autocomplete__input{-webkit-appearance:none;appearance:none;border:2px solid #0b0c0c;border-radius:0;box-sizing:border-box;height:2.5rem;line-height:1.25;margin-bottom:0;width:100%}.autocomplete__input{background-color:transparent;position:relative}.autocomplete__hint{color:#505a5f;position:absolute}.autocomplete__input--default{padding:5px}.autocomplete__input--focused{box-shadow:inset 0 0 0 2px;outline:3px solid #fd0;outline-offset:0}.autocomplete__input--show-all-values{cursor:pointer;padding:5px 35px 5px 5px}.autocomplete__dropdown-arrow-down{display:inline-block;height:24px;position:absolute;right:8px;top:10px;width:24px;z-index:-1}.autocomplete__menu{background-color:#fff;border:2px solid #0b0c0c;border-top:0;color:#0b0c0c;margin:0;max-height:342px;overflow-x:hidden;padding:0;width:100%;width:calc(100% - 4px)}.autocomplete__menu--visible{display:block}.autocomplete__menu--hidden{display:none}.autocomplete__menu--overlay{box-shadow:0 2px 6px rgba(0,0,0,.257);left:0;position:absolute;top:100%;z-index:100}.autocomplete__menu--inline{position:relative}.autocomplete__option{border-bottom:1px solid #b1b4b6;border-left-width:0;border-right-width:0;border-top-width:1px;cursor:pointer;display:block;position:relative}.autocomplete__option>*{pointer-events:none}.autocomplete__option:first-of-type{border-top-width:0}.autocomplete__option:last-of-type{border-bottom-width:0}.autocomplete__option--odd{background-color:#f3f2f1}.autocomplete__option--focused,.autocomplete__option:hover{background-color:#1d70b8;border-color:#1d70b8;color:#fff;outline:none}@media (-ms-high-contrast:active),(forced-colors:active){.autocomplete__menu{border-color:FieldText}.autocomplete__option{background-color:Field;color:FieldText}.autocomplete__option--focused,.autocomplete__option:hover{background-color:Highlight;background-color:SelectedItem;border-color:SelectedItem;color:HighlightText;color:SelectedItemText;forced-color-adjust:none;outline-color:SelectedItemText}}.autocomplete__option--no-results{background-color:#f3f2f1;color:#505a5f;cursor:not-allowed}.autocomplete__hint,.autocomplete__input,.autocomplete__option{font-size:1rem;font-weight:400}.autocomplete__hint,.autocomplete__option{padding:5px}@media (min-width:641px){.autocomplete__hint,.autocomplete__input,.autocomplete__option{font-size:1.1875rem;line-height:1.3157894737}}</style>
 
 {% block pageScripts %}
-    <script type="module" src="/public/javascripts/accessible-autocomplete.min.js"></script>
-    <script type="module" src="/public/javascripts/accessible-autocomplete.min.js.map"></script>
+    <script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+    <script src="/public/javascripts/accessible-autocomplete.min.js.map"></script>
 
-    <script type="text/javascript">
-      // update #course with whatever the ID is for the select you want to enhance
-      element = document.querySelector('#country')
+    <script>
       accessibleAutocomplete.enhanceSelectElement({
-        showAllValues: true,
-        selectElement: element
-      })
+        defaultValue : '',
+        autoselect : true,
+        selectElement: document.querySelector('#country')
+      });
     </script>
 {% endblock %}
 
