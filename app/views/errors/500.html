@@ -8,25 +8,16 @@ Enter the person's CRN
 {{ super() }}
 {% endblock %}
 
-{% block beforeContent %}
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{{ govukBackLink({
-  text: "Back",
-href: "javascript:history.back()"
-}) }}
-{% endblock %}
-
 {% block content %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">Sorry, there is a problem with the service</h1>
-        <p class="govuk-body">Try again later.</p>
-        <p class="govuk-body">We saved your answers. [?] They will be available for 30 days.</p>
-        <p class="govuk-body">
-          <a class="govuk-link" href="#">Contact the XXXX</a> if you need to make changes to your referals or speak to someone about your referals.
-        </p>
-      </div>
-    </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Sorry, there is a problem with the service</h1>
+    <p class="govuk-body">Try again later.</p>
+    <p class="govuk-body">
+      <a class="govuk-link" href="https://hmpps-interventions-ui-dev.apps.live-1.cloud-platform.service.justice.gov.uk/report-a-problem">Contact the helpline</a> if you need to speak to someone about this service. 
+    </p>
+  </div>
+</div>
 
 {% endblock %}
