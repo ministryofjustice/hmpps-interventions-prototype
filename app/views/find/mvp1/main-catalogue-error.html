@@ -1,0 +1,174 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Main catalogue page
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-l">Search results</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <div class="moj-filter">
+      <div class="moj-filter__header">
+        <div class="moj-filter__header-title">
+          <h2 class="govuk-heading-m">Filter</h2>
+        </div>
+        <div class="moj-filter__header-action">
+        </div>
+      </div>  
+    
+      <div class="moj-filter__content">
+        <div class="moj-filter__options">
+          <button type="submit" class="govuk-button" data-module="govuk-button" data-test-id="submit-button">
+            Apply filters
+          </button>
+    
+          <!--<div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="keywords">
+              Search by programme name
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div> -->
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Lorem ipsum
+                </h1>
+              </legend>
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                    Lorem ipsum
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                    Lorem ipsum
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                    Lorem ipsum
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                    Lorem ipsum
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Lorem ipsum
+                </h1>
+              </legend>
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                    Lorem ipsum
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                    Lorem ipsum
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                    Lorem ipsum
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                    Lorem ipsum
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds js-live-search-results-block filtered-results" role="region" aria-label="Search search results" data-ga4-ecommerce="" data-ga4-ecommerce-start-index="1" data-ga4-list-title="Search" data-ga4-search-query="bob" data-ga4-ecommerce-variant="Relevance">
+    <div id="js-search-results-info" data-module="remove-filter" class="result-info " data-remove-filter-module-started="true">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <div class="result-info__header">
+            <h2 id="js-result-count" class="gem-c-heading govuk-heading-s   govuk-!-margin-bottom-2">0 results</h2>
+              <a class="gem-c-skip-link govuk-skip-link govuk-!-display-none-print" data-module="govuk-skip-link" href="#js-results" data-govuk-skip-link-module-started="true">Skip to results</a>
+          </div>
+        </div>
+      </div>
+      <div id="js-facet-tag-wrapper" class="facet-tags__container" aria-live="assertive">
+          <span class="govuk-visually-hidden">
+          461 results
+          sorted by Relevance
+          </span>
+      </div>
+    </div>
+
+    <div class="govuk-caption-l live-search-loading-message" id="js-loading-message"></div>
+      <!--<div id="js-sort-options" data-ga4-change-category="update-sort select">
+        <div class="govuk-form-group sort-options gem-c-select">
+          <label for="order" class="sort-options__label govuk-label">Sort by</label>
+            <select class="js-order-results govuk-select sort-options__select" name="order" id="order" aria-controls="js-search-results-info" data-default-sort-option="relevance" data-relevance-sort-option="relevance">
+                <option value="most-viewed" disabled="">Most viewed</option>
+                <option value="relevance" selected="">Relevance</option>
+                <option value="updated-newest">Updated (newest)</option>
+                <option value="updated-oldest">Updated (oldest)</option>
+            </select>
+        </div>
+      </div>-->
+    <div id="js-results">
+      <div class="finder-results js-finder-results">
+        <ul class="gem-c-document-list gem-c-document-list--no-underline govuk-!-margin-bottom-5" style="font-size: 1.1875rem; line-height: 1.3157894737;margin: 0;
+  padding: 0;">
+          <p class="govuk-body govuk-!-font-weight-bold">There are no matching results.</p>
+          <p class="govuk-body">Improve your search results by:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>removing filters</li>
+            <li>double-checking your spelling</li>
+            <li>using fewer keywords</li>
+            <li>searching for something less specific</li>
+          </ul>    
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

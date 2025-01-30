@@ -32,8 +32,8 @@ href: "javascript:history.back()"
         </div>
         <div class="moj-filter__header-action">
         </div>
-      </div>  
-    
+      </div> 
+      
       <div class="moj-filter__content">
         <!--<div class="moj-filter__selected">
           <div class="moj-filter__selected-heading">
@@ -69,7 +69,7 @@ href: "javascript:history.back()"
         </div>-->
     
         <div class="moj-filter__options">
-
+    
           <a href="manual-search-filter" class="govuk-button">Apply filters</a>
 
           <div class="govuk-form-group">
@@ -80,39 +80,177 @@ href: "javascript:history.back()"
           </div>
 
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                Setting
+                <h1 class="govuk-fieldset__heading">
+                  Setting
+                </h1>
               </legend>
-              <!--<p class="govuk-hint govuk-!-font-size-16">Not selected</p>-->
-              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-    
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete">
-                  <label class="govuk-label govuk-checkboxes__label" for="status">
+              <div id="contact-hint" class="govuk-hint">
+                Select one option
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact" checked="checked">
+                  <label class="govuk-label govuk-radios__label" for="contact">
                     Community
                   </label>
                 </div>
-    
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
-                  <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-email">
+                      <div class="govuk-form-group">
+                        <h1 class="govuk-label-wrapper">
+                          <label class="govuk-label govuk-label--s" for="country" id="countryLabel" style="font-weight:normal">
+                            Probation Delivery Unit (PDU)
+                          </label>
+                        </h1>
+                        <select class="govuk-select" id="country" name="country" aria-labelledby="countryLabel">
+                          <option value="" selected disabled>Select an option</option>
+                          <option value="Blackburn">Blackburn and Darwen</option>
+                          <option value="Lancashire">Central Lancashire</option>
+                          <option value="CheshireE">Cheshire East</option>
+                          <option value="CheshireW">Cheshire West</option>
+                          <option value="Cumbria">Cumbria</option>
+                          <option value="ELancashire">East Lancashire</option>
+                          <option value="HaltonandWarrington">Halton and Warrington</option>
+                          <option value="LiverpoolN">LiverpoolNorth</option>
+                          <option value="LiverpoolS">Liverpool South</option>
+                          <option value="NWLancashire">North West Lancashire</option>
+                          <option value="Sefton">Sefton</option>
+                          <option value="Wirra">Wirra</option>
+
+                          <option value="Bolton">Bolton</option>
+                          <option value="BuryRochdale">Bury and Rochdale</option>
+                          <option value="ManchesterN">Manchester North</option>
+                          <option value="ManchesterS">Manchester South</option>
+                          <option value="Oldham">Oldham</option>
+                          <option value="Salford">Salford</option>
+                          <option value="Stockport">Stockport and Trafford</option>
+                          <option value="Tameside">Tameside</option>
+                          <option value="Wigan">Wigan</option>
+
+                          <option value="Barnsley">Barnsley and Rotherham</option>
+                          <option value="Bradford and Calderdale">Bradford and Calderdale</option>
+                          <option value="Doncaster">Doncaster</option>
+                          <option value="Hull">Hull and East Riding</option>
+                          <option value="Leeds">Leeds</option>
+                          <option value="North and North East Lincs">North and North East Lincs</option>
+                          <option value="NYorkshire">North Yorkshire</option>
+                          <option value="Stockport">Stockport and Trafford</option>
+                          <option value="Sheffield">Sheffield</option>
+                          <option value="Wakefield">Wakefield</option>
+                          <option value="York">York</option>
+
+                          <option value="Durham">County Durham and Darlington</option>
+                          <option value="Gateshead and South Tyneside">Gateshead and South Tyneside</option>
+                          <option value="Newcastle Upon Tyne">Newcastle Upon Tyne</option>
+                          <option value="North Tyneside and Northumberland">North Tyneside and Northumberland</option>
+                          <option value="Redcar, Cleveland and Middlesbrough">Redcar, Cleveland and Middlesbrough</option>
+                          <option value="Stockton and Hartlepool">Stockton and Hartlepool</option>
+                          <option value="Sunderland">Sunderland</option>
+
+                          <option value="Barking and Dagenham">Barking and Dagenham and Havering</option>
+                          <option value="Brent">Brent</option>
+                          <option value="Camden">Camden, Islington</option>
+                          <option value="Croydon">Croydon</option>
+                          <option value="Ealing and Hillingdon">Ealing and Hillingdon</option>
+                          <option value="Enfield and Haringey">Enfield and Haringey</option>
+                          <option value="Greenwich and Bexley">Greenwich and Bexley</option>
+                          <option value="Hackney and City">Hackney and City</option>
+                          <option value="Hammersmith">Hammersmith, Fulham, Kensington, Chelsea and Westminster</option>
+                          <option value="Harrow and Barnet">Harrow and Barnet</option>
+                          <option value="Ealing and Hillingdon">Kingston, Richmond and Hounslow</option>
+                          <option value="Enfield and Haringey">Lambeth</option>
+                          <option value="Greenwich and Bexley">Newham</option>
+                          <option value="Redbridge and Waltham Forest">Redbridge and Waltham Forest</option>
+                          <option value="Enfield and Haringey">Southwark</option>
+                          <option value="Greenwich and Bexley">Tower Hamlets</option>
+                          <option value="Greenwich and Bexley">Wandsworth, Merton and
+                            Sutton</option>
+
+                            <option value="Birmingham Central and South">Birmingham Central and South</option>
+                            <option value="Birmingham North, East and
+                            Solihull">Birmingham North, East and
+                              Solihull</option>
+                            <option value="Coventry">Coventry</option>
+                            <option value="Dudley">Dudley and Sandwell</option>
+                            <option value="Herefordshire, Shropshire
+                            and Telford">Herefordshire, Shropshire
+                            and Telford</option>
+                            <option value="Staffordshire and Stoke">Staffordshire and Stoke</option>
+                            <option value="Walsall and Wolverhampton">Walsall and Wolverhampton</option>
+                            <option value="Warwickshire">Warwickshire</option>
+                            <option value="Worcestershire">Worcestershire</option>
+                            <option value="Derby City">Derby City</option>
+                            <option value="Derbyshire">Derbyshire</option>
+                            <option value="Leicester, Leicestershire and
+                            Rutland">Leicester, Leicestershire and
+                              Rutland</option>
+                            <option value="Lincolnshire East and West">Lincolnshire East and West</option>
+                            <option value="Nottingham City">Nottingham City</option>
+                            <option value="Nottinghamshire">Nottinghamshire</option>
+
+                            <option value="Bedfordshire">Bedfordshire</option>
+                            <option value="Cambridgeshire and
+                            Peterborough">Cambridgeshire and
+                              Peterborough</option>
+                            <option value="Essex North">Essex North</option>
+                            <option value="Essex South">Essex South</option>
+                            <option value="Hertfordshire">Hertfordshire</option>
+                            <option value="Norfolk">Norfolk</option>
+                            <option value="Northamptonshire">Northamptonshire</option>
+                            <option value="Suffolk">Suffolk</option>
+
+                            <option value="Brighton and East Sussex">Brighton and East Sussex</option>
+                            <option value="East Kent">East Kent</option>
+                            <option value="Surrey">Surrey</option>
+                            <option value="West Kent">West Kent</option>
+                            <option value="West Sussex">West Sussex</option>
+
+                          <option value="Bath and North Somerset">Bath and North Somerset</option>
+                          <option value="Bristol and South
+                          Gloucestershire">Bristol and South
+                            Gloucestershire</option>
+                          <option value="Cornwall and Isles of Scilly">Cornwall and Isles of Scilly</option>
+                          <option value="Devon and Torbay">Devon and Torbay</option>
+                          <option value="Dorset">Dorset</option>
+                          <option value="Gloucestershire">Gloucestershire</option>
+                          <option value="Plymouth">Plymouth</option>
+                          <option value="Somerset">Somerset</option>
+                          <option value="Buckinghamshire and Milton
+                          Keynes">Buckinghamshire and Milton
+                            Keynes</option>
+                          <option value="East Berkshire">East Berkshire</option>
+                          <option value="Hampshire North and East">Hampshire North and East</option>
+                          <option value="Oxfordshire">Oxfordshire</option>
+                          <option value="Portsmouth and Isle of Wight">Portsmouth and Isle of Wight</option>
+                          <option value="Southampton, Eastleigh and
+                          New Forest">Southampton, Eastleigh and
+                            New Forest</option>
+                          <option value="West Berkshire">West Berkshire</option>
+
+                          <option value="Cardiff and Vale">Cardiff and Vale</option>
+                          <option value="Cwm Taf Morgannwg">Cwm Taf Morgannwg</option>
+                          <option value="Dyfed Powys">Dyfed Powys</option>
+                          <option value="Gwent">Gwent</option>
+                          <option value="North Wales">North Wales</option>
+                          <option value="Swansea, Neath PortTalbot">Swansea, Neath PortTalbot</option>
+
+                        </select>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+                  <label class="govuk-label govuk-radios__label" for="contact-2">
                     Custody
                   </label>
                 </div>
-
               </div>
             </fieldset>
           </div>
-
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="keywords">
-              Search by prison or PDU
-            </label>
-            <input class="govuk-input" id="keywords" name="keywords" type="text" value="">
-          </div>
-
-
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -281,7 +419,7 @@ href: "javascript:history.back()"
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-               <Ftr></Ftr>ormat
+               Format
               </legend>
               <!--<p class="govuk-hint govuk-!-font-size-16">Not selected</p>-->
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -355,103 +493,13 @@ href: "javascript:history.back()"
   
         <div id="js-results">
           <div class="finder-results js-finder-results">
-            <ul class="gem-c-document-list gem-c-document-list--no-underline govuk-!-margin-bottom-5" style="font-size: 1.1875rem; line-height: 1.3157894737;margin: 0;
-      padding: 0;">
-
-              <!--example 1-->
-              <li class="gem-c-document-list__item" style="border-top:none">
-                <div class="gem-c-document-list__item-title">          
-                  <h2 class="govuk-heading-m"><a class="govuk-link" href="intervention-skeleton" style="font-weight: 700;">Intervention name</a></h2>
-                </div>
-                <strong class="govuk-tag govuk-tag--yellow" style="max-width: none; color: #0b0c0c">General violence offence</strong>
-                <ul class="govuk-list search-result-details">
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>           
-                </ul>
-                <dl class="govuk-summary-list" style="font-size: 1rem;">
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                     Type
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Lorem ipsum
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Gender
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Male or female
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Age group
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      xx-xx years old
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Risk criteria
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Lorem ipsum available for some interventions
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Suitable for people with learning disabilities or challenges (LDC)
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Yes/No
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Equivalent non-LDC programme
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Lorem ipsum
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Format
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      One-to-one or group
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Attendance type
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      In person or online
-                    </dd>
-                  </div>
-                </dl>
-                <p class="gem-c-document-list__item-description">Short description ->> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at sodales mauris, eget pharetra enim. Donec posuere, ante sed luctus rutrum, ipsum urna bibendum velit, elementum lacinia erat nulla nec elit. </p>
-              </li>
+            <ul class="gem-c-document-list gem-c-document-list--no-underline govuk-!-margin-bottom-5" style="font-size: 1.1875rem; line-height: 1.3157894737;margin: 0;padding: 0;">
 
               <!--example 2-->
-              <li class="gem-c-document-list__item">
+              <li class="gem-c-document-list__item"  style="border-top:none">
                 <div class="gem-c-document-list__item-title">          
-                  <h2 class="govuk-heading-m"><a class="govuk-link" href="intervention-skeleton" style="font-weight: 700;">Intervention name</a></h2>
+                  <h2 class="govuk-heading-m"><a class="govuk-link" href="int-acp-com-violence" style="font-weight: 700;">Becoming New Me Plus: general violence offence</a></h2>
                 </div>
-                <strong class="govuk-tag govuk-tag--green" style="max-width: none; color: #0b0c0c">Intimate partner violence offence</strong>
                 <ul class="govuk-list search-result-details">
                   <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
                   <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
@@ -465,103 +513,129 @@ href: "javascript:history.back()"
                   <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
                   <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>           
                 </ul>
-                <dl class="govuk-summary-list" style="font-size: 1rem;">
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                     Type
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Lorem ipsum
-                    </dd>
-                  </div>
+                <dl class="govuk-summary-list" style="font-size: 1.1875rem;">
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       Gender
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      Male or female
+                      Male
                     </dd>
                   </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Age group
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      xx-xx years old
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Risk criteria
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Lorem ipsum available for some interventions
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Suitable for people with learning disabilities or challenges (LDC)
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Yes/No
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Equivalent non-LDC programme
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Lorem ipsum
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Format
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      One-to-one or group
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Attendance type
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      In person or online
-                    </dd>
-                  </div>
-                </dl>
-                <p class="gem-c-document-list__item-description">Short description ->> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at sodales mauris, eget pharetra enim. Donec posuere, ante sed luctus rutrum, ipsum urna bibendum velit, elementum lacinia erat nulla nec elit. </p>
-              </li>
-
-              <!--example 3-->
-              <li class="gem-c-document-list__item">
-                <div class="gem-c-document-list__item-title">          
-                  <h2 class="govuk-heading-m"><a class="govuk-link" href="intervention-skeleton" style="font-weight: 700;">Intervention name</a></h2>
-                </div>
-                <strong class="govuk-tag govuk-tag--red" style="max-width: none;">Sexual offence</strong>
-                <ul class="govuk-list search-result-details">
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>           
-                </ul>
-                <dl class="govuk-summary-list" style="font-size: 1rem;">
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       Type
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      Lorem ipsum
+                      Accredited Programme
                     </dd>
                   </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Risk criteria
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Medium SARA (Spousal Assault Risk Assessment) in custody ***
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Format
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Group, one-to-one
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Attendance type
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      In person 
+                    </dd>
+                  </div>
+                </dl>
+                <p class="gem-c-document-list__item-description">Becoming New Me Plus (BNM+) uses cognitive behaviour therapy. It is for men who are at high or very high risk of reoffending. Suitable for men convicted of a general violence offence.</p>
+              </li>
+
+              
+
+              <!--example 3-->
+              <li class="gem-c-document-list__item">
+                <div class="gem-c-document-list__item-title">          
+                  <h2 class="govuk-heading-m"><a class="govuk-link" href="int-crs-finance-mvp1" style="font-weight: 700;">Finance, Benefit and Debt Services: Devon and Cornwall</a></h2>
+                </div>
+                <ul class="govuk-list search-result-details">
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>           
+                </ul>
+                <dl class="govuk-summary-list" style="font-size: 1.1875rem;">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Gender
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Male
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Type
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Commissioned Rehabilitative Service
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Format
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Variable, group or one-to-one sessions depending on provider
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Attendance type
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      In person or online
+                    </dd>
+                  </div>
+                </dl>
+                <p class="gem-c-document-list__item-description">Finance, Benefits and Debt (FBD) is a rehabilitative service to help men better understand banking, stabilise debt, and claim benefits.</p>
+              </li>
+
+
+
+              <!--example 4-->
+              <li class="gem-c-document-list__item">
+                <div class="gem-c-document-list__item-title">          
+                  <h2 class="govuk-heading-m"><a class="govuk-link" href="int-si-driving-mvp1" style="font-weight: 700;">Stepwise Driving</a></h2>
+                </div>
+                <ul class="govuk-list search-result-details">
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>           
+                </ul>
+                <dl class="govuk-summary-list" style="font-size: 1.1875rem;">
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       Gender
@@ -572,34 +646,10 @@ href: "javascript:history.back()"
                   </div>
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      Age group
+                      Type
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      xx-xx years old
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Risk criteria
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Lorem ipsum available for some interventions
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Suitable for people with learning disabilities or challenges (LDC)
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Yes/No
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Equivalent non-LDC programme
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Lorem ipsum
+                      Structured intervention
                     </dd>
                   </div>
                   <div class="govuk-summary-list__row">
@@ -619,7 +669,66 @@ href: "javascript:history.back()"
                     </dd>
                   </div>
                 </dl>
-                <p class="gem-c-document-list__item-description">Short description ->> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at sodales mauris, eget pharetra enim. Donec posuere, ante sed luctus rutrum, ipsum urna bibendum velit, elementum lacinia erat nulla nec elit. </p>
+                <p class="gem-c-document-list__item-description">Stepwise Driving is a structured intervention for people in England and Wales who have been convicted of driving while under the influence of drugs or alcohol.</p>
+              </li>
+
+
+
+              <!--example 5 Toolkit-->
+              <li class="gem-c-document-list__item">
+                <div class="gem-c-document-list__item-title">          
+                  <h2 class="govuk-heading-m"><a class="govuk-link" href="int-Toolkit-maps-mvp1" style="font-weight: 700;">Maps for Change</a></h2>
+                </div>
+                <ul class="govuk-list search-result-details">
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>          
+                </ul>
+                <dl class="govuk-summary-list" style="font-size: 1.1875rem;">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Gender
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Male
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Type
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Toolkit
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Risk criteria
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>Low OASys sexual reoffending predictor: direct contact</li>
+                        <li>Low OASys sexual reoffending predictor: indecent images</li>
+                      </ul>                
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Format
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      One-to-one or group
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Attendance type
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      In person
+                    </dd>
+                  </div>
+                </dl>
+                <p class="gem-c-document-list__item-description">Maps for Change is a work-based resource for probation practitioners in the community. It provides a structured framework for supervising men convicted of sexual offences.</p>
               </li>
 
             </ul>
@@ -651,5 +760,21 @@ href: "javascript:history.back()"
       </nav>
   </div>
 </div>
+
+<style>.autocomplete__wrapper{position:relative}.autocomplete__hint,.autocomplete__input{-webkit-appearance:none;appearance:none;border:2px solid #0b0c0c;border-radius:0;box-sizing:border-box;height:2.5rem;line-height:1.25;margin-bottom:0;width:100%}.autocomplete__input{background-color:transparent;position:relative}.autocomplete__hint{color:#505a5f;position:absolute}.autocomplete__input--default{padding:5px}.autocomplete__input--focused{box-shadow:inset 0 0 0 2px;outline:3px solid #fd0;outline-offset:0}.autocomplete__input--show-all-values{cursor:pointer;padding:5px 35px 5px 5px}.autocomplete__dropdown-arrow-down{display:inline-block;height:24px;position:absolute;right:8px;top:10px;width:24px;z-index:-1}.autocomplete__menu{background-color:#fff;border:2px solid #0b0c0c;border-top:0;color:#0b0c0c;margin:0;max-height:342px;overflow-x:hidden;padding:0;width:100%;width:calc(100% - 4px)}.autocomplete__menu--visible{display:block}.autocomplete__menu--hidden{display:none}.autocomplete__menu--overlay{box-shadow:0 2px 6px rgba(0,0,0,.257);left:0;position:absolute;top:100%;z-index:100}.autocomplete__menu--inline{position:relative}.autocomplete__option{border-bottom:1px solid #b1b4b6;border-left-width:0;border-right-width:0;border-top-width:1px;cursor:pointer;display:block;position:relative}.autocomplete__option>*{pointer-events:none}.autocomplete__option:first-of-type{border-top-width:0}.autocomplete__option:last-of-type{border-bottom-width:0}.autocomplete__option--odd{background-color:#f3f2f1}.autocomplete__option--focused,.autocomplete__option:hover{background-color:#1d70b8;border-color:#1d70b8;color:#fff;outline:none}@media (-ms-high-contrast:active),(forced-colors:active){.autocomplete__menu{border-color:FieldText}.autocomplete__option{background-color:Field;color:FieldText}.autocomplete__option--focused,.autocomplete__option:hover{background-color:Highlight;background-color:SelectedItem;border-color:SelectedItem;color:HighlightText;color:SelectedItemText;forced-color-adjust:none;outline-color:SelectedItemText}}.autocomplete__option--no-results{background-color:#f3f2f1;color:#505a5f;cursor:not-allowed}.autocomplete__hint,.autocomplete__input,.autocomplete__option{font-size:1rem;font-weight:400}.autocomplete__hint,.autocomplete__option{padding:5px}@media (min-width:641px){.autocomplete__hint,.autocomplete__input,.autocomplete__option{font-size:1.1875rem;line-height:1.3157894737}}</style>
+
+{% block pageScripts %}
+    <script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+    <script src="/public/javascripts/accessible-autocomplete.min.js.map"></script>
+
+    <script>
+      accessibleAutocomplete.enhanceSelectElement({
+        defaultValue : '',
+        autoselect : true,
+        showAllValues: true,
+        selectElement: document.querySelector('#country')
+      });
+    </script>
+{% endblock %}
 
 {% endblock %}
