@@ -1,0 +1,179 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Intervention skeleton
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="#">
+          <div class="govuk-form-group">
+            <!--<span class="govuk-caption-l">Alex River (CRN: X123456)</span>-->
+            <h1 class="govuk-heading-l">Finance, Benefit and Debt Services: Devon and Cornwall</h1> 
+          </div>
+         
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Criteria</h2>
+          <dl class="govuk-summary-list">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Gender
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Male
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Commissioned Rehabilitative Service
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Needs
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <ul class="govuk-list search-result-details">
+                    <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
+                    <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
+                    <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
+                    <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
+                    <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
+                    <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
+                    <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
+                    <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
+                    <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
+                    <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>
+                    <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>            
+                  </ul>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Time to complete
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Variable
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Format
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Variable, group or one-to-one sessions depending on provider
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Attendance type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  In person or online
+                </dd>
+              </div>
+          </dl>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Description</h2>
+          <p class="govuk-body">Finance, Benefits and Debt (FBD) is a rehabilitative service to help men better understand banking, stabilise debt, and claim benefits. </p>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Outcomes</h2>
+          <p class="govuk-body">By the end of the programme, participants will be able to:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>create a monthly budget</li>
+            <li>manage finances independently for 3 consecutive months with no missed payments</li>
+            <li>create a repayment plan for 75% of their debts within 8 weeks</li>
+            <li>identify at least 3 financial behaviours linked to offending and develop strategies to change these</li>
+            <li>find and apply for all benefits and financial support they’re eligible for</li>
+          </ul>
+          
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Session details</h2>
+          <p class="govuk-body govuk-!-margin-top-6">Sessions are held in a group or one-to-one depending on the participant’s needs.</p>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Location</h2>
+          <p class="govuk-body govuk-!-margin-top-6">Locations where the service is provided.</p>
+
+<!--Table for custody-->
+
+          <table class="govuk-table" data-module="moj-sortable-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" aria-sort="ascending"><button type="button" data-index="0">Location</button></th>
+                <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Category</button></th>
+                <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2">Country</button></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">      
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="crs-double-barnstable-browse">Aylesbury (HMP)</a></td>
+                <td class="govuk-table__cell">Category C</td>
+                <td class="govuk-table__cell">Buckinghamshire</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="crs-double-barnstable-browse">Brinsford (HMP)</a></td>
+                <td class="govuk-table__cell">Category B/C</td>
+                <td class="govuk-table__cell">Wolverhampton</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="crs-double-barnstable-browse">Frankland (HMP)</a></td>
+                <td class="govuk-table__cell">Category A/B</td>
+                <td class="govuk-table__cell">Durham</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="crs-double-barnstable-browse">Stoke Heath (HMP)</a></td>
+                <td class="govuk-table__cell">Category C</td>
+                <td class="govuk-table__cell">Shropshire</td>
+                </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="crs-double-barnstable-browse">Swinton Hall (HMP)</a></td>
+                <td class="govuk-table__cell">Category C</td>
+                <td class="govuk-table__cell">Staffordshire</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="crs-double-barnstable-browse">Erlestoke (HMP)</a></td>
+                <td class="govuk-table__cell">Category C</td>
+                <td class="govuk-table__cell">Wiltshire</td>
+              </tr>
+            </tbody>
+          </table>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-8">Next steps</h2>
+      <p class="govuk-body govuk-!-margin-top-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae condimentum nunc. Nullam nec justo id libero vehicula ultrices. Curabitur convallis, mauris in vulputate sodales, arcu massa porta augue, quis tincidunt libero nibh sed tortor. Etiam rhoncus fermentum ipsum, a vestibulum velit vehicula quis. Suspendisse porttitor orci id lacus consectetur consequat. </p>
+
+      <!-- {{ govukButton({
+        text: 'Continue'
+      }) }} -->
+
+      <div class="govuk-button-group">
+        <!--<a href="#" class="govuk-button">
+          Make a referral
+        </a> -->
+        <a href="#" class="govuk-button govuk-button--secondary">
+          Copy link for this intervention
+        </a>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script type="module" src="/public/javascripts/gov-uk-latest.js"></script>
+
+{% endblock %}
