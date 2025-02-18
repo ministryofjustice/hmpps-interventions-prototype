@@ -19,14 +19,9 @@ href: "javascript:history.back()"
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <h1 class="govuk-heading-l" style="display:inline;">Search results in community            
-      <div class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__row">
-        <dd class="govuk-summary-list__actions" style="display:inline;">
-        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> setting</span></a>
-      </dd>
-      </div>
+    <h1 class="govuk-heading-l">Search results</h1>
   </div>
-</div> <br>
+</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
@@ -82,6 +77,33 @@ href: "javascript:history.back()"
               Search by programme name
             </label>
             <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Setting
+                </h1>
+              </legend>
+              <div id="contact-hint" class="govuk-hint">
+                Select one option
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item govuk-radios--small">
+                  <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" checked="checked">
+                  <label class="govuk-label govuk-radios__label" for="contact">
+                    Community
+                  </label>
+                </div>
+                <div class="govuk-radios__item govuk-radios--small">
+                  <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+                  <label class="govuk-label govuk-radios__label" for="contact-2">
+                    Custody
+                  </label>
+                </div>
+              </div>
+            </fieldset>
           </div>
 
           <div class="govuk-form-group">
@@ -159,12 +181,14 @@ href: "javascript:history.back()"
                     Toolkits
                   </label>
                 </div>
+    
               </div>
             </fieldset>
           </div>
         </div>
       </div>
     </div>
+    
   </div>
     <div class="govuk-grid-column-two-thirds js-live-search-results-block filtered-results" role="region" aria-label="Search search results" data-ga4-ecommerce="" data-ga4-ecommerce-start-index="1" data-ga4-list-title="Search" data-ga4-search-query="bob" data-ga4-ecommerce-variant="Relevance">
       <div id="js-search-results-info" data-module="remove-filter" class="result-info " data-remove-filter-module-started="true">
@@ -190,10 +214,10 @@ href: "javascript:history.back()"
           <div class="finder-results js-finder-results">
             <ul class="gem-c-document-list gem-c-document-list--no-underline govuk-!-margin-bottom-5" style="font-size: 1.1875rem; line-height: 1.3157894737;margin: 0;padding: 0;">
 
-              <!--example 2-->
+              <!--AcP BBR-->
               <li class="gem-c-document-list__item"  style="border-top:none">
                 <div class="gem-c-document-list__item-title">          
-                  <h2 class="govuk-heading-m"><a class="govuk-link" href="int-acp-cus-violence" style="font-weight: 700;">Becoming New Me Plus: general violence offence</a></h2>
+                  <h2 class="govuk-heading-m"><a class="govuk-link" href="int-acp-com-relationships" style="font-weight: 700;">Building Better Relationships</a></h2>
                 </div>
                <!--  <ul class="govuk-list search-result-details">
                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
@@ -229,96 +253,7 @@ href: "javascript:history.back()"
                       Risk criteria
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      <ul class="govuk-list govuk-list--bullet">
-                        <li>High or very high OVP (OASys Violence Predictor)</li>
-                        <li>High or very high OGRS (Offender Group Reconviction Scale)</li>
-                      </ul> 
-                    </dd>
-                  </div>  
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Needs
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Thinking and behaviour, Attitudes
-                    </dd>
-                  </div>            
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Suitable for people with learning disabilities or challenges (LDC)
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Yes
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Equivalent non-LDC programme
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Kaizen
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Time to complete	
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      At least 12 months
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Format
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      One-to-one or group
-                    </dd>
-                  </div>
-                </dl>
-                <p class="gem-c-document-list__item-description">Becoming New Me Plus (BNM+) uses cognitive behaviour therapy. It is for men who are at high or very high risk of reoffending. This strand is for men convicted of a general violence offence.</p>
-              </li>
-
-              <!--AcP BBR-->
-              <li class="gem-c-document-list__item"  style="border-top:none">
-                <div class="gem-c-document-list__item-title">          
-                  <h2 class="govuk-heading-m"><a class="govuk-link" href="int-acp-com-relationships" style="font-weight: 700;">Building Better Relationships</a></h2>
-                </div>
-                <!--  <ul class="govuk-list search-result-details">
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
-                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>         
-                </ul>-->
-                <dl class="govuk-summary-list" style="font-size: 1.1875rem;">
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Gender
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Male
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Type
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Accredited Programmes
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Risk criteria
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Medium SARA (Spousal Assault Risk Assessment)
+                        Medium or high SARA (Spousal Assault Risk Assessment)
                     </dd>
                   </div>
                   <div class="govuk-summary-list__row">
@@ -329,14 +264,6 @@ href: "javascript:history.back()"
                       Thinking and behaviour, Attitudes
                     </dd>
                   </div> 
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Suitable for people with learning disabilities or challenges (LDC)
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Yes
-                    </dd>
-                  </div>
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       Time to complete	
@@ -366,12 +293,11 @@ href: "javascript:history.back()"
               </li>
 
               
-
               <!--example 3
               <li class="gem-c-document-list__item">
                 <div class="gem-c-document-list__item-title">          
-                  <h2 class="govuk-heading-m"><a class="govuk-link" href="int-crs-cus-finance" style="font-weight: 700;">Finance, Benefit and Debt Services: Devon and Cornwall</a></h2>
-                </div>  
+                  <h2 class="govuk-heading-m"><a class="govuk-link" href="int-crs-com-finance" style="font-weight: 700;">Finance, Benefit and Debt Services: Devon and Cornwall</a></h2>
+                </div>
                 <ul class="govuk-list search-result-details">
                   <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
                   <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
@@ -383,7 +309,7 @@ href: "javascript:history.back()"
                   <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
                   <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
                   <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>         
-                </ul>           
+                </ul>
                 <dl class="govuk-summary-list" style="font-size: 1.1875rem;">
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
@@ -400,32 +326,72 @@ href: "javascript:history.back()"
                     <dd class="govuk-summary-list__value">
                       Commissioned Rehabilitative Services
                     </dd>
-                  </div> 
+                  </div>
+                </dl>
+                <p class="gem-c-document-list__item-description">Finance, Benefits and Debt (FBD) is a rehabilitative service to help men better understand banking, stabilise debt, and claim benefits.</p>
+              </li>-->
+
+              
+              <!--example 4-->
+              <li class="gem-c-document-list__item">
+                <div class="gem-c-document-list__item-title">          
+                  <h2 class="govuk-heading-m"><a class="govuk-link" href="int-crs-com-wellbeing" style="font-weight: 700;">Personal Wellbeing service</a></h2>
+                </div>
+                <!--<ul class="govuk-list search-result-details">
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>        
+                </ul>   -->          
+                <dl class="govuk-summary-list" style="font-size: 1.1875rem;">
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      Format
+                      Gender
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      One-to-one or group
+                      Male
                     </dd>
                   </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Type
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Commissioned Rehabilitative Services
+                    </dd>
+                  </div>  
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Needs
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Lifestyle and associates, Emotional wellbeing
+                    </dd>
+                  </div> 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       Attendance type
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      In person or online
+                      In person, online
                     </dd>
-                  </div>             
+                  </div>              
                 </dl>
-                <p class="gem-c-document-list__item-description">Finance, Benefits and Debt (FBD) is a rehabilitative service to help men better understand banking, stabilise debt, and claim benefits.</p>
-              </li>-->
+                <p class="gem-c-document-list__item-description">This service helps men with a range of rehabilitative needs, including emotional wellbeing, family and significant others, lifestyle and associates and social inclusion.</p>
+              </li>
 
-                <!--example 4-->
-                <li class="gem-c-document-list__item">
-                  <div class="gem-c-document-list__item-title">          
-                    <h2 class="govuk-heading-m"><a class="govuk-link" href="int-crs-cus-accommodation" style="font-weight: 700;">Accommodation service</a></h2>
-                  </div>  
+
+              <!--example 5-->
+              <li class="gem-c-document-list__item">
+                <div class="gem-c-document-list__item-title">          
+                  <h2 class="govuk-heading-m"><a class="govuk-link" href="int-si-com-driving" style="font-weight: 700;">Stepwise Driving</a></h2>
+                </div>
                <!--  <ul class="govuk-list search-result-details">
                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
                   <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
@@ -437,57 +403,71 @@ href: "javascript:history.back()"
                   <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
                   <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
                   <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>         
-                </ul>-->   
-                  <dl class="govuk-summary-list" style="font-size: 1.1875rem;">
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        Gender
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        Male
-                      </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        Type
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        Commissioned Rehabilitative Services
-                      </dd>
-                    </div> 
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        Needs
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        Accommodation
-                      </dd>
-                    </div> 
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        Format
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        Variable, group or one-to-one sessions depending on provider
-                      </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        Attendance type
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        In-person or online
-                      </dd>
-                    </div>              
-                  </dl>
-                  <p class="gem-c-document-list__item-description">Accommodation services provide pre-release support to help people find and keep housing. These services are designed to help people in prison and on probation address their accommodation needs and achieve stability.</p>
-                </li>
+                </ul>-->
+                <dl class="govuk-summary-list" style="font-size: 1.1875rem;">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Gender
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Any
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Type
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Structured Interventions
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Needs
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Thinking and behaviour, Attitude
+                    </dd>
+                  </div> 
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Format
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Group
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Attendance type
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      In person, online
+                    </dd>
+                  </div>              
+                </dl>
+                <p class="gem-c-document-list__item-description">Stepwise Driving is a structured intervention for men or women who have been convicted of driving while under the influence of drugs or alcohol.</p>
+              </li>
+
+
 
               <!--example 6 Toolkit-->
               <li class="gem-c-document-list__item">
                 <div class="gem-c-document-list__item-title">          
-                  <h2 class="govuk-heading-m"><a class="govuk-link" href="int-toolkits-cus-cc" style="font-weight: 700;">Choices and Changes</a></h2>
+                  <h2 class="govuk-heading-m"><a class="govuk-link" href="int-toolkits-com-maps" style="font-weight: 700;">Maps for Change</a></h2>
                 </div>
+               <!--  <ul class="govuk-list search-result-details">
+                 <li><strong class="govuk-tag govuk-tag--grey tag-filters">Accommodation</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Education, training and employability</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Financial management and income</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Relationships</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Lifestyle and associates</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Drug misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Alcohol misuse</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Emotional wellbeing</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Thinking and behaviour</strong></li>
+                  <li><strong class="govuk-tag govuk-tag--grey tag-filters">Attitudes</strong></li>         
+                </ul>-->
                 <dl class="govuk-summary-list" style="font-size: 1.1875rem;">
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
@@ -510,9 +490,14 @@ href: "javascript:history.back()"
                       Risk criteria
                     </dt>
                     <dd class="govuk-summary-list__value">                   
-                      Low maturity marker on OASys maturity screening tool          
+                      <!--<ul class="govuk-list govuk-list--bullet">
+                        <li>Low OASys sexual reoffending predictor: direct contact</li>
+                        <li>Low OASys sexual reoffending predictor: indecent images</li>
+                      </ul>   
+                       -->
+                        Low OSP-DC or OSP-IIC (OASys Sexual Reconviction Predictor – Contact or Indecent Imagery)             
                     </dd>
-                  </div>  
+                  </div> 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       Needs
@@ -520,7 +505,7 @@ href: "javascript:history.back()"
                     <dd class="govuk-summary-list__value">
                       [TBC]
                     </dd>
-                  </div>
+                  </div>  
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       Format
@@ -528,7 +513,7 @@ href: "javascript:history.back()"
                     <dd class="govuk-summary-list__value">
                       One-to-one
                     </dd>
-                  </div>
+                  </div>  
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       Attendance type
@@ -536,9 +521,9 @@ href: "javascript:history.back()"
                     <dd class="govuk-summary-list__value">
                       In person
                     </dd>
-                  </div>                 
+                  </div>               
                 </dl>
-                <p class="gem-c-document-list__item-description">Choices and Changes is a toolkit of resources for prison staff who work with young adults who are less mature according to the OASys maturity screening tool. It provides a structured framework for staff to encourage positive change.</p>
+                <p class="gem-c-document-list__item-description">Maps for Change is a toolkit of exercises for probation practitioners in working with men convicted of a sexual offences.</p>
               </li>
             </ul>
           </div>

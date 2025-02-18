@@ -19,9 +19,14 @@ href: "javascript:history.back()"
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <h1 class="govuk-heading-l">Search results</h1>
+    <h1 class="govuk-heading-l" style="display:inline;">Search results in community            
+      <div class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__row">
+        <dd class="govuk-summary-list__actions" style="display:inline;">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> setting</span></a>
+      </dd>
+      </div>
   </div>
-</div>
+</div> <br>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
@@ -77,33 +82,6 @@ href: "javascript:history.back()"
               Search by programme name
             </label>
             <input class="govuk-input" id="keywords" name="keywords" type="text">
-          </div>
-
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h1 class="govuk-fieldset__heading">
-                  Setting
-                </h1>
-              </legend>
-              <div id="contact-hint" class="govuk-hint">
-                Select one option
-              </div>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item govuk-radios--small">
-                  <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" checked="checked">
-                  <label class="govuk-label govuk-radios__label" for="contact">
-                    Community
-                  </label>
-                </div>
-                <div class="govuk-radios__item govuk-radios--small">
-                  <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
-                  <label class="govuk-label govuk-radios__label" for="contact-2">
-                    Custody
-                  </label>
-                </div>
-              </div>
-            </fieldset>
           </div>
 
           <div class="govuk-form-group">
