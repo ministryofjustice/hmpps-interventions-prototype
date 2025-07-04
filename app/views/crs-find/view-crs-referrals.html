@@ -1,0 +1,210 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Open casess
+{% endblock %}
+
+{% block main %}
+{% include "../includes/primary-nav-pp.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <nav class="clear-right">
+      <a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right" style="padding-top: 10px;">Go to CRS homepage</a>
+  </nav>
+
+    <h1 class="govuk-heading-l">Open cases</h1>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="open-cases">Open cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="">Unassigned cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="">Completed cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="">Cancelled cases</a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Date sent</th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">Referral</th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">Person</th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">Intervention type</th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">Provider</th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">Caseworker</th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">Action</th>
+
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">14 Feb 2024</td>
+
+          <td class="govuk-table__cell">RY2127AG</td>
+
+          <td class="govuk-table__cell">Alex River</td>
+
+          <td class="govuk-table__cell">Accommodation service</td>
+
+          <td class="govuk-table__cell">Seetec Business Technology Centre Limited</td>
+
+          <td class="govuk-table__cell">Unassigned</td>
+
+          <td class="govuk-table__cell"><a href="referral-details-alex">View</a></td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">14 Feb 2024</td>
+
+          <td class="govuk-table__cell">YE7432DD</td>
+
+          <td class="govuk-table__cell">Mohammed Salah</td>
+
+          <td class="govuk-table__cell">ETE services</td>
+
+          <td class="govuk-table__cell">ETE services</td>
+
+          <td class="govuk-table__cell">The Growth Company Ltd</td>
+
+          <td class="govuk-table__cell"><a href="">View</a></td>
+
+        </tr>
+
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">11 Feb 2024</td>
+
+          <td class="govuk-table__cell">JE9392LG</td>
+
+          <td class="govuk-table__cell">Darren Wicks</td>
+
+          <td class="govuk-table__cell">Dependency and recovery</td>
+
+          <td class="govuk-table__cell">Catch22 Charity Limited</td>
+
+          <td class="govuk-table__cell">Unassigned</td>
+
+          <td class="govuk-table__cell"><a href="">View</a></td>
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">9 Feb 2024</td>
+
+          <td class="govuk-table__cell">YR2812JD</td>
+
+          <td class="govuk-table__cell">John Smith</td>
+
+          <td class="govuk-table__cell">Finance, benefit and debt services</td>
+
+          <td class="govuk-table__cell">The Nelson Trust</td>
+
+          <td class="govuk-table__cell">Unassigned</td>
+
+          <td class="govuk-table__cell"><a href="">View</a></td>
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">4 Feb 2024</td>
+
+          <td class="govuk-table__cell">HJ6273PL</td>
+
+          <td class="govuk-table__cell">Julian Briars</td>
+
+          <td class="govuk-table__cell">Accommodation services</td>
+
+          <td class="govuk-table__cell">The Forward Trust</td>
+
+          <td class="govuk-table__cell">Unassigned</td>
+
+          <td class="govuk-table__cell"><a href="">View</a></td>
+
+        </tr>
+
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">4 Feb 2024</td>
+
+          <td class="govuk-table__cell">RG1723OP</td>
+
+          <td class="govuk-table__cell">Dakarai Abara</td>
+
+          <td class="govuk-table__cell">Accommodation services</td>
+
+          <td class="govuk-table__cell">The Forward Trust</td>
+
+          <td class="govuk-table__cell">Unassigned</td>
+
+          <td class="govuk-table__cell"><a href="">View</a></td>
+
+        </tr>
+
+
+
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+{% endblock %}
