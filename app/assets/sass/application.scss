@@ -640,3 +640,46 @@ ul#country__listbox {
 .moj-primary-navigation__nav {
     text-align: left;
 }
+
+.govuk-tag-feedback {
+    display: inline-block;
+    outline: 2px solid rgba(0, 0, 0, 0);
+    outline-offset: -2px;
+    color: #fff;
+    background-color: #1d70b8;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    padding-top: 5px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+}
+
+.refer-and-monitor__filters .govuk-form-group {
+    margin-bottom: 35px;
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+.find-filters--scrollable {
+    margin-bottom: 0;
+}
+
+.govuk-fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+@media (min-width: 40.0625em) {
+    .govuk-checkboxes__item {
+        font-size: 1.1875rem;
+        line-height: 1.3157894737;
+    }
+}
