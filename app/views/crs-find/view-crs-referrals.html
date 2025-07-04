@@ -4,20 +4,21 @@
   Open casess
 {% endblock %}
 
-{% block main %}
-{% include "../includes/primary-nav-pp.html" %}
-{{ super() }}
+{% block header %}
+	{% include "/includes/head-crs.html" %}
 {% endblock %}
+
+{% block beforeContent %}
+<nav class="clear-right">
+	<a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right">Go to CRS homepage</a>
+  	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+</nav>
+{% endblock %} 
 
 {% block content %}
 
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
-    <nav class="clear-right">
-      <a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right" style="padding-top: 10px;">Go to CRS homepage</a>
-  </nav>
 
     <h1 class="govuk-heading-l">Open cases</h1>
 
@@ -38,6 +39,10 @@
 
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link" href="">Cancelled cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="">Draft cases</a>
         </li>
       </ul>
 
