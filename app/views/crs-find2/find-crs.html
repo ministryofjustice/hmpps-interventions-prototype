@@ -1,0 +1,2097 @@
+{% extends "layouts/main.html" %}
+{% set containerClasses = "moj-special-width-container" %}
+
+{% block pageTitle %}
+Interventions - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% set bodyClasses = "dps-home" %}
+
+
+
+
+{% block content %}
+<div class="govuk-phase-banner govuk-width-container" style="margin-top:-40px">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag-feedback govuk-phase-banner__content__tag">
+        Prototype
+      </strong>
+      <span class="govuk-phase-banner__text">
+        <a class="govuk-link" data-ga-action="click" data-ga-category="Feedback" data-ga-label="Survey Monkey 369L5GL" data-ga-value="1" href="https://eu.surveymonkey.com/r/369L5GL">Give us your feedback</a> to help us improve this service.
+      </span>
+    </p>
+    </div>
+    
+    <div class="govuk-width-container">
+        <nav class="clear-right">  
+            <a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right" style="padding-top: 10px;">Go to CRS homepage</a>
+            <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+        </nav>
+    </div>
+
+
+<!--<div class="moj-primary-navigation refer-and-monitor__primary-navigation">
+    <div class="moj-primary-navigation__container">
+      <div class="moj-primary-navigation__nav">
+        <nav class="moj-primary-navigation" aria-label="Primary navigation">
+          <ul class="moj-primary-navigation__list">
+              <li class="moj-primary-navigation__item">
+                <a class="moj-primary-navigation__link" href="/probation-practitioner/dashboard">Referrals</a>
+              </li>
+            
+              <li class="moj-primary-navigation__item">
+                <a class="moj-primary-navigation__link" aria-current="page" href="/probation-practitioner/find">Find interventions</a>
+              </li>
+            </ul>
+        </nav>
+      </div>
+    </div>
+</div>-->
+
+
+
+    <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+          <div class="govuk-grid-row clear">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl">Find interventions</h1>
+                <p class="govuk-body">
+                Search for the most appropriate interventions for someone on probation, according to their region and age group. You can use this service to find 
+                Commissioned Rehabilitative Services, which are individual rehabilitation and resettlement services.
+                </p>
+            </div>
+          </div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third refer-and-monitor__filters">
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset find-filters--scrollable">
+                    
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    
+                    Regions
+                    
+                    </legend>
+                    
+                
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    
+                        
+                            
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item find-filters--scrollable">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids" name="pcc-region-ids[]" type="checkbox" value="avon-and-somerset">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids">
+                        Avon &amp; Somerset
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item find-filters--scrollable">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-2" name="pcc-region-ids[]" type="checkbox" value="bedfordshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-2">
+                        Bedfordshire
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-3" name="pcc-region-ids[]" type="checkbox" value="cambridgeshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-3">
+                        Cambridgeshire
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-4" name="pcc-region-ids[]" type="checkbox" value="cheshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-4">
+                        Cheshire
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-5" name="pcc-region-ids[]" type="checkbox" value="cleveland">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-5">
+                        Cleveland
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-6" name="pcc-region-ids[]" type="checkbox" value="cumbria">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-6">
+                        Cumbria
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-7" name="pcc-region-ids[]" type="checkbox" value="derbyshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-7">
+                        Derbyshire
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-8" name="pcc-region-ids[]" type="checkbox" value="devon-and-cornwall">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-8">
+                        Devon &amp; Cornwall
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-9" name="pcc-region-ids[]" type="checkbox" value="dorset">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-9">
+                        Dorset
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-10" name="pcc-region-ids[]" type="checkbox" value="durham">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-10">
+                        Durham
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-11" name="pcc-region-ids[]" type="checkbox" value="dyfed-powys">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-11">
+                        Dyfed-Powys
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-12" name="pcc-region-ids[]" type="checkbox" value="essex">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-12">
+                        Essex
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-13" name="pcc-region-ids[]" type="checkbox" value="gloucestershire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-13">
+                        Gloucestershire
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-14" name="pcc-region-ids[]" type="checkbox" value="greater-manchester">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-14">
+                        Greater Manchester
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-15" name="pcc-region-ids[]" type="checkbox" value="gwent">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-15">
+                        Gwent
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-16" name="pcc-region-ids[]" type="checkbox" value="hampshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-16">
+                        Hampshire
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-17" name="pcc-region-ids[]" type="checkbox" value="hertfordshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-17">
+                        Hertfordshire
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-18" name="pcc-region-ids[]" type="checkbox" value="humberside">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-18">
+                        Humberside
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-19" name="pcc-region-ids[]" type="checkbox" value="kent">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-19">
+                        Kent
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-20" name="pcc-region-ids[]" type="checkbox" value="lancashire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-20">
+                        Lancashire
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-21" name="pcc-region-ids[]" type="checkbox" value="leicestershire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-21">
+                        Leicestershire
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-22" name="pcc-region-ids[]" type="checkbox" value="lincolnshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-22">
+                        Lincolnshire
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-23" name="pcc-region-ids[]" type="checkbox" value="metropolitan">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-23">
+                        London (Metropolitan Police)
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-24" name="pcc-region-ids[]" type="checkbox" value="merseyside">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-24">
+                        Merseyside
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-25" name="pcc-region-ids[]" type="checkbox" value="norfolk">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-25">
+                        Norfolk
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-26" name="pcc-region-ids[]" type="checkbox" value="north-wales">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-26">
+                        North Wales
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-27" name="pcc-region-ids[]" type="checkbox" value="north-yorkshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-27">
+                        North Yorkshire
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-28" name="pcc-region-ids[]" type="checkbox" value="northamptonshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-28">
+                        Northamptonshire
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-29" name="pcc-region-ids[]" type="checkbox" value="northumbria">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-29">
+                        Northumbria
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-30" name="pcc-region-ids[]" type="checkbox" value="nottinghamshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-30">
+                        Nottinghamshire
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-31" name="pcc-region-ids[]" type="checkbox" value="south-wales">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-31">
+                        South Wales
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-32" name="pcc-region-ids[]" type="checkbox" value="south-yorkshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-32">
+                        South Yorkshire
+                        </label>
+                            
+                            </div>
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-33" name="pcc-region-ids[]" type="checkbox" value="staffordshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-33">
+                        Staffordshire
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-34" name="pcc-region-ids[]" type="checkbox" value="suffolk">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-34">
+                        Suffolk
+                        </label>
+                            
+                            </div>
+                            
+                        
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-35" name="pcc-region-ids[]" type="checkbox" value="surrey">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-35">
+                        Surrey
+                        </label>
+                            
+                            </div>
+                            
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-36" name="pcc-region-ids[]" type="checkbox" value="sussex">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-36">
+                                Sussex
+                            </label>               
+                            </div>
+                
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-37" name="pcc-region-ids[]" type="checkbox" value="thames-valley">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-37">
+                                Thames Valley
+                            </label>         
+                            </div>
+                
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-38" name="pcc-region-ids[]" type="checkbox" value="warwickshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-38">
+                                Warwickshire
+                            </label>
+                            </div>
+                
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-39" name="pcc-region-ids[]" type="checkbox" value="west-mercia">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-39">
+                                West Mercia
+                            </label> 
+                            </div>
+                
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-40" name="pcc-region-ids[]" type="checkbox" value="west-midlands">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-40">
+                                West Midlands
+                            </label>          
+                        </div>
+                
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-41" name="pcc-region-ids[]" type="checkbox" value="west-yorkshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-41">
+                                West Yorkshire
+                            </label> 
+                            </div>
+                
+                            <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="pcc-region-ids-42" name="pcc-region-ids[]" type="checkbox" value="wiltshire">
+                            <label class="govuk-label govuk-checkboxes__label" for="pcc-region-ids-42">
+                                Wiltshire
+                            </label>             
+                            </div>
+                    </div>
+                </fieldset>
+                </div>
+                    
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset find-filters--scrollable">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    Gender
+                    </legend>
+                
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="gender" name="gender[]" type="checkbox" value="male">
+                        <label class="govuk-label govuk-checkboxes__label" for="gender">
+                        Male
+                        </label>
+                    </div>
+                
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="gender-2" name="gender[]" type="checkbox" value="female">
+                        <label class="govuk-label govuk-checkboxes__label" for="gender-2">
+                        Female
+                        </label>
+                    </div> 
+                    </div>
+                </fieldset>
+                </div>
+                
+                <div class="govuk-form-group">
+                
+                    <fieldset class="govuk-fieldset find-filters--scrollable">        
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            Age restrictions         
+                        </legend>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="age" name="age[]" type="checkbox" value="18-to-25-only">
+                                <label class="govuk-label govuk-checkboxes__label" for="age">
+                                Only for ages 18 to 25
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+                    Filter results
+                </button>
+              </div>
+            <div class="govuk-grid-column-two-thirds">
+              <p class="govuk-body"><span class="govuk-!-font-size-36 govuk-!-margin-right-1" role="status"><strong>180</strong></span> results found.</p>
+        <dl class="govuk-summary-list">
+        </dl>
+    <h2 class="govuk-heading-l">
+        <a class="govuk-link" href="/find-interventions/intervention/2a0e9c3b-b65e-411a-8072-814371f60ebb">Women's Lifestyle Coaching</a>
+    </h2>
+    <p class="govuk-body">Helping women in Sussex live better lives</p>
+    <dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">Commissioned Rehabilitative Service</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Location
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">Sussex</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Service categories
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list govuk-list--bullet"><li>Emotional wellbeing</li>
+        <li>Family and significant others</li>
+        <li>Lifestyle and associates</li>
+        <li>Social inclusion</li></ul>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Provider
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">Safe Living Ltd.</p>
+          </dd>
+        </div> 
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Age group
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">18+</p>
+          </dd>      
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Gender
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">Female</p>
+          </dd>
+          
+        </div>
+      
+    
+  </dl>
+    
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/6b08b8d4-8993-468e-b8b8-21db38ba5e89">Dependency and Recovery Services in South Gloucestershire</a>
+</h2>
+<p class="govuk-body">Dependency services to reduce the harmful effects of substance misuse, promote healthier behaviours, and improve overall well-being. Recovery services focus on helping individuals maintain long-term recovery and rebuild their lives after overcoming dependency. Practitioners are requested to utilise the Substance Misuse Screening Tool to inform referrals. These services provide ongoing support through various interventions, such as individual and group therapy, life skills training, and relapse ...</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">  
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Gloucestershire</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service category
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Dependency and recovery (south west)</p>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Developing Health and Independence</p>
+    </dd>            
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>                
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Male</p>
+    </dd>                 
+</div>
+</dl>
+    
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/920240ba-c06b-4ded-b8be-26f73a2ca7d7">Personal Wellbeing Services in Durham</a>
+</h2>
+<p class="govuk-body">A holistic service which addresses the following rehabilitative needs: Emotional Wellbeing, Family and Significant Others, Lifestyle and Associates and Social Inclusion.</p>  
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list"> 
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Durham</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service categories
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <ul class="govuk-list govuk-list--bullet"><li>Emotional wellbeing</li>
+<li>Family and significant others</li>
+<li>Lifestyle and associates</li>
+<li>Social inclusion</li></ul>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">St Giles Wise Group Partnership</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Male</p>
+    </dd>                 
+</div>         
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/42c9eb32-03ac-4e3a-9af7-6b9437b9a71d">Women's Services in Gloucestershire</a>
+</h2>
+<p class="govuk-body">A holistic service for women which secure improved outcomes in relation to the following rehabilitative needs:</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Gloucestershire</p>
+    </dd>  
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service categories
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <ul class="govuk-list govuk-list--bullet"><li>Accommodation</li>
+        <li>Dependency and recovery (d&amp;r)</li>
+        <li>Education, training and employment (ete)</li>
+        <li>Emotional wellbeing</li>
+        <li>Family and significant others</li>
+        <li>Finance, benefits and debt (fbd)</li>
+        <li>Lifestyle and associates</li>
+        <li>Social inclusion</li>
+    </ul>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">The Nelson Trust</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Female</p>
+    </dd>
+</div>
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/0f21df40-498a-4ca4-a2fb-3448bf799a75">Finance Benefit &amp; Debt Services in Devon and Cornwall</a>
+</h2>
+<p class="govuk-body">Services are available for all adult males on probation either:</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">            
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Devon &amp; Cornwall</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service category
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Finance, benefit and debt (south west)</p>
+    </dd>  
+</div>  
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Ingeus UK Limited</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Male</p>
+    </dd>
+</div>
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">              
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/669916d0-55c7-42c4-8b80-8612a5a2251c">Personal Wellbeing Services in Merseyside</a>
+</h2>
+<p class="govuk-body">A holistic service which addresses the following rehabilitative needs: Emotional Wellbeing, Family and Significant Others, Lifestyle and Associates and Social Inclusion.</p>      
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Merseyside</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service categories
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <ul class="govuk-list govuk-list--bullet"><li>Emotional wellbeing</li>
+<li>Family and significant others</li>
+<li>Lifestyle and associates</li>
+<li>Social inclusion</li></ul>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">The Growth Company Ltd</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Male</p>
+    </dd>
+</div>
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/28bccc81-8f96-4f0b-be60-41895d1ac4de">Accommodation Services - Gwent</a>
+</h2>
+<p class="govuk-body">Services are available for all adult male Service Users, irrespective of risk level or complexity level, on a Community/ Suspended Sentence Order with a RAR or on Licence/Post-Sentence Supervision. They are also available to be delivered pre-release for those who will be under Probation supervision on release. Appointments which are part of sentence delivery will be enforceable.</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>                
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Gwent</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service category
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Accommodation</p>
+    </dd>               
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">The Forward Trust</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Male</p>
+    </dd>                
+</div>
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/641cf1b0-d7d0-4bac-9f96-73cb36b23da9">GM - ETE</a>
+</h2>
+<p class="govuk-body">The service is to deliver Education, Training &amp; Employment (ETE) for POPs sentenced to an ETE RAR or with an ETE need, currently on licence or a community order. The Probation practitioner will identify complexity level and send the completed referral form to GM-ETE via the Refer &amp; Monitor system - Dependent upon complexity, GM-ETE will deliver 121 work; group work; job clubs and digital interventions to support the POP with ETE:</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>                
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Region
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Greater Manchester</p>
+    </dd>            
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Greater Manchester</p>
+    </dd>                
+</div>          
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service category
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Education, training and employment (ete)</p>
+    </dd>                  
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Achieve</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Male and female</p>
+    </dd>                  
+</div>
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/3637d848-a63d-4978-98fa-04e752ac4bc3">Women's Services in Northumbria</a>
+</h2>
+<p class="govuk-body">A holistic service for women which secure improved outcomes in relation to the following rehabilitative needs:</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Northumbria</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service categories
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <ul class="govuk-list govuk-list--bullet"><li>Accommodation</li>
+<li>Dependency and recovery (d&amp;r)</li>
+<li>Education, training and employment (ete)</li>
+<li>Emotional wellbeing</li>
+<li>Family and significant others</li>
+<li>Finance, benefits and debt (fbd)</li>
+<li>Lifestyle and associates</li>
+<li>Social inclusion</li></ul>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Changing Lives</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>                
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Female</p>
+    </dd>                 
+</div>
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">            
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/5f5fe94c-88c6-482f-a8b1-ce27a5a27686">Dependency and Recovery Services in North Yorkshire</a>
+</h2>
+<p class="govuk-body">Services are available for all adult males on probation either:</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">          
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">North Yorkshire</p>
+    </dd>           
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service category
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Dependency and recovery (yorkshire and the humber)</p>
+    </dd>                
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Ingeus UK Limited</p>
+    </dd>     
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>                
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Male</p>
+    </dd>                
+</div>
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">           
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/c13c3cd9-b5a5-4a17-b158-9921fde750f6">Women Services in North Wales</a>
+</h2>
+<p class="govuk-body">A holistic service for women which secure improved outcomes in relation to the following rehabilitative needs:</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">North Wales</p>
+    </dd>                
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service categories
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <ul class="govuk-list govuk-list--bullet"><li>Accommodation</li>
+<li>Dependency and recovery (d&amp;r)</li>
+<li>Education, training and employment (ete)</li>
+<li>Emotional wellbeing</li>
+<li>Family and significant others</li>
+<li>Finance, benefits and debt (fbd)</li>
+<li>Lifestyle and associates</li>
+<li>Social inclusion</li></ul>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">The Nelson Trust</p>
+    </dd>               
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>                
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Female</p>
+    </dd>  
+</div>
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">         
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/244e9b63-8dc3-4067-aad2-27f1ba286f3d">GMWSA - Women's Support Service - Tameside</a>
+</h2>
+<p class="govuk-body">This is the GMWSA service delivered by Jigsaw (Tameside Women's Centre) in Tameside.</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Region
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Greater Manchester</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Greater Manchester</p>
+    </dd>   
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service categories
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <ul class="govuk-list govuk-list--bullet"><li>Accommodation</li>
+<li>Dependency and recovery (d&amp;r)</li>
+<li>Education, training and employment (ete)</li>
+<li>Emotional wellbeing</li>
+<li>Family and significant others (gm)</li>
+<li>Finance, benefits and debt (fbd)</li>
+<li>Lifestyle and associates</li>
+<li>Social inclusion</li></ul>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Greater Manchester Women's Support Alliance</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>   
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Female</p>
+    </dd>               
+</div>
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/d4e47ac3-502f-4e86-acbb-c5334f4c58d1">Personal Wellbeing Services in Devon &amp; Cornwall DA</a>
+</h2>
+<p class="govuk-body">A holistic service which addresses the following rehabilitative needs: Emotional Wellbeing, Family and Significant Others, Lifestyle and Associates and Social Inclusion.</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Devon &amp; Cornwall</p>
+    </dd>   
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service categories
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <ul class="govuk-list govuk-list--bullet"><li>Emotional wellbeing</li>
+<li>Family and significant others</li>
+<li>Lifestyle and associates</li>
+<li>Social inclusion</li></ul>
+    </dd>         
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Catch22 Charity Limited</p>
+    </dd>   
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Male</p>
+    </dd>   
+</div>
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">     
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/58ad428e-2922-405c-a9fb-ac072681ec86">Women Services in South Wales</a>
+</h2>
+<p class="govuk-body">A holistic service for women which secure improved outcomes in relation to the following rehabilitative needs:</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>                 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">South Wales</p>
+    </dd>          
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service categories
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <ul class="govuk-list govuk-list--bullet"><li>Accommodation</li>
+<li>Dependency and recovery (d&amp;r)</li>
+<li>Education, training and employment (ete)</li>
+<li>Emotional wellbeing</li>
+<li>Family and significant others</li>
+<li>Finance, benefits and debt (fbd)</li>
+<li>Lifestyle and associates</li>
+<li>Social inclusion</li></ul>
+    </dd>          
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">The Nelson Trust</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>                
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Female</p>
+    </dd>        
+</div>
+</dl>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/2eba236e-2c78-41b1-b64b-c358c536ae4e">Women Services in Gwent</a>
+</h2>
+<p class="govuk-body">A holistic service for women which secure improved outcomes in relation to the following rehabilitative needs:</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>   
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Gwent</p>
+    </dd>      
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service categories
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <ul class="govuk-list govuk-list--bullet"><li>Accommodation</li>
+<li>Dependency and recovery (d&amp;r)</li>
+<li>Education, training and employment (ete)</li>
+<li>Emotional wellbeing</li>
+<li>Family and significant others</li>
+<li>Finance, benefits and debt (fbd)</li>
+<li>Lifestyle and associates</li>
+<li>Social inclusion</li></ul>
+    </dd>       
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">The Nelson Trust</p>
+    </dd>         
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>             
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Female</p>
+    </dd> 
+</div>
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">             
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/4b11205e-dbf3-4894-b9aa-03a27e991135">Personal Wellbeing Services in the West Midlands</a>
+</h2>
+<p class="govuk-body">A holistic service which addresses the following rehabilitative needs: Emotional Wellbeing, Family and Significant Others, Lifestyle and Associates and Social Inclusion.</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>  
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">West Midlands</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service categories
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <ul class="govuk-list govuk-list--bullet"><li>Emotional wellbeing</li>
+<li>Family and significant others</li>
+<li>Lifestyle and associates</li>
+<li>Social inclusion</li></ul>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Ingeus UK Limited</p>
+    </dd>          
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Male</p>
+    </dd>    
+</div>
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/d1f8a115-d2c9-4ac2-ac4d-e621bea960d9">Dependency and Recovery Services in Durham</a>
+</h2>
+<p class="govuk-body">Services are available for all adult males on probation either:</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>   
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Region
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">North East</p>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Cleveland, Durham, Northumbria</p>
+    </dd>      
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service category
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Dependency and recovery (north east)</p>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Ingeus UK Limited</p>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Male</p>
+    </dd>    
+</div> 
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/63fedb3f-71c1-4711-8947-4cdd5aa2548a">Dependency and Recovery Services in Cleveland</a>
+</h2>
+<p class="govuk-body">Services are available for all adult males on probation either:</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Region
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">North East</p>
+    </dd>    
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Cleveland, Durham, Northumbria</p>
+    </dd>   
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service category
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Dependency and recovery (north east)</p>
+    </dd>       
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Ingeus UK Limited</p>
+    </dd>  
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>  
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Male</p>
+    </dd>         
+</div>
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">          
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/d3d2e527-2292-4033-82d2-43270e855cfa">Dependency and Recovery Services in Humberside</a>
+</h2>
+<p class="govuk-body">Services are available for all adult males on probation either:</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Humberside</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service category
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Dependency and recovery (yorkshire and the humber)</p>
+    </dd>   
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">The Forward Trust</p>
+    </dd>      
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>          
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Male</p>
+    </dd> 
+</div>
+</dl>
+    
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/aa166112-d4aa-42d8-9f7a-4e78693df509">Women Services in Dyfed-Powys</a>
+</h2>
+<p class="govuk-body">A holistic service for women which secure improved outcomes in relation to the following rehabilitative needs:</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Dyfed-Powys</p>
+    </dd>   
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service categories
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <ul class="govuk-list govuk-list--bullet"><li>Accommodation</li>
+<li>Dependency and recovery (d&amp;r)</li>
+<li>Education, training and employment (ete)</li>
+<li>Emotional wellbeing</li>
+<li>Family and significant others</li>
+<li>Finance, benefits and debt (fbd)</li>
+<li>Lifestyle and associates</li>
+<li>Social inclusion</li></ul>
+    </dd>           
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">The Nelson Trust</p>
+    </dd>             
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Female</p>
+    </dd>     
+</div>
+</dl>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-l">
+<a class="govuk-link" href="/find-interventions/intervention/718ede8f-909d-400e-8beb-9819b2f7e6f8">Dependency and Recovery Services in Bath and North East Somerset</a>
+</h2>
+<p class="govuk-body">Dependency services to reduce the harmful effects of substance misuse, promote healthier behaviours, and improve overall well-being. Recovery services focus on helping individuals maintain long-term recovery and rebuild their lives after overcoming dependency. Practitioners are requested to utilise the Substance Misuse Screening Tool to inform referrals.</p>
+<dl class="govuk-summary-list govuk-summary-list--no-border refer-and-monitor__intervention-summary-list">
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Commissioned Rehabilitative Service</p>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Avon &amp; Somerset</p>
+    </dd>         
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Service category
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Dependency and recovery (south west)</p>
+    </dd>                
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Devon Partnership Trust</p>
+    </dd> 
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Age group
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">18+</p>
+    </dd>           
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Gender
+    </dt>
+    <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Male</p>
+    </dd>
+</div>
+</dl>  
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        </div>
+        
+            </div>
+            
+          </div>
+        </main>
+      </div>
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third refer-and-monitor__filters">
+            <form method="get">
+            
+    
+    
+
+    
+
+</form>
+</div>
+</main>
+{% endblock %}

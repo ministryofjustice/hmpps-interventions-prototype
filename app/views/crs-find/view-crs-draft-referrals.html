@@ -1,0 +1,702 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Open casess
+{% endblock %}
+
+{% block header %}
+	{% include "/includes/head-crs.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="clear-right">
+	<a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right">Go to CRS homepage</a>
+  	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+</nav>
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Draft cases</h1>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="view-crs-referrals">Open cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="">Unassigned cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="">Completed cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="">Cancelled cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page"  href="view-crs-draft-referrals">Draft cases</a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <div class="govuk-grid-column-two-thirds" style="padding: 0px;">
+      <table class="govuk-table">
+    
+    
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+          
+            <th scope="col" class="govuk-table__header">Name</th>
+          
+            <th scope="col" class="govuk-table__header">Provider</th>
+          
+            <th scope="col" class="govuk-table__header">Intervention type</th>
+          
+            <th scope="col" class="govuk-table__header">Started on</th>
+          
+          </tr>
+        </thead>
+        
+        <tbody class="govuk-table__body">
+          
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/72d329a4-5711-4128-8c57-e28ccc9b6779/community-allocated-form">Sadie Borer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Waythrough</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Dependency and Recovery (South West)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">7 Jul 2025</td>
+                
+              
+              </tr>
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/c6b88f7e-740a-4b9c-b8b7-280152fb5dd8/community-allocated-form">Sadie Borer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Waythrough</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Dependency and Recovery (South West)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">7 Jul 2025</td>
+                
+              
+              </tr>
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/b879ea9c-e6bc-4ff1-8eec-60563f935bb8/community-allocated-form">Sadie Borer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Seetec Business Technology Centre Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">7 Jul 2025</td>
+                
+              
+              </tr>
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/88521a76-e9a1-40c4-b8ff-c2687b9834e5/community-allocated-form">Edgar Schiller</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Ingeus UK Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">3 Jul 2025</td>
+                
+              
+              </tr>
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/ac535bd3-99c2-4927-bec4-2159ffa326b9/community-allocated-form">Sadie Borer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Seetec Business Technology Centre Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">3 Jul 2025</td>
+                
+              
+              </tr>
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/8ab4ae62-045a-4aef-ba27-8bdc0e185be8/community-allocated-form">Sadie Borer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Seetec Business Technology Centre Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">2 Jul 2025</td>
+                
+              
+              </tr>
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/fa934e86-f092-4988-9111-41d5a6033a3d/community-allocated-form">Sadie Borer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Nacro</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">2 Jul 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/7ede6920-4ea7-489b-b8e3-6dbdcbb3cd71/community-allocated-form">Sadie Borer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Seetec Business Technology Centre Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">2 Jul 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/8d6eda3f-7e3a-4aac-9bc5-047660cc9cde/community-allocated-form">Sadie Borer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Seetec Business Technology Centre Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">30 Jun 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/0b008c8a-fc39-46d3-bfe7-67ad0082857a/community-allocated-form">Omar Pfeffer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Seetec Business Technology Centre Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">25 Jun 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/dbef4266-0cdd-49be-8f97-c5fe3c9ae355/community-allocated-form">Sadie Borer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Seetec Business Technology Centre Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">23 Jun 2025</td>
+                
+              
+              </tr>
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/36d44323-3c4f-43f2-beb2-8be619902701/community-allocated-form">Sadie Borer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Seetec Business Technology Centre Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">23 Jun 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/d5ca2f89-401e-4965-9dae-a2f2ac961804/community-allocated-form">Valerie Wyman</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Ingeus UK Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">20 Jun 2025</td>
+                
+              
+              </tr>
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/db3198c0-6aef-40d9-8509-370fd4d9e2bb/community-allocated-form">Valerie Wyman</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Ingeus UK Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">20 Jun 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/bbb1388b-05b0-4dcd-b367-f3bdfa604d30/community-allocated-form">Aadland Bertrand</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">The Forward Trust</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">19 Jun 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/dda556b3-e31c-44f6-aa61-989b25a87e1a/community-allocated-form">Omar Pfeffer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Community Led Initiatives</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Mentoring</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">19 Jun 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/206ecf4f-edcc-47ab-9227-45c414285a4e/community-allocated-form">Omar Pfeffer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Achieve</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Education, Training and Employment (ETE)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">19 Jun 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/c59fbb78-7416-4502-bf7e-a67f9cdd8f9f/community-allocated-form">Omar Pfeffer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Ingeus UK Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Dependency and Recovery (Yorkshire and the Humber)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">19 Jun 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/a536b3c9-0c92-419b-9f56-cb746d9574f1/community-allocated-form">Omar Pfeffer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">The Forward Trust</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">19 Jun 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/eec23fdf-a0ca-4014-a66c-0f70f791d9a7/community-allocated-form">Omar Pfeffer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Ingeus UK Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Finance, Benefit and Debt (South West)</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">19 Jun 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/d02447ca-ae45-4a9a-9ecf-9ce75a04945e/community-allocated-form">Karen Puckett</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">The Nelson Trust</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Women's Services</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">19 Jun 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/bb34026d-4376-4a7c-9221-e648bb60713b/community-allocated-form">Edgar Schiller</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">St Giles Wise Group Partnership</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Personal Wellbeing</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">19 Jun 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/7c1bffc1-86e0-49a6-bd94-43ea34e8ffe3/community-allocated-form">Sadie Borer</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Seetec Business Technology Centre Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">19 Jun 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/f51e7754-fa96-4f53-ba6a-421a9386c7cb/community-allocated-form">Karen Puckett</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Safe Living Ltd.</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Personal Wellbeing</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">17 Jun 2025</td>
+                
+              
+              </tr>
+
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/71873d92-faf0-495b-99a1-063ded988c91/community-allocated-form">Tamara Dare</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Seetec Business Technology Centre Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">16 Jun 2025</td>
+                
+              
+              </tr>
+            
+              <tr class="govuk-table__row">
+              
+                
+                
+                <th scope="row" class="govuk-table__header"><a href="/referrals/1306df2d-6fb2-42ed-88a3-f740953b0dcc/community-allocated-form">Aadland Bertrand</a></th>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Seetec Business Technology Centre Limited</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">Accommodation</td>
+                
+              
+                
+                
+                <td class="govuk-table__cell">16 Jun 2025</td>
+                
+              
+              </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
