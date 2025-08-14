@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Delete the probation practitioner’s email address
+{% endblock %}
+
+{% block main %}
+{% include "../../amend/includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+{% block beforeContent %}
+<nav class="clear-right">
+	<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+	<!--<a href="view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right">Go to interventions homepage</a>-->
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row clear">
+    <div class="govuk-grid-column-two-thirds">
+		<form action="deleted-referral-details-email" method="post">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="areYouSure-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Delete the probation practitioner’s email address?</h1>
+				  	</legend>
+				  	<div id="areYouSure-hint" class="govuk-hint">You cannot undo this.</div>
+				</fieldset>
+				<div class="govuk-button-group govuk-!-margin-top-6">
+					<button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">Delete</button>
+					<a class="govuk-link" href="bc-group-1">Cancel</a>
+				</div>
+			</div>
+		</form>
+    </div>
+</div>
+
+{% endblock %}
