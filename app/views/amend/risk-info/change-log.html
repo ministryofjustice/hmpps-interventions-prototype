@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Referral details
+{% endblock %}
+
+{% block main %}
+{% include "../../amend/includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Alex River: referral details</h1>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="">Case progress</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="referral-details-alex">View or change referral</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"  href="">Case notes</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="">Change log</a>
+        </li>
+      </ul>
+    </nav>
+    </div></div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <div class="card" style="padding: 0px;">
+        <div class="card-header">
+          <h3><a class="govuk-link--no-visited-state:visited govuk-label--m changelog-link" href="change-log-details">Expected release date has changed</a></h3>
+          <p>15 Aug 2025 at 2.48pm</p>
+          <p><strong>Change made by R&amp;MP Practitioner</strong></p>
+        </div>
+        <div class="card-body">
+          <p>... <a class="govuk-link--no-visited-state:visited  govuk-label--xs changelog-link" href="change-log-details">Read full details of the change</a></p>
+        </div>
+      </div>
+      <br><br>
+      <table class="govuk-table">
+        <tbody>
+          <tr class="govuk-table__row">  
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
+
+{% endblock %}

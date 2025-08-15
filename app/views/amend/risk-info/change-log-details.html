@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Referral details
+{% endblock %}
+
+{% block main %}
+{% include "../../amend/includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-xl">Alex River's risk information has changed</h3>
+        
+        <div class="govuk-!-margin-top-5">    
+            <p class="govuk-body"><b>From</b></p>
+            <p class="govuk-body"><strong>Who is at risk</strong></p>
+            <p class="govuk-body">
+            Medium ROSH to the public<br>
+            Medium ROSH to staff<br>
+            High ROSH to her children (neglect)
+            </p>
+        </div>
+        <div class="govuk-!-margin-top-5">
+            <p class="govuk-body"><b>To</b></p>
+            <p class="govuk-body"><strong>Who is at risk</strong></p>
+            <p class="govuk-body">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> 
+              Morbi non ultrices ante, nec dictum mauris. </br>
+              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
+            </p>
+        </div>
+        <div class="govuk-!-margin-top-5">    
+            <p><b></b></p>
+        </div>
+        <p class="govuk-body"></p>
+      </div>
+    </div>
+
+{% endblock %}

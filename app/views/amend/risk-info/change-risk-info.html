@@ -21,10 +21,7 @@ href: "javascript:history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <p class="govuk-caption-xl">Karen Puckett (CRN: D002399) </p>
     <h1 class="govuk-heading-xl">OASys risk information</h1>
-    
-
     <p class="govuk-body">Latest assessment: 1 August 2024 </p>
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <form class="form" method="post" action="referral-details-alex">
@@ -123,9 +120,12 @@ High ROSH to her children (neglect)</textarea>
     </div>
   </div>
 
-  <button class="govuk-button" data-module="govuk-button">
-  Save and continue
-  </button>
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+    <a class="govuk-link" href="#">Cancel</a>
+  </div>
 </div>
 
 {% endblock %}
