@@ -1,0 +1,131 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Submit current location
+{% endblock %}
+
+{% block main %}
+{% include "../../amend/includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-caption-xl">Karen Puckett (CRN: D002399) </p>
+    <h1 class="govuk-heading-xl">OASys risk information</h1>
+    
+
+    <p class="govuk-body">Latest assessment: 1 August 2024 </p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <form class="form" method="post" action="referral-details-alex">
+      <input type="hidden" name="_csrf" value="tnrQfRgB-xYF-Z_oyDVn3Hg4HsSk1AvQjt0o">
+      <h2 class="govuk-heading-m">Who is at risk</h2>
+      <div class="govuk-form-group">
+        <textarea class="govuk-textarea" id="who-is-at-risk" name="who-is-at-risk" rows="5" oasysriskinfo="Males whom Ms Puckett believes have wronged him, or strangers with whom she gets into altercations. The wounding offence was committed 17 years ago in 1998.  More recent offence of Affray in 2004. On both occasions were male strangers in pubs.">
+Medium ROSH to the public 
+Medium ROSH to staff
+High ROSH to her children (neglect)</textarea>
+      </div>
+
+      <div class="form-input-reset govuk-!-text-align-right">
+        <a class="govuk-link" href="#">Revert to original OASys information</a>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h2 class="govuk-heading-m">What is the nature of the risk</h2>
+      <div class="govuk-form-group">
+        <textarea class="govuk-textarea" id="nature-of-risk" name="nature-of-risk" rows="5" oasysriskinfo="Violence, Threats, Physical harm">Previous Convictions: numerous acquisitive offences since the age of 14 – Theft from Shop x 26; Street Robbery x1; Theft from person x 4; Prostitution x 6; Possession of class A drug (heroin) x 2; Criminal damage x 1; Assault Police x 2 Silver Cymbal has a history of offending since the age of 14. He is currently on license for an offence of supplying class A drugs as part of a county lines gang A712$**. In this offence the driver of the gang would take him to the Saturn Pub in Space Town in his pink ford focus Reg no ABC 123Y. He would wait at the entrance wearing a green baseball cap so people would know to approach him for drugs. He would sell heroin, cocaine and cannabis, which he kept in a NIKKK backpack. When the police arrested him, he threw the backpack at the officer – missing him and ran away, but he gave chase and arrested him around the corner in the garden of Moon Beam’s house. Forrest Mercury the car driver was also arrested and charged with drug related offences. A number of gang members are still in custody servicing longer sentences. However, he is both fearful of members in the community and at risk of returning to offending. He says that he carries a knife in case he bumps into any gang member and has been warned not to do so by PC999 Plod, his local officer (mob-0123 987654). He previously had a relationship with one gang member Orange Trumpet who is the mother of his son Purple (Dob: 10:11:13). Her new partner is Gold Viola, and they have a child Yellow Trumpet Dob: 21:02:17) He has recently been released from custody and is residing with his sister (also known to probation) but this is only temporary. He has no other family member who he can reside with and although his family support him, they do not offer the pro-social influence required to keep him from offending. Since release he is on a methadone script and requires support and encouragement to continue with it as historically, he relapses quickly after release. Following his last sentence his child Purple Trumpet (who had been with a foster family (Avril & Teal Timpani) has been adopted to a family in the Acorn area of Oaktree Village so that he can continue to attend Oaktree School where he has been since being in foster care. He is struggling to come to terms with this.</textarea>
+      </div>
+
+      <div class="form-input-reset govuk-!-text-align-right">
+        <a class="govuk-link" href="#">Revert to original OASys information</a>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">When is the risk likely to be greatest</h2>
+      
+
+      <div class="govuk-form-group">
+        <textarea class="govuk-textarea" id="risk-imminence" name="risk-imminence" rows="5" oasysriskinfo="Not imminent--  lengthy gap between convictions for violent offences; no history of aggressive behaviour in custody; level of violence deployed in current offence was significant and could have resulted in more serious injuries. If she is need of drugs or feels wronged, there I no telling how she will behave despite her stated motivation to avoid such behaviour in the future and address his drug use. Says she is currently drug free -- in custody.">Silver Cymbal has a history of offending since the age of 14. He is currently on license for an offence of supplying class A drugs as part of a county lines gang A712$**. In this offence the driver of the gang would take him to the Saturn Pub in Space Town in his pink ford focus Reg no ABC 123Y. He would wait at the entrance wearing a green baseball cap so people would know to approach him for drugs. He would sell heroin, cocaine and cannabis, which he kept in a NIKKK backpack. When the police arrested him, he threw the backpack at the officer – missing him and ran away, but he gave chase and arrested him around the corner in the garden of Moon Beam’s house. Forrest Mercury the car driver was also arrested and charged with drug related offences. A number of gang members are still in custody servicing longer sentences. However, he is both fearful of members in the community and at risk of returning to offending. He says that he carries a knife in case he bumps into any gang member and has been warned not to do so by PC999 Plod, his local officer (mob-0123 987654). He previously had a relationship with one gang member Orange Trumpet who is the mother of his son Purple (Dob: 10:11:13). Her new partner is Gold Viola, and they have a child Yellow Trumpet Dob: 21:02:17) He has recently been released from custody and is residing with his sister (also known to probation) but this is only temporary. He has no other family member who he can reside with and although his family support him, they do not offer the pro-social influence required to keep him from offending.</textarea>
+      </div>
+
+      <div class="form-input-reset govuk-!-text-align-right">
+        <a class="govuk-link" href="#">Revert to original OASys information</a>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Concerns in relation to self-harm</h2>
+      <p class="govuk-body app-oasys-text app-oasys-text--dark-grey">None</p>
+      
+      <div class="govuk-form-group">
+        <textarea class="govuk-textarea" id="risk-to-self-self-harm" name="risk-to-self-self-harm" rows="5" oasysriskinfo=""></textarea>
+      </div>
+
+      <div class="form-input-reset govuk-!-text-align-right">
+        <a class="govuk-link" href="#">Revert to original OASys information</a>
+      </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <h2 class="govuk-heading-m">Concerns in relation to suicide</h2>
+  <p class="govuk-body app-oasys-text app-oasys-text--dark-grey">None</p>
+  <div class="govuk-form-group">
+    <textarea class="govuk-textarea" id="risk-to-self-suicide" name="risk-to-self-suicide" rows="5" oasysriskinfo=""></textarea>
+  </div>
+  <div class="form-input-reset govuk-!-text-align-right">
+    <a class="govuk-link" href="#">Revert to original OASys information</a>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <h2 class="govuk-heading-m">Concerns in relation to coping in a hostel setting</h2>
+  <p class="govuk-body app-oasys-text app-oasys-text--dark-grey"></p>
+  <div class="govuk-form-group">
+    <textarea class="govuk-textarea" id="risk-to-self-hostel-setting" name="risk-to-self-hostel-setting" rows="5" oasysriskinfo="">Silver Cymbal has a history of offending since the age of 14. He is currently on license for an offence of supplying class A drugs as part of a county lines gang A712$**. In this offence the driver of the gang would take him to the Saturn Pub in Space Town in his pink ford focus Reg no ABC 123Y. He would wait at the entrance wearing a green baseball cap so people would know to approach him for drugs. He would sell heroin, cocaine and cannabis, which he kept in a NIKKK backpack. When the police arrested him, he threw the backpack at the officer – missing him and ran away, but he gave chase and arrested him around the corner in the garden of Moon Beam’s house. Forrest Mercury the car driver was also arrested and charged with drug related offences. A number of gang members are still in custody servicing longer sentences. However, he is both fearful of members in the community and at risk of returning to offending. He says that he carries a knife in case he bumps into any gang member and has been warned not to do so by PC999 Plod, his local officer (mob-0123 987654). He previously had a relationship with one gang member Orange Trumpet who is the mother of his son Purple (Dob: 10:11:13). Her new partner is Gold Viola, and they have a child Yellow Trumpet Dob: 21:02:17) He has recently been released from custody and is residing with his sister (also known to probation) but this is only temporary. He has no other family member who he can reside with and although his family support him, they do not offer the pro-social influence required to keep him from offending. Since release he is on a methadone script and requires support and encouragement to continue with it as historically, he relapses quickly after release. Following his last sentence his child Purple Trumpet (who had been with a foster family (Avril & Teal Timpani) has been adopted to a family in the Acorn area of Oaktree Village so that he can continue to attend Oaktree School where he has been since being in foster care. He is struggling to come to terms with this.</textarea>
+  </div>
+  <div class="form-input-reset govuk-!-text-align-right">
+    <a class="govuk-link" href="#">Revert to original OASys information</a>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <h2 class="govuk-heading-m">Concerns in relation to vulnerability</h2>
+  <p class="govuk-body app-oasys-text app-oasys-text--dark-grey"></p>
+  <div class="govuk-form-group">
+    <textarea class="govuk-textarea" id="risk-to-self-vulnerability" name="risk-to-self-vulnerability" rows="5" oasysriskinfo="">Silver Cymbal has a history of offending since the age of 14. He is currently on license for an offence of supplying class A drugs as part of a county lines gang A712$**. In this offence the driver of the gang would take him to the Saturn Pub in Space Town in his pink ford focus Reg no ABC 123Y. He would wait at the entrance wearing a green baseball cap so people would know to approach him for drugs. He would sell heroin, cocaine and cannabis, which he kept in a NIKKK backpack. When the police arrested him, he threw the backpack at the officer – missing him and ran away, but he gave chase and arrested him around the corner in the garden of Moon Beam’s house. Forrest Mercury the car driver was also arrested and charged with drug related offences. A number of gang members are still in custody servicing longer sentences. However, he is both fearful of members in the community and at risk of returning to offending. He says that he carries a knife in case he bumps into any gang member and has been warned not to do so by PC999 Plod, his local officer (mob-0123 987654). He previously had a relationship with one gang member Orange Trumpet who is the mother of his son Purple (Dob: 10:11:13). Her new partner is Gold Viola, and they have a child Yellow Trumpet Dob: 21:02:17) He has recently been released from custody and is residing with his sister (also known to probation) but this is only temporary. He has no other family member who he can reside with and although his family support him, they do not offer the pro-social influence required to keep him from offending.</textarea>
+  </div>
+  <div class="form-input-reset govuk-!-text-align-right">
+    <a class="govuk-link" href="#">Revert to original OASys information</a>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <h2 class="govuk-heading-m">Additional information</h2>
+  <p class="govuk-body app-oasys-text app-oasys-text--dark-grey">None</p>
+  <div class="govuk-form-group">
+    <textarea class="govuk-textarea" id="additional-information" name="additional-information" rows="5" oasysriskinfo=""></textarea>
+  </div>
+
+  <div class="form-input-reset govuk-!-text-align-right">
+    <a class="govuk-link" href="#">Revert to original OASys information</a>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m">
+  <div class="govuk-form-group">
+    <div class="govuk-checkboxes govuk-checkboxes__inset--grey" data-module="govuk-checkboxes">  
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="confirm-understood" name="confirm-understood" type="checkbox" value="understood">
+        <label class="govuk-label govuk-checkboxes__label" for="confirm-understood">
+          I understand this information will be shared with the Service Provider
+        </label>      
+      </div>
+    </div>
+  </div>
+
+  <button class="govuk-button" data-module="govuk-button">
+  Save and continue
+  </button>
+</div>
+
+{% endblock %}
