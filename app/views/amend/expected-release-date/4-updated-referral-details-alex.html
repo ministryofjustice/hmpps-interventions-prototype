@@ -11,11 +11,32 @@
 
 {% block content %}
 
-
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">   
+    <div class="govuk-grid-column-two-thirds" style="padding:0px;">  
+      <a href="/probation-practitioner/dashboard" class="govuk-back-link">Back</a>
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content"><strong>Referral changes saved</strong>
+          <hr class="govuk-section-break govuk-section-break--s">
+          <p>
+            The service provider has been notified about the change to this referral. If there are details of a responsible officer, a notification will also be sent to them.
+          </p>
+          <p>
+              <a href="/probation-practitioner/referrals/1ab8b97c-364c-4f74-9717-8f103a7a7b7c/details">Close</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-
+  <div class="govuk-grid-column-full">  
     <h1 class="govuk-heading-l">Alex River: referral details</h1>
 
     <nav class="moj-sub-navigation" aria-label="Sub navigation">
@@ -38,9 +59,6 @@
         </li>
       </ul>
     </nav>
-
-
-
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -752,6 +770,8 @@ been since being in foster care. He is struggling to come to terms with this.
 
 
 </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
