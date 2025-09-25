@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Risk information
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post" action="cya-final">
+            <p class="govuk-caption-xl">Alex River (CRN: D002399)</p>
+            <h1 class="govuk-heading-xl">Risk information</h1>
+            
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Risk alerts from NDelius
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Racist</li>
+                    <li>Domestic abuse victim</li>
+                    <li>Domestic abuse history</li>
+                    <li>PPO</li>
+                  </ul>
+                </dd>
+               
+              </div>
+            </dl>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                    Are there any details about these risks that the service provider should know about?
+                  </h2>
+                </legend>
+                <div id="contact-hint" class="govuk-hint">
+                  For example, if Alex should not attend sessions with certain people, or if there is a risk to an individual or a particular group of people. Select one option
+                </div>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-radios__label" for="contact">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="contact-by-email">
+                        Enter details about what the risks are, who is at risk and anything else the service provider should be aware of regarding these risks.
+                      </label>
+                      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+                    <label class="govuk-label govuk-radios__label">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+
+{% endblock %}

@@ -728,3 +728,21 @@ ul#country__listbox {
 .changelog-link {
     color: #1d70b8 !important;
 }
+
+.refer-and-monitor__rosh-analysis-table .rosh-analysis-table__header {
+    margin-bottom: 0;
+}
+
+.refer-and-monitor__rosh-analysis-table {
+    border: 2px solid;
+    padding: 20px;
+}
+
+.refer-and-monitor__rosh-analysis-table .rosh-analysis-table__subheader {
+    margin-bottom: 10px;
+}
+
+.refer-and-monitor__rosh-analysis-table .rosh-analysis-table__last-updated {
+    color: #505a5f;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,153 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  OASys risk information
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container ">
+        
+  <main class="govuk-main-wrapper" id="main-content" role="main"  style="padding-top: 0px;">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-caption-xl">Valerie Wyman (CRN: X718255)</p>
+        <h1 class="govuk-heading-xl">OASys risk information</h1>
+        
+        <p class="govuk-body">Latest assessment: Assessment date not found </p>
+        <hr>
+
+        <h2 class="govuk-heading-m">Who is at risk</h2>
+        
+        <p class="govuk-body app-oasys-text app-oasys-text--dark-grey">No information provided</p>
+        
+        <p class="govuk-body"></p>
+        <hr>
+
+        <h2 class="govuk-heading-m">What is the nature of the risk</h2>
+        
+        <p class="govuk-body app-oasys-text app-oasys-text--dark-grey">No information provided</p>
+        
+        <p class="govuk-body"></p>
+        <hr>
+
+        <h2 class="govuk-heading-m">When is the risk likely to be greatest</h2>
+        
+        <p class="govuk-body app-oasys-text app-oasys-text--dark-grey">No information provided</p>
+        
+        <p class="govuk-body"></p>
+        <hr>
+
+        <h2 class="govuk-heading-m">Concerns in relation to self-harm</h2>
+        <p class="govuk-body app-oasys-text app-oasys-text--dark-grey"> Don't know</p>
+        <p class="govuk-body"></p>
+        <hr>
+
+        <h2 class="govuk-heading-m">Concerns in relation to suicide</h2>
+        <p class="govuk-body app-oasys-text app-oasys-text--dark-grey"> Don't know</p>
+        <p class="govuk-body"></p>
+        <hr>
+
+        <h2 class="govuk-heading-m">Concerns in relation to coping in a hostel setting</h2>
+        <p class="govuk-body app-oasys-text app-oasys-text--dark-grey"> Don't know</p>
+        <p class="govuk-body"></p>
+        <hr>
+
+        <h2 class="govuk-heading-m">Concerns in relation to vulnerability</h2>
+        <p class="govuk-body app-oasys-text app-oasys-text--dark-grey"> Don't know</p>
+        <p class="govuk-body"></p>
+        <hr>
+        <h2 class="govuk-heading-m">Additional information</h2>
+        <p class="govuk-body app-oasys-text app-oasys-text--dark-grey">None</p>
+        <p class="govuk-body"></p>
+        <form method="post" action="/rm/additional-support-needs/additional-support-needs">
+          <input type="hidden" name="_csrf" value="wj8lOELy-a-vOZaDkWyRCunRHOxPurTHczXA">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Do you want to edit this OASys risk information for the Service Provider?
+            </legend>
+            <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="edit-risk-confirmation" name="edit-risk-confirmation" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="edit-risk-confirmation">
+                  Yes
+                </label>  
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="edit-risk-confirmation-2" name="edit-risk-confirmation" type="radio" value="no" aria-controls="conditional-edit-risk-confirmation-2" aria-expanded="false">
+                <label class="govuk-label govuk-radios__label" for="edit-risk-confirmation-2">
+                  No
+                </label>
+              </div>
+              
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-edit-risk-confirmation-2">   
+                <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                  <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                      You have not edited any of the OASys information.
+                      Selecting save and continue will share it with the service provider in its current form.
+                      Make sure there are no sensitive details included.
+                      You will be responsible for the information that is shared.
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                          What is sensitive information
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <p class="govuk-body">Sensitive information can include personal information or risk-related information received directly from the person on probation or communicated by third parties.</p><p class="govuk-body">It can include, but is not limited to:</p><ul><li>a victim's personal details</li><li>personal details of other individuals</li><li>police information that the person on probation cannot be made aware of</li><li>safeguarding information from children's services</li><li>information from mental health agencies</li></ul><p class="govuk-body">You should carefully consider:</p><ul><li>could the information cause harm or undermine the investigation of a crime if it were disclosed to the person on probation?</li><li>is the information relevant to the risk management of the individual?</li><li>is it necessary?</li><li>can sensitive information be removed, or a safe summary provided?</li></ul>
+                        </div>
+                      </details>
+                      <div class="govuk-form-group">
+                        <div class="govuk-checkboxes govuk-checkboxes__inset--grey" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="confirm-understood" name="confirm-understood" type="checkbox" value="understood">
+                            <label class="govuk-label govuk-checkboxes__label" for="confirm-understood">
+                              I understand this information will be shared with the Service Provider
+                            </label>   
+                          </div>
+                        </div>
+                      </div>
+                  </strong>
+                </div>       
+              </div>
+            </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+          </button>
+        </form>
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <div class="refer-and-monitor__rosh-analysis-table ">
+          <p class="rosh-analysis-table__header"><strong>Rosh score not found</strong> RoSH</p>
+          <p class="rosh-analysis-table__subheader">Risk of serious harm</p>
+          <p class="rosh-analysis-table__last-updated">Last updated: assessment date not found</p>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+
+            <th scope="col" class="govuk-table__header">Risk to</th>
+
+            <th scope="col" class="govuk-table__header">Risk in community</th>
+
+            </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
