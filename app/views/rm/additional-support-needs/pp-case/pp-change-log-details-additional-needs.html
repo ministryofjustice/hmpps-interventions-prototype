@@ -1,0 +1,137 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Amend expected release date
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-xl">Alex's additional support information was changed</h3>
+      
+      <div class="govuk-!-margin-top-5">    
+        <p class="govuk-body"><b>From</b></p>
+        <ul class="govuk-list">
+          <li>Physical health</li>
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  View details<span class="govuk-visually-hidden"> for physical health</span>
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+              </div>
+            </details>
+          <li>Mental or emotional health</li>
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  View details<span class="govuk-visually-hidden"> for mental or emotional health</span>
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+              </div>
+            </details>
+          <li>Neurodiversity</li>
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  View details<span class="govuk-visually-hidden"> for neurodiversity</span>
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+              </div>
+            </details>
+        </ul>
+      </div>
+      <div class="govuk-!-margin-top-5">
+          <p class="govuk-body"><strong>To<strong></p>
+          <p class="govuk-body">No</p>
+            
+      </div>
+
+      <!--<div class="govuk-!-margin-top-5">    
+        <p class="govuk-body"><b>From</b></p>
+        <p class="govuk-body"></p>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row" style="border-bottom:0px">
+              <dt class="govuk-summary-list__key">
+                Additional support
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list">
+                  <li>Physical health</li>
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          View details<span class="govuk-visually-hidden"> for physical health</span>
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+                      </div>
+                    </details>
+                  <li>Mental or emotional health</li>
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          View details<span class="govuk-visually-hidden"> for mental or emotional health</span>
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+                      </div>
+                    </details>
+                  <li>Neurodiversity</li>
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          View details<span class="govuk-visually-hidden"> for neurodiversity</span>
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+                      </div>
+                    </details>
+                </ul>
+              </dd>       
+            </div>
+          </dl>
+      </div>
+      <div class="govuk-!-margin-top-5">
+          <p class="govuk-body"><strong>To<strong></p>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row" style="border-bottom:0px">
+                <dt class="govuk-summary-list__key">
+                  Additional support
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  No
+                </dd>       
+              </div>
+            </dl>
+      </div>-->
+      <div class="govuk-!-margin-top-5">    
+          <p class="govuk-body"><b>Reason for changing the additional support information </b></p>
+      </div>
+      <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis eget dui sed lobortis. Duis sit amet magna eget lorem consectetur egestas in eget arcu.</p>
+  </div>
+</div>
+
+{% endblock %}

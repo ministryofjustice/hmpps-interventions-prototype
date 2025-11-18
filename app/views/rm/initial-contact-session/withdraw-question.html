@@ -1,0 +1,250 @@
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Why are you withdrawing Alex River’s Dependency and Recovery (South West) referral?
+          </h1>
+        </legend>
+        <div id="changedName-hint" class="govuk-hint">
+          Select one reason
+        </div>  
+        <div class="govuk-radios" data-module="govuk-radios">
+          <h3 class="govuk-heading-s">Problem with the referral</h3>
+          <div class="govuk-radios" data-module="govuk-radios">
+<!-- Ineligible referral -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Ineligible referral
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+                  Details
+                </label>
+                <textarea class="govuk-textarea" id="contact-by-email" name="contactByEmail" rows="5"></textarea>
+              </div>
+            </div>
+
+<!-- Mistaken or duplicate referral -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+              <label class="govuk-label govuk-radios__label" for="contact-2">     
+                Mistaken or duplicate referral
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-phone">
+                  Details
+                </label>
+                <textarea class="govuk-textarea" id="contact-by-phone" name="contactByPhone" rows="5"></textarea>
+              </div>
+            </div>
+
+          <div class="govuk-!-padding-bottom-5"></div>
+          <h3 class="govuk-heading-s">User related</h3>
+
+<!-- Not engaged -->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+            <label class="govuk-label govuk-radios__label" for="contact-3">
+              Not engaged
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-text">
+                Details
+              </label>
+              <textarea class="govuk-textarea" id="contact-by-text" name="contactByText" rows="5" spellcheck="false"></textarea>
+            </div>
+          </div>
+
+<!-- Needs met through another route --> 
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-a" name="contact" type="radio" value="a" data-aria-controls="conditional-contact-a">
+            <label class="govuk-label govuk-radios__label" for="contact-a">
+              Needs met through another route
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-a">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-a">
+                Details
+              </label>
+              <textarea class="govuk-textarea"  id="contact-by-a" name="contactByA" rows="5" spellcheck="false"></textarea>
+            </div>
+          </div>
+
+<!-- Moved out of service area --> 
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-b" name="contact" type="radio" value="b" data-aria-controls="conditional-contact-b">
+            <label class="govuk-label govuk-radios__label" for="contact-b">
+              Moved out of service area
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-b">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-b">
+                Details
+              </label>
+              <textarea class="govuk-textarea" id="contact-by-b" name="contactByB" rows="5" spellcheck="false"></textarea>
+            </div>
+          </div>
+
+<!-- User died --> 
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-c" name="contact" type="radio" value="c" data-aria-controls="conditional-contact-c">
+            <label class="govuk-label govuk-radios__label" for="contact-c">
+              User died
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-c">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-c">
+                Details
+              </label>
+              <textarea class="govuk-textarea"  id="contact-by-c" name="contactByC" rows="5" spellcheck="false"></textarea>
+            </div>
+          </div>
+
+<!-- Work, caring commitments, or sickness --> 
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-d" name="contact" type="radio" value="d" data-aria-controls="conditional-contact-d">
+            <label class="govuk-label govuk-radios__label" for="contact-d">
+              Work, caring commitments, or sickness
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-d">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-d">
+                Details
+              </label>
+              <textarea class="govuk-textarea" id="contact-by-d" name="contactByD" rows="5" spellcheck="false"></textarea>
+            </div>
+          </div>
+    
+          <div class="govuk-!-padding-bottom-5"></div>
+          <h3 class="govuk-heading-s">Sentence or custody related</h3>
+
+<!-- Acquitted on appeal -->           
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-e" name="contact" type="radio" value="e" data-aria-controls="conditional-contact-e">
+              <label class="govuk-label govuk-radios__label" for="contact-e">
+                Acquitted on appeal
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-e">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-e">
+                  Details
+                </label>
+                <textarea class="govuk-textarea" id="contact-by-e" name="contactByE" rows="5" spellcheck="false"></textarea>
+              </div>
+            </div>   
+
+<!-- Returned to custody -->                
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-f" name="contact" type="radio" value="f" data-aria-controls="conditional-contact-f">
+              <label class="govuk-label govuk-radios__label" for="contact-f">
+                Returned to custody
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-f">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-f">
+                  Details
+                </label>
+                <textarea class="govuk-textarea" id="contact-by-f" name="contactByF" rows="5" spellcheck="false"></textarea>
+              </div>
+            </div>
+
+<!-- Sentence revoked -->                
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-g" name="contact" type="radio" value="g" data-aria-controls="conditional-contact-g">
+              <label class="govuk-label govuk-radios__label" for="contact-g">
+                Sentence revoked
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-g">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-g">
+                  Details
+                </label>
+                <textarea class="govuk-textarea" id="contact-by-g" name="contactByG" rows="5" spellcheck="false"></textarea>
+              </div>
+            </div>
+
+<!-- Sentence expired -->                
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-h" name="contact" type="radio" value="h" data-aria-controls="conditional-contact-h">
+              <label class="govuk-label govuk-radios__label" for="contact-h">
+                Sentence expired
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-h">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-h">
+                  Details
+                </label>
+                <textarea class="govuk-textarea" id="contact-by-h" name="contactByH" rows="5" spellcheck="false"></textarea>
+              </div>
+            </div>
+         
+            <div class="govuk-radios__divider">or</div>
+<!-- Another reason -->  
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-i" name="contact" type="radio" value="i" data-aria-controls="conditional-contact-i">
+            <label class="govuk-label govuk-radios__label" for="contact-i">
+              Another reason
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-i">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-i">
+                Details
+              </label>
+              <textarea class="govuk-textarea" id="contact-by-i" name="contactByI" rows="5" spellcheck="false"></textarea>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      {{ govukButton({
+          text: "Confirm and send",
+          href:"withdraw-confirmation.html"
+          
+        }) }}
+    </div>
+  </div>
+</div>
+    
+
+{% endblock %}

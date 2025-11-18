@@ -1,10 +1,11 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Review Alex River's information
+Amend expected release date
 {% endblock %}
 
 {% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
 {{ super() }}
 {% endblock %}
 
@@ -17,12 +18,57 @@ href: "javascript:history.back()"
 {% endblock %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <p class="govuk-caption-xl">Alex River (CRN: D002399)</p>
-    <h1 class="govuk-heading-xl">Check all referral information</h1>
-    <p class="govuk-body-l">These details will be sent to the service provider. Check they are correct before submitting the referral.</p>
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content"><strong>Referral changes saved</strong>
+              <hr class="govuk-section-break govuk-section-break--s">
+              <p>
+              The service provider has been notified about the change to this referral. If there are details of a responsible officer, a notification will also be sent to them.
+              </p>
+              <p>
+                  <a href="/probation-practitioner/referrals/3f3486d9-717e-4ca6-9276-6878dd060d5e/details">Close</a>
+              </p></div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Alex River: referral details</h1>
+      </div>
+      <div class="govuk-grid-column-one-third">       
+      </div>
+    </div>
+
+    <nav class="moj-sub-navigation" aria-label="Secondary navigation region">
+      <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link"  href="/probation-practitioner/referrals/89bf0eaa-938c-406a-a0e8-ac3636c4c0b2/progress">Progress</a>
+          </li>
+        
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="/probation-practitioner/referrals/89bf0eaa-938c-406a-a0e8-ac3636c4c0b2/details">View or change referral</a>
+          </li>
+        
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link"  href="/probation-practitioner/referrals/89bf0eaa-938c-406a-a0e8-ac3636c4c0b2/case-notes">Case notes</a>
+          </li>
+        
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link"  href="/probation-practitioner/referrals/89bf0eaa-938c-406a-a0e8-ac3636c4c0b2/changelog">Change log</a>
+          </li>
+      </ul>
+    </nav>
+
+    <div class="govuk-inset-text">
+You can change some of these referral details.  What you can change will depend on how much progress has been made on the referral.<br/>When you make a change it will send a notification to the service provider.
+    </div>
+
+    <p class="govuk-body">This intervention is not yet assigned to a caseworker.</p>
+
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">Personal details</h2>
@@ -677,7 +723,7 @@ href: "javascript:history.back()"
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-                Additional risk information for the service provider
+               Additional risk information for the service provider
             </dt>
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">No</p>
@@ -752,7 +798,7 @@ href: "javascript:history.back()"
               Interpreter
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Polish</p>
+              <p class="govuk-body">No</p>
             </dd>    
             <dd class="govuk-summary-list__actions">           
               <a class="govuk-link" href="#ß" id="change-link-0">
@@ -766,7 +812,7 @@ href: "javascript:history.back()"
       </div>
     </div>
 
-    <!--<div class="govuk-summary-card">
+   <!--<div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">Alex's additional support needs</h2>
       </div>
@@ -775,14 +821,14 @@ href: "javascript:history.back()"
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Additional support
+             Additional support
             </dt>
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">No</p>
             </dd>    
             <dd class="govuk-summary-list__actions">           
               <a class="govuk-link" href="#ß" id="change-link-0">
-                Change<span class="govuk-visually-hidden">  additional support needs</span>
+                Change<span class="govuk-visually-hidden">  additional support</span>
               </a>           
             </dd>        
           </div>
@@ -804,12 +850,6 @@ href: "javascript:history.back()"
       </div>
     </div>-->
 
-    <form method="post" action="send">
-      <input type="hidden" name="_csrf" value="WzHYKwjB-a9FKFghl-7iuX89P1tQCObF0-UY">
-      <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
-      Submit referral
-      </button>
-    </form>
   </div>
 </div>
 

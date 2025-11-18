@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Amend expected release date
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-xl">Alex's interpreter information was changed</h3>
+      
+      <div class="govuk-!-margin-top-5">    
+        <p class="govuk-body"><b>From</b></p>
+        <p class="govuk-body">No</p>
+      </div>
+      <div class="govuk-!-margin-top-5">
+          <p class="govuk-body"><strong>To <strong></p>
+          <p>Polish</p>
+      </div>
+      <div class="govuk-!-margin-top-5">    
+          <p><b>Reason for changing the interpreter information</b></p>
+      </div>
+      <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis eget dui sed lobortis. Duis sit amet magna eget lorem consectetur egestas in eget arcu.</p>
+  </div>
+</div>
+
+{% endblock %}

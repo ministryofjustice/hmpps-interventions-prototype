@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Amend expected release date
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Alex River: change log</h1>
+      </div>
+      <div class="govuk-grid-column-one-third">       
+      </div>
+    </div>
+
+    <nav class="moj-sub-navigation" aria-label="Secondary navigation region">
+      <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="#">Progress</a>
+          </li>
+        
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="#">View or change referral</a>
+          </li>
+        
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="#">Case notes</a>
+          </li>
+        
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="#">Change log</a>
+          </li>
+      </ul>
+    </nav>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+         <div class="card" style="padding: 0px;">
+            <div class="card-header">
+              <h3><a class="govuk-link--no-visited-state:visited govuk-label--m changelog-link" href="pp-change-log-details-additional-needs">Additional support information was changed</a></h3>
+              <p>15 Oct 2025 at 2.53pm</p>
+              <p><strong>Change made by R&amp;MP Practitioner</strong></p>
+            </div>
+            <div class="card-body">
+              <p>Lorem ipsum... <a class="govuk-link--no-visited-state:visited  govuk-label--xs changelog-link" href="pp-change-log-details-additional-needs">Read full details of the change</a></p>
+            </div>
+        </div>  
+        <div class="card" style="padding: 0px;">
+          <div class="card-header">
+            <h3><a class="govuk-link--no-visited-state:visited govuk-label--m changelog-link" href="pp-change-log-details-interpreter">Interpreter information was changed</a></h3>
+            <p>15 Oct 2025 at 2.42pm</p>
+            <p><strong>Change made by R&amp;MP Practitioner</strong></p>
+          </div>
+          <div class="card-body">
+            <p>Lorem ipsum... <a class="govuk-link--no-visited-state:visited  govuk-label--xs changelog-link" href="pp-change-log-details-interpreter">Read full details of the change</a></p>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

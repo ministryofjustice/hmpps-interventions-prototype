@@ -1,0 +1,285 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Add additional session details
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Check your answers</h1>
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Session details</h2></div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Current caseworker
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">R&amp;M Active Probation Practitioner (<a href="mailto: interventions-devs@digital.justice.gov.uk">interventions-devs@digital.justice.gov.uk</a>)</p>
+              </dd>             
+            </div>
+                       
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">Monday 17 November 2025</p>
+              </dd>           
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Time
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">2:26pm to 2:28pm</p>
+              </dd>          
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Method
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">In-person meeting</p>
+              </dd>           
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">Provider</p>
+                <p class="govuk-body">21 Provider Row</p>
+                <p class="govuk-body">anytown</p>
+                <p class="govuk-body">anywhere</p>
+                <p class="govuk-body">AN49WH</p>
+              </dd>            
+            </div>  
+          </dl>
+        </div>
+      </div>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Session attendance</h2>
+          <div class="govuk-summary-card__actions">
+            <a class="govuk-link" href="/service-provider/referrals/f941bb00-2707-492c-bcfe-948df4e8b8a1/supplier-assessment/post-assessment-feedback/attendance">
+            Change<span class="govuk-visually-hidden"> Change session attendance details</span>
+            </a>
+          </div>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Did the session happen?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">Yes</p>
+              </dd>       
+            </div> 
+          </dl>
+        </div>
+      </div>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Alex's additional support needs</h2>
+          <div class="govuk-summary-card__actions">
+            <a class="govuk-link" href="/service-provider/referrals/f941bb00-2707-492c-bcfe-948df4e8b8a1/supplier-assessment/post-assessment-feedback/attendance">
+            Change<span class="govuk-visually-hidden"> Change session attendance details</span>
+            </a>
+          </div>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                "New" - Additional support needs identified during ICS
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">Yes</p>
+                <ul class="govuk-list">
+                  <li>Caring responsibilities</li>
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          View details<span class="govuk-visually-hidden"> for physical health</span>
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+                      </div>
+                    </details>
+                  <li>Employment responsibilities</li>
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          View details<span class="govuk-visually-hidden"> for mental or emotional health</span>
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+                      </div>
+                    </details>
+                  <li>Diversity</li>
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          View details<span class="govuk-visually-hidden"> for neurodiversity</span>
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+                      </div>
+                    </details>
+                </ul>
+              </dd>       
+            </div> 
+          </dl>
+        </div>
+      </div>
+
+      <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Session feedback</h2>
+      <div class="govuk-summary-card__actions">
+        <a class="govuk-link" href="/service-provider/referrals/f941bb00-2707-492c-bcfe-948df4e8b8a1/supplier-assessment/post-assessment-feedback/behaviour">
+        Change<span class="govuk-visually-hidden"> Change session feedback details</span>
+        </a>
+      </div>
+      </div>
+
+      <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">     
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Was Valerie Wyman late?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">No</p>
+              </dd>               
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What did you do in the appointment?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+              </dd>           
+            </div>   
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                How did Alex respond to the appointment?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+              </dd>                
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Who led the ICS?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+              </dd>                
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Who else attended?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+              </dd>                
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Identify strengths
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+              </dd>                
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Risks presented by Alex River that warrant consideration in delivery of services
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+              </dd>                
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Is there any feedback or concerns from Alex River?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+              </dd>                
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Does the probation practitioner need to be notified about poor behaviour?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">Yes -  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+              </dd>          
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Does the probation practitioner need to be notified about any concerns?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">No</p>
+              </dd>              
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Add anything you have planned for the next session (optional)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+              </dd>               
+            </div>            
+          </dl>
+        </div>
+      </div>
+
+  <form method="post" action="/service-provider/referrals/f941bb00-2707-492c-bcfe-948df4e8b8a1/supplier-assessment/post-assessment-feedback/submit">
+    <input type="hidden" name="_csrf" value="RYppmUkW-jvGgw5Z0GNo9FM7QjixhF27nWsYj9gRrbqcvMcMMYDg">
+    
+
+  
+    
+  
+
+<button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+  Confirm and send
+</button>
+
+  </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

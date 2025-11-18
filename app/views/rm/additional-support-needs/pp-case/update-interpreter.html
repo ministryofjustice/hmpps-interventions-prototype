@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Review Alex River's information
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post" action="update-pp-case-view">
+            <p class="govuk-caption-xl">Alex River (CRN: D002399)</p>
+        
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-heading-xl govuk-fieldset__heading">
+                    Does Alex need an interpreter?
+                  </h1>
+                </legend>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact" checked>
+                    <label class="govuk-label govuk-radios__label" for="contact">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="contact-by-email">
+                        What language does Alex need an interpreter for?
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" spellcheck="false" autocomplete="email" value="Polish">
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+                    <label class="govuk-label govuk-radios__label" for="contact-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--m" for="reason-for-change">
+                What is the reason for changing the interpreter information?
+              </label>    
+              <textarea class="govuk-textarea" id="reason-for-change" name="reason-for-change" rows="5"></textarea>
+            </div>
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+
+{% endblock %}

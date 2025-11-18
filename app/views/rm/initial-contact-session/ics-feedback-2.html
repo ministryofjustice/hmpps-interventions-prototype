@@ -1,0 +1,135 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Add additional session details
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">  
+  <div class="govuk-grid-column-two-thirds">   
+    <h1 class="govuk-heading-l">Alex's additional support needs</h1>
+    <p class="govuk-body">xxxxx</p>
+    <br>  
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Additional support needs
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Physical health</p>
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                View details<span class="govuk-visually-hidden"> for physical health</span>
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+            </div>
+          </details>
+
+          <p class="govuk-body">Mental or emotional health</p>
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                View details<span class="govuk-visually-hidden"> for physical health</span>
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+            </div>
+          </details>
+
+          <p class="govuk-body">Neurodiversity</p>
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                View details<span class="govuk-visually-hidden"> for physical health</span>
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+            </div>
+          </details>
+        </dd>       
+      </div>
+    </dl>
+
+    <form action="additional-support-needs" method="post" novalidate>
+      <input type="hidden" name="_csrf" value="yE8AMrDn-YNbZ4SBNGXHnUZTvEGV166Bv1CLyuLYgwSIVvY1AUdk">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="did-session-happen-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          Are there any additional support needs you identified?
+          </legend>
+          <div id="did-session-happen-hint" class="govuk-hint">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+
+          <div class="govuk-radios govuk-radios" data-cy="did-session-happen-radios" data-module="govuk-radios">   
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="didSessionHappenYesRadio" name="did-session-happen" type="radio" value="yes" checked="">
+                <label class="govuk-label govuk-radios__label" for="didSessionHappenYesRadio">
+                Yes
+              </label>     
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="didSessionHappenNoRadio" name="did-session-happen" type="radio" value="no" aria-controls="conditional-didSessionHappenNoRadio" aria-expanded="false">
+              <label class="govuk-label govuk-radios__label" for="didSessionHappenNoRadio">
+                No
+              </label>    
+            </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-didSessionHappenNoRadio">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Did Alex River come to the appointment?
+                </legend>
+                <div class="govuk-radios govuk-radios" data-cy="supplier-assessment-attendance-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="attendedYesRadio" name="attended" type="radio" value="yes" checked="">
+                    <label class="govuk-label govuk-radios__label" for="attendedYesRadio">
+                    Yes
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="attendedNoRadio" name="attended" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="attendedNoRadio">
+                    No
+                    </label>     
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

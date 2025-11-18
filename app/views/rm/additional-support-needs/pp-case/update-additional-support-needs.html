@@ -1,0 +1,211 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Review Alex River's information
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post" action="update-pp-case-view">
+            <p class="govuk-caption-xl">Alex River (CRN: D002399)</p>
+            <h1 class="govuk-heading-xl">Update additional support</h1>
+            
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h2 class="govuk-fieldset__heading">
+                    What does Alex need support with to attend or take part in sessions?
+                  </h1>
+                </legend>
+                <div id="countries-hint" class="govuk-hint">
+                  Select all that apply.
+                </div>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="physical" name="physical" type="checkbox" value="physical" data-aria-controls="conditional-contact" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="physical">
+                      Physical health
+                    </label>
+                    <div id="physical-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                      For example, physical disabilities or illnesses that affect their daily life.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="physical">
+                        Give details of any physical health issues and anything the provider can do to support Alex                      
+                      </label>
+                      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis eget dui sed lobortis. Duis sit amet magna eget lorem consectetur egestas in eget arcu.</textarea>
+                    </div>
+                  </div>
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="mental" name="mental" type="checkbox" value="mental" data-aria-controls="conditional-mental" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="mental">
+                      Mental or emotional health
+                    </label>
+                    <div id="mental-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                      For example, depression, anxiety, behavioural issues and learning difficulties.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-mental">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="mental">
+                        Give details of any mental or emotional health issues, and anything the provider can do to support Alex                      
+                      </label>
+                      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis eget dui sed lobortis. Duis sit amet magna eget lorem consectetur egestas in eget arcu.</textarea>
+                    </div>
+                  </div>
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="neurodiversity" name="neurodiversity" type="checkbox" value="neurodiversity" data-aria-controls="conditional-neurodiversity" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="neurodiversity">
+                      Neurodiversity
+                    </label>
+                    <div id="neurodiversity-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                      For example, conditions including autism, ADHD and dyslexia.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-neurodiversity">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="neurodiversity">
+                        Give details of any neurodivergent conditions, how this may affect Alex's ability to learn and anything the supplier can do to support them                      
+                      </label>
+                      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</textarea>
+                    </div>
+                  </div>
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="travel" name="travel" type="checkbox" value="travel" data-aria-controls="conditional-travel">
+                    <label class="govuk-label govuk-checkboxes__label" for="travel">
+                      Location and travel
+                    </label>
+                    <div id="travel-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                      For example, if they live in a remote area or do not have access to transport.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-travel">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="travel">
+                        Give details of issues regarding travel or location and how this may affect when and where Alex can attend sessions
+                      </label>
+                      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                    </div>
+                  </div>
+
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="caring" name="caring" type="checkbox" value="caring" data-aria-controls="conditional-caring">
+                    <label class="govuk-label govuk-checkboxes__label" for="caring">
+                      Caring responsibilities
+                    </label>
+                    <div id="caring-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                      For example, if they have to care for a child, which may limit when they can attend sessions.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-caring">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="caring">
+                        Give details of any caring responsibilities and how this may affect when and where Alex can attend sessions
+                      </label>
+                      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="employment" name="employment" type="checkbox" value="employment" data-aria-controls="conditional-employment">
+                    <label class="govuk-label govuk-checkboxes__label" for="employment">
+                      Employment responsibilities
+                    </label>
+                    <div id="employment-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                      For example, if they do any work which may limit when they can attend sessions.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-employment">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="employment">
+                        Give details of any employment responsibilities and how this may affect when and where Alex can attend sessions 
+                      </label>
+                      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                    </div>
+                  </div>
+
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="diversity" name="diversity" type="checkbox" value="diversity" data-aria-controls="conditional-diversity">
+                    <label class="govuk-label govuk-checkboxes__label" for="diversity">
+                      Diversity
+                    </label>
+                    <div id="diversity-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                      For example, if they have any additional needs regarding their ethnicity, religion, gender identity or sexual orientation.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-diversity">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="diversity">
+                        Give details of any additional needs Alex has regarding their diversity, and anything the provider can do to support them                      
+                      </label>
+                      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="anything" name="anything" type="checkbox" value="anything" data-aria-controls="conditional-anything">
+                    <label class="govuk-label govuk-checkboxes__label" for="anything">
+                      Anything else
+                    </label>
+                    <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                      This includes any other support needs the provider should know about.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-anything">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="anything">
+                        Give details of any other needs and anything the provider can do to support Alex                     
+                      </label>
+                      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="govuk-checkboxes__divider">or</div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="none" data-behaviour="exclusive">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-5">
+                      Alex does not need any additional support
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--m" for="reason-for-change">
+                What is the reason for changing Alex's additional support?
+              </label>    
+              <textarea class="govuk-textarea" id="reason-for-change" name="reason-for-change" rows="5"></textarea>
+            </div>
+
+          {{ govukButton({
+            text: 'Save and continue'
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+
+{% endblock %}
