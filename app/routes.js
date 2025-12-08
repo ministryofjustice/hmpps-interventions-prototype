@@ -14,3 +14,13 @@ require('./views/IPB-265/_routes')(router);
 require('./views/v3/_routes')(router);
 require('./views/v4/_routes')(router);
 require('./views/v5/_routes')(router);
+
+router.post('/attendance-unhappy', function(request, response) {
+
+	var attendance = request.session.data['attendance']
+	if (attendance == "Yes"){
+		response.redirect("/rm/initial-contact-session/why-session-not-happened")
+	} else {
+		response.redirect("/rm/initial-contact-session/why-not-attend")
+	}
+})

@@ -1,0 +1,123 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Add additional session details
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">  
+  <div class="govuk-grid-column-two-thirds">   
+    <h1 class="govuk-heading-l">You told us that Alex attended</h1>
+
+      <input type="hidden" name="_csrf">
+        <div class="govuk-form-group">
+        
+          <fieldset class="govuk-fieldset">         
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Why did the session not happen?
+          </legend>
+          <div class="govuk-radios govuk-radios" data-cy="why-did-session-not-happen-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no-session-reason-type" name="no-session-reason-type" type="radio" value="POP_UNACCEPTABLE" aria-controls="conditional-no-session-reason-type" aria-expanded="false">
+              <label class="govuk-label govuk-radios__label" for="no-session-reason-type">
+              Alex did not comply, for example they were disruptive or disengaged
+              </label>
+            </div>    
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no-session-reason-type">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-margin-bottom-4" for="no-session-reason-pop-unacceptable">
+                  Give details about their behaviour and how they were unable to take part.
+                </label>                   
+                <textarea class="govuk-textarea" id="no-session-reason-pop-unacceptable" name="no-session-reason-pop-unacceptable" rows="5"></textarea>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no-session-reason-type-2" name="no-session-reason-type" type="radio" value="POP_ACCEPTABLE" aria-controls="conditional-no-session-reason-type-2" aria-expanded="false">
+              <label class="govuk-label govuk-radios__label" for="no-session-reason-type-2">
+                Alex could not take part, for example because of illness or a crisis
+              </label>            
+            </div>             
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no-session-reason-type-2">   
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-margin-bottom-4" for="no-session-reason-pop-acceptable">
+                  Give details about why they were unable to take part, such as what happened and who was involved.
+                </label>
+                <textarea class="govuk-textarea" id="no-session-reason-pop-acceptable" name="no-session-reason-pop-acceptable" rows="5"></textarea>
+              </div>
+            </div>
+ 
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no-session-reason-type-3" name="no-session-reason-type" type="radio" value="LOGISTICS" aria-controls="conditional-no-session-reason-type-3" aria-expanded="false">
+              <label class="govuk-label govuk-radios__label" for="no-session-reason-type-3">
+                There was an issue with the service provider or logistics, for example a problem with a room booking or a fire alarm
+              </label>      
+            </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no-session-reason-type-3">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-margin-bottom-4" for="no-session-reason-logistics">
+                  Give details of any issues that meant the session could not happen.
+                </label>
+                <textarea class="govuk-textarea" id="no-session-reason-logistics" name="no-session-reason-logistics" rows="5"></textarea>
+            </div> 
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend">
+          <label class="govuk-fieldset__legend--m"> Does the probation practitioner need to be notified about any issues?</label>
+        </legend>
+        <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="yesNotifyPPRadio" name="notify-probation-practitioner" type="radio" value="yes" aria-controls="conditional-yesNotifyPPRadio" aria-expanded="false">
+              <label class="govuk-label govuk-radios__label" for="yesNotifyPPRadio">
+              Yes
+              </label> 
+            </div>
+        
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yesNotifyPPRadio">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-margin-bottom-4" for="session-concerns">
+                  Give details about any issues you think the probation practitioner should know about.
+                </label>
+                <textarea class="govuk-textarea" id="session-concerns" name="session-concerns" rows="5"></textarea>
+              </div>
+            </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="noNotifyPPRadio" name="notify-probation-practitioner" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="noNotifyPPRadio">
+            No
+            </label>   
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <form action="cya-ics-feedback-not-happened" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

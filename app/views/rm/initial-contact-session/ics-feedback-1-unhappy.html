@@ -79,8 +79,8 @@ href: "javascript:history.back()"
       </div>
     </dl>
 
-    <form action="ics-feedback-2" method="post" novalidate>
-      <input type="hidden" name="_csrf" value="yE8AMrDn-YNbZ4SBNGXHnUZTvEGV166Bv1CLyuLYgwSIVvY1AUdk">
+    <form action="/attendance-unhappy" method="post" novalidate>
+      <input type="hidden" name="_csrf">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="did-session-happen-hint">
@@ -93,14 +93,14 @@ href: "javascript:history.back()"
 
           <div class="govuk-radios govuk-radios" data-cy="did-session-happen-radios" data-module="govuk-radios">   
             <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="didSessionHappenYesRadio" name="did-session-happen" type="radio" value="yes" checked="">
+                <input class="govuk-radios__input" id="didSessionHappenYesRadio" name="did-session-happen" type="radio" value="yes">
                 <label class="govuk-label govuk-radios__label" for="didSessionHappenYesRadio">
                 Yes
               </label>     
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="didSessionHappenNoRadio" name="did-session-happen" type="radio" value="no" aria-controls="conditional-didSessionHappenNoRadio" aria-expanded="false">
+              <input class="govuk-radios__input" id="didSessionHappenNoRadio" name="did-session-happen" type="radio" value="no" aria-controls="conditional-didSessionHappenNoRadio" aria-expanded="false" checked="">
               <label class="govuk-label govuk-radios__label" for="didSessionHappenNoRadio">
               No
               </label>    
@@ -114,14 +114,14 @@ href: "javascript:history.back()"
                 </legend>
                 <div class="govuk-radios govuk-radios" data-cy="supplier-assessment-attendance-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="attendedYesRadio" name="attended" type="radio" value="yes" checked="">
+                    <input class="govuk-radios__input" id="attendedYesRadio" name="attendance" type="radio" value="Yes" checked="">
                     <label class="govuk-label govuk-radios__label" for="attendedYesRadio">
                     Yes
                     </label>
                   </div>
 
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="attendedNoRadio" name="attended" type="radio" value="no">
+                    <input class="govuk-radios__input" id="attendedNoRadio" name="attendance" type="radio" value="No">
                     <label class="govuk-label govuk-radios__label" for="attendedNoRadio">
                     No
                     </label>     
@@ -133,6 +133,8 @@ href: "javascript:history.back()"
           </div>
         </fieldset>
       </div>
+
+    
 
       <button class="govuk-button" data-module="govuk-button">
         Save and continue
