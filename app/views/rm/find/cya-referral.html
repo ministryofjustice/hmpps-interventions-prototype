@@ -1,0 +1,97 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter the person's CRN
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="confirmation-page">
+      <div class="govuk-form-group">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Check referral information
+                  </h1>
+                </legend>
+            
+              </fieldset>
+            </div>
+          </div>
+          <h2 class="govuk-heading-m">Personal details</h2>
+          <dl class="govuk-summary-list govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Alex River
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                CRN
+              </dt>
+              <dd class="govuk-summary-list__value">
+                X123456
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Sex
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Male
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m">Referral details</h2>
+          <dl class="govuk-summary-list govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Community Service
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Community Support service 1
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Location
+              </dt>
+              <dd class="govuk-summary-list__value">
+                North East
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Delivery partner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Citizens Advice
+              </dd>
+            </div>
+          </dl>
+
+          {{ govukButton({
+            text: 'Submit referral'
+          }) }}
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
