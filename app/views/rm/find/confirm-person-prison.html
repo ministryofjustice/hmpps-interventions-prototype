@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter the person's CRN
+{% endblock %}
+
+{% block main %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="list-of-services">
+      <div class="govuk-form-group">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Confirm this is the correct person for referral
+                  </h1>
+                </legend>
+            
+              </fieldset>
+            </div>
+          </div>
+
+          <dl class="govuk-summary-list govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Alex River
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Prison number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                X123456
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Sex
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Male
+              </dd>
+            </div>
+          </dl>
+
+          {{ govukButton({
+            text: 'Continue'
+          }) }}
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
