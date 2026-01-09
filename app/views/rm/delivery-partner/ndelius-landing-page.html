@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+{% set containerClasses = "moj-special-width-container" %}
+
+{% block pageTitle %}
+Interventions - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% set bodyClasses = "dps-home" %}
+
+{% block header %}
+    {% include "/includes/head-dps-dp.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="moj-width-container">
+    <!-- <a href="javascript:window.history.back()" class="govuk-back-link govuk-!-margin-bottom-7">[Service name]</a> -->
+    <h1 class="govuk-heading-l">Community Support services</h1>
+</div>
+<div class="homepage-content">
+    <div class="moj-width-container">
+        <ul class="govuk-grid-row card-group govuk-!-margin-bottom-9">
+            <li class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable">
+                    <h2 class="govuk-heading-m card__heading">
+                        <a class="govuk-link card__link govuk-link--no-visited-state" href="view-unassigned-cases">Referrals</a>
+                    </h2>
+                    <p class="govuk-body card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sollicitudin euismod enim eget facilisis.</p>
+                    <p>&nbsp;</p>
+                </div>
+            </li>
+            <li class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable">
+                    <h2 class="govuk-heading-m card__heading">
+                        <a class="govuk-link card__link govuk-link--no-visited-state" href="#">Distance travelled tool (tbc)</a>
+                    </h2>
+                    <p class="govuk-body card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sollicitudin euismod enim eget facilisis.</p>
+                </div>
+            </li>
+            <li class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable">
+                    <h2 class="govuk-heading-m card__heading">
+                        <a class="govuk-link card__link govuk-link--no-visited-state" href="#">Reporting</a>
+                    </h2>
+                    <p class="govuk-body card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sollicitudin euismod enim eget facilisis.</p>
+                </div>
+            </li>
+            <br />
+            <br />
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

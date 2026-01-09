@@ -1,0 +1,171 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Open casess
+{% endblock %}
+
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="clear-right">
+	<!--<a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right">Go to CRS homepage</a>-->
+  	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+</nav>
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Cases</h1>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="#">Unassigned cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="view-assigned-cases">Assigned cases</a>
+        </li>
+
+        <!--<li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="#">Completed cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="#">Cancelled cases</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"  href="#">Draft cases</a>
+        </li>-->
+      </ul>
+
+    </nav>
+
+    <div class="govuk-grid-column-two-thirds" style="padding: 0px;">
+
+      <table class="govuk-table" data-module="moj-sortable-table">
+        <h2 class="govuk-heading-m">Unassigned cases</h2>
+        <!--<caption class="govuk-table__caption">Mountains of the world</caption>-->
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">CRN/Prison number</th>    
+            <th scope="col" class="govuk-table__header" govuk-table__header--numeric aria-sort="none">Date submitted</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="view-alex-details" class="govuk-link">River, Alex</a></th>
+            <td class="govuk-table__cell" data-sort-value="X123456">X123456</td>
+            <td class="govuk-table__cell" data-sort-value="7 Jul 2025">7 Jul 2025</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#">Zaahir, Albinas</a></th>
+            <td class="govuk-table__cell">X135791</td> 
+            <td class="govuk-table__cell" data-sort-value="8 Jul 2025">8 Jul 2025</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#">Linas, Herbert</a></th>
+            <td class="govuk-table__cell">X246810</td> 
+            <td class="govuk-table__cell">9 Jul 2025</td>              
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#">Lütfi, Geoffrey</a></th>
+            <td class="govuk-table__cell">X202020</td> 
+            <td class="govuk-table__cell">10 Jul 2025</td>              
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#">Muammar, Brenden</a></th>
+            <td class="govuk-table__cell">X345678</td> 
+            <td class="govuk-table__cell">11 Jul 2025</td>              
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#">Okeke, Rabih</a></th>
+            <td class="govuk-table__cell">X456789</td> 
+            <td class="govuk-table__cell">12 Jul 2025</td>              
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#">Jordan, Nasim</a></th>
+            <td class="govuk-table__cell">X595679</td> 
+            <td class="govuk-table__cell">13 Jul 2025</td>              
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#">Callum, Napoleon</a></th>
+            <td class="govuk-table__cell">X656768</td> 
+            <td class="govuk-table__cell">14 Jul 2025</td>              
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#">Seymour, Abd al-Wali </a></th>
+            <td class="govuk-table__cell">X712345</td> 
+            <td class="govuk-table__cell">15 Jul 2025</td>              
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#">Jones, Oliver</a></th>
+            <td class="govuk-table__cell">X889911</td> 
+            <td class="govuk-table__cell">16 Jul 2025</td>              
+          </tr>   
+        </tbody>
+      </table>
+      
+
+      <div class="moj-pagination">
+        <nav class="govuk-pagination moj-pagination__pagination " aria-label="Pagination">
+          <ul class="govuk-pagination__list">
+            <li class="govuk-pagination__item govuk-pagination__item--current"> 
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                1
+              </a>
+            </li>
+            <li class="govuk-pagination__item">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                2
+              </a>
+            </li>
+            <li class="govuk-pagination__item">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                3
+              </a>
+            </li>
+            <li class="govuk-pagination__item govuk-pagination__item--ellipses">
+              &ctdot;
+            </li>
+            <li class="govuk-pagination__item">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 7">
+                7
+              </a>
+            </li>
+          </ul>
+          <div class="govuk-pagination__next">
+            <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+              <span class="govuk-pagination__link-title">
+                Next
+              </span>
+              <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg>
+            </a>
+          </div>
+        </nav>
+        <p class="moj-pagination__results">Showing 10 to 20 of 157 total results</p>
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+{% endblock %}
