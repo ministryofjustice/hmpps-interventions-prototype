@@ -42,7 +42,7 @@ href: "javascript:history.back()"
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
           <h2 class="govuk-fieldset__heading">
             When the session started?
           </h1>
@@ -84,32 +84,36 @@ href: "javascript:history.back()"
     </div>
 
     <div class="govuk-form-group">
-      <label class="govuk-label" for="location">
-        Duration of the session
-      </label>
-      <div id="location-hint" class="govuk-hint">
-        blah blah?
-      </div>
-      <select class="govuk-select" id="location" name="location" aria-describedby="location-hint">
-        <option value="choose" selected>Choose duration</option>
-        <option value="15">15 minutes</option>
-        <option value="30">30 minutes</option>
-        <option value="45">45 minutes</option>
-        <option value="1h">1 hour</option>
-        <option value="1h15">1 hour and 15 minutes</option>
-        <option value="1h30">1 hour and 30 minutes</option>
-        <option value="1h45">1 hour and 45 minutes</option>
-        <option value="2h">2 hours</option>
-      </select>
-      <br><br>
-      <p class="govuk-body">
-        <a href="book-ics-cant-find-answer" class="govuk-link govuk-link--no-visited-state">I can't find my answer</a>
-      </p>
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h2 class="govuk-fieldset__heading">
+            Duration of the session
+          </h1>
+        </legend>
+        <div class="govuk-date-input" id="passport-issued">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                Hour
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                Minute
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
     </div>
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
           <h1 class="govuk-fieldset__heading">
             Method
           </h1>
@@ -148,7 +152,7 @@ href: "javascript:history.back()"
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
           <h1 class="govuk-fieldset__heading">
             [Placeholder] Who is delivering the ICS appointment?
           </h1>
@@ -181,7 +185,7 @@ href: "javascript:history.back()"
 
    <!-- <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
           <h1 class="govuk-fieldset__heading">
             Enter reason for changing appointment
           </h1>
