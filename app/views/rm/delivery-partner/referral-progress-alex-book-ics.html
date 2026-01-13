@@ -1,0 +1,139 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Referral details
+{% endblock %}
+
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="clear-right">
+	<!--<a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right">Go to CRS homepage</a>-->
+  	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+</nav>
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Alex River [title]</h1>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="view-alex-details-tabs-assigned-progress">Case details</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="referral-progress-alex-book-ics">Progress</a>
+        </li>
+
+        <!--<li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"  href="">Case notes</a>
+        </li>-->
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="">Change log</a>
+        </li>
+      </ul>
+    </nav>
+
+    <h2 class="govuk-heading-m">Referral progress</h2>
+
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-1-status">
+            Book initial contact session (ICS)
+          </a>
+        </div>
+        <div class="govuk-task-list__status" id="application-details-1-status">
+          <strong class="govuk-tag govuk-tag--blue">
+            Not yet booked
+          </strong>
+        </div>
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">       
+            Mark attendance and add feedback
+        </div>
+        <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="application-details-3-status">
+          Cannot start yet
+        </div>
+        <!--<div class="govuk-task-list__status" id="application-details-2-status">
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+        </div>-->
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+            Create action plan
+          <div id="application-details-3-hint" class="govuk-task-list__hint">
+            The action plan can be recorded once the ICS is submitted
+          </div>
+        </div>
+        <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="application-details-3-status">
+          Cannot start yet
+        </div>
+        <!--<div class="govuk-task-list__status" id="application-details-2-status">
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+        </div>-->
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+            Add session details
+          <div id="application-details-3-hint" class="govuk-task-list__hint">
+            Blurb....
+          </div>
+        </div>
+        <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="application-details-3-status">
+          Cannot start yet
+        </div>
+        <!--<div class="govuk-task-list__status" id="application-details-2-status">
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+        </div>-->
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+            Record intervention session(s) feedback (?)
+          <div id="application-details-3-hint" class="govuk-task-list__hint">
+            The sessions can be recorded once the action plan is submitted
+          </div>
+        </div>
+        <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="application-details-3-status">
+          Cannot start yet
+        </div>
+        <!--<div class="govuk-task-list__status" id="application-details-2-status">
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+        </div>-->
+      </li>
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <div>
+            End of service report
+          </div>
+          <div id="application-details-3-hint" class="govuk-task-list__hint">
+            The report will be available once the ICS is complete
+          </div>
+        </div>
+        <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="application-details-3-status">
+          Cannot start yet
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</div>
+
+{% endblock %}

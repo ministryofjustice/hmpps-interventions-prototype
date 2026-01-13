@@ -18,7 +18,7 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Alex River [title]</h1>
 
     <!--<nav class="moj-sub-navigation" aria-label="Sub navigation">
@@ -42,102 +42,100 @@
       </ul>
     </nav>-->
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Case details</h2>
 
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Identity details
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Name
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Alex River
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Date of birth
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  20 Feb 1975 (47 years old)
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  CRN
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  D007615
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Prison number *
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  A8362HF
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Location
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Newcastle Upon Tyne
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Prison establishment *
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Durham Prison
-                </dd>
-              </div>
-            </dl>
-          </div>
+    <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Identity details
         </div>
-
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Referral details
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Referral date
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  18 April 2025
-                </dd>
-              </div>
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Assigned to
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Unassigned
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="assign">
-                    Assign<span class="govuk-visually-hidden"> location</span>
-                  </a>
-                </dd>
-              </div>
-            </dl>
-          </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Alex River
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                20 Feb 1975 (47 years old)
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                CRN
+              </dt>
+              <dd class="govuk-summary-list__value">
+                D007615
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Prison number *
+              </dt>
+              <dd class="govuk-summary-list__value">
+                A8362HF
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Location
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Newcastle Upon Tyne
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Prison establishment *
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Durham Prison
+              </dd>
+            </div>
+          </dl>
         </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+         Case details
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Referral date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              18 April 2025
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Assigned to
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Unassigned
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="assign">
+                Assign to caseworker<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+        </dl>
       </div>
     </div>
+
   </div>
 </div>
 
