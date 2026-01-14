@@ -59,50 +59,40 @@
   </div>
 </div>
 
-{% block pageScripts %}
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-  // Select the add another container
-  const addAnotherContainer = document.querySelector('[data-module="moj-add-another"]');
-
-  if (!addAnotherContainer) return;
-
-  // Function to renumber legends
-  function updateLegends() {
-    const fieldsets = addAnotherContainer.querySelectorAll('.moj-add-another__item');
-
-    fieldsets.forEach((fs, index) => {
-      const legend = fs.querySelector('legend.moj-add-another__title');
-
-      if (legend) {
-        const baseText = legend.textContent.trim().split(' ')[0]; // e.g. "Person"
-        legend.textContent = `${baseText} ${index + 1}`;        // e.g. "Person 1"
+<script>
+  function renumberCaseworkers() {
+    const items = document.querySelectorAll('.moj-add-another__item');
+    const showNumbers = items.length > 1;
+  
+    items.forEach((item, idx) => {
+      const legend = item.querySelector('.moj-add-another__title');
+  
+      if (!legend) return;
+  
+      if (showNumbers) {
+        legend.textContent = 'Caseworker ' + (idx + 1);
+      } else {
+        // back to plain label when 0–1 rows
+        legend.textContent = 'Caseworker';
       }
     });
   }
-
-  // Observe additions and renumber when a new fieldset is added
-  const observer = new MutationObserver((mutationsList) => {
-    let shouldUpdate = false;
-
-    for (const mutation of mutationsList) {
-      if (mutation.addedNodes.length) {
-        shouldUpdate = true;
-        break;
+  
+  // run on page load
+  document.addEventListener('DOMContentLoaded', function () {
+    renumberCaseworkers();
+  
+    // handle clicks on add/remove buttons
+    document.body.addEventListener('click', function (e) {
+      if (
+        e.target.closest('.moj-add-another__add-button') ||
+        e.target.closest('.moj-add-another__remove-button')
+      ) {
+        // allow MOJ module to mutate DOM first
+        setTimeout(renumberCaseworkers, 0);
       }
-    }
-
-    if (shouldUpdate) {
-      updateLegends();
-    }
+    });
   });
-
-  observer.observe(addAnotherContainer, { childList: true, subtree: true });
-
-  // Initial update on load
-  updateLegends();
-});
-    </script>
-{% endblock %}
-
+  </script>
+  
 {% endblock %}
