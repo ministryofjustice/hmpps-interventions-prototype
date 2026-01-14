@@ -28,28 +28,26 @@ href: "javascript:history.back()"
 
     <div class="moj-datepicker" data-module="moj-date-picker">
       <div class="govuk-form-group">
-        <label class="govuk-label" for="date">
-          Date
-        </label>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">What is the date of the session?</h2>
+        </legend>
         <div id="date-hint" class="govuk-hint">
-          For example, 17/5/2024.
+         *  For example, 17/5/2024. / Enter a date, for example 10/7/2025, or select one from the calendar.
         </div>
         <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
       </div>
     </div>
     
-    
-
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">
             When the session started?
           </h1>
-          <div id="location-hint" class="govuk-hint">
-            Use the 12-hour clock, for example 9:30am or 3pm.
-          </div>
         </legend>
+        <div id="location-hint" class="govuk-hint">
+          Use the 12-hour clock, for example 9:30am or 3pm.
+        </div>
         <div class="govuk-date-input" id="passport-issued">
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
@@ -84,9 +82,11 @@ href: "javascript:history.back()"
     </div>
 
     <div class="govuk-form-group">
-      <label class="govuk-label" for="location">
-        Duration of the session
-      </label>
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">How long did the session last for?</h2>
+        </legend>
+      </legend>
       <div id="location-hint" class="govuk-hint">
         blah blah?
       </div>
@@ -110,14 +110,14 @@ href: "javascript:history.back()"
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h1 class="govuk-fieldset__heading">
-            Method
-          </h1>
+          <h2 class="govuk-fieldset__heading">
+            *What method has been used to deliver the ICS? /Method
+          </h2>
         </legend>
         <div id="contact-hint" class="govuk-hint">
           Select one option
         </div>
-        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+        <div class="govuk-radios govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
             <label class="govuk-label govuk-radios__label" for="changedName">
@@ -149,9 +149,9 @@ href: "javascript:history.back()"
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h1 class="govuk-fieldset__heading">
+          <h2 class="govuk-fieldset__heading">
             [Placeholder] Who is delivering the ICS appointment?
-          </h1>
+          </h2>
         </legend>
         <div id="countries-hint" class="govuk-hint">
           Select all xxx that apply
@@ -160,19 +160,19 @@ href: "javascript:history.back()"
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
             <label class="govuk-label govuk-checkboxes__label" for="countries">
-              Placeholder
+              R&M Active Probation Practitioner (<a href="mailto:interventions-dev@digital.justice.gov.uk">interventions-dev@digital.justice.gov.uk</a>)
             </label>
           </div>
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="portugal">
             <label class="govuk-label govuk-checkboxes__label" for="countries-2">
-              Placeholder
+              Michaela Boronsky (<a href="mailto:michaela.b@example.com">michaela.b@example.com</a>)
             </label>
           </div>
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="spain">
             <label class="govuk-label govuk-checkboxes__label" for="countries-3">
-              Placeholder
+              John Smithy (<a href="mailto:john.smithy@example.com">john.smithy@example.com</a>)
             </label>
           </div>
         </div>
@@ -190,12 +190,12 @@ href: "javascript:history.back()"
       </fieldset>
     </div>-->
 
-    <form action="record-additional-session-extra3" method="post" novalidate>
+    <!--<form action="record-additional-session-extra3" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
         <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
           Add another session
         </button>
-    </form>
+    </form>-->
 
     <form action="confirm-additional-session" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">

@@ -19,7 +19,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <div data-module="moj-add-another">
-      <h1 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Assign to a caseworker</h1>
+      <h1 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Who do you want to assign this case to? </h1>
       
       <form action="view-alex-details-tabs-assigned-progress" method="post" novalidate="">
 
@@ -29,7 +29,7 @@
           </legend>
           <div class="govuk-form-group">
             <label class="govuk-label govuk-!-font-weight-bold" for="person[0][first_name]">
-              Who do you want to assign this case to?
+              Enter the caseworker's email address
             </label>
             <input class="govuk-input" id="person[0][first_name]" name="person[0][first_name]" type="text" data-name="person[%index%][first_name]" data-id="person[%index%][first_name]" value="R&M Active Probation Practitioner (interventions-dev@digital.justice.gov.uk)" autocomplete="off">
           </div>
@@ -39,7 +39,7 @@
           </legend>
           <div class="govuk-form-group">
             <label class="govuk-label govuk-!-font-weight-bold" for="person[1][first_name]">
-              Who do you want to assign this case to?
+              Enter the caseworker's email address
             </label>
             <input class="govuk-input" id="person[1][first_name]" name="person[1][first_name]" type="text" data-name="person[%index%][first_name]" data-id="person[%index%][first_name]" value="Michaela Boronsky (michaela.b@example.com)" autocomplete="off">
           </div>
@@ -55,9 +55,54 @@
           </button>
         </div>
       </form>
-
     </div>
   </div>
 </div>
+
+{% block pageScripts %}
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+  // Select the add another container
+  const addAnotherContainer = document.querySelector('[data-module="moj-add-another"]');
+
+  if (!addAnotherContainer) return;
+
+  // Function to renumber legends
+  function updateLegends() {
+    const fieldsets = addAnotherContainer.querySelectorAll('.moj-add-another__item');
+
+    fieldsets.forEach((fs, index) => {
+      const legend = fs.querySelector('legend.moj-add-another__title');
+
+      if (legend) {
+        const baseText = legend.textContent.trim().split(' ')[0]; // e.g. "Person"
+        legend.textContent = `${baseText} ${index + 1}`;        // e.g. "Person 1"
+      }
+    });
+  }
+
+  // Observe additions and renumber when a new fieldset is added
+  const observer = new MutationObserver((mutationsList) => {
+    let shouldUpdate = false;
+
+    for (const mutation of mutationsList) {
+      if (mutation.addedNodes.length) {
+        shouldUpdate = true;
+        break;
+      }
+    }
+
+    if (shouldUpdate) {
+      updateLegends();
+    }
+  });
+
+  observer.observe(addAnotherContainer, { childList: true, subtree: true });
+
+  // Initial update on load
+  updateLegends();
+});
+    </script>
+{% endblock %}
 
 {% endblock %}

@@ -19,7 +19,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <div data-module="moj-add-another">
-      <h1 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Assign to a caseworker</h1>
+      <h1 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Who do you want to assign this case to? </h1>
       <form action="view-alex-details-tabs-assigned-progress" method="post" novalidate>
 
         <fieldset class="govuk-fieldset moj-add-another__item">
@@ -28,8 +28,11 @@
           </legend>
           <div class="govuk-form-group">
             <label class="govuk-label govuk-!-font-weight-bold" for="person[0][first_name]">
-              Who do you want to assign this case to?
+              Enter the caseworker's email address
             </label>
+            <!--<div id="email-hint" class="govuk-hint">
+              hint text
+            </div>-->
             <input class="govuk-input" id="person[0][first_name]" name="person[0][first_name]" type="text" data-name="person[%index%][first_name]" data-id="person[%index%][first_name]">
           </div>
         </fieldset>

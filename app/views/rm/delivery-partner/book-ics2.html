@@ -23,52 +23,29 @@ href: "javascript:history.back()"
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Add details of second session
+      Book ICS
     </h1>
 
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+    <div class="moj-datepicker" data-module="moj-date-picker">
+      <div class="govuk-form-group">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h2 class="govuk-fieldset__heading">
-            Date
-          </h1>
+          <h2 class="govuk-fieldset__heading">What is the date of the session?</h2>
         </legend>
-        <div class="govuk-date-input" id="passport-issued">
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                Day
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
-            </div>
-          </div>
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                Month
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
-            </div>
-          </div>
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                Year
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
-            </div>
-          </div>
+        <div id="date-hint" class="govuk-hint">
+         *  For example, 17/5/2024. / Enter a date, for example 10/7/2025, or select one from the calendar.
         </div>
-      </fieldset>
+        <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
+      </div>
     </div>
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h2 class="govuk-fieldset__heading">
-            Time
-          </h1>
+          <h2 class="govuk-fieldset__heading">When does the session start?</h2>
         </legend>
+        <div id="date-hint" class="govuk-hint">
+          * Use the 12-hour clock, for example 9:30am or 3pm.
+         </div>
         <div class="govuk-date-input" id="passport-issued">
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
@@ -89,12 +66,12 @@ href: "javascript:history.back()"
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
               <label class="govuk-label" for="sort" for="width-2">
-                AM or PM
+                *am or pm / AM or PM
               </label>
               <select class="govuk-select" id="sort" name="sort" style="min-width: 4.5em;">
                 <option value=""></option>
-                <option value="PM">PM</option>
-                <option value="AM">AM</option>
+                <option value="pm">pm</option>
+                <option value="am">am</option>
               </select>
             </div>
           </div>
@@ -134,13 +111,13 @@ href: "javascript:history.back()"
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h1 class="govuk-fieldset__heading">
-            Method
+            *What method has been used to deliver the ICS? /Method
           </h1>
         </legend>
         <div id="contact-hint" class="govuk-hint">
           Select one option
         </div>
-        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+        <div class="govuk-radios govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
             <label class="govuk-label govuk-radios__label" for="changedName">
