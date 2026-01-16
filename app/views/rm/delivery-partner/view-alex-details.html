@@ -1,19 +1,19 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Referral details
+Referral details
 {% endblock %}
 
 {% block header %}
-  {% include "/includes/head-dps-dp.html" %}
+{% include "/includes/head-dps-dp.html" %}
 {% endblock %}
 
 {% block beforeContent %}
 <nav class="clear-right">
-	<!--<a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right">Go to CRS homepage</a>-->
-  	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+  <!--<a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right">Go to CRS homepage</a>-->
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 </nav>
-{% endblock %} 
+{% endblock %}
 
 {% block content %}
 
@@ -21,92 +21,230 @@
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Referral for Alex River</h1>
 
-    <!--<nav class="moj-sub-navigation" aria-label="Sub navigation">
-
-      <ul class="moj-sub-navigation__list">
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" href="">Case progress</a>
-        </li>
-
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link"  aria-current="page" href="referral-details-alex">View or change referral</a>
-        </li>
-
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link"  href="">Case notes</a>
-        </li>
-
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" href="">Change log</a>
-        </li>
-      </ul>
-    </nav>-->
-
     <h2 class="govuk-heading-m">Case details</h2>
 
     <div class="govuk-summary-card">
-        <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">
-            Identity details
-        </div>
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Alex River
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Date of birth
-              </dt>
-              <dd class="govuk-summary-list__value">
-                20 Feb 1975 (47 years old)
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                CRN
-              </dt>
-              <dd class="govuk-summary-list__value">
-                D007615
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Prison number *
-              </dt>
-              <dd class="govuk-summary-list__value">
-                A8362HF
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Location
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Newcastle Upon Tyne
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Prison establishment *
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Durham Prison
-              </dd>
-            </div>
-          </dl>
-        </div>
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Personal details
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Alex River
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              CRN
+            </dt>
+            <dd class="govuk-summary-list__value">
+              D007615
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              20 Feb 1975 (47 years old)
+            </dd>
+          </div>
+
+          <!--<div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Prison number *
+            </dt>
+            <dd class="govuk-summary-list__value">
+              A8362HF
+            </dd>
+          </div>-->
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Preferred language
+            </dt>
+            <dd class="govuk-summary-list__value">
+              English
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Disabilities<br>
+              <span class="govuk-body-s secondary-text govuk-!-font-weight-regular">
+                Last updated 7 January 2026
+              </span>
+            </dt>
+            <dd class="govuk-summary-list__value">             
+              <ul class="govuk-list">       
+                  <li>Neurodiverse conditions</li>                  
+              </ul> 
+              <!--<a class="govuk-link" href="#">View details and notes</a>-->
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h3 class="govuk-summary-card__title">
+          Equality monitoring
+        </h3>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Ethnicity
+            </dt>
+            <dd class="govuk-summary-list__value">
+              White: British/English/Welsh/Scottish/Northern Irish
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Religion or belief
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No religion
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sex
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Male
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Gender identity
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Male
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sexual orientation
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Heterosexual/Straight
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Consider transgender or transgender history
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+          </div>
+        </dl>
+        <!--<p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a class="govuk-link" href="#">View more equality monitoring on NDelius (opens in new tab)</a></p>-->
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h3 class="govuk-summary-card__title">
+          Contact details
+        </h3>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No phone number
+            </dd>
+            <!--<dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change</a>
+            </dd>-->
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Mobile number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              07700 900002
+            </dd>
+            <!--<dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change</a>
+            </dd>-->
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              alex.rivers@gmail.com
+            </dd>
+            <!--<dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change</a>
+            </dd>-->
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Main address<br>
+              <span class="govuk-body-s secondary-text govuk-!-font-weight-regular">
+                Last updated 6 January 2026
+              </span>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 Lunar Lane, Newcastle, Newcastle upon Tyne, NE12 34AB<br>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+                <span class="govuk-summary-list__key govuk-!-padding-bottom-0">Type of address</span>
+                <span>Friends/Family (settled) (verified)</span>
+              </p>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+                <span class="govuk-summary-list__key govuk-!-padding-bottom-0">Start date</span>
+                <span>1 December 2005</span>
+              </p>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+                <span class="govuk-summary-list__key govuk-!-padding-bottom-0">Notes</span>
+                <span>No notes</span>
+              </p>
+            </dd>
+            <!--<dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change</a>
+            </dd>-->
+          </div>
+          <!--<div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Other addresses
+            </dt>
+            <dd class="govuk-summary-list__value">              
+              No other addresses       
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contacts
+            </dt>
+            <dd class="govuk-summary-list__value">             
+              None
+            </dd>
+          </div>-->
+        </dl>
+      </div>
     </div>
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
-         Case details
+          Personal details
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
