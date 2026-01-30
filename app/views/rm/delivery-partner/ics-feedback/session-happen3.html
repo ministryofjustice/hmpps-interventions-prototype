@@ -1,0 +1,207 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">[Behaviour/You told us that the session happened]</h1>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Was Alex late?
+            </h2>
+          </legend>
+          <div id="contact-hint" class="govuk-hint">
+            This helps the probation practitioner to support Alex.
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+                  Add how late they were and anything you know about the reason.
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+  
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              What did you do in the session?
+            </h2>
+          </legend>
+          <div id="account-number-hint" class="govuk-hint">
+            Add details about what you did, anything that was achieved and what came out of the session.
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </fieldset>
+      </div>
+  
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              How did Alex behave in the session?
+            </h2>
+          </legend>
+          <div id="account-number-hint" class="govuk-hint">
+            Add details about if Alex was engaged during the session, and if there was any progress or positive change.
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </fieldset>
+      </div>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              What strengths did you identify during the session?
+            </h2>
+          </legend>
+          <div id="account-number-hint" class="govuk-hint">
+            [TBC] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id nulla a risus accumsan condimentum ac eu elit.
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </fieldset>
+      </div>
+      
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              [TBC] Risks presented by Alex that warrant consideration in delivery of services
+            </h2>
+          </legend>
+          <div id="account-number-hint" class="govuk-hint">
+            [TBC] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id nulla a risus accumsan condimentum ac eu elit.
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </fieldset>
+      </div>
+  
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              [TBC] Is there any feedback or concerns from Alex?
+            </h2>
+          </legend>
+          <div id="account-number-hint" class="govuk-hint">
+            [TBC] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id nulla a risus accumsan condimentum ac eu elit.
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </fieldset>
+      </div>
+  
+      <div class="govuk-form-group">
+  
+        <fieldset class="govuk-fieldset" aria-describedby="notify-probation-practitioner-hint">
+        
+        <legend class="govuk-fieldset__legend">
+          <label class="govuk-label govuk-label--m govuk-!-margin-bottom-4"> Does the probation practitioner need to be notified about any issues?</label>     
+        </legend>
+        
+        <div id="notify-probation-practitioner-hint" class="govuk-hint">
+          Select all that apply.
+        </div>
+    
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">           
+  
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="notify-probation-practitioner-of-behaviour" name="notify-probation-practitioner-of-behaviour" type="checkbox" value="yes" aria-controls="conditional-notify-probation-practitioner-of-behaviour" aria-expanded="false">
+            <label class="govuk-label govuk-checkboxes__label" for="notify-probation-practitioner-of-behaviour">
+              Yes, Alex behaved poorly
+              </label>     
+          </div>
+                
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-notify-probation-practitioner-of-behaviour">   
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-body govuk-!-margin-bottom-4" for="session-behaviour">
+              Add enough detail to help the probation practitioner to know what happened.
+              </label>
+              <textarea class="govuk-textarea" id="session-behaviour" name="session-behaviour" rows="5"></textarea>
+            </div>
+          </div>
+                    
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="notify-probation-practitioner-of-concerns" name="notify-probation-practitioner-of-concerns" type="checkbox" value="yes" aria-controls="conditional-notify-probation-practitioner-of-concerns" aria-expanded="false">
+            <label class="govuk-label govuk-checkboxes__label" for="notify-probation-practitioner-of-concerns">
+            Yes, something concerned me about Alex
+            </label>        
+          </div>
+                
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-notify-probation-practitioner-of-concerns">
+            <div class="govuk-form-group">
+            <label class="govuk-label govuk-body govuk-!-margin-bottom-4" for="session-concerns">
+            Add details about your concerns.
+            </label>
+            <textarea class="govuk-textarea" id="session-concerns" name="session-concerns" rows="5"></textarea>
+            </div>
+          </div>
+          <div class="govuk-checkboxes__divider">or</div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="noNotifyPPCheckbox" name="notify-probation-practitioner" type="checkbox" value="no" data-behaviour="exclusive">
+            <label class="govuk-label govuk-checkboxes__label" for="noNotifyPPCheckbox">
+            No
+            </label>              
+          </div>   
+        </div>
+      </fieldset>
+      </div>
+  
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Add anything you have planned for the next session (optional)
+            </h2>
+          </legend>
+          <div id="account-number-hint" class="govuk-hint">
+            You’ll be able to view these plans in this service, for example before you hold the next session.
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </fieldset>
+      </div>
+  
+      <form action="cya-ics-feedback" method="post" novalidate>
+        <input type="hidden" name="answers-checked" value="true">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+  </fieldset>
+</div>
+        
+        
+    
+
+{% endblock %}

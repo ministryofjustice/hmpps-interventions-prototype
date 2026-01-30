@@ -1,21 +1,19 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Add additional session details
+  Open casess
 {% endblock %}
 
-{% block main %}
-{% include "../includes/key-details-bar-alex.html" %}
-{{ super() }}
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{{ govukBackLink({
-  text: "Back",
-href: "javascript:history.back()"
-}) }}
-{% endblock %}
+<nav class="clear-right">
+	<!--<a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right">Go to CRS homepage</a>-->
+  	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+</nav>
+{% endblock %} 
 
 {% block content %}
 
@@ -23,7 +21,7 @@ href: "javascript:history.back()"
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Book ICS
+      Schedule the ICS
     </h1>
 
     <div class="moj-datepicker" data-module="moj-date-picker">
@@ -32,7 +30,7 @@ href: "javascript:history.back()"
           <h2 class="govuk-fieldset__heading">What is the date of the session?</h2>
         </legend>
         <div id="date-hint" class="govuk-hint">
-         *  For example, 17/5/2024. / Enter a date, for example 10/7/2025, or select one from the calendar.
+         Enter a date, for example 10/7/2025, or select one from the calendar.
         </div>
         <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
       </div>
@@ -42,10 +40,10 @@ href: "javascript:history.back()"
       <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">
-            When the session started?
+            What time does the session start?
           </h2>
           <div id="location-hint" class="govuk-hint">
-            Use the 12-hour clock, for example 9:30am or 3pm.
+            Use the 12-hour clock, for example 1130am or 3pm.
           </div>
         </legend>
         <div class="govuk-date-input" id="passport-issued">
@@ -68,7 +66,7 @@ href: "javascript:history.back()"
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
               <label class="govuk-label" for="sort" for="width-2">
-                AM or PM
+                am or pm
               </label>
               <select class="govuk-select" id="sort" name="sort" style="min-width: 4.5em;">
                 <option value=""></option>
@@ -84,7 +82,7 @@ href: "javascript:history.back()"
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h2 class="govuk-fieldset__heading">How long did the session last for?</h2>
+          <h2 class="govuk-fieldset__heading">How long is the session scheduled for?</h2>
         </legend>
         <div class="govuk-date-input" id="passport-issued">
           <div class="govuk-date-input__item">
@@ -106,47 +104,197 @@ href: "javascript:history.back()"
         </div>
       </fieldset>
     </div>
-
+    
     <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">
-            *What method has been used to deliver the ICS? /Method
+            *What method has been used to deliver the ICS? / Method
           </h2>
         </legend>
+
         <div id="contact-hint" class="govuk-hint">
           Select one option
         </div>
-        <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+
+        <div class="govuk-radios" data-module="govuk-radios">
+          <!-- Phone call -->
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
-            <label class="govuk-label govuk-radios__label" for="changedName">
+            <input class="govuk-radios__input" id="contact-phone-call" name="contact" type="radio" value="phone-call" data-aria-controls="conditional-contact-phone-call"/>
+            <label class="govuk-label govuk-radios__label" for="contact-phone-call">
               Phone call
             </label>
           </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-phone-call">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="reason-phone-call">
+                Why is this session not in-person? 
+              </label>
+              <input class="govuk-input govuk-!-width-full" id="reason-phone-call" name="reasonPhoneCall" type="text" autocomplete="off"/>
+            </div>
+          </div>
+
+          <!-- Video call -->
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
-            <label class="govuk-label govuk-radios__label" for="changedName-2">
+            <input class="govuk-radios__input" id="contact-video-call" name="contact" type="radio" value="video-call" data-aria-controls="conditional-contact-video-call"/>
+            <label class="govuk-label govuk-radios__label" for="contact-video-call">
               Video call
             </label>
           </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-video-call">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="reason-video-call">
+                Why is this session not in-person? 
+              </label>
+              <input class="govuk-input govuk-!-width-full" id="reason-video-call" name="reasonVideoCall" type="text" autocomplete="off"/>
+            </div>
+          </div>
+
+          <!-- In-person meeting - NPS offices -->
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
-            <label class="govuk-label govuk-radios__label" for="changedName">
-              In-person meeting - NPS offices
+            <input class="govuk-radios__input" id="contact-inperson-nps" name="contact" type="radio" value="inperson-nps" data-aria-controls="conditional-contact-inperson-nps"/>
+            <label class="govuk-label govuk-radios__label" for="contact-inperson-nps">
+              In-person meeting - probation office
             </label>
           </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-inperson-nps">
+            <div class="govuk-form-group">
+  
+              <select class="govuk-select" id="delius-office-location-code" name="delius-office-location-code">
+                  <option value="" disabled="">-- Select a Probation Delivery Unit --</option>
+                  <option value="CRS0002">Bedford: Bedford Probation Office</option>
+                  <option value="CRS0014">Cambridgeshire: Cambridge Probation Office</option>
+                  <option value="CRS0015">Cambridgeshire: Huntingdon Probation Office</option>
+                  <option value="CRS0098">Chelmsford: Chelmsford Probation Office</option>
+                  <option value="CRS0099">Colchester: Colchester Probation Office</option>
+                  <option value="CRS0118">Essex: Carraway House</option>
+                  <option value="CRS0100">Harlow: Harlow Probation Office</option>
+                  <option value="CRS0078">Hertfordshire: East Hertfordshire Probation Centre</option>
+                  <option value="CRS0080">Hertfordshire: Mid Herts Probation Centre</option>
+                  <option value="CRS0081">Hertfordshire: North Hertfordshire Probation Centre</option>
+                  <option value="CRS0082">Hertfordshire: South West Hertfordshire Probation Centre</option>
+                  <option value="CRS0097">Norfolk: Centenary House</option>         
+                  <option value="CRS0107">Northamptonshire: Walter Tull House</option>
+                  <option value="CRS0017">Peterborough: Peterborough Magistrates' Court</option>
+                  <option value="CRS0127">Suffolk: Bury Saint Edmunds Probation Office</option>
+                  <option value="CRS0131">Suffolk: Lowestoft Probation Office</option>
+                  <option value="CRS0128">Suffolk: Peninsular House</option>
+                  <option value="CRS0003">Bedford: Suite G1A, G1B And The Basement</option>
+                  <option value="CRS0004">Luton: Clemitson House</option>
+                  <option value="CRS0005">Luton: Sceptre House (First Fl)</option>
+                  <option value="CRS0016">Peterborough: 12-13 Adam Court</option>
+                  <option value="CRS0079">Hemel Hampstead: Waterhouse Street</option>
+                  <option value="CRS0119">Basildon: The Basildon Centre</option>
+                  <option value="CRS0120">Grays: Part Second Floor, Civic Office Complex</option>
+                  <option value="CRS0121">Southend-On-Sea: Civic 2, Victoria Avenue</option>
+                  <option value="CRS0129">Ipswich: Suite 1, 3rd Floor, Hubbard House</option>
+                  <option value="CRS0130">Ipswich: Suite 2, 3rd Floor, Hubbard House</option>
+                  <option value="CRS0286">Wisbech: The BoatHouse Business Centre</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- In-person meeting - Other locations -->
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
-            <label class="govuk-label govuk-radios__label" for="changedName-2">
-              In-person meeting - Other locations
+            <input class="govuk-radios__input" id="contact-inperson-other" name="contact" type="radio" value="inperson-other" data-aria-controls="conditional-contact-inperson-other"/>
+            <label class="govuk-label govuk-radios__label" for="contact-inperson-other">
+              In-person meeting - somewhere else
             </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-inperson-other">
+            <fieldset class="govuk-fieldset">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-1">
+                  Address line 1
+                </label>
+                <input class="govuk-input" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-2">
+                  Address line 2 (optional)
+                </label>
+                <input class="govuk-input" id="address-line-2" name="addressLine2" type="text" autocomplete="address-line2">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-town">
+                  Town or city
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-county">
+                  County (optional)
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-postcode">
+                  Postcode
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code">
+              </div>
+            </fieldset>
           </div>
         </div>
       </fieldset>
     </div>
 
     <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            How was Alex River informed about the session? 
+          </h2>
+        </legend>
+        <div id="waste-hint" class="govuk-hint">
+          Select all that apply
+        </div>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              Phone call
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+            <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+              Text message
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+              Email
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
+            <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+              Other
+            </label>
+          </div>
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-text">
+                Other method of contact
+              </label>
+              <input class="govuk-input govuk-!-width-full" id="contact-by-text" name="contactByText" type="tel" autocomplete="tel">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h2 class="govuk-fieldset__heading">Who is delivering the ICS appointment?</h2>
+      </legend>
+      <input class="govuk-input" id="event-name" name="eventName" type="text">
+    </div>
+
+    <!--<div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">
@@ -177,7 +325,7 @@ href: "javascript:history.back()"
           </div>
         </div>
       </fieldset>
-    </div>
+    </div>-->
 
    <!-- <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
@@ -197,7 +345,7 @@ href: "javascript:history.back()"
         </button>
     </form>-->
 
-    <form action="confirm-additional-session" method="post" novalidate>
+    <form action="cya-book-ics" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">
         Save and continue

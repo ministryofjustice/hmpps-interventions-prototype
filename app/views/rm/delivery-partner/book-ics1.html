@@ -80,6 +80,31 @@
     </div>
 
     <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            How long is the session scheduled for?
+          </h2>
+        </legend>
+        <select class="govuk-select" id="location" name="location" aria-describedby="location-hint">
+          <option value="choose" selected>Choose duration</option>
+          <option value="15">15 minutes</option>
+          <option value="30">30 minutes</option>
+          <option value="45">45 minutes</option>
+          <option value="1h">1 hour</option>
+          <option value="1h15">1 hour and 15 minutes</option>
+          <option value="1h30">1 hour and 30 minutes</option>
+          <option value="1h45">1 hour and 45 minutes</option>
+          <option value="2h">2 hours</option>
+        </select>
+        <br><br>
+        <p class="govuk-body">
+          <a href="book-ics-cant-find-answer" class="govuk-link govuk-link--no-visited-state">My duration is not listed</a>
+        </p>
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">
@@ -260,6 +285,46 @@
         </div>
       </fieldset>
     </div>
+
+    <div class="govuk-form-group">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h2 class="govuk-fieldset__heading">Who is delivering the ICS appointment?</h2>
+      </legend>
+      <input class="govuk-input" id="event-name" name="eventName" type="text">
+    </div>
+
+    <!--<div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            [Placeholder] Who is delivering the ICS appointment?
+          </h2>
+        </legend>
+        <div id="countries-hint" class="govuk-hint">
+          Select all xxx that apply
+        </div>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+            <label class="govuk-label govuk-checkboxes__label" for="countries">
+              R&M Active Probation Practitioner (<a href="mailto:interventions-dev@digital.justice.gov.uk">interventions-dev@digital.justice.gov.uk</a>)
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="portugal">
+            <label class="govuk-label govuk-checkboxes__label" for="countries-2">
+              Michaela Boronsky (<a href="mailto:michaela.b@example.com">michaela.b@example.com</a>)
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="spain">
+            <label class="govuk-label govuk-checkboxes__label" for="countries-3">
+              John Smithy (<a href="mailto:john.smithy@example.com">john.smithy@example.com</a>)
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>-->
 
     <form action="cya-book-ics" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">

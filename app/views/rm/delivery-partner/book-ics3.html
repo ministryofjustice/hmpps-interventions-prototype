@@ -35,17 +35,15 @@
         <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
       </div>
     </div>
-    
+
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h2 class="govuk-fieldset__heading">
-            What time does the session start?
-          </h2>
+          <h2 class="govuk-fieldset__heading">What time does the session start?</h2>
         </legend>
-        <div id="location-hint" class="govuk-hint">
+        <div id="date-hint" class="govuk-hint">
           Use the 12-hour clock, for example 1130am or 3pm.
-        </div>
+         </div>
         <div class="govuk-date-input" id="passport-issued">
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
@@ -70,9 +68,37 @@
               </label>
               <select class="govuk-select" id="sort" name="sort" style="min-width: 4.5em;">
                 <option value=""></option>
-                <option value="PM">PM</option>
-                <option value="AM">AM</option>
+                <option value="pm">pm</option>
+                <option value="am">am</option>
               </select>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Duration of the session
+          </h2>
+        </legend>
+        <div class="govuk-date-input" id="passport-issued">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                Hour
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                Minute
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
             </div>
           </div>
         </div>
@@ -260,6 +286,46 @@
         </div>
       </fieldset>
     </div>
+
+    <div class="govuk-form-group">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h2 class="govuk-fieldset__heading">Who will deliver the session?</h2>
+      </legend>
+      <input class="govuk-input" id="event-name" name="eventName" type="text">
+    </div>
+
+    <!--<div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            [Placeholder] Who is delivering the ICS appointment?
+          </h2>
+        </legend>
+        <div id="countries-hint" class="govuk-hint">
+          Select all xxx that apply
+        </div>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+            <label class="govuk-label govuk-checkboxes__label" for="countries">
+              R&M Active Probation Practitioner (<a href="mailto:interventions-dev@digital.justice.gov.uk">interventions-dev@digital.justice.gov.uk</a>)
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="portugal">
+            <label class="govuk-label govuk-checkboxes__label" for="countries-2">
+              Michaela Boronsky (<a href="mailto:michaela.b@example.com">michaela.b@example.com</a>)
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="spain">
+            <label class="govuk-label govuk-checkboxes__label" for="countries-3">
+              John Smithy (<a href="mailto:john.smithy@example.com">john.smithy@example.com</a>)
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>-->
 
     <form action="cya-book-ics" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">

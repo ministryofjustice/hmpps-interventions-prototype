@@ -777,3 +777,15 @@ ul#country__listbox {
 .govuk-flex {
     display: flex;
 }
+
+.equal-cols {
+    table-layout: fixed;
+    width: 100%;
+  }
+  
+  .equal-cols th,
+  .equal-cols td {
+    width: 50%;
+    word-wrap: break-word;
+  }
+  

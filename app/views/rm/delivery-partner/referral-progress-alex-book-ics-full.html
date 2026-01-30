@@ -1,0 +1,173 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Referral details
+{% endblock %}
+
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="clear-right">
+	<!--<a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right">Go to CRS homepage</a>-->
+  	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+</nav>
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Referral for Alex River</h1>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="view-alex-details-tabs-assigned-progress">Case details</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="referral-progress-alex-book-ics">Progress</a>
+        </li>
+
+        <!--<li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"  href="">Case notes</a>
+        </li>-->
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="">Change log</a>
+        </li>
+      </ul>
+    </nav>
+
+    <h2 class="govuk-heading-m">Referral progress</h2>
+<!--ICS-->
+    <h3 class="govuk-heading-s">Initial contact session (ICS)</h3>
+    <table class="govuk-table" data-cy="supplier-assessment-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">    
+          <th scope="col" class="govuk-table__header">Date and time</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>  
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">13 Jan 2026 at 3:01pm</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green" id="supplier-assessment-status"> COMPLETED </strong></td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">View feedback</a></td>
+        </tr> 
+      </tbody>
+    </table>
+
+<!--Action plan-->
+    <h3 class="govuk-heading-s">Action plan</h3>
+    <table class="govuk-table" data-cy="supplier-assessment-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">  
+          <th scope="col" class="govuk-table__header">Version (?)</th>  
+          <th scope="col" class="govuk-table__header">Date submitted</th>
+          <th scope="col" class="govuk-table__header">Date approved (?)</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>  
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">1</td>
+          <td class="govuk-table__cell">14 Jan 2026</td>
+          <td class="govuk-table__cell">15 Jan 2026</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Approved (?)
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">View action plan</a></td>
+        </tr> 
+      </tbody>
+    </table>
+
+<!--Sessions-->
+    <h3 class="govuk-heading-s">Session progress</h3>
+    <table class="govuk-table" data-cy="supplier-assessment-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">  
+          <th scope="col" class="govuk-table__header">Session number</th>  
+          <th scope="col" class="govuk-table__header">Date and time</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>  
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">1</td>
+          <td class="govuk-table__cell">17 Jan 2026</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Completed
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">View feedback form</a></td>
+        </tr> 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2</td>
+          <td class="govuk-table__cell">18 Jan 2026</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Completed
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">View feedback form</a></td>
+        </tr> 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">3</td>
+          <td class="govuk-table__cell">19 Jan 2026</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Completed
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">View feedback form</a></td>
+        </tr> 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">4</td>
+          <td class="govuk-table__cell">20 Jan 2026</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Completed
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">View feedback form</a></td>
+        </tr> 
+      </tbody>
+    </table>
+
+<!--End of service report-->
+    <h3 class="govuk-heading-s">End of service report</h3>
+    <table class="govuk-table" data-cy="supplier-assessment-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">   
+          <th scope="col" class="govuk-table__header">Date and time</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>  
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">16 Jan 2026</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Submitted
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">View submitted report</a></td>
+        </tr> 
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+{% endblock %}

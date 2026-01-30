@@ -1,0 +1,189 @@
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block main %}
+{% include "../includes/key-details-bar-alex.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">You told us that the person attended</h1>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<form class="form" action="person-attends-check-your-answers" method="post">
+
+
+{% set somethingtodowiththepersononprobationHtml %}
+{{ govukTextarea({
+  id: "what-happened-who-was-involved",
+  name: "what-happened-who-was-involved",
+  type: "text",
+  classes: "govuk-label--l",
+  label: {
+    text: "Explain what happened and who was involved."
+  }
+}) }}
+{% endset -%}
+
+{% set somethingtodowiththeserviceproviderHtml %}
+{{ govukTextarea({
+  id: "what-happened-service-provider",
+  name: "what-happened-service-provider",
+  type: "text",
+  classes: "govuk-label--l",
+  label: {
+    text: "Explain what happened and whether the person was told about it."
+  }
+}) }}
+{% endset -%}
+
+{% set otherHtml %}
+{{ govukTextarea({
+  id: "what-happened-other",
+  name: "what-happened-other",
+  type: "text",
+  classes: "govuk-label--l",
+  label: {
+    text: "Explain what happened and who was involved."
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  name: "why-did-the-session-not-happen",
+  fieldset: {
+    legend: {
+      text: "Why did the session not happen?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  
+  items: [
+    {
+      value: "something-to-do-with-the-person-on-probation",
+      text: "The person did not comply, for example they were disruptive or disengaged",
+      conditional: {
+        html: somethingtodowiththepersononprobationHtml
+      }
+    },
+    {
+      value: "something-to-do-with-the-service-provider",
+      text: "Something to do with the service provider or logistics, for example a room booking or fire alarm",
+      conditional: {
+        html: somethingtodowiththeserviceproviderHtml
+      }
+    },
+    {
+      value: "other",
+      text: "Other",
+      conditional: {
+        html: otherHtml
+      }
+    }
+  ]
+}) }}
+
+
+ <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-0">
+              <h2 class="govuk-fieldset__heading">
+                Did anything concern you about Alex River?
+              </h2>
+            </legend>
+            <div class="govuk-inset-text">
+              
+              If you select yes, the probation practitioner will get an email about your concerns.           
+             </div>
+
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="anything-concern-you" name="anything-concern-you" type="radio" value="yes" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="anything-concern-you">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="anything-concern-you">
+                    Add enough detail to help the probation practitioner understand what's happened.                   </label>
+                    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="anything-concern-you" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  No
+                </label>
+              </div>
+
+
+      
+      
+    </div>
+    <div class="govuk-!-padding-top-6"></div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Would you like to reschedule this session now?
+          </h1>
+        </legend>
+        
+        <div id="reschedule-session" class="govuk-hint">
+          If you select no, you’ll still be able to reschedule it later.    </div>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="reschedule-session" name="reschedule-session" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="reschedule-session">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="reschedule-session-2" name="reschedule-session" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="reschedule-sessiond-2">
+             No
+            </label>
+          </div>
+          </div>
+          
+          
+      </fieldset>
+    </div>
+    
+  </div>
+     
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Save and continue"
+          
+        }) }}
+
+    </form>
+    </div>
+  </div>
+
+</form>
+
+{% endblock %}

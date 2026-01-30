@@ -1,0 +1,255 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">How the session took place</h1>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Method
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Phone call - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </dd>
+        </div>
+      </dl>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="session-details-correct-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Are the session details correct?
+            </h2>
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="session-details-correct-yes"
+                name="session-details-correct"
+                type="radio"
+                value="yes">
+              <label class="govuk-label govuk-radios__label" for="session-details-correct-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="session-details-correct-no"
+                name="session-details-correct"
+                type="radio"
+                value="no"
+                data-aria-controls="conditional-session-details-correct-no">
+              <label class="govuk-label govuk-radios__label" for="session-details-correct-no">
+                No
+              </label>
+            </div>
+
+            <!-- CONDITIONAL: Only shown when "No" is selected -->
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-session-details-correct-no">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="session-method-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h3 class="govuk-fieldset__heading">
+                      How did the session take place?
+                    </h3>
+                  </legend>
+
+                  <div id="session-method-hint" class="govuk-hint">
+                    Select one option
+                  </div>
+
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <!-- Phone call -->
+                    <div class="govuk-radios__item">
+                      <input
+                        class="govuk-radios__input"
+                        id="session-method-phone-call"
+                        name="session-method"
+                        type="radio"
+                        value="phone-call"
+                        data-aria-controls="conditional-session-method-phone-call">
+                      <label class="govuk-label govuk-radios__label" for="session-method-phone-call">
+                        Phone call
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-session-method-phone-call">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="reason-phone-call">
+                          Why is this session not in-person?
+                        </label>
+                        <input
+                          class="govuk-input govuk-!-width-full"
+                          id="reason-phone-call"
+                          name="reasonPhoneCall"
+                          type="text"
+                          autocomplete="off">
+                      </div>
+                    </div>
+
+                    <!-- Video call -->
+                    <div class="govuk-radios__item">
+                      <input
+                        class="govuk-radios__input"
+                        id="session-method-video-call"
+                        name="session-method"
+                        type="radio"
+                        value="video-call"
+                        data-aria-controls="conditional-session-method-video-call">
+                      <label class="govuk-label govuk-radios__label" for="session-method-video-call">
+                        Video call
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-session-method-video-call">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="reason-video-call">
+                          Why is this session not in-person?
+                        </label>
+                        <input
+                          class="govuk-input govuk-!-width-full"
+                          id="reason-video-call"
+                          name="reasonVideoCall"
+                          type="text"
+                          autocomplete="off">
+                      </div>
+                    </div>
+
+                    <!-- In-person meeting - probation office -->
+                    <div class="govuk-radios__item">
+                      <input
+                        class="govuk-radios__input"
+                        id="session-method-inperson-nps"
+                        name="session-method"
+                        type="radio"
+                        value="inperson-nps"
+                        data-aria-controls="conditional-session-method-inperson-nps">
+                      <label class="govuk-label govuk-radios__label" for="session-method-inperson-nps">
+                        In-person meeting - probation office
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-session-method-inperson-nps">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="delius-office-location-code">
+                          Select a Probation Delivery Unit
+                        </label>
+                        <select class="govuk-select" id="delius-office-location-code" name="delius-office-location-code">
+                          <option value="" disabled selected>-- Select a Probation Delivery Unit --</option>
+                          <option value="CRS0002">Bedford: Bedford Probation Office</option>
+                          <option value="CRS0014">Cambridgeshire: Cambridge Probation Office</option>
+                          <option value="CRS0015">Cambridgeshire: Huntingdon Probation Office</option>
+                          <option value="CRS0098">Chelmsford: Chelmsford Probation Office</option>
+                          <option value="CRS0099">Colchester: Colchester Probation Office</option>
+                          <option value="CRS0118">Essex: Carraway House</option>
+                          <option value="CRS0100">Harlow: Harlow Probation Office</option>
+                          <option value="CRS0078">Hertfordshire: East Hertfordshire Probation Centre</option>
+                          <option value="CRS0080">Hertfordshire: Mid Herts Probation Centre</option>
+                          <option value="CRS0081">Hertfordshire: North Hertfordshire Probation Centre</option>
+                          <option value="CRS0082">Hertfordshire: South West Hertfordshire Probation Centre</option>
+                          <option value="CRS0097">Norfolk: Centenary House</option>
+                          <option value="CRS0107">Northamptonshire: Walter Tull House</option>
+                          <option value="CRS0017">Peterborough: Peterborough Magistrates' Court</option>
+                          <option value="CRS0127">Suffolk: Bury Saint Edmunds Probation Office</option>
+                          <option value="CRS0131">Suffolk: Lowestoft Probation Office</option>
+                          <option value="CRS0128">Suffolk: Peninsular House</option>
+                          <option value="CRS0003">Bedford: Suite G1A, G1B And The Basement</option>
+                          <option value="CRS0004">Luton: Clemitson House</option>
+                          <option value="CRS0005">Luton: Sceptre House (First Fl)</option>
+                          <option value="CRS0016">Peterborough: 12-13 Adam Court</option>
+                          <option value="CRS0079">Hemel Hampstead: Waterhouse Street</option>
+                          <option value="CRS0119">Basildon: The Basildon Centre</option>
+                          <option value="CRS0120">Grays: Part Second Floor, Civic Office Complex</option>
+                          <option value="CRS0121">Southend-On-Sea: Civic 2, Victoria Avenue</option>
+                          <option value="CRS0129">Ipswich: Suite 1, 3rd Floor, Hubbard House</option>
+                          <option value="CRS0130">Ipswich: Suite 2, 3rd Floor, Hubbard House</option>
+                          <option value="CRS0286">Wisbech: The BoatHouse Business Centre</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- In-person meeting - somewhere else -->
+                    <div class="govuk-radios__item">
+                      <input
+                        class="govuk-radios__input"
+                        id="session-method-inperson-other"
+                        name="session-method"
+                        type="radio"
+                        value="inperson-other"
+                        data-aria-controls="conditional-session-method-inperson-other">
+                      <label class="govuk-label govuk-radios__label" for="session-method-inperson-other">
+                        In-person meeting - somewhere else
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-session-method-inperson-other">
+                      <fieldset class="govuk-fieldset">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-line-1">
+                            Address line 1
+                          </label>
+                          <input class="govuk-input" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-line-2">
+                            Address line 2 (optional)
+                          </label>
+                          <input class="govuk-input" id="address-line-2" name="addressLine2" type="text" autocomplete="address-line2">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-town">
+                            Town or city
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-county">
+                            County (optional)
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-postcode">
+                            Postcode
+                          </label>
+                          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code">
+                        </div>
+                      </fieldset>
+                    </div>
+
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+            <!-- /conditional -->
+          </div>
+        </fieldset>
+      </div>
+
+      <form action="session-happen2" method="post" novalidate>
+        <input type="hidden" name="answers-checked" value="true">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+  </div>
+</div>
+
+{% endblock %}
+``
