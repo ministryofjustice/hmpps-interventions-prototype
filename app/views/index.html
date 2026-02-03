@@ -18,7 +18,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Current prototypes</h1>
+    <h1 class="govuk-heading-xl">Current prototypes</h1>
     <p class="govuk-body">This prototype is a way of exploring ideas for the Refer and monitor an intervention service.</p>
     <p class="govuk-body">If you have any questions please contact:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -28,7 +28,156 @@
     <p class="govuk-body">Each new prototype is used to test designs. These designs may change before they're developed.</p>
     <p class="govuk-body">If you are looking for design iterations and prototype history, we have a <a href="https://miro.com/app/board/uXjVKi9TMCc=/?share_link_id=844084422829">Miro page</a> storing this information.</p>
     
-    <h2 class="govuk-heading-m">Service entry routes</h2>
+    <h2 class="govuk-heading-l">Community Support (CS) services</h2>
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">PP's view(s) (Foundational build)</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Scenario</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Links</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Jira</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Find CS interventions</td>
+          <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">done</span></td> 
+          <td class="govuk-table__cell">
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-visually-hidden">Warning</span>
+               This level of design is minimum as requested by the dev for the foundational build. The Delivery Partner's views are at medium level.
+              </strong>
+            </div>
+            <p class="govuk-body">Find CS interventions:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/rm/find/enter-unique-identifier">Find and confirm person, select a delivery partner, check referral information and confirmation screen</a></li>
+              <li><a href="/rm/find/error-enter-unique-identifier">Example of error page for CRN</a></li>
+            </ul>       
+          </td>
+          <td class="govuk-table__cell"><a href="https://dsdmoj.atlassian.net/browse/IPB-1990">Jira epic (IPB-1990)</a></td> 
+        </tr> 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Refer a person</td>
+          <td class="govuk-table__cell"><span class="moj-badge moj-badge--grey">not started yet</span></td> 
+          <td class="govuk-table__cell">
+            <p class="govuk-body">Placeholder</p>
+      
+          </td>
+          <td class="govuk-table__cell"><a href="https://dsdmoj.atlassian.net/browse/IPB-1991">Jira epic (IPB-1991)</a></td> 
+        </tr> 
+      </tbody>
+    </table>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Delivery partner's view(s) (Foundational build)</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Scenario</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Links</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Jira</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Delivery partner assigns a caseworker</td>
+          <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">done</span></td> 
+          <td class="govuk-table__cell">
+            <a href="rm/delivery-partner/ndelius-landing-page">Assign chaseworker</a>      
+          </td>
+          <td class="govuk-table__cell">
+            <a href="https://dsdmoj.atlassian.net/browse/IPB-1966">Jira epic (IPB-1966)</a>
+          </td> 
+        </tr> 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Change caseworker assigned</td>
+          <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">done</span></td> 
+          <td class="govuk-table__cell">
+            <a href="rm/delivery-partner/view-alex-details-tabs-assigned-progress">Change caseworker assigned</a>
+          </td>
+          <td class="govuk-table__cell"><a href="#">Jira epic (IPB-TBC)</a></td> 
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Schedule ICS session</td>
+          <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">in design</span></td> 
+          <td class="govuk-table__cell">
+            <a href="rm/delivery-partner/referral-progress-alex-book-ics">Schedule ICS session</a>
+            <br><br>
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Extra options provided
+                </span>
+              </summary>
+              <div class="govuk-details__text">   
+                <ul class="govuk-list govuk-list--bullet">
+                  <li><a href="rm/delivery-partner/book-ics1">Option 1</a> where duration is in 15 mins slots, max to 2h</li>
+                  <li><a href="rm/delivery-partner/book-ics2">Option 2</a> where we record start and end time (as per AcP), and can calculate duration in the backend if needed</li>
+                  <li><a href="rm/delivery-partner/book-ics3">Option 3</a> is similar to AS-IS R&M, but using the latest patterns and components</li>
+                </ul>  
+              </div>
+            </details>
+             
+          </td>
+          <td class="govuk-table__cell"><a href="https://dsdmoj.atlassian.net/browse/IPB-2046">Jira ticket (IPB-2046)</a></td> 
+        </tr>  
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Reschedule ICS session</td>
+          <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">in design</span></td> 
+          <td class="govuk-table__cell">
+            <a href="#">Reschedule ICS session</a>
+          </td>
+          <td class="govuk-table__cell"><a href="https://dsdmoj.atlassian.net/browse/IPB-2060">Jira ticket (IPB-2060)</a></td> 
+        </tr> 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Session happened - attendance and feedback</td>
+          <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">in design</span></td> 
+          <td class="govuk-table__cell">
+            <a href="#">Session happened - attendance and feedback</a>
+          </td>
+          <td class="govuk-table__cell"><a href="https://dsdmoj.atlassian.net/browse/IPB-2051">Jira ticket (IPB-2051)</a></td> 
+        </tr> 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Person attended but session did not happen</td>
+          <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">in design</span></td> 
+          <td class="govuk-table__cell">
+            <a href="#">Person attended but session did not happen</a>
+          </td>
+          <td class="govuk-table__cell"><a href="https://dsdmoj.atlassian.net/browse/IPB-2061">Jira ticket (IPB-2061)</a></td> 
+        </tr> 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Person attended but session did not happen</td>
+          <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">in design</span></td> 
+          <td class="govuk-table__cell">
+            <a href="#">Person attended but session did not happen</a>
+          </td>
+          <td class="govuk-table__cell"><a href="https://dsdmoj.atlassian.net/browse/IPB-2062">Jira ticket (IPB-2062)</a></td> 
+        </tr> 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Progress tab</td>
+          <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">in design</span></td> 
+          <td class="govuk-table__cell">
+            
+            <p class="govuk-body">Progress view for:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="rm/delivery-partner/referral-progress-alex-book-ics">arriving for the first time (ICS not scheduled)</a></li>
+              <li><a href="rm/delivery-partner/referral-progress-alex-book-ics-booked-future">ICS is booked in the future and has not happened yet</a></li>
+              <li><a href="rm/delivery-partner/referral-progress-alex-book-ics-booked-future-feedback-needed">ICS booked in future, time has passed</a></li>
+              <li><a href="rm/delivery-partner/referral-progress-alex-book-ics-full">full view, all completed example</a></li>
+            </ul>   
+          </td>
+          <td class="govuk-table__cell">Not applicable</td> 
+        </tr> 
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-l">Refer and monitor (R&M)</h2>
+    <h3 class="govuk-heading-m">Service entry routes</h3>
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -58,8 +207,7 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Additional support needs</td>
           <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">done</span></td> 
-          <td class="govuk-table__cell">
-            
+          <td class="govuk-table__cell">           
             <ul class="govuk-list govuk-list--bullet">
               <li>Flow available in <a href="/rm/additional-support-needs/personal-details-alex">refer journey</a> to add additional needs and interpreter details</li>
               <li>Change page for <a href="/rm/additional-support-needs/pp-case/update-additional-support-needs">additional support needs</a> post referral</li>
@@ -79,18 +227,6 @@
               <li><a href="/rm/initial-contact-session/withdraw-question">Edit initial appointment details</a></li>
               <li><a href="/rm/initial-contact-session/ics-feedback-1">ICS feedback flow - happy path</a></li>
               <li><a href="/rm/initial-contact-session/ics-feedback-1-unhappy">ICS feedback flow - session didn't happen path</a></li>
-            </ul>         
-          </td>
-        </tr> 
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Foundational build - Devs</td>
-          <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">done</span></td> 
-          <td class="govuk-table__cell">
-            
-            <ul class="govuk-list govuk-list--bullet">
-              <li><a href="/rm/find/enter-unique-identifier">Find and confirm person, select a delivery partner, check referral information and confirmation screen</a></li>
-              <li><a href="/rm/find/error-enter-unique-identifier">Example of error page for CRN</a></li>
-              <li><a href="rm/delivery-partner/ndelius-landing-page">Delivery partner path</a></li>
             </ul>         
           </td>
         </tr> 
