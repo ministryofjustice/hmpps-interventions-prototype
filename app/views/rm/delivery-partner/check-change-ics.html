@@ -19,12 +19,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <div data-module="moj-add-another">
-      <h1 class="govuk-heading-l">Check the details before scheduling the ICS</h1>
+      <h1 class="govuk-heading-l">View or change session details</h1>
+
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
           <h2 class="govuk-summary-card__title">
             ICS details
           </h2>
+
           <ul class="govuk-summary-card__actions">
             <li class="govuk-summary-card__action">
               <a class="govuk-link" href="assign">Change<span class="govuk-visually-hidden"> assignee(s)</span></a>
@@ -47,7 +49,7 @@
                 Start time
               </dt>
               <dd class="govuk-summary-list__value">
-                1:00pm 
+                1:00pm
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -77,7 +79,7 @@
           </dl>
         </div>
       </div>
-      <form action="referral-progress-alex-book-ics-booked" method="post" novalidate>
+      <form action="ics-feedback/did-the-session-happen" method="post" novalidate>
         <button type="submit" class="govuk-button" data-module="govuk-button">
           Submit
         </button>
