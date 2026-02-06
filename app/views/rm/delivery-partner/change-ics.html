@@ -21,7 +21,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Schedule the ICS
+      Change ICS session details
     </h1>
 
     <div class="moj-datepicker" data-module="moj-date-picker">
@@ -32,27 +32,27 @@
         <div id="date-hint" class="govuk-hint">
          Enter a date, for example 10/7/2025, or select one from the calendar.
         </div>
-        <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
+        <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="27/03/2026">
       </div>
     </div>
-
+    
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">
             What time does the session start?
           </h2>
-          <div id="location-hint" class="govuk-hint">
-            Use the 12-hour clock, for example 1130am or 3pm.
-          </div>
         </legend>
+        <div id="location-hint" class="govuk-hint">
+          Use the 12-hour clock, for example 1130am or 3pm.
+        </div>
         <div class="govuk-date-input" id="passport-issued">
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
               <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                 Hour
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" type="text" inputmode="numeric" value="1">
             </div>
           </div>
           <div class="govuk-date-input__item">
@@ -60,7 +60,7 @@
               <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                 Minute
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" type="text" inputmode="numeric" value="00">
             </div>
           </div>
           <div class="govuk-date-input__item">
@@ -69,7 +69,6 @@
                 am or pm
               </label>
               <select class="govuk-select" id="sort" name="sort" style="min-width: 4.5em;">
-                <option value=""></option>
                 <option value="PM">PM</option>
                 <option value="AM">AM</option>
               </select>
@@ -80,36 +79,10 @@
     </div>
 
     <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h2 class="govuk-fieldset__heading">How long is the session scheduled for?</h2>
-        </legend>
-        <div class="govuk-date-input" id="passport-issued">
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                Hour
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
-            </div>
-          </div>
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                Minute
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
-            </div>
-          </div>
-        </div>
-      </fieldset>
-    </div>
-    
-    <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">
-            *What method has been used to deliver the ICS? / Method
+            How will the session take place?
           </h2>
         </legend>
 
@@ -120,7 +93,7 @@
         <div class="govuk-radios" data-module="govuk-radios">
           <!-- Phone call -->
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-phone-call" name="contact" type="radio" value="phone-call" data-aria-controls="conditional-contact-phone-call"/>
+            <input class="govuk-radios__input" id="contact-phone-call" name="contact" type="radio" value="phone-call" data-aria-controls="conditional-contact-phone-call" checked/>
             <label class="govuk-label govuk-radios__label" for="contact-phone-call">
               Phone call
             </label>
@@ -130,7 +103,7 @@
               <label class="govuk-label" for="reason-phone-call">
                 Why is this session not in-person? 
               </label>
-              <input class="govuk-input govuk-!-width-full" id="reason-phone-call" name="reasonPhoneCall" type="text" autocomplete="off"/>
+              <input class="govuk-input govuk-!-width-full" id="reason-phone-call" type="text" autocomplete="off" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
             </div>
           </div>
 
@@ -244,7 +217,7 @@
       <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">
-            How was Alex informed about the session? 
+            How was Alex informed about the change to the session?
           </h2>
         </legend>
         <div id="waste-hint" class="govuk-hint">
@@ -252,25 +225,25 @@
         </div>
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <input class="govuk-checkboxes__input" id="waste" type="checkbox" value="carcasses" checked>
             <label class="govuk-label govuk-checkboxes__label" for="waste">
               Phone call
             </label>
           </div>
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+            <input class="govuk-checkboxes__input" id="waste-2" type="checkbox" value="mines">
             <label class="govuk-label govuk-checkboxes__label" for="waste-2">
               Text message
             </label>
           </div>
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+            <input class="govuk-checkboxes__input" id="waste-3" type="checkbox" value="farm">
             <label class="govuk-label govuk-checkboxes__label" for="waste-3">
               Email
             </label>
           </div>
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
+            <input class="govuk-checkboxes__input" id="contact-3" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
             <label class="govuk-label govuk-checkboxes__label" for="contact-3">
               Other
             </label>
@@ -288,64 +261,45 @@
     </div>
 
     <div class="govuk-form-group">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-        <h2 class="govuk-fieldset__heading">Who is delivering the ICS appointment?</h2>
-      </legend>
-      <input class="govuk-input" id="event-name" name="eventName" type="text">
-    </div>
-
-    <!--<div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h2 class="govuk-fieldset__heading">
-            [Placeholder] Who is delivering the ICS appointment?
-          </h2>
-        </legend>
-        <div id="countries-hint" class="govuk-hint">
-          Select all xxx that apply.
-        </div>
-        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
-            <label class="govuk-label govuk-checkboxes__label" for="countries">
-              R&M Active Probation Practitioner (<a href="mailto:interventions-dev@digital.justice.gov.uk">interventions-dev@digital.justice.gov.uk</a>)
-            </label>
-          </div>
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="portugal">
-            <label class="govuk-label govuk-checkboxes__label" for="countries-2">
-              Michaela Boronsky (<a href="mailto:michaela.b@example.com">michaela.b@example.com</a>)
-            </label>
-          </div>
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="spain">
-            <label class="govuk-label govuk-checkboxes__label" for="countries-3">
-              John Smithy (<a href="mailto:john.smithy@example.com">john.smithy@example.com</a>)
-            </label>
-          </div>
-        </div>
-      </fieldset>
-    </div>-->
-
-   <!-- <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">
-            Enter reason for changing appointment
+            Who requested this change? 
           </h2>
         </legend>
-        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        <div id="changedName-hint" class="govuk-hint">
+          Select one option.
+        </div>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+              Delivery partner
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+              Alex River
+            </label>
+          </div>
+        </div>
       </fieldset>
-    </div>-->
+    </div>
 
-    <!--<form action="record-additional-session-extra3" method="post" novalidate>
-      <input type="hidden" name="answers-checked" value="true">
-        <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
-          Add another session
-        </button>
-    </form>-->
+    <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="more-detail">
+          What is the reason for this change?
+        </label>
+      </h1>
+      <!--<div id="more-detail-hint" class="govuk-hint">
+        Do not include personal or financial information, like your National Insurance number or credit card details
+      </div>-->
+      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+    </div>
 
-    <form action="cya-book-ics" method="post" novalidate>
+    <form action="cya-change-ics" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">
         Save and continue

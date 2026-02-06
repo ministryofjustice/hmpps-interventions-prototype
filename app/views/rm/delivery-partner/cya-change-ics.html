@@ -19,7 +19,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <div data-module="moj-add-another">
-      <h1 class="govuk-heading-l">View or change session details</h1>
+      <h1 class="govuk-heading-l">Check the details before changing the ICS</h1>
 
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
@@ -75,10 +75,31 @@
               <dd class="govuk-summary-list__value">
                 Phone call
               </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Who requested the change
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Delivery partner
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Reason for the change
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </dd>
             </div>
           </dl>
         </div>
       </div>
+      <form action="change-ics-progress-status/progress-future" method="post" novalidate>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Submit
+        </button>
+      </form>
     </div>
   </div>
 </div>

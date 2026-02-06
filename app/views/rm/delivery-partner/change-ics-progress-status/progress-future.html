@@ -1,0 +1,146 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Referral details
+{% endblock %}
+
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="clear-right">
+	<!--<a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right">Go to CRS homepage</a>-->
+  	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+</nav>
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          ICS details changed 
+        </h3>
+        <p class="govuk-body">The ICS details have been changed.</p>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-l">Referral for Alex River</h1>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="view-alex-details-tabs-assigned-progress">Case details</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="referral-progress-alex-book-ics">Progress</a>
+        </li>
+
+        <!--<li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"  href="">Case notes</a>
+        </li>-->
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="">Change log</a>
+        </li>
+      </ul>
+    </nav>
+
+    <h2 class="govuk-heading-m">Referral progress</h2>
+
+<!--ICS-->
+    <h3 class="govuk-heading-s">Initial contact session (ICS)</h3>
+    <table class="govuk-table" data-cy="supplier-assessment-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">    
+          <th scope="col" class="govuk-table__header">Date and time</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>  
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">28 March 2026 at 1:00pm</td>
+          <td class="govuk-table__cell">            
+            <strong class="govuk-tag">
+            Scheduled
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="check-new-ics">View or change details</a></td>
+        </tr> 
+      </tbody>
+    </table>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          View ICS history
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <table class="govuk-table" data-cy="supplier-assessment-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">    
+              <th scope="col" class="govuk-table__header">Date and time</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header">Action</th>
+            </tr>
+          </thead>  
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">27 March 2026 at 1:00pm</td>
+              <td class="govuk-table__cell">            
+                <strong class="govuk-tag govuk-tag--grey">
+                  Changed
+                </strong>
+              </td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="check-change-ics-no-change">View session details</a></td>
+            </tr> 
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+<!--Action plan-->
+    <h3 class="govuk-heading-s">Action plan</h3>
+    <table class="govuk-table equal-cols" data-cy="supplier-assessment-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">  
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>  
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--grey">
+              Not submitted
+            </strong>
+          </td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="#">View action plan</a></td>
+        </tr> 
+      </tbody>
+    </table>
+
+<!--Sessions
+    <h3 class="govuk-heading-s">Session progress</h3>
+    <p class="govuk-body">Sessions will appear here when the action plan is approved.</p>
+
+End of service report
+    <h3 class="govuk-heading-s">End of service report</h3>
+    <p class="govuk-body">blurb</p>
+  -->
+  </div>
+</div>
+
+{% endblock %}
