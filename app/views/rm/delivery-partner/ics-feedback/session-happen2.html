@@ -19,6 +19,108 @@
 
       <h1 class="govuk-heading-l">Session details</h1>
 
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Start time
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1:00pm
+          </dd>
+        </div>
+      </dl>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+             Was Alex late?
+            </h2>
+          </legend>             
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <!-- YES (now shows conditional content) -->
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="was-late-yes"
+                name="was-late"
+                type="radio"
+                value="yes"
+                data-aria-controls="conditional-was-late-yes">
+              <label class="govuk-label govuk-radios__label" for="was-late-yes">
+                Yes
+              </label>
+            </div>
+
+            <!-- CONDITIONAL CONTENT SHOWN ONLY WHEN "YES" IS SELECTED -->
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-was-late-yes">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="start-time-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h2 class="govuk-fieldset__heading">What time did the session start?</h2>
+                  </legend>
+
+                  <div id="start-time-hint" class="govuk-hint">
+                    Use the 12-hour clock, for example 1130am or 3pm.
+                  </div>
+
+                  <div class="govuk-date-input" id="session-start-time">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="start-hour">Hour</label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-hour" name="start-hour" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="start-minute">Minute</label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-minute" name="start-minute" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="start-ampm">AM or PM</label>
+                        <select class="govuk-select" id="start-ampm" name="start-ampm" style="min-width: 4.5em;">
+                          <option value=""></option>
+                          <option value="AM">AM</option>
+                          <option value="PM">PM</option>
+                        </select>
+                      </div>
+                    </div>
+
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="more-detail">
+                  Give details about what you know about why Alex was late.
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+              </div>
+
+            </div>
+
+            <!-- NO (now does NOT show anything) -->
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="was-late-no"
+                name="was-late"
+                type="radio"
+                value="no">
+              <label class="govuk-label govuk-radios__label" for="was-late-no">
+                No
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -73,4 +175,3 @@
 </div>
 
 {% endblock %}
-``

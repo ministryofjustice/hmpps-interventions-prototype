@@ -1,0 +1,281 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-l">Check your answers before [xxxx]</h1>
+    <h2 class="govuk-heading-m">Record session details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Session happen
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="session-happen">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Did the session take place in-person
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How did the session take place?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          In-person meeting - probation office
+          <br>
+          Hertfordshire: South West Hertfordshire Probation Centre
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Session details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Was Alex late?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What time did the session happen?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          9:00am
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Give details about what you know about why Alex was late.
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis. 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> home address</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How long did the session last?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 hour [and?] 45 minute
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Who led the session?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Who else attended the session? (optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis. 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Session feedback</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        What did you do in the session?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis. 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How did Alex behave?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis. 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What strengths did you identify?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis. 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> home address</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Risks</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Lorem ipsum dolor sit amet
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+        </dd>
+      </div>  
+    </dl>
+
+    <h2 class="govuk-heading-m">Needs and additional support</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Lorem ipsum dolor sit amet
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+        </dd>
+      </div>  
+    </dl>
+
+    <h2 class="govuk-heading-m">Issues or concerns</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What issues or concerns were raised by Alex?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+        </dd>
+      </div>  
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Does the PP need to be informed about any issues?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+        </dd>
+      </div>  
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Details about Alex behaving poorly
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis. 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+        </dd>
+      </div> 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Details about something concerning about Alex
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis. 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+        </dd>
+      </div>   
+    </dl>
+
+    <h2 class="govuk-heading-m">Next steps</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What do you have planned for the next session?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis. 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+        </dd>
+      </div>  
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What actions do you and [first name] have before the next session takes place?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis. 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+        </dd>
+      </div> 
+    </dl>
+
+    <h2 class="govuk-heading-m">Now send your application [TBC]</h2>
+    <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+    <form action="/form-handler" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Accept and send [TBC]
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

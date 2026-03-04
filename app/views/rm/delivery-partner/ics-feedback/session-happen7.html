@@ -16,51 +16,38 @@ href: "javascript:history.back()"
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Session feedback</h1>
-  
+      <h1 class="govuk-heading-l">Next steps</h1>
+
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h2 class="govuk-fieldset__heading">
-              What did you do in the session?
+              What do you have planned for the next session?
             </h2>
           </legend>
           <div id="account-number-hint" class="govuk-hint">
-            Give details about what you did, anything that was achieved and what came out of the session. 
+            Give as much detail as possible about what you plan to do when you next meet with Alex.
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              What actions do you and Alex have before the next session takes place?
+            </h2>
+          </legend>
+          <div id="account-number-hint" class="govuk-hint">
+            Give details of any actions or next steps you and Alex have agreed to do ahead of your next session.
           </div>
           <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
         </fieldset>
       </div>
   
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h2 class="govuk-fieldset__heading">
-              How did Alex behave?
-            </h2>
-          </legend>
-          <div id="account-number-hint" class="govuk-hint">
-            Give details about if Alex was engaged in the session, and if there was any progress or positive change.
-          </div>
-          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
-        </fieldset>
-      </div>
-        
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h2 class="govuk-fieldset__heading">
-              What strengths did you identify?
-            </h2>
-          </legend>
-          <div id="account-number-hint" class="govuk-hint">
-            Give details of any skills, experience and capabilities that can support the delivery of services.
-          </div>
-          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
-        </fieldset>
-      </div>
   
-      <form action="session-happen6" method="post" novalidate>
+      <form action="cya-ics-happened" method="post" novalidate>
         <input type="hidden" name="answers-checked" value="true">
         <button class="govuk-button" data-module="govuk-button">
           Continue
