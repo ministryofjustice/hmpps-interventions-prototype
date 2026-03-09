@@ -1,0 +1,409 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Referral details
+{% endblock %}
+
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="clear-right">
+	<!--<a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right">Go to CRS homepage</a>-->
+  	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+</nav>
+{% endblock %} 
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div data-module="moj-add-another">
+      <h1 class="govuk-heading-l">View session feedback</h1>
+
+<!--Session details-->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Session details (TBC)
+          </h2>
+
+          <!--<ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action">
+              <a class="govuk-link" href="change-ics">Change<span class="govuk-visually-hidden"> assignee(s)</span></a>
+            </li>
+          </ul>-->
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Current caseworker
+              </dt>
+              <dd class="govuk-summary-list__value">
+                R&M Active Probation Practitioner (<a href="mailto: interventions-devs@digital.justice.gov.uk">interventions-devs@digital.justice.gov.uk</a>)
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Feedback submitted by
+              </dt>
+              <dd class="govuk-summary-list__value">
+                R&M Active Probation Practitioner (<a href="mailto: interventions-devs@digital.justice.gov.uk">interventions-devs@digital.justice.gov.uk</a>)
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                27 March 2026
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Start time
+              </dt>
+              <dd class="govuk-summary-list__value">
+                1:00pm
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Method
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Phone call
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Reason session is not in-person
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                How Alex was informed about the session
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Phone call
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+<!--Record session details-->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Record session details
+          </h2>
+
+          <!--<ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action">
+              <a class="govuk-link" href="change-ics">Change<span class="govuk-visually-hidden"> assignee(s)</span></a>
+            </li>
+          </ul>-->
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Did the session happen?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Was it in-person?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Where it took place
+              </dt>
+              <dd class="govuk-summary-list__value">
+                In-person meeting - probation office
+                <br>
+                Hertfordshire: South West Hertfordshire Probation Centre
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+<!--Session details-->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Session details
+          </h2>
+
+          <!--<ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action">
+              <a class="govuk-link" href="change-ics">Change<span class="govuk-visually-hidden"> assignee(s)</span></a>
+            </li>
+          </ul>-->
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Was Alex late?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Time the session started
+              </dt>
+              <dd class="govuk-summary-list__value">
+               9:00am
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Details about why Alex was late
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis.
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Session duration
+              </dt>
+              <dd class="govuk-summary-list__value">
+                1 hour and 45 minutes
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Who led the session?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Who else attended? (optional)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+<!--Session feedback-->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Session feedback
+          </h2>
+
+          <!--<ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action">
+              <a class="govuk-link" href="change-ics">Change<span class="govuk-visually-hidden"> assignee(s)</span></a>
+            </li>
+          </ul>-->
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What happened in the session
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis.
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                How Alex behaved
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis.
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Strengths identified
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+<!--Risks-->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Risks
+          </h2>
+
+          <!--<ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action">
+              <a class="govuk-link" href="change-ics">Change<span class="govuk-visually-hidden"> assignee(s)</span></a>
+            </li>
+          </ul>-->
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Lorem ipsum dolor sit amet
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+<!--Needs and additional support-->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Needs and additional support
+          </h2>
+
+          <!--<ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action">
+              <a class="govuk-link" href="change-ics">Change<span class="govuk-visually-hidden"> assignee(s)</span></a>
+            </li>
+          </ul>-->
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Lorem ipsum dolor sit amet
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+<!--Issues or concerns-->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Issues or concerns
+          </h2>
+
+          <!--<ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action">
+              <a class="govuk-link" href="change-ics">Change<span class="govuk-visually-hidden"> assignee(s)</span></a>
+            </li>
+          </ul>-->
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Concerns or issues raised by Alex
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis.
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Does the probation practitioner need to be informed?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Details about Alex's poor behaviour
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis.
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Concerns about Alex
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    
+
+<!--Next steps-->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Next steps
+          </h2>
+
+          <!--<ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action">
+              <a class="govuk-link" href="change-ics">Change<span class="govuk-visually-hidden"> assignee(s)</span></a>
+            </li>
+          </ul>-->
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Planned for the next session
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis.
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Actions before next session
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -51,14 +51,14 @@ href: "javascript:history.back()"
           
         <div class="govuk-radios govuk-radios" data-cy="did-session-happen-radios" data-module="govuk-radios">     
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="didSessionHappenYesRadio" name="did-session-happen" type="radio" value="yes" checked>
+            <input class="govuk-radios__input" id="didSessionHappenYesRadio" name="did-session-happen" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="didSessionHappenYesRadio">
             Yes
             </label>          
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="didSessionHappenNoRadio" name="did-session-happen" type="radio" value="no" aria-controls="conditional-didSessionHappenNoRadio" aria-expanded="false">
+            <input class="govuk-radios__input" id="didSessionHappenNoRadio" name="did-session-happen" type="radio" value="no" aria-controls="conditional-didSessionHappenNoRadio" aria-expanded="false" checked>
             <label class="govuk-label govuk-radios__label" for="didSessionHappenNoRadio">
               No
             </label>             
@@ -74,7 +74,7 @@ href: "javascript:history.back()"
               </legend>
               <div class="govuk-radios govuk-radios" data-cy="supplier-assessment-attendance-radios" data-module="govuk-radios">   
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="attendedYesRadio" name="attended" type="radio" value="yes">
+                  <input class="govuk-radios__input" id="attendedYesRadio" name="attended" type="radio" value="yes" checked>
                   <label class="govuk-label govuk-radios__label" for="attendedYesRadio">
                   Yes
                   </label>
@@ -93,7 +93,7 @@ href: "javascript:history.back()"
       </fieldset>
     </div>
 
-    <form action="session-happen" method="post" novalidate>
+    <form action="reason-why-not-attend" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">
         Continue
