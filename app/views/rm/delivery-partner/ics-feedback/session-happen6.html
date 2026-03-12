@@ -22,17 +22,49 @@ href: "javascript:history.back()"
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h2 class="govuk-fieldset__heading">
-              What issues or concerns were raised by Alex?
+              What issues or concerns did you identify?
             </h2>
           </legend>
           <div id="account-number-hint" class="govuk-hint">
-            Give details of anything raised by Alex in the session that may impact their engagement in future sessions. 
+            Give details of anything that concerned you about Alex, or any issues they raised that may impact their engagement in future sessions. 
           </div>
           <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
         </fieldset>
       </div>
-  
+
       <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend">
+            <label class="govuk-fieldset__legend--m">Does the probation practitioner need to be notified about these issues or concerns?</label>
+          </legend>
+          <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="yesNotifyPPRadio" name="notify-probation-practitioner" type="radio" value="yes" aria-controls="conditional-yesNotifyPPRadio" aria-expanded="false">
+              <label class="govuk-label govuk-radios__label" for="yesNotifyPPRadio">
+                Yes
+              </label>       
+            </div>   
+            <!--<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yesNotifyPPRadio">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-margin-bottom-4" for="session-concerns">
+                  Give details about any issues you think the probation practitioner should know about.
+                </label>
+                <textarea class="govuk-textarea" id="session-concerns" name="session-concerns" rows="5"></textarea>
+              </div>
+            </div>-->
+  
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="noNotifyPPRadio" name="notify-probation-practitioner" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="noNotifyPPRadio">
+                No
+              </label>     
+            </div>
+          </div>
+        </fieldset>
+      </div>
+  
+  
+      <!--<div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="notify-probation-practitioner-hint">     
         <legend class="govuk-fieldset__legend">
           <label class="govuk-label govuk-label--m govuk-!-margin-bottom-4"> Does the probation practitioner need to be notified about any issues?</label>     
@@ -83,7 +115,7 @@ href: "javascript:history.back()"
             </div>   
           </div>
         </fieldset>
-      </div>
+      </div>-->
   
       <form action="session-happen7" method="post" novalidate>
         <input type="hidden" name="answers-checked" value="true">
