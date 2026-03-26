@@ -4,6 +4,10 @@
   Case progress
 {% endblock %}
 
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %} 
+{% endblock %}
+
 {% block beforeContent %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {{ govukBackLink({
@@ -153,13 +157,6 @@
             </div>
           </div>
         </fieldset>
-      </div>
-
-      <div class="govuk-form-group">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h2 class="govuk-fieldset__heading">Who led the session?</h2>
-        </legend>
-        <input class="govuk-input" id="event-name" name="eventName" type="text">
       </div>
 
       <form action="session-happen3" method="post" novalidate>

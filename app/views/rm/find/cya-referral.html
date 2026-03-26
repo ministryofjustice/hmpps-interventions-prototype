@@ -8,16 +8,23 @@ Enter the person's CRN
 {{ super() }}
 {% endblock %}
 
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %} 
+{% endblock %}
+
 {% block beforeContent %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" method="post" action="confirmation-page">
+    <form class="form" method="post" action="task-list-initial">
       <div class="govuk-form-group">
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">

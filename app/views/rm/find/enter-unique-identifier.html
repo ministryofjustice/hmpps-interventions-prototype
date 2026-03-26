@@ -1,20 +1,22 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Enter the person's CRN
+  Case progress
 {% endblock %}
 
-{% block main %}
-{{ super() }}
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %} 
 {% endblock %}
 
 {% block beforeContent %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post" action="confirm-person">
@@ -23,7 +25,7 @@ Enter the person's CRN
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h1 class="govuk-fieldset__heading">
-                    Enter a CRN or prison number
+                    Enter a person's CRN or prison number
                   </h1>
                 </legend>
             

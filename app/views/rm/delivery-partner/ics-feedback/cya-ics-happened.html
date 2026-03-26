@@ -4,6 +4,10 @@
   Case progress
 {% endblock %}
 
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %} 
+{% endblock %}
+
 {% block beforeContent %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {{ govukBackLink({
@@ -34,10 +38,10 @@ href: "javascript:history.back()"
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Was it in-person?
+          How the session took place
         </dt>
         <dd class="govuk-summary-list__value">
-          No 
+          Phone call
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
@@ -45,12 +49,10 @@ href: "javascript:history.back()"
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Where it took place
+          Reason session was not in person
         </dt>
         <dd class="govuk-summary-list__value">
-          In-person meeting - probation office
-          <br>
-          Hertfordshire: South West Hertfordshire Probation Centre
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat tortor non congue iaculis. Cras laoreet consectetur quam vel ornare. Etiam rhoncus consectetur justo, mattis convallis est rhoncus mattis. 
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
@@ -90,17 +92,6 @@ href: "javascript:history.back()"
         </dt>
         <dd class="govuk-summary-list__value">
           1 hour and 45 minutes
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Who led the session?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Lorem ipsum
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>

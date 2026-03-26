@@ -1,0 +1,115 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %} 
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="confirm-person">
+      <h1 class="govuk-heading-l">Task list [Placeholder]</h1>
+      <h2 class="govuk-heading-m govuk-!-margin-top-8">Personal details</h2>
+      <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="view-alex-details" aria-describedby="company-details-1-status">
+              Confirm personal details
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="company-details-2-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              Incomplete
+            </strong>
+          </div>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-8">Referral information</h2>
+      <ul class="govuk-task-list"> 
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
+              Confirm risk information
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="company-details-2-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              Incomplete
+            </strong>
+          </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
+              Confirm needs
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="company-details-2-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              Incomplete
+            </strong>
+          </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
+              Confirm additional support
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="company-details-2-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              Incomplete
+            </strong>
+          </div>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-8">Other's contact (?)</h2>
+      <ul class="govuk-task-list"> 
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-2-status">
+              Confirm details of relevant contacts (e.g. PP)
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="company-details-2-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              Incomplete
+            </strong>
+          </div>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-8">Check answers and submit</h2>
+      <ul class="govuk-task-list"> 
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-2-status">
+              Check answers and submit
+            </a>
+          </div>
+          <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="make-referral-details-5">Cannot start yet</div>
+        </li>
+      </ul>
+          {{ govukButton({
+            text: 'Continue/Save and come back later?/grey?'
+          }) }}
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

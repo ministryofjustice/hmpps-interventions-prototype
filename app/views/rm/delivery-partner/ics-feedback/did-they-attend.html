@@ -5,6 +5,10 @@
   Case progress
 {% endblock %}
 
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %} 
+{% endblock %}
+
 {% block beforeContent %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {{ govukBackLink({
