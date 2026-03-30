@@ -16,13 +16,37 @@ Referral details
 {% endblock %}
 
 {% block content %}
+  <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+    <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-flex">
+      <abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: D006309
+      <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
+      Date of birth: 7 October 1984 (41 years old)
+      <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
+      Tier:&nbsp;<a href="#">B3</a>
+      
+      <!-- ROSH badge -->
+  
+      <div class="govuk-!-margin-left-4">
+        <div class="predictor-timeline-item predictor-timeline-item--high">
+          <span class="predictor-timeline-item__level"><strong>ROSH</strong> HIGH</span>
+        </div>
+      </div>       
 
+      <!-- RSR badge & score -->
+      
+      <div class="govuk-!-margin-left-4">
+        <div class="predictor-timeline-item predictor-timeline-item--medium">
+          <span class="predictor-timeline-item__level"><strong>RSR</strong> MEDIUM</span>
+          <span class="predictor-timeline-item__score"> 3</span>
+        </div>
+      </div>
+    </span>
+    Stuart Morrison
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  </h1>
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Referral for Alex River</h1>
-
-    <h2 class="govuk-heading-m">Case details</h2>
-
+  <div class="govuk-grid-column-two-thirds"> 
+    <h2 class="govuk-heading-l">Personal details [TBC]</h2>
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
@@ -118,6 +142,14 @@ Referral details
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Nationality
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Argentine, Brazilian
+            </dd>
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Ethnicity
@@ -258,38 +290,20 @@ Referral details
       </div>
     </div>
 
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Referral details
-      </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Referral date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              18 April 2025
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Assigned to
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Unassigned
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="assign">
-                Assign to caseworker<span class="govuk-visually-hidden"> </span>
-              </a>
-            </dd>
-          </div>
-        </dl>
-      </div>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        If this information is out of date or incorrect, you must update the information in NOMIS.
+      </strong>
     </div>
+
+    <p class="govuk-body">This will save a draft referral. [TBC]</p>
+
+    <div class="govuk-button-group govuk-!-margin-top-8">
+			<a class="govuk-button" href="task-list-2">Continue</a>
+			<a class="govuk-link" href="enter-unique-identifier">Enter a different identifier</a>
+		</div>
   </div>
 </div>
 

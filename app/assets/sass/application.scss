@@ -778,6 +778,22 @@ ul#country__listbox {
     display: flex;
 }
 
+a:link, .govuk-link:link {
+    color: #1d70b8;
+}
+
+.predictor-timeline-item--high {
+    outline: 2px solid #d4351c;
+    padding: 0;
+    display: inline-block;
+}
+
+.predictor-timeline-item--medium {
+    outline: 2px solid #f47738;
+    padding: 0;
+    display: inline-block;
+}
+
 .equal-cols {
     table-layout: fixed;
     width: 100%;
@@ -788,4 +804,5 @@ ul#country__listbox {
     width: 50%;
     word-wrap: break-word;
   }
+
   

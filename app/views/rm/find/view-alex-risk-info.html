@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Referral details
+{% endblock %}
+
+{% block header %}
+{% include "/includes/head-dps-dp.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="clear-right">
+  <!--<a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right">Go to CRS homepage</a>-->
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+</nav>
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+    <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-flex">
+      <abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: D006309
+      <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
+      Date of birth: 7 October 1984 (41 years old)
+      <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
+      Tier:&nbsp;<a href="#">B3</a>
+      
+      <!-- ROSH badge -->
+  
+      <div class="govuk-!-margin-left-4">
+        <div class="predictor-timeline-item predictor-timeline-item--high">
+          <span class="predictor-timeline-item__level"><strong>ROSH</strong> HIGH</span>
+        </div>
+      </div>       
+
+      <!-- RSR badge & score -->
+      
+      <div class="govuk-!-margin-left-4">
+        <div class="predictor-timeline-item predictor-timeline-item--medium">
+          <span class="predictor-timeline-item__level"><strong>RSR</strong> MEDIUM</span>
+          <span class="predictor-timeline-item__score"> 3</span>
+        </div>
+      </div>
+    </span>
+    Stuart Morrison
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  </h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"> 
+    <h2 class="govuk-heading-l">Risk</h2>
+    <div class="govuk-inset-text govuk-!-margin-top-0">
+      Last updated (OASys): 28 February 2026
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          xxx
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Offender personality disorder (OPD)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not eligible / OPD Self-Harm / Suicide Attempts
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Foreign national offender
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Home Office Interest
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        If this information is out of date or incorrect, you must update the information in NOMIS.
+      </strong>
+    </div>
+
+    <p class="govuk-body">This will save a draft referral. [TBC]</p>
+
+    <div class="govuk-button-group govuk-!-margin-top-8">
+			<a class="govuk-button" href="risk-info">Continue</a>
+			<!--<a class="govuk-link" href="enter-unique-identifier">Enter a different identifier</a>-->
+		</div>
+  </div>
+</div>
+
+{% endblock %}
