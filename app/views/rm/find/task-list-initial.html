@@ -50,7 +50,7 @@ href: "javascript:history.back()"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post" action="confirm-person">
-      <h2 class="govuk-heading-l">Task list [Placeholder]</h2>
+      <h2 class="govuk-heading-l">Make a referral    </h2>
       <h3 class="govuk-heading-m govuk-!-margin-top-8">Personal details</h3>
       <ul class="govuk-task-list">
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
@@ -59,7 +59,7 @@ href: "javascript:history.back()"
               Confirm personal details
             </a>
           </div>
-          <div class="govuk-task-list__status" id="company-details-2-status">
+          <div class="govuk-task-list__status" id="company-details-1-status">
             <strong class="govuk-tag govuk-tag--blue">
               Incomplete
             </strong>
@@ -72,7 +72,7 @@ href: "javascript:history.back()"
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="view-alex-risk-info" aria-describedby="company-details-1-status">
-              Confirm risk information
+              Check risk information
             </a>
           </div>
           <div class="govuk-task-list__status" id="company-details-2-status">
@@ -84,7 +84,7 @@ href: "javascript:history.back()"
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="view-alex-needs" aria-describedby="company-details-1-status">
-              Confirm needs
+              Add the person's needs
             </a>
           </div>
           <div class="govuk-task-list__status" id="company-details-2-status">
@@ -96,7 +96,7 @@ href: "javascript:history.back()"
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="view-alex-additional-support" aria-describedby="company-details-1-status">
-              Confirm additional support
+              Add details of any additional support needs
             </a>
           </div>
           <div class="govuk-task-list__status" id="company-details-2-status">
@@ -107,13 +107,12 @@ href: "javascript:history.back()"
         </li>
       </ul>
 
-      <h2 class="govuk-heading-m govuk-!-margin-top-8">Other's contact (?)</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-top-8">Referral contact details</h2>
       <ul class="govuk-task-list"> 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="view-pp-details" aria-describedby="company-details-2-status">
-              Confirm details of relevant contacts (e.g. PP)
-            </a>
+              Add contact details for this referral            </a>
           </div>
           <div class="govuk-task-list__status" id="company-details-2-status">
             <strong class="govuk-tag govuk-tag--blue">
@@ -134,12 +133,11 @@ href: "javascript:history.back()"
           <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="make-referral-details-5">Cannot start yet</div>
         </li>
       </ul>
-          {{ govukButton({
-            text: 'Continue/Save and come back later?/grey?'
-          }) }}
-
-        </form>
-      </div>
-    </div>
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Save and come back later
+      </button>
+    </form>
+  </div>
+</div>
 
 {% endblock %}

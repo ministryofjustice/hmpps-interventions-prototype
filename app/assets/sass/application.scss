@@ -794,6 +794,27 @@ a:link, .govuk-link:link {
     display: inline-block;
 }
 
+.predictor-timeline-item--medium .predictor-timeline-item__score {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    float: right;
+    color: #0b0c0c;
+    background-color: #f9e8bd;
+}
+
+@media (min-width: 40.0625em) {
+    .predictor-timeline-item--medium .predictor-timeline-item__score {
+        font-size: 0.875rem;
+        line-height: 1.4285714286;
+    }
+}
+
+.predictor-timeline-item--medium > span {
+    padding: 3px 6px;
+}
+
 .equal-cols {
     table-layout: fixed;
     width: 100%;

@@ -1,11 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Enter the person's CRN
-{% endblock %}
-
-{% block main %}
-{{ super() }}
+  Case progress
 {% endblock %}
 
 {% block header %}
@@ -21,6 +17,34 @@ href: "javascript:history.back()"
 {% endblock %}
 
 {% block content %}
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+  <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-flex">
+    <abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: D006309
+    <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
+    Date of birth: 7 October 1984 (41 years old)
+    <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
+    Tier:&nbsp;<a href="#">B3</a>
+    
+    <!-- ROSH badge -->
+
+    <div class="govuk-!-margin-left-4">
+      <div class="predictor-timeline-item predictor-timeline-item--high">
+        <span class="predictor-timeline-item__level"><strong>ROSH</strong> HIGH</span>
+      </div>
+    </div>       
+
+    <!-- RSR badge & score -->
+    
+    <div class="govuk-!-margin-left-4">
+      <div class="predictor-timeline-item predictor-timeline-item--medium">
+        <span class="predictor-timeline-item__level"><strong>RSR</strong> MEDIUM</span>
+        <span class="predictor-timeline-item__score"> 3</span>
+      </div>
+    </div>
+  </span>
+  Stuart Morrison
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+</h1>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
