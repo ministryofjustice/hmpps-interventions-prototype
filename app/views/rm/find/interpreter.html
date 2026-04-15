@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %} 
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+  <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-flex">
+    <abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: X123456
+    <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
+    Date of birth: 20 Feb 1975 (47 years old)
+    <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
+    Tier:&nbsp;<a href="#">B3</a>
+    
+    <!-- ROSH badge -->
+
+    <div class="govuk-!-margin-left-4">
+      <div class="predictor-timeline-item predictor-timeline-item--high">
+        <span class="predictor-timeline-item__level"><strong>ROSH</strong> HIGH</span>
+      </div>
+    </div>       
+
+    <!-- RSR badge & score -->
+    
+    <div class="govuk-!-margin-left-4">
+      <div class="predictor-timeline-item predictor-timeline-item--medium">
+        <span class="predictor-timeline-item__level"><strong>RSR</strong> MEDIUM</span>
+        <span class="predictor-timeline-item__score"> 3</span>
+      </div>
+    </div>
+  </span>
+  Alex River
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="task-list-5">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-heading-xl govuk-fieldset__heading">
+              Does Alex need an interpreter?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+                  What language does Alex need an interpreter for?
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+    {{ govukButton({
+      text: 'Save and continue'
+    }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

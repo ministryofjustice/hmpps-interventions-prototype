@@ -189,9 +189,7 @@ href: "javascript:history.back()"
               ]
               }
             }
-          ]
-          
-          
+          ]      
       }) }}
 
       {% set whyDidTheSessionNotHappen %}
@@ -210,10 +208,6 @@ href: "javascript:history.back()"
       <p>{{ data['what-happened-other']|textInputWithLineBreaks}}</p>
       {% endif %}
       {% endset %}
-
-
-
-
       
       {{ govukSummaryList({
         card: {
@@ -244,9 +238,6 @@ href: "javascript:history.back()"
               ]
               }
             },
-
-            
-
                 {
                   key: {
                     text: "Did anything concern you about Alex River?"

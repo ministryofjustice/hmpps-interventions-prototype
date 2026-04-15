@@ -1,0 +1,138 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %} 
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+  <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-flex">
+    <abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: X123456
+    <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
+    Date of birth: 20 Feb 1975 (47 years old)
+    <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
+    Tier:&nbsp;<a href="#">B3</a>
+    
+    <!-- ROSH badge -->
+
+    <div class="govuk-!-margin-left-4">
+      <div class="predictor-timeline-item predictor-timeline-item--high">
+        <span class="predictor-timeline-item__level"><strong>ROSH</strong> HIGH</span>
+      </div>
+    </div>       
+
+    <!-- RSR badge & score -->
+    
+    <div class="govuk-!-margin-left-4">
+      <div class="predictor-timeline-item predictor-timeline-item--medium">
+        <span class="predictor-timeline-item__level"><strong>RSR</strong> MEDIUM</span>
+        <span class="predictor-timeline-item__score"> 3</span>
+      </div>
+    </div>
+  </span>
+  Alex River
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+</h1>
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Check your answers</h1>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Alex's additional support needs</h2>
+        <div class="govuk-summary-card__actions">
+          <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> Change Alex's additional support needs</span>
+          </a>
+        </div>
+      </div>
+  
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Additional support
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list">
+                  <li>Physical health</li>
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          View details<span class="govuk-visually-hidden"> for physical health</span>
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+                      </div>
+                    </details>
+                  <li>Mental or emotional health</li>
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          View details<span class="govuk-visually-hidden"> for mental or emotional health</span>
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+                      </div>
+                    </details>
+                  <li>Neurodiversity</li>
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          View details<span class="govuk-visually-hidden"> for neurodiversity</span>
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
+                      </div>
+                    </details>
+                </ul>
+              </dd>       
+              <dd class="govuk-summary-list__actions">            
+                <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/needs-and-requirements" id="change-link-1">
+                  Change<span class="govuk-visually-hidden"> mobility, disability or accessibility needs</span>
+                </a>   
+              </dd> 
+            </div>
+  
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Interpreter
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">Polish</p>
+              </dd>    
+              <dd class="govuk-summary-list__actions">           
+                <a class="govuk-link" href="#ß" id="change-link-0">
+                  Change<span class="govuk-visually-hidden">  interpreter</span>
+                </a>           
+              </dd>        
+            </div>
+  
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" name="_csrf">
+  <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+  </div>
+</div>
+
+{% endblock %}
