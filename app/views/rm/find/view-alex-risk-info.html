@@ -16,46 +16,157 @@ Referral details
 {% endblock %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-    <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-flex">
-      <abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: X123456
-      <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
-      Date of birth: 20 Feb 1975 (47 years old)
-      <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
-      Tier:&nbsp;<a href="#">B3</a>
-      
-      <!-- ROSH badge -->
-  
-      <div class="govuk-!-margin-left-4">
-        <div class="predictor-timeline-item predictor-timeline-item--high">
-          <span class="predictor-timeline-item__level"><strong>ROSH</strong> HIGH</span>
-        </div>
-      </div>       
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+  <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-flex">
+    <abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: X123456
+    <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
+    Date of birth: 20 Feb 1975 (47 years old)
+    <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
+    Tier:&nbsp;<a href="#">B3</a>
+    
+    <!-- ROSH badge -->
 
-      <!-- RSR badge & score -->
-      
-      <div class="govuk-!-margin-left-4">
-        <div class="predictor-timeline-item predictor-timeline-item--medium">
-          <span class="predictor-timeline-item__level"><strong>RSR</strong> MEDIUM</span>
-          <span class="predictor-timeline-item__score"> 3</span>
-        </div>
+    <div class="govuk-!-margin-left-4">
+      <div class="predictor-timeline-item predictor-timeline-item--high">
+        <span class="predictor-timeline-item__level"><strong>ROSH</strong> HIGH</span>
       </div>
-    </span>
-    Alex River
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-  </h1>
+    </div>       
+
+    <!-- RSR badge & score -->
+    
+    <div class="govuk-!-margin-left-4">
+      <div class="predictor-timeline-item predictor-timeline-item--medium">
+        <span class="predictor-timeline-item__level"><strong>RSR</strong> MEDIUM</span>
+        <span class="predictor-timeline-item__score"> 3</span>
+      </div>
+    </div>
+  </span>
+  Alex River
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <h2 class="govuk-heading-l">Risk</h2>
+  <div class="govuk-inset-text govuk-!-margin-top-0">
+    Last updated (OASys): 28 February 2026
+  </div>
+</h1>
+
+
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds"> 
-    <h2 class="govuk-heading-l">Risk</h2>
-    <div class="govuk-inset-text govuk-!-margin-top-0">
-      Last updated (OASys): 28 February 2026
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-!-margin-bottom-8">
+      <dl class="govuk-summary-list">     
+        There is no OASys risk assessment.
+      </dl>
+      <p>
+       <!-- <a class="govuk-link--no-visited-state" href="#">View the full risk assessment on OASys (opens in new tab) [remove]</a>.-->
+      </p>
     </div>
 
+    <!--<h3 class="govuk-heading-m">RSR (risk of serious recidivism)</h3>
+    <div class="predictor-score govuk-body govuk-!-margin-bottom-8">
+      RSR badge & score
+      <div class="score-bar">
+        <div>
+          <span></span>
+        </div>
+        <div>
+          <span></span>
+        </div>
+        <div>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <table class="govuk-table govuk-!-margin-bottom-8">
+      <caption class="govuk-table__caption govuk-table__caption--m">Other scores</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Scores</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Year 1</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Year 2</th>
+          <th scope="col" class="govuk-table__header">Level</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">OGRS (offender group reconviction scale)</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">OVP (OASys violent predictor score)</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">OGP (OASys general predictor score)</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+      </tbody>
+    </table> -->
+    <div class="govuk-summary-card govuk-!-margin-bottom-8">
+      <div class="govuk-summary-card__title-wrapper">
+        <h3 class="govuk-summary-card__title">
+          NDelius risk flags
+        </h3>
+        <div class="app-summary-card__actions">
+          <a class="govuk-link" href="#">Add a risk flag in NDelius (opens in new tab) [remove]</a>
+        </div>
+      </div>
+      <div class="govuk-summary-card__content">
+        <p>Risk flags show circumstances that need prominent and constant visibility. Review flags regularly, and remove
+          them when they are no longer appropriate.</p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Risk level</th>
+              <th scope="col" class="govuk-table__header">Flag</th>
+              <th scope="col" class="govuk-table__header">Notes</th>
+              <th scope="col" class="govuk-table__header">Date added</th>
+              <th scope="col" class="govuk-table__header">Next review</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            
+            <tr class="govuk-table__row">
+              
+              <td class="govuk-table__cell">N/A</td>
+              
+              <td class="govuk-table__cell"><a href="#">Home Office Interest [remove hyperlink]</a></td>
+              <td class="govuk-table__cell">
+                <div class="truncate-notes">
+                  
+                   No notes
+                  
+                </div>
+              </td>
+              <td class="govuk-table__cell">13 February 2025</td>
+              <td class="govuk-table__cell">
+                18 February 2026
+                
+                <strong class="govuk-tag app-compliance-tag govuk-tag--red">Overdue</strong>
+                
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+        <p><a href="#">View removed risk flags (12) [remove]</a></p>
+      </div>
+    </div>
+
+    <h3 class="govuk-heading-m">Offender personality disorder (OPD)</h3>
+    <p class="govuk-body">Not eligible</p>
+
+    <br>
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
-          Other risk flags
+          Other risk flags [remove]
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
@@ -92,6 +203,167 @@ Referral details
 			<a class="govuk-button" href="task-list-3">Save and continue</a>
 			<!--<a class="govuk-link" href="enter-unique-identifier">Enter a different identifier</a>-->
 		</div>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <div class="rosh-widget rosh-widget--high" style="margin-bottom: 20px;">
+      <h3 class="govuk-heading-m" style="color: #942514; font-weight: normal;""><strong>HIGH</strong> ROSH</h3>
+      <p class="govuk-body-m">Risk of serious harm</p>
+      <p class="govuk-hint govuk-body-m">Last updated: 10 October 2021</p>
+      <div class="moj-scrollable-pane">
+        <table class="govuk-table rosh-widget__table" style="margin-bottom: 0;">
+          <caption class="govuk-visually-hidden">Risk of serious harm in Community</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">Risk to</th>
+              <th class="govuk-table__header">Community</th>
+              <th class="govuk-table__header">Custody</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              
+            </tr><tr class="govuk-table__row">
+              <th class="govuk-table__cell">Staff</th>
+              
+              <td class="govuk-table__cell rosh--very-high">Very high</td>
+              
+              <td class="govuk-table__cell rosh-low">Low</td>
+            </tr>
+            
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell">Children</th>
+              
+              <td class="govuk-table__cell rosh-medium">Medium</td>
+              
+              <td class="govuk-table__cell rosh-low">Low</td>
+            </tr>
+            
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell">Public</th>
+              
+              <td class="govuk-table__cell rosh-medium">Medium</td>
+              
+              <td class="govuk-table__cell rosh-low">Low</td>
+            </tr>
+            
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell">Adult</th>
+              
+              <td class="govuk-table__cell rosh-high">High</td>
+              
+              <td class="govuk-table__cell rosh-low">Low</td>
+            </tr>
+            
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell">Prisoners</th>
+              
+              <td class="govuk-table__cell">N/A</td>
+              
+              <td class="govuk-table__cell rosh-low">Low</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--<div class="mappa-widget">
+      <h3 class="govuk-heading-m text-uppercase"><strong>Unknown</strong> MAPPA</h3>
+      <p class="govuk-body-m govuk-!-margin-bottom-2">Multi-agency public protection arrangements</p>
+      <p class="govuk-body-m govuk-!-margin-bottom-0">
+        
+        No MAPPA data found in NDelius.<br>
+        If you think this is wrong:<br>
+        <br>
+        1. Check and update NDelius.<br>
+        2. Refresh this page to see your update.<br>
+        <br>
+        You can continue with the Part A<br>
+        if you still get this error. Update the<br>
+        MAPPA section manually.<br>
+      </p>
+      
+    </div>
+    <h3 class="govuk-heading-m">OASys score history</h3>
+    <div class="govuk-body predictor-timeline__heading">
+      <div>
+        <button type="button" data-js="predictor-timeline__toggle-all" class="reset-button link-button govuk-link">
+          Open all<span class="govuk-visually-hidden"> scores in timeline</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="moj-timeline predictor">
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <p class="moj-timeline__byline">19 March 2026 at 10:22am</p>
+        </div>
+        <div class="moj-timeline__description">
+          <div data-js="predictor-timeline__section" class="predictor-timeline-section predictor-timeline-section--hidden" id="scores-section-0">
+            <ul class="govuk-list">
+              
+              
+              <li>
+                <div class="predictor-timeline-item predictor-timeline-item--">
+                  <span class="predictor-timeline-item__level">
+                    <strong>OGRS 1YR</strong> 
+                  </span>
+                  <span class="predictor-timeline-item__score"></span>
+                </div>
+              </li>
+              <li>
+                <div class="predictor-timeline-item predictor-timeline-item--">
+                  <span class="predictor-timeline-item__level">
+                    <strong>OGRS 2YR</strong> 
+                  </span>
+                  <span class="predictor-timeline-item__score"></span>
+                </div>
+              </li>
+              
+              
+              <li>
+                <div class="predictor-timeline-item predictor-timeline-item--">
+                  <span class="predictor-timeline-item__level">
+                    <strong>OVP 1YR</strong> 
+                  </span>
+                  <span class="predictor-timeline-item__score"></span>
+                </div>
+              </li>
+              <li>
+                <div class="predictor-timeline-item predictor-timeline-item--">
+                  <span class="predictor-timeline-item__level">
+                    <strong>OVP 2YR</strong> 
+                  </span>
+                  <span class="predictor-timeline-item__score"></span>
+                </div>
+              </li>
+              
+              
+              <li>
+                <div class="predictor-timeline-item predictor-timeline-item--">
+                  <span class="predictor-timeline-item__level">
+                    <strong>OGP 1YR</strong> 
+                  </span>
+                  <span class="predictor-timeline-item__score"></span>
+                </div>
+              </li>
+              <li>
+                <div class="predictor-timeline-item predictor-timeline-item--">
+                  <span class="predictor-timeline-item__level">
+                    <strong>OGP 2YR</strong> 
+                  </span>
+                  <span class="predictor-timeline-item__score"></span>
+                </div>
+              </li>
+              
+            </ul>
+          </div>
+          <button type="button" data-js="predictor-timeline__toggle-section" class="reset-button link-button govuk-link predictor-timeline__toggle-section" aria-controls="scores-section-0">
+            <span data-js="score-action-label">Open</span>
+          </button>
+        </div>
+      </div>
+    </div>-->
   </div>
 </div>
 

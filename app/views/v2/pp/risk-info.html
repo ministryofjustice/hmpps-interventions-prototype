@@ -31,9 +31,6 @@ href: "javascript:history.back()"
         {% endif %}
 
             <div class="govuk-form-group">
-
-
-            <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   {% if data ['referral-type'] == "prison" %}
@@ -245,30 +242,18 @@ href: "javascript:history.back()"
   
 
                       </div>
-  
-  
-  
                     </div>
                   </div>
                 </div>
               </div>
             </fieldset>
-
-
-
-
-
+ 
           {{ govukButton({
             text: 'Save and continue'
           }) }}
-
-
 
         </form>
 
       </div>
     </div>
-
-
-
 {% endblock %}

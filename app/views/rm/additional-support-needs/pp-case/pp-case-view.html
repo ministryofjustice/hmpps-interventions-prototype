@@ -12,7 +12,7 @@ Amend expected release date
 {% block beforeContent %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {{ govukBackLink({
-  text: "Back",
+text: "Back",
 href: "javascript:history.back()"
 }) }}
 {% endblock %}
@@ -20,37 +20,43 @@ href: "javascript:history.back()"
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">Alex River: referral details</h1>
       </div>
-      <div class="govuk-grid-column-one-third">       
+      <div class="govuk-grid-column-one-third">
       </div>
     </div>
 
     <nav class="moj-sub-navigation" aria-label="Secondary navigation region">
       <ul class="moj-sub-navigation__list">
-          <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link"  href="/probation-practitioner/referrals/89bf0eaa-938c-406a-a0e8-ac3636c4c0b2/progress">Progress</a>
-          </li>
-        
-          <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link" aria-current="page" href="/probation-practitioner/referrals/89bf0eaa-938c-406a-a0e8-ac3636c4c0b2/details">View or change referral</a>
-          </li>
-        
-          <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link"  href="/probation-practitioner/referrals/89bf0eaa-938c-406a-a0e8-ac3636c4c0b2/case-notes">Case notes</a>
-          </li>
-        
-          <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link"  href="/probation-practitioner/referrals/89bf0eaa-938c-406a-a0e8-ac3636c4c0b2/changelog">Change log</a>
-          </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"
+            href="/probation-practitioner/referrals/89bf0eaa-938c-406a-a0e8-ac3636c4c0b2/progress">Progress</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page"
+            href="/probation-practitioner/referrals/89bf0eaa-938c-406a-a0e8-ac3636c4c0b2/details">View or change
+            referral</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"
+            href="/probation-practitioner/referrals/89bf0eaa-938c-406a-a0e8-ac3636c4c0b2/case-notes">Case notes</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"
+            href="/probation-practitioner/referrals/89bf0eaa-938c-406a-a0e8-ac3636c4c0b2/changelog">Change log</a>
+        </li>
       </ul>
     </nav>
 
     <div class="govuk-inset-text">
-You can change some of these referral details.  What you can change will depend on how much progress has been made on the referral.<br/>When you make a change it will send a notification to the service provider.
+      You can change some of these referral details. What you can change will depend on how much progress has been made
+      on the referral.<br />When you make a change it will send a notification to the service provider.
     </div>
 
     <p class="govuk-body">This intervention is not yet assigned to a caseworker.</p>
@@ -100,7 +106,7 @@ You can change some of these referral details.  What you can change will depend 
             <dd class="govuk-summary-list__value">
               Mixed: other
             </dd>
-          </div> 
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Preferred language
@@ -108,7 +114,7 @@ You can change some of these referral details.  What you can change will depend 
             <dd class="govuk-summary-list__value">
               English
             </dd>
-          </div>                 
+          </div>
         </dl>
       </div>
     </div>
@@ -186,7 +192,7 @@ You can change some of these referral details.  What you can change will depend 
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">Community</p>
             </dd>
-            
+
           </div>
 
           <div class="govuk-summary-list__row">
@@ -196,15 +202,17 @@ You can change some of these referral details.  What you can change will depend 
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">Manchester North</p>
             </dd>
-            
-              <dd class="govuk-summary-list__actions">
-                
-                  <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/update-probation-practitioner-pdu?amendPPDetails=true" id="change-link-1">
-                      Change<span class="govuk-visually-hidden"> probation practitioner's probation delivery unit</span>
-                      </a>
-                
-              </dd>
-            
+
+            <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link"
+                href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/update-probation-practitioner-pdu?amendPPDetails=true"
+                id="change-link-1">
+                Change<span class="govuk-visually-hidden"> probation practitioner's probation delivery unit</span>
+              </a>
+
+            </dd>
+
           </div>
 
           <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
@@ -214,7 +222,7 @@ You can change some of these referral details.  What you can change will depend 
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">---</p>
             </dd>
-            
+
           </div>
         </dl>
       </div>
@@ -234,7 +242,7 @@ You can change some of these referral details.  What you can change will depend 
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">Personal wellbeing</p>
             </dd>
-            
+
           </div>
 
           <div class="govuk-summary-list__row">
@@ -244,15 +252,16 @@ You can change some of these referral details.  What you can change will depend 
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">Aggravated Assaults</p>
             </dd>
-            
-              <dd class="govuk-summary-list__actions">
-                
-                  <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/relevant-sentence" id="change-link-1">
-                      Change<span class="govuk-visually-hidden"> sentence</span>
-                      </a>
-                
-              </dd>
-            
+
+            <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/relevant-sentence"
+                id="change-link-1">
+                Change<span class="govuk-visually-hidden"> sentence</span>
+              </a>
+
+            </dd>
+
           </div>
 
           <div class="govuk-summary-list__row">
@@ -262,15 +271,16 @@ You can change some of these referral details.  What you can change will depend 
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">Aggravated Assaults</p>
             </dd>
-            
-              <dd class="govuk-summary-list__actions">
-                
-                  <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/relevant-sentence" id="change-link-2">
-                      Change<span class="govuk-visually-hidden"> subcategory</span>
-                      </a>
-                
-              </dd>
-            
+
+            <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/relevant-sentence"
+                id="change-link-2">
+                Change<span class="govuk-visually-hidden"> subcategory</span>
+              </a>
+
+            </dd>
+
           </div>
 
           <div class="govuk-summary-list__row">
@@ -280,15 +290,16 @@ You can change some of these referral details.  What you can change will depend 
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">21 Aug 2025</p>
             </dd>
-            
-              <dd class="govuk-summary-list__actions">
-                
-                  <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/relevant-sentence" id="change-link-3">
-                      Change<span class="govuk-visually-hidden"> end of sentence date</span>
-                      </a>
-                
-              </dd>
-            
+
+            <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/relevant-sentence"
+                id="change-link-3">
+                Change<span class="govuk-visually-hidden"> end of sentence date</span>
+              </a>
+
+            </dd>
+
           </div>
 
           <div class="govuk-summary-list__row">
@@ -298,15 +309,16 @@ You can change some of these referral details.  What you can change will depend 
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">1</p>
             </dd>
-            
-              <dd class="govuk-summary-list__actions">
-                
-                  <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/enforceable-days" id="change-link-4">
-                      Change<span class="govuk-visually-hidden"> maximum number of enforceable days</span>
-                      </a>
-                
-              </dd>
-            
+
+            <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/enforceable-days"
+                id="change-link-4">
+                Change<span class="govuk-visually-hidden"> maximum number of enforceable days</span>
+              </a>
+
+            </dd>
+
           </div>
 
           <div class="govuk-summary-list__row">
@@ -316,15 +328,16 @@ You can change some of these referral details.  What you can change will depend 
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">11 Nov 2025</p>
             </dd>
-            
-              <dd class="govuk-summary-list__actions">
-                
-                  <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/completion-deadline" id="change-link-5">
-                      Change<span class="govuk-visually-hidden"> date the intervention is to be completed by</span>
-                      </a>
-                
-              </dd>
-            
+
+            <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/completion-deadline"
+                id="change-link-5">
+                Change<span class="govuk-visually-hidden"> date the intervention is to be completed by</span>
+              </a>
+
+            </dd>
+
           </div>
         </dl>
       </div>
@@ -345,11 +358,13 @@ You can change some of these referral details.  What you can change will depend 
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">A</p>
             </dd>
-            
-            <dd class="govuk-summary-list__actions">     
-              <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/reason-for-referral?amendPPDetails=true" id="change-link-0">
+
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link"
+                href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/reason-for-referral?amendPPDetails=true"
+                id="change-link-0">
                 Change<span class="govuk-visually-hidden"> reason for referral and referral details</span>
-              </a> 
+              </a>
             </dd>
           </div>
 
@@ -358,13 +373,16 @@ You can change some of these referral details.  What you can change will depend 
               Selected services
             </dt>
             <dd class="govuk-summary-list__value">
-              <ul class="govuk-list"><li>Family and significant others</li></ul>
+              <ul class="govuk-list">
+                <li>Family and significant others</li>
+              </ul>
             </dd>
-            
+
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/service-categories" id="change-link-1">
+              <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/service-categories"
+                id="change-link-1">
                 Change<span class="govuk-visually-hidden"> selected services</span>
-              </a>      
+              </a>
             </dd>
           </div>
         </dl>
@@ -385,13 +403,17 @@ You can change some of these referral details.  What you can change will depend 
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">Low complexity</p>
               <p class="govuk-body"></p>
-              <p class="govuk-body">Service user has positive contact with some family or some significant others and may have positive support of family members. Service user has previously lost contact with family and recently renewed contacts but there remain some difficulties.</p>
+              <p class="govuk-body">Service user has positive contact with some family or some significant others and
+                may have positive support of family members. Service user has previously lost contact with family and
+                recently renewed contacts but there remain some difficulties.</p>
             </dd>
-            <dd class="govuk-summary-list__actions">     
-              <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/service-category/9556a399-3529-4993-8030-41db2090555e/complexity-level" id="change-link-0">
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link"
+                href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/service-category/9556a399-3529-4993-8030-41db2090555e/complexity-level"
+                id="change-link-0">
                 Change<span class="govuk-visually-hidden"> complexity level</span>
-              </a>             
-            </dd>     
+              </a>
+            </dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -399,13 +421,17 @@ You can change some of these referral details.  What you can change will depend 
               Desired outcomes
             </dt>
             <dd class="govuk-summary-list__value">
-              <ul class="govuk-list"><li>Service User demonstrates confident and responsible parenting behaviours.</li></ul>
-            </dd>           
-            <dd class="govuk-summary-list__actions">             
-              <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/service-category/9556a399-3529-4993-8030-41db2090555e/desired-outcomes" id="change-link-1">
+              <ul class="govuk-list">
+                <li>Service User demonstrates confident and responsible parenting behaviours.</li>
+              </ul>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link"
+                href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/service-category/9556a399-3529-4993-8030-41db2090555e/desired-outcomes"
+                id="change-link-1">
                 Change<span class="govuk-visually-hidden"> desired outcomes</span>
-              </a>             
-            </dd>          
+              </a>
+            </dd>
           </div>
         </dl>
       </div>
@@ -417,78 +443,78 @@ You can change some of these referral details.  What you can change will depend 
       </div>
 
       <div class="govuk-summary-card__content">
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p class="govuk-body">Natalie Wood</p>
-          </dd>  
-          <dd class="govuk-summary-list__actions">           
-            <a class="govuk-link" href="#" id="change-link-0">
-              Change<span class="govuk-visually-hidden"> probation practitioner's name</span>
-            </a>           
-          </dd>         
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Email address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p class="govuk-body">natalie.wood@digital.justice.gov.uk</p>
-          </dd>      
-          <dd class="govuk-summary-list__actions">          
-            <a class="govuk-link" href="#" id="change-link-1">
-              Change<span class="govuk-visually-hidden"> probation practitioner's email address</span>
-            </a>           
-          </dd>          
-        </div>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">Natalie Wood</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#" id="change-link-0">
+                Change<span class="govuk-visually-hidden"> probation practitioner's name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">natalie.wood@digital.justice.gov.uk</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#" id="change-link-1">
+                Change<span class="govuk-visually-hidden"> probation practitioner's email address</span>
+              </a>
+            </dd>
+          </div>
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Phone number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p class="govuk-body">Not provided</p>
-          </dd>
-          
-          <dd class="govuk-summary-list__actions">          
-            <a class="govuk-link" href="#" id="change-link-2">
-              Change<span class="govuk-visually-hidden"> probation practitioner's phone number</span>
-            </a>
-          </dd>        
-        </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">Not provided</p>
+            </dd>
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            PDU (Probation Delivery Unit)
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p class="govuk-body">Manchester North</p>
-          </dd>     
-          <dd class="govuk-summary-list__actions">           
-            <a class="govuk-link" href="#" id="change-link-3">
-              Change<span class="govuk-visually-hidden"> probation practitioner's probation delivery unit</span>
-            </a>           
-          </dd>         
-        </div>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#" id="change-link-2">
+                Change<span class="govuk-visually-hidden"> probation practitioner's phone number</span>
+              </a>
+            </dd>
+          </div>
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Team phone number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p class="govuk-body">Not provided</p>
-          </dd>          
-          <dd class="govuk-summary-list__actions">           
-            <a class="govuk-link" href="#" id="change-link-4">
-              Change<span class="govuk-visually-hidden"> probation practitioner's team phone number</span>
-            </a>         
-          </dd>        
-        </div>
-      </dl>
-    </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              PDU (Probation Delivery Unit)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">Manchester North</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#" id="change-link-3">
+                Change<span class="govuk-visually-hidden"> probation practitioner's probation delivery unit</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Team phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">Not provided</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#" id="change-link-4">
+                Change<span class="govuk-visually-hidden"> probation practitioner's team phone number</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
     </div>
 
     <div class="govuk-summary-card">
@@ -504,7 +530,7 @@ You can change some of these referral details.  What you can change will depend 
             </dt>
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">REFER_MONITOR_PP</p>
-            </dd>         
+            </dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -513,7 +539,7 @@ You can change some of these referral details.  What you can change will depend 
             </dt>
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">interventions-devs+another@digital.justice.gov.uk</p>
-            </dd>        
+            </dd>
           </div>
         </dl>
       </div>
@@ -531,8 +557,10 @@ You can change some of these referral details.  What you can change will depend 
               Last known address
             </dt>
             <dd class="govuk-summary-list__value">
-              <ul class="govuk-list"><li>Not found</li></ul>
-            </dd>          
+              <ul class="govuk-list">
+                <li>Not found</li>
+              </ul>
+            </dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -541,7 +569,7 @@ You can change some of these referral details.  What you can change will depend 
             </dt>
             <dd class="govuk-summary-list__value">
               <ul class="govuk-list"></ul>
-            </dd>    
+            </dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -550,7 +578,7 @@ You can change some of these referral details.  What you can change will depend 
             </dt>
             <dd class="govuk-summary-list__value">
               <ul class="govuk-list"></ul>
-            </dd>    
+            </dd>
           </div>
         </dl>
       </div>
@@ -561,7 +589,8 @@ You can change some of these referral details.  What you can change will depend 
         <h2 class="govuk-summary-card__title">Alex’s OAsys risk information</h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> of University of Gloucestershire (University of Gloucestershire)</span></a>
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> of University of Gloucestershire
+                (University of Gloucestershire)</span></a>
           </li>
         </ul>
       </div>
@@ -573,10 +602,11 @@ You can change some of these referral details.  What you can change will depend 
               Who is at risk
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
-            </dd>        
-            <dd class="govuk-summary-list__actions">                    
-            </dd>         
+              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet
+                est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -584,10 +614,11 @@ You can change some of these referral details.  What you can change will depend 
               Nature of risk
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
-            </dd>         
-            <dd class="govuk-summary-list__actions">          
-            </dd>         
+              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet
+                est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -595,10 +626,11 @@ You can change some of these referral details.  What you can change will depend 
               When risk likely to be greatest
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
-            </dd> 
-            <dd class="govuk-summary-list__actions">             
-            </dd>       
+              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet
+                est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -606,10 +638,11 @@ You can change some of these referral details.  What you can change will depend 
               Concerns relating to self harm
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet
+                est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
             </dd>
-            <dd class="govuk-summary-list__actions">                      
-            </dd>      
+            <dd class="govuk-summary-list__actions">
+            </dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -617,10 +650,11 @@ You can change some of these referral details.  What you can change will depend 
               Concerns relating to suicide
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
-            </dd>         
-            <dd class="govuk-summary-list__actions">                    
-            </dd>        
+              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet
+                est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -628,10 +662,11 @@ You can change some of these referral details.  What you can change will depend 
               Concerns relating to coping in a hotel setting
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
-            </dd>         
-            <dd class="govuk-summary-list__actions">                   
-            </dd>         
+              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet
+                est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -639,10 +674,11 @@ You can change some of these referral details.  What you can change will depend 
               Concerns relating to vulnerability
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
-            </dd>         
-            <dd class="govuk-summary-list__actions">                 
-            </dd>         
+              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet
+                est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -650,11 +686,12 @@ You can change some of these referral details.  What you can change will depend 
               Additional risk information
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet
+                est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
             </dd>
-            <dd class="govuk-summary-list__actions">                    
-            </dd>      
-          </div>           
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
         </dl>
       </div>
     </div>
@@ -682,18 +719,19 @@ You can change some of these referral details.  What you can change will depend 
               Additional risk information for the service provider
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
+              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet
+                est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.</p>
             </dd>
-            <dd class="govuk-summary-list__actions">           
+            <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#" id="change-link-7">
                 Change<span class="govuk-visually-hidden"> xxxx</span>
-              </a>           
-            </dd>      
-          </div>       
-  </dl>
+              </a>
+            </dd>
+          </div>
+        </dl>
       </div>
     </div>
-    
+
     <!--<div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">NDelius risk information</h2>
@@ -738,45 +776,49 @@ You can change some of these referral details.  What you can change will depend 
             <dd class="govuk-summary-list__value">
               <ul class="govuk-list">
                 <li>Physical health</li>
-                  <details class="govuk-details">
-                    <summary class="govuk-details__summary">
-                      <span class="govuk-details__summary-text">
-                        View details<span class="govuk-visually-hidden"> for physical health</span>
-                      </span>
-                    </summary>
-                    <div class="govuk-details__text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
-                    </div>
-                  </details>
+                <details class="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      View details<span class="govuk-visually-hidden"> for physical health</span>
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper
+                    pulvinar. Donec faucibus dui id ligula posuere commodo.
+                  </div>
+                </details>
                 <li>Mental or emotional health</li>
-                  <details class="govuk-details">
-                    <summary class="govuk-details__summary">
-                      <span class="govuk-details__summary-text">
-                        View details<span class="govuk-visually-hidden"> for mental or emotional health</span>
-                      </span>
-                    </summary>
-                    <div class="govuk-details__text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
-                    </div>
-                  </details>
+                <details class="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      View details<span class="govuk-visually-hidden"> for mental or emotional health</span>
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper
+                    pulvinar. Donec faucibus dui id ligula posuere commodo.
+                  </div>
+                </details>
                 <li>Neurodiversity</li>
-                  <details class="govuk-details">
-                    <summary class="govuk-details__summary">
-                      <span class="govuk-details__summary-text">
-                        View details<span class="govuk-visually-hidden"> for neurodiversity</span>
-                      </span>
-                    </summary>
-                    <div class="govuk-details__text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper pulvinar. Donec faucibus dui id ligula posuere commodo.
-                    </div>
-                  </details>
+                <details class="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      View details<span class="govuk-visually-hidden"> for neurodiversity</span>
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tellus sit amet est ullamcorper
+                    pulvinar. Donec faucibus dui id ligula posuere commodo.
+                  </div>
+                </details>
               </ul>
-            </dd>       
-            <dd class="govuk-summary-list__actions">            
-              <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/needs-and-requirements" id="change-link-1">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/referrals/ed8b5b32-a95e-49de-b34a-f1a8ee3926d2/needs-and-requirements"
+                id="change-link-1">
                 Change<span class="govuk-visually-hidden"> mobility, disability or accessibility needs</span>
-              </a>   
-            </dd> 
+              </a>
+            </dd>
           </div>
 
           <div class="govuk-summary-list__row">
@@ -785,12 +827,12 @@ You can change some of these referral details.  What you can change will depend 
             </dt>
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">No</p>
-            </dd>    
-            <dd class="govuk-summary-list__actions">           
+            </dd>
+            <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#ß" id="change-link-0">
-                Change<span class="govuk-visually-hidden">  interpreter</span>
-              </a>           
-            </dd>        
+                Change<span class="govuk-visually-hidden"> interpreter</span>
+              </a>
+            </dd>
           </div>
 
 
@@ -798,7 +840,7 @@ You can change some of these referral details.  What you can change will depend 
       </div>
     </div>
 
-   <!--<div class="govuk-summary-card">
+    <!--<div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">Alex's additional support needs</h2>
       </div>
@@ -835,7 +877,6 @@ You can change some of these referral details.  What you can change will depend 
         </dl>
       </div>
     </div>-->
-
   </div>
 </div>
 

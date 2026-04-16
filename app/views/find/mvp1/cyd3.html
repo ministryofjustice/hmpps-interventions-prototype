@@ -11,7 +11,7 @@ Check Alex River's details
 {% block beforeContent %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {{ govukBackLink({
-  text: "Back",
+text: "Back",
 href: "javascript:history.back()"
 }) }}
 {% endblock %}
@@ -22,9 +22,10 @@ href: "javascript:history.back()"
   <div class="govuk-grid-column-two-thirds-from-desktop">
     <h1 class="govuk-heading-l">Review Alex River’s information for the search</h1>
     <div class="govuk-inset-text">
-      These details will be used to find suitable interventions for Alex, so they must be up to date. <br><br> 
-      [!!post MVP - Needs new content to remove the deeplinks] If the details are incorrect, they should be updated in <a href="#">nDelius</a> or <a href="#">OASys</a> by someone with edit access.
-     </div>
+      These details will be used to find suitable interventions for Alex, so they must be up to date. <br><br>
+      [!!post MVP - Needs new content to remove the deeplinks] If the details are incorrect, they should be updated in
+      <a href="#">nDelius</a> or <a href="#">OASys</a> by someone with edit access.
+    </div>
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -39,11 +40,11 @@ href: "javascript:history.back()"
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link" href="cyd2">Sentence and offence history</a>
         </li>
-    
+
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link" aria-current="page" href="cyd3">Risks and needs</a>
         </li>
-    
+
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link" href="cyd4">Licence conditions</a>
         </li>
@@ -56,149 +57,188 @@ href: "javascript:history.back()"
 
     <h2 class="govuk-heading-m">Risks and needs</h2>
 
-<!--predictor scores and risk level-->
+    <!--predictor scores and risk level-->
 
-  <div class="govuk-inset-text govuk-!-margin-top-0">Assessment completed 1 August 2023</div>
+    <div class="govuk-inset-text govuk-!-margin-top-0">Assessment completed 1 August 2023</div>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-<!--predictor scores-->
-      <h3 class="govuk-heading-m">Predictor scores and risk level</h3>
-      <table class="govuk-table rosh-widget__table">
-        <caption class="govuk-!-text-align-left">
-          <p class="text-secondary govuk-body-s grey">
-            Last updated: 1 November 2022
-          </p>
-        </caption>
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header">Risk</th>
-            <th class="govuk-table__header">Year 1</th>
-            <th class="govuk-table__header">Year 2</th>
-            <th class="govuk-table__header">Risk level</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header">OGRS3 probability of proven reoffending</th>
-            <td class="govuk-table__cell">55%</td>
-            <td class="govuk-table__cell">71%</td>
-            <td class="govuk-table__cell">
-              <div class="predictor-timeline-item predictor-timeline-item--high">
-                <span class="predictor-timeline-item__level"><strong>HIGH</strong> OGRS3</span>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <!--predictor scores-->
+        <h3 class="govuk-heading-m">Predictor scores and risk level</h3>
+        <table class="govuk-table rosh-widget__table">
+          <caption class="govuk-!-text-align-left">
+            <p class="text-secondary govuk-body-s grey">
+              Last updated: 1 November 2022
+            </p>
+          </caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">Risk</th>
+              <th class="govuk-table__header">Year 1</th>
+              <th class="govuk-table__header">Year 2</th>
+              <th class="govuk-table__header">Risk level</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">OGRS3 probability of proven reoffending</th>
+              <td class="govuk-table__cell">55%</td>
+              <td class="govuk-table__cell">71%</td>
+              <td class="govuk-table__cell">
+                <div class="predictor-timeline-item predictor-timeline-item--high">
+                  <span class="predictor-timeline-item__level"><strong>HIGH</strong> OGRS3</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="govuk-table__header">OGP probability of proven non-violent reoffending</th>
+              <td class="govuk-table__cell">10%</td>
+              <td class="govuk-table__cell">10% </td>
+              <td class="govuk-table__cell">
+                <div class="predictor-timeline-item predictor-timeline-item--low">
+                  <span class="predictor-timeline-item__level"><strong>LOW</strong> OGP</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="govuk-table__header">OVP probability of proven violent-type reoffending</th>
+              <td class="govuk-table__cell">35%</td>
+              <td class="govuk-table__cell">51%</td>
+              <td class="govuk-table__cell">
+                <div class="predictor-timeline-item predictor-timeline-item--medium">
+                  <span class="predictor-timeline-item__level"><strong>MEDIUM</strong> OVP</span>
+                </div>
+              </td>
+              <!--<td class="govuk-table__cell rosh-widget__risk--medium">Medium</td>-->
+            </tr>
+            <tr>
+              <th class="govuk-table__header">OSP indecent image reoffending risk</th>
+              <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden">
+                  name</span></td>
+              <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden">
+                  name</span></td>
+              <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden">
+                  name</span></td>
+            </tr>
+            <tr>
+              <th class="govuk-table__header">OSP contact sexual reoffending risk</th>
+              <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden">
+                  name</span></td>
+              <td class="govuk-table__cell">1.11%</td>
+              <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden">
+                  name</span></td>
+            </tr>
+            <tr>
+              <th class="govuk-table__header">Risk of serious recidivism (RSR)</th>
+              <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden">
+                  name</span></td>
+              <td class="govuk-table__cell">1.11%</td>
+              <td class="govuk-table__cell">
+                <div class="predictor-timeline-item predictor-timeline-item--low">
+                  <span class="predictor-timeline-item__level"><strong>LOW</strong> RSR</span>
+                </div>
+              </td>
+              <!--<td class="govuk-table__cell rosh-widget__risk--low">Low</td>-->
+            </tr>
+          </tbody>
+        </table>
+        <!--who is at risk-->
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title"> Who is at risk</h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                  Known Adult - Mr Alex River is assessed as posing a high risk of harm to Ms Jenny Spark who is the
+                  victim of the index offence. <br> <br>
+                  Public - Mr Alex River is assessed as posing a medium level of harm to the public, specifically future
+                  partners. In general, Mr River is assessed as posing a medium risk of harm to general members of the
+                  public.<br> <br>
+                  Staff - Mr Alex River is assessed as posing a low level of harm to the staff, specifically police
+                  officers.<br><br>
+                  Children - Mr Alex River is assessed as posing a low level of harm to children.<br><br>
+                  Himself - Mr Alex River is assessed as posing a low level of harm to himself.<br><br>
+                </dd>
               </div>
-            </td>
-          </tr>
-          <tr>
-            <th class="govuk-table__header">OGP probability of proven non-violent reoffending</th>
-            <td class="govuk-table__cell">10%</td>
-            <td class="govuk-table__cell">10%	</td>
-            <td class="govuk-table__cell">              
-              <div class="predictor-timeline-item predictor-timeline-item--low">
-                <span class="predictor-timeline-item__level"><strong>LOW</strong> OGP</span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th class="govuk-table__header">OVP probability of proven violent-type reoffending</th>
-            <td class="govuk-table__cell">35%</td>
-            <td class="govuk-table__cell">51%</td>
-            <td class="govuk-table__cell">
-              <div class="predictor-timeline-item predictor-timeline-item--medium">
-                <span class="predictor-timeline-item__level"><strong>MEDIUM</strong> OVP</span>
-              </div>
-            </td>
-            <!--<td class="govuk-table__cell rosh-widget__risk--medium">Medium</td>-->
-          </tr>
-          <tr>
-            <th class="govuk-table__header">OSP indecent image reoffending risk</th>
-            <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span></td>
-            <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span></td>
-            <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span></td>
-          </tr>
-          <tr>
-            <th class="govuk-table__header">OSP contact sexual reoffending risk</th>
-            <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span></td>
-            <td class="govuk-table__cell">1.11%</td>
-            <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span></td>
-          </tr>
-          <tr>
-            <th class="govuk-table__header">Risk of serious recidivism (RSR)</th>
-            <td class="govuk-table__cell"><span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span></td> 
-            <td class="govuk-table__cell">1.11%</td>
-            <td class="govuk-table__cell">
-              <div class="predictor-timeline-item predictor-timeline-item--low">
-                <span class="predictor-timeline-item__level"><strong>LOW</strong> RSR</span>
-              </div>
-            </td>
-            <!--<td class="govuk-table__cell rosh-widget__risk--low">Low</td>-->
-          </tr>
-        </tbody>
-      </table>
-<!--who is at risk-->
-      <div class="govuk-summary-card">
-        <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title"> Who is at risk</h2>
+            </dl>
+          </div>
         </div>
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                Known Adult - Mr Alex River is assessed as posing a high risk of harm to Ms Jenny Spark who is the victim of the index offence. <br> <br>
-                Public - Mr Alex River is assessed as posing a medium level of harm to the public, specifically future partners. In general, Mr River is assessed as posing a medium risk of harm to general members of the public.<br> <br>
-                Staff - Mr Alex River is assessed as posing a low level of harm to the staff, specifically police officers.<br><br>
-                Children - Mr Alex River is assessed as posing a low level of harm to children.<br><br>
-                Himself - Mr Alex River is assessed as posing a low level of harm to himself.<br><br>
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </div>
 
-<!--Nature of risk-->
-      <div class="govuk-summary-card">
-        <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">Nature of risk</h2>
+        <!--Nature of risk-->
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Nature of risk</h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                  Given the circumstances of the index offence, previous breaches of the restraining order and details
+                  of domestic abuse call-outs, I assess that Mr. Alex River's offending does cross the threshold for
+                  causing serious harm to the victim and his behaviour suggests that he has the potential to reoffend in
+                  a similar manner. <br><br>
+                  Known adult - Mr Alex River is assessed as posing a high risk of harm to known adult, Ms Jenny Spark,
+                  the victim. This is in regard to domestic abuse. The nature of the harm relates to physical,
+                  psychological, emotional and financial. Incidents have included intimidation, verbal arguments,
+                  physical assaults, with one occasion it is detailed that Mr Alex River had his hands around Ms Jenny
+                  Spark's neck. Since a restraining order has been put in place, Mr Alex River and Ms Jenny Spark the
+                  victim have appeared to disregard the order, having regular breaches of the order since it was
+                  imposed.<br><br>
+                  Public - Mr Alex River is assessed as posing a medium risk of harm to the public in regard to future
+                  partners. This is in relation to domestic abuse concerns which is likely to cause physical,
+                  psychological and emotional harm.<br><br>
+                  Staff - Mr Alex River is assessed as posing a low level of harm to the staff, specifically police
+                  officers.<br><br>
+                  Children - Mr Alex River does not spend time around any children currently and has a low level of harm
+                  to children. <br><br>
+                  Himself - Mr Alex River is assessed as posing a low level of harm to himself.<br><br>
+                </dd>
+              </div>
+            </dl>
+          </div>
         </div>
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                Given the circumstances of the index offence, previous breaches of the restraining order and details of domestic abuse call-outs, I assess that Mr. Alex River's offending does cross the threshold for causing serious harm to the victim and his behaviour suggests that he has the potential to reoffend in a similar manner. <br><br>
-                Known adult - Mr Alex River is assessed as posing a high risk of harm to known adult, Ms Jenny Spark, the victim. This is in regard to domestic abuse. The nature of the harm relates to physical, psychological, emotional and financial. Incidents have included intimidation, verbal arguments, physical assaults, with one occasion it is detailed that Mr Alex River had his hands around Ms Jenny Spark's neck. Since a restraining order has been put in place, Mr Alex River and Ms Jenny Spark the victim have appeared to disregard the order, having regular breaches of the order since it was imposed.<br><br>
-                Public - Mr Alex River is assessed as posing a medium risk of harm to the public in regard to future partners. This is in relation to domestic abuse concerns which is likely to cause physical, psychological and emotional harm.<br><br>
-                Staff - Mr Alex River is assessed as posing a low level of harm to the staff, specifically police officers.<br><br>
-                Children - Mr Alex River does not spend time around any children currently and has a low level of harm to children. <br><br>
-                Himself - Mr Alex River is assessed as posing a low level of harm to himself.<br><br>
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </div>
 
-<!--When risk is likely to be greatest-->
-      <div class="govuk-summary-card">
-        <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">When risk is likely to be greatest</h2>
+        <!--When risk is likely to be greatest-->
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">When risk is likely to be greatest</h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                  Known adult - Risk is likely to be at its greatest, should Mr Alex River continue to show a complete
+                  disregard for the restraining order put in place. Risk is also likely to be at its greatest, should Mr
+                  Alex River be around Ms Jenny Spark.<br><br>
+                  Public - Risk is likely to be at its greatest, should Mr. Alex River enter into a new intimate
+                  relationship. This would raise concerns around risk of domestic abuse. Risk is likely to be at its
+                  greatest to the general public, should Mr. Alex River be involved in any form of altercation of
+                  disagreement. Risk is also likely to be at its greatest, should Mr Alex River fail to address
+                  attitudes which condone racial abuse.<br><br>
+                  Staff - Risk is likely to be at its greatest, should Mr. Alex River be involved in a verbal or
+                  physical altercation, which requires Police Attendance.<br><br>
+                  Children - Risk is likely to be greatest, should any child, be present during any domestic incident.
+                  Risk is likely to be at its greatest, should they find themselves in the middle of or intervene in any
+                  physical domestic incident. Mr Alex River does not spend time around any children currently and has a
+                  low risk of serious harm. <br><br>
+                  Himself - Risk is likely to be at its greatest, should Mr Alex River's mental health deteriorate. At
+                  the moment, Mr Alex River tells me he is managing well at the moment, raising no concerns around self
+                  harm or suicide.<br><br>
+                  I do not assess the risk to be currently imminent. I have spoken to Mr Alex River in detail and he
+                  claims that he has no interntions of having any contact with Ms Jenny Spark. Previously, Mr Alex River
+                  has stated that he has no intention of staying away from Ms Jenny Spark as he loves her, however more
+                  recently, Mr Alex River has stated that he understands the restraining order and has no interntion of
+                  having any contact.
+                  Additionally, Mr Alex River tells me that he is currently managing his anger better.
+                </dd>
+              </div>
+            </dl>
+          </div>
         </div>
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                Known adult - Risk is likely to be at its greatest, should Mr Alex River continue to show a complete disregard for the restraining order put in place. Risk is also likely to be at its greatest, should Mr Alex River be around Ms Jenny Spark.<br><br>
-                Public - Risk is likely to be at its greatest, should Mr. Alex River enter into a new intimate relationship. This would raise concerns around risk of domestic abuse. Risk is likely to be at its greatest to the general public, should Mr. Alex River be involved in any form of altercation of disagreement. Risk is also likely to be at its greatest, should Mr Alex River fail to address attitudes which condone racial abuse.<br><br>
-                Staff - Risk is likely to be at its greatest, should Mr. Alex River be involved in a verbal or physical altercation, which requires Police Attendance.<br><br>
-                Children - Risk is likely to be greatest, should any child, be present during any domestic incident. Risk is likely to be at its greatest, should they find themselves in the middle of or intervene in any physical domestic incident. Mr Alex River does not spend time around any children currently and has a low risk of serious harm. <br><br>
-                Himself - Risk is likely to be at its greatest, should Mr Alex River's mental health deteriorate. At the moment, Mr Alex River tells me he is managing well at the moment, raising no concerns around self harm or suicide.<br><br>
-                I do not assess the risk to be currently imminent. I have spoken to Mr Alex River in detail and he claims that he has no interntions of having any contact with Ms Jenny Spark. Previously, Mr Alex River has stated that he has no intention of staying away from Ms Jenny Spark as he loves her, however more recently, Mr Alex River has stated that he understands the restraining order and has no interntion of having any contact.
-                Additionally, Mr Alex River tells me that he is currently managing his anger better. 
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </div>
 
-<!--PLACEHOLDER
+        <!--PLACEHOLDER
   <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">What circumstances are likely to increase risk [?]</h2>
@@ -224,7 +264,7 @@ href: "javascript:history.back()"
   </div>
 </div>-->
 
-<!--PLACEHOLDER
+        <!--PLACEHOLDER
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">What factors are likely to reduce the risk [?]</h2>
@@ -252,184 +292,186 @@ href: "javascript:history.back()"
   </div>
 </div>-->
 
-<!--Risk information-->
-      <div class="govuk-summary-card">
-        <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">Risk information</h2>
+        <!--Risk information-->
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Risk information</h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Concerns relating to self-harm
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  No
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Concerns relating to suicide
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  No
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Concerns relating to coping in a hostel setting
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  No
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Additional information
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span>
+                </dd>
+              </div>
+            </dl>
+          </div>
         </div>
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Concerns relating to self-harm	
-              </dt>
-              <dd class="govuk-summary-list__value">
-                No
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Concerns relating to suicide
-              </dt>
-              <dd class="govuk-summary-list__value">
-                No
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Concerns relating to coping in a hostel setting	
-              </dt>
-              <dd class="govuk-summary-list__value">
-                No
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Additional information	
-              </dt>
-              <dd class="govuk-summary-list__value">
-                <span aria-hidden=”true”> &#8212</span><span class="govuk-visually-hidden"> name</span>
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </div>
 
-<!--Needs 2-->
-    <h3 class="govuk-heading-m">Criminogenic needs</h3>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            High-scoring areas from the assessment
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Accommodation<BR>
-            Thinking and behaviour
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Low-scoring areas from the assessment
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Education, Training and Employment (ETE)<br>
+        <!--Needs 2-->
+        <h3 class="govuk-heading-m">Criminogenic needs</h3>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              High-scoring areas from the assessment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Accommodation<BR>
+              Thinking and behaviour
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Low-scoring areas from the assessment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Education, Training and Employment (ETE)<br>
               Relationships<br>
               Lifestyle and associates<br>
-              Drug misuse	<br>
-              Alcohol misuse	<br>
-              Emotional wellbeing	<br>
+              Drug misuse <br>
+              Alcohol misuse <br>
+              Emotional wellbeing <br>
               Attitudes
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Areas without a need score
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Finance
-          </dd>
-        </div>
-      </dl>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Areas without a need score
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Finance
+            </dd>
+          </div>
+        </dl>
 
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+
+        <!--Rosh-->
+        <h3 class="govuk-heading-m">Risk information</h2>
+          <div class="rosh-widget rosh-widget--high govuk-!-margin-bottom-6">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <span class="red"><strong>HIGH</strong> <span class="govuk-!-font-weight-regular">RoSH</span></span>
+            </h3>
+            <table class="govuk-table rosh-widget__table">
+              <caption class="govuk-!-text-align-left">
+                <p class="govuk-body-m govuk-!-margin-bottom-1">
+                  Risk of serious harm
+                </p>
+                <p class="text-secondary govuk-body-s grey">
+                  Last updated: 1 November 2022
+                </p>
+              </caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Risk to</th>
+                  <th class="govuk-table__header">Community</th>
+                  <th class="govuk-table__header">Custody</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Children</th>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Public</th>
+                  <td class="govuk-table__cell rosh-widget__risk--medium">Medium</td>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Known adult</th>
+                  <td class="govuk-table__cell rosh-widget__risk--high">High</td>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Staff</th>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                </tr>
+                <tr>
+                  <th class="govuk-table__header">Prisoners</th>
+                  <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
+                  <td class="govuk-table__cell">N/A</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <!--MAPPA-->
+          <!--<h3 class="govuk-heading-m">Multi Agency Public Protection Arrangement management (MAPPA)</h2>-->
+          <div class="rosh-widget mappa-widget--purple govuk-!-margin-bottom-6">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <span class="purple"><strong>CAT3/LEVEL3</strong><span
+                  class="govuk-!-font-weight-regular"><br>MAPPA</span></span>
+            </h3>
+            <p class="govuk-body-m govuk-!-margin-bottom-1">Multi-agency public protection arrangements</p>
+            <p class="text-secondary govuk-body-s govuk-!-margin-bottom-0 grey">Last updated: 2 February 2022</p>
+          </div>
+
+          <!--Risk alerts-->
+          <!--<h3 class="govuk-heading-m">Risk alerts</h2>-->
+          <div class="risk-flag-widget">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Active alerts</h3>
+            <hr class="govuk-section-break govuk-section-break--visible">
+            <ul class="govuk-list govuk-!-margin-top-1 govuk-!-margin-bottom-2">
+              <li>Domestic abuse history</li>
+              <li>Domestic abuse perpetrator</li>
+            </ul>
+            <hr class="govuk-section-break govuk-section-break--visible">
+            <p class="text-secondary govuk-body-s govuk-!-margin-top-2 govuk-!-margin-bottom-0 grey">Last updated: 2
+              February 2022</p>
+          </div>
+
+          <!--SARA-->
+          <!--<h3 class="govuk-heading-m">Spousal assault risk assessment</h3>-->
+          <div class="rosh-widget rosh-widget--high govuk-!-margin-bottom-6">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <span class="red"><strong>HIGH</strong> <span class="govuk-!-font-weight-regular">SARA</span></span>
+            </h3>
+            <p class="govuk-body-m govuk-!-margin-bottom-1">Risk of violence towards partner</p>
+            <p class="text-secondary govuk-body-s govuk-!-margin-bottom-0 grey">Last updated: 1 November 2022</p>
+          </div>
+          <div class="rosh-widget rosh-widget--medium govuk-!-margin-bottom-6">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <span class="orange"><strong>MEDIUM</strong> <span class="govuk-!-font-weight-regular">SARA</span></span>
+            </h3>
+            <p class="govuk-body-m govuk-!-margin-bottom-1">Risk of violence towards others</p>
+            <p class="text-secondary govuk-body-s govuk-!-margin-bottom-0 grey">Last updated: 1 November 2022</p>
+          </div>
+
+      </div>
     </div>
-
-    <div class="govuk-grid-column-one-third">
-
-<!--Rosh-->
-      <h3 class="govuk-heading-m">Risk information</h2>
-      <div class="rosh-widget rosh-widget--high govuk-!-margin-bottom-6">
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
-          <span class="red"><strong>HIGH</strong> <span class="govuk-!-font-weight-regular">RoSH</span></span>
-        </h3>
-        <table class="govuk-table rosh-widget__table">
-          <caption class="govuk-!-text-align-left">
-            <p class="govuk-body-m govuk-!-margin-bottom-1">
-              Risk of serious harm
-            </p>
-            <p class="text-secondary govuk-body-s grey">
-              Last updated: 1 November 2022
-            </p>
-          </caption>
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header">Risk to</th>
-              <th class="govuk-table__header">Community</th>
-              <th class="govuk-table__header">Custody</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header">Children</th>
-              <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
-              <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
-            </tr>
-            <tr>
-              <th class="govuk-table__header">Public</th>
-              <td class="govuk-table__cell rosh-widget__risk--medium">Medium</td>
-              <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
-            </tr>
-            <tr>
-              <th class="govuk-table__header">Known adult</th>
-              <td class="govuk-table__cell rosh-widget__risk--high">High</td>
-              <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
-            </tr>
-            <tr>
-              <th class="govuk-table__header">Staff</th>
-              <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
-              <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
-            </tr>
-            <tr>
-              <th class="govuk-table__header">Prisoners</th>
-              <td class="govuk-table__cell rosh-widget__risk--low">Low</td>
-              <td class="govuk-table__cell">N/A</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-
-<!--MAPPA-->
-      <!--<h3 class="govuk-heading-m">Multi Agency Public Protection Arrangement management (MAPPA)</h2>-->
-      <div class="rosh-widget mappa-widget--purple govuk-!-margin-bottom-6">
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
-          <span class="purple"><strong>CAT3/LEVEL3</strong><span class="govuk-!-font-weight-regular"><br>MAPPA</span></span>
-        </h3>
-        <p class="govuk-body-m govuk-!-margin-bottom-1">Multi-agency public protection arrangements</p>
-        <p class="text-secondary govuk-body-s govuk-!-margin-bottom-0 grey">Last updated: 2 February 2022</p>
-      </div>
-
-<!--Risk alerts-->
-      <!--<h3 class="govuk-heading-m">Risk alerts</h2>-->
-      <div class="risk-flag-widget">
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Active alerts</h3>
-        <hr class="govuk-section-break govuk-section-break--visible">
-        <ul class="govuk-list govuk-!-margin-top-1 govuk-!-margin-bottom-2">
-          <li>Domestic abuse history</li>
-          <li>Domestic abuse perpetrator</li>
-        </ul>
-        <hr class="govuk-section-break govuk-section-break--visible">
-        <p class="text-secondary govuk-body-s govuk-!-margin-top-2 govuk-!-margin-bottom-0 grey">Last updated: 2 February 2022</p>
-      </div>
-
-      <!--SARA-->
-      <!--<h3 class="govuk-heading-m">Spousal assault risk assessment</h3>-->
-      <div class="rosh-widget rosh-widget--high govuk-!-margin-bottom-6">
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
-          <span class="red"><strong>HIGH</strong> <span class="govuk-!-font-weight-regular">SARA</span></span>
-        </h3>
-        <p class="govuk-body-m govuk-!-margin-bottom-1">Risk of violence towards partner</p>
-        <p class="text-secondary govuk-body-s govuk-!-margin-bottom-0 grey">Last updated: 1 November 2022</p>
-      </div>
-      <div class="rosh-widget rosh-widget--medium govuk-!-margin-bottom-6">
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
-          <span class="orange"><strong>MEDIUM</strong> <span class="govuk-!-font-weight-regular">SARA</span></span>
-        </h3>
-        <p class="govuk-body-m govuk-!-margin-bottom-1">Risk of violence towards others</p>
-        <p class="text-secondary govuk-body-s govuk-!-margin-bottom-0 grey">Last updated: 1 November 2022</p>
-      </div>
-
-    </div>
-  </div>
 
     <form action="main-catalogue-page" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
