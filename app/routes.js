@@ -24,3 +24,17 @@ router.post('/attendance-unhappy', function(request, response) {
 		response.redirect("/rm/initial-contact-session/why-not-attend")
 	}
 })
+
+router.post('/edit-oasys-answer', function (req, res) {
+	const changedName = req.body.changedName
+  
+	if (changedName === 'yes') {
+	  res.redirect('page-yes')
+	} else if (changedName === 'no') {
+	  res.redirect('page-no')
+	} else {
+	  // No option selected – reload page or show error
+	  res.redirect('edit-oasys')
+	}
+  })
+  
