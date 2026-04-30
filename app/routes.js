@@ -29,7 +29,7 @@ router.post('/edit-oasys-answer', function (req, res) {
 	const changedName = req.body.changedName
   
 	if (changedName === 'yes') {
-	  res.redirect('page-yes')
+	  res.redirect('/rm/find/edit-alex-risk-info')
 	} else if (changedName === 'no') {
 	  res.redirect('page-no')
 	} else {

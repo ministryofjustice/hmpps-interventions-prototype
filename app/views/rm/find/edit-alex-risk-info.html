@@ -1,0 +1,430 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Referral details
+{% endblock %}
+
+{% block header %}
+{% include "/includes/head-dps-dp.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="clear-right">
+  <!--<a href="/dps/view-acp-and-referrals" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-8 float-right">Go to CRS homepage</a>-->
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+</nav>
+{% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+  <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-flex">
+    <abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: X123456
+    <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
+    Date of birth: 20 Feb 1975 (47 years old)
+    <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
+    Tier:&nbsp;<a href="#">B3</a>
+
+    <!-- ROSH badge -->
+
+    <div class="govuk-!-margin-left-4">
+      <div class="predictor-timeline-item predictor-timeline-item--high">
+        <span class="predictor-timeline-item__level"><strong>ROSH</strong> HIGH</span>
+      </div>
+    </div>
+
+    <!-- RSR badge & score -->
+
+    <div class="govuk-!-margin-left-4">
+      <div class="predictor-timeline-item predictor-timeline-item--medium">
+        <span class="predictor-timeline-item__level"><strong>RSR</strong> MEDIUM</span>
+        <span class="predictor-timeline-item__score"> 3</span>
+      </div>
+    </div>
+  </span>
+  Alex River
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <h2 class="govuk-heading-l">[Edit?] Risk</h2>
+  <div class="govuk-inset-text govuk-!-margin-top-0">
+    Last updated (OASys): 28 February 2026
+  </div>
+</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-!-margin-bottom-8">
+
+      <!--Who is at risk-->
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-m">Who is at risk</h3>
+      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5">
+Medium ROSH to the public
+Low ROSH in all other areas
+      </textarea>
+
+      <div class="govuk-!-text-align-right">
+        <a class="govuk-link" href="#">
+          Revert to original OASys information
+        </a>
+      </div>
+      
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <!--What is the nature of the risk-->
+      <h3 class="govuk-heading-m">What is the nature of the risk</h3>
+      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5">
+  Previous Convictions:
+  numerous acquisitive offences since the age of 14 –
+  Theft from Shop x 26;
+  Street Robbery x1;
+  Theft from person x 4;
+  Prostitution x 6;
+  Possession of class A drug (heroin) x 2;
+  Criminal damage x 1;
+  Assault Police x 2
+  Alex River has a history of offending since the age of 14. He is currently on
+  license for an offence of supplying class A drugs as part of a county lines gang
+  A712$**.
+  In this offence the driver of the gang would take him to the Saturn Pub in Space
+  Town in his pink ford focus Reg no ABC 123Y. He would wait at the entrance
+  wearing a green baseball cap so people would know to approach him for drugs.
+  He would sell heroin, cocaine and cannabis, which he kept in a NIKKK
+  backpack. When the police arrested him, he threw the backpack at the officer –
+  missing him and ran away, but he gave chase and arrested him around the
+  corner in the garden of Moon Beam’s house. Forrest Mercury the car driver was
+  also arrested and charged with drug related offences. <br>
+  A number of gang members are still in custody servicing longer sentences.
+  However, he is both fearful of members in the community and at risk of
+  returning to offending. He says that he carries a knife in case he bumps into
+  any gang member and has been warned not to do so by PC999 Plod, his local
+  officer (mob-0123 987654). He previously had a relationship with one gang
+  member Orange Trumpet who is the mother of his son Purple (Dob: 10:11:13). Her
+  new partner is Gold Viola, and they have a child Yellow Trumpet Dob: 21:02:17)
+  He has recently been released from custody and is residing with his sister
+  (also known to probation) but this is only temporary.<br>
+  He has no other family member who he can reside with and although his
+  family support him, they do not offer the pro-social influence required to keep him
+  from offending.
+      </textarea>
+      <div class="govuk-!-text-align-right">
+        <a class="govuk-link" href="#">
+          Revert to original OASys information
+        </a>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <!-- When is the risk likely to be greatest-->
+      <h3 class="govuk-heading-m">When is the risk likely to be greatest</h3>
+      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5">
+Alex River has a history of offending since the age of 14. He is currently on
+license for an offence of supplying class A drugs as part of a county lines gang
+A712$**.
+In this offence the driver of the gang would take him to the Saturn Pub in Space
+Town in his pink ford focus Reg no ABC 123Y. He would wait at the entrance
+wearing a green baseball cap so people would know to approach him for drugs.
+He would sell heroin, cocaine and cannabis, which he kept in a NIKKK
+backpack. When the police arrested him, he threw the backpack at the officer –
+missing him and ran away, but he gave chase and arrested him around the
+corner in the garden of Moon Beam’s house. Forrest Mercury the car driver was
+also arrested and charged with drug related offences.
+A number of gang members are still in custody servicing longer sentences.
+However, he is both fearful of members in the community and at risk of
+returning to offending. He says that he carries a knife in case he bumps into
+any gang member and has been warned not to do so by PC999 Plod, his local
+officer (mob-0123 987654). He previously had a relationship with one gang
+member Orange Trumpet who is the mother of his son Purple (Dob: 10:11:13). Her
+new partner is Gold Viola, and they have a child Yellow Trumpet Dob: 21:02:17)
+He has recently been released from custody and is residing with his sister
+(also known to probation) but this is only temporary.
+He has no other family member who he can reside with and although his
+family support him, they do not offer the pro-social influence required to keep him
+from offending.
+      </textarea>
+      <div class="govuk-!-text-align-right">
+        <a class="govuk-link" href="#">
+          Revert to original OASys information
+        </a>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <!-- Concerns in relation to self-harm-->
+      <h3 class="govuk-heading-m">Concerns in relation to self-harm</h3>
+      <p class="govuk-body app-oasys-text app-oasys-text--dark-grey">Don't know</p>
+      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5">
+      </textarea>
+      <div class="govuk-!-text-align-right">
+        <a class="govuk-link" href="#">
+          Revert to original OASys information
+        </a>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <!--Concerns in relation to suicide-->
+      <h3 class="govuk-heading-m">Concerns in relation to suicide</h3>
+      <p class="govuk-body app-oasys-text app-oasys-text--dark-grey">Don't know</p>
+      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5">
+      </textarea>
+      <div class="govuk-!-text-align-right">
+        <a class="govuk-link" href="#">
+          Revert to original OASys information
+        </a>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <!--Concerns in relation to coping in a hostel setting-->
+      <h3 class="govuk-heading-m">Concerns in relation to coping in a hostel setting</h3>
+      <p class="govuk-body">
+      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5">
+Alex River has a history of offending since the age of 14. He is currently on
+license for an offence of supplying class A drugs as part of a county lines gang
+A712$**.
+In this offence the driver of the gang would take him to the Saturn Pub in Space
+Town in his pink ford focus Reg no ABC 123Y. He would wait at the entrance
+wearing a green baseball cap so people would know to approach him for drugs.
+He would sell heroin, cocaine and cannabis, which he kept in a NIKKK
+backpack. When the police arrested him, he threw the backpack at the officer –
+missing him and ran away, but he gave chase and arrested him around the
+corner in the garden of Moon Beam’s house. Forrest Mercury the car driver was
+also arrested and charged with drug related offences.
+      </textarea>
+      <div class="govuk-!-text-align-right">
+        <a class="govuk-link" href="#">
+          Revert to original OASys information
+        </a>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <!--Concerns in relation to vulnerability-->
+      <h3 class="govuk-heading-m">Concerns in relation to vulnerability</h3>
+      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5">
+Alex River has a history of offending since the age of 14. He is currently on
+license for an offence of supplying class A drugs as part of a county lines gang
+A712$**.
+In this offence the driver of the gang would take him to the Saturn Pub in Space
+Town in his pink ford focus Reg no ABC 123Y. He would wait at the entrance
+wearing a green baseball cap so people would know to approach him for drugs.
+He would sell heroin, cocaine and cannabis, which he kept in a NIKKK
+backpack. When the police arrested him, he threw the backpack at the officer –
+missing him and ran away, but he gave chase and arrested him around the
+corner in the garden of Moon Beam’s house. Forrest Mercury the car driver was
+also arrested and charged with drug related offences.
+A number of gang members are still in custody servicing longer sentences.
+However, he is both fearful of members in the community and at risk of
+returning to offending. He says that he carries a knife in case he bumps into
+any gang member and has been warned not to do so by PC999 Plod, his local
+officer (mob-0123 987654). He previously had a relationship with one gang
+member Orange Trumpet who is the mother of his son Purple (Dob: 10:11:13). Her
+new partner is Gold Viola, and they have a child Yellow Trumpet Dob: 21:02:17)
+He has recently been released from custody and is residing with his sister
+(also known to probation) but this is only temporary.
+He has no other family member who he can reside with and although his
+family support him, they do not offer the pro-social influence required to keep him
+from offending.
+      </textarea>
+      <div class="govuk-!-text-align-right">
+        <a class="govuk-link" href="#">
+          Revert to original OASys information
+        </a>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <!--Additional info-->
+      <h3 class="govuk-heading-m">Additional information</h3>
+      <p class="govuk-body app-oasys-text app-oasys-text--dark-grey">None</p>
+      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5">
+      </textarea>
+      <div class="govuk-!-text-align-right">
+        <a class="govuk-link" href="#">
+          Revert to original OASys information
+        </a>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-form-group">
+        <div class="govuk-checkboxes govuk-checkboxes__inset--grey" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="confirm-understood" name="confirm-understood"
+              type="checkbox" value="understood">
+            <label class="govuk-label govuk-checkboxes__label" for="confirm-understood">
+              I understand this information will be shared with the Service Provider
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    <!--<div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        If this information is out of date or incorrect, you must update the information in NOMIS.
+      </strong>
+    </div>-->
+
+  </div>
+
+  <!--<div class="govuk-grid-column-one-third">
+    <div class="rosh-widget rosh-widget--high" style="margin-bottom: 20px;">
+      <h3 class="govuk-heading-m" style="color: #942514; font-weight: normal;""><strong>HIGH</strong> ROSH</h3>
+      <p class=" govuk-body-m">Risk of serious harm</p>
+        <p class="govuk-hint govuk-body-m">Last updated: 10 October 2021</p>
+        <div class="moj-scrollable-pane">
+          <table class="govuk-table rosh-widget__table" style="margin-bottom: 0;">
+            <caption class="govuk-visually-hidden">Risk of serious harm in Community</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header">Risk to</th>
+                <th class="govuk-table__header">Community</th>
+                <th class="govuk-table__header">Custody</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+
+              </tr>
+              <tr class="govuk-table__row">
+                <th class="govuk-table__cell">Staff</th>
+
+                <td class="govuk-table__cell rosh--very-high">Very high</td>
+
+                <td class="govuk-table__cell rosh-low">Low</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th class="govuk-table__cell">Children</th>
+
+                <td class="govuk-table__cell rosh-medium">Medium</td>
+
+                <td class="govuk-table__cell rosh-low">Low</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th class="govuk-table__cell">Public</th>
+
+                <td class="govuk-table__cell rosh-medium">Medium</td>
+
+                <td class="govuk-table__cell rosh-low">Low</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th class="govuk-table__cell">Adult</th>
+
+                <td class="govuk-table__cell rosh-high">High</td>
+
+                <td class="govuk-table__cell rosh-low">Low</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th class="govuk-table__cell">Prisoners</th>
+
+                <td class="govuk-table__cell">N/A</td>
+
+                <td class="govuk-table__cell rosh-low">Low</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+    </div>
+    <!--<div class="mappa-widget">
+      <h3 class="govuk-heading-m text-uppercase"><strong>Unknown</strong> MAPPA</h3>
+      <p class="govuk-body-m govuk-!-margin-bottom-2">Multi-agency public protection arrangements</p>
+      <p class="govuk-body-m govuk-!-margin-bottom-0">
+        
+        No MAPPA data found in NDelius.<br>
+        If you think this is wrong:<br>
+        <br>
+        1. Check and update NDelius.<br>
+        2. Refresh this page to see your update.<br>
+        <br>
+        You can continue with the Part A<br>
+        if you still get this error. Update the<br>
+        MAPPA section manually.<br>
+      </p>
+      
+    </div>
+    <h3 class="govuk-heading-m">OASys score history</h3>
+    <div class="govuk-body predictor-timeline__heading">
+      <div>
+        <button type="button" data-js="predictor-timeline__toggle-all" class="reset-button link-button govuk-link">
+          Open all<span class="govuk-visually-hidden"> scores in timeline</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="moj-timeline predictor">
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <p class="moj-timeline__byline">19 March 2026 at 10:22am</p>
+        </div>
+        <div class="moj-timeline__description">
+          <div data-js="predictor-timeline__section" class="predictor-timeline-section predictor-timeline-section--hidden" id="scores-section-0">
+            <ul class="govuk-list">
+              
+              
+              <li>
+                <div class="predictor-timeline-item predictor-timeline-item--">
+                  <span class="predictor-timeline-item__level">
+                    <strong>OGRS 1YR</strong> 
+                  </span>
+                  <span class="predictor-timeline-item__score"></span>
+                </div>
+              </li>
+              <li>
+                <div class="predictor-timeline-item predictor-timeline-item--">
+                  <span class="predictor-timeline-item__level">
+                    <strong>OGRS 2YR</strong> 
+                  </span>
+                  <span class="predictor-timeline-item__score"></span>
+                </div>
+              </li>
+              
+              
+              <li>
+                <div class="predictor-timeline-item predictor-timeline-item--">
+                  <span class="predictor-timeline-item__level">
+                    <strong>OVP 1YR</strong> 
+                  </span>
+                  <span class="predictor-timeline-item__score"></span>
+                </div>
+              </li>
+              <li>
+                <div class="predictor-timeline-item predictor-timeline-item--">
+                  <span class="predictor-timeline-item__level">
+                    <strong>OVP 2YR</strong> 
+                  </span>
+                  <span class="predictor-timeline-item__score"></span>
+                </div>
+              </li>
+              
+              
+              <li>
+                <div class="predictor-timeline-item predictor-timeline-item--">
+                  <span class="predictor-timeline-item__level">
+                    <strong>OGP 1YR</strong> 
+                  </span>
+                  <span class="predictor-timeline-item__score"></span>
+                </div>
+              </li>
+              <li>
+                <div class="predictor-timeline-item predictor-timeline-item--">
+                  <span class="predictor-timeline-item__level">
+                    <strong>OGP 2YR</strong> 
+                  </span>
+                  <span class="predictor-timeline-item__score"></span>
+                </div>
+              </li>
+              
+            </ul>
+          </div>
+          <button type="button" data-js="predictor-timeline__toggle-section" class="reset-button link-button govuk-link predictor-timeline__toggle-section" aria-controls="scores-section-0">
+            <span data-js="score-action-label">Open</span>
+          </button>
+        </div>
+      </div>
+    </div>-->
+</div>
+
+{% endblock %}
