@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %} 
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">  
+    <h1 class="govuk-heading-l">Home Office interest flag [TBC]</h1>
+    <p class="govuk-body">A blurb to explain that we pull this info from OASys risk flags? [TBC]</p>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Home Office interest
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Yes</p>
+        </dd>   
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Notes
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla leo metus, quis dignissim neque vestibulum ac. Nulla porta ex in ultricies imperdiet. Donec viverra urna eu mollis dictum. Vivamus mattis elementum tincidunt. Sed non lacus et tortor consectetur dictum ut ac velit. Fusce tristique vitae urna ornare cursus. Fusce enim libero, ultrices quis pellentesque et, eleifend et nibh. Maecenas lobortis leo quis fringilla rhoncus. Cras eleifend mi at mattis pellentesque. Proin consectetur neque non nulla vehicula egestas. Fusce pellentesque condimentum ultricies. Nullam rutrum rhoncus placerat.</p>
+        </dd>   
+      </div>
+    </dl>
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="event-name">
+          Additional info [TBC]
+        </label>
+      </h1>
+      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+    </div>
+
+    <form action="task-list-3" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
+
+  </div>
+</div>
+     
+
+   
+
+{% endblock %}

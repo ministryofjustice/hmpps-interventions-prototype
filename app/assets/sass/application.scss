@@ -859,3 +859,11 @@ a:link, .govuk-link:link {
         line-height: 1.3157894737;
     }
 }
+
+.govuk-heading-with-action {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  

@@ -31,7 +31,7 @@ router.post('/edit-oasys-answer', function (req, res) {
 	if (changedName === 'yes') {
 	  res.redirect('/rm/find/edit-alex-risk-info')
 	} else if (changedName === 'no') {
-	  res.redirect('page-no')
+	  res.redirect('/rm/find/opd-question')
 	} else {
 	  // No option selected – reload page or show error
 	  res.redirect('edit-oasys')
