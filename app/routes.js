@@ -38,3 +38,16 @@ router.post('/edit-oasys-answer', function (req, res) {
 	}
   })
   
+
+  router.post('/recommended-referral', function (req, res) {
+	const choice = req.body.referralChoice;
+  
+	if (choice === 'yes') {
+	  res.redirect('/rm/find-select-referral-type/region-question');
+	} else if (choice === 'no') {
+	  res.redirect('/rm/find-select-referral-type/select-referral-type');
+	} else {
+	  res.redirect('/rm/find-select-referral-type/region-question'); // fallback if nothing selected
+	}
+  });
+  

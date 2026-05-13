@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %} 
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="confirm-person">
+      <div class="govuk-form-group">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Enter a person's CRN or prison number
+                  </h1>
+                </legend>
+            
+                <div class="govuk-form-group">
+                  <!--<label class="govuk-label" for="national-insurance-number">
+                    CRN or prison number [TBC]
+                  </label>-->
+                  <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="national-insurance-number" name="nationalInsuranceNumber" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint">
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          {{ govukButton({
+            text: 'Continue'
+          }) }}
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

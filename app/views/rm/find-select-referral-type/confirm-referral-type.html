@@ -1,7 +1,11 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Case progress
+Recommended referral type
+{% endblock %}
+
+{% block main %}
+{{ super() }}
 {% endblock %}
 
 {% block header %}
@@ -17,7 +21,6 @@ href: "javascript:history.back()"
 {% endblock %}
 
 {% block content %}
-
 <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
   <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-flex">
     <abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: X123456
@@ -47,38 +50,48 @@ href: "javascript:history.back()"
   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 </h1>
 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">  
-    <h2 class="govuk-heading-l">Offender personality disorder (OPD)</h2>
+    <h1 class="govuk-heading-l">Recommended referral type</h1>
     <!--<p class="govuk-body">NDelius shows Alex is eligible for the OPD pathway.</p>-->
-    <p class="govuk-body">This information is taken from NDelius. If you need to provide more information to the delivery partner about the OPD pathway, you will need to contact them.</p>
+    <p class="govuk-body">Based on [???], the recommended referral type for Alex is <strong>[referral type]</strong>.</p>
+    <p class="govuk-body"><a href="#" class="govuk-link">See all referral types</a>.</p> 
 
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          OPD community pathway status
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Services not appropriate /needed at this time 4</p>
-        </dd>   
+    <form action="/recommended-referral" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Do you want to make this recommended type of Community Service referral?
+            </h2>
+          </legend>
+    
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="referral-yes" name="referralChoice" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="referral-yes">
+                Yes
+              </label>
+            </div>
+    
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="referral-no" name="referralChoice" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="referral-no">
+                No - select a different region
+              </label>
+            </div>
+    
+          </div>
+        </fieldset>
       </div>
-    </dl>
-
-   
-    <!--<div class="govuk-form-group">
-      <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--m" for="event-name">
-          Enter details of the OPD link worker
-        </label>
-      </h1>
-      <input class="govuk-input" id="event-name" name="eventName" type="text">
-    </div>-->
-
-    <form action="ho-question" method="post" novalidate>
-      <input type="hidden" name="answers-checked" value="true">
+    
       <button class="govuk-button" data-module="govuk-button">
         Save and continue
       </button>
+    
     </form>
 
   </div>

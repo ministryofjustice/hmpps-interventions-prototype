@@ -17,7 +17,6 @@ href: "javascript:history.back()"
 {% endblock %}
 
 {% block content %}
-
 <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
   <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-flex">
     <abbr title="Case reference number" style="text-decoration: none">CRN</abbr>: X123456
@@ -25,17 +24,17 @@ href: "javascript:history.back()"
     Date of birth: 20 Feb 1975 (47 years old)
     <span class="govuk-!-padding-left-3 govuk-!-padding-right-3 hide-mobile">|</span>
     Tier:&nbsp;<a href="#">B3</a>
-    
+
     <!-- ROSH badge -->
 
     <div class="govuk-!-margin-left-4">
       <div class="predictor-timeline-item predictor-timeline-item--high">
         <span class="predictor-timeline-item__level"><strong>ROSH</strong> HIGH</span>
       </div>
-    </div>       
+    </div>
 
     <!-- RSR badge & score -->
-    
+
     <div class="govuk-!-margin-left-4">
       <div class="predictor-timeline-item predictor-timeline-item--medium">
         <span class="predictor-timeline-item__level"><strong>RSR</strong> MEDIUM</span>
@@ -45,41 +44,40 @@ href: "javascript:history.back()"
   </span>
   Alex River
   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <h2 class="govuk-heading-l">Recommended delivery partner region</h2>
+
 </h1>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">  
-    <h2 class="govuk-heading-l">Home Office interest</h2>
-    <p class="govuk-body">NDelius shows there is a Home Office interest flag on this case.</p>
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Home Office interest
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Yes</p>
-        </dd>   
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Notes
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla leo metus, quis dignissim neque vestibulum ac. Nulla porta ex in ultricies imperdiet. Donec viverra urna eu mollis dictum. Vivamus mattis elementum tincidunt. Sed non lacus et tortor consectetur dictum ut ac velit. Fusce tristique vitae urna ornare cursus. Fusce enim libero, ultrices quis pellentesque et, eleifend et nibh. Maecenas lobortis leo quis fringilla rhoncus. Cras eleifend mi at mattis pellentesque. Proin consectetur neque non nulla vehicula egestas. Fusce pellentesque condimentum ultricies. Nullam rutrum rhoncus placerat.</p>
-        </dd>   
-      </div>
-    </dl>
+    <p class="govuk-body">Based on the PDU, the recommended region for this referral is <strong>Northumbria</strong>.</p>
+    <p class="govuk-body"><a href="#" class="govuk-link">See what PDUs are covered by this region</a>.</p> 
 
-    <!--<div class="govuk-form-group">
-      <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--m" for="event-name">
-          Additional info [TBC]
-        </label>
-      </h1>
-      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
-    </div>-->
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Do you want to make a Community Service referral to this region?
+          </h2>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+              No - select a different region
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
 
-    <form action="task-list-3" method="post" novalidate>
+    <form action="task-list-initial" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">
         Save and continue
