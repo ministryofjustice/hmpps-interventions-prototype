@@ -56,7 +56,26 @@ href: "javascript:history.back()"
     <h1 class="govuk-heading-l">Recommended referral type</h1>
     <!--<p class="govuk-body">NDelius shows Alex is eligible for the OPD pathway.</p>-->
     <p class="govuk-body">Based on Alex's information, the recommended referral type is an <strong>urgent community referral</strong>.</p>
-    <p class="govuk-body"><a href="#" class="govuk-link">See all referral types</a></p> 
+
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        See all referral types
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+    
+<ul class="govuk-list govuk-list--bullet">
+  <li>imminent release</li>
+  <li>pre-release</li>
+  <li>reception/mid-sentence/remand</li>
+  <li>community</li>
+  <li>urgent community</li>
+</ul>
+    </div>
+  </details>
+
+   
 
     <form action="/recommended-referral" method="post" novalidate>
 
