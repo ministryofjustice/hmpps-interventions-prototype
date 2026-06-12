@@ -53,75 +53,165 @@ href: "javascript:history.back()"
         <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h2 class="govuk-fieldset__heading">
-              Select the needs for this referral
+              Select the needs that the referral should focus on 
             </h1>
           </legend>
           <div id="countries-hint" class="govuk-hint">
             Select all that apply.
           </div>
 
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+         
 
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="accommodation" name="accommodation" type="checkbox" value="accommodation" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-checkboxes__label" for="accommodation">
+              <input class="govuk-checkboxes__input" id="Accommodation" name="Accommodation" type="checkbox" value="Accommodation" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-checkboxes__label" for="Accommodation">
                 Accommodation
               </label>
             </div>
-            
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="Accommodation">
+                  Give details about Alex's accommodation needs                    
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+            </div>
+
+          
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="ee" name="ee" type="checkbox" value="ee" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-checkboxes__label" for="ee">
+              <input class="govuk-checkboxes__input" id="Employment and education" name="Employment and education" type="checkbox" value="Employment and education" data-aria-controls="conditional-2">
+              <label class="govuk-label govuk-checkboxes__label" for="Employment and education">
                 Employment and education
               </label>
             </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="Employment and education">
+                  Give details about Alex's employment and education needs                    
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+            </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="fin" name="fin" type="checkbox" value="fin" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-checkboxes__label" for="fin">
+              <input class="govuk-checkboxes__input" id="Finances" name="Finances" type="checkbox" value="Finances" data-aria-controls="conditional-3">
+              <label class="govuk-label govuk-checkboxes__label" for="Finances">
                 Finances
               </label>
             </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-3">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="Finances">
+                  Give details about Alex's finance needs                    
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+            </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="prc" name="prc" type="checkbox" value="prc" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-checkboxes__label" for="prc">
+              <input class="govuk-checkboxes__input" id="Personal relationships and community" name="Personal relationships and community" type="checkbox" value="Personal relationships and community" data-aria-controls="conditional-4">
+              <label class="govuk-label govuk-checkboxes__label" for="Personal relationships and community">
                 Personal relationships and community
               </label>
             </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-4">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="Personal relationships and community">
+                  Give details about Alex's personal relationships and community needs                    
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+            </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="drug" name="drug" type="checkbox" value="drug" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-checkboxes__label" for="drug">
+              <input class="govuk-checkboxes__input" id="Drug use" name="Drug use" type="checkbox" value="Drug use" data-aria-controls="conditional-5">
+              <label class="govuk-label govuk-checkboxes__label" for="Drug use">
                 Drug use
               </label>
             </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-5">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="Drug use">
+                  Give details about Alex's drug use needs                    
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+            </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="alc" name="alc" type="checkbox" value="alc" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-checkboxes__label" for="alc">
+              <input class="govuk-checkboxes__input" id="Alcohol use" name="Alcohol use" type="checkbox" value="Alcohol use" data-aria-controls="conditional-6">
+              <label class="govuk-label govuk-checkboxes__label" for="Alcohol use">
                 Alcohol use
               </label>
             </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-6">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="Alcohol use">
+                  Give details about Alex's alcohol use needs                  
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+            </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="hw" name="hw" type="checkbox" value="hw" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-checkboxes__label" for="hw">
+              <input class="govuk-checkboxes__input" id="Health and wellbeing" name="Health and wellbeing" type="checkbox" value="Health and wellbeing" data-aria-controls="conditional-7">
+              <label class="govuk-label govuk-checkboxes__label" for="Health and wellbeing">
                 Health and wellbeing
               </label>
             </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-7">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="Health and wellbeing">
+                  Give details about Alex's health and wellbeing needs                    
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+            </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="tba" name="tba" type="checkbox" value="tba" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-checkboxes__label" for="tba">
+              <input class="govuk-checkboxes__input" id="Thinking, behaviours and attitudes" name="Thinking, behaviours and attitudes" type="checkbox" value="Thinking, behaviours and attitudes" data-aria-controls="conditional-8">
+              <label class="govuk-label govuk-checkboxes__label" for="Thinking, behaviours and attitudes">
                 Thinking, behaviours and attitudes
               </label>
             </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-8">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="Thinking, behaviours and attitudes">
+                  Give details about Alex's thinking, behaviours and attitudes needs                    
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+            </div>
+
+            
+
+            
+            
+          </div>
+
+
+
+
+
+
+        
 
           
 
             
-          </div>
+
+            
+
+
+            
+
+
+          
+
+          
+
+          
         </fieldset>
       </div>
 
