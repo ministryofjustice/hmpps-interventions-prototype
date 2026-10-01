@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Who do you want to assign this case to?
+      </h1>
+
+      <form action="referral-details-assigned.html" method="post">
+
+  <div class="moj-add-another" data-module="moj-add-another" data-item-label="Caseworker">
+    <div class="moj-add-another__items">
+      <div class="moj-add-another__item">
+        <fieldset class="govuk-fieldset moj-add-another__fieldset ">
+          <legend class="govuk-fieldset__legend moj-add-another__item-title govuk-fieldset__legend--m">
+            Caseworker 1
+          </legend>
+          <div class="moj-add-another__item-container">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="caseworker[0][full_name]">
+                Enter the email address for the caseworker <span class="govuk-visually-hidden moj-add-another__label-suffix">for caseworker 1</span>
+              </label>
+              <input class="govuk-input" id="caseworker[0][email]" name="caseworker[0][email]" type="text" data-name="caseworker[%index%][email]" data-id="caseworker[%index%][email]" data-label="Email">
+            </div>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-birth-hint" data-legend="Date of birth">
+                <legend class="govuk-fieldset__legend">
+                  Date of birth <span class="govuk-visually-hidden moj-add-another__label-suffix">for participant 1</span>
+                </legend>
+                <div id="date-of-birth-hint" class="govuk-hint">
+                  For example, 31 7 1980
+                </div>
+                <div class="govuk-date-input" id="date-of-birth">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="participant[0][dob][day]">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="participant[0][dob][day]" name="participant[0][dob][day]" type="text" inputmode="numeric" data-name="participant[%index%][dob][day]" data-id="participant[%index%][dob][day]">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="participant[0][dob][month]">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="participant[0][dob][month]" name="participant[0][dob][month]" type="text" inputmode="numeric" data-name="participant[%index%][dob][month]" data-id="participant[%index%][dob][month]">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="participant[0][dob][year]">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="participant[0][dob][year]" name="participant[0][dob][year]" type="text" inputmode="numeric" data-name="participant[%index%][dob][year]" data-id="participant[%index%][dob][year]">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="moj-add-another__remove-button-container">
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <div class="moj-add-another__add-button-container">
+      <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button" data-module="govuk-button">
+        Add another participant
+      </button>
+    </div>
+      <button class="govuk-button" data-module="govuk-button">Submit</button>
+  </div>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

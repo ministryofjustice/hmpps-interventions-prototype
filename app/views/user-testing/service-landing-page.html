@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+{% set containerClasses = "moj-special-width-container" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="moj-width-container">
+    <!-- <a href="javascript:window.history.back()" class="govuk-back-link govuk-!-margin-bottom-7">[Service name]</a> -->
+    <h1 class="govuk-heading-l">Community Support services</h1>
+</div>
+
+<div class="homepage-content">
+    <div class="moj-width-container">
+        <ul class="govuk-grid-row card-group govuk-!-margin-bottom-9">
+            <li class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable">
+                    <h2 class="govuk-heading-m card__heading">
+                        <a class="govuk-link card__link govuk-link--no-visited-state" href="assign-referral/unassigned.html">View cases</a>
+                    </h2>
+                    <p class="govuk-body card__description">View all ongoing and unassigned cases.</p>
+                </div>
+            </li>
+            <li class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable">
+                    <h2 class="govuk-heading-m card__heading">
+                        <a class="govuk-link card__link govuk-link--no-visited-state" href="#">Make a referral</a>
+                    </h2>
+                    <p class="govuk-body card__description">Start a new referral for Community Support services</p>
+                </div>
+          
+            <br />
+            <br />
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
