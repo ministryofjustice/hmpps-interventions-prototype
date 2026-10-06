@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block header %}
-  {% include "/includes/head-dps-dp.html" %} 
+  {% include "/includes/head-dps-dp.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,6 +19,19 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Session feedback submitted
+        </h3>
+        <p class="govuk-body">The ICS is now complete. The probation practitioner will receive an email.</p>
+      </div>
+    </div>
 
     <h1 class="govuk-heading-l">Referral for Alex River</h1>
 
@@ -30,13 +43,8 @@
         </li>
 
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" aria-current="page" href="progress-needs-feedback">Progress</a>
+          <a class="moj-sub-navigation__link" aria-current="page" href="progress-feedback-submitted">Progress</a>
         </li>
-
-        <!--<li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link"  href="">Case notes</a>
-        </li>-->
-
       </ul>
     </nav>
 
@@ -56,11 +64,11 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">27 Nov 2026 at 1:00pm</td>
           <td class="govuk-table__cell">            
-            <strong class="govuk-tag govuk-tag--red">
-            Needs feedback
+            <strong class="govuk-tag govuk-tag--green">
+              Completed
             </strong>
           </td>
-          <td class="govuk-table__cell"><a class="govuk-link" href="session-attendance.html">Add attendance and feedback</a></td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="view-ics-feedback">View feedback</a></td>
         </tr> 
       </tbody>
     </table>

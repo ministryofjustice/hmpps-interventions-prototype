@@ -12,41 +12,65 @@
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {{ govukBackLink({
   text: "Back",
-  href: "javascript:history.back()"
+href: "javascript:history.back()"
 }) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Session details</h1>
+<h1 class="govuk-heading-l">Additional support needs</h1>
 
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date
-          </dt>
-          <dd class="govuk-summary-list__value">       	
-            27 November 2026
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Start time
-          </dt>
-          <dd class="govuk-summary-list__value">
-            1:00pm
-          </dd>
-        </div>
-      </dl>
+<p>
+These are the support needs identified in Alex’s referral.
+</p>
 
-      <div class="govuk-form-group">
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+  
+    <h2 class="govuk-summary-card__title">
+      Additional support needs already identified
+    </h2>
+  
+  </div>
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+    
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mental or emotional health
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit. Duis nobis consequat at vero irure labore minim repellendus. Aute laboris in irure fuga lorem eligendi. Laboris veniam laborum maxime aut nam occaecat dolores deserunt quis omnis facilis cum. Nulla facere minus fugiat autem est fugiat est do maxime aliquip.
+        </dd>
+        
+      </div>
+      
+    
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Neurodiversity
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit. Duis nobis consequat at vero irure labore minim repellendus. Aute laboris in irure fuga lorem eligendi. Laboris veniam laborum maxime aut nam occaecat dolores deserunt quis omnis facilis cum. Nulla facere minus fugiat autem est fugiat est do maxime aliquip.
+        </dd>
+        
+      </div>
+    </dl>
+  </div>
+</div>
+
+
+   <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h2 class="govuk-fieldset__heading">
-             Was Alex late?
+             Did you identify anything else Alex needs support with?
             </h2>
           </legend>             
           <div class="govuk-radios" data-module="govuk-radios">
@@ -108,7 +132,7 @@
 
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-label--s" for="more-detail">
-                  Why was Alex late?
+                  Give details of anything else Alex needs support with
                 </label>
                 <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
                 </div>
@@ -129,44 +153,19 @@
 
           </div>
         </fieldset>
-      </div>
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h2 class="govuk-fieldset__heading">
-              How long did the session last? 
-            </h2>
-          </legend>
-          <div class="govuk-date-input" id="passport-issued">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                  Hour
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                  Minute
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
-              </div>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-
-      <form action="session-feedback" method="post" novalidate>
+      </div> 
+  
+  
+      <form action="next-steps" method="post" novalidate>
         <input type="hidden" name="answers-checked" value="true">
         <button class="govuk-button" data-module="govuk-button">
           Continue
         </button>
       </form>
-
-  </div>
+  </fieldset>
 </div>
+        
+        
+    
 
 {% endblock %}

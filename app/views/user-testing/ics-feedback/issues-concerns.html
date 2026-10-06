@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case progress
+{% endblock %}
+
+{% block header %}
+  {% include "/includes/head-dps-dp.html" %} 
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+  text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Issues or concerns</h1>
+  
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              What issues or concerns did you identify?
+            </h2>
+          </legend>
+          <div id="account-number-hint" class="govuk-hint">
+            Give details of anything that concerned you about Alex, or any issues they raised that may impact their engagement in future sessions. 
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </fieldset>
+      </div>
+  
+      <form action="additional-support-needs" method="post" novalidate>
+        <input type="hidden" name="answers-checked" value="true">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+  </fieldset>
+</div>
+        
+        
+    
+
+{% endblock %}
