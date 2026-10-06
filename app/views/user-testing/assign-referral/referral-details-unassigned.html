@@ -18,261 +18,521 @@ Referral details
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Referral for Alex River</h1>
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">Referral for Alex River</h1>
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
 
-    <h2 class="govuk-heading-m">Case details</h2>
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="referral-details-unassigned">Referral details</a>
+          </li>
+  
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link"  href="#">Progress</a>
+          </li>
+        </ul>
+      </nav>
 
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Personal details
+      <h2 class="govuk-heading-m">Referral details</h2>
+      
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Referral details
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Referral date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                18 April 2026
+              </dd>
+            </div>
+        
+             <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Assigned to
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Unassigned
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="assign-a-caseworker">
+                  Assign a caseworker
+                  <span class="govuk-visually-hidden"> location</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
       </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Alex River
-            </dd>
-          </div>
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              CRN
-            </dt>
-            <dd class="govuk-summary-list__value">
-              D007615
-            </dd>
-          </div>
+          <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Personal details
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Alex River
+              </dd>
+            </div>
+        
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                CRN
+              </dt>
+              <dd class="govuk-summary-list__value">
+                D007615
+              </dd>
+            </div>
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of birth
-            </dt>
-            <dd class="govuk-summary-list__value">
-              20 Feb 1975 (47 years old)
-            </dd>
-          </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Current location
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Community
+              </dd>
+            </div>
+  
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                20 Feb 1975 (47 years old)
+              </dd>
+            </div>
+  
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Preferred language
+              </dt>
+              <dd class="govuk-summary-list__value">
+                English
+              </dd>
+            </div>
 
-          <!--<div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Prison number *
-            </dt>
-            <dd class="govuk-summary-list__value">
-              A8362HF
-            </dd>
-          </div>-->
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Preferred language
-            </dt>
-            <dd class="govuk-summary-list__value">
-              English
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Disabilities<br>
-              <span class="govuk-body-s secondary-text govuk-!-font-weight-regular" style="color: #505a5f;">
-                Last updated 7 January 2026
-              </span>
-            </dt>
-            <dd class="govuk-summary-list__value">             
-              <ul class="govuk-list">       
-                  <li>Neurodiverse conditions</li>                  
-              </ul> 
-              <!--<a class="govuk-link" href="#">View details and notes</a>-->
-            </dd>
-          </div>
-        </dl>
+             <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Current circumstances<br>
+                <span class="govuk-body-s secondary-text govuk-!-font-weight-regular" style="color: #505a5f;">
+                  Last updated 7 January 2026
+                </span>
+              </dt>
+              <dd class="govuk-summary-list__value">             
+                <ul class="govuk-list">       
+                    <li>Relationship: Married/Civil partnership</li>
+                    <li>Employment: Full time employed</li>
+                    <li>Dependents: Has dependents</li>                        
+                </ul> 
+                <!--<a class="govuk-link" href="#">View details and notes</a>-->
+              </dd>
+            </div>
+  
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Disabilities<br>
+                <span class="govuk-body-s secondary-text govuk-!-font-weight-regular" style="color: #505a5f;">
+                  Last updated 7 January 2026
+                </span>
+              </dt>
+              <dd class="govuk-summary-list__value">             
+                <ul class="govuk-list">       
+                    <li>Neurodiverse conditions</li>                  
+                </ul> 
+                <!--<a class="govuk-link" href="#">View details and notes</a>-->
+              </dd>
+            </div>
+          </dl>
+        </div>
       </div>
-    </div>
+  
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h3 class="govuk-summary-card__title">
+            Equality monitoring
+          </h3>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Nationality
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Argentine, Brazilian
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Ethnicity
+              </dt>
+              <dd class="govuk-summary-list__value">
+                White: British/English/Welsh/Scottish/Northern Irish
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Religion or belief
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No religion
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Sex
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Male
+              </dd>
+            </div>
+          </dl>
+          <!--<p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a class="govuk-link" href="#">View more equality monitoring on NDelius (opens in new tab)</a></p>-->
+        </div>
+      </div>
 
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h3 class="govuk-summary-card__title">
-          Equality monitoring
-        </h3>
+            <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h3 class="govuk-summary-card__title">
+            Additional information
+          </h3>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Home office interest
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit fugiat similique 
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Offender personality disorder (OPD) pathway
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+            </div>
+          </dl>
+          <!--<p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a class="govuk-link" href="#">View more equality monitoring on NDelius (opens in new tab)</a></p>-->
+        </div>
       </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Ethnicity
-            </dt>
-            <dd class="govuk-summary-list__value">
-              White: British/English/Welsh/Scottish/Northern Irish
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Religion or belief
-            </dt>
-            <dd class="govuk-summary-list__value">
-              No religion
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Sex
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Male
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Gender identity
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Male
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Sexual orientation
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Heterosexual/Straight
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Transgender
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Yes
-            </dd>
-          </div>
-        </dl>
-        <!--<p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a class="govuk-link" href="#">View more equality monitoring on NDelius (opens in new tab)</a></p>-->
-      </div>
-    </div>
 
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h3 class="govuk-summary-card__title">
-          Contact details
-        </h3>
+               <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h3 class="govuk-summary-card__title">
+            Risk information
+          </h3>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Who is at risk?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Proident aliquip in aliquip aute cumque qui. Non cupiditate do facilis nostrud in sint soluta est minim voluptas. Pariatur minim accusamus sit accusamus fuga. Fugiat excepteur quo deserunt in qui non.
+               </p>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What is the nature of the risk?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit fugiat similique 
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                In what circumstances or situations would offending be most likely to occur?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Proident aliquip in aliquip aute cumque qui. Non cupiditate do facilis nostrud in sint soluta est minim voluptas. Pariatur minim accusamus sit accusamus fuga. Fugiat excepteur quo deserunt in qui non.
+            </div>
+             <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Risk of self-harm
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet 
+              </dd>
+            </div>
+             <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Risk of suicide
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet 
+              </dd>
+            </div>
+             <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Concerns in relation to coping in an approved premises or hostel
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Proident aliquip in aliquip aute cumque qui. Non cupiditate do facilis nostrud in sint soluta est minim voluptas. Pariatur minim accusamus sit accusamus fuga. Fugiat excepteur quo deserunt in qui non.
+              </dd>
+            </div>
+             <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Concerns in relation to vulnerability
+              </dt>
+              <dd class="govuk-summary-list__value">
+                 Lorem ipsum dolor sit amet consectetur adipiscing elit. Proident aliquip in aliquip aute cumque qui. Non cupiditate do facilis nostrud in sint soluta est minim voluptas. Pariatur minim accusamus sit accusamus fuga. Fugiat excepteur quo deserunt in qui non.
+            </div>
+            
+          </dl>
+          <!--<p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a class="govuk-link" href="#">View more equality monitoring on NDelius (opens in new tab)</a></p>-->
+        </div>
       </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Phone number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Not available
-            </dd>
-            <!--<dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change</a>
-            </dd>-->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Mobile number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              07700 900002
-            </dd>
-            <!--<dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change</a>
-            </dd>-->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Email address
-            </dt>
-            <dd class="govuk-summary-list__value">
-              alex.rivers@gmail.com
-            </dd>
-            <!--<dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change</a>
-            </dd>-->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Main address<br>
-              <span class="govuk-body-s secondary-text govuk-!-font-weight-regular" style="color: #505a5f;">
-                Last updated 6 January 2026
-              </span>
-            </dt>
-            <dd class="govuk-summary-list__value">
-              1 Lunar Lane, Newcastle, Newcastle upon Tyne, NE12 34AB<br>
-              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">
-                <span class="govuk-summary-list__key govuk-!-padding-bottom-0">Type of address</span>
-                <span>Friends/Family (settled) (verified)</span>
-              </p>
-              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">
-                <span class="govuk-summary-list__key govuk-!-padding-bottom-0">Start date</span>
-                <span>1 December 2005</span>
-              </p>
-              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">
-                <span class="govuk-summary-list__key govuk-!-padding-bottom-0">Notes</span>
-                <span>No notes</span>
-              </p>
-            </dd>
-            <!--<dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change</a>
-            </dd>-->
-          </div>
-          <!--<div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Other addresses
-            </dt>
-            <dd class="govuk-summary-list__value">              
-              No other addresses       
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Contacts
-            </dt>
-            <dd class="govuk-summary-list__value">             
-              None
-            </dd>
-          </div>-->
-        </dl>
-      </div>
-    </div>
 
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Referral details
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h3 class="govuk-summary-card__title">
+            Additional support needs
+          </h3>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Mental or emotional health
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Proident aliquip in aliquip aute cumque qui. Non cupiditate do facilis nostrud in sint soluta est minim voluptas. Pariatur minim accusamus sit accusamus fuga. Fugiat excepteur quo deserunt in qui non.
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Neurodiversity
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Proident aliquip in aliquip aute cumque qui. Non cupiditate do facilis nostrud in sint soluta est minim voluptas. Pariatur minim accusamus sit accusamus fuga. Fugiat excepteur quo deserunt in qui non.              </dd>
+            </div>
+             <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Does Alex need an interpreter?<br>
+                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+                <span class="govuk-summary-list__key govuk-!-padding-bottom-0">What language does Alex need an interpreter for?</span>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes<br>
+                <br>
+                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+                <span class="govuk-summary-list__value">Spanish</span>
+              </dd>
+            </div>
+          </dl>
+          <!--<p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a class="govuk-link" href="#">View more equality monitoring on NDelius (opens in new tab)</a></p>-->
+        </div>
       </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Referral date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              18 April 2025
-            </dd>
-          </div>
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Assigned to
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Unassigned
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="assign-a-caseworker.html">
-                Assign to caseworker<span class="govuk-visually-hidden"> </span>
-              </a>
-            </dd>
-          </div>
-        </dl>
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h3 class="govuk-summary-card__title">
+            Person's needs
+          </h3>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Employment and education
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Proident aliquip in aliquip aute cumque qui. 
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Finances
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Proident aliquip in aliquip aute cumque qui. Non cupiditate do facilis nostrud in sint soluta est minim voluptas. Pariatur minim accusamus sit accusamus fuga. Fugiat excepteur quo deserunt in qui non.              
+              </dd>
+            </div>
+             <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Alcohol use
+               </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Proident aliquip in aliquip aute cumque qui. Non cupiditate do facilis nostrud in sint soluta est minim voluptas. 
+              </dd>
+            </div>
+          </dl>
+          <!--<p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a class="govuk-link" href="#">View more equality monitoring on NDelius (opens in new tab)</a></p>-->
+        </div>
       </div>
-    </div>
+
+            <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h3 class="govuk-summary-card__title">
+            Additional referral information
+          </h3>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What date does the service need to be completed by?<br>
+                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+                <span class="govuk-summary-list__key govuk-!-padding-bottom-0">Why does it need to be completed by this date?</span>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                24/11/2026<br>
+                <br>
+                <br>
+                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+                <span class="govuk-summary-list__value">Lorem ipsum dolor sit amet consectetur adipiscing elit. Proident aliquip in aliquip aute cumque qui. Non cupiditate do facilis nostrud in sint soluta est minim voluptas.</span>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Offence
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor             
+              </dd>
+            </div>
+             <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Offence subcategory
+               </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Proident aliquip in aliquip aute cumque qui. Non cupiditate do facilis nostrud in sint soluta est minim voluptas. 
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Outcome
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet           
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Sentence end date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                10 June 2027           
+              </dd>
+            </div>
+             <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Any license conditions or exclusion zones?
+               </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Proident aliquip in aliquip aute cumque qui. Non cupiditate do facilis nostrud. 
+          </dl>
+          <!--<p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a class="govuk-link" href="#">View more equality monitoring on NDelius (opens in new tab)</a></p>-->
+        </div>
+      </div>
+  
+  
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h3 class="govuk-summary-card__title">
+            Contact details
+          </h3>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Phone number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Not available
+              </dd>
+              <!--<dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change</a>
+              </dd>-->
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Mobile number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                07700 900002
+              </dd>
+              <!--<dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change</a>
+              </dd>-->
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                alex.rivers@gmail.com
+              </dd>
+              <!--<dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change</a>
+              </dd>-->
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Main address<br>
+                <span class="govuk-body-s secondary-text govuk-!-font-weight-regular" style="color: #505a5f;">
+                  Last updated 6 January 2026
+                </span>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                1 Lunar Lane, Newcastle, Newcastle upon Tyne, NE12 34AB<br>
+                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+                  <span class="govuk-summary-list__key govuk-!-padding-bottom-0">Type of address</span>
+                  <span>Friends/Family (settled) (verified)</span>
+                </p>
+                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+                  <span class="govuk-summary-list__key govuk-!-padding-bottom-0">Start date</span>
+                  <span>1 December 2005</span>
+                </p>
+                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+                  <span class="govuk-summary-list__key govuk-!-padding-bottom-0">Notes</span>
+                  <span>No notes</span>
+                </p>
+              </dd>
+              <!--<dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change</a>
+              </dd>-->
+            </div>
+            <!--<div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Other addresses
+              </dt>
+              <dd class="govuk-summary-list__value">              
+                No other addresses       
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Contacts
+              </dt>
+              <dd class="govuk-summary-list__value">             
+                None
+              </dd>
+            </div>-->
+          </dl>
+        </div>
+      </div>
+  
+      </div>
   </div>
 </div>
 
